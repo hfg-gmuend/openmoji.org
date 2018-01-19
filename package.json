@@ -1,0 +1,29 @@
+{
+  "name": "hfg-emoji-project-website",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parallelshell 'npm run watch' 'npm run watch-style'",
+    "watch": "budo --host localhost --dir . --open --live --watch-glob '**/*.{html,css,js}'",
+    "watch-style": "watch 'npm run bundle-css' .",
+    "bundle-css": "node-sass --include-path scss style/main.scss style/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hfg-gmuend/HfG-Emoji-Project-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hfg-gmuend/HfG-Emoji-Project-Website/issues"
+  },
+  "homepage": "https://github.com/hfg-gmuend/HfG-Emoji-Project-Website#readme",
+  "devDependencies": {
+    "budo": "^10.0.4",
+    "node-sass": "^4.7.2",
+    "parallelshell": "^3.0.2",
+    "watch": "^1.0.2"
+  }
+}
