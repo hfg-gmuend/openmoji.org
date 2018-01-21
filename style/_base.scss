@@ -1,4 +1,22 @@
 html {
-  color: $clr-grey;
-  font-size: $fnt-sz-xl;
+	color: $clr-grey-dark;
+	font-size: $fnt-sz-md;
+}
+
+body {
+	font-family: $fnt-family;
+}
+
+h1 {
+	font-size: $fnt-sz-xl;
+	font-weight: $fnt-bold;
+}
+
+h2 {
+	font-size: $fnt-sz-lg;
+	font-weight: $fnt-bold;
+}
+
+p {
+	color: $clr-grey-light;
 }

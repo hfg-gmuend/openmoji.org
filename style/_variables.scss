@@ -1,12 +1,24 @@
 //colors
-$clr-brand: #00FF00;
-$clr-grey: #555;
+$clr-red-light: #E95A47;
+$clr-red-dark: #D22F29;
+$clr-blue-light: #5EB0CF;
+$clr-blue-dark: #3D98BB;
+$clr-yellow-light: #EEB41A;
+$clr-yellow-dark: #C78D0E;
+
+$clr-grey-light: #818080;
+$clr-grey-dark: #242424;
+
+$bgclr-grey: #F2F1F0;
+
+//font
+$fnt-family: 'Source Sans Pro', sans-serif;
 
 //font-sizes
-$fnt-sz-xl: 50px;
-$fnt-sz-lg: 35px;
-$fnt-sz-md: 25px;
-$fnt-sz-sm: 13px;
-$fnt-sz-xs: 10px;
+$fnt-sz-xl: 47px;
+$fnt-sz-lg: 30px;
+$fnt-sz-md: 17px;
 
-
+//font-weights
+$fnt-reg: 500;
+$fnt-bold: 700; 

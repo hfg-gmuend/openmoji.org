@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Source Sans Pro', sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400, 700"); }
+
 html {
-  color: #555;
-  font-size: 50px; }
+  color: #242424;
+  font-size: 17px; }
+
+body {
+  font-family: "Source Sans Pro", sans-serif; }
+
+h1 {
+  font-size: 47px;
+  font-weight: 700; }
+
+h2 {
+  font-size: 30px;
+  font-weight: 700; }
+
+p {
+  color: #818080; }
