@@ -1,0 +1,21 @@
+footer {
+	padding: $gap-med;
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	bottom: 0;
+	p{
+		display: inline-block;
+	}
+	ul{
+		position: absolute;
+		right: $gap-med;
+		bottom: $gap-med;
+		li{
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			padding-left: $gap-small;
+		}
+	}
+}

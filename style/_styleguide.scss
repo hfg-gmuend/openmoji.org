@@ -1,0 +1,14 @@
+#styleguide-wrapper{
+	h1{
+		color: $clr-red-light;
+	}
+
+	.active-tab{
+		border-color: $clr-red-light;
+	}
+}
+
+#styleguide-content{
+	max-width: 800px;
+	margin-left: 400px;
+}

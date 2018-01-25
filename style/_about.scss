@@ -1,0 +1,47 @@
+#about-wrapper{
+	h1{
+		color: $clr-yellow-light;
+	}
+	button{
+		background-color: $clr-yellow-light;
+	}
+	.active-tab{
+		border-color: $clr-yellow-light;
+	}
+	#about-content{
+		margin-left: 400px;
+		.descriptive-text{
+			padding-left: $gap-med;
+			padding-bottom: $gap-large;
+		}
+		#team-container{
+			padding-left: $gap-med;
+			max-width: 1000px;
+			    display: -webkit-flex; /* Safari */
+			    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+			    display: flex;
+			    flex-wrap: wrap;
+			.teammember{
+				width: 150px;
+				position: relative;
+				padding-right: $gap-large;
+				padding-bottom: $gap-med;
+				p{
+					color: $clr-grey-dark;
+				}
+				div {
+					width: 80%;
+					margin: auto;
+					padding-bottom: $gap-small;
+					img{
+						width: 100%;
+					}
+					a{
+						padding-top: $gap-small;
+					}
+				}
+
+			}
+		}
+	}
+}

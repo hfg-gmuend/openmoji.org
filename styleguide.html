@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OpenMoji · Participate</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="stylesheet" href="style/main.css">
+  </head>
+  <body>
+    <div id="styleguide-wrapper">
+        <header>
+            <!-- <div> -->
+                <ul>
+                    <li><a href="index.html">OpenMoji</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li class = "active-tab"><a href="styleguide.html">Participate</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            <!-- </div> -->
+            <!-- <div class="clear"></div> -->
+            <div id="emojisuche">
+                
+                <img src="img/search.svg">
+                <input type="text" name="emojisearch" placeholder="author, category or emoji…">
+                
+            </div>
+            <div class="right">
+                    <button>get OpenMojis</button>
+                    <a id = "gh-link" class = "iconlink" href=""><img src = "img/brand-icons/github.svg"></a>
+                    <!-- <div class="clear"></div> -->
+            </div>
+          </header>
+          <main>
+            <nav class="nav-left">
+                <ul>
+                    <li><a href="#Grid">Grid</a></li>
+                    <li><a href="#Kontur">Kontur</a></li>
+                    <li><a href="#Radien">Radien</a></li>
+                    <li><a href="#Themen">Themen</a></li>
+                    <li><a href="#Farben">Farben</a></li>
+                    <li><a href="#Schattierungen">Schattierungen</a></li>
+                <ul>
+            </nav>
+
+            <div id="styleguide-content">
+                <h1 id="Grid" class="one">Grid</h1>
+                
+                <div class="two-rows">
+                    <p  class="one">Das Grid dient zur Größenorientierung. Die Grundformen bestimmen grob den Flächeninhalt des Icons. </br>
+            Dieser muss aber auch immer im Vergleich zu den anderen Icons gesehen und angeglichen werden. Dabei möglichst versuchen innerhalb des Grids zu bleiben. Für Ausnahmefälle sind noch 4px Padding eingeplant.</p>
+                    <img class="imagefix" src="img/img_Raster.png" class="two">
+                    <div class="clear"></div>
+                </div>
+
+                <h2  class="one">Basisformen</h2>
+               
+                <div class="two-rows">
+                    <p  class="one">Jeweils eine Basisform bestimmt den groben Flächeninhalt des Icons. Die Form muss dabei nicht komplett ausgefüllt werden. „Emoji Gesichter“ werden auf 46x46px angelegt, da sie komplett gefüllt sind und damit noch Platz für Zusätze außerhalb bleibt (z.B. Tränen).</p>
+                    <img class="imagefix" src="img/img_Grundformen.png" class="one">
+                    <div class="clear"></div>
+                </div>
+                
+
+                <h3  class="one">Beispiele für Platzierung der Icons in den Grundformen</h3>
+                <img class="imagefix" src="img/img_Grundformen-bsp1.png" class="one">
+               
+                <h3  class="one">Beispiele für Platzierung der Icons in den zwei Grundkreisen</h3>
+                <img class="imagefix" src="img/img_Grundformen-bsp2.png" class="one">
+                
+                <h2>Basiskreise</h2>
+               
+                <div class="two-rows">
+                    <p>Die Basiskreise sollen ein einheitlicheres Bild schaffen. In Ausnahmefällen können aber auch andere Formate benutzt werden.</p>
+                    <img  class="imagefix" src="img/img_Basiskreise.png">
+                    <div class="clear"></div>
+                </div>
+
+                <h3>Anwendungsbeispele</h3>
+                <img class="imagefix" src="img/img_Kreise-bsp.png">
+
+                <h1 id="Kontur">Kontur</h1>
+                
+                <div class="two-rows">
+                    <p>Die Kontur ist grundsätzlich 2px breit und leicht abgerundet. Sie läuft mittig im Pfad. Der Abschluss ist abgerundet.</p>
+                    <img class="imagefix" src="img/img_Grundeinstellung.png">
+                    <div class="clear"></div>
+                </div>
+
+                <div class="two-rows">        
+                    <p>Wenn deutliche Schichten bestehen können Linien angeschnitten werden. Der Abstand zwischen Linien beträgt immer mindestens 2px.<br><br>Wenn sinnvoll, können Konturen auch <b> mit abgerundeten Enden offen gelassen werden.</strong> Dies bietet sich besonders bei „organischen“ Icons an (Tiere, Pflanzen).</p>
+                    <img class="imagefix" src="img/img_Offen Linien.png">
+                    <div class="clear"></div>
+                </div>
+
+                <h1 id="Radien">Radien</h1>
+
+                <div class="two-rows">
+                    <p>Bei „normalen“, eckigen Form reicht die voreingestellte Rundung. Zusätzlich können Radien mit 1px, 3px oder individuell benutzt werden.</p>
+                    <img class="imagefix" src="img/img_Radien.png">
+                    <div class="clear"></div>
+                </div>
+                
+                <h1 id="Themen">Themen</h1>
+                <h2 class="expandable-button">Menschen</h2>
+                <div id="Menschen" class="expandable">
+                    <div class="two-rows">
+                        <p>Personen werden ohne Kleidung dargestellt.Beine laufen leicht schmal zu und sind unten rund. Arme sind einzelne StricheStatische Personen werden frontal, aktive im Profil dargestellt.</p>
+                         <img class="imagefix" src="img/img_Personen-ganzkörper.png">
+                         <div class="clear"></div>
+                    </div>
+
+                    <div class="two-rows">
+                        <p>Bei Objekten mit vielen Überlappungen, sollte die Komplexität der 
+                Objekte reduziert 
+                werden.</p>
+                         <img class="imagefix" src="img/img_Personen-und-Geräte.png">
+                         <div class="clear"></div>
+                    </div>
+                </div>
+
+                <h2 class="expandable-button">Büste</h2>
+                <div id="Bueste" class="expandable">
+                    <div class="two-rows">
+                        <p>Ellipsenförmiges Gesicht
+                Evtl. Personalisierbar
+                Mit Abstand zwischen Kopf und Schultern.</p>
+                        <img class="imagefix" src="img/img_Büste-Grundlage.png">
+                        <div class="clear"></div>
+                    </div>
+                    <div class="two-rows">
+                        <p>Augen mittig vom Kopf platzieren</p>
+                        <img class="imagefix" src="img/img_Büste-Gesichtsform.png">
+                        <div class="clear"></div>
+                    </div>
+                        <div class="two-rows">
+                        <p>Für einen neutralen Gesichtsausdruck die Breite des Mundes an der Mitte der Augen ausrichten</p>
+                        <img  class="imagefix" src="img/img_Büste-Alignment.png">
+                        <div class="clear"></div>
+                    </div>
+                </div>  
+
+                <h2 class="expandable-button">Hände</h2>
+                <div id = "Heande" class="expandable">
+                    <div class="two-rows">
+                        <p>Bei Händen läuft der Daumen zur Spitze hin leicht zu. Runde Fingerspitzen. Der Handansatz ist ein Teilkreis.Die länge der Finger sollte über das komplette Iconset relativ konstant sein.</p>
+                        <img class="imagefix" src="img/img_Hände.png">
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <h2 class="expandable-button">Pfeile</h2>
+                <div id = "Pfeile" class="expandable">
+                    <div class="two-rows">
+                        <p>Die Spitze der Pfeile ist aus der Grundform zusammengesetzt</p>
+                        <img class="imagefix" src="img/img_Pfeile-Konstruktion.png">
+                        <div class="clear"></div>
+                    </div>
+                    
+                    <div class="two-rows">
+                        <p>Pfeilspitzen und Ansatz sollten optisch die gleiche Breite haben</p>
+                        <img class="imagefix" src="img/img_Pfeile-breite.png">
+                        <div class="clear"></div>
+                    </div>
+
+                    <h3>Variationen für UI</h3>
+                    <img class="imagefix" src="img/img_Emoji-to-UI.png">
+                </div>
+                
+                <h2 class="expandable-button">Tiere</h2>
+                <div id="Tiere" class="expandable">
+                    <div class="two-rows">
+                        <p>Bei Tieren wird allgemein der <strong>ganze Körper von der Seite</strong> dargestellt. Die Linien werden hier etwas offener und freier. Trotzdem sollten sie möglichst naturalistisch und nicht verniedlicht werden.</p>
+                        <img class="imagefix" src="img/img_Tiere.png">
+                        <div class="clear"></div>
+                    </div>
+                </div>
+
+                <h2 class="expandable-button">Gebäude</h2>
+               <div id="Gebaeude" class="expandable">
+                    <div class="two-rows"> 
+                        <p>Gebäude werden von vorne und mit Tür dargestellt. Die Details möglichst einfach halten und nicht zu kleinteilig.</p>
+                        <img class="imagefix" src="img/img_Gebäude.png">
+                        <div class="clear"></div>
+                    </div>    
+                </div>
+
+                <h2 class="expandable-button">Pflanzen</h2>
+                <div id = "Pflanzen" class="expandable">
+                    <div class="two-rows">
+                        <p>Pflanzen werden ähnlich wie Tiere relativ natürlich und offen dargestellt. Der Stamm oder Stiel bleibt für bessere Einheitlichkeit ein Strich. Nicht symmetrisch!</p>
+                        <img class="imagefix" src="img/img_Pflanzen.png">
+                        <div class="clear"></div>
+                    </div> 
+                </div>
+
+                <h2 class="expandable-button">Fahrzeuge</h2>
+                <div id="Fahrzeuge" class="expandable">
+                <div class="two-rows">
+                    <p>Fahrzeuge sollten an echten Umrissen orientiert sein (keine Spielzeugautos). Nicht zu detailliert. <strong>Von der Seite darstellen und Formen vereinfachen.</strong> Konturen können wenn möglich offen gelassen werden. Die Reifen schneiden die Konturen.</p>
+                    <img class="imagefix" src="img/img_Autos.png">
+                    <div class="clear"></div>
+                </div>
+                </div>
+                <h1 id="Farben">Farben</h1>
+                <p>Die Farbpalette ist in Primär- und Sekundärfarben aufgeteilt, sowie in helle und dunkle Töne. <strong>Die primären Töne sollten bevorzugt werden,</strong> nur in Sonderfällen die Sekundärtöne. Für Schattierungen sollten ausschließlich die zwei Farbabstufungen verwendet werden. (das dunkle Gelb darf also <strong>nicht</strong> mit brauch oder Orange schattiert werden!) Outlines bleiben immer schwarz</p>
+                <p>Hautfarbe wird standardmäßig in gelb dargestellt.</p>
+
+                <h2>Primärfarben</h2>
+                <img class="imagefix" src="img/img_primaerfarben.png">
+                <h2>Sonderfarben</h2>
+                <img class="imagefix" src="img/img_sonderfarben.png">
+
+                <h1 id="Schattierungen">Schattierungen</h1>
+                <h2>Bei Tieren</h2>
+                <p>Da Tiere immer mit dem ganzen Körper dargestellt werden, können die hinten liegenden Gliedmaße leicht schattiert dargestellt werden.</p>
+                <h2>"Runde" Formen</h2>
+                <p>Schatten treten vor allem da auf, wo die Grundform deutlich abgerundet ist. Hier ca. 1/3 des Icons auf der rechten Seite schattieren. Das Licht kommt von Links!</p>
+                <h2>Fahrzeuge, Häuser</h2>
+                <p>Icons die eine flache Seite zeigen bekommen keinen Schatten. Hier eher darauf achten was im Hintergrund liegen könnte (Turm an der Kirche).</p>
+                <h2>Sonderfälle</h2>
+                <p>Besonders glänzende Oberflächen können eine Reflektion bekommen.
+    Organische Formen können durch einen individuellen Schatten mehr Tiefe erhalten.</p>
+            </div>         
+          </main>
+          <footer></footer>
+    </div>
+    <script src="src/collection.js"></script>
+  </body>
+</html>
+

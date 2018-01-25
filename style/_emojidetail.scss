@@ -1,0 +1,129 @@
+
+#popover {
+    position: relative;
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 8vh;
+    background: #FFFFFF;
+    box-shadow: 0 1px 34px 0 rgba(163,161,173,0.50);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.path {
+	color: $clr-grey-light;
+}
+
+#sharetitle {
+    position: absolute; 
+    bottom: 2 * $gap-reg;
+}
+#shareitems {
+    position: absolute;
+    bottom: $gap-reg;
+}
+
+#shareitems ul li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: $gap-reg / 2;
+}
+
+.close {
+    position: absolute;
+    right: 30px;
+    top: 28px;
+}
+
+#preview {
+    float: left;
+    width: 70%;
+    position: relative;
+    height: 100%;
+
+    #active-emoji-selection {
+        position: relative;
+        margin: auto;
+        margin-top:  2 * $gap-large;
+        width: 60%;
+     
+        #main-emoji-preview {
+            width: 70%;
+            margin: auto;
+            
+        }
+
+        .small-emoji-preview {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: $gap-reg;
+            
+            div {
+                width: 35px;
+                height: 35px;
+                padding: $gap-small;
+                border-radius: $border-radius;
+                margin: auto;
+                margin: $gap-small;
+                display: inline-block;
+                position: relative;    
+            }    
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }    
+
+    }
+
+    #outline-emoji-preview {
+    }
+    #color-emoji-preview { 
+    }
+
+    .next-or-prev {
+        width: 35px;
+        height: 35px;
+        background-color: #456;
+        position: absolute;
+        bottom: 0;
+    }
+
+    #prev-emoji {
+        left: 0;
+    }    
+
+    #next-emoji {
+        right: $gap-reg;
+    }    
+
+}
+
+#description {
+    float: left;
+    width: 25%;
+    border-left: 1px solid $clr-grey-light;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: $gap-reg;
+
+    table {
+        margin-bottom: $gap-reg;
+
+        td {
+            height: 25px;
+            padding-right: $gap-small;
+        }
+    }
+    h2 {
+         padding-top: $gap-large;
+    }
+
+    button {
+        margin-right: $gap-small;
+    }
+
+}

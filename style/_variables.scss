@@ -6,6 +6,7 @@ $clr-blue-dark: #3D98BB;
 $clr-yellow-light: #EEB41A;
 $clr-yellow-dark: #C78D0E;
 
+$clr-white: #fff;
 $clr-grey-light: #818080;
 $clr-grey-dark: #242424;
 
@@ -18,7 +19,16 @@ $fnt-family: 'Source Sans Pro', sans-serif;
 $fnt-sz-xl: 47px;
 $fnt-sz-lg: 30px;
 $fnt-sz-md: 17px;
+$fnt-sz-s: 14px;
 
 //font-weights
 $fnt-reg: 500;
 $fnt-bold: 700; 
+
+//gaps
+$gap-reg: 25px;
+$gap-small: 10px;
+$gap-med: 50px;
+$gap-large: 100px;
+
+$border-radius: 8px;

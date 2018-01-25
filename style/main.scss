@@ -1,3 +1,16 @@
 @import '_variables';
 @import '_fonts';
 @import '_base';
+
+
+//components
+@import '_emojidetail';
+@import '_nav-left';
+@import '_nav-top';
+@import '_footer';
+
+//pages
+@import '_about';
+@import '_styleguide';
+@import '_library';
+@import '_home';

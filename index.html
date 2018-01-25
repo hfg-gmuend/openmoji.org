@@ -16,8 +16,26 @@
     <link rel="stylesheet" href="style/main.css">
   </head>
   <body>
-    <div class="wrapper">
-      <header><h1>home</h1></header>
+    <div id="home-wrapper">
+              <header>
+                <ul>
+                    <li class = "active-tab"><a href="index.html">OpenMoji</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="styleguide.html">Participate</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            <div id="emojisuche">
+                
+                <img src="img/search.svg">
+                <input type="text" name="emojisearch" placeholder="author, category or emoji…">
+                
+            </div>
+            <div class="right">
+                    <button>get OpenMojis</button>
+                    <a id = "gh-link" class = "iconlink" href=""><img src = "img/brand-icons/github.svg"></a>
+                    <!-- <div class="clear"></div> -->
+            </div>
+          </header>
       <main></main>
       <footer></footer>
     </div>

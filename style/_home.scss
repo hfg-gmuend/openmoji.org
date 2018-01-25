@@ -1,0 +1,15 @@
+#home-wrapper{
+	background-color: $bgclr-grey;
+	h1{
+		color: $clr-blue-light;
+	}
+	button{
+		background-color: $clr-blue-light;
+	}
+	.active-tab{
+		border-color: $clr-blue-light;
+	}
+	header{
+		background-color: $bgclr-grey;
+	}
+}
