@@ -78,8 +78,8 @@ button {
   background: #E95A47;
   border: none;
   box-shadow: 0 2px 4px 0 rgba(232, 232, 232, 0.5);
-  height: 30px;
-  border-radius: 15px;
+  height: 40px;
+  border-radius: 20px;
   min-width: 80px; }
 
 .copy-to-clipboard {
@@ -217,13 +217,13 @@ header {
   background-color: #fff;
   box-sizing: border-box;
   padding: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   display: flex; }
   header ul {
     flex: 1;
     display: flex; }
     header ul li {
-      height: 30px;
+      height: 40px;
       margin-right: 25px;
       cursor: pointer;
       list-style: none; }
@@ -234,7 +234,7 @@ header {
     flex: 1; }
   header #gh-link {
     height: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
     float: right; }
     header #gh-link img {
       height: 100%; }
@@ -246,7 +246,7 @@ header {
     flex: 1;
     justify-content: center;
     display: flex;
-    height: 30px; }
+    height: 40px; }
     header #emojisuche img {
       height: 100%;
       width: auto;
@@ -256,20 +256,19 @@ header {
       background: url(../img/search.svg) left no-repeat;
       padding: 14px;
       padding-left: 37px;
-      border-radius: 17px;
+      border-radius: 20px;
       border: solid 1px #818080;
       font-size: 17px;
       color: #818080;
-      transition: all 0.4s; }
+      transition: all 0.4s;
+      width: 100%; }
       header #emojisuche input:focus {
         outline: none;
-        color: #242424;
-        width: 100%;
-        transition: all 0.4s; }
+        color: #242424; }
       header #emojisuche input:focus + img {
         opacity: 1; }
   header .active-tab {
-    border-bottom: 3px solid #E95A47; }
+    border-bottom: 4px solid #E95A47; }
     header .active-tab a {
       color: #242424; }
 
@@ -338,13 +337,13 @@ footer {
           padding-right: 10px; }
 
 #styleguide-wrapper h1 {
-  color: #8967AA; }
+  color: #E27022; }
 
 #styleguide-wrapper button {
-  background-color: #8967AA; }
+  background-color: #E27022; }
 
 #styleguide-wrapper .active-tab {
-  border-color: #8967AA; }
+  border-color: #E27022; }
 
 #styleguide-wrapper .intro {
   max-width: 600px;

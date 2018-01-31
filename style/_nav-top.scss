@@ -5,14 +5,14 @@ header{
 	background-color: $clr-white;
     box-sizing: border-box;
     padding: $gap-med;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
  	display: flex;
 	
 	ul{
 		flex: 1;
 		display: flex;
 		li{
-			height: 30px;
+			height: 40px;
 			margin-right: $gap-reg;
 			cursor: pointer;
 			list-style: none;
@@ -29,7 +29,7 @@ header{
 	}
 	#gh-link{
 		height: 20px;
-		margin-top: 5px;
+		margin-top: 10px;
 		float: right;
 		img{
 			height: 100%
@@ -44,7 +44,7 @@ header{
 		flex: 1;
 		justify-content: center;
 		display: flex;
-		height: 30px;
+		height: 40px;
 
 			img{
 				height: 100%;
@@ -58,18 +58,17 @@ header{
 				background: url(../img/search.svg) left no-repeat;
 				padding: 14px;
    				padding-left: 37px;
-				border-radius: 17px;
+				border-radius: 20px;
 				border: solid 1px $clr-grey-light;
 		   		font-size: $fnt-sz-md;
 		   		color: $clr-grey-light;
 		   		transition: all 0.4s;
+		   		width: 100%;
 		   		// background: none;
 		    
 		    	&:focus{
 		    		outline: none;
 		   			color: $clr-grey-dark;
-		   			width: 100%;
-		   			transition: all 0.4s;
 		    	}
 
 		    	&:focus + img {
@@ -79,7 +78,8 @@ header{
 	}
 	
 	.active-tab{
-		border-bottom: 3px solid $clr-red-light;
+		padding-bottom: -20px
+		border-bottom: 4px solid $clr-red-light;
 		a{
 			color: $clr-grey-dark;
 		}

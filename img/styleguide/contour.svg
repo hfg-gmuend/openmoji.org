@@ -4,20 +4,20 @@
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="250.5px" height="70.8px" viewBox="0 0 250.5 70.8" enable-background="new 0 0 250.5 70.8" xml:space="preserve">
 <g>
-	<path fill="none" stroke="#8967AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	<path fill="none" stroke="#E27022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M45.8,31.9H33c-6.6,0-12-5.4-12-12l0,0c0-6.6,5.4-12,12-12h12.8"/>
 </g>
 <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="33" cy="19.9" r="3.2"/>
 <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="121.8" cy="19.9" r="3.2"/>
 <g>
-	<path fill="none" stroke="#8967AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	<path fill="none" stroke="#E27022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M109.8,32.6V19.9c0-6.6,5.4-12,12-12h12"/>
 </g>
 <g>
 	<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M195.8,31.9v-12
 		c0-6.6,5.4-12,12-12.1l12.8-0.1"/>
 </g>
-<circle fill="none" stroke="#8967AA" stroke-width="2" stroke-miterlimit="10" cx="207.8" cy="19.7" r="3.2"/>
+<circle fill="none" stroke="#E27022" stroke-width="2" stroke-miterlimit="10" cx="207.8" cy="19.7" r="3.2"/>
 <g>
 	<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M195.8,32.1V19.9
 		c0-6.6,5.4-12,12-12.1l12.8-0.1"/>
@@ -26,9 +26,9 @@
 	<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M217.8,31.9v-1.2
 		c0-0.5,0.5-1,1-1h1.8"/>
 </g>
-<line fill="none" stroke="#8967AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="211" y1="19.7" x2="220.5" y2="19.7"/>
-<line fill="none" stroke="#8967AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="207.8" y1="23" x2="207.8" y2="31.9"/>
-<text transform="matrix(1 0 0 1 21 52.2148)" font-family="'SourceSansPro-Regular'" font-size="6">round caps</text>
-<text transform="matrix(1 0 0 1 106.668 52.2148)" font-family="'SourceSansPro-Regular'" font-size="6">round edges</text>
-<text transform="matrix(1 0 0 1 185.832 52.2148)" font-family="'SourceSansPro-Regular'" font-size="6">centered contour</text>
+<line fill="none" stroke="#E27022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="211" y1="19.7" x2="220.5" y2="19.7"/>
+<line fill="none" stroke="#E27022" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="207.8" y1="23" x2="207.8" y2="31.9"/>
+<text transform="matrix(1 0 0 1 21 52.2144)" font-family="'SourceSansPro-Regular'" font-size="6">round caps</text>
+<text transform="matrix(1 0 0 1 106.668 52.2144)" font-family="'SourceSansPro-Regular'" font-size="6">round edges</text>
+<text transform="matrix(1 0 0 1 185.832 52.2144)" font-family="'SourceSansPro-Regular'" font-size="6">centered contour</text>
 </svg>
