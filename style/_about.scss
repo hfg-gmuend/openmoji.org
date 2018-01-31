@@ -1,4 +1,7 @@
 #about-wrapper{
+	#emojisuche input{
+		border-color: $clr-yellow-light;
+	}
 	h1{
 		color: $clr-yellow-light;
 	}
@@ -25,19 +28,29 @@
 				width: 150px;
 				position: relative;
 				padding-right: $gap-large;
-				padding-bottom: $gap-med;
+				padding-bottom: $gap-large;
 				p{
 					color: $clr-grey-dark;
 				}
 				div {
-					width: 80%;
+					// width: 80%;
 					margin: auto;
 					padding-bottom: $gap-small;
+					// padding-bottom: $gap-small;
 					img{
 						width: 100%;
+						// background-color: #f3f3f3;
 					}
-					a{
-						padding-top: $gap-small;
+				}
+				ul{
+						// position: absolute;
+						// right: $gap-med;
+					padding-top: $gap-reg;
+					li{
+						width: 20px;
+						height: 20px;
+						display: inline-block;
+						padding-right: $gap-small;
 					}
 				}
 

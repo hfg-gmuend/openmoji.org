@@ -17,6 +17,9 @@ ul {
   padding: 0;
   margin: 0; }
 
+li {
+  list-style: none; }
+
 h1 {
   font-size: 47px;
   font-weight: 700;
@@ -41,6 +44,9 @@ h4, h5, h6 {
 
 p {
   color: #818080; }
+
+article {
+  padding-top: 100px; }
 
 .descriptive-text {
   color: #242424;
@@ -211,7 +217,7 @@ header {
   background-color: #fff;
   box-sizing: border-box;
   padding: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   display: flex; }
   header ul {
     flex: 1;
@@ -227,7 +233,8 @@ header {
   header .right {
     flex: 1; }
   header #gh-link {
-    height: 30px;
+    height: 20px;
+    margin-top: 5px;
     float: right; }
     header #gh-link img {
       height: 100%; }
@@ -246,17 +253,23 @@ header {
       padding-right: 10px;
       opacity: 0.4; }
     header #emojisuche input {
-      border: none;
+      background: url(../img/search.svg) left no-repeat;
+      padding: 14px;
+      padding-left: 37px;
+      border-radius: 17px;
+      border: solid 1px #818080;
       font-size: 17px;
       color: #818080;
-      background: none; }
+      transition: all 0.4s; }
       header #emojisuche input:focus {
         outline: none;
-        color: #242424; }
+        color: #242424;
+        width: 100%;
+        transition: all 0.4s; }
       header #emojisuche input:focus + img {
         opacity: 1; }
   header .active-tab {
-    border-bottom: 4px solid #E95A47; }
+    border-bottom: 3px solid #E95A47; }
     header .active-tab a {
       color: #242424; }
 
@@ -277,6 +290,9 @@ footer {
       height: 20px;
       display: inline-block;
       padding-left: 10px; }
+
+#about-wrapper #emojisuche input {
+  border-color: #EEB41A; }
 
 #about-wrapper h1 {
   color: #EEB41A; }
@@ -305,27 +321,68 @@ footer {
       width: 150px;
       position: relative;
       padding-right: 100px;
-      padding-bottom: 50px; }
+      padding-bottom: 100px; }
       #about-wrapper #about-content #team-container .teammember p {
         color: #242424; }
       #about-wrapper #about-content #team-container .teammember div {
-        width: 80%;
         margin: auto;
         padding-bottom: 10px; }
         #about-wrapper #about-content #team-container .teammember div img {
           width: 100%; }
-        #about-wrapper #about-content #team-container .teammember div a {
-          padding-top: 10px; }
+      #about-wrapper #about-content #team-container .teammember ul {
+        padding-top: 25px; }
+        #about-wrapper #about-content #team-container .teammember ul li {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          padding-right: 10px; }
 
 #styleguide-wrapper h1 {
-  color: #E95A47; }
+  color: #8967AA; }
+
+#styleguide-wrapper button {
+  background-color: #8967AA; }
 
 #styleguide-wrapper .active-tab {
-  border-color: #E95A47; }
+  border-color: #8967AA; }
+
+#styleguide-wrapper .intro {
+  max-width: 600px;
+  margin-bottom: 50px; }
+
+#styleguide-wrapper img {
+  width: 100%; }
+
+#styleguide-wrapper .img-full {
+  width: 100%; }
+
+#styleguide-wrapper .two-rows {
+  padding-bottom: 100px; }
+  #styleguide-wrapper .two-rows p, #styleguide-wrapper .two-rows h3 {
+    float: left;
+    width: 25%; }
+  #styleguide-wrapper .two-rows .img-small {
+    width: 20%;
+    float: left;
+    margin-left: 5%; }
+  #styleguide-wrapper .two-rows .img-big {
+    width: 70%;
+    float: left;
+    margin-left: 5%; }
+
+#styleguide-wrapper .border {
+  padding: 25px;
+  border: solid 1px #F2F1F0;
+  border-radius: 5px;
+  box-sizing: border-box; }
 
 #styleguide-content {
-  max-width: 800px;
+  max-width: 1000px;
   margin-left: 400px; }
+  #styleguide-content h1 {
+    margin-bottom: 25px; }
+  #styleguide-content h2 {
+    margin-top: 25px; }
 
 .library-wrapper h1 {
   color: #E95A47; }

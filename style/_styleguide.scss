@@ -1,14 +1,59 @@
 #styleguide-wrapper{
 	h1{
-		color: $clr-red-light;
+		color: $clr-violet-dark;
 	}
-
+	button{
+		background-color: $clr-violet-dark;
+	}
 	.active-tab{
-		border-color: $clr-red-light;
+		border-color: $clr-violet-dark;
+	}
+	.intro{
+		max-width: 600px;
+		margin-bottom: $gap-med;
+	}
+	img{
+		width: 100%;
+	}
+	.img-full{
+		width: 100%;
+	}
+	.two-rows{
+		padding-bottom: $gap-large;
+		p, h3{
+			float: left;
+			width: 25%;
+
+		}
+		.img-small{
+			width: 20%;
+			float: left;
+			margin-left: 5%;
+		}
+
+		.img-big{
+			width: 70%;
+			float: left;
+			margin-left: 5%;
+		}
+	}
+	.border{
+		padding: $gap-reg; 
+		border: solid 1px $bgclr-grey; 
+		border-radius: 5px;
+		box-sizing: border-box;
 	}
 }
 
 #styleguide-content{
-	max-width: 800px;
+	max-width: 1000px;
 	margin-left: 400px;
+
+	h1{
+		margin-bottom: $gap-reg;
+	}
+
+	h2{
+		margin-top: $gap-reg;
+	}
 }

@@ -5,7 +5,7 @@ header{
 	background-color: $clr-white;
     box-sizing: border-box;
     padding: $gap-med;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
  	display: flex;
 	
 	ul{
@@ -28,7 +28,8 @@ header{
 		flex: 1;
 	}
 	#gh-link{
-		height: 30px;
+		height: 20px;
+		margin-top: 5px;
 		float: right;
 		img{
 			height: 100%
@@ -54,14 +55,21 @@ header{
 			}
 		
 			input{
-		    	border: none;
+				background: url(../img/search.svg) left no-repeat;
+				padding: 14px;
+   				padding-left: 37px;
+				border-radius: 17px;
+				border: solid 1px $clr-grey-light;
 		   		font-size: $fnt-sz-md;
 		   		color: $clr-grey-light;
-		   		background: none;
+		   		transition: all 0.4s;
+		   		// background: none;
 		    
 		    	&:focus{
 		    		outline: none;
 		   			color: $clr-grey-dark;
+		   			width: 100%;
+		   			transition: all 0.4s;
 		    	}
 
 		    	&:focus + img {
@@ -71,7 +79,7 @@ header{
 	}
 	
 	.active-tab{
-		border-bottom: 4px solid $clr-red-light;
+		border-bottom: 3px solid $clr-red-light;
 		a{
 			color: $clr-grey-dark;
 		}

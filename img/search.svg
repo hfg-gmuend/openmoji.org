@@ -2,9 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="36.089px" height="46.034px" viewBox="3.591 0.502 36.089 46.034" enable-background="new 3.591 0.502 36.089 46.034"
-	 xml:space="preserve">
-<circle fill="none" stroke="#242424" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="23.542" cy="16.639" r="14.637"/>
-<path fill="#242424" d="M17.924,30.935L8.791,45.39c-0.75,1.176-2.344,1.499-3.561,0.723l0,0c-1.216-0.776-1.596-2.358-0.846-3.532
-	l9.133-14.456"/>
+	 width="30px" height="23px" viewBox="-9.6 0.4 30 23" enable-background="new -9.6 0.4 30 23" xml:space="preserve">
+<circle fill="none" stroke="#818080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="11.8" cy="9.2" r="6.3"/>
+<line fill="#242424" stroke="#818080" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="7.7" y1="14" x2="3" y2="19.5"/>
 </svg>
