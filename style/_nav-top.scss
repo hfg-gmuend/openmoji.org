@@ -12,7 +12,7 @@ header{
 		flex: 1;
 		display: flex;
 		li{
-			height: 40px;
+			height: 30px;
 			margin-right: $gap-reg;
 			cursor: pointer;
 			list-style: none;
@@ -78,7 +78,7 @@ header{
 	}
 	
 	.active-tab{
-		padding-bottom: -20px
+		// padding-bottom: -20px;
 		border-bottom: 4px solid $clr-red-light;
 		a{
 			color: $clr-grey-dark;

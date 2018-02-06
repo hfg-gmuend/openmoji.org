@@ -46,7 +46,7 @@ p {
   color: #818080; }
 
 article {
-  padding-top: 100px; }
+  padding-bottom: 100px; }
 
 .descriptive-text {
   color: #242424;
@@ -108,6 +108,12 @@ input[type='radio'] {
 
 main {
   padding-top: 200px; }
+
+.hidden {
+  visibility: hidden; }
+
+.visible {
+  visibility: visible; }
 
 .clear {
   clear: both; }
@@ -223,7 +229,7 @@ header {
     flex: 1;
     display: flex; }
     header ul li {
-      height: 40px;
+      height: 30px;
       margin-right: 25px;
       cursor: pointer;
       list-style: none; }
@@ -289,9 +295,6 @@ footer {
       height: 20px;
       display: inline-block;
       padding-left: 10px; }
-
-#about-wrapper #emojisuche input {
-  border-color: #EEB41A; }
 
 #about-wrapper h1 {
   color: #EEB41A; }
@@ -475,3 +478,12 @@ footer {
     border-color: #5EB0CF; }
   #home-wrapper header {
     background-color: #F2F1F0; }
+
+#popover {
+  position: fixed;
+  top: 2vh;
+  left: 10%;
+  z-index: 10; }
+
+.close {
+  cursor: pointer; }

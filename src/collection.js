@@ -7,11 +7,15 @@ $(document).ready(function(){
 		// updateList();
 
 	})
+
+	$(".emoji_single").on("click", function({
+		insertemoji(this);
+	}))
 	
 	function fillList(){
 		console.log(emojiList)
 		for(var i = 0; i < emojiList.length; i++){
-			$(".emoji_grid").append("<div class='emoji_single'><div class = 'emoji-container'><img src='data/color/svg/"+emojiList[i].hexcode+".svg'></div><div><h3>"+emojiList[i].annotation+"</h3><p>"+emojiList[i].hexcode+"</p></div></div>")
+			$(".emoji_grid").append("<div class='emoji_single'><div class = 'emoji-container'><img src='data/color/svg/"+emojiList[i].hexcode+".svg'></div><div><h3>"+emojiList[i].annotation+"</h3><p>"+emojiList[i].hexcode+"</p></div></div>") // data/color/svg/"+emojiList[i].hexcode+".svg
 		}
 	}
 	function updateList(searchinput){
@@ -58,6 +62,11 @@ $(document).ready(function(){
 			$(".emoji_grid").append("<div class='emoji_single'><div class = 'emoji-container'><img src='data/color/svg/"+result[i].item.hexcode+".svg'></div><div><h3>"+result[i].item.annotation+"</h3><p>"+result[i].item.hexcode+"</p></div></div>")
 		}
 	}
+
+	function insertemoji(elem){
+		$("")
+	}
+
 
 	$('input[type=radio][name=category]').change(function() {
 		$("#selected-category").text($(this).val())

@@ -52,7 +52,7 @@ p {
 }
 
 article{
-    padding-top: $gap-large;
+    padding-bottom: $gap-large;
 }
 
 .descriptive-text{
@@ -137,6 +137,15 @@ input[type='radio']{
 main{
     padding-top: $gap-large * 2;
 }
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
 
 .clear{
     clear: both;
