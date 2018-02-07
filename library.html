@@ -30,7 +30,7 @@
             <nav class="nav-left">
                 <div id="show-color">show color
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" checked="true">
                         <span class="slider"></span>
                     </label>
                 </div>
@@ -91,9 +91,9 @@
 
 <!-- Poplover for detaild vies -->
 
-            <div id = "popover" class = "visible">
+            <div id = "popover" class = "hidden">
            
-            <div class="close">
+            <div class="close" id ="close-detailview">
                 <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                         <g id="Detail-iconpreview-big" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47" stroke-width="3">
@@ -113,10 +113,10 @@
                 <!-- </div>     -->
                 <div id = "active-emoji-selection">
                     <!--Set main rmoji-->
-                    <div id = "main-emoji-preview" ><img src="img/preview-big.png"></div>
+                    <div id = "main-emoji-preview" ><img id="main-emoji-image" src="img/preview-big.png"></div>
                     <div class = "small-emoji-preview">
-                        <div id = "outline-emoji-preview"><img src="img/preview-ol-small.png"></div>
-                        <div id = "color-emoji-preview"><img src="img/preview-filled-small.png"></div>
+                        <div id = "outline-emoji-preview"><img id="outline-emoji-image-preview" src="img/preview-ol-small.png"></div>
+                        <div id = "color-emoji-preview"><img id="color-emoji-image-preview" src="img/preview-filled-small.png"></div>
                     </div>
                 </div>
                 <!-- set prev and next emoji-->
@@ -138,8 +138,8 @@
                         <td><a id = "author" class="redlink" href="">Name Ofauthor</td>
                     </tr>
                 </table>
-                <button type="button" onclick="alert('Hello world!')">SVG</button>
-                <button type="button" onclick="alert('Hello world!')">PNG</button>
+                <button type="button" onclick="alert('Dont even try!')">SVG</button>
+                <button type="button" onclick="alert('😱')">PNG</button>
                         
                 <h4 id="sharetitle"> share </h4>
                 <div id="shareitems">
