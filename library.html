@@ -18,6 +18,8 @@
             <!-- </div> -->
             <!-- <div class="clear"></div> -->
             <div id="emojisuche">
+                <img src="img/search.svg">
+               
                 <input class="search" type="text" name="emojisearch" placeholder="author, category or emoji…">
             </div>
             <div class="right">
@@ -90,8 +92,8 @@
 
 
 <!-- Poplover for detaild vies -->
-
-            <div id = "popover" class = "hidden">
+<div id="popover-wrapper" class = "hidden">
+            <div id = "popover">
            
             <div class="close" id ="close-detailview">
                 <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -116,12 +118,13 @@
                     <div id = "main-emoji-preview" ><img id="main-emoji-image" src="img/preview-big.png"></div>
                     <div class = "small-emoji-preview">
                         <div id = "outline-emoji-preview"><img id="outline-emoji-image-preview" src="img/preview-ol-small.png"></div>
-                        <div id = "color-emoji-preview"><img id="color-emoji-image-preview" src="img/preview-filled-small.png"></div>
+                        <div class="highlight" id = "color-emoji-preview"><img id="color-emoji-image-preview" src="img/preview-filled-small.png"></div>
                     </div>
                 </div>
+                
                 <!-- set prev and next emoji-->
-                <div class="next-or-prev" id = "prev-emoji"></div>
-                <div class="next-or-prev" id="next-emoji"></div>
+                <div class="next-or-prev prev-emoji" id = ""><img src="img/preview-big.png"><p class="sub">previous</p></div>
+                <div class="next-or-prev next-emoji" id=""><img src="img/preview-big.png"><p class="sub">next</p></div>
             </div>
 
             <div id = "description">
@@ -131,22 +134,22 @@
                 <table>
                     <tr>
                         <td>Unicode</td>
-                        <td><button id="Unicode" class="copy-to-clipboard">26F7</button></td>
+                        <td><button id="unicode" class="copy-to-clipboard">26F7</button></td>
                     </tr>
                     <tr>
                         <td>Author</td>
-                        <td><a id = "author" class="redlink" href="">Name Ofauthor</td>
+                        <td><p id = "author" class="redlink" href="library.html">Name Ofauthor</p></td>
                     </tr>
                 </table>
-                <button type="button" onclick="alert('Dont even try!')">SVG</button>
+                <button type="button" onclick="alert('Dont even try!n 😡')">SVG</button>
                 <button type="button" onclick="alert('😱')">PNG</button>
                         
-                <h4 id="sharetitle"> share </h4>
+                <!-- <h4 id="sharetitle"> share </h4> -->
                 <div id="shareitems">
                     <ul>
                         <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                         <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                        <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>
+                        <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
                     </ul>
                 </div>
 
@@ -154,13 +157,24 @@
 
             <div class="clear"></div>
         </div>
+            <div class="clear"></div>
+
+</div>
 
 
-
-
+            <div class="clear"></div>
 
         </main>
-        <footer></footer>
+<footer>
+            <p>© OpenMoji 2018 · </p>
+            <p><a href="">MIT License</a> · </p>
+            <p><a href="">Legal</a></p>
+            <ul>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>
+            </ul>
+        </footer>
     </div>
 </body>
 <script src="src/fuse.min.js" rel="script"></script>

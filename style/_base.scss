@@ -55,6 +55,11 @@ article{
     padding-bottom: $gap-large;
 }
 
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
 .descriptive-text{
     color: $clr-grey-dark;
     max-width: 500px;
@@ -139,11 +144,11 @@ main{
 }
 
 .hidden{
-    visibility: hidden;
+    display: none;
 }
 
 .visible{
-    visibility: visible;
+    display: block;
 }
 
 

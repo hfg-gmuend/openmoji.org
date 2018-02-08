@@ -9,13 +9,58 @@ $(document).ready(function(){
 		// updateList();
 
 	})
-
+	//smooth scroll in styleguide
+	$(document).on('click', 'a[href^="#"]', function (event) {
+	    event.preventDefault();
+	    $('html, body').animate({
+	        scrollTop: ($($.attr(this, 'href')).offset().top - 190)
+	    }, 500);
+	});
+	
+// click on emoji
 	$("body").on("click", ".emoji_single", function(){
 		insertemoji($(this).attr("id"));
 	})
+	
+	//toggle outline and color
+	$("#outline-emoji-preview").on("click", function(){
+		// outline icon
+		$("#main-emoji-image").attr("src", $("#main-emoji-image").attr("src").replace("color", "black"))
+		$("#color-emoji-preview").removeClass("highlight")
+		$("#outline-emoji-preview").addClass("highlight")
+	})
 
+	$("#color-emoji-preview").on("click", function(){
+		// color icon
+		$("#main-emoji-image").attr("src", $("#main-emoji-image").attr("src").replace("black", "color"))
+		$("#color-emoji-preview").addClass("highlight")
+		$("#outline-emoji-preview").removeClass("highlight")
+	})
+
+	//author search
+	$('#author').on("click", function(){
+		$("#selected-category").text($(this).text())
+		$("#popover-wrapper").fadeOut(200)
+		$("body").css("overflow", "auto")
+		$( "body" ).scrollTop( 0 );
+		updateList($(this).text())
+		console.log($(this).text())
+	})
+
+	//move through emoji
+	$(".prev-emoji").on("click", function(){
+		insertemoji($(this).attr("id"));
+	})
+
+	$(".next-emoji").on("click", function(){
+		insertemoji($(this).attr("id"));
+	})
+
+
+	//close overlay
 	$("#close-detailview").on("click", function(){
-		$("#popover").addClass("hidden").removeClass("visible")
+		$("#popover-wrapper").fadeOut(400)
+		$("body").css("overflow", "auto")
 	})
 	
 	function fillList(){
@@ -80,11 +125,13 @@ $(document).ready(function(){
 	}
 
 	function insertemoji(id){
-		var currEmoji = emojiList.filter(function(item){
+		var currEmoji = currentList.filter(function(item){
 	    	return item.emoji == id;         
 		});
-		console.log(currEmoji[0].hexcode)
-		//update images
+	    // get in index of current object
+	    var index = currentList.indexOf(currEmoji[0])
+	    console.log(currEmoji);	        
+		//update i mages
 		$("#main-emoji-image").attr("src","data/color/svg/"+currEmoji[0].hexcode+".svg");
 		$("#outline-emoji-image-preview").attr("src","data/black/svg/"+currEmoji[0].hexcode+".svg");
 		$("#color-emoji-image-preview").attr("src","data/color/svg/"+currEmoji[0].hexcode+".svg");
@@ -95,17 +142,32 @@ $(document).ready(function(){
 		//update path
 		$("#description .path a:nth-child(2)").text(currEmoji[0].group);
 		$("#description .path a:nth-child(3)").text(currEmoji[0].subgroups);
+		//update prev und next
+		
+		if(index == 0){
+			$(".prev-emoji img").attr("src","data/color/svg/"+currentList[currentList.length-1].hexcode+".svg");
+			$(".prev-emoji").attr("id",""+currentList[index + 1].emoji+"");
+			
+			$(".next-emoji img").attr("src","data/color/svg/"+currentList[index + 1].hexcode+".svg");
+			$(".next-emoji").attr("id",""+currentList[index + 1].emoji+"");
+		}else if(index == currentList.length - 1){
+			$(".prev-emoji").attr("id",""+currentList[index - 1].emoji+"");
+			$(".prev-emoji img").attr("src","data/color/svg/"+currentList[index - 1].hexcode+".svg");
+			
+			$(".next-emoji").attr("id",""+currentList[0].emoji+"");
+			$(".next-emoji img").attr("src","data/color/svg/"+currentList[0].hexcode+".svg");
+		}else{
+			$(".prev-emoji").attr("id",""+currentList[index - 1].emoji+"");
+			$(".prev-emoji img").attr("src","data/color/svg/"+currentList[index - 1].hexcode+".svg");
+			
+			$(".next-emoji").attr("id",""+currentList[index + 1].emoji+"");
+			$(".next-emoji img").attr("src","data/color/svg/"+currentList[index + 1].hexcode+".svg");
+		}
 
-
-		$("#popover").addClass("visible").removeClass("hidden")
+		$("#popover-wrapper").fadeIn(300)
+		$("body").css("overflow", "hidden")
 	}
 
-
-
-	// bei click auf x: visiblity hidden
-	// bei click auf "name des Autor" visibility hidden 
-
-	// prevent events in bg
 
 
 	$('#show-color .switch input[type=checkbox]').change(function() {

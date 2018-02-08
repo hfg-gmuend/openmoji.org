@@ -30,6 +30,8 @@
             <!-- </div> -->
             <!-- <div class="clear"></div> -->
             <div id="emojisuche">
+                <img src="img/search.svg">
+                
                 <input type="text" name="emojisearch" placeholder="author, category or emoji…">
             </div>
             <div class="right">
@@ -47,8 +49,8 @@
                     <li><a href="#Color">Color</a></li>
                     <li><a href="#Typography">Typography</a></li>
                     <li><a href="#Topics">Topics</a></li>
-                    <li><a href="#Inspiration">Inspiration</a></li>
-                    <ul>
+                    <li><a href="#Submission">Submission</a></li>
+                <ul>
             </nav>
             <div id="styleguide-content">
           <article>
@@ -250,13 +252,15 @@ first Artboard = Black only<br><br>
 Layers and layer names:<br>
 emoji<br>
 description<br>
-grid</p>
+grid<br><br>
+Color mode<br>
+RGB</p>
                     <div class="img-big border">
                         <img src="img/styleguide/abgabe.svg">
                     </div>
+                    <div class="clear"></div>                     
 </div>
-<h2>Color mode</h2>
-<p>RGB</p>
+<!-- </div> -->
 <h2>File contents</h2>
 <p class="intro">The template contains one grid for the
 contour only and another for the colored version of the emoji. Stated above
@@ -265,9 +269,20 @@ be shown in Illustrator), the Unicode and the author. if the Emoji doesn‘t yet
 exist in Unicode, the columns can be empty.</p>
         </article>
     </main>
-                <footer></footer>
+                <footer>
+            <p>© OpenMoji 2018 · </p>
+            <p><a href="">MIT License</a> · </p>
+            <p><a href="">Legal</a></p>
+            <ul>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>
+            </ul>
+        </footer>
             </div>
-            <script src="src/collection.js"></script>
 </body>
-
+<script src="src/fuse.min.js" rel="script"></script>
+<script src="src/jquery-3.3.1.min.js" rel="script"></script>
+<script src="data/hfg-emojis-list.json" rel="script"></script>
+<script src="src/collection.js" rel="script"></script>
 </html>

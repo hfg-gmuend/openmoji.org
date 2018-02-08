@@ -1,3 +1,17 @@
+#popover-wrapper{
+    background: rgba(255,255,255,0.6);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 19;
+    opacity: 1;
+}
+
+.highlight{
+    background: $bgclr-grey;
+}
 
 #popover {
     position: relative;
@@ -9,6 +23,57 @@
     box-shadow: 0 1px 34px 0 rgba(163,161,173,0.50);
     border-radius: 8px;
     padding: 30px;
+    z-index: 20;
+
+    .sub{
+        text-align: center;
+        font-size: $fnt-sz-s;
+    }
+
+
+    #outline-emoji-preview {
+        transition: all 0.3s;
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            border-radius: $border-radius;
+            background: $clr-grey-light;
+            opacity: 0.0;
+            transition: all 0.3s;
+        
+        }
+        &:hover:before{
+            opacity: 0.1;
+        }
+    }
+    #color-emoji-preview { 
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            border-radius: $border-radius;
+            background: $clr-grey-light;
+            opacity: 0.0;
+            transition: all 0.3s;
+        }
+        &:hover:before{
+            opacity: 0.1;
+        }
+    }
+
+    button{
+        &:not(.copy-to-clipboard) {
+            padding-left: $gap-med;
+            padding-right: $gap-med;
+        }
+    }
 }
 
 .path {
@@ -34,6 +99,7 @@
 .close {
     position: absolute;
     right: 30px;
+    cursor: pointer;
     top: 28px;
 }
 
@@ -46,7 +112,7 @@
     #active-emoji-selection {
         position: relative;
         margin: auto;
-        margin-top:  2 * $gap-large;
+        margin-top: $gap-large;
         width: 60%;
      
         #main-emoji-preview {
@@ -79,51 +145,58 @@
 
     }
 
-    #outline-emoji-preview {
-    }
-    #color-emoji-preview { 
-    }
 
     .next-or-prev {
-        width: 35px;
+        // width: 35px;
         height: 35px;
-        background-color: #456;
+        opacity: 0.5;
+        transition: all 0.3s;
+        // background-color: #456;
+        bottom: $gap-reg;
         position: absolute;
-        bottom: 0;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
 
-    #prev-emoji {
+
+    .next-or-prev:hover{
+        opacity: 1;
+    }
+
+    .prev-emoji {
         left: 0;
     }    
 
-    #next-emoji {
+    .next-emoji {
         right: $gap-reg;
     }    
 
 }
 
 #description {
-    float: left;
-    width: 25%;
+    float: right;
+    width: 30%;
     border-left: 1px solid $clr-grey-light;
     height: 100%;
     box-sizing: border-box;
-    padding-left: $gap-reg;
+    padding-left: $gap-med;
 
     table {
-        margin-bottom: $gap-reg;
+        margin-bottom: $gap-med;
 
         td {
             height: 25px;
-            padding-right: $gap-small;
+            padding-right: $gap-reg;
         }
     }
     h2 {
-         padding-top: $gap-large;
+        margin-bottom: $gap-med;
+        padding-top: $gap-large;
     }
 
     button {
         margin-right: $gap-small;
     }
-
 }

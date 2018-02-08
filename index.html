@@ -25,6 +25,7 @@
                     <li><a href="about.html">About</a></li>
                 </ul>
             <div id="emojisuche">
+                <img src="img/search.svg">
                 <input type="text" name="emojisearch" placeholder="author, category or emoji…">
                 
             </div>
@@ -32,11 +33,24 @@
                     <button>get OpenMojis</button>
                     <a id = "gh-link" class = "iconlink" href=""><img src = "img/brand-icons/github.svg"></a>
                     <!-- <div class="clear"></div> -->
+              <!-- </div> -->
             </div>
           </header>
       <main></main>
-      <footer></footer>
+<footer>
+            <p>© OpenMoji 2018 · </p>
+            <p><a href="">MIT License</a> · </p>
+            <p><a href="">Legal</a></p>
+            <ul>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>
+            </ul>
+        </footer>
     </div>
-    <script src="src/home.js"></script>
   </body>
+  <script src="src/fuse.min.js" rel="script"></script>
+<script src="src/jquery-3.3.1.min.js" rel="script"></script>
+<script src="data/hfg-emojis-list.json" rel="script"></script>
+<script src="src/collection.js" rel="script"></script>
 </html>

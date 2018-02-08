@@ -45,9 +45,13 @@ header{
 		justify-content: center;
 		display: flex;
 		height: 40px;
+		position: relative;
 
 			img{
-				height: 100%;
+				left: 0px;
+				top: 6px;
+				position: absolute;
+				height: 70%;
 				width: auto;
 				padding-right: $gap-small;
 				opacity: 0.4;
@@ -55,9 +59,9 @@ header{
 			}
 		
 			input{
-				background: url(../img/search.svg) left no-repeat;
-				padding: 14px;
-   				padding-left: 37px;
+				background: none; //url(../img/search.svg) left no-repeat;
+				padding: 15px;
+   				padding-left: 39px;
 				border-radius: 20px;
 				border: solid 1px $clr-grey-light;
 		   		font-size: $fnt-sz-md;
