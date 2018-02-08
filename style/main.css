@@ -222,8 +222,9 @@ main {
     height: 100%;
     width: 100%; }
     #preview #active-emoji-selection #main-emoji-preview {
-      height: 100%;
-      margin: auto; }
+      height: 90%;
+      margin: auto;
+      margin-bottom: 10%; }
       #preview #active-emoji-selection #main-emoji-preview img {
         height: 100%;
         width: 100%;
