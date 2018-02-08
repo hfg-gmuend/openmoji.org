@@ -65,6 +65,12 @@ a {
   a:hover {
     color: #242424; }
 
+.buttonlink {
+  color: white; }
+
+.buttonlink:hover {
+  color: white; }
+
 .redlink {
   color: #D22F29; }
   .redlink:hover {
@@ -146,7 +152,7 @@ main {
   background: #FFFFFF;
   box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
   border-radius: 8px;
-  padding: 30px;
+  padding: 25px;
   z-index: 20; }
   #popover .sub {
     text-align: center;
@@ -179,9 +185,6 @@ main {
     transition: all 0.3s; }
   #popover #color-emoji-preview:hover:before {
     opacity: 0.1; }
-  #popover button:not(.copy-to-clipboard) {
-    padding-left: 50px;
-    padding-right: 50px; }
 
 .path {
   color: #818080; }
@@ -192,7 +195,8 @@ main {
 
 #shareitems {
   position: absolute;
-  bottom: 25px; }
+  bottom: 0;
+  right: 0; }
 
 #shareitems ul li {
   display: inline-block;
@@ -204,7 +208,8 @@ main {
   position: absolute;
   right: 30px;
   cursor: pointer;
-  top: 28px; }
+  top: 28px;
+  z-index: 21; }
 
 #preview {
   float: left;
@@ -212,18 +217,23 @@ main {
   position: relative;
   height: 100%; }
   #preview #active-emoji-selection {
-    position: relative;
-    margin: auto;
-    margin-top: 100px;
-    width: 60%; }
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%; }
     #preview #active-emoji-selection #main-emoji-preview {
-      width: 70%;
+      height: 100%;
       margin: auto; }
+      #preview #active-emoji-selection #main-emoji-preview img {
+        height: 100%;
+        width: 100%;
+        margin: auto; }
     #preview #active-emoji-selection .small-emoji-preview {
+      position: absolute;
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-top: 25px; }
+      bottom: 0; }
       #preview #active-emoji-selection .small-emoji-preview div {
         width: 35px;
         height: 35px;
@@ -243,7 +253,8 @@ main {
     bottom: 25px;
     position: absolute; }
     #preview .next-or-prev img {
-      width: 100%;
+      width: 50%;
+      display: inline-block;
       height: 100%; }
   #preview .next-or-prev:hover {
     opacity: 1; }
@@ -255,10 +266,11 @@ main {
 #description {
   float: right;
   width: 30%;
-  border-left: 1px solid #818080;
+  border-left: 1px solid rgba(129, 128, 128, 0.5);
   height: 100%;
   box-sizing: border-box;
-  padding-left: 50px; }
+  padding-left: 50px;
+  position: relative; }
   #description table {
     margin-bottom: 50px; }
     #description table td {
@@ -266,16 +278,25 @@ main {
       padding-right: 25px; }
   #description h2 {
     margin-bottom: 50px;
-    padding-top: 100px; }
-  #description button {
-    margin-right: 10px; }
+    padding-top: 40vh;
+    max-width: 400px; }
+  #description #buttoncontainer {
+    position: absolute;
+    bottom: 0;
+    left: 50px; }
+    #description #buttoncontainer button:not(.copy-to-clipboard) {
+      display: inline-block;
+      width: 100px;
+      margin-right: 10px;
+      margin-bottom: 25px; }
 
 .nav-left {
   position: fixed;
   padding-left: 50px; }
   .nav-left ul li {
     display: block;
-    height: 30px; }
+    height: 30px;
+    padding-bottom: 10px; }
 
 header {
   position: fixed;

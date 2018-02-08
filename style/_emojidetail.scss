@@ -22,7 +22,7 @@
     background: #FFFFFF;
     box-shadow: 0 1px 34px 0 rgba(163,161,173,0.50);
     border-radius: 8px;
-    padding: 30px;
+    padding: $gap-reg;
     z-index: 20;
 
     .sub{
@@ -68,12 +68,7 @@
         }
     }
 
-    button{
-        &:not(.copy-to-clipboard) {
-            padding-left: $gap-med;
-            padding-right: $gap-med;
-        }
-    }
+
 }
 
 .path {
@@ -86,7 +81,8 @@
 }
 #shareitems {
     position: absolute;
-    bottom: $gap-reg;
+    bottom: 0;
+    right: 0;
 }
 
 #shareitems ul li {
@@ -101,6 +97,7 @@
     right: 30px;
     cursor: pointer;
     top: 28px;
+    z-index: 21;
 }
 
 #preview {
@@ -110,22 +107,29 @@
     height: 100%;
 
     #active-emoji-selection {
-        position: relative;
-        margin: auto;
-        margin-top: $gap-large;
-        width: 60%;
+        position: absolute;
+        // margin: auto;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
      
         #main-emoji-preview {
-            width: 70%;
+            // width: 100%;
+            height: 100%;
             margin: auto;
-            
+            img{
+                height: 100%;
+                width: 100%;
+                margin: auto;
+            }
         }
 
         .small-emoji-preview {
+            position: absolute;
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-top: $gap-reg;
+            bottom: 0;
             
             div {
                 width: 35px;
@@ -154,8 +158,10 @@
         // background-color: #456;
         bottom: $gap-reg;
         position: absolute;
+
         img{
-            width: 100%;
+            width: 50%;
+            display: inline-block; 
             height: 100%;
         }
     }
@@ -165,23 +171,26 @@
         opacity: 1;
     }
 
+
     .prev-emoji {
         left: 0;
     }    
 
     .next-emoji {
         right: $gap-reg;
-    }    
+    }   
+
 
 }
 
 #description {
     float: right;
     width: 30%;
-    border-left: 1px solid $clr-grey-light;
+    border-left: 1px solid $clr-grey-super-light;
     height: 100%;
     box-sizing: border-box;
     padding-left: $gap-med;
+    position: relative;
 
     table {
         margin-bottom: $gap-med;
@@ -193,10 +202,20 @@
     }
     h2 {
         margin-bottom: $gap-med;
-        padding-top: $gap-large;
+        padding-top: 40vh;
+        max-width: 400px
     }
 
-    button {
-        margin-right: $gap-small;
-    }
+
+    #buttoncontainer{
+        position: absolute;
+        bottom: 0;
+        left: $gap-med;
+        button:not(.copy-to-clipboard) {
+            display: inline-block;
+            width: 100px; 
+            margin-right:$gap-small;
+            margin-bottom: $gap-reg;
+        }
+    } 
 }

@@ -69,6 +69,7 @@ $(document).ready(function(){
 		}
 	}
 	function updateList(searchinput){
+		$( "body" ).scrollTop( 0 );
 		$(".emoji_grid").empty()
 		if(searchinput == "all OpenMojis" || searchinput == ""){
 			fillList()
@@ -124,6 +125,44 @@ $(document).ready(function(){
 		}
 	}
 
+
+	function updatebycategory(searchinput){
+		$( "body" ).scrollTop( 0 );
+		$(".emoji_grid").empty()
+		if(searchinput == "all OpenMojis" || searchinput == ""){
+			fillList()
+			currentList = emojiList
+		}else{
+			var options = {
+					  shouldSort: true,
+					  tokenize: true,
+					  includeScore: true,
+					  threshold: 0.1,
+					  location: 0,
+					  distance: 100,
+					  maxPatternLength: 32,
+					  minMatchCharLength: 0,
+					  keys: [
+					  	{
+					    	name: "group",
+					    	weight: 1
+						}]
+					};
+					var fuse = new Fuse(emojiList, options); // "list" is the item array
+					result = fuse.search(searchinput);
+
+					//reduce current list to emojis, no score …
+					currentList = []
+					result.forEach(function(e){
+						currentList.push(e.item)	
+					})
+					console.log(currentList)
+					for(var i = 0; i < currentList.length; i++){
+						$(".emoji_grid").append("<div class='emoji_single' id='"+currentList[i].emoji+"'><div class = 'emoji-container'><img src='data/color/svg/"+currentList[i].hexcode+".svg'></div><div><h3>"+currentList[i].annotation+"</h3><p>"+currentList[i].hexcode+"</p></div></div>")
+					}
+		}
+	}
+
 	function insertemoji(id){
 		var currEmoji = currentList.filter(function(item){
 	    	return item.emoji == id;         
@@ -137,31 +176,33 @@ $(document).ready(function(){
 		$("#color-emoji-image-preview").attr("src","data/color/svg/"+currEmoji[0].hexcode+".svg");
 		//update 
 		$("#description h2").text(currEmoji[0].annotation);
-		$("#description #Unicode").text(currEmoji[0].hexcode);
+		$("#description #unicode").text(currEmoji[0].hexcode);
 		$("#description #author").text(currEmoji[0].hfg_author);
+		$("#description #category").text(currEmoji[0].group);
+		$("#description #subcategory").text(currEmoji[0].subgroups);
 		//update path
 		$("#description .path a:nth-child(2)").text(currEmoji[0].group);
 		$("#description .path a:nth-child(3)").text(currEmoji[0].subgroups);
 		//update prev und next
 		
 		if(index == 0){
-			$(".prev-emoji img").attr("src","data/color/svg/"+currentList[currentList.length-1].hexcode+".svg");
+			$(".prev-emoji .icon-img").attr("src","data/color/svg/"+currentList[currentList.length-1].hexcode+".svg");
 			$(".prev-emoji").attr("id",""+currentList[index + 1].emoji+"");
 			
-			$(".next-emoji img").attr("src","data/color/svg/"+currentList[index + 1].hexcode+".svg");
+			$(".next-emoji .icon-img").attr("src","data/color/svg/"+currentList[index + 1].hexcode+".svg");
 			$(".next-emoji").attr("id",""+currentList[index + 1].emoji+"");
 		}else if(index == currentList.length - 1){
 			$(".prev-emoji").attr("id",""+currentList[index - 1].emoji+"");
-			$(".prev-emoji img").attr("src","data/color/svg/"+currentList[index - 1].hexcode+".svg");
+			$(".prev-emoji .icon-img").attr("src","data/color/svg/"+currentList[index - 1].hexcode+".svg");
 			
 			$(".next-emoji").attr("id",""+currentList[0].emoji+"");
-			$(".next-emoji img").attr("src","data/color/svg/"+currentList[0].hexcode+".svg");
+			$(".next-emoji .icon-img").attr("src","data/color/svg/"+currentList[0].hexcode+".svg");
 		}else{
 			$(".prev-emoji").attr("id",""+currentList[index - 1].emoji+"");
-			$(".prev-emoji img").attr("src","data/color/svg/"+currentList[index - 1].hexcode+".svg");
+			$(".prev-emoji .icon-img").attr("src","data/color/svg/"+currentList[index - 1].hexcode+".svg");
 			
 			$(".next-emoji").attr("id",""+currentList[index + 1].emoji+"");
-			$(".next-emoji img").attr("src","data/color/svg/"+currentList[index + 1].hexcode+".svg");
+			$(".next-emoji .icon-img").attr("src","data/color/svg/"+currentList[index + 1].hexcode+".svg");
 		}
 
 		$("#popover-wrapper").fadeIn(300)
@@ -185,7 +226,7 @@ $(document).ready(function(){
 
 	$('input[type=radio][name=category]').change(function() {
 		$("#selected-category").text($(this).val())
-		updateList($(this).val());
+		updatebycategory($(this).val());
 	});
 
 	$( ".search" ).keydown(function( event ) {
