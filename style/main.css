@@ -127,6 +127,9 @@ main {
 .visible {
   display: block; }
 
+svg {
+  font-family: Times; }
+
 .clear {
   clear: both; }
 

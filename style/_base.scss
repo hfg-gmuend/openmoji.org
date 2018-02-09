@@ -146,6 +146,9 @@ input[type='radio']{
     }
 }
 
+
+
+
 main{
     padding-top: $gap-large * 2;
 }
@@ -158,6 +161,9 @@ main{
     display: block;
 }
 
+svg{
+    font-family: Times;
+}
 
 .clear{
     clear: both;
