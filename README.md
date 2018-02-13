@@ -1,10 +1,10 @@
-HfG-Emoji-Project-Website
-=========================
+OpenMoji Website
+================
 
 Developer Setup
 ---------------
 1. Install [node.js](https://nodejs.org) (go for the latest stable version)
-2. Open Terminal and navigate over to the `HfG-Emoji-Project-Website` folder that you downloaded onto your computer:
+2. Open Terminal and navigate over to the `openmoji-website` folder that you downloaded onto your computer:
 
 ```
 $ cd path/to/folder
