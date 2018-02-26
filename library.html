@@ -2,34 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OpenMoji · Library</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
     <div id="library-wrapper">
-        <header>
-            <!-- <div> -->
-                <ul>
-                    <!-- <li><a href="index.html">OpenMoji</a></li> -->
-                    <li class = "active-tab"><a href="library.html">OpenMoji</a></li>
-                    <li><a href="styleguide.html">Participate</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            <!-- </div> -->
-            <!-- <div class="clear"></div> -->
-            <div id="emojisuche">
-                <img src="img/search.svg">
-               
-                <input class="search" type="text" name="emojisearch" placeholder="author, category or emoji …">
-            </div>
-            <div class="right">
-                    <button><a class="buttonlink" href ="https://github.com/hfg-gmuend/openmoji">Get OpenMojis</a></button>
+        <div class="container">
+            <header>
+                    <ul>
+                        <li><a href="index.html">OpenMoji</a></li>
+                        <li class="active-tab"><a href="library.html">Library</a></li>
+                        <li><a href="styleguide.html">Participate</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                <div class="emoji-search">
+                    <img src="img/search.svg">
+                   
+                    <input class="search" type="text" name="emojisearch" placeholder="author, category or emoji …">
+                </div>
+                <div class="right">
                     <a id = "gh-link" class = "iconlink" href=""><img src = "img/brand-icons/github.svg"></a>
-                    <!-- <div class="clear"></div> -->
-            </div>
-          </header>
-        <main>
+                    <button><a class="buttonlink" href ="https://github.com/hfg-gmuend/openmoji">Get OpenMojis</a></button>
+                </div>
+            </header>
             <nav class="nav-left">
                 <div id="show-color">show color
                     <label class="switch">
@@ -38,158 +35,129 @@
                     </label>
                 </div>
 
-                <ul>
-                    <li>
-                        <input id="all" type="radio" name="category" checked="true" value="all OpenMojis">
-                        <label for="all">all emojis</label>
-                    </li>  
-                    <li>
-                        <input id="symbols" type="radio" name="category" value = "symbols">
-                        <label for="symbols">symbols</label>
-                    </li>  
-                    <li>
-                        <input id="animals" type="radio" name="category" value = "animals">
-                        <label for="animals">animals</label>
-                    </li>  
-                    <li>
-                        <input id="nature" type="radio" name="category" value = "nature">
-                        <label for="nature">nature</label>
-                    </li>   
-                    <li>
-                        <input id="activities" type="radio" name="category" value="activities">
-                        <label for="activities">activties</label>
-                    </li>   
-                    <li>
-                        <input id="smileys" type="radio" name="category" value="smileys">
-                        <label for="smileys">smileys</label>
+                <ul id="nav-items">
+                    <li data-item="all OpenMojis">
+                        <input id="all OpenMojis" type="radio" name="category" value="all OpenMojis" checked>
+                        <label for="all OpenMojis">all OpenMojis</label>
                     </li>
-                    <li>
-                        <input id="people" type="radio" name="category" value="people">
-                        <label for="people">people</label>
-                    </li>  
-                    <li>
-                        <input id="object" type="radio" name="category" value="object">
-                        <label for="object">object</label>
-                    </li>  
-                    <li>
-                        <input id="food-and-drink" type="radio" name="category" value="food and drink">
-                        <label for="food-and-drink">food and drink</label>
-                    </li>  
-                    <li>
-                        <input id="flags" type="radio" name="category" value="flags">
-                        <label for="flags">flags</label>
-                    </li> 
-                    <li>
-                        <input id="travel-and-places" type="radio" name="category" value="travel and places">
-                        <label for="travel-and-places">travel and places</label>
-                    </li> 
-
                 </ul>
             </nav>
-            <div id="library-content">
-                    <h2 id ="selected-category">all OpenMojis</h2>
-                    <div class="emoji_grid"></div>
-            </div>
+            <main>
+                <div id="library-content" class="content">
+                        <h2 id ="selected-category">all OpenMojis</h2>
+                        <div class="emoji_grid_wrapper">
+                            <div class="emoji_grid"></div>
+                        </div>
+                </div>
 
 
-<!-- Poplover for detaild vies -->
-<div id="popover-wrapper" class = "hidden">
-            <div id = "popover">
-           
-            <div class="close" id ="close-detailview">
-                <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-                        <g id="Detail-iconpreview-big" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47" stroke-width="3">
-                            <g id="X" transform="translate(1342.000000, 121.000000)">
-                                <path d="M13.5,0.5 L0.990003997,13.009996 L13.5,0.5 Z" id="Line-2"></path>
-                                <path d="M13.5,13.5 L0.990003997,0.990003997 L13.5,13.5 Z" id="Line-2"></path>
-                            </g>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-           
-            <div class="clear"></div>
-            
-            <div id="preview">
-                <!-- <div id="prev-icon"><- -->
-                <!-- </div>     -->
-                <div id = "active-emoji-selection">
-                    <!--Set main rmoji-->
-                    <div id = "main-emoji-preview" ><img id="main-emoji-image" src="img/preview-big.png"></div>
-                    <div class = "small-emoji-preview">
-                        <div id = "outline-emoji-preview"><img id="outline-emoji-image-preview" src="img/preview-ol-small.png"></div>
-                        <div class="highlight" id = "color-emoji-preview"><img id="color-emoji-image-preview" src="img/preview-filled-small.png"></div>
+                <!-- Poplover for detaild vies -->
+                <div id="popover-wrapper">
+                    <div id = "popover">                        
+                        <div id="preview">
+                            <!-- <div id="prev-icon"><- -->
+                            <!-- </div>     -->
+                            <div id = "active-emoji-selection">
+                                <!--Set main rmoji-->
+                                <img id="main-emoji-image" src="img/preview-big.png">
+                                <div class = "small-emoji-preview">
+                                    <div class="next-or-prev prev-emoji" id="">
+                                        <img class="arrow" src="img/from-arrow.svg">
+                                        <img class="icon-img" src="img/preview-big.png">
+                                    </div>
+                                    <div id="emoji-preview">
+                                        <div id="outline-emoji-preview">
+                                            <img id="outline-emoji-image-preview" class="emoji-preview-image" src="img/preview-ol-small.png">
+                                        </div>
+                                        <div class="highlight" id="color-emoji-preview">
+                                            <img id="color-emoji-image-preview" class="emoji-preview-image" src="img/preview-filled-small.png">
+                                        </div>
+                                    </div>
+                                    <div class="next-or-prev next-emoji" id="">
+                                        <img class="icon-img" src="img/preview-big.png">
+                                        <img class="arrow" src="img/arrow-to.svg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id = "description">
+                            <div class="description-top">
+                                <div class="path">
+                                    <a href="">all OpenMojis</a> / <a href="">people</a> / <a href="">sports</a>
+                                </div>
+                                <div class="close" id ="close-detailview">
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                            <g id="Detail-iconpreview-big" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47" stroke-width="3">
+                                                <g id="X" transform="translate(1342.000000, 121.000000)">
+                                                    <path d="M13.5,0.5 L0.990003997,13.009996 L13.5,0.5 Z" id="Line-2"></path>
+                                                    <path d="M13.5,13.5 L0.990003997,0.990003997 L13.5,13.5 Z" id="Line-2"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <!-- details zu den icons-->
+                            <div class="description-bottom">
+                                <h2>Skier</h2>
+                                <table>
+                                    <tr>
+                                        <td>Unicode</td>
+                                        <td><button id="unicode" class="copy-to-clipboard">26F7</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Author</td>
+                                        <td><p id = "author" class="redlink" href="library.html">Name Ofauthor</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category</td>
+                                        <td><p id = "category" class="redlink" href="library.html">Name Ofauthor</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subcategory</td>
+                                        <td><p id = "subcategory" class="redlink" href="library.html">Name Ofauthor</p></td>
+                                    </tr>
+                                </table>
+                                <div id = "buttoncontainer">
+                                    <a id="svg-download-btn" href="" download>
+                                        <button type="button">SVG</button>
+                                    </a>
+                                    <a id="png-download-btn" href="" download>
+                                        <button type="button">PNG</button>
+                                    </a>
+                                </div>
+                            </div> 
+                            <!-- <h4 id="sharetitle"> share </h4> -->
+                            <!-- <div id="shareitems">
+                                <ul>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
+                                </ul>
+                            </div> -->
+                        </div>
                     </div>
                 </div>
-                
-                <!-- set prev and next emoji-->
-                <div class="next-or-prev prev-emoji" id = "">
-                    <img class="arrow" src="img/from-arrow.svg"><img class="icon-img" src="img/preview-big.png"></div>
-                <div class="next-or-prev next-emoji" id=""><img class="icon-img" src="img/preview-big.png"><img class="arrow" src="img/arrow-to.svg"></div>
-            </div>
-
-            <div id = "description">
-                <div class="path"><a href="">emojis</a> / <a href="">people</a> / <a href="">sports</a></div>
-                <h2>Skier</h2>
-                <!-- details zu den icons-->
-                <table>
-                    <tr>
-                        <td>Unicode</td>
-                        <td><button id="unicode" class="copy-to-clipboard">26F7</button></td>
-                    </tr>
-                    <tr>
-                        <td>Author</td>
-                        <td><p id = "author" class="redlink" href="library.html">Name Ofauthor</p></td>
-                    </tr>
-                    <tr>
-                        <td>Category</td>
-                        <td><p id = "category" class="redlink" href="library.html">Name Ofauthor</p></td>
-                    </tr>
-                    <tr>
-                        <td>Subcategory</td>
-                        <td><p id = "subcategory" class="redlink" href="library.html">Name Ofauthor</p></td>
-                    </tr>
-                </table>
-                <div id = "buttoncontainer">
-                    <button type="button" onclick="alert('Dont even try!n 😡')">SVG</button>
-                    <button type="button" onclick="alert('😱')">PNG</button>
-                    <div class="clear"></div>
-                </div>    
-                <!-- <h4 id="sharetitle"> share </h4> -->
-                <!-- <div id="shareitems">
-                    <ul>
-                        <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                        <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                        <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
-                    </ul>
-                </div> -->
-
-            </div>
-
-            <div class="clear"></div>
+            </main>
+            <footer>
+                <div>
+                    <p><!-- ©  -->OpenMoji 2018 · </p>
+                    <p><a href="">Legal</a></p>
+                </div>
+                <ul>
+                    <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
+                </ul>
+            </footer>
         </div>
-            <div class="clear"></div>
-
-</div>
-
-
-            <div class="clear"></div>
-
-        </main>
-<footer>
-            <p>© OpenMoji 2018 · </p>
-            <p><a href="">Legal</a></p>
-            <ul>
-                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>
-            </ul>
-        </footer>
     </div>
 </body>
 <script src="src/fuse.min.js" rel="script"></script>
 <script src="src/jquery-3.3.1.min.js" rel="script"></script>
 <script src="data/hfg-emojis-list.json" rel="script"></script>
-<script src="src/collection.js" rel="script"></script>
+<script src="src/general.js" rel="script"></script>
+<script src="src/library.js" rel="script"></script>
 </html>

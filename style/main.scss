@@ -1,17 +1,17 @@
-@import '_variables';
-@import '_fonts';
-@import '_base';
+@import 'variables';
+@import 'fonts';
+@import 'base';
 
 
 //components
-@import '_emojidetail';
-@import '_nav-left';
-@import '_nav-top';
-@import '_footer';
+@import 'emojidetail';
+@import 'nav-left';
+@import 'header';
+@import 'footer';
 
 //pages
-@import '_about';
-@import '_styleguide';
-@import '_library';
-@import '_home';
+@import 'about';
+@import 'styleguide';
+@import 'library';
+@import 'home';
 // @import '_detailview';

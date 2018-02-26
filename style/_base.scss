@@ -10,6 +10,7 @@ html {
 
 body {
 	font-family: $fnt-family;
+    height: 100vh;
 }
 
 ul{
@@ -36,7 +37,7 @@ h2 {
 h3 {
 	font-weight: $fnt-reg;
 	font-size: $fnt-sz-md;
-    margin-bottom: $gap-small;
+    margin-bottom: $gap-xs;
 }
 
 h4, h5, h6 {
@@ -44,20 +45,30 @@ h4, h5, h6 {
 	font-size: $fnt-sz-md;  
 	color: $clr-grey-light;
     margin-top: 0;
-    margin-bottom: $gap-small;
+    margin-bottom: $gap-xs;
 }
 
 p {
 	color: $clr-grey-light;
 }
 
-article{
-    padding-bottom: $gap-large;
+article + article{
+    margin-bottom: $gap-large;
 }
 
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.container{
+    display: grid;
+    grid-template-areas: "header header"
+                         "nav content"
+                         "footer footer";
+    grid-template-columns: minmax(200px, 300px) auto;
+    grid-template-rows: minmax(40px, $footer-header-max-height) minmax(65%, auto) minmax(40px, $footer-header-max-height);
+    height: 100%;
 }
 
 .descriptive-text{
@@ -101,34 +112,35 @@ a{
 
 button {
     cursor: pointer;
-	padding: 0;
+	padding: 0px 20px;
     margin: 0;
     font-size: $fnt-sz-md;
     color: $clr-white;
     background: $clr-red-light;
     border: none;
     box-shadow: 0 2px 4px 0 rgba(232,232,232,0.50);
-    height: 40px;
+    min-height: 40px;
     border-radius: 20px;
-    min-width: 80px; 
+    min-width: 80px;
 }
 
 .copy-to-clipboard {
 	min-width: 0;
     margin-right: 0px;
     margin-top: 0px;
+    padding: 0px;
     height: auto;
     background: none;
     box-shadow: none;
     border-radius: 0px;
     border-bottom: 1px solid $clr-red-dark;
     color: $clr-red-dark;
-    padding-bottom: 0;    
+    padding-bottom: 0;
 }
 
 
 label {
-    color: $clr-grey-light;   
+    color: $clr-grey-light;
     cursor: pointer;
     transition: all 0.2s;
     &:hover {
@@ -146,11 +158,17 @@ input[type='radio']{
     }
 }
 
-
-
-
 main{
-    padding-top: $gap-large * 2;
+    grid-area: content;
+    margin-top: $gap-reg;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+%content{
+    max-width: $content-max-width;
+    position: relative;
 }
 
 .hidden{

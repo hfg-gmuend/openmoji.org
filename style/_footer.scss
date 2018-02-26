@@ -1,24 +1,24 @@
 footer {
-	// max-width: 1000px;
-	// margin-left: 400px;
-	padding: $gap-med;
-	padding-top: $gap-large;
-	position: relative;
-	width: 100%;
-	box-sizing: border-box;
-	bottom: 0;
+	padding: 0 $gap-med 0 $gap-med;
+	grid-area: footer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
 	p{
 		display: inline-block;
+		line-height: 33%;
 	}
 	ul{
-		position: absolute;
-		right: $gap-med;
-		bottom: $gap-med;
+		display: inline-flex;
+		align-items: center;
+
 		li{
 			width: 20px;
 			height: 20px;
-			display: inline-block;
-			padding-left: $gap-small;
+		}
+		li + li{
+			margin-left: $gap-small;
 		}
 	}
 }

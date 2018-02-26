@@ -1,6 +1,7 @@
 //colors
 $clr-red-light: #E95A47;
 $clr-red-dark: #D22F29;
+$clr-blue-super-light: #92d3f5;
 $clr-blue-light: #5EB0CF;
 $clr-blue-dark: #3D98BB;
 $clr-yellow-light: #EEB41A;
@@ -10,9 +11,10 @@ $clr-orange-dark: #E27022;
 $clr-violet-dark: #8967AA;
 
 $clr-white: #fff;
+$clr-grey-dark: #242424;
 $clr-grey-light: #818080;
 $clr-grey-super-light: rgba(129, 128, 128, 0.5);
-$clr-grey-dark: #242424;
+$clr-grey-ultra-light: #f5f6f7;
 
 $bgclr-grey: #F2F1F0;
 
@@ -30,9 +32,14 @@ $fnt-reg: 500;
 $fnt-bold: 700; 
 
 //gaps
-$gap-reg: 25px;
-$gap-small: 10px;
+$gap-xs: 10px;
+$gap-small: 20px;
+$gap-reg: 30px;
 $gap-med: 50px;
 $gap-large: 100px;
 
 $border-radius: 8px;
+
+//sizes
+$content-max-width: 900px;
+$footer-header-max-height: 120px;

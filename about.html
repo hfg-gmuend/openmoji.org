@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>OpenMoji · About</title>
@@ -15,41 +15,49 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
     <link rel="apple-touch-icon" href="/icon.png" />
     <link rel="stylesheet" href="style/main.css">
-  </head>
-  <body>
+    </head>
+<body>
     <div id="about-wrapper">
-        <header>
+        <div class="container">
+            <header>
                 <ul>
-                
-                    <!-- <li><a href="index.html">OpenMoji</a></li> -->
-                    <li><a href="library.html">OpenMoji</a></li>
+                    <li><a href="index.html">OpenMoji</a></li>
+                    <li><a href="library.html">Library</a></li>
                     <li><a href="styleguide.html">Participate</a></li>
-                    <li class = "active-tab"><a href="about.html">About</a></li>
+                    <li class="active-tab"><a href="about.html">About</a></li>
                 </ul>
-<!--             <div id="emojisuche">
-                
-                <img src="img/search.svg">
-                <input type="text" name="emojisearch" placeholder="author, category or emoji …">
-                
-            </div> -->
-            <div class="right">
-                    <button><a class="buttonlink" href ="https://github.com/hfg-gmuend/openmoji">Get OpenMojis</a></button>
+                <div class="right">
                     <a id = "gh-link" class = "iconlink" href=""><img src = "img/brand-icons/github.svg"></a>
-                    <!-- <div class="clear"></div> -->
-            </div>
-          </header>
-        <main>
+                    <button><a class="buttonlink" href ="https://github.com/hfg-gmuend/openmoji">Get OpenMojis</a></button>
+                </div>
+            </header>
             <nav class="nav-left">
-                <ul>
-                    <li><a href="#Whoweare">Who we are</a></li>
-                    <li><a href="#AuthorsandTeam">Authors and Team</a></li>
-                    <li><a href="#Acknowledgement">Acknowledgement</a></li>
+                <ul id="nav-items">
+                    <li class="mainmenu" data-item="who_we_are">
+                        <a href="#who_we_are">
+                            <input type="radio" name="section" value="Who we are" checked>
+                            <label>Who we are</label>
+                        </a>
+                    </li>
+                    <li class="mainmenu" data-item="authors_and_team">
+                        <a href="#authors_and_team">
+                            <input type="radio" name="section" value="Authors and Team">
+                            <label>Authors and Team</label>
+                        </a>
+                    </li>
+                    <li class="mainmenu" data-item="acknowledgement">
+                        <a href="#acknowledgement">
+                            <input type="radio" name="section" value="Acknowledgement">
+                            <label>Acknowledgement</label>
+                        </a>
+                    </li>
                 <ul>
             </nav>
-            <div id = "about-content">
-                <h1 id= "Whoweare">Who we are</h1>
+            <main>
+                <div id="about-content" class="content">
+                    <h1 id="who_we_are">Who we are</h1>
                     <p class = "descriptive-text">The Project started as a semester project by interaction and communication design students form the HfG Gmuend, aiming to develop an Open Source Emoji and Icon Libary from a designers point of view.</p>
-                    <h1 id= "AuthorsandTeam">Author and Team</h1>
+                    <h1 id= "authors_and_team">Author and Team</h1>
                     <div id = "team-container">
                         <div class = "teammember">
                             <div ><img src="img/team/benedikt.svg"></div><!--image-->
@@ -68,7 +76,7 @@
                             <p>Daniel Utz</p>
                             <!-- <p><a href="">whatever.de</a></p> -->
                             <ul>
-                               <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
                             </ul>
@@ -76,13 +84,13 @@
                         <div class = "teammember">
                             <div ><img src="img/team/sofie.svg"></div><!--image-->
                             <p>Sofie Ascherl</p>
-                 <!--            <p><a href="https://www.behance.net/sofieasche36e2">behance.net/sofieasche36e2</a></p> -->
+                            <!--<p><a href="https://www.behance.net/sofieasche36e2">behance.net/sofieasche36e2</a></p> -->
                             <ul>
                                <li><a class = "iconlink" href="https://www.behance.net/sofieasche36e2"><img src="img/brand-icons/link.svg"></a></li>
                                 <li><a class = "iconlink" href="https://twitter.com/sofie_ascherl"><img src="img/brand-icons/twitter.svg"></a></li>
                                 <li><a class = "iconlink" href="https://www.instagram.com/sofie_asch/"><img src="img/brand-icons/instagram.svg"></a></li>
-            <!--                     <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>
- -->                            </ul>
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>-->
+                            </ul>
                         </div>
                         <div class = "teammember">
                             <div ><img src="img/team/miriam.svg"></div><!--image-->
@@ -90,7 +98,7 @@
                             <!-- <p><a href="http://www.miriamvollmeier.com">miriamvollmeier.com</a></p> -->
                             <ul>
                                 <li><a class = "iconlink" href="http://www.miriamvollmeier.com"><img src="img/brand-icons/link.svg"></a></li>
-<!--                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
                             </ul>
@@ -100,8 +108,7 @@
                             <p>Kai Wanschura</p>
                             <!-- <p><a href="http://kaiwanschura.de">kaiwanschura.de</a></p> -->
                             <ul>
-<!--                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
                                 <li><a class = "iconlink" href="http://kaiwanschura.de"><img src="img/brand-icons/link.svg"></a></li>
                                 <li><a class = "iconlink" href="https://twitter.com/kaiwanschura"><img src="img/brand-icons/twitter.svg"><a></li>
@@ -112,7 +119,7 @@
                             <p>Johanna Wellnitz</p>
                             <!-- <p><a href="http://johannawellnitz.de">johannawellnitz.de</a></p> -->
                             <ul>
- <!--                                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
                                 <li><a class = "iconlink" href="http://johannawellnitz.de"><img src="img/brand-icons/link.svg"></a></li>
                                 <li><a class = "iconlink" href="https://twitter.com/JohannaWellnitz"><img src="img/brand-icons/twitter.svg"><a></li>
@@ -123,7 +130,7 @@
                             <p>Jonas Roßner</p>
                             <!-- <p><a href="">whatever.de</a></p> -->
                             <ul>
-                               <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
                             </ul>
@@ -203,7 +210,7 @@
                             <p>Ronja Bäurlen</p>
                             <!-- <p><a href="https://ronjabaeurlen.myportfolio.com">ronjabaeurlen.myportfolio.com</a></p> -->
                             <ul>
-               <!--                  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
                                 <li><a class = "iconlink" href="https://ronjabaeurlen.myportfolio.com/"><img src="img/brand-icons/link.svg"></a></li>
                                 <li><a class = "iconlink" href=" https://www.instagram.com/bae_ronnie/"><img src="img/brand-icons/instagram.svg"></a></li>
                                 <li><a class = "iconlink" href="https://twitter.com/RBaurlen"><img src="img/brand-icons/twitter.svg"><a></li>
@@ -225,7 +232,7 @@
                             <!-- <p><a href="https://lisathiel.wixsite.com/portfolio">lisathiel.wixsite.com/portfolio</a></p> -->
                             <ul>
                                 <li><a class = "iconlink" href="https://lisathiel.wixsite.com/portfolio"><img src="img/brand-icons/link.svg"></a></li>
-        <!--                         <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
                             </ul>
@@ -236,7 +243,7 @@
                             <!-- <p><a href="http://hilda-kalyoncu.de">hilda-kalyoncu.de</a></p> -->
                             <ul>
                                  <li><a class = "iconlink" href="http://hilda-kalyoncu.de"><img src="img/brand-icons/link.svg"></a></li>
-<!--                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
                                 <li><a class = "iconlink" href="https://twitter.com/hildakalyoncu"><img src="img/brand-icons/twitter.svg"><a></li>
                             </ul>
@@ -246,10 +253,10 @@
                             <p>Julian Grüneberg</p>
                             <!-- <p><a href="http://juliangrueneberg.com">juliangrueneberg.com</a></p> -->
                             <ul>
-<!--                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
                                 <li><a class = "iconlink" href="http://juliangrueneberg.com"><img src="img/brand-icons/link.svg"></a></li>
                                 <li><a class = "iconlink" href="https://www.instagram.com/dschules_/"><img src="img/brand-icons/instagram.svg"></a></li>
-<!--                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
                             </ul>
                         </div>
                         <div class = "teammember">
@@ -257,7 +264,7 @@
                             <p>Laura Humpfer</p>
                             <!-- <p><a href="">whatever.de</a></p> -->
                             <ul>
-                               <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
                             </ul>
@@ -278,7 +285,7 @@
                             <!-- <p><a href="http://www.kaimagnus.de">kaimagnus.de</a></p> -->
                             <ul>
                                 <li><a class = "iconlink" href="http://www.kaimagnus.de"><img src="img/brand-icons/link.svg"></a></li>
-<!--                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
                                 <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
                                 <li><a class = "iconlink" href="https://twitter.com/_kaimagnus"><img src="img/brand-icons/twitter.svg"><a></li>
                             </ul>
@@ -304,30 +311,32 @@
                             </ul>
                         </div>
                     </div>
-            <h1 id= "Acknowledgement">Acknowledgement</h1>
+                    <h1 id= "acknowledgement">Acknowledgement</h1>
                     <ul>
                         <li><a href="fontself maker for photoshop cc crack">Franz von Fontself</a></li>
                         <li><a href="https://github.com/milesj/emojibase">Emojibase</a></li>
                     </ul>
                     <!-- <div class = "descriptive-text"><a href="">Franz von Fontselfmaker</a><br><a href="">Emojibase Lib</a>
                     </div> -->
-            </div>
-        </main>
-        <footer>
-            <p>© OpenMoji 2018 · </p>
-            <p><a href="">Legal</a></p>
-            <ul>
-                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>
-            </ul>
-        </footer>
+                </div>
+            </main>
+            <footer>
+                <div>
+                    <p><!-- ©  -->OpenMoji 2018 · </p>
+                    <p><a href="">Legal</a></p>
+                </div>
+                <ul>
+                    <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
+                </ul>
+            </footer>
+        </div>
     </div>
-    <script src="src/collection.js"></script>
-  </body>
-  <script src="src/fuse.min.js" rel="script"></script>
+</body>
+<script src="src/fuse.min.js" rel="script"></script>
 <script src="src/jquery-3.3.1.min.js" rel="script"></script>
 <script src="data/hfg-emojis-list.json" rel="script"></script>
-<script src="src/collection.js" rel="script"></script>
+<script src="src/general.js" rel="script"></script>
 </html>
 

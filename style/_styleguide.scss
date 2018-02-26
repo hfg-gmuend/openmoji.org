@@ -1,4 +1,6 @@
 #styleguide-wrapper{
+	height: 100%;
+
 	h1{
 		color: $clr-orange-dark;
 	}
@@ -12,17 +14,16 @@
 		max-width: 600px;
 		margin-bottom: $gap-med;
 	}
-	img{
-		width: 100%;
-	}
 	.img-full{
 		width: 100%;
 	}
 	.two-rows{
-		padding-bottom: $gap-large;
+		margin-bottom: $gap-med;
+
 		p, h3{
 			float: left;
 			width: 25%;
+			max-width: 240px;
 
 		}
 		.img-small{
@@ -46,14 +47,17 @@
 }
 
 #styleguide-content{
-	max-width: 1000px;
-	margin-left: 400px;
+	@extend %content;
 
+	img{
+		width: 100%;
+	}
+	
 	h1{
 		margin-bottom: $gap-reg;
 	}
 
 	h2{
-		margin-top: $gap-reg;
+		margin-bottom: $gap-reg;
 	}
 }

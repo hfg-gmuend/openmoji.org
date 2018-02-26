@@ -3,72 +3,37 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 19;
     opacity: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .highlight{
     background: $bgclr-grey;
+    border-radius: $border-radius;
 }
 
 #popover{
     position: relative;
     width: 80%;
-    height: 80vh;
-    margin: auto;
-    margin-top: 8vh;
+    max-width: $content-max-width * 1.5;
+    height: 80%;
     background: #FFFFFF;
     box-shadow: 0 1px 34px 0 rgba(163,161,173,0.50);
     border-radius: 8px;
     padding: $gap-reg;
     z-index: 20;
+    box-sizing: border-box;
+    display: flex;
 
     .sub{
         text-align: center;
         font-size: $fnt-sz-s;
     }
-
-
-    #outline-emoji-preview {
-        transition: all 0.3s;
-        &:before{
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0px;
-            top: 0px;
-            border-radius: $border-radius;
-            background: $clr-grey-light;
-            opacity: 0.0;
-            transition: all 0.3s;
-        
-        }
-        &:hover:before{
-            opacity: 0.1;
-        }
-    }
-    #color-emoji-preview { 
-        &:before{
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0px;
-            top: 0px;
-            border-radius: $border-radius;
-            background: $clr-grey-light;
-            opacity: 0.0;
-            transition: all 0.3s;
-        }
-        &:hover:before{
-            opacity: 0.1;
-        }
-    }
-
-
 }
 
 .path {
@@ -76,7 +41,7 @@
 }
 
 #sharetitle {
-    position: absolute; 
+    position: absolute;
     bottom: 2 * $gap-reg;
 }
 #shareitems {
@@ -92,131 +57,120 @@
     margin-right: $gap-reg / 2;
 }
 
-.close {
-    position: absolute;
-    right: 30px;
-    cursor: pointer;
-    top: 28px;
-    z-index: 21;
-}
-
 #preview {
-    float: left;
     width: 70%;
-    position: relative;
-    height: 100%;
+    padding-right: $gap-med / 2;
+    box-sizing: border-box;
 
     #active-emoji-selection {
-        position: absolute;
-        // margin: auto;
-        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         height: 100%;
-        width: 100%;
-     
-        #main-emoji-preview {
-            // width: 100%;
-            height: 90%;
-            margin: auto;
-            margin-bottom: 10%;
-            img{
-                height: 100%;
-                width: 100%;
-                margin: auto;
-            }
+
+        #main-emoji-image{
+            min-height: 0;
+            margin-bottom: $gap-reg + $gap-xs;
         }
 
         .small-emoji-preview {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            bottom: 0;
-            
-            div {
-                width: 35px;
-                height: 35px;
-                padding: $gap-small;
-                border-radius: $border-radius;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+
+            #emoji-preview {
+                display: inline-flex;
+                height: 50px;
                 margin: auto;
-                margin: $gap-small;
-                display: inline-block;
-                position: relative;    
-            }    
+
+                .emoji-preview-image{
+                    height: 50px;
+
+                    // transition: all 0.3s;
+                    // &:before{
+                    //     content: "";
+                    //     width: 100%;
+                    //     height: 100%;
+                    //     left: 0px;
+                    //     top: 0px;
+                    //     border-radius: $border-radius;
+                    //     background: $clr-grey-light;
+                    //     opacity: 0.0;
+                    //     transition: all 0.3s;
+                    
+                    // }
+                    // &:hover:before{
+                    //     opacity: 0.1;
+                    // }
+                }
+            }
+
+            .next-or-prev {
+                opacity: 0.5;
+                transition: all 0.3s;
+                // background-color: #456;
+                display: inline-flex;
+
+                img{
+                    height: 40px;
+                }
+            }
+            .next-or-prev:hover{
+                opacity: 1;
+            }
         }
-        img {
-            width: 100%;
-            height: auto;
-        }    
-
     }
-
-
-    .next-or-prev {
-        // width: 35px;
-        height: 35px;
-        opacity: 0.5;
-        transition: all 0.3s;
-        // background-color: #456;
-        bottom: $gap-reg;
-        position: absolute;
-
-        img{
-            width: 50%;
-            display: inline-block; 
-            height: 100%;
-        }
-    }
-
-
-    .next-or-prev:hover{
-        opacity: 1;
-    }
-
-
-    .prev-emoji {
-        left: 0;
-    }    
-
-    .next-emoji {
-        right: $gap-reg;
-    }   
-
-
 }
 
 #description {
-    float: right;
-    width: 30%;
     border-left: 1px solid $clr-grey-super-light;
-    height: 100%;
+    padding-left: $gap-med / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
     box-sizing: border-box;
-    padding-left: $gap-med;
-    position: relative;
 
-    table {
-        margin-bottom: $gap-med;
+    .description-top{
+        display: inline-flex;
+        justify-content: space-between;
 
-        td {
-            height: 25px;
-            padding-right: $gap-reg;
+        .close {
+            cursor: pointer;
+            margin-left: $gap-xs;
         }
     }
-    h2 {
-        margin-bottom: $gap-med;
-        padding-top: 40vh;
-        max-width: 400px
+
+    .description-bottom{
+        h2 {
+            margin-bottom: $gap-reg;
+            max-width: 400px
+        }
+        table {
+            margin-bottom: $gap-med;
+
+            td {
+                height: 40px;
+            }
+            td + td{
+                padding-left: $gap-reg;
+            }
+        }
     }
 
 
     #buttoncontainer{
-        position: absolute;
-        bottom: 0;
-        left: $gap-med;
+        height: 50px;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+
         button:not(.copy-to-clipboard) {
-            display: inline-block;
-            width: 100px; 
-            margin-right:$gap-small;
-            margin-bottom: $gap-reg;
+            min-width: 100px;
+        }
+        a + a{
+            margin-left:$gap-xs;
         }
     } 
 }

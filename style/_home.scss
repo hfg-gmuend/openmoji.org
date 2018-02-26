@@ -1,6 +1,9 @@
 #home-wrapper{
 	min-height: 100vh;
-	background-color: $bgclr-grey;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+
 	h1{
 		color: $clr-blue-light;
 	}
@@ -10,7 +13,246 @@
 	.active-tab{
 		border-color: $clr-blue-light;
 	}
+	#landing{
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		> *{
+			width: 80%;
+			max-width: $content-max-width * 0.75;
+		}
+
+		h1{
+			margin-bottom: $gap-small;
+		}
+
+		.emoji-search{
+			max-width: 500px;
+			height: 50px;
+			margin-top: $gap-med;
+
+			input{
+				padding-left: $gap-med;
+			}
+		}
+	}
 	header{
-		background-color: $bgclr-grey;
+		height: $footer-header-max-height;
+		position: sticky;
+		top: 0;
+	}
+	.content-wrapper{
+		@extend %content;
+
+		min-height: calc(100vh - #{$footer-header-max-height});
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		margin: auto;
+		padding-left: $gap-med;
+		padding-right: $gap-med;
+	}
+
+	#small-overview{
+		background-color: $clr-grey-ultra-light;
+
+		.content{
+			display: flex;
+			// justify-content: space-between;
+			flex-wrap: wrap;
+			margin-right: -$gap-med;
+			padding-bottom: $gap-large + $gap-small;
+
+			.content-item{
+				flex-grow: 1;
+				width: 33%;
+				margin-right: $gap-med;
+				margin-bottom: $gap-large;
+				display: flex;
+				max-width: 250px;
+				min-width: 150px;
+				box-sizing: border-box;
+
+				img{
+					height: 40px;
+					margin-right: $gap-xs;
+				}
+
+				.description{
+					h3{
+						margin-bottom: $gap-small;
+						color: $clr-blue-light;
+					}
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+	}
+
+	#big-overview{
+		background-color: $clr-blue-light;
+		display: flex;
+		padding-top: ($gap-large + $gap-small) * 2;
+		box-sizing: border-box;
+
+		.col{
+			width: 50%;
+
+			&.left{
+				justify-content: flex-end;
+
+				>.section{
+					justify-content: flex-end;
+				}
+			}
+			&.right{
+				justify-content: flex-start;
+
+				>.section{
+					justify-content: flex-start;
+				}
+			}
+		}
+
+		.section{
+			height: calc(100vh - #{$footer-header-max-height});
+			display: flex;
+
+			img{
+				width: 500px;
+				margin-right: $gap-large;
+
+				&.large{
+					width: 1000px;
+				}
+			}
+
+			.description{
+				align-self: center;
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+
+				h1{
+					color: $clr-white;
+					margin: 0;
+				}
+				p{
+					color: $clr-white;
+					padding-top: $gap-small;
+				}
+			}
+		}
+	}
+
+	#categories{
+		padding-top: $gap-large + $gap-small;
+		padding-bottom: $gap-large + $gap-small;
+		background-color: $clr-grey-ultra-light;
+
+		h1{
+			margin-bottom: $gap-reg;
+		}
+
+		button{
+			margin-bottom: $gap-large;
+			align-self: flex-start;
+		}
+
+		.content-wrapper{
+			min-height: 0;
+		}
+
+		.content{
+			@extend %content;
+
+			display: flex;
+			flex-wrap: wrap;
+
+			.row{
+				display: inline-flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				width: 100%;
+
+				.categories-item{
+					max-width: 250px;
+					min-width: 150px;
+					box-sizing: border-box;
+				}
+
+				a{
+					&.active-tab{
+						color: #000000;
+					}
+					> *{
+						margin-bottom: $gap-xs;
+					}
+				}
+			}
+		}
+	}
+
+	#footer-wrapper{
+		background-color: $clr-blue-light;
+
+		.content-wrapper{
+			min-height: 0;
+		}
+
+		#interest{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			margin-top: $gap-med;
+			margin-bottom: $gap-med;
+
+			h1{
+				color: $clr-white;
+				margin-bottom: $gap-reg;
+			}
+
+			.buttongroup{
+				display: inline-flex;
+
+				h1{
+					color: $clr-white;
+					margin-bottom: $gap-reg;
+				}
+				button{
+					background-color: $clr-white;
+					color: $clr-blue-super-light;
+					box-shadow: none;
+				}
+				button:first-child{
+					background-color: $clr-blue-super-light;
+					color: $clr-white;
+				}
+				button + button{
+					margin-left: $gap-small;
+				}
+			}
+		}
+
+		footer{
+			min-height: 120px;
+
+			p{
+				color: $clr-white;
+			}
+
+			a{
+				color: $clr-white;
+			}
+
+			img{
+				filter: brightness(0) invert(1);
+			}
+		}
 	}
 }
