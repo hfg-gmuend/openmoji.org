@@ -12,11 +12,19 @@
 	}
 	#about-content{
 		@extend %content;
-		
-		.descriptive-text{
-			// padding-left: $gap-med;
-			padding-bottom: $gap-large;
+
+		ul{
+			padding-left: $gap-reg;
+
+			li{
+				list-style-type: disc;
+			}
 		}
+
+		h1{
+			margin-bottom: $gap-reg;
+		}
+
 		#team-container{
 			// padding-left: $gap-med;
 			display: -webkit-flex; /* Safari */
@@ -24,6 +32,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			margin-right: -$gap-large;
+			margin-bottom: -$gap-med;
 
 			.teammember{
 				width: 150px;
@@ -46,6 +55,7 @@
 				ul{
 						// position: absolute;
 						// right: $gap-med;
+					padding-left: 0;
 					padding-top: $gap-reg;
 					li{
 						width: 20px;

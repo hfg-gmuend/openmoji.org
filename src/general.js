@@ -1,4 +1,21 @@
-//------------ Gerneral Functions ------------
+//------------ General Functions ------------
+function shuffleArr(arr) {
+	var ctr = arr.length, temp, index;
+
+	// While there are elements in the array
+	while (ctr > 0) {
+		// Pick a random index
+		index = Math.floor(Math.random() * ctr);
+		// Decrease ctr by 1
+		ctr--;
+		// And swap the last element with it
+		temp = arr[ctr];
+		arr[ctr] = arr[index];
+		arr[index] = temp;
+	}
+	return arr;
+}
+
 //------------ nav ------------
 var navItemGotClicked = false;
 // mark selected item in nav
@@ -39,6 +56,9 @@ function markNavItem(item) {
 
 
 $(document).ready(function() {
+	//------------ Initialization ------------
+	$( "#impressum-wrapper .popover-wrapper" ).css("display", "flex").hide();
+
 	//------------ Event listeners ------------
 	// nav-item click listener for smooth scroll
 	$( "#nav-items" ).on("click", "a[href^='#']", function() {
@@ -55,5 +75,17 @@ $(document).ready(function() {
 		// mark corresponding nav-item and handle submenu expansion
 		navItemGotClicked = true;
 		markNavItem(href.substring(href.indexOf("#") + 1, href.length));
+	});
+
+	// click listener to show impressum modal
+	$( "#impressumLink" ).click(function(e) {
+		e.preventDefault();
+
+		$( "#impressum-wrapper .popover-wrapper" ).show();
+	});
+
+	// close overlay
+	$( "#close-impressum-wrapper" ).click(function() {
+		$( "#impressum-wrapper .popover-wrapper" ).fadeOut(400);
 	});
 });

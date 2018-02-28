@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	//------------ Initialization ------------
-	$( "#popover-wrapper" ).css("display", "flex").hide();
+	$( "#emoji-detail-wrapper .popover-wrapper" ).css("display", "flex").hide();
 
 	//------------ for emoji list ------------
 	var EMOJI_LIST;
@@ -58,8 +58,10 @@ $(document).ready(function() {
 			// if only one filter is set and it is not equal to search make sharp search
 			if(Object.keys(filter).length == 1 && !filter.search) {
 				fuse.options.threshold = 0.0;
+				fuse.options.tokenize = false;
 			} else {
 				fuse.options.threshold = FUSE_DEFAULT_THRESHOLD;
+				fuse.options.tokenize = true;
 			}
 
 			// set fuse keys according to filter and weighted according to the URL order
@@ -100,9 +102,6 @@ $(document).ready(function() {
 
 			// filter list with fuse based on searchStr
 			currentList = fuse.search(fuseSearchStr);
-
-			// set search input field value to search filter if it is defined
-			filter.search ? $( ".search" ).val(filter.search) : $( ".search" ).val("");
 		}
 
 		// mark nav-item if filter group is set
@@ -110,6 +109,13 @@ $(document).ready(function() {
 			markNavItem(filter.group);
 		} else {
 			markNavItem(undefined);
+		}
+
+		// set search input field value to search filter if it is defined
+		if(filter && filter.search) {
+			$( ".search" ).val(filter.search);
+		} else {
+			$( ".search" ).val("");
 		}
 
 		// show fuseSearchStr in HTML
@@ -181,7 +187,6 @@ $(document).ready(function() {
 	function handleRequest(filter) {
 		// open emoji detail view if emoji filter is set else update list
 		if(filter && filter.emoji) {
-			if(filter.group === undefined) updateList(undefined);
 			showEmojiDetails(filter.emoji);
 		} else {
 			updateList(filter);
@@ -206,11 +211,6 @@ $(document).ready(function() {
 				// get all subgroups
 				var subgroups = [];
 				filteredByGroup.forEach(function(emoji) {
-					/*emoji.subgroups.forEach(function(subgroup) {
-						if(subgroups.indexOf(subgroup) == -1) {
-
-						}
-					});*/
 					if(subgroups.indexOf(emoji.subgroups) == -1) {
 						subgroups.push(emoji.subgroups);
 					}
@@ -309,7 +309,7 @@ $(document).ready(function() {
 			$( ".next-emoji" ).hide();
 		}
 
-		$( "#popover-wrapper" ).fadeIn(300);
+		$( "#emoji-detail-wrapper .popover-wrapper" ).fadeIn(300);
 	}
 
 
@@ -321,8 +321,8 @@ $(document).ready(function() {
 		if($( this ).parent().hasClass("mainmenu")) navItemGotClicked = true;
 
 		// hide popover wrapper if it is shown
-		if($( "#popover-wrapper" ).is(":visible")) {
-			$( "#popover-wrapper" ).fadeOut(400);
+		if($( "#emoji-detail-wrapper .popover-wrapper" ).is(":visible")) {
+			$( "#emoji-detail-wrapper .popover-wrapper" ).fadeOut(400);
 		}
 
 		exposeListFilter( {group: $( this ).text(), search: undefined, author: undefined, emoji: undefined} );
@@ -336,7 +336,7 @@ $(document).ready(function() {
 	// search field listener to update EMOJI_LIST based on search text when enter is pressed
 	$( ".search" ).keydown(function(e) {
 		if (e.which == 13) {
-			$( this ).val().length > 0 ? exposeListFilter( {search: $( this ).val()} ) : exposeListFilter( {search: undefined} );
+			$( this ).val().length > 0 ? exposeListFilter( {search: $( this ).val(), group: undefined, author: undefined, emoji: undefined} ) : exposeListFilter( {search: undefined} );
 		}
 	});
 
@@ -346,7 +346,7 @@ $(document).ready(function() {
 	});
 
 	// toggle outline and color in emoji detail view
-	$( "#popover .emoji-preview-image" ).click(function() {
+	$( "#emoji-detail-wrapper .popover .emoji-preview-image" ).click(function() {
 		// toggle "show color" checkbox
 		if($( this ).is($( "#color-emoji-image-preview" ))) {
 			$( "#show-color .switch input[type=checkbox]" ).prop("checked", true);
@@ -361,12 +361,12 @@ $(document).ready(function() {
 	// author click listener to filter emoji list by author
 	$( "#author" ).click(function() {
 		exposeListFilter( {author: $( this ).text(), search: undefined, group: undefined, emoji: undefined} );
-		$( "#popover-wrapper" ).fadeOut(400);
+		$( "#emoji-detail-wrapper .popover-wrapper" ).fadeOut(400);
 	});
 
 	// close overlay
 	$( "#close-detailview" ).click(function() {
 		exposeListFilter( {emoji: undefined} );
-		$( "#popover-wrapper" ).fadeOut(400);
+		$( "#emoji-detail-wrapper .popover-wrapper" ).fadeOut(400);
 	});
 });

@@ -4,10 +4,12 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-top: $gap-xs;
+	margin-bottom: $gap-xs;
 
 	p{
 		display: inline-block;
-		line-height: 33%;
+		font-size: $fnt-sz-s;
 	}
 	ul{
 		display: inline-flex;

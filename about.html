@@ -27,8 +27,24 @@
                     <li class="active-tab"><a href="about.html">About</a></li>
                 </ul>
                 <div class="right">
-                    <a id = "gh-link" class = "iconlink" href=""><img src = "img/brand-icons/github.svg"></a>
-                    <button><a class="buttonlink" href ="https://github.com/hfg-gmuend/openmoji">Get OpenMojis</a></button>
+                    <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "img/brand-icons/github.svg"></a>
+                    <div class="dropdown">
+                        <button>Get OpenMojis</button>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li>
+                                    <a href="https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank">Download Everything</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Black.otf" target="_blank">OpenMoji-Black.otf</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Color.otf" target="_blank">OpenMoji-Color.otf</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="clear"></div> -->
                 </div>
             </header>
             <nav class="nav-left">
@@ -55,267 +71,273 @@
             </nav>
             <main>
                 <div id="about-content" class="content">
-                    <h1 id="who_we_are">Who we are</h1>
-                    <p class = "descriptive-text">The Project started as a semester project by interaction and communication design students form the HfG Gmuend, aiming to develop an Open Source Emoji and Icon Libary from a designers point of view.</p>
-                    <h1 id= "authors_and_team">Author and Team</h1>
-                    <div id = "team-container">
-                        <div class = "teammember">
-                            <div ><img src="img/team/benedikt.svg"></div><!--image-->
-                            <p>Benedikt Groß</p>
-                            <!-- <p><a href="http://benedikt-gross.de">benedikt-gross.de</a></p> -->
-                            <ul>
-                                <!-- <li><a class = "iconlink" href="http://benedikt-gross.de"><img src="img/brand-icons/link.svg"></a></li> -->
-                                <li><a class = "iconlink" href="http://benedikt-gross.de"><img src="img/brand-icons/link.svg"></a></li>
-                                <li><a class = "iconlink" href="https://twitter.com/bndktgrs"><img src="img/brand-icons/twitter.svg"></a></li>
-                                <li><a class = "iconlink" href=" https://github.com/b-g/"><img src="img/brand-icons/github.svg"></a></li>
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
+                    <article id="who_we_are">
+                        <h1>Who we are</h1>
+                        <p class = "descriptive-text">The Project started as a semester project by interaction and communication design students form the HfG Gmuend, aiming to develop an Open Source Emoji and Icon Libary from a designers point of view.</p>
+                    </article>
+                    <article id="authors_and_team">
+                        <h1>Author and Team</h1>
+                        <div id = "team-container">
+                            <div class = "teammember">
+                                <div ><img src="img/team/benedikt.svg"></div><!--image-->
+                                <p>Benedikt Groß</p>
+                                <!-- <p><a href="http://benedikt-gross.de">benedikt-gross.de</a></p> -->
+                                <ul>
+                                    <!-- <li><a class = "iconlink" href="http://benedikt-gross.de"><img src="img/brand-icons/link.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="http://benedikt-gross.de" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://twitter.com/bndktgrs" target="_blank"><img src="img/brand-icons/twitter.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://github.com/b-g/" target="_blank"><img src="img/brand-icons/github.svg"></a></li>
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><img src="img/team/daniel.svg"></div><!--image-->
+                                <p>Daniel Utz</p>
+                                <!-- <p><a href="">whatever.de</a></p> -->
+                                <ul>
+                                    <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Sofie Ascherl"><img src="img/team/sofie.svg"></a></div><!--image-->
+                                <p>Sofie Ascherl</p>
+                                <!--<p><a href="https://www.behance.net/sofieasche36e2">behance.net/sofieasche36e2</a></p> -->
+                                <ul>
+                                    <li><a class = "iconlink" href="https://www.behance.net/sofieasche36e2" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://twitter.com/sofie_ascherl" target="_blank"><img src="img/brand-icons/twitter.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://www.instagram.com/sofie_asch/" target="_blank"><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>-->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Miriam Vollmeier"><img src="img/team/miriam.svg"></a></div><!--image-->
+                                <p>Miriam Vollmeier</p>
+                                <!-- <p><a href="http://www.miriamvollmeier.com">miriamvollmeier.com</a></p> -->
+                                <ul>
+                                    <li><a class = "iconlink" href="http://www.miriamvollmeier.com" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Kai Wanschura"><img src="img/team/kai.svg"></a></div><!--image-->
+                                <p>Kai Wanschura</p>
+                                <!-- <p><a href="http://kaiwanschura.de">kaiwanschura.de</a></p> -->
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="http://kaiwanschura.de" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://twitter.com/kaiwanschura" target="_blank"><img src="img/brand-icons/twitter.svg"><a></li>
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Johanna Wellnitz"><img src="img/team/johanna.svg"></a></div><!--image-->
+                                <p>Johanna Wellnitz</p>
+                                <!-- <p><a href="http://johannawellnitz.de">johannawellnitz.de</a></p> -->
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="http://johannawellnitz.de" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://twitter.com/JohannaWellnitz" target="_blank"><img src="img/brand-icons/twitter.svg"><a></li>
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Jonas Roßner"><img src="img/team/jonas.svg"></a></div><!--image-->
+                                <p>Jonas Roßner</p>
+                                <!-- <p><a href="">whatever.de</a></p> -->
+                                <ul>
+                                    <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Marius Schnabel"><img src="img/team/marius.svg"></a></div><!--image-->
+                                <p>Marius Schnabel</p>
+                                <!-- <p><a href="">whatever.de</a></p> -->
+                                <ul>
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="https://twitter.com/MariusSchnabel" target="_blank"><img src="img/brand-icons/twitter.svg"><a></li>
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Lisa Schulz"><img src="img/team/lisa-s.svg"></a></div><!--image-->
+                                <p>Lisa Schulz</p>
+                                <!-- <p><a href="">whatever.de</a></p> -->
+                                <ul>
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Mariella Steeb"><img src="img/team/mary.svg"></a></div><!--image-->
+                                <p>Mariella Steeb</p>
+                                <p><a></a></p>
+                                <ul>
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Sina Schulz"><img src="img/team/sina.svg"></a></div><!--image-->
+                                <p>Sina Schulz</p>
+                                <!-- <p><a href="http://www.skschulz.com">skschulz.com</a></p> -->
+                                <ul>
+                                    <li><a class = "iconlink" href="http://www.skschulz.com" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Vanessa Boutzikoudi"><img src="img/team/vanni.svg"></a></div><!--image-->
+                                <p>Vanessa Boutzikoudi</p>
+                                <!-- <p><a href="">whatever.de</a></p> -->
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Jose Avila"><img src="img/team/jose.svg"></a></div><!--image-->
+                                <p>Jose Avila</p>
+                                <p><a></a></p>
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Baris Camli"><img src="img/team/baris.svg"></a></div><!--image-->
+                                <p>Baris Camli</p>
+                                <p><a></a></p>
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Ronja Bäurlen"><img src="img/team/ronja.svg"></a></div><!--image-->
+                                <p>Ronja Bäurlen</p>
+                                <!-- <p><a href="https://ronjabaeurlen.myportfolio.com">ronjabaeurlen.myportfolio.com</a></p> -->
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="https://ronjabaeurlen.myportfolio.com/" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <li><a class = "iconlink" href=" https://www.instagram.com/bae_ronnie/" target="_blank"><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://twitter.com/RBaurlen" target="_blank"><img src="img/brand-icons/twitter.svg"><a></li>
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Rana Cakir"><img src="img/team/rana.svg"></a></div><!--image-->
+                                <p>Rana Cakir</p>
+                                <!-- <p><a href="http://ranacakir.de">ranacakir.de</a></p> -->
+                                <ul>
+                                    <li><a class = "iconlink" href="http://ranacakir.de" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Lisa Thiel"><img src="img/team/lisa.svg"></a></div><!--image-->
+                                <p>Lisa Thiel</p>
+                                <!-- <p><a href="https://lisathiel.wixsite.com/portfolio">lisathiel.wixsite.com/portfolio</a></p> -->
+                                <ul>
+                                    <li><a class = "iconlink" href="https://lisathiel.wixsite.com/portfolio" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Hilda Kalyoncu"><img src="img/team/hilda.svg"></a></div><!--image-->
+                                <p>Hilda Kalyoncu</p>
+                                <!-- <p><a href="http://hilda-kalyoncu.de">hilda-kalyoncu.de</a></p> -->
+                                <ul>
+                                     <li><a class = "iconlink" href="http://hilda-kalyoncu.de" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="https://twitter.com/hildakalyoncu" target="_blank"><img src="img/brand-icons/twitter.svg"><a></li>
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Julian Grüneberg"><img src="img/team/julian.svg"></a></div><!--image-->
+                                <p>Julian Grüneberg</p>
+                                <!-- <p><a href="http://juliangrueneberg.com">juliangrueneberg.com</a></p> -->
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="http://juliangrueneberg.com" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://www.instagram.com/dschules_/" target="_blank"><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Laura Humpfer"><img src="img/team/laura.svg"></a></div><!--image-->
+                                <p>Laura Humpfer</p>
+                                <!-- <p><a href="">whatever.de</a></p> -->
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Emily Jäger"><img src="img/team/emily.svg"></a></div><!--image-->
+                                <p>Emily Jäger</p>
+                                <p><a></a></p>
+                                <ul>
+                                    <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Kai Magnus Müller"><img src="img/team/kai-m.svg"></a></div><!--image-->
+                                <p>Kai Magnus Müller</p>
+                                <!-- <p><a href="http://www.kaimagnus.de">kaimagnus.de</a></p> -->
+                                <ul>
+                                    <li><a class = "iconlink" href="http://www.kaimagnus.de" target="_blank"><img src="img/brand-icons/link.svg"></a></li>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
+                                    <li><a class = "iconlink" href="https://twitter.com/_kaimagnus" target="_blank"><img src="img/brand-icons/twitter.svg"><a></li>
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Martin Wehl"><img src="img/team/martin.svg"></a></div><!--image-->
+                                <p>Martin Wehl</p>
+                                <!-- <p><a href="">martinwehl.de</a></p> -->
+                                <ul>
+                                    <li><a class = "iconlink" href="http://martinwehl.de" target="_blank"><img src="img/brand-icons/link.svg"><a></li>
+                                    <li><a class = "iconlink" href="https://www.instagram.com/martinwehl/" target="_blank"><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href="https://twitter.com/martin_wehl" target="_blank"><img src="img/brand-icons/twitter.svg"><a></li>
+                                </ul>
+                            </div>
+                            <div class = "teammember">
+                                <div ><a href="/library.html?author=Selina Bauder"><img src="img/team/selina.svg"></a></div><!--image-->
+                                <p>Selina Bauder</p>
+                                 <p><a></a></p>
+                                <ul>
+                                    <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></ a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
+                                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
+                                </ul>
+                            </div>
                         </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/daniel.svg"></div><!--image-->
-                            <p>Daniel Utz</p>
-                            <!-- <p><a href="">whatever.de</a></p> -->
-                            <ul>
-                                <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/sofie.svg"></div><!--image-->
-                            <p>Sofie Ascherl</p>
-                            <!--<p><a href="https://www.behance.net/sofieasche36e2">behance.net/sofieasche36e2</a></p> -->
-                            <ul>
-                               <li><a class = "iconlink" href="https://www.behance.net/sofieasche36e2"><img src="img/brand-icons/link.svg"></a></li>
-                                <li><a class = "iconlink" href="https://twitter.com/sofie_ascherl"><img src="img/brand-icons/twitter.svg"></a></li>
-                                <li><a class = "iconlink" href="https://www.instagram.com/sofie_asch/"><img src="img/brand-icons/instagram.svg"></a></li>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li>-->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/miriam.svg"></div><!--image-->
-                            <p>Miriam Vollmeier</p>
-                            <!-- <p><a href="http://www.miriamvollmeier.com">miriamvollmeier.com</a></p> -->
-                            <ul>
-                                <li><a class = "iconlink" href="http://www.miriamvollmeier.com"><img src="img/brand-icons/link.svg"></a></li>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/kai.svg"></div><!--image-->
-                            <p>Kai Wanschura</p>
-                            <!-- <p><a href="http://kaiwanschura.de">kaiwanschura.de</a></p> -->
-                            <ul>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
-                                <li><a class = "iconlink" href="http://kaiwanschura.de"><img src="img/brand-icons/link.svg"></a></li>
-                                <li><a class = "iconlink" href="https://twitter.com/kaiwanschura"><img src="img/brand-icons/twitter.svg"><a></li>
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/johanna.svg"></div><!--image-->
-                            <p>Johanna Wellnitz</p>
-                            <!-- <p><a href="http://johannawellnitz.de">johannawellnitz.de</a></p> -->
-                            <ul>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
-                                <li><a class = "iconlink" href="http://johannawellnitz.de"><img src="img/brand-icons/link.svg"></a></li>
-                                <li><a class = "iconlink" href="https://twitter.com/JohannaWellnitz"><img src="img/brand-icons/twitter.svg"><a></li>
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/jonas.svg"></div><!--image-->
-                            <p>Jonas Roßner</p>
-                            <!-- <p><a href="">whatever.de</a></p> -->
-                            <ul>
-                                <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/marius.svg"></div><!--image-->
-                            <p>Marius Schnabel</p>
-                            <!-- <p><a href="">whatever.de</a></p> -->
-                            <ul>
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
-                                <li><a class = "iconlink" href="https://twitter.com/MariusSchnabel"><img src="img/brand-icons/twitter.svg"><a></li>
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/lisa-s.svg"></div><!--image-->
-                            <p>Lisa Schulz</p>
-                            <!-- <p><a href="">whatever.de</a></p> -->
-                            <ul>
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/mary.svg"></div><!--image-->
-                            <p>Mariella Steeb</p>
-                            <p><a></a></p>
-                            <ul>
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/sina.svg"></div><!--image-->
-                            <p>Sina Schulz</p>
-                            <!-- <p><a href="http://www.skschulz.com">skschulz.com</a></p> -->
-                            <ul>
-                                <li><a class = "iconlink" href="http://www.skschulz.com"><img src="img/brand-icons/link.svg"></a></li>
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/vanni.svg"></div><!--image-->
-                            <p>Vanessa Boutzikoudi</p>
-                            <!-- <p><a href="">whatever.de</a></p> -->
-                            <ul>
-                               <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/jose.svg"></div><!--image-->
-                            <p>Jose Avila</p>
-                            <p><a></a></p>
-                            <ul>
-                            <!--     <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/baris.svg"></div><!--image-->
-                            <p>Baris Camli</p>
-                            <p><a></a></p>
-                            <ul>
-                               <!--  <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/ronja.svg"></div><!--image-->
-                            <p>Ronja Bäurlen</p>
-                            <!-- <p><a href="https://ronjabaeurlen.myportfolio.com">ronjabaeurlen.myportfolio.com</a></p> -->
-                            <ul>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
-                                <li><a class = "iconlink" href="https://ronjabaeurlen.myportfolio.com/"><img src="img/brand-icons/link.svg"></a></li>
-                                <li><a class = "iconlink" href=" https://www.instagram.com/bae_ronnie/"><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href="https://twitter.com/RBaurlen"><img src="img/brand-icons/twitter.svg"><a></li>
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/rana.svg"></div><!--image-->
-                            <p>Rana Cakir</p>
-                            <!-- <p><a href="http://ranacakir.de">ranacakir.de</a></p> -->
-                            <ul>
-                                <li><a class = "iconlink" href="http://ranacakir.de"><img src="img/brand-icons/link.svg"></a></li>
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/lisa.svg"></div><!--image-->
-                            <p>Lisa Thiel</p>
-                            <!-- <p><a href="https://lisathiel.wixsite.com/portfolio">lisathiel.wixsite.com/portfolio</a></p> -->
-                            <ul>
-                                <li><a class = "iconlink" href="https://lisathiel.wixsite.com/portfolio"><img src="img/brand-icons/link.svg"></a></li>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/hilda.svg"></div><!--image-->
-                            <p>Hilda Kalyoncu</p>
-                            <!-- <p><a href="http://hilda-kalyoncu.de">hilda-kalyoncu.de</a></p> -->
-                            <ul>
-                                 <li><a class = "iconlink" href="http://hilda-kalyoncu.de"><img src="img/brand-icons/link.svg"></a></li>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
-                                <li><a class = "iconlink" href="https://twitter.com/hildakalyoncu"><img src="img/brand-icons/twitter.svg"><a></li>
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/julian.svg"></div><!--image-->
-                            <p>Julian Grüneberg</p>
-                            <!-- <p><a href="http://juliangrueneberg.com">juliangrueneberg.com</a></p> -->
-                            <ul>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li> -->
-                                <li><a class = "iconlink" href="http://juliangrueneberg.com"><img src="img/brand-icons/link.svg"></a></li>
-                                <li><a class = "iconlink" href="https://www.instagram.com/dschules_/"><img src="img/brand-icons/instagram.svg"></a></li>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/laura.svg"></div><!--image-->
-                            <p>Laura Humpfer</p>
-                            <!-- <p><a href="">whatever.de</a></p> -->
-                            <ul>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/emily.svg"></div><!--image-->
-                            <p>Emily Jäger</p>
-                            <p><a></a></p>
-                            <ul>
-                                <!-- <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/kai-m.svg"></div><!--image-->
-                            <p>Kai Magnus Müller</p>
-                            <!-- <p><a href="http://www.kaimagnus.de">kaimagnus.de</a></p> -->
-                            <ul>
-                                <li><a class = "iconlink" href="http://www.kaimagnus.de"><img src="img/brand-icons/link.svg"></a></li>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
-                                <li><a class = "iconlink" href="https://twitter.com/_kaimagnus"><img src="img/brand-icons/twitter.svg"><a></li>
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/martin.svg"></div><!--image-->
-                            <p>Martin Wehl</p>
-                            <!-- <p><a href="">martinwehl.de</a></p> -->
-                            <ul>
-                                <li><a class = "iconlink" href="http://martinwehl.de"><img src="img/brand-icons/link.svg"><a></li>
-                                <li><a class = "iconlink" href="https://www.instagram.com/martinwehl/"><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href="https://twitter.com/martin_wehl"><img src="img/brand-icons/twitter.svg"><a></li>
-                            </ul>
-                        </div>
-                        <div class = "teammember">
-                            <div ><img src="img/team/selina.svg"></div><!--image-->
-                            <p>Selina Bauder</p>
-                             <p><a></a></p>
-                            <ul>
-                                <!--<li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></ a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"><a></li> -->
-                            </ul>
-                        </div>
-                    </div>
-                    <h1 id= "acknowledgement">Acknowledgement</h1>
-                    <ul>
-                        <li><a href="fontself maker for photoshop cc crack">Franz von Fontself</a></li>
-                        <li><a href="https://github.com/milesj/emojibase">Emojibase</a></li>
-                    </ul>
+                    </article>
+                    <article id="acknowledgement">
+                        <h1 id= "acknowledgement">Acknowledgement</h1>
+                        <ul>
+                            <li><a href="https://www.fontself.com" target="_blank">Franz von Fontself</a></li>
+                            <li><a href="https://github.com/milesj/emojibase" target="_blank">Emojibase</a></li>
+                        </ul>
+                    </article>
                     <!-- <div class = "descriptive-text"><a href="">Franz von Fontselfmaker</a><br><a href="">Emojibase Lib</a>
                     </div> -->
                 </div>
@@ -323,14 +345,60 @@
             <footer>
                 <div>
                     <p><!-- ©  -->OpenMoji 2018 · </p>
-                    <p><a href="">Legal</a></p>
+                    <p><a id="impressumLink" href="">Legal</a></p>
                 </div>
                 <ul>
-                    <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                    <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                    <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
+                    <li><a class="iconlink" href="https://twitter.com/share?url=https://www.github.com/hfg-gmuend/openmoji/releases/latest&amp;text=OpenMojis&amp;hashtags=openmoji" target="_blank"><img src="img/brand-icons/twitter.svg"></a></li>
+                    <!-- <li><a class="iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
+                    <li><a class="iconlink" href="http://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest"><img src="img/brand-icons/facebook.svg" target="_blank"></a></li>
+                    <li><a class="iconlink" href="mailto:?Subject=OpenMojis&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank"><img src="data/black/svg/1F4E7.svg"></a></li>
                 </ul>
             </footer>
+        </div>
+
+        <!-- Popover for impressum -->
+        <div id="impressum-wrapper">
+            <div class="popover-wrapper">
+                <div class="popover">
+                    <div id="impressum">
+                        <h2>Haftungsausschluss (Disclaimer)</h2>
+
+                        <h3>Haftung für Inhalte</h3>
+
+                        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<p><br>
+
+                        <h3>Haftung für Links</h3>
+
+                        <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p><br>
+
+                        <h3>Urheberrecht</h3>
+
+                        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p><br>
+
+                        <h2>Datenschutzerklärung</h2>
+
+                        <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+
+                        <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+
+                        <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p><br>
+
+                        <p>Quellenangaben: <a href="https://www.e-recht24.de" target="_blank">e-recht24.de</a></p>
+                    </div>
+                    <div class="close" id="close-impressum-wrapper">
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                <g id="Detail-iconpreview-big" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47" stroke-width="3">
+                                    <g id="X" transform="translate(1342.000000, 121.000000)">
+                                        <path d="M13.5,0.5 L0.990003997,13.009996 L13.5,0.5 Z" id="Line-2"></path>
+                                        <path d="M13.5,13.5 L0.990003997,0.990003997 L13.5,13.5 Z" id="Line-2"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

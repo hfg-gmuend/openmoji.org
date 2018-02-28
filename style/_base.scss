@@ -52,14 +52,14 @@ p {
 	color: $clr-grey-light;
 }
 
-article + article{
+article:not(:last-child){
     margin-bottom: $gap-large;
 }
 
-::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
+// ::-webkit-scrollbar {
+//     width: 0px;  /* remove scrollbar space */
+//     background: transparent;  /* optional: just make scrollbar invisible */
+// }
 
 .container{
     display: grid;
@@ -67,7 +67,7 @@ article + article{
                          "nav content"
                          "footer footer";
     grid-template-columns: minmax(200px, 300px) auto;
-    grid-template-rows: minmax(40px, $footer-header-max-height) minmax(65%, auto) minmax(40px, $footer-header-max-height);
+    grid-template-rows: minmax(40px, $footer-header-max-height) minmax(65%, auto) auto;
     height: 100%;
 }
 
@@ -112,7 +112,7 @@ a{
 
 button {
     cursor: pointer;
-	padding: 0px 20px;
+	padding: 0px $gap-small;
     margin: 0;
     font-size: $fnt-sz-md;
     color: $clr-white;
@@ -122,6 +122,7 @@ button {
     min-height: 40px;
     border-radius: 20px;
     min-width: 80px;
+    white-space: nowrap;
 }
 
 .copy-to-clipboard {
@@ -161,7 +162,6 @@ input[type='radio']{
 main{
     grid-area: content;
     margin-top: $gap-reg;
-    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -185,4 +185,9 @@ svg{
 
 .clear{
     clear: both;
+}
+
+#impressum {
+    overflow: auto;
+    padding-right: $gap-reg;
 }
