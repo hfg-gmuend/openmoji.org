@@ -94,6 +94,14 @@ a{
     color: white;
 }
 
+.largebutton{
+    margin-bottom: $gap-large;
+    align-self: flex-start;
+    padding: $gap-xs $gap-reg;
+    font-size: $fnt-sz-lg;
+    border-radius: 29px;
+}
+
 .redlink {
 	color: $clr-red-dark;
 
@@ -188,6 +196,5 @@ svg{
 }
 
 #impressum {
-    overflow: auto;
     padding-right: $gap-reg;
 }

@@ -39,9 +39,6 @@
 				position: relative;
 				margin-bottom: $gap-med;
 				margin-right: $gap-large;
-				p{
-					color: $clr-grey-dark;
-				}
 				div {
 					// width: 80%;
 					margin: auto;
@@ -53,8 +50,8 @@
 					}
 				}
 				ul{
-						// position: absolute;
-						// right: $gap-med;
+					// position: absolute;
+					// right: $gap-med;
 					padding-left: 0;
 					padding-top: $gap-reg;
 					li{
@@ -62,6 +59,12 @@
 						height: 20px;
 						display: inline-block;
 						padding-right: $gap-xs;
+					}
+				}
+
+				.team{
+					p{
+						font-size: $fnt-sz-s;
 					}
 				}
 			}

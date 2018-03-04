@@ -73,6 +73,13 @@ a {
 .buttonlink:hover {
   color: white; }
 
+.largebutton {
+  margin-bottom: 100px;
+  align-self: flex-start;
+  padding: 10px 30px;
+  font-size: 30px;
+  border-radius: 29px; }
+
 .redlink {
   color: #D22F29; }
   .redlink:hover {
@@ -145,7 +152,6 @@ svg {
   clear: both; }
 
 #impressum {
-  overflow: auto;
   padding-right: 30px; }
 
 .popover-wrapper {
@@ -315,6 +321,12 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: flex-end; }
+    header .right button {
+      display: inline-flex;
+      justify-content: center;
+      width: 200px; }
+      header .right button div + div {
+        margin-left: 20px; }
   header #gh-link {
     height: 20px;
     padding-left: 30px; }
@@ -328,7 +340,8 @@ header {
     header .dropdown .dropdown-content {
       position: absolute;
       right: 0;
-      display: none; }
+      display: none;
+      width: 100%; }
       header .dropdown .dropdown-content ul {
         display: block;
         margin-top: 20px;
@@ -337,11 +350,22 @@ header {
         box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
         border-radius: 8px; }
         header .dropdown .dropdown-content ul li {
-          min-height: 40px;
           margin: 0;
-          display: flex;
-          align-items: center;
-          white-space: nowrap; }
+          padding: 11.5px 0px;
+          height: auto; }
+          header .dropdown .dropdown-content ul li > * {
+            font-size: 17px; }
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  border-color: #fff;
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 2px; }
+  .arrow.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); }
 
 .active-tab {
   border-bottom: 4px solid #E95A47; }
@@ -424,8 +448,6 @@ footer {
       position: relative;
       margin-bottom: 50px;
       margin-right: 100px; }
-      #about-wrapper #about-content #team-container .teammember p {
-        color: #242424; }
       #about-wrapper #about-content #team-container .teammember div {
         margin: auto;
         padding-bottom: 10px; }
@@ -439,6 +461,8 @@ footer {
           height: 20px;
           display: inline-block;
           padding-right: 10px; }
+      #about-wrapper #about-content #team-container .teammember .team p {
+        font-size: 14px; }
 
 #styleguide-wrapper {
   height: 100%; }
@@ -495,7 +519,7 @@ footer {
   height: 100%;
   overflow: auto; }
   #library-content h2 {
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     margin-bottom: 0;
     position: sticky;
     top: 0;
@@ -607,9 +631,9 @@ footer {
         margin-bottom: 50px; }
       #home-wrapper #landing .content .emoji {
         position: absolute;
-        width: 40px;
-        margin-left: -20px;
-        margin-top: -20px; }
+        width: 50px;
+        margin-left: -25px;
+        margin-top: -25px; }
       #home-wrapper #landing .content .emoji-search {
         max-width: 500px;
         height: 50px; }
@@ -657,7 +681,7 @@ footer {
     display: flex;
     padding-top: 240px;
     box-sizing: border-box;
-    overflow-x: hidden; }
+    overflow: hidden; }
     #home-wrapper #big-overview .col {
       width: 50%; }
       #home-wrapper #big-overview .col.left {
@@ -672,12 +696,10 @@ footer {
       height: calc(100vh - 120px);
       display: flex; }
       #home-wrapper #big-overview .section img {
+        height: 100%;
         width: 500px;
         min-width: 250px;
         margin-right: 100px; }
-        #home-wrapper #big-overview .section img.large {
-          width: 1000px;
-          min-width: 500px; }
       #home-wrapper #big-overview .section .description {
         align-self: center;
         display: grid;
@@ -694,9 +716,6 @@ footer {
     background-color: #f5f6f7; }
     #home-wrapper #categories-showcase h1 {
       margin-bottom: 30px; }
-    #home-wrapper #categories-showcase button {
-      margin-bottom: 100px;
-      align-self: flex-start; }
     #home-wrapper #categories-showcase .content-wrapper {
       display: block;
       min-height: 0; }
@@ -706,20 +725,26 @@ footer {
       margin-bottom: 20px; }
       #home-wrapper #categories-showcase .content #categories .row {
         justify-content: space-around; }
+      #home-wrapper #categories-showcase .content #categories a.active-tab {
+        color: #000000; }
+        #home-wrapper #categories-showcase .content #categories a.active-tab > * {
+          margin-bottom: 6px; }
+      #home-wrapper #categories-showcase .content #categories a > * {
+        margin-bottom: 10px; }
     #home-wrapper #categories-showcase .content .row {
       display: inline-flex;
       flex-wrap: wrap;
-      width: 100%; }
+      width: 100%;
+      justify-content: center; }
       #home-wrapper #categories-showcase .content .row .categories-item {
         max-height: 250px;
         min-width: 150px;
-        box-sizing: border-box; }
-      #home-wrapper #categories-showcase .content .row a.active-tab {
-        color: #000000; }
-        #home-wrapper #categories-showcase .content .row a.active-tab > * {
-          margin-bottom: 6px; }
-      #home-wrapper #categories-showcase .content .row a > * {
-        margin-bottom: 10px; }
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; }
+        #home-wrapper #categories-showcase .content .row .categories-item img {
+          height: 100%; }
   #home-wrapper #footer-wrapper {
     background-color: #5EB0CF; }
     #home-wrapper #footer-wrapper .content-wrapper {
@@ -737,8 +762,8 @@ footer {
       #home-wrapper #footer-wrapper #interest .buttongroup {
         display: inline-flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        width: 50%;
+        justify-content: space-around;
+        width: 85%;
         align-items: center; }
         #home-wrapper #footer-wrapper #interest .buttongroup h1 {
           color: #fff;

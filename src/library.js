@@ -119,6 +119,7 @@ $(document).ready(function() {
 		}
 
 		// show fuseSearchStr in HTML
+		if(filter && Object.keys(filter).length == 1 && filter.author) fuseSearchStr = "Author: " + fuseSearchStr;
 		$( "#selected-category" ).text(fuseSearchStr);
 
 		// check if show color is selected and add emojis accordingly
@@ -273,7 +274,7 @@ $(document).ready(function() {
 		$( "#color-emoji-image-preview" ).attr("src", "data/color/svg/" + currEmoji[0].hexcode + ".svg");
 		// update description
 		$( "#description h2" ).text(currEmoji[0].annotation);
-		$( "#description #unicode" ).text(currEmoji[0].hexcode);
+		$( "#description #unicode" ).text(currEmoji[0].hexcode).attr("href", "http://www.decodeunicode.org/en/u+" + currEmoji[0].hexcode);
 		$( "#description #author" ).text(currEmoji[0].hfg_author);
 		$( "#description #category" ).text(currEmoji[0].group);
 		$( "#description #subcategory" ).text(currEmoji[0].subgroups);
@@ -359,7 +360,9 @@ $(document).ready(function() {
 	});
 
 	// author click listener to filter emoji list by author
-	$( "#author" ).click(function() {
+	$( "#author" ).click(function(e) {
+		e.preventDefault();
+
 		exposeListFilter( {author: $( this ).text(), search: undefined, group: undefined, emoji: undefined} );
 		$( "#emoji-detail-wrapper .popover-wrapper" ).fadeOut(400);
 	});

@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	//------------ Initialization ------------
+	if($( "header .emoji-search" ).is(":visible") && $( window ).scrollTop() - $( "header" ).offset().top != 0) $( "header .emoji-search" ).hide();
+
+
 	//------------ Emoji Cloud ------------
 	var EMOJI_LIST;
 	const EMOJI_POSITIONS = getPositions( 1.4, 300 );
@@ -24,7 +28,7 @@ $(document).ready(function() {
 			var yPos = EMOJI_POSITIONS[i].y + 50;
 
 			// add emoji to html
-			if( !(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100) ) $( "#landing .content" ).append("<img class='emoji' src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'>");
+			if( !(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100) ) $( "#landing .content" ).append("<a href='/library.html?emoji=" + shuffledList[i].hexcode + "'><img class='emoji' src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
 		}
 	}
 
@@ -48,6 +52,25 @@ $(document).ready(function() {
 	}
 
 
+	//------------ Big overview scroll animation ------------
+	var scrollMagicController = new ScrollMagic.Controller();
+	var emoji_pool = {emoji_left: ["1F420", "1F993"],
+						emoji_right: ["1F4EB", "1F6F8", "1F37C"]}
+
+	// set random emojis for showcase
+	$( "#big-emoji-left" ).attr("src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_left)[0] + ".svg");
+	$( "#big-emoji-right" ).attr("src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_right)[0] + ".svg");
+
+	var emoji_left = new ScrollMagic.Scene({triggerElement: "#big-emoji-left-start", duration: Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top)})
+												.setPin("#big-emoji-left")
+												.setTween("#big-emoji-left", {scale: 2.5, transformOrigin:"100% 50%"})
+												.addTo(scrollMagicController);
+	var emoji_right = new ScrollMagic.Scene({triggerElement: "#big-emoji-right-start", duration: Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top)})
+												.setPin("#big-emoji-right")
+												.setTween("#big-emoji-right", {scale: 2.5, transformOrigin:"0% 50%"})
+												.addTo(scrollMagicController);
+
+
 	//------------ Category showcase ------------
 	// Object that holds all Categories with their html display name and corresponding group in the emoji list 
 	const CATEGORIES = {"Interaction": "interaction",
@@ -66,12 +89,18 @@ $(document).ready(function() {
 		for(var category in CATEGORIES) {
 			if(CATEGORIES.hasOwnProperty(category)) {
 				if(firstCategory) {
-					html += "<a class='categories-item active-tab' data-category='" + CATEGORIES[category] + "' href=''>"
-							+ "<h2>" + category + "</h2></a>";
+					html += "<div class='categories-item'>"
+								+ "<a class='active-tab' data-category='" + CATEGORIES[category] + "' href=''>"
+									+ "<h2>" + category + "</h2>"
+								+ "</a>"
+							+ "</div>";
 					firstCategory = false;
 				} else {
-					html += "<a class='categories-item' data-category='" + CATEGORIES[category] + "' href=''>"
-							+ "<h2>" + category + "</h2></a>";
+					html += "<div class='categories-item'>"
+								+ "<a data-category='" + CATEGORIES[category] + "' href=''>"
+									+ "<h2>" + category + "</h2>"
+								+ "</a>"
+							+ "</div>";
 				}
 			}
 		}
@@ -109,7 +138,7 @@ $(document).ready(function() {
 			// break out of loop if array doesn't have new emojis anymore
 			if(i >= filteredList.length) break;
 
-			html += "<img class='categories-item' src='data/color/svg/" + filteredList[i].hexcode + ".svg'>";
+			html += "<a class='categories-item' href='/library.html?emoji=" + filteredList[i].hexcode + "'><img src='data/color/svg/" + filteredList[i].hexcode + ".svg'></a>";
 		}
 		html += "</div>";
 
@@ -117,7 +146,7 @@ $(document).ready(function() {
 		$( "#categories-showcase #examples" ).append(html);
 
 		// set element width based on column count
-		$( "img.categories-item" ).css("width", 100 / Object.keys(CATEGORIES).length + "%");
+		$( "#categories-showcase .categories-item" ).css("width", 100 / Object.keys(CATEGORIES).length + "%");
 	}
 
 	function slideCategory() {
@@ -148,7 +177,7 @@ $(document).ready(function() {
 	});
 
 	// switch category when clicked
-	$( "#categories-showcase" ).on("click", "a.categories-item", function(e) {
+	$( "#categories-showcase" ).on("click", ".categories-item a", function(e) {
 		e.preventDefault();
 
 		// check if clicked item is already active
@@ -158,7 +187,6 @@ $(document).ready(function() {
 
 			// reset categorySlideInterval
 			clearInterval(categorySlideInterval);
-			categorySlideInterval = setInterval(slideCategory, CATEGORY_SLIDE_INTERVAL_TIMEOUT);
 		}
 	});
 
@@ -167,5 +195,21 @@ $(document).ready(function() {
 		// reset min-height to current height of categories showcase container element to avoid jumpy transition when selected category changes
 		$( "#categories-showcase .content" ).css("min-height", "");
 		$( "#categories-showcase .content" ).css("min-height", $( "#categories-showcase .content" ).height());
+
+		// change duration of scrollmagic animations
+		emoji_left.duration(Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top));
+		emoji_right.duration(Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top));
+	});
+
+	// window scroll listener
+	$( window ).scroll(function() {
+		// toggle visibility of header search field based on position
+		var headerOffset = $( window ).scrollTop() - $( "header" ).offset().top;
+
+		if(!$( "header .emoji-search" ).is(":visible") && headerOffset == 0) {
+			$( "header .emoji-search" ).fadeIn(150);
+		} else if($( "header .emoji-search" ).is(":visible") && headerOffset != 0) {
+			$( "header .emoji-search" ).fadeOut(150);
+		}
 	});
 });

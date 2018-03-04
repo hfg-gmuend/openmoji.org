@@ -42,9 +42,9 @@
 
 			.emoji{
 				position: absolute;
-				width: 40px;
-				margin-left: -20px;
-				margin-top: -20px;
+				width: 50px;
+				margin-left: -25px;
+				margin-top: -25px;
 			}
 
 			.emoji-search{
@@ -116,7 +116,7 @@
 		display: flex;
 		padding-top: ($gap-large + $gap-small) * 2;
 		box-sizing: border-box;
-		overflow-x: hidden;
+		overflow: hidden;
 
 		.col{
 			width: 50%;
@@ -142,14 +142,10 @@
 			display: flex;
 
 			img{
+				height: 100%;
 				width: 500px;
 				min-width: 250px;
 				margin-right: $gap-large;
-
-				&.large{
-					width: 1000px;
-					min-width: 500px;
-				}
 			}
 
 			.description{
@@ -178,11 +174,6 @@
 			margin-bottom: $gap-reg;
 		}
 
-		button{
-			margin-bottom: $gap-large;
-			align-self: flex-start;
-		}
-
 		.content-wrapper{
 			display: block;
 			min-height: 0;
@@ -201,18 +192,6 @@
 				.row{
 					justify-content: space-around;
 				}
-			}
-
-			.row{
-				display: inline-flex;
-				flex-wrap: wrap;
-				width: 100%;
-
-				.categories-item{
-					max-height: 250px;
-					min-width: 150px;
-					box-sizing: border-box;
-				}
 
 				a{
 					&.active-tab{
@@ -223,6 +202,26 @@
 					}
 					> *{
 						margin-bottom: $gap-xs;
+					}
+				}
+			}
+
+			.row{
+				display: inline-flex;
+				flex-wrap: wrap;
+				width: 100%;
+				justify-content: center;
+
+				.categories-item{
+					max-height: 250px;
+					min-width: 150px;
+					box-sizing: border-box;
+					display: flex;
+					justify-content: center;
+					align-items: flex-start;
+
+					img{
+						height: 100%;
 					}
 				}
 			}
@@ -252,8 +251,8 @@
 			.buttongroup{
 				display: inline-flex;
 				flex-wrap: wrap;
-				justify-content: space-between;
-				width: 50%;
+				justify-content: space-around;
+				width: 85%;
 				align-items: center;
 
 				h1{
