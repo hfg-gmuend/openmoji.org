@@ -39,8 +39,8 @@
 		}
 	}
 	.border{
-		padding: $gap-reg; 
-		border: solid 1px $bgclr-grey; 
+		padding: $gap-reg;
+		border: solid 1px $bgclr-grey;
 		border-radius: 5px;
 		box-sizing: border-box;
 	}
@@ -49,15 +49,18 @@
 #styleguide-content{
 	@extend %content;
 
-	img{
+	img {
 		width: 100%;
 	}
-	
-	h1{
+
+	h1 {
 		margin-bottom: $gap-reg;
 	}
 
-	h2{
+	h2 {
 		margin-bottom: $gap-reg;
+	}
+	.download-styleguide-asset button {
+		margin-bottom: $gap-reg * 2;
 	}
 }
