@@ -116,6 +116,11 @@ a{
     &:hover {
         opacity: 1;
     }
+
+    > img {
+        display: block;
+        height: 100%;
+    }
 }
 
 button {
