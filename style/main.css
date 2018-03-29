@@ -331,7 +331,7 @@ header {
       header .right button div + div {
         margin-left: 20px; }
   header #gh-link {
-    height: 20px;
+    height: 25px;
     padding-left: 30px; }
     header #gh-link img {
       height: 100%; }
@@ -418,8 +418,8 @@ footer {
     display: inline-flex;
     align-items: center; }
     footer ul li {
-      width: 20px;
-      height: 20px; }
+      width: 25px;
+      height: 25px; }
     footer ul li + li {
       margin-left: 20px; }
 
