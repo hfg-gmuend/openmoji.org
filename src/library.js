@@ -283,7 +283,7 @@ $(document).ready(function() {
 		$( "#description .path a:nth-child(3)" ).text(currEmoji[0].subgroups);
 		// update download links
 		$( "#svg-download-btn" ).attr("href", path + "/svg/" + currEmoji[0].hexcode + ".svg");
-		$( "#png-download-btn" ).attr("href", path + "/72x72/" + currEmoji[0].hexcode + ".png");
+		$( "#png-download-btn" ).attr("href", path + "/618x618/" + currEmoji[0].hexcode + ".png");
 
 		// update prev and next
 		if(currentList.length > 1) {
