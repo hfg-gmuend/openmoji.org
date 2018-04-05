@@ -51,7 +51,7 @@ article:not(:last-child) {
 
 .container {
   display: grid;
-  grid-template-areas: "header header" "nav content" "footer footer";
+  grid-template-areas: "header header" "nav content" "footer footer";
   grid-template-columns: minmax(200px, 300px) auto;
   grid-template-rows: minmax(40px, 120px) minmax(65%, auto) auto;
   height: 100%; }
@@ -138,7 +138,7 @@ main {
   overflow-x: hidden;
   overflow-y: auto; }
 
-#about-wrapper #about-content, #styleguide-content, #home-wrapper .content-wrapper, #home-wrapper #categories-showcase .content {
+#about-wrapper #about-content, #samples-wrapper #samples-content, #styleguide-content, #home-wrapper .content-wrapper, #home-wrapper #categories-showcase .content {
   max-width: 900px;
   position: relative; }
 
@@ -466,6 +466,17 @@ footer {
           padding-right: 10px; }
       #about-wrapper #about-content #team-container .teammember .team p {
         font-size: 14px; }
+
+#samples-wrapper {
+  height: 100%; }
+  #samples-wrapper .container {
+    grid-template-areas: "header header" "content content" "footer footer"; }
+  #samples-wrapper .sample {
+    width: 100%; }
+  #samples-wrapper .caption {
+    margin-top: 1em;
+    margin-left: 2em;
+    height: 14em; }
 
 #styleguide-wrapper {
   height: 100%; }

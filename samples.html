@@ -1,30 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OpenMoji · Samples</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OpenMoji · Library</title>
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/icon.png" />
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
-</head>
+    </head>
 <body>
-    <div id="library-wrapper">
+    <div id="samples-wrapper">
         <div class="container">
             <header>
-                    <ul>
-                        <li><a href="index.html">OpenMoji</a></li>
-                        <li class="active-tab"><a href="library.html">Library</a></li>
-                        <li><a href="styleguide.html">Participate</a></li>
-                        <li><a href="samples.html">Samples</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                <div class="emoji-search">
-                    <img src="img/search.svg">
-                    <input class="search" type="text" name="emojisearch" placeholder="author, category or emoji …">
-                </div>
+                <ul>
+                    <li><a href="index.html">OpenMoji</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="styleguide.html">Participate</a></li>
+                    <li class="active-tab"><a href="samples.html">Samples</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
                 <div class="right">
-                    <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "img/brand-icons/github_hi.svg"></a>
+                    <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "img/brand-icons/github.svg"></a>
                     <div class="dropdown">
                         <button><div>Get OpenMojis</div><div><i class="arrow down"></i></div></button>
                         <div class="dropdown-content">
@@ -44,28 +49,47 @@
                     <!-- <div class="clear"></div> -->
                 </div>
             </header>
-            <nav class="nav-left">
-                <div id="show-color">show color
-                    <label class="switch">
-                        <input type="checkbox" checked="true">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <ul id="nav-items">
-                    <li data-item="all OpenMojis">
-                        <input id="all OpenMojis" type="radio" name="category" value="all OpenMojis" checked>
-                        <label for="all OpenMojis">all OpenMojis</label>
-                    </li>
-                </ul>
-            </nav>
             <main>
-                <div id="library-content" class="content">
-                        <h2 id ="selected-category">all OpenMojis</h2>
-                        <div class="emoji_grid_wrapper">
-                            <div class="emoji_grid"></div>
-                        </div>
-                </div>
+                <object data="/img/samples/climbing.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">person climbing</p>
+
+                <object data="/img/samples/pasture.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">cow, deciduous tree, ewe</p>
+
+                <object data="/img/samples/jobs.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">man mechanic, woman pilot, woman firefighter,<br>
+                    woman technologist, man scientist, police officer</p>
+
+                <object data="/img/samples/ufo.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">shooting star, flying saucer</p>
+
+                <object data="/img/samples/balls.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">baseball, american football, tennis<br>
+                    rugby football, soccer ball, basketball</p>
+
+                <object data="/img/samples/robot.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">robot face</p>
+
+                <object data="/img/samples/champagne.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">bottle with popping cork</p>
+
+                <object data="/img/samples/sea.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">blowfish, fish, goldfish, shark, tropical fish</p>
+
+                <object data="/img/samples/fish.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">fishing pole</p>
+
+
+                <object data="/img/samples/traffic.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">sport utility vehicle, automobile, delivery truck,<br>
+                    minibus, articulated lorry, taxi, police car</p>
+
+                <object data="/img/samples/info.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">airplane departure, railway car, articulated lorry, ship<br>
+                    eye, automobile, pill, deciduous tree, pick, green apple, cooked rice, droplet</p>
+
+                <object data="/img/samples/zombie.svg" type="image/svg+xml" class="sample"></object>
+                <p class="caption">zombie</p>
             </main>
             <footer>
                 <div>
@@ -80,98 +104,6 @@
                     <li><a class="iconlink" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="img/brand-icons/pinterest.svg" target="_blank"></a></li>
                 </ul>
             </footer>
-        </div>
-
-        <!-- Popover for detailed view -->
-        <div id="emoji-detail-wrapper">
-            <div class="popover-wrapper">
-                <div class="popover">
-                    <div id="preview">
-                        <!-- <div id="prev-icon"><- -->
-                        <!-- </div>     -->
-                        <div id = "active-emoji-selection">
-                            <!--Set main rmoji-->
-                            <img id="main-emoji-image" src="img/preview-big.png">
-                            <div class = "small-emoji-preview">
-                                <div class="next-or-prev prev-emoji" id="">
-                                    <img class="arrow" src="img/from-arrow.svg">
-                                    <img class="icon-img" src="img/preview-big.png">
-                                </div>
-                                <div id="emoji-preview">
-                                    <div id="outline-emoji-preview">
-                                        <img id="outline-emoji-image-preview" class="emoji-preview-image" src="img/preview-ol-small.png">
-                                    </div>
-                                    <div class="highlight" id="color-emoji-preview">
-                                        <img id="color-emoji-image-preview" class="emoji-preview-image" src="img/preview-filled-small.png">
-                                    </div>
-                                </div>
-                                <div class="next-or-prev next-emoji" id="">
-                                    <img class="icon-img" src="img/preview-big.png">
-                                    <img class="arrow" src="img/arrow-to.svg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id = "description">
-                        <div class="description-top">
-                            <div class="path">
-                                <a href="">all OpenMojis</a> / <a href="">people</a> / <a href="">sports</a>
-                            </div>
-                            <div class="close" id ="close-detailview">
-                                <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-                                        <g id="Detail-iconpreview-big" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47" stroke-width="3">
-                                            <g id="X" transform="translate(1342.000000, 121.000000)">
-                                                <path d="M13.5,0.5 L0.990003997,13.009996 L13.5,0.5 Z" id="Line-2"></path>
-                                                <path d="M13.5,13.5 L0.990003997,0.990003997 L13.5,13.5 Z" id="Line-2"></path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- details zu den icons-->
-                        <div class="description-bottom">
-                            <h2>Skier</h2>
-                            <table>
-                                <tr>
-                                    <td>Unicode</td>
-                                    <td><a id="unicode" class="redlink" href="http://www.decodeunicode.org/en/u+26F7" target="_blank">26F7</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Author</td>
-                                    <td><a id="author" class="redlink" href="">Name Ofauthor</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Category</td>
-                                    <td><a id="category" class="redlink" href="">Name Ofauthor</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Subcategory</td>
-                                    <td><a id="subcategory" class="redlink" href="">Name Ofauthor</a></td>
-                                </tr>
-                            </table>
-                            <div id = "buttoncontainer">
-                                <a id="svg-download-btn" href="" download>
-                                    <button type="button">SVG</button>
-                                </a>
-                                <a id="png-download-btn" href="" download>
-                                    <button type="button">PNG</button>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- <h4 id="sharetitle"> share </h4> -->
-                        <!-- <div id="shareitems">
-                            <ul>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
-                            </ul>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Popover for impressum -->
@@ -227,5 +159,5 @@
 <script src="src/jquery-3.3.1.min.js" rel="script"></script>
 <script src="data/hfg-emojis-list.json" rel="script"></script>
 <script src="src/general.js" rel="script"></script>
-<script src="src/library.js" rel="script"></script>
 </html>
+
