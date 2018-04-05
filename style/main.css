@@ -51,7 +51,7 @@ article:not(:last-child) {
 
 .container {
   display: grid;
-  grid-template-areas: "header header" "nav content" "footer footer";
+  grid-template-areas: "header header" "nav content" "footer footer";
   grid-template-columns: minmax(200px, 300px) auto;
   grid-template-rows: minmax(40px, 120px) minmax(65%, auto) auto;
   height: 100%; }
@@ -331,7 +331,7 @@ header {
       header .right button div + div {
         margin-left: 20px; }
   header #gh-link {
-    height: 25px;
+    height: 30px;
     padding-left: 30px; }
     header #gh-link img {
       height: 100%; }
@@ -418,8 +418,8 @@ footer {
     display: inline-flex;
     align-items: center; }
     footer ul li {
-      width: 25px;
-      height: 25px; }
+      width: 30px;
+      height: 30px; }
     footer ul li + li {
       margin-left: 20px; }
 
