@@ -447,11 +447,14 @@ footer {
     margin-right: -100px;
     margin-bottom: -50px; }
     #about-wrapper #about-content #team-container .teammember {
+      display: flex;
+      flex-direction: column;
       width: 150px;
       position: relative;
       margin-bottom: 50px;
       margin-right: 100px; }
       #about-wrapper #about-content #team-container .teammember div {
+        width: 100%;
         margin: auto;
         padding-bottom: 10px; }
         #about-wrapper #about-content #team-container .teammember div img {
@@ -464,8 +467,10 @@ footer {
           height: 20px;
           display: inline-block;
           padding-right: 10px; }
-      #about-wrapper #about-content #team-container .teammember .team p {
-        font-size: 14px; }
+      #about-wrapper #about-content #team-container .teammember .team {
+        flex: 1; }
+        #about-wrapper #about-content #team-container .teammember .team p {
+          font-size: 14px; }
 
 #samples-wrapper {
   height: 100%; }
