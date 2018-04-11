@@ -13,6 +13,10 @@
 	#about-content{
 		@extend %content;
 
+		p a, ul a {
+			color: $clr-yellow-light;
+		}
+
 		ul{
 			padding-left: $gap-reg;
 

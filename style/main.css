@@ -431,6 +431,8 @@ footer {
     background-color: #EEB41A; }
   #about-wrapper .active-tab {
     border-color: #EEB41A; }
+  #about-wrapper #about-content p a, #about-wrapper #about-content ul a {
+    color: #EEB41A; }
   #about-wrapper #about-content ul {
     padding-left: 30px; }
     #about-wrapper #about-content ul li {
