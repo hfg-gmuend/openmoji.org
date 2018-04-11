@@ -22,7 +22,7 @@ li {
   list-style: none; }
 
 h1 {
-  font-size: 47px;
+  font-size: 50px;
   font-weight: 700;
   margin-bottom: 100px; }
 
@@ -51,7 +51,7 @@ article:not(:last-child) {
 
 .container {
   display: grid;
-  grid-template-areas: "header header" "nav content" "footer footer";
+  grid-template-areas: "header header" "nav content" "footer footer";
   grid-template-columns: minmax(200px, 300px) auto;
   grid-template-rows: minmax(40px, 120px) minmax(65%, auto) auto;
   height: 100%; }
@@ -382,19 +382,19 @@ header {
   position: relative; }
   .emoji-search img {
     left: 0px;
-    top: 6px;
+    top: 8px;
     position: absolute;
-    height: 70%;
+    height: 60%;
     width: auto;
     padding-right: 20px;
     opacity: 0.4; }
   .emoji-search input {
     background: none;
-    padding-left: 39px;
+    padding-left: 33px;
     border-radius: 20px;
     border: solid 1px #818080;
     font-size: 17px;
-    color: #818080;
+    color: #242424;
     transition: all 0.4s;
     width: 100%; }
     .emoji-search input:focus {
@@ -643,19 +643,31 @@ footer {
         width: 80%;
         max-width: 675px; }
       #home-wrapper #landing .content h1 {
+        font-size: 70px;
         margin-bottom: 20px; }
       #home-wrapper #landing .content h2 {
-        margin-bottom: 50px; }
+        margin-bottom: 35px; }
       #home-wrapper #landing .content .emoji {
         position: absolute;
         width: 50px;
         margin-left: -25px;
         margin-top: -25px; }
       #home-wrapper #landing .content .emoji-search {
-        max-width: 500px;
-        height: 50px; }
+        max-width: 450px;
+        height: 60px; }
+        #home-wrapper #landing .content .emoji-search img {
+          left: 0px;
+          top: 12px;
+          position: absolute;
+          height: 60%;
+          width: auto;
+          padding-right: 20px;
+          opacity: 0.4; }
         #home-wrapper #landing .content .emoji-search input {
-          padding-left: 50px; }
+          font-size: 23px;
+          background-color: #F2F1F0;
+          padding-left: 55px;
+          border: none; }
   #home-wrapper header {
     height: 120px;
     position: sticky;
@@ -780,18 +792,15 @@ footer {
         display: inline-flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        width: 85%;
+        width: 50%;
         align-items: center; }
         #home-wrapper #footer-wrapper #interest .buttongroup h1 {
           color: #fff;
           margin-bottom: 30px; }
         #home-wrapper #footer-wrapper #interest .buttongroup button {
-          background-color: #fff;
-          color: #92d3f5;
-          box-shadow: none; }
-        #home-wrapper #footer-wrapper #interest .buttongroup a:nth-child(odd) button {
           background-color: #92d3f5;
-          color: #fff; }
+          color: #fff;
+          box-shadow: none; }
     #home-wrapper #footer-wrapper footer p {
       color: #fff; }
     #home-wrapper #footer-wrapper footer a {

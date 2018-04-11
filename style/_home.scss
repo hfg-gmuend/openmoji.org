@@ -32,12 +32,13 @@
 				max-width: $content-max-width * 0.75;
 			}
 
-			h1{
+			h1 {
+				font-size: $fnt-sz-xxl;
 				margin-bottom: $gap-small;
 			}
 
 			h2{
-				margin-bottom: $gap-med;
+				margin-bottom: 35px;
 			}
 
 			.emoji{
@@ -48,11 +49,24 @@
 			}
 
 			.emoji-search{
-				max-width: 500px;
-				height: 50px;
+				max-width: 450px;
+				height: 60px;
+
+				img {
+					left: 0px;
+					top: 12px;
+					position: absolute;
+					height: 60%;
+					width: auto;
+					padding-right: $gap-small;
+					opacity: 0.4;
+				}
 
 				input{
-					padding-left: $gap-med;
+					font-size: 23px;
+					background-color: $bgclr-grey;
+					padding-left: 55px;
+					border: none;
 				}
 			}
 		}
@@ -252,23 +266,18 @@
 				display: inline-flex;
 				flex-wrap: wrap;
 				justify-content: space-around;
-				width: 85%;
+				width: 50%;
 				align-items: center;
 
 				h1{
 					color: $clr-white;
 					margin-bottom: $gap-reg;
 				}
+				
 				button{
-					background-color: $clr-white;
-					color: $clr-blue-super-light;
+					background-color: $clr-blue-super-light;
+					color: $clr-white;
 					box-shadow: none;
-				}
-				a:nth-child(odd){
-					button{
-						background-color: $clr-blue-super-light;
-						color: $clr-white;
-					}
 				}
 			}
 		}

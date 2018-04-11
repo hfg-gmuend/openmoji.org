@@ -126,24 +126,23 @@ header{
 	height: 40px;
 	position: relative;
 
-		img{
+		img {
 			left: 0px;
-			top: 6px;
+			top: 8px;
 			position: absolute;
-			height: 70%;
+			height: 60%;
 			width: auto;
 			padding-right: $gap-small;
 			opacity: 0.4;
-
 		}
 
 		input{
 			background: none; //url(../img/search.svg) left no-repeat;
-			padding-left: 39px;
+			padding-left: 33px;
 			border-radius: 20px;
 			border: solid 1px $clr-grey-light;
 			font-size: $fnt-sz-md;
-			color: $clr-grey-light;
+			color: $clr-grey-dark;
 			transition: all 0.4s;
 			width: 100%;
 			// background: none;
