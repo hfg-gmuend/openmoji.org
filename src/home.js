@@ -1,8 +1,4 @@
 $(document).ready(function() {
-	//------------ Initialization ------------
-	if($( "header .emoji-search" ).is(":visible") && $( window ).scrollTop() - $( "header" ).offset().top != 0) $( "header .emoji-search" ).hide();
-
-
 	//------------ Emoji Cloud ------------
 	var EMOJI_LIST;
 	const EMOJI_POSITIONS = getPositions( 1.4, 300 );
@@ -72,7 +68,7 @@ $(document).ready(function() {
 
 
 	//------------ Category showcase ------------
-	// Object that holds all Categories with their html display name and corresponding group in the emoji list 
+	// Object that holds all Categories with their html display name and corresponding group in the emoji list
 	const CATEGORIES = {"Interaction": "interaction",
 						"UI Design": "ui-element",
 						"Technology": "technology"};
