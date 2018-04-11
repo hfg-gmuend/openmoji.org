@@ -7,9 +7,12 @@ footer {
 	margin-top: $gap-xs;
 	margin-bottom: $gap-xs;
 
-	p{
+	p {
 		display: inline-block;
 		font-size: $fnt-sz-s;
+		a {
+			text-decoration: underline;
+		}
 	}
 	ul{
 		display: inline-flex;

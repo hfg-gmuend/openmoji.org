@@ -414,6 +414,8 @@ footer {
   footer p {
     display: inline-block;
     font-size: 14px; }
+    footer p a {
+      text-decoration: underline; }
   footer ul {
     display: inline-flex;
     align-items: center; }
