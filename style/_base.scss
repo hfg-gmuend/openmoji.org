@@ -128,6 +128,7 @@ button {
 	padding: 0px $gap-small;
     margin: 0;
     font-size: $fnt-sz-md;
+    font-family: inherit;
     color: $clr-white;
     background: $clr-red-light;
     border: none;
@@ -136,6 +137,10 @@ button {
     border-radius: 20px;
     min-width: 80px;
     white-space: nowrap;
+}
+
+input {
+    font-family: inherit;
 }
 
 .copy-to-clipboard {

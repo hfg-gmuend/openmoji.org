@@ -164,8 +164,14 @@
 
 			.description{
 				align-self: center;
-				display: grid;
-				grid-template-columns: repeat(2, auto);
+
+				&.left{
+						padding-left: $gap-med;
+				}
+
+				&.right{
+						padding-right: $gap-med;
+				}
 
 				h1{
 					color: $clr-white;
@@ -273,7 +279,9 @@
 					color: $clr-white;
 					margin-bottom: $gap-reg;
 				}
-
+				.largebutton:first-child {
+					margin-bottom: $gap-reg;
+				}
 				button{
 					background-color: $clr-blue-super-light;
 					color: $clr-white;

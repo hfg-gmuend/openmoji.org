@@ -50,8 +50,8 @@ $(document).ready(function() {
 
 	//------------ Big overview scroll animation ------------
 	var scrollMagicController = new ScrollMagic.Controller();
-	var emoji_pool = {emoji_left: ["1F420", "1F993"],
-						emoji_right: ["1F4EB", "1F6F8", "1F37C"]}
+	var emoji_pool = {emoji_left: ["1F420"],
+						emoji_right: ["1F6F8"]}
 
 	// set random emojis for showcase
 	$( "#big-emoji-left" ).attr("src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_left)[0] + ".svg");
@@ -59,11 +59,11 @@ $(document).ready(function() {
 
 	var emoji_left = new ScrollMagic.Scene({triggerElement: "#big-emoji-left-start", duration: Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top)})
 												.setPin("#big-emoji-left")
-												.setTween("#big-emoji-left", {scale: 2.5, transformOrigin:"100% 50%"})
+												.setTween("#big-emoji-left", {scale: 2, transformOrigin:"100% 50%"})
 												.addTo(scrollMagicController);
 	var emoji_right = new ScrollMagic.Scene({triggerElement: "#big-emoji-right-start", duration: Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top)})
 												.setPin("#big-emoji-right")
-												.setTween("#big-emoji-right", {scale: 2.5, transformOrigin:"0% 50%"})
+												.setTween("#big-emoji-right", {scale: 2, transformOrigin:"0% 50%"})
 												.addTo(scrollMagicController);
 
 

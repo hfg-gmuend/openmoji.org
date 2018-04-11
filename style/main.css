@@ -51,7 +51,7 @@ article:not(:last-child) {
 
 .container {
   display: grid;
-  grid-template-areas: "header header" "nav content" "footer footer";
+  grid-template-areas: "header header" "nav content" "footer footer";
   grid-template-columns: minmax(200px, 300px) auto;
   grid-template-rows: minmax(40px, 120px) minmax(65%, auto) auto;
   height: 100%; }
@@ -98,6 +98,7 @@ button {
   padding: 0px 20px;
   margin: 0;
   font-size: 17px;
+  font-family: inherit;
   color: #fff;
   background: #E95A47;
   border: none;
@@ -106,6 +107,9 @@ button {
   border-radius: 20px;
   min-width: 80px;
   white-space: nowrap; }
+
+input {
+  font-family: inherit; }
 
 .copy-to-clipboard {
   min-width: 0;
@@ -739,9 +743,11 @@ footer {
         min-width: 250px;
         margin-right: 100px; }
       #home-wrapper #big-overview .section .description {
-        align-self: center;
-        display: grid;
-        grid-template-columns: repeat(2, auto); }
+        align-self: center; }
+        #home-wrapper #big-overview .section .description.left {
+          padding-left: 50px; }
+        #home-wrapper #big-overview .section .description.right {
+          padding-right: 50px; }
         #home-wrapper #big-overview .section .description h1 {
           color: #fff;
           margin: 0; }
@@ -805,6 +811,8 @@ footer {
         align-items: center; }
         #home-wrapper #footer-wrapper #interest .buttongroup h1 {
           color: #fff;
+          margin-bottom: 30px; }
+        #home-wrapper #footer-wrapper #interest .buttongroup .largebutton:first-child {
           margin-bottom: 30px; }
         #home-wrapper #footer-wrapper #interest .buttongroup button {
           background-color: #92d3f5;
