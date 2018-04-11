@@ -92,6 +92,11 @@ header{
 					> *{
 						font-size: $fnt-sz-md;
 					}
+
+					.disclaimer{
+						font-size: $fnt-sz-s;
+						color: $clr-grey-super-light;
+					}
 				}
 			}
 		}

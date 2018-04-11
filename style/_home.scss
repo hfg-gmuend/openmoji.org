@@ -283,9 +283,17 @@
 					margin-bottom: $gap-reg;
 				}
 				button{
+					display: flex;
+					align-items: center;
+					padding-left: 15px;
 					background-color: $clr-blue-super-light;
 					color: $clr-white;
 					box-shadow: none;
+
+					img{
+						height: 40px;
+						margin-right: 5px;
+					}
 				}
 			}
 		}
