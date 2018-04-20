@@ -160,6 +160,8 @@ svg {
 
 #impressum {
   padding-right: 30px; }
+  #impressum p {
+    margin-bottom: 15px; }
 
 .popover-wrapper {
   background: rgba(255, 255, 255, 0.6);

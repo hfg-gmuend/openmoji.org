@@ -42,7 +42,7 @@ h3 {
 
 h4, h5, h6 {
 	font-weight:  $fnt-reg;
-	font-size: $fnt-sz-md;  
+	font-size: $fnt-sz-md;
 	color: $clr-grey-light;
     margin-top: 0;
     margin-bottom: $gap-xs;
@@ -80,7 +80,7 @@ a{
     text-decoration: none;
     color: $clr-grey-light;
     transition: all 0.2s;
-        
+
     &:hover {
         color: $clr-grey-dark;
     }
@@ -207,4 +207,7 @@ svg{
 
 #impressum {
     padding-right: $gap-reg;
+		p {
+			margin-bottom: $gap-reg / 2;
+		}
 }
