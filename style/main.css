@@ -795,6 +795,7 @@ footer {
         #home-wrapper #categories-showcase .content .row .categories-item img {
           height: 100%; }
   #home-wrapper #footer-wrapper {
+    display: none;
     background-color: #5EB0CF; }
     #home-wrapper #footer-wrapper .content-wrapper {
       min-height: 0; }
@@ -833,3 +834,83 @@ footer {
       color: #fff; }
     #home-wrapper #footer-wrapper footer a {
       color: #fff; }
+
+.home-header {
+  height: auto !important;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px; }
+  .home-header *,
+  .home-header *:before,
+  .home-header *:after {
+    box-sizing: border-box; }
+  .home-header > * {
+    flex: auto; }
+  .home-header ul {
+    flex-basis: auto; }
+  .home-header__links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 0; }
+  .home-header__link {
+    height: auto;
+    padding-bottom: 8px;
+    border-bottom: 4px solid transparent;
+    margin-top: 6px;
+    margin-bottom: 6px; }
+    .home-header__link[data-active] {
+      border-color: #5EB0CF; }
+      .home-header__link[data-active] a {
+        color: #242424; }
+  .home-header__tools {
+    display: flex;
+    flex-grow: 0;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .home-header__gh-link {
+    height: 30px; }
+    .home-header__gh-link img {
+      height: 100%; }
+  .home-header__get-button {
+    display: inline-flex;
+    justify-content: center;
+    width: 200px; }
+    .home-header__get-button div + div {
+      margin-left: 20px; }
+
+@media screen and (max-width: 959px) {
+  .home-header__links {
+    position: relative;
+    width: 100%; }
+    .home-header__links:before, .home-header__links:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 20px;
+      pointer-events: none; }
+    .home-header__links:before {
+      background: linear-gradient(90deg, white, rgba(255, 255, 255, 0));
+      left: -20px; }
+    .home-header__links:after {
+      background: linear-gradient(-90deg, white, rgba(255, 255, 255, 0));
+      right: -20px; }
+    .home-header__links__scroller {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+      /* hack to have last .home-header__link's margin not collapse */ }
+      .home-header__links__scroller:after {
+        content: '';
+        padding-right: 1px; } }
+
+@media screen and (min-width: 960px) {
+  .home-header {
+    padding: 30px 50px;
+    justify-content: space-between; }
+    .home-header__links {
+      justify-content: center; } }
