@@ -23,9 +23,13 @@ li{
 }
 
 h1 {
-	font-size: $fnt-sz-xl;
+	font-size: $fnt-sz-lg;
 	font-weight: $fnt-bold;
-    margin-bottom: $gap-large;
+    margin-bottom: 2em;
+
+    @media screen and (min-width: 960px) {
+        font-size: $fnt-sz-xl;
+    }
 }
 
 h2 {
