@@ -80,8 +80,11 @@ a {
   margin-bottom: 100px;
   align-self: flex-start;
   padding: 10px 30px;
-  font-size: 30px;
+  font-size: 17px;
   border-radius: 29px; }
+  @media screen and (min-width: 960px) {
+    .largebutton {
+      font-size: 30px; } }
 
 .redlink {
   color: #D22F29; }
@@ -813,7 +816,6 @@ footer {
         #home-wrapper #categories-showcase .content .row .categories-item img {
           height: 100%; }
   #home-wrapper #footer-wrapper {
-    display: none;
     background-color: #5EB0CF; }
     #home-wrapper #footer-wrapper .content-wrapper {
       min-height: 0; }

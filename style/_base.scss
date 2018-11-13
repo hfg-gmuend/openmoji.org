@@ -102,8 +102,12 @@ a{
     margin-bottom: $gap-large;
     align-self: flex-start;
     padding: $gap-xs $gap-reg;
-    font-size: $fnt-sz-lg;
+    font-size: $fnt-sz-md;
     border-radius: 29px;
+
+    @media screen and (min-width: 960px) {
+        font-size: $fnt-sz-lg;
+    }
 }
 
 .redlink {
