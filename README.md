@@ -3,7 +3,7 @@ OpenMoji Website
 
 Developer Setup
 ---------------
-1. Install [node.js](https://nodejs.org) (see version in the file `.nvmrc`)
+1. Install [node.js](https://nodejs.org) (see version in the file [`.nvmrc`](https://github.com/hfg-gmuend/openmoji-website/blob/master/.nvmrc#L1))
 2. Open Terminal and navigate over to the `openmoji-website` folder that you downloaded onto your computer:
 
 ```
