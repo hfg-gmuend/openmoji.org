@@ -1,25 +1,25 @@
 {
   "name": "openmoji-website",
-  "version": "0.0.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Website of the OpenMoji project",
   "main": "index.js",
   "scripts": {
     "start": "parallelshell \"npm run watch\" \"npm run watch-style\"",
-    "watch": "budo --host localhost --dir . --open --live --watch-glob '**/*.{html,css,js}'",
+    "watch": "budo --host localhost --dir . --open --live --verbose --watch-glob '**/*.{html,js,css}'",
     "watch-style": "nodemon -e scss -x \"npm run bundle-css\" .",
     "bundle-css": "node-sass --include-path scss style/main.scss style/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hfg-gmuend/HfG-Emoji-Project-Website.git"
+    "url": "git+https://github.com/hfg-gmuend/openmoji-website.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hfg-gmuend/HfG-Emoji-Project-Website/issues"
+    "url": "https://github.com/hfg-gmuend/openmoji-website/issues"
   },
-  "homepage": "https://github.com/hfg-gmuend/HfG-Emoji-Project-Website#readme",
+  "homepage": "http://openmoji.org/",
   "devDependencies": {
     "budo": "^10.0.4",
     "node-sass": "^4.7.2",
