@@ -76,16 +76,19 @@
 		position: sticky;
 		top: 0;
 	}
+
 	.content-wrapper{
 		@extend %content;
 
 		min-height: calc(100vh - #{$footer-header-max-height});
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
 		margin: auto;
-		padding-left: $gap-med;
-		padding-right: $gap-med;
+		padding-left: $gap-small;
+		padding-right: $gap-small;
+
+		@media screen and (min-width: $bp-med) {
+			padding-left: $gap-med;
+			padding-right: $gap-med;
+		}
 	}
 
 	#small-overview{
@@ -93,20 +96,35 @@
 
 		.content{
 			display: flex;
-			// justify-content: space-between;
 			flex-wrap: wrap;
-			margin-right: -$gap-med;
-			padding: $gap-large + $gap-small 0px;
+			padding-top: $gap-med;
+			padding-bottom: $gap-med;
+
+			@media screen and (min-width: $bp-med) {
+				padding-top: $gap-large + $gap-small;
+				padding-bottom: $gap-large + $gap-small;
+			}
 
 			.content-item{
 				flex-grow: 1;
-				width: 33%;
-				margin-right: $gap-med;
-				margin-bottom: $gap-large;
 				display: flex;
-				max-width: 250px;
-				min-width: 150px;
 				box-sizing: border-box;
+
+				& + .content-item {
+					margin-top: $gap-med;
+
+					@media screen and (min-width: $bp-med) {
+						margin-top: 0;
+					}
+				}
+
+				@media screen and (min-width: $bp-med) {
+					width: 33.333%;
+					max-width: 250px;
+					min-width: 150px;
+					margin-right: $gap-med;
+					margin-bottom: $gap-large;
+				}
 
 				img{
 					height: 40px;
@@ -128,9 +146,13 @@
 	#big-overview{
 		background-color: $clr-blue-light;
 		display: flex;
-		padding-top: ($gap-large + $gap-small) * 2;
+		padding-top: $gap-med;
 		box-sizing: border-box;
 		overflow: hidden;
+
+		@media screen and (min-width: $bp-med) {
+			padding-top: ($gap-large + $gap-small) * 2;
+		}
 
 		.col{
 			width: 50%;
