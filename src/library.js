@@ -160,11 +160,11 @@ $(document).ready(function() {
 		// expose filter in URL
 		var URL;
 		if($.isEmptyObject(currentUrlParams)) {
-			URL = window.location.href.substring(0, window.location.href.indexOf("?"));
-		} else if(window.location.href.includes("?")) {
-			URL = window.location.href.substring(0, window.location.href.indexOf("?") + 1);
+			URL = window.location.href.substring(0, window.location.href.indexOf("#"));
+		} else if(window.location.href.includes("#")) {
+			URL = window.location.href.substring(0, window.location.href.indexOf("#") + 1);
 		} else {
-			URL = window.location.href.substring(0, window.location.href.indexOf("?")) + "?";
+			URL = window.location.href.substring(0, window.location.href.indexOf("#")) + "#";
 		}
 		history.pushState(null, "", URL + $.param(currentUrlParams));
 
@@ -172,7 +172,7 @@ $(document).ready(function() {
 	}
 
 	function getUrlParameters() {
-		var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		var sPageURL = decodeURIComponent(window.location.hash.substring(1)),
 			sURLVariables = sPageURL.split("&"),
 			sParameters = {},
 			i;
