@@ -61,46 +61,8 @@ header{
 		}
 	}
 
-	.dropdown{
+	.dropdown {
 		margin-left: $gap-small;
-		position: relative;
-
-		&:hover{
-			.dropdown-content{
-				display: block;
-			}
-		}
-
-		.dropdown-content{
-			position: absolute;
-			right: 0;
-			display: none;
-			width: 100%;
-
-			ul{
-				display: block;
-				margin-top: $gap-small;
-				padding: 0px $gap-small;
-				background: #FFFFFF;
-				box-shadow: 0 1px 34px 0 rgba(163,161,173,0.50);
-				border-radius: 8px;
-
-				li{
-					margin: 0;
-					padding: (40px - $fnt-sz-md) / 2 0px;
-					height: auto;
-
-					> *{
-						font-size: $fnt-sz-md;
-					}
-
-					.disclaimer{
-						font-size: $fnt-sz-s;
-						color: $clr-grey-super-light;
-					}
-				}
-			}
-		}
 	}
 }
 

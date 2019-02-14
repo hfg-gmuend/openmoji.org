@@ -219,3 +219,49 @@ svg{
 			margin-bottom: $gap-reg / 2;
 		}
 }
+
+.dropdown{
+    position: relative;
+
+    &:hover{
+        .dropdown-content{
+            display: block;
+        }
+    }
+
+    .dropdown-content{
+        position: absolute;
+        right: 0;
+        display: none;
+        min-width: 100%;
+
+        ul{
+            display: block;
+            margin-top: $gap-small;
+            background: #FFFFFF;
+            box-shadow: 0 1px 34px 0 rgba(163,161,173,0.50);
+            border-radius: 8px;
+            padding: 8px 0px;
+            white-space: nowrap;
+
+            li{
+                margin: 0;
+                padding: (40px - $fnt-sz-md) / 2 $gap-small;
+                height: auto;
+
+                > *{
+                    font-size: $fnt-sz-md;
+                }
+
+                .disclaimer{
+                    font-size: $fnt-sz-s;
+                    color: $clr-grey-super-light;
+                }
+            }
+        }
+    }
+}
+
+.dropdown--light-shadow .dropdown-content ul {
+    box-shadow: 0 1px 5px 0 rgba(163,161,173,0.50);
+}

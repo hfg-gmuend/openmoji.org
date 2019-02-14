@@ -9,6 +9,8 @@ $(document).ready(function() {
 
 		genEmojiCloud();
 		genCategoriesShowcase();
+		initBigEmojiOverview();
+		$(".lazy").Lazy();
 	});
 
 	function genEmojiCloud() {
@@ -24,7 +26,7 @@ $(document).ready(function() {
 			var yPos = EMOJI_POSITIONS[i].y + 50;
 
 			// add emoji to html
-			if( !(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100) ) $( "#landing .content" ).append("<a href='/library.html#emoji=" + shuffledList[i].hexcode + "'><img class='emoji' src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
+			if( !(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100) ) $( "#landing .content" ).append("<a href='/library.html#emoji=" + shuffledList[i].hexcode + "'><img class='emoji lazy' data-src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
 		}
 	}
 
@@ -49,22 +51,24 @@ $(document).ready(function() {
 
 
 	//------------ Big overview scroll animation ------------
-	var scrollMagicController = new ScrollMagic.Controller();
-	var emoji_pool = {emoji_left: ["1F420"],
-						emoji_right: ["1F6F8"]}
+	function initBigEmojiOverview() {
+		var scrollMagicController = new ScrollMagic.Controller();
+		var emoji_pool = {emoji_left: ["1F420"],
+							emoji_right: ["1F6F8"]}
 
-	// set random emojis for showcase
-	$( "#big-emoji-left" ).attr("src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_left)[0] + ".svg");
-	$( "#big-emoji-right" ).attr("src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_right)[0] + ".svg");
+		// set random emojis for showcase
+		$( "#big-emoji-left" ).attr("data-src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_left)[0] + ".svg");
+		$( "#big-emoji-right" ).attr("data-src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_right)[0] + ".svg");
 
-	var emoji_left = new ScrollMagic.Scene({triggerElement: "#big-emoji-left-start", duration: Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top)})
-												.setPin("#big-emoji-left")
-												.setTween("#big-emoji-left", {scale: 2, transformOrigin:"100% 50%"})
-												.addTo(scrollMagicController);
-	var emoji_right = new ScrollMagic.Scene({triggerElement: "#big-emoji-right-start", duration: Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top)})
-												.setPin("#big-emoji-right")
-												.setTween("#big-emoji-right", {scale: 2, transformOrigin:"0% 50%"})
-												.addTo(scrollMagicController);
+		var emoji_left = new ScrollMagic.Scene({triggerElement: "#big-emoji-left-start", duration: Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top)})
+													.setPin("#big-emoji-left")
+													.setTween("#big-emoji-left", {scale: 2, transformOrigin:"100% 50%"})
+													.addTo(scrollMagicController);
+		var emoji_right = new ScrollMagic.Scene({triggerElement: "#big-emoji-right-start", duration: Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top)})
+													.setPin("#big-emoji-right")
+													.setTween("#big-emoji-right", {scale: 2, transformOrigin:"0% 50%"})
+													.addTo(scrollMagicController);
+	}
 
 
 	//------------ Category showcase ------------

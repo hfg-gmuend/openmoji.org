@@ -169,6 +169,36 @@ svg {
   #impressum p {
     margin-bottom: 15px; }
 
+.dropdown {
+  position: relative; }
+  .dropdown:hover .dropdown-content {
+    display: block; }
+  .dropdown .dropdown-content {
+    position: absolute;
+    right: 0;
+    display: none;
+    min-width: 100%; }
+    .dropdown .dropdown-content ul {
+      display: block;
+      margin-top: 20px;
+      background: #FFFFFF;
+      box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
+      border-radius: 8px;
+      padding: 8px 0px;
+      white-space: nowrap; }
+      .dropdown .dropdown-content ul li {
+        margin: 0;
+        padding: 11.5px 20px;
+        height: auto; }
+        .dropdown .dropdown-content ul li > * {
+          font-size: 17px; }
+        .dropdown .dropdown-content ul li .disclaimer {
+          font-size: 14px;
+          color: rgba(129, 128, 128, 0.5); }
+
+.dropdown--light-shadow .dropdown-content ul {
+  box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5); }
+
 .popover-wrapper {
   background: rgba(255, 255, 255, 0.6);
   position: fixed;
@@ -349,31 +379,7 @@ header {
     header #gh-link img {
       height: 100%; }
   header .dropdown {
-    margin-left: 20px;
-    position: relative; }
-    header .dropdown:hover .dropdown-content {
-      display: block; }
-    header .dropdown .dropdown-content {
-      position: absolute;
-      right: 0;
-      display: none;
-      width: 100%; }
-      header .dropdown .dropdown-content ul {
-        display: block;
-        margin-top: 20px;
-        padding: 0px 20px;
-        background: #FFFFFF;
-        box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
-        border-radius: 8px; }
-        header .dropdown .dropdown-content ul li {
-          margin: 0;
-          padding: 11.5px 0px;
-          height: auto; }
-          header .dropdown .dropdown-content ul li > * {
-            font-size: 17px; }
-          header .dropdown .dropdown-content ul li .disclaimer {
-            font-size: 14px;
-            color: rgba(129, 128, 128, 0.5); }
+    margin-left: 20px; }
 
 .arrow {
   border: solid black;
@@ -560,12 +566,56 @@ footer {
 #library-content {
   height: 100%;
   overflow: auto; }
-  #library-content h2 {
+  #library-content #emoji_grid_header {
+    width: 100%;
+    max-width: 900px;
     padding-bottom: 10px;
-    margin-bottom: 0;
     position: sticky;
     top: 0;
-    background-color: #fff; }
+    background-color: #fff;
+    display: inline-flex; }
+    #library-content #emoji_grid_header h2 {
+      margin-bottom: 0;
+      flex-grow: 1; }
+    #library-content #emoji_grid_header .sort_selector {
+      align-self: center;
+      font-size: 17px;
+      color: #818080; }
+      #library-content #emoji_grid_header .sort_selector__selected {
+        position: relative;
+        padding-right: 14px;
+        cursor: pointer; }
+        #library-content #emoji_grid_header .sort_selector__selected::before {
+          content: "";
+          border: solid black;
+          border-width: 0 1.75px 1.75px 0;
+          border-color: #818080;
+          position: absolute;
+          top: 5px;
+          right: 1.25px;
+          padding: 2.5px;
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg); }
+        #library-content #emoji_grid_header .sort_selector__selected::after {
+          content: "";
+          border: solid black;
+          border-width: 0 1.75px 1.75px 0;
+          border-color: #818080;
+          position: absolute;
+          bottom: 5px;
+          right: 1.25px;
+          padding: 2.5px;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg); }
+      #library-content #emoji_grid_header .sort_selector__list ul {
+        margin-top: 10px; }
+      #library-content #emoji_grid_header .sort_selector__list li:hover {
+        background-color: #5EB0CF;
+        color: #f5f6f7; }
+    #library-content #emoji_grid_header .sort_selector--asc .sort_selector__selected::before {
+      border-color: #242424; }
+    #library-content #emoji_grid_header .sort_selector--desc .sort_selector__selected::after {
+      border-color: #242424; }
 
 .emoji_grid_wrapper {
   max-width: 900px;

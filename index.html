@@ -12,6 +12,7 @@
     <meta property="og:image" content="">
     <meta property="og:url" content="">
 
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
@@ -92,42 +93,42 @@
                 <div class="content">
                     <h1>OpenMoji is an open-source project of the HfG Schwäbisch Gmünd.</h1>
                     <div class="content-item">
-                        <img src="data/color/svg/1F64F.svg">
+                        <img class="lazy" data-src="data/color/svg/1F64F.svg">
                         <div class="description">
                             <h3>Free to use</h3>
                             <p>OpenMoji is an open-source project, all emojis are free to use and are under the CC BY-SA 4.0 license.</p>
                         </div>
                     </div>
                     <div class="content-item">
-                        <img src="data/color/svg/1F3C6.svg">
+                        <img class="lazy" data-src="data/color/svg/1F3C6.svg">
                         <div class="description">
                             <h3>1000+ Emojis</h3>
                             <p>So far more than thousand emojis over many categories have been designed.</p>
                         </div>
                     </div>
                     <div class="content-item">
-                        <img src="data/color/svg/26D3.svg">
+                        <img class="lazy" data-src="data/color/svg/26D3.svg">
                         <div class="description">
                             <h3>Consistent</h3>
                             <p>All emojis follow a single styleguide and perfectly fit together.</p>
                         </div>
                     </div>
                     <div class="content-item">
-                        <img src="data/color/svg/F009F.svg">
+                        <img class="lazy" data-src="data/color/svg/E183.svg">
                         <div class="description">
                             <h3>Special Interest Categories</h3>
                             <p>OpenMoji ships with various special interest categories beyond standard unicode.</p>
                         </div>
                     </div>
                     <div class="content-item">
-                        <img src="data/color/svg/1F58C.svg">
+                        <img class="lazy" data-src="data/color/svg/1F58C.svg">
                         <div class="description">
                             <h3>Colored/Outlined</h3>
                             <p>Supporting a wide range of use cases with colored and outlined emojis.</p>
                         </div>
                     </div>
                     <div class="content-item">
-                        <img src="data/color/svg/1F6E0.svg">
+                        <img class="lazy" data-src="data/color/svg/1F6E0.svg">
                         <div class="description">
                             <h3>Handcrafted</h3>
                             <p>All emojis have been carefully designed and reviewed in many iterations.</p>
@@ -139,7 +140,7 @@
         <div id="big-overview">
             <div class="col left">
                 <div class="section">
-                    <img id="big-emoji-left" src="data/color/svg/1F420.svg">
+                    <img id="big-emoji-left" class="lazy" data-src="data/color/svg/1F420.svg">
                 </div>
                 <div class="section">
                 </div>
@@ -170,7 +171,7 @@
                     </div>
                 </div>
                 <div class="section">
-                    <img id="big-emoji-right" src="data/color/svg/1F4EB.svg">
+                    <img id="big-emoji-right" class="lazy" data-src="data/color/svg/1F4EB.svg">
                 </div>
                 <div class="section">
                 </div>
@@ -193,8 +194,8 @@
                 <div id="interest">
                     <h1>Interested?</h1>
                     <div class="buttongroup">
-                        <a href="/styleguide.html"><button class="largebutton"><img id="big-emoji-right" src="data/color/svg/1F449.svg">Participate & Contribute</button></a>
-                        <a href="/library.html"><button class="largebutton"><img id="big-emoji-right" src="data/color/svg/1F449.svg">Explore Collection</button></a>
+                        <a href="/styleguide.html"><button class="largebutton"><img id="big-emoji-right" class="lazy" data-src="data/color/svg/1F449.svg">Participate & Contribute</button></a>
+                        <a href="/library.html"><button class="largebutton"><img id="big-emoji-right" class="lazy" data-src="data/color/svg/1F449.svg">Explore Collection</button></a>
                     </div>
                 </div>
             </div>
@@ -278,6 +279,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 <script src="src/fuse.min.js" rel="script"></script>
 <script src="src/jquery-3.3.1.min.js" rel="script"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js" rel="script"></script>
 <script src="data/hfg-emojis-list.json" rel="script"></script>
 <script src="src/general.js" rel="script"></script>
 <script src="src/home.js" rel="script"></script>
