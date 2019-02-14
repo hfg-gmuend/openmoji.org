@@ -54,7 +54,7 @@ article:not(:last-child) {
 
 .container {
   display: grid;
-  grid-template-areas: "header header" "nav content" "footer footer";
+  grid-template-areas: "header header" "nav content" "footer footer";
   grid-template-columns: minmax(200px, 300px) auto;
   grid-template-rows: minmax(40px, 120px) minmax(65%, auto) auto;
   height: 100%; }
@@ -339,6 +339,7 @@ header {
     header .right button {
       display: inline-flex;
       justify-content: center;
+      align-items: center;
       width: 200px; }
       header .right button div + div {
         margin-left: 20px; }
@@ -902,6 +903,7 @@ footer {
   .home-header__get-button {
     display: inline-flex;
     justify-content: center;
+    align-items: center;
     width: 200px; }
     .home-header__get-button div + div {
       margin-left: 20px; }
