@@ -269,7 +269,54 @@ svg {
       #preview #active-emoji-selection .small-emoji-preview #emoji-preview {
         display: inline-flex;
         height: 50px;
-        margin: auto; }
+        margin: auto;
+        align-items: center; }
+        #preview #active-emoji-selection .small-emoji-preview #emoji-preview .circle {
+          box-sizing: border-box;
+          position: relative;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          cursor: pointer; }
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview .circle.highlight::after {
+            content: "";
+            position: absolute;
+            top: 25%;
+            right: 25%;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5); }
+        #preview #active-emoji-selection .small-emoji-preview #emoji-preview .circle + .circle {
+          margin-left: 5px; }
+        #preview #active-emoji-selection .small-emoji-preview #emoji-preview #outline-emoji-preview {
+          background-color: #f5f6f7; }
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview #outline-emoji-preview::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 65%;
+            margin-top: -1px;
+            margin-left: calc(-30% - 1px);
+            border: 1px solid #818080;
+            transform: rotate3d(0, 0, 1, -45deg); }
+        #preview #active-emoji-selection .small-emoji-preview #emoji-preview #color-emoji-preview {
+          background-color: #FCEA2B; }
+        #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview {
+          display: inline-flex;
+          align-items: center; }
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview .circle:first-child {
+            margin-left: 7.5px; }
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview::before {
+            content: "";
+            height: 15px;
+            margin-left: 7.5px;
+            border-left: 1px solid rgba(129, 128, 128, 0.5); }
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview:empty::before {
+            display: none; }
         #preview #active-emoji-selection .small-emoji-preview #emoji-preview .emoji-preview-image {
           height: 50px; }
       #preview #active-emoji-selection .small-emoji-preview .next-or-prev {

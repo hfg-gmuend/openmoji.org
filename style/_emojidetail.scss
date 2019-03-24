@@ -82,6 +82,73 @@
                 display: inline-flex;
                 height: 50px;
                 margin: auto;
+                align-items: center;
+
+                .circle {
+                    box-sizing: border-box;
+                    position: relative;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    border: 2px solid rgba(0, 0, 0, 0.1);
+                    cursor: pointer;
+
+                    &.highlight::after {
+                        content: "";
+                        position: absolute;
+                        top: 25%;
+                        right: 25%;
+                        height: 50%;
+                        width: 50%;
+                        border-radius: 50%;
+                        background-color: $clr-white;
+                        box-shadow: 0 1px 5px 0 rgba(163,161,173,0.50);
+                    }
+                }
+
+                .circle + .circle {
+                    margin-left: 5px;
+                }
+
+                #outline-emoji-preview {
+                    background-color: $clr-grey-ultra-light;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 65%;
+                        margin-top: -1px;
+                        margin-left: calc(-30% - 1px);
+                        border: 1px solid $clr-grey-light;
+                        transform: rotate3d(0, 0, 1, -45deg);
+                    }
+                }
+
+                #color-emoji-preview {
+                    background-color: $clr-fitzpatrick-default;
+                }
+
+                #skintones-emoji-preview {
+                    display: inline-flex;
+                    align-items: center;
+
+                    .circle:first-child {
+                        margin-left: 7.5px;
+                    }
+
+                    &::before {
+                        content: "";
+                        height: 15px;
+                        margin-left: 7.5px;
+                        border-left: 1px solid $clr-grey-super-light;
+                    }
+
+                    &:empty::before {
+                        display: none;
+                    }
+                }
 
                 .emoji-preview-image{
                     height: 50px;

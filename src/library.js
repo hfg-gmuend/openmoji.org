@@ -5,18 +5,33 @@ $(document).ready(function() {
 
 	//------------ for emoji list ------------
 	var EMOJI_LIST;
+	var FITZPATRICK_COLOR_PALETTE;
 	var LIST_FILTERS;
 	var currentList;
 	var fuse;
 	const FUSE_DEFAULT_THRESHOLD = 0.1;
-	const sortFuncs = {    // list of possible sort functions NOTE: functions need to sort in ascending order
+	const SORT_FUNCS = {    // list of possible sort functions NOTE: functions need to sort in ascending order
 		"unicode": function(a, b) {
+			if(a.item.order === "" && b.item.order === "") {
+				return 0;
+			} else if(a.item.order === "") {
+				return 1;
+			} else if(b.item.order === "") {
+				return -1;
+			}
 			return parseInt(a.item.order) - parseInt(b.item.order);
 		},
 		"alphabetical": function(a, b) {
 			return a.item.annotation.localeCompare(b.item.annotation);
 		},
 		"contribution_date": function(a, b) {
+			if(a.item.openmoji_date === "" && b.item.openmoji_date === "") {
+				return 0;
+			} else if(a.item.openmoji_date === "") {
+				return 1;
+			} else if(b.item.openmoji_date === "") {
+				return -1;
+			}
 			return new Date(b.item.openmoji_date) - new Date(a.item.openmoji_date);
 		},
 		"best_match": function(a, b) {
@@ -34,15 +49,24 @@ $(document).ready(function() {
 
 	$.when(
 		$.getJSON( "data/openmoji.json" , function(json) {
-			EMOJI_LIST = json.map((item) => {
-				// add group path for filtering with fusejs
-				item.groupPath = getGroupPath(item.group, item.subgroups);
+			var filteredEmojies = {};
 
-				// wrap item inside item key so structure matches with fusejs search
-				item.item = item;
-
-				return item;
+			json.forEach(function(item) {
+				// NOTE: skintone_base_emoji needs to occur before skintone variants in list
+				if(item.skintone !== "" && Number.isInteger(item.skintone)) {
+					if(filteredEmojies[item.skintone_base_hexcode].skintones === undefined) filteredEmojies[item.skintone_base_hexcode].skintones = [];
+					filteredEmojies[item.skintone_base_hexcode].skintones.push(item);
+				} else {
+					filteredEmojies[item.hexcode]           = item;
+					filteredEmojies[item.hexcode].item      = item;	// wrap item inside item key so structure matches with fusejs search
+					filteredEmojies[item.hexcode].groupPath = getGroupPath(item.group, item.subgroups);
+				}
 			});
+
+			EMOJI_LIST = Object.values(filteredEmojies).sort(SORT_FUNCS["unicode"]);
+		}),
+		$.getJSON( "data/color-palette.json" , function(json) {
+			FITZPATRICK_COLOR_PALETTE = json.skintones.fitzpatrick;
 		}),
 		$.getJSON( "data/filterWeights.json" , function(json) {
 			LIST_FILTERS = json;
@@ -113,7 +137,7 @@ $(document).ready(function() {
 			if(filter.search) {
 				for(var key in LIST_FILTERS) {
 					if(LIST_FILTERS.hasOwnProperty(key)) {
-						if(fuse.options.keys.filter( fKey => fKey.name === key ).length == 0) {
+						if(fuse.options.keys.filter( function(fKey) { fKey.name === key } ).length == 0) {
 							fuse.options.keys.push( {name: key, weight: Math.round(weight * LIST_FILTERS[key] * 1e2) / 1e2} );
 						}
 					}
@@ -162,7 +186,7 @@ $(document).ready(function() {
 	// update sort selector
 	function updateSortSelector(newSortFunc) {
 		// if sort function is defined and isn't the same as the current one set new sort function
-		if(sortFuncs[newSortFunc] !== undefined && newSortFunc !== currentSort) {
+		if(SORT_FUNCS[newSortFunc] !== undefined && newSortFunc !== currentSort) {
 			prevSort    = currentSort;
 			currentSort = newSortFunc;
 
@@ -215,7 +239,7 @@ $(document).ready(function() {
 		// sort list if sort has changed or flip list if sort direction changed
 		if(currentSort !== prevSort) {
 			prevSort = currentSort;
-			currentList.sort(sortFuncs[currentSort]);
+			currentList.sort(SORT_FUNCS[currentSort]);
 
 			// flip list if sort has to be in descending order
 			if(getSortDir() === "desc") {
@@ -363,20 +387,27 @@ $(document).ready(function() {
 
 
 	//------------ Emoji detail view ------------
-	function showEmojiDetails(id) {
-		var path;
-		if($( "#show-color .switch input[type=checkbox]" ).is(":checked")) {
-			// highlight colored emoji
-			$( "#outline-emoji-preview" ).removeClass("highlight");
+	function showEmojiDetails(id, skintone) {
+		// switch to color if skintone is selected and outline was previous
+		if($( "#show-color .switch input[type=checkbox]" ).is(":checked") === false && skintone !== undefined) {
+			$( "#show-color .switch input[type=checkbox]" ).prop("checked", true);
+		}
+
+		// get path
+		var path = $( "#show-color .switch input[type=checkbox]" ).is(":checked") ? "data/color" : "data/black";
+
+		// reset highlighting
+		$( "#outline-emoji-preview" ).removeClass("highlight");
+		$( "#outline-emoji-image-preview" ).removeClass("highlight");
+		$( "#color-emoji-preview" ).removeClass("highlight");
+		$( "#color-emoji-image-preview" ).removeClass("highlight");
+
+		if($( "#show-color .switch input[type=checkbox]" ).is(":checked") && skintone === undefined) {
 			$( "#color-emoji-preview" ).addClass("highlight");
-
-			path = "data/color";
-		} else {
-			// highlight outline emoji
-			$( "#color-emoji-preview" ).removeClass("highlight");
+			$( "#color-emoji-image-preview" ).addClass("highlight");
+		} else if(skintone === undefined) {
 			$( "#outline-emoji-preview" ).addClass("highlight");
-
-			path = "data/black";
+			$( "#outline-emoji-image-preview" ).addClass("highlight");
 		}
 
 		// get in index of current object
@@ -390,19 +421,51 @@ $(document).ready(function() {
 			}
 		});
 
-		// update images
-		$( "#main-emoji-image" ).attr("src", path + "/svg/" + currEmoji.hexcode + ".svg");
-		$( "#outline-emoji-image-preview" ).attr("src", "data/black/svg/" + currEmoji.hexcode + ".svg");
-		$( "#color-emoji-image-preview" ).attr("src", "data/color/svg/" + currEmoji.hexcode + ".svg");
+		var emojiHex = skintone ? skintone : currEmoji.hexcode;
+
+		// show image/circle preview if emoji has skintones or vice versa if it hasn't
+		if(currEmoji.skintones === undefined) {
+			// update preview images
+			$( "#outline-emoji-image-preview" ).attr("src", "data/black/svg/" + emojiHex + ".svg");
+			$( "#color-emoji-image-preview" ).attr("src", "data/color/svg/" + emojiHex + ".svg");
+
+			// show image preview and hide circle preview
+			$( "#outline-emoji-preview" ).removeClass("visible").addClass("hidden");			
+			$( "#color-emoji-preview" ).removeClass("visible").addClass("hidden");
+			$( "#outline-emoji-image-preview" ).removeClass("hidden").addClass("visible");
+			$( "#color-emoji-image-preview" ).removeClass("hidden").addClass("visible");
+		} else {
+			// hide image preview and show circle preview
+			$( "#outline-emoji-image-preview" ).removeClass("visible").addClass("hidden");			
+			$( "#color-emoji-image-preview" ).removeClass("visible").addClass("hidden");
+			$( "#outline-emoji-preview" ).removeClass("hidden").addClass("visible");
+			$( "#color-emoji-preview" ).removeClass("hidden").addClass("visible");
+		}
+
+		// update main image
+		$( "#main-emoji-image" ).attr("src", path + "/svg/" + emojiHex + ".svg");
+
+		// clear skintones
+		$( "#skintones-emoji-preview" ).empty();
+		// add potential skintone variants
+		if(currEmoji.skintones !== undefined) {
+			currEmoji.skintones.forEach(function(emoji) {
+				var elClass = emoji.hexcode === emojiHex ? "circle highlight" : "circle";
+				$( "#skintones-emoji-preview" ).append("<div class='" + elClass + "' data-skintone_hexcode='" + emoji.hexcode + "' style='background-color: " + FITZPATRICK_COLOR_PALETTE[emoji.skintone - 1] + ";'></div>");
+			});
+		}
+
 		// update description
 		$( "#description h2" ).text(currEmoji.annotation);
 		$( "#description #unicode" ).text(currEmoji.hexcode).attr("href", "http://www.decodeunicode.org/en/u+" + currEmoji.hexcode);
 		$( "#description #author" ).text(currEmoji.openmoji_author);
 		$( "#description #category" ).text(currEmoji.group);
 		$( "#description #subcategory" ).text(currEmoji.subgroups);
+
 		// update path
 		$( "#description .path a:nth-child(2)" ).text(currEmoji.group);
 		$( "#description .path a:nth-child(3)" ).text(currEmoji.subgroups);
+
 		// update download links
 		$( "#svg-download-btn" ).attr("href", path + "/svg/" + currEmoji.hexcode + ".svg");
 		$( "#png-download-btn" ).attr("href", path + "/618x618/" + currEmoji.hexcode + ".png");
@@ -473,16 +536,20 @@ $(document).ready(function() {
 	});
 
 	// toggle outline and color in emoji detail view
-	$( "#emoji-detail-wrapper .popover .emoji-preview-image" ).click(function() {
+	$( "#emoji-preview" ).click(function(e) {
+		var skintone = undefined;
+		var target  = $( e.target );
 		// toggle "show color" checkbox
-		if($( this ).is($( "#color-emoji-image-preview" ))) {
+		if(target.is($( "#color-emoji-preview" )) || target.is($( "#color-emoji-image-preview" ))) {
 			$( "#show-color .switch input[type=checkbox]" ).prop("checked", true);
-		} else if($( this ).is($( "#outline-emoji-image-preview" ))) {
+		} else if(target.is($( "#outline-emoji-preview" )) || target.is($( "#outline-emoji-image-preview" ))) {
 			$( "#show-color .switch input[type=checkbox]" ).prop("checked", false);
+		} else if(target.parent().is($( "#skintones-emoji-preview" ))) {
+			skintone = target.data("skintone_hexcode");
 		}
 
 		// update emoji detail view
-		showEmojiDetails(getUrlParameters().emoji);
+		showEmojiDetails(getUrlParameters().emoji, skintone);
 	});
 
 	// author click listener to filter emoji list by author
