@@ -170,9 +170,11 @@ $(document).ready(function() {
 
 	//------------ Event listeners ------------
 	// search field listener to change location to library.html and set search filter
+	console.log(window.location);
 	$( ".search" ).keydown(function(e) {
+		var url = window.location.href;
 		if (e.which == 13) {
-			window.location.href = "http://" + window.location.href.split("/")[2] + "library.html#search=" + $( this ).val();
+			window.location.href = url.substring(0, url.lastIndexOf("/") + 1) + "library.html#search=" + $( this ).val();
 		}
 	});
 
