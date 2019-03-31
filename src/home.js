@@ -5,7 +5,9 @@ $(document).ready(function() {
 
 	// get all emojis and generate category showcase
 	$.getJSON( "data/openmoji.json" , function(json) {
-		EMOJI_LIST = json;
+		EMOJI_LIST = json.filter(function(emoji) {
+			return emoji.skintone === "";
+		});
 
 		genEmojiCloud();
 		genCategoriesShowcase();
