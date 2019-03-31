@@ -226,6 +226,8 @@ $(document).ready(function() {
 
 	// generates groupPath string from passed group and subgroups
 	function getGroupPath(group, subgroups) {
+		if(subgroups === undefined) return group;
+
 		return group + "/" + ($.isArray(subgroups) ? subgroups.join(" ") : subgroups);
 	}
 
@@ -459,12 +461,12 @@ $(document).ready(function() {
 		$( "#description h2" ).text(currEmoji.annotation);
 		$( "#description #unicode" ).text(currEmoji.hexcode).attr("href", "http://www.decodeunicode.org/en/u+" + currEmoji.hexcode);
 		$( "#description #author" ).text(currEmoji.openmoji_author);
-		$( "#description #category" ).text(currEmoji.group);
-		$( "#description #subcategory" ).text(currEmoji.subgroups);
+		$( "#description #category" ).text(currEmoji.group).attr("data-grouppath", currEmoji.group);
+		$( "#description #subcategory" ).text(currEmoji.subgroups).attr("data-grouppath", currEmoji.groupPath);
 
 		// update path
-		$( "#description .path a:nth-child(2)" ).text(currEmoji.group);
-		$( "#description .path a:nth-child(3)" ).text(currEmoji.subgroups);
+		$( "#description .path a:nth-child(2)" ).text(currEmoji.group).attr("data-grouppath", currEmoji.group);
+		$( "#description .path a:nth-child(3)" ).text(currEmoji.subgroups).attr("data-grouppath", currEmoji.groupPath);
 
 		// update download links
 		$( "#svg-download-btn" ).attr("href", path + "/svg/" + currEmoji.hexcode + ".svg");
@@ -515,7 +517,7 @@ $(document).ready(function() {
 			$( "#emoji-detail-wrapper .popover-wrapper" ).fadeOut(400);
 		}
 
-		exposeListFilter( {group: $( this ).data( "grouppath" ), search: undefined, author: undefined, emoji: undefined} );
+		exposeListFilter( {group: $( this ).attr( "data-grouppath" ), search: undefined, author: undefined, emoji: undefined} );
 	});
 
 	// "show color" radio button change listener to change EMOJI_LIST from black to color or vice versa
