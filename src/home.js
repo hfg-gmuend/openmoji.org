@@ -6,7 +6,7 @@ $(document).ready(function() {
 	// get all emojis and generate category showcase
 	$.getJSON( "data/openmoji.json" , function(json) {
 		EMOJI_LIST = json.filter(function(emoji) {
-			return emoji.skintone === "";
+			return emoji.skintone === "" && emoji.subgroups != "country-flag";
 		});
 
 		genEmojiCloud();
