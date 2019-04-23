@@ -764,9 +764,29 @@ footer {
       #home-wrapper #landing .content > * {
         width: 80%;
         max-width: 675px; }
-      #home-wrapper #landing .content h1 {
+      /* #home-wrapper #landing .content h1 {
         font-size: 70px;
-        margin-bottom: 20px; }
+        margin-bottom: 20px; } */
+        @media (min-width: 300px) {
+          #home-wrapper #landing .content h1 {
+              font-size: 2.7rem;
+              margin-bottom: 20px;}}
+        @media (min-width: 544px) {
+          #home-wrapper #landing .content h1 {
+              font-size: 3rem;
+              margin-bottom: 20px;}}
+        @media (min-width: 768px) {
+          #home-wrapper #landing .content h1 {
+              font-size: 3.5rem;
+              margin-bottom: 20px;}}
+        @media (min-width: 992px) {
+          #home-wrapper #landing .content h1 {
+              font-size: 4rem;
+              margin-bottom: 20px;}}
+        @media (min-width: 1200px) {
+          #home-wrapper #landing .content h1 {
+              font-size: 4.4rem;
+              margin-bottom: 20px;}}
       #home-wrapper #landing .content h2 {
         margin-bottom: 35px; }
       #home-wrapper #landing .content .emoji {
