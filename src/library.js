@@ -48,7 +48,7 @@ $(document).ready(function() {
 	var currentLazyInstance;
 
 	$.when(
-		$.getJSON( "data/openmoji.json" , function(json) {
+		$.getJSON( "../data/openmoji.json" , function(json) {
 			var filteredEmojies = {};
 
 			json.forEach(function(item) {
@@ -65,10 +65,10 @@ $(document).ready(function() {
 
 			EMOJI_LIST = Object.values(filteredEmojies).sort(SORT_FUNCS["unicode"]);
 		}),
-		$.getJSON( "data/color-palette.json" , function(json) {
+		$.getJSON( "../data/color-palette.json" , function(json) {
 			FITZPATRICK_COLOR_PALETTE = json.skintones.fitzpatrick;
 		}),
-		$.getJSON( "data/filterWeights.json" , function(json) {
+		$.getJSON( "../data/filterWeights.json" , function(json) {
 			LIST_FILTERS = json;
 		})
 	).then(function() {
@@ -256,12 +256,12 @@ $(document).ready(function() {
 		if($( "#show-color .switch input[type=checkbox]" ).is(":checked")) {
 			for(var i = 0; i < currentList.length; i++) {
 				var currEmoji = currentList[i].item;
-				$( ".emoji_grid" ).append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img class='lazy' data-src='data/color/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
+				$( ".emoji_grid" ).append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img class='lazy' data-src='../data/color/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
 			}
 		} else {
 			for(var i = 0; i < currentList.length; i++) {
 				var currEmoji = currentList[i].item;
-				$( ".emoji_grid" ).append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img class='lazy' data-src='data/black/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
+				$( ".emoji_grid" ).append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img class='lazy' data-src='../data/black/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
 			}
 		}
 
@@ -396,7 +396,7 @@ $(document).ready(function() {
 		}
 
 		// get path
-		var path = $( "#show-color .switch input[type=checkbox]" ).is(":checked") ? "data/color" : "data/black";
+		var path = $( "#show-color .switch input[type=checkbox]" ).is(":checked") ? "../data/color" : "../data/black";
 
 		// reset highlighting
 		$( "#outline-emoji-preview" ).removeClass("highlight");
@@ -428,8 +428,8 @@ $(document).ready(function() {
 		// show image/circle preview if emoji has skintones or vice versa if it hasn't
 		if(currEmoji.skintones === undefined) {
 			// update preview images
-			$( "#outline-emoji-image-preview" ).attr("src", "data/black/svg/" + emojiHex + ".svg");
-			$( "#color-emoji-image-preview" ).attr("src", "data/color/svg/" + emojiHex + ".svg");
+			$( "#outline-emoji-image-preview" ).attr("src", "../data/black/svg/" + emojiHex + ".svg");
+			$( "#color-emoji-image-preview" ).attr("src", "../data/color/svg/" + emojiHex + ".svg");
 
 			// show image preview and hide circle preview
 			$( "#outline-emoji-preview" ).removeClass("visible").addClass("hidden");
