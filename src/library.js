@@ -432,13 +432,13 @@ $(document).ready(function() {
 			$( "#color-emoji-image-preview" ).attr("src", "data/color/svg/" + emojiHex + ".svg");
 
 			// show image preview and hide circle preview
-			$( "#outline-emoji-preview" ).removeClass("visible").addClass("hidden");			
+			$( "#outline-emoji-preview" ).removeClass("visible").addClass("hidden");
 			$( "#color-emoji-preview" ).removeClass("visible").addClass("hidden");
 			$( "#outline-emoji-image-preview" ).removeClass("hidden").addClass("visible");
 			$( "#color-emoji-image-preview" ).removeClass("hidden").addClass("visible");
 		} else {
 			// hide image preview and show circle preview
-			$( "#outline-emoji-image-preview" ).removeClass("visible").addClass("hidden");			
+			$( "#outline-emoji-image-preview" ).removeClass("visible").addClass("hidden");
 			$( "#color-emoji-image-preview" ).removeClass("visible").addClass("hidden");
 			$( "#outline-emoji-preview" ).removeClass("hidden").addClass("visible");
 			$( "#color-emoji-preview" ).removeClass("hidden").addClass("visible");
