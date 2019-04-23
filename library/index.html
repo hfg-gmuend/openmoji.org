@@ -14,7 +14,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
 </head>
 <body>
@@ -29,11 +29,11 @@
                         <li><a href="https://openmoji.org/about">About</a></li>
                     </ul>
                 <div class="emoji-search">
-                    <img src="img/search.svg">
+                    <img src="../img/search.svg">
                     <input class="search" type="text" name="emojisearch" placeholder="author, category or emoji …">
                 </div>
                 <div class="right">
-                    <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "img/brand-icons/github_hi.svg"></a>
+                    <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "../img/brand-icons/github_hi.svg"></a>
                     <div class="dropdown">
                         <button><div>Get OpenMojis</div><div><i class="arrow down"></i></div></button>
                         <div class="dropdown-content">
@@ -124,11 +124,11 @@
                     <p>Licence: <a href="https://creativecommons.org/licenses/by-sa/4.0/.">CC BY-SA 4.0</a></p>
                 </div>
                 <ul>
-                    <li><a class="iconlink" href="https://twitter.com/share?url=https://www.github.com/hfg-gmuend/openmoji/releases/latest&amp;text=OpenMojis&amp;hashtags=openmoji" target="_blank"><img src="img/brand-icons/twitter.svg"></a></li>
-                    <!-- <li><a class="iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li> -->
-                    <li><a class="iconlink" href="http://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest"><img src="img/brand-icons/facebook.svg" target="_blank"></a></li>
-                    <!-- <li><a class="iconlink" href="mailto:?Subject=OpenMojis&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank"><img src="data/black/svg/1F4E7.svg"></a></li> -->
-                    <li><a class="iconlink" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="img/brand-icons/pinterest.svg" target="_blank"></a></li>
+                    <li><a class="iconlink" href="https://twitter.com/share?url=https://www.github.com/hfg-gmuend/openmoji/releases/latest&amp;text=OpenMojis&amp;hashtags=openmoji" target="_blank"><img src="../img/brand-icons/twitter.svg"></a></li>
+                    <!-- <li><a class="iconlink" href=""><img src="../img/brand-icons/instagram.svg"></a></li> -->
+                    <li><a class="iconlink" href="http://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest"><img src="../img/brand-icons/facebook.svg" target="_blank"></a></li>
+                    <!-- <li><a class="iconlink" href="mailto:?Subject=OpenMojis&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank"><img src="../data/black/svg/1F4E7.svg"></a></li> -->
+                    <li><a class="iconlink" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="../img/brand-icons/pinterest.svg" target="_blank"></a></li>
                 </ul>
             </footer>
         </div>
@@ -142,24 +142,24 @@
                         <!-- </div>     -->
                         <div id = "active-emoji-selection">
                             <!--Set main rmoji-->
-                            <img id="main-emoji-image" class="lazy" data-src="img/preview-big.png">
+                            <img id="main-emoji-image" class="lazy" data-src="../img/preview-big.png">
                             <div class = "small-emoji-preview">
                                 <div class="next-or-prev prev-emoji" id="">
-                                    <img class="arrow lazy" data-src="img/from-arrow.svg">
-                                    <img class="icon-img lazy" data-src="img/preview-big.png">
+                                    <img class="arrow lazy" data-src="../img/from-arrow.svg">
+                                    <img class="icon-img lazy" data-src="../img/preview-big.png">
                                 </div>
                                 <div id="emoji-preview">
                                     <div id="outline-emoji-preview" class="circle hidden"></div>
                                     <div id="color-emoji-preview" class="circle hidden"></div>
 
-                                    <img id="outline-emoji-image-preview" class="emoji-preview-image lazy" data-src="img/preview-ol-small.png">
-                                    <img id="color-emoji-image-preview" class="emoji-preview-image lazy" data-src="img/preview-filled-small.png">
+                                    <img id="outline-emoji-image-preview" class="emoji-preview-image lazy" data-src="../img/preview-ol-small.png">
+                                    <img id="color-emoji-image-preview" class="emoji-preview-image lazy" data-src="../img/preview-filled-small.png">
 
                                     <div id="skintones-emoji-preview"></div>
                                 </div>
                                 <div class="next-or-prev next-emoji" id="">
-                                    <img class="icon-img lazy" data-src="img/preview-big.png">
-                                    <img class="arrow lazy" data-src="img/arrow-to.svg">
+                                    <img class="icon-img lazy" data-src="../img/preview-big.png">
+                                    <img class="arrow lazy" data-src="../img/arrow-to.svg">
                                 </div>
                             </div>
                         </div>
@@ -216,9 +216,9 @@
                         <!-- <h4 id="sharetitle"> share </h4> -->
                         <!-- <div id="shareitems">
                             <ul>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/facebook.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/instagram.svg"></a></li>
-                                <li><a class = "iconlink" href=""><img src="img/brand-icons/twitter.svg"></a></li>
+                                <li><a class = "iconlink" href=""><img src="../img/brand-icons/facebook.svg"></a></li>
+                                <li><a class = "iconlink" href=""><img src="../img/brand-icons/instagram.svg"></a></li>
+                                <li><a class = "iconlink" href=""><img src="../img/brand-icons/twitter.svg"></a></li>
                             </ul>
                         </div> -->
                     </div>
@@ -288,10 +288,10 @@
     </div>
 </body>
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
-<script src="src/fuse.min.js" rel="script"></script>
-<script src="src/jquery-3.3.1.min.js" rel="script"></script>
+<script src="../src/fuse.min.js" rel="script"></script>
+<script src="../src/jquery-3.3.1.min.js" rel="script"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js" rel="script"></script>
-<script src="data/hfg-emojis-list.json" rel="script"></script>
-<script src="src/general.js" rel="script"></script>
-<script src="src/library.js" rel="script"></script>
+<script src="../data/hfg-emojis-list.json" rel="script"></script>
+<script src="../src/general.js" rel="script"></script>
+<script src="../src/library.js" rel="script"></script>
 </html>
