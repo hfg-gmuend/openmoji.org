@@ -748,6 +748,8 @@ footer {
     background-color: #5EB0CF; }
   #home-wrapper .active-tab {
     border-color: #5EB0CF; }
+  #home-wrapper data-simplebar {
+    width: 100%; }
   #home-wrapper #landing {
     height: 100vh;
     display: flex;
