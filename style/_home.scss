@@ -12,6 +12,9 @@
 	.active-tab{
 		border-color: $clr-blue-light;
 	}
+	data-simplebar{
+		width: 100%;
+	}
 	#landing{
 		height: 100vh;
 		display: flex;

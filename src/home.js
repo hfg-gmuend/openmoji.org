@@ -28,7 +28,7 @@ $(document).ready(function() {
 			var yPos = EMOJI_POSITIONS[i].y + 50;
 
 			// add emoji to html
-			if( !(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100) ) $( "#landing .content" ).append("<a href='library.html#emoji=" + shuffledList[i].hexcode + "'><img class='emoji lazy' data-src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
+			if( !(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100) ) $( "#landing .content" ).append("<a href='./library#emoji=" + shuffledList[i].hexcode + "'><img class='emoji lazy' data-src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
 		}
 	}
 
@@ -140,7 +140,7 @@ $(document).ready(function() {
 			// break out of loop if array doesn't have new emojis anymore
 			if(i >= filteredList.length) break;
 
-			html += "<a class='categories-item' href='library.html#emoji=" + filteredList[i].hexcode + "'><img src='data/color/svg/" + filteredList[i].hexcode + ".svg'></a>";
+			html += "<a class='categories-item' href='./library#emoji=" + filteredList[i].hexcode + "'><img src='data/color/svg/" + filteredList[i].hexcode + ".svg'></a>";
 		}
 		html += "</div>";
 
@@ -171,12 +171,12 @@ $(document).ready(function() {
 
 
 	//------------ Event listeners ------------
-	// search field listener to change location to library.html and set search filter
+	// search field listener to change location to ./library and set search filter
 	console.log(window.location);
 	$( ".search" ).keydown(function(e) {
 		var url = window.location.href;
 		if (e.which == 13) {
-			window.location.href = url.substring(0, url.lastIndexOf("/") + 1) + "library.html#search=" + $( this ).val();
+			window.location.href = url.substring(0, url.lastIndexOf("/") + 1) + "./library#search=" + $( this ).val();
 		}
 	});
 
