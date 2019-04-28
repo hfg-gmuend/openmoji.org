@@ -743,16 +743,18 @@ footer {
   display: flex;
   flex-direction: column; }
   #home-wrapper h1 {
-    color: #5EB0CF; }
+    color: #242424; }
   #home-wrapper button {
     background-color: #5EB0CF; }
   #home-wrapper .active-tab {
     border-color: #5EB0CF; }
+  #home-wrapper data-simplebar {
+    width: 100%; }
   #home-wrapper #landing {
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     overflow: hidden; }
     #home-wrapper #landing .content {
       position: relative;
@@ -760,33 +762,14 @@ footer {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center; }
+      text-align: left; }
       #home-wrapper #landing .content > * {
         width: 80%;
         max-width: 675px; }
-      /* #home-wrapper #landing .content h1 {
-        font-size: 70px;
-        margin-bottom: 20px; } */
-        @media (min-width: 300px) {
-          #home-wrapper #landing .content h1 {
-              font-size: 2.7rem;
-              margin-bottom: 20px;}}
-        @media (min-width: 544px) {
-          #home-wrapper #landing .content h1 {
-              font-size: 3rem;
-              margin-bottom: 20px;}}
-        @media (min-width: 768px) {
-          #home-wrapper #landing .content h1 {
-              font-size: 3.5rem;
-              margin-bottom: 20px;}}
-        @media (min-width: 992px) {
-          #home-wrapper #landing .content h1 {
-              font-size: 4rem;
-              margin-bottom: 20px;}}
-        @media (min-width: 1200px) {
-          #home-wrapper #landing .content h1 {
-              font-size: 4.4rem;
-              margin-bottom: 20px;}}
+      #home-wrapper #landing .content h1 {
+        font-size: 17px;
+        font-weight: 500;
+        margin-bottom: 20px; }
       #home-wrapper #landing .content h2 {
         margin-bottom: 35px; }
       #home-wrapper #landing .content .emoji {
@@ -796,7 +779,8 @@ footer {
         margin-top: -25px; }
       #home-wrapper #landing .content .emoji-search {
         max-width: 400px;
-        height: 60px; }
+        height: 60px;
+        left: 0px; }
         #home-wrapper #landing .content .emoji-search img {
           left: 0px;
           top: 12px;

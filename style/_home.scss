@@ -4,7 +4,7 @@
 	flex-direction: column;
 
 	h1{
-		color: $clr-blue-light;
+		color: $clr-grey-dark;
 	}
 	button{
 		background-color: $clr-blue-light;
@@ -12,11 +12,14 @@
 	.active-tab{
 		border-color: $clr-blue-light;
 	}
+	data-simplebar{
+		width: 100%;
+	}
 	#landing{
 		height: 100vh;
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		justify-content: left;
+		align-items: left;
 		overflow: hidden;
 
 		.content{
@@ -25,7 +28,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			text-align: center;
+			text-align: left;
 
 			> *{
 				width: 80%;
@@ -33,7 +36,8 @@
 			}
 
 			h1 {
-				font-size: $fnt-sz-xxl;
+				font-size: $fnt-sz-md;
+				font-weight: $fnt-reg;
 				margin-bottom: $gap-small;
 			}
 
@@ -51,6 +55,7 @@
 			.emoji-search{
 				max-width: 400px;
 				height: 60px;
+				left: 0px;
 
 				img {
 					left: 0px;
