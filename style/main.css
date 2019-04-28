@@ -1377,7 +1377,7 @@ footer ul li+li {
   display: flex;
   align-items: center;
   padding-left: 15px;
-  background-color: Black;
+  background-color: black;
   color: #fff;
   box-shadow: none;
 }
