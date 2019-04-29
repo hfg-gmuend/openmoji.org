@@ -1129,7 +1129,7 @@ footer ul li+li {
 }
 
 #home-wrapper header {
-  height: 120px;
+  height: 91px;
   position: sticky;
   top: 0;
 }
@@ -1514,7 +1514,8 @@ footer ul li+li {
 
 @media screen and (min-width: 960px) {
   .home-header {
-    padding: 30px 50px;
+    /* padding: 30px 50px; */
+    padding: 0px 50px 0px 50px;
     justify-content: space-between;
   }
   .home-header__links {

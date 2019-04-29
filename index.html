@@ -21,7 +21,8 @@
 
 <body>
   <div id="home-wrapper">
-    <header class="sticky-top home-header">
+
+    <header>
       <div class="home-header__links">
         <ul class="home-header__links__scroller">
           <li class="home-header__link" data-active="true"><a href="./">OpenMoji</a></li>
@@ -31,10 +32,10 @@
           <li class="home-header__link"><a href="./about">About</a></li>
         </ul>
       </div>
-      <div class="home-header__tools">
-        <a class="home-header__gh-link iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "img/brand-icons/github_hi.svg"></a>
+      <div class="right">
+        <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "../img/brand-icons/github_hi.svg"></a>
         <div class="dropdown">
-          <button class="home-header__get-button"><div>Get OpenMojis</div><div><i class="arrow down"></i></div></button>
+          <button><div>Get OpenMojis</div><div><i class="arrow down"></i></div></button>
           <div class="dropdown-content">
             <ul>
               <li>
@@ -78,6 +79,7 @@
             </ul>
           </div>
         </div>
+        <!-- <div class="clear"></div> -->
       </div>
     </header>
     <div id="landing">
