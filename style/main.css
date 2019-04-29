@@ -743,7 +743,7 @@ footer {
   display: flex;
   flex-direction: column; }
   #home-wrapper h1 {
-    color: #242424; }
+    color: #818080; }
   #home-wrapper button {
     background-color: #5EB0CF; }
   #home-wrapper .active-tab {
@@ -759,16 +759,19 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: left; }
+      align-items: left;
+      text-align: left;
+      padding-left: 100px; }
       #home-wrapper #landing .content > * {
         width: 80%;
         max-width: 675px; }
       #home-wrapper #landing .content h1 {
         font-size: 17px;
         font-weight: 500;
-        margin-bottom: 20px; }
+        margin-bottom: 10px; }
       #home-wrapper #landing .content h2 {
+        font-size: 50px;
+        font-weight: 500;
         margin-bottom: 35px; }
       #home-wrapper #landing .content .emoji {
         position: absolute;
@@ -777,8 +780,7 @@ footer {
         margin-top: -25px; }
       #home-wrapper #landing .content .emoji-search {
         max-width: 400px;
-        height: 60px;
-        left: 0px; }
+        height: 60px; }
         #home-wrapper #landing .content .emoji-search img {
           left: 0px;
           top: 12px;
