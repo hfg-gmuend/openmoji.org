@@ -51,7 +51,7 @@
 
 			.emoji{
 				position: absolute;
-				width: 50px;
+				width: 80px;
 				margin-left: -25px;
 				margin-top: -25px;
 			}
@@ -82,7 +82,10 @@
 	header{
 		height: $footer-header-max-height;
 		position: sticky;
-		top: 0;
+		//top: -10px;
+		// height: 200px;
+		margin-top: -2px;
+		border-bottom: $clr-grey-super-light 1px solid;
 	}
 
 	.content-wrapper{
