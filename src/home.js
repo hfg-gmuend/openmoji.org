@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 		genEmojiCloud();
 		genCategoriesShowcase();
-		initBigEmojiOverview();
+		// initBigEmojiOverview();
 		$(".lazy").Lazy();
 	});
 
