@@ -1,4 +1,28 @@
 #home-wrapper{
+
+	// height: 100%;
+	//
+	.container{
+		grid-template-areas: "header header" "content content" "footer footer";
+	}
+	//
+	// #samples-content{
+	// 	@extend %content;
+	// }
+	//
+	// .sample {
+	// 	width: 100%;
+	// }
+	//
+	// .caption {
+	// 	margin-top: 1em;
+	// 	margin-left: 2em;
+	// 	height: 14em;
+	// }
+
+
+
+
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -79,12 +103,13 @@
 			}
 		}
 	}
+
 	header{
-		height: $footer-header-max-height;
-		position: sticky;
+		// height: $footer-header-max-height;
+		// position: sticky;
 		//top: -10px;
 		// height: 200px;
-		margin-top: -2px;
+		// margin-top: -2px;
 		border-bottom: $clr-grey-super-light 1px solid;
 	}
 
@@ -246,16 +271,16 @@
 					justify-content: space-around;
 				}
 
-				a{
-					&.active-tab{
-						color: #000000;
-						> *{
-							margin-bottom: $gap-xs - 4px;
-						}
-					}
-					> *{
-						margin-bottom: $gap-xs;
-					}
+				// a{
+				// 	&.active-tab{
+				// 		color: #000000;
+				// 		// > *{
+				// 		// 	margin-bottom: $gap-xs;
+				// 		// }
+				// 	}
+				// 	// > *{
+				// 	// 	margin-bottom: $gap-xs;
+				// 	}
 				}
 			}
 
@@ -279,13 +304,14 @@
 				}
 			}
 		}
-	}
+
 
 	#footer-wrapper{
 		background-color: $clr-blue-light;
 
 		.content-wrapper{
 			min-height: 0;
+			padding-top: $gap-xs;
 		}
 
 		#interest{
@@ -294,7 +320,7 @@
 			align-items: center;
 			flex-direction: column;
 			margin-top: $gap-med;
-			margin-bottom: $gap-med;
+			// padding-bottom: $gap-med;
 
 			h1{
 				color: $clr-white;
@@ -330,15 +356,24 @@
 				}
 			}
 		}
-
-		footer{
-			p{
-				color: $clr-white;
-			}
-
-			a{
-				color: $clr-white;
-			}
-		}
 	}
+	footer{
+		background-color: $clr-blue-light;
+		// position: fixed;
+		// bottom: 0px;
+		// width: calc( 100vw - 100px);
+		height: 50px;
+		margin: 0px;
+		p{
+			color: $clr-white;
+		}
+
+		a{
+			color: $clr-white;
+		}
+		// ul{
+		// 	// right: 1em;
+		// }
+	}
+
 }

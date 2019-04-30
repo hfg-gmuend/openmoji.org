@@ -186,7 +186,7 @@ input[type='radio']{
 }
 
 main{
-    grid-area: content;
+    grid-area: content !important;
     margin-top: $gap-reg;
     overflow-x: hidden;
     overflow-y: auto;

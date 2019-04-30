@@ -143,7 +143,7 @@ input[type='radio'] {
     color: #242424; }
 
 main {
-  grid-area: content;
+  grid-area: content !important;
   margin-top: 30px;
   overflow-x: hidden;
   overflow-y: auto; }
@@ -742,6 +742,8 @@ footer {
   min-height: 100vh;
   display: flex;
   flex-direction: column; }
+  #home-wrapper .container {
+    grid-template-areas: "header header" "content content" "footer footer"; }
   #home-wrapper h1 {
     color: #818080; }
   #home-wrapper button {
@@ -797,9 +799,6 @@ footer {
           padding-left: 55px;
           border: none; }
   #home-wrapper header {
-    height: 80px;
-    position: sticky;
-    margin-top: -2px;
     border-bottom: rgba(129, 128, 128, 0.5) 1px solid; }
   #home-wrapper .content-wrapper {
     min-height: calc(100vh - 80px);
@@ -900,37 +899,31 @@ footer {
       margin-bottom: 20px; }
       #home-wrapper #categories-showcase .content #categories .row {
         justify-content: space-around; }
-      #home-wrapper #categories-showcase .content #categories a.active-tab {
-        color: #000000; }
-        #home-wrapper #categories-showcase .content #categories a.active-tab > * {
-          margin-bottom: 6px; }
-      #home-wrapper #categories-showcase .content #categories a > * {
-        margin-bottom: 10px; }
-    #home-wrapper #categories-showcase .content .row {
+    #home-wrapper #categories-showcase .row {
       display: inline-flex;
       flex-wrap: wrap;
       width: 100%;
       justify-content: center; }
-      #home-wrapper #categories-showcase .content .row .categories-item {
+      #home-wrapper #categories-showcase .row .categories-item {
         max-height: 250px;
         min-width: 150px;
         box-sizing: border-box;
         display: flex;
         justify-content: center;
         align-items: flex-start; }
-        #home-wrapper #categories-showcase .content .row .categories-item img {
+        #home-wrapper #categories-showcase .row .categories-item img {
           height: 100%; }
   #home-wrapper #footer-wrapper {
     background-color: #5EB0CF; }
     #home-wrapper #footer-wrapper .content-wrapper {
-      min-height: 0; }
+      min-height: 0;
+      padding-top: 10px; }
     #home-wrapper #footer-wrapper #interest {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      margin-top: 50px;
-      margin-bottom: 50px; }
+      margin-top: 50px; }
       #home-wrapper #footer-wrapper #interest h1 {
         color: #fff;
         margin-bottom: 30px; }
@@ -955,7 +948,11 @@ footer {
           #home-wrapper #footer-wrapper #interest .buttongroup button img {
             height: 40px;
             margin-right: 5px; }
-    #home-wrapper #footer-wrapper footer p {
+  #home-wrapper footer {
+    background-color: #5EB0CF;
+    height: 50px;
+    margin: 0px; }
+    #home-wrapper footer p {
       color: #fff; }
-    #home-wrapper #footer-wrapper footer a {
+    #home-wrapper footer a {
       color: #fff; }
