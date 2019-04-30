@@ -1,135 +1,135 @@
-.home-header {
-  height: auto !important; // reset ...
-  display: flex;
-  justify-content: center;
-  padding: $gap-xs $gap-small;
-
-  @media screen and (min-width: $bp-med) {
-    padding: 30px $gap-med;
-    justify-content: space-between;
-  }
-
-  & *,
-  & *:before,
-  & *:after {
-    box-sizing: border-box;
-  }
-
-  & > * {
-    flex: auto; // reset header > * { flex: 1; } in style/_header.scss
-  }
-
-  ul {
-    flex-basis: auto;
-  }
-
-  &__links {
-    display: flex;
-    justify-content: center;
-    flex-grow: 0;
-
-    @media screen and (min-width: $bp-med) {
-      justify-content: center;
-    }
-  }
-
-  &__link {
-    height: auto; // reset ...
-    padding-bottom: 8px;
-    border-bottom: 4px solid transparent;
-    margin-top: 6px;
-    margin-bottom: 6px;
-
-    &[data-active] {
-      border-color: #5EB0CF;
-
-      a {
-        color: #242424;
-      }
-    }
-  }
-
-  &__tools {
-    display: flex;
-    flex-grow: 0;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  &__gh-link {
-    height: 30px;
-
-		img {
-			height: 100%
-		}
-  }
-
-  &__get-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-
-    div + div {
-      margin-left: $gap-small;
-    }
-  }
-}
-
-@media screen and (max-width: ($bp-med - 1px)) {
-  .home-header {
-    &__links {
-      position: relative;
-      width: 100%;
-
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: $gap-small;
-        pointer-events: none;
-      }
-
-      &:before {
-        background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-        left: -1 * $gap-small;
-      }
-
-      &:after {
-        background: linear-gradient(-90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-        right: -1 * $gap-small;
-      }
-
-      &__scroller {
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-
-        // allow edges to go to window width while keeping padding
-        padding-left: $gap-small;
-        padding-right: $gap-small;
-        margin-left: -1 * $gap-small;
-        margin-right: -1 * $gap-small;
-
-        /* hack to have last .home-header__link's margin not collapse */
-        &:after {
-          content: '';
-          padding-right: 1px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $bp-med) {
-  .home-header {
-    padding: 30px $gap-med;
-    justify-content: space-between;
-
-    &__links {
-      justify-content: center;
-    }
-  }
-}
+// .home-header {
+//   height: auto !important; // reset ...
+//   display: flex;
+//   justify-content: center;
+//   padding: $gap-xs $gap-small;
+//
+//   @media screen and (min-width: $bp-med) {
+//     padding: 30px $gap-med;
+//     justify-content: space-between;
+//   }
+//
+//   & *,
+//   & *:before,
+//   & *:after {
+//     box-sizing: border-box;
+//   }
+//
+//   & > * {
+//     flex: auto; // reset header > * { flex: 1; } in style/_header.scss
+//   }
+//
+//   ul {
+//     flex-basis: auto;
+//   }
+//
+//   &__links {
+//     display: flex;
+//     justify-content: center;
+//     flex-grow: 0;
+//
+//     @media screen and (min-width: $bp-med) {
+//       justify-content: center;
+//     }
+//   }
+//
+//   &__link {
+//     height: auto; // reset ...
+//     padding-bottom: 8px;
+//     border-bottom: 4px solid transparent;
+//     margin-top: 6px;
+//     margin-bottom: 6px;
+//
+//     &[data-active] {
+//       border-color: #5EB0CF;
+//
+//       a {
+//         color: #242424;
+//       }
+//     }
+//   }
+//
+//   &__tools {
+//     display: flex;
+//     flex-grow: 0;
+//     align-items: center;
+//     margin-top: 10px;
+//     margin-bottom: 10px;
+//   }
+//
+//   &__gh-link {
+//     height: 30px;
+//
+// 		img {
+// 			height: 100%
+// 		}
+//   }
+//
+//   &__get-button {
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 200px;
+//
+//     div + div {
+//       margin-left: $gap-small;
+//     }
+//   }
+// }
+//
+// @media screen and (max-width: ($bp-med - 1px)) {
+//   .home-header {
+//     &__links {
+//       position: relative;
+//       width: 100%;
+//
+//       &:before,
+//       &:after {
+//         content: '';
+//         position: absolute;
+//         top: 0;
+//         bottom: 0;
+//         width: $gap-small;
+//         pointer-events: none;
+//       }
+//
+//       &:before {
+//         background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+//         left: -1 * $gap-small;
+//       }
+//
+//       &:after {
+//         background: linear-gradient(-90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+//         right: -1 * $gap-small;
+//       }
+//
+//       &__scroller {
+//         overflow: auto;
+//         -webkit-overflow-scrolling: touch;
+//
+//         // allow edges to go to window width while keeping padding
+//         padding-left: $gap-small;
+//         padding-right: $gap-small;
+//         margin-left: -1 * $gap-small;
+//         margin-right: -1 * $gap-small;
+//
+//         /* hack to have last .home-header__link's margin not collapse */
+//         &:after {
+//           content: '';
+//           padding-right: 1px;
+//         }
+//       }
+//     }
+//   }
+// }
+//
+// @media screen and (min-width: $bp-med) {
+//   .home-header {
+//     padding: 30px $gap-med;
+//     justify-content: space-between;
+//
+//     &__links {
+//       justify-content: center;
+//     }
+//   }
+// }
