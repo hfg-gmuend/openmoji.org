@@ -105,10 +105,13 @@
 	}
 
 	header{
+		position: fixed;
+		top: 0px;
+		width: 100vw;
 		// height: $footer-header-max-height;
 		// position: sticky;
 		//top: -10px;
-		// height: 200px;
+		height: 80px;
 		// margin-top: -2px;
 		border-bottom: $clr-grey-super-light 1px solid;
 	}

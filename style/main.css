@@ -799,6 +799,10 @@ footer {
           padding-left: 55px;
           border: none; }
   #home-wrapper header {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 80px;
     border-bottom: rgba(129, 128, 128, 0.5) 1px solid; }
   #home-wrapper .content-wrapper {
     min-height: calc(100vh - 80px);
