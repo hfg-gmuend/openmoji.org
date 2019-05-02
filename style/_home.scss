@@ -280,7 +280,7 @@
 			min-height: 0;
 		}
 
-		button{
+		button {
 			margin-left: 375px;
 			// display: flex;
 			// align-items: center;
@@ -335,6 +335,16 @@
 				}
 			}
 		}
+	}
+
+	#video-wrapper {
+		display: block;
+		padding-top: $gap-large;
+		padding-bottom: $gap-large;
+	 height: 506px;
+		background-color: $clr-white;
+		// frameborder: 0;
+		//  allow: autoplay; fullscreen allowfullscreen
 	}
 
 	#footer-wrapper {

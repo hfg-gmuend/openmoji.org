@@ -941,6 +941,12 @@ footer {
         align-items: flex-start; }
         #home-wrapper #categories-showcase .row .categories-item img {
           height: 100%; }
+  #home-wrapper #video-wrapper {
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 506px;
+    background-color: #fff; }
   #home-wrapper #footer-wrapper {
     background-color: #5EB0CF; }
     #home-wrapper #footer-wrapper .content-wrapper {
