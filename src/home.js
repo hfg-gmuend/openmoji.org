@@ -201,8 +201,8 @@ $(document).ready(function() {
 		$( "#categories-showcase .content" ).css("min-height", $( "#categories-showcase .content" ).height());
 
 		// change duration of scrollmagic animations
-		emoji_left.duration(Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top));
-		emoji_right.duration(Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top));
+		// emoji_left.duration(Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top));
+		// emoji_right.duration(Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top));
 	});
 
 	// window scroll listener
