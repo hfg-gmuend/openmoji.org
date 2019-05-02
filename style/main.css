@@ -747,7 +747,15 @@ footer {
     grid-template-areas: "header header" "content content" "footer footer";
     grid-template-rows: 50px minmax(65%, auto) auto; }
   #home-wrapper h1 {
-    color: #818080; }
+    text-align: center;
+    width: 600px;
+    padding-left: 150px;
+    padding-right: 150px; }
+    @media screen and (max-width: 960px) {
+      #home-wrapper h1 {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: auto; } }
   #home-wrapper button {
     background-color: #5EB0CF; }
   #home-wrapper .active-tab {
@@ -776,7 +784,8 @@ footer {
       #home-wrapper #landing .content h1 {
         font-size: 17px;
         font-weight: 500;
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        text-align: left; }
       #home-wrapper #landing .content h2 {
         font-size: 50px;
         font-weight: 500;

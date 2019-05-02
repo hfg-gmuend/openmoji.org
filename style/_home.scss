@@ -29,7 +29,16 @@
 	flex-direction: column;
 
 	h1{
-		color: $clr-grey-light;
+		// color: $clr-grey-light;
+		text-align: center;
+		width: 600px;
+		padding-left: 150px;
+		padding-right: 150px;
+		@media screen and (max-width: $bp-med) {
+			padding-left: 0px;
+			padding-right: 0px;
+			width: auto;
+		}
 	}
 	button{
 		background-color: $clr-blue-light;
@@ -68,6 +77,7 @@
 				font-size: $fnt-sz-md;
 				font-weight: $fnt-reg;
 				margin-bottom: $gap-xs;
+				text-align: left;
 			}
 
 			h2{
