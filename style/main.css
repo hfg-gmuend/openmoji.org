@@ -753,8 +753,8 @@ footer {
     padding-right: 150px; }
     @media screen and (max-width: 960px) {
       #home-wrapper h1 {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
         width: auto; } }
   #home-wrapper button {
     background-color: #5EB0CF; }
@@ -785,35 +785,38 @@ footer {
         font-size: 17px;
         font-weight: 500;
         margin-bottom: 10px;
-        text-align: left; }
-      #home-wrapper #landing .content h2 {
-        font-size: 50px;
-        font-weight: 500;
-        margin-bottom: 35px; }
-      #home-wrapper #landing .content .emoji {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
+        width: auto; }
+    #home-wrapper #landing h2 {
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 35px; }
+    #home-wrapper #landing .emoji {
+      position: absolute;
+      width: 80px;
+      margin-left: -25px;
+      margin-top: -25px; }
+    #home-wrapper #landing .emoji-search {
+      max-width: 400px;
+      height: 60px; }
+      #home-wrapper #landing .emoji-search img {
+        left: 0;
+        top: 12px;
         position: absolute;
-        width: 80px;
-        margin-left: -25px;
-        margin-top: -25px; }
-      #home-wrapper #landing .content .emoji-search {
-        max-width: 400px;
-        height: 60px; }
-        #home-wrapper #landing .content .emoji-search img {
-          left: 0px;
-          top: 12px;
-          position: absolute;
-          height: 60%;
-          width: auto;
-          padding-right: 20px;
-          opacity: 0.4; }
-        #home-wrapper #landing .content .emoji-search input {
-          font-size: 23px;
-          background-color: #F2F1F0;
-          padding-left: 55px;
-          border: none; }
+        height: 60%;
+        width: auto;
+        padding-right: 20px;
+        opacity: 0.4; }
+      #home-wrapper #landing .emoji-search input {
+        font-size: 23px;
+        background-color: #F2F1F0;
+        padding-left: 55px;
+        border: none; }
   #home-wrapper header {
     position: fixed;
-    top: 0px;
+    top: 0;
     width: 100vw;
     height: 80px;
     border-bottom: rgba(129, 128, 128, 0.5) 1px solid; }
@@ -839,7 +842,6 @@ footer {
           padding-bottom: 120px; } }
       #home-wrapper #small-overview .content .content-item {
         flex-grow: 1;
-        display: flex;
         box-sizing: border-box; }
         #home-wrapper #small-overview .content .content-item + .content-item {
           margin-top: 50px; }
@@ -854,14 +856,21 @@ footer {
             margin-right: 50px;
             margin-bottom: 100px; } }
         #home-wrapper #small-overview .content .content-item img {
-          height: 40px;
-          margin-right: 10px; }
+          width: 100px;
+          margin-right: 75px;
+          margin-left: 75px;
+          margin-bottom: 20px; }
         #home-wrapper #small-overview .content .content-item .description {
           display: flex;
           flex-direction: column; }
           #home-wrapper #small-overview .content .content-item .description h3 {
-            margin-bottom: 20px;
-            color: #5EB0CF; }
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #000;
+            text-align: center; }
+          #home-wrapper #small-overview .content .content-item .description p {
+            text-align: center; }
   #home-wrapper #big-overview {
     background-color: #5EB0CF;
     display: flex;
@@ -910,6 +919,8 @@ footer {
     #home-wrapper #categories-showcase .content-wrapper {
       display: block;
       min-height: 0; }
+    #home-wrapper #categories-showcase button {
+      margin-left: 375px; }
     #home-wrapper #categories-showcase .content > * {
       width: 100%; }
     #home-wrapper #categories-showcase .content #categories {
@@ -968,7 +979,7 @@ footer {
   #home-wrapper footer {
     background-color: #5EB0CF;
     height: 50px;
-    margin: 0px; }
+    margin: 0; }
     #home-wrapper footer p {
       color: #fff; }
     #home-wrapper footer a {
