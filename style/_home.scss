@@ -4,6 +4,7 @@
 	//
 	.container{
 		grid-template-areas: "header header" "content content" "footer footer";
+		grid-template-rows: 50px minmax(65%, auto) auto;
 	}
 	//
 	// #samples-content{
@@ -40,7 +41,7 @@
 		width: 100%;
 	}
 	#landing{
-		height: 100vh;
+		height: calc(100vh - 80px);
 		display: flex;
 		justify-content: left;
 		align-items: left;
@@ -54,6 +55,8 @@
 			align-items: left;
 			text-align: left;
 			padding-left: $gap-large;
+			height: 400px;
+			top: calc(50vh - 200px);
 
 
 			> *{
@@ -103,7 +106,6 @@
 			}
 		}
 	}
-
 	header{
 		position: fixed;
 		top: 0px;

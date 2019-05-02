@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	//------------ Emoji Cloud ------------
 	var EMOJI_LIST;
-	const EMOJI_POSITIONS = getPositions( 1.3, 300 );
-
+	const EMOJI_POSITIONS = getPositions( 1.4, 300 );
+	console.log(EMOJI_POSITIONS);
 	// get all emojis and generate category showcase
 	$.getJSON( "data/openmoji.json" , function(json) {
 		EMOJI_LIST = json.filter(function(emoji) {
