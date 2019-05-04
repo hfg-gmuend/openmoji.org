@@ -753,6 +753,7 @@ footer {
         padding-right: 0;
         width: auto; } }
   #home-wrapper .active-tab {
+    color: #242424 !important;
     border-color: #5EB0CF; }
   #home-wrapper data-simplebar {
     width: 100%; }
@@ -921,6 +922,8 @@ footer {
       margin-bottom: 20px; }
       #home-wrapper #categories-showcase .content #categories .row {
         justify-content: space-around; }
+      #home-wrapper #categories-showcase .content #categories a {
+        color: rgba(129, 128, 128, 0.5); }
     #home-wrapper #categories-showcase .row {
       display: inline-flex;
       flex-wrap: wrap;

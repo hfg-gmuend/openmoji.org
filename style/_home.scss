@@ -41,6 +41,7 @@
 	// }
 
 	.active-tab {
+		color: $clr-grey-dark !important;
 		border-color: $clr-blue-light;
 	}
 
@@ -266,6 +267,7 @@
 		}
 	}
 
+
 	#categories-showcase {
 		padding-top: $gap-large + $gap-small;
 		padding-bottom: $gap-large + $gap-small;
@@ -303,7 +305,8 @@
 				.row {
 					justify-content: space-around;
 				}
-				// a{
+				a{
+					color: $clr-grey-super-light;
 				// 	&.active-tab{
 				// 		color: #000000;
 				// 		// > *{
@@ -312,7 +315,7 @@
 				// 	}
 				// 	// > *{
 				// 	// 	margin-bottom: $gap-xs;
-				// 	}
+					}
 			}
 		}
 
