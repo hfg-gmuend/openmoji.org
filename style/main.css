@@ -39,7 +39,9 @@ h3 {
   font-size: 17px;
   margin-bottom: 10px; }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-weight: 500;
   font-size: 17px;
   color: #818080;
@@ -101,7 +103,7 @@ a {
 
 button {
   cursor: pointer;
-  padding: 0px 20px;
+  padding: 0 20px;
   margin: 0;
   font-size: 17px;
   font-family: inherit;
@@ -119,13 +121,13 @@ input {
 
 .copy-to-clipboard {
   min-width: 0;
-  margin-right: 0px;
-  margin-top: 0px;
-  padding: 0px;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0;
   height: auto;
   background: none;
   box-shadow: none;
-  border-radius: 0px;
+  border-radius: 0;
   border-bottom: 1px solid #D22F29;
   color: #D22F29;
   padding-bottom: 0; }
@@ -184,7 +186,7 @@ svg {
       background: #FFFFFF;
       box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
       border-radius: 8px;
-      padding: 8px 0px;
+      padding: 8px 0;
       white-space: nowrap; }
       .dropdown .dropdown-content ul li {
         margin: 0;
@@ -441,7 +443,7 @@ header {
     -webkit-transform: rotate(45deg); }
 
 .active-tab {
-  border-bottom: 4px solid #E95A47; }
+  border-bottom: 4px solid #3D98BB; }
   .active-tab a {
     color: #242424; }
 
@@ -499,6 +501,8 @@ footer {
   height: 100%; }
   #about-wrapper h1 {
     color: #EEB41A; }
+  #about-wrapper button {
+    background-color: #EEB41A; }
   #about-wrapper .active-tab {
     border-color: #EEB41A; }
   #about-wrapper #about-content p a, #about-wrapper #about-content ul a {
@@ -559,6 +563,8 @@ footer {
   height: 100%; }
   #styleguide-wrapper h1 {
     color: #E27022; }
+  #styleguide-wrapper button {
+    background-color: #E27022; }
   #styleguide-wrapper .active-tab {
     border-color: #E27022; }
   #styleguide-wrapper .intro {
@@ -604,6 +610,8 @@ footer {
     color: #E95A47; }
   #library-wrapper .active-tab {
     border-color: #E95A47; }
+  #library-wrapper button {
+    background-color: #E95A47; }
   #library-wrapper .nav-left #show-color {
     margin-bottom: 30px; }
 
@@ -752,9 +760,6 @@ footer {
         padding-left: 0;
         padding-right: 0;
         width: auto; } }
-  #home-wrapper .active-tab {
-    color: #242424 !important;
-    border-color: #5EB0CF; }
   #home-wrapper data-simplebar {
     width: 100%; }
   #home-wrapper #landing {
