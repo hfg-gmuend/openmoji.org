@@ -106,7 +106,7 @@ button {
   font-size: 17px;
   font-family: inherit;
   color: #fff;
-  background: #E95A47;
+  background: #3D98BB;
   border: none;
   box-shadow: 0 2px 4px 0 rgba(232, 232, 232, 0.5);
   min-height: 40px;
@@ -499,8 +499,6 @@ footer {
   height: 100%; }
   #about-wrapper h1 {
     color: #EEB41A; }
-  #about-wrapper button {
-    background-color: #EEB41A; }
   #about-wrapper .active-tab {
     border-color: #EEB41A; }
   #about-wrapper #about-content p a, #about-wrapper #about-content ul a {
@@ -561,8 +559,6 @@ footer {
   height: 100%; }
   #styleguide-wrapper h1 {
     color: #E27022; }
-  #styleguide-wrapper button {
-    background-color: #E27022; }
   #styleguide-wrapper .active-tab {
     border-color: #E27022; }
   #styleguide-wrapper .intro {
@@ -756,8 +752,6 @@ footer {
         padding-left: 0;
         padding-right: 0;
         width: auto; } }
-  #home-wrapper button {
-    background-color: #5EB0CF; }
   #home-wrapper .active-tab {
     border-color: #5EB0CF; }
   #home-wrapper data-simplebar {
@@ -948,7 +942,7 @@ footer {
     height: 506px;
     background-color: #fff; }
   #home-wrapper #footer-wrapper {
-    background-color: #5EB0CF; }
+    background-color: #3D98BB; }
     #home-wrapper #footer-wrapper .content-wrapper {
       min-height: 0;
       padding-top: 10px; }
@@ -976,14 +970,14 @@ footer {
           display: flex;
           align-items: center;
           padding-left: 15px;
-          background-color: #92d3f5;
+          background-color: #5EB0CF;
           color: #fff;
           box-shadow: none; }
           #home-wrapper #footer-wrapper #interest .buttongroup button img {
             height: 40px;
             margin-right: 5px; }
   #home-wrapper footer {
-    background-color: #5EB0CF;
+    background-color: #3D98BB;
     height: 50px;
     margin: 0; }
     #home-wrapper footer p {

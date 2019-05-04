@@ -36,9 +36,9 @@
 		}
 	}
 
-	button {
-		background-color: $clr-blue-light;
-	}
+	// button {
+	// 	background-color: $clr-blue-light;
+	// }
 
 	.active-tab {
 		border-color: $clr-blue-light;
@@ -348,7 +348,7 @@
 	}
 
 	#footer-wrapper {
-		background-color: $clr-blue-light;
+		background-color: $clr-blue-dark;
 
 		.content-wrapper {
 			min-height: 0;
@@ -387,7 +387,7 @@
 					display: flex;
 					align-items: center;
 					padding-left: 15px;
-					background-color: $clr-blue-super-light;
+					background-color: $clr-blue-light;
 					color: $clr-white;
 					box-shadow: none;
 
@@ -401,7 +401,7 @@
 	}
 
 	footer {
-		background-color: $clr-blue-light;
+		background-color: $clr-blue-dark;
 		// position: fixed;
 		// bottom: 0px;
 		// width: calc( 100vw - 100px);
