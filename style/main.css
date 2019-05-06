@@ -840,14 +840,12 @@ footer {
         #home-wrapper #small-overview .content {
           padding-top: 120px;
           padding-bottom: 120px; } }
+      #home-wrapper #small-overview .content h1 {
+        padding-top: 50px; }
       #home-wrapper #small-overview .content .tow-rows {
         width: 900px;
         display: flex;
-        flex-wrap: wrap;
-        padding-top: 50px; }
-        @media screen and (min-width: 960px) {
-          #home-wrapper #small-overview .content .tow-rows {
-            padding-top: 120px; } }
+        flex-wrap: wrap; }
         #home-wrapper #small-overview .content .tow-rows .content-item {
           flex-grow: 1;
           box-sizing: border-box; }

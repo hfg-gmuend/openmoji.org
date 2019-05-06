@@ -156,16 +156,23 @@
 				padding-bottom: $gap-large + $gap-small;
 			}
 
+			h1 {
+				padding-top: $gap-med;
+				// @media screen and (min-width: $bp-med) {
+				// 	padding-top: $gap-large;
+				// }
+			}
+
 			.tow-rows{
 				width: 900px;
 				display: flex;
 				flex-wrap: wrap;
-				padding-top: $gap-med;
+				// padding-top: $gap-med;
 				// padding-bottom: $gap-med;
-				@media screen and (min-width: $bp-med) {
-					padding-top: $gap-large + $gap-small;
-					// padding-bottom: $gap-large + $gap-small;
-				}
+				// @media screen and (min-width: $bp-med) {
+				// 	padding-top: $gap-med;
+				// 	// padding-bottom: $gap-large + $gap-small;
+				// }
 
 				.content-item {
 					flex-grow: 1;
