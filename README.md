@@ -9,13 +9,13 @@ Developer Setup
 2. Open Terminal and navigate over to the `openmoji-website` folder that you downloaded onto your computer:
 
 ```
-$ cd path/to/folder
+cd path/to/folder
 ```
 
 3. Run:
 
 ```
-$ npm install
+npm install
 ```
 
 Run
@@ -24,5 +24,5 @@ Run
 Start a local web server (with live reload, scss support) by typing in your Terminal the command below. This will open the `index.html` file a new browser window.
 
 ```
-$ npm start
+npm start
 ```
