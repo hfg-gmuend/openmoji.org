@@ -371,12 +371,12 @@
 				}
 				a{
 					color: $clr-grey-super-light;
-				// 	&.active-tab{
-				// 		color: #000000;
-				// 		// > *{
-				// 		// 	margin-bottom: $gap-xs;
-				// 		// }
-				// 	}
+					&.active-tab{
+						color: $clr-grey-dark;
+						// > *{
+						// 	margin-bottom: $gap-xs;
+						// }
+					}
 				// 	// > *{
 				// 	// 	margin-bottom: $gap-xs;
 					}
