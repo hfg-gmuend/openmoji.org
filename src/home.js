@@ -2,7 +2,6 @@ $(document).ready(function() {
 	//------------ Emoji Cloud ------------
 	var EMOJI_LIST;
 	const EMOJI_POSITIONS = getPositions( 1.4, 300 );
-	console.log(EMOJI_POSITIONS);
 	// get all emojis and generate category showcase
 	$.getJSON( "data/openmoji.json" , function(json) {
 		EMOJI_LIST = json.filter(function(emoji) {
@@ -172,7 +171,6 @@ $(document).ready(function() {
 
 	//------------ Event listeners ------------
 	// search field listener to change location to ./library and set search filter
-	console.log(window.location);
 	$( ".search" ).keydown(function(e) {
 		var url = window.location.href;
 		if (e.which == 13) {
