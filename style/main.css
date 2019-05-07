@@ -830,6 +830,11 @@ footer {
       #home-wrapper .content-wrapper {
         padding-left: 50px;
         padding-right: 50px; } }
+  #home-wrapper h3 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center; }
   #home-wrapper #small-overview {
     background-color: #f5f6f7; }
     #home-wrapper #small-overview .content {

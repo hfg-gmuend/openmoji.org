@@ -143,6 +143,14 @@
 		}
 	}
 
+	h3{
+		font-size: $fnt-sz-lg;
+		font-weight: $fnt-reg;
+		margin-bottom: $gap-xs;
+		// color: #000;
+		text-align: center;
+	}
+
 	#small-overview {
 		background-color: $clr-grey-ultra-light;
 
@@ -224,6 +232,7 @@
 				flex-grow: 1;
 				// display: flex;
 				box-sizing: border-box;
+
 
 				& + .content-item {
 					margin-top: $gap-med;
