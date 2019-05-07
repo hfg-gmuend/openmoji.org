@@ -171,6 +171,9 @@ svg {
   #impressum p {
     margin-bottom: 15px; }
 
+.data-simplebar {
+  width: 100%; }
+
 .dropdown {
   position: relative; }
   .dropdown:hover .dropdown-content {
@@ -760,8 +763,6 @@ footer {
         padding-left: 0;
         padding-right: 0;
         width: auto; } }
-  #home-wrapper data-simplebar {
-    width: 100%; }
   #home-wrapper #landing {
     height: calc(100vh - 80px);
     display: flex;

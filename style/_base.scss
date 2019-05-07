@@ -214,10 +214,13 @@ svg {
 
 #impressum {
 	padding-right: $gap-reg;
-
 	p {
 		margin-bottom: $gap-reg / 2;
 	}
+}
+
+.data-simplebar {
+	width: 100%;
 }
 
 .dropdown {
