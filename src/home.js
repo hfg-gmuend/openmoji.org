@@ -2,7 +2,7 @@ $(document).ready(function() {
 	//------------ Emoji Cloud ------------
 	var EMOJI_LIST;
 	const EMOJI_POSITIONS = getPositions( 1.4, 300 );
-
+	console.log(EMOJI_POSITIONS);
 	// get all emojis and generate category showcase
 	$.getJSON( "data/openmoji.json" , function(json) {
 		EMOJI_LIST = json.filter(function(emoji) {
@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 		genEmojiCloud();
 		genCategoriesShowcase();
-		initBigEmojiOverview();
+		// initBigEmojiOverview();
 		$(".lazy").Lazy();
 	});
 
@@ -201,8 +201,8 @@ $(document).ready(function() {
 		$( "#categories-showcase .content" ).css("min-height", $( "#categories-showcase .content" ).height());
 
 		// change duration of scrollmagic animations
-		emoji_left.duration(Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top));
-		emoji_right.duration(Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top));
+		// emoji_left.duration(Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top));
+		// emoji_right.duration(Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top));
 	});
 
 	// window scroll listener

@@ -7,6 +7,7 @@ header{
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
+	height: 80px;
 
 	@media only screen and (max-width: 768px) {
 		ul{
@@ -82,7 +83,7 @@ header{
 
 .active-tab{
 	// padding-bottom: -20px;
-	border-bottom: 4px solid $clr-red-light;
+	border-bottom: 4px solid $clr-blue-dark;
 	a{
 		color: $clr-grey-dark;
 	}

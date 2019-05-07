@@ -7,6 +7,9 @@
 	.active-tab{
 		border-color: $clr-red-light;
 	}
+	button{
+		background-color: $clr-red-light;
+	}
 
 	.nav-left {
 		#show-color {
@@ -104,7 +107,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin-right: -$gap-large;
-		
+
 		.emoji_single {
 			margin-right: $gap-large;
 			margin-bottom: $gap-med;
