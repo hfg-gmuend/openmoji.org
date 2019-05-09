@@ -166,6 +166,9 @@
 
 			h1 {
 				padding-top: $gap-med;
+				padding-left: 75px;
+				padding-right: 75px;
+				width: 750px;
 				// @media screen and (min-width: $bp-med) {
 				// 	padding-top: $gap-large;
 				// }
@@ -348,6 +351,10 @@
 
 		h1 {
 			margin-bottom: $gap-reg;
+			padding-top: $gap-med;
+			padding-left: 75px;
+			padding-right: 75px;
+			width: 750px;
 		}
 
 		.content-wrapper {

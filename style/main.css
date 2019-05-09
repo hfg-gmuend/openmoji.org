@@ -847,7 +847,10 @@ footer {
           padding-top: 120px;
           padding-bottom: 120px; } }
       #home-wrapper #small-overview .content h1 {
-        padding-top: 50px; }
+        padding-top: 50px;
+        padding-left: 75px;
+        padding-right: 75px;
+        width: 750px; }
       #home-wrapper #small-overview .content .tow-rows {
         width: 900px;
         display: flex;
@@ -958,7 +961,11 @@ footer {
     padding-bottom: 120px;
     background-color: #f5f6f7; }
     #home-wrapper #categories-showcase h1 {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      padding-top: 50px;
+      padding-left: 75px;
+      padding-right: 75px;
+      width: 750px; }
     #home-wrapper #categories-showcase .content-wrapper {
       display: block;
       min-height: 0; }
