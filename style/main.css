@@ -171,6 +171,9 @@ svg {
   #impressum p {
     margin-bottom: 15px; }
 
+.data-simplebar {
+  width: 100%; }
+
 .dropdown {
   position: relative; }
   .dropdown:hover .dropdown-content {
@@ -760,8 +763,6 @@ footer {
         padding-left: 0;
         padding-right: 0;
         width: auto; } }
-  #home-wrapper data-simplebar {
-    width: 100%; }
   #home-wrapper #landing {
     height: calc(100vh - 80px);
     display: flex;
@@ -829,6 +830,11 @@ footer {
       #home-wrapper .content-wrapper {
         padding-left: 50px;
         padding-right: 50px; } }
+  #home-wrapper h3 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center; }
   #home-wrapper #small-overview {
     background-color: #f5f6f7; }
     #home-wrapper #small-overview .content {
@@ -841,7 +847,10 @@ footer {
           padding-top: 120px;
           padding-bottom: 120px; } }
       #home-wrapper #small-overview .content h1 {
-        padding-top: 50px; }
+        padding-top: 50px;
+        padding-left: 75px;
+        padding-right: 75px;
+        width: 750px; }
       #home-wrapper #small-overview .content .tow-rows {
         width: 900px;
         display: flex;
@@ -952,7 +961,11 @@ footer {
     padding-bottom: 120px;
     background-color: #f5f6f7; }
     #home-wrapper #categories-showcase h1 {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      padding-top: 50px;
+      padding-left: 75px;
+      padding-right: 75px;
+      width: 750px; }
     #home-wrapper #categories-showcase .content-wrapper {
       display: block;
       min-height: 0; }

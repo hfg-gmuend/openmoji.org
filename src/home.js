@@ -92,14 +92,14 @@ $(document).ready(function() {
 				if(firstCategory) {
 					html += "<div class='categories-item'>"
 								+ "<a class='active-tab' data-category='" + CATEGORIES[category] + "' href=''>"
-									+ "<h2>" + category + "</h2>"
+									+ "<h3>" + category + "</h3>"
 								+ "</a>"
 							+ "</div>";
 					firstCategory = false;
 				} else {
 					html += "<div class='categories-item'>"
 								+ "<a data-category='" + CATEGORIES[category] + "' href=''>"
-									+ "<h2>" + category + "</h2>"
+									+ "<h3>" + category + "</h3>"
 								+ "</a>"
 							+ "</div>";
 				}
