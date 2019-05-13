@@ -24,9 +24,7 @@
     "budo": "^10.0.4",
     "node-sass": "^4.7.2",
     "nodemon": "^1.14.11",
-    "parallelshell": "^3.0.2"
-  },
-  "dependencies": {
+    "parallelshell": "^3.0.2",
     "fuse.js": "^3.2.0"
   }
 }
