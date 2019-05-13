@@ -763,6 +763,9 @@ footer {
         padding-left: 0;
         padding-right: 0;
         width: auto; } }
+    #home-wrapper h1 span {
+      color: #E95A47;
+      font-weight: 600; }
   #home-wrapper #landing {
     height: calc(100vh - 80px);
     display: flex;
