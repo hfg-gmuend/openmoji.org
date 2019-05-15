@@ -1,5 +1,7 @@
-OpenMoji Website
-================
+OpenMoji.org
+============
+
+Website of the OpenMoji project 👉 http://openmoji.org/
 
 ⚠️ Please note that the master branch is in active development! You can view the most recent version under the [staging instance](https://hfg-gmuend.github.io/openmoji-website/).  
 
