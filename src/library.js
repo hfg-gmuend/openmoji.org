@@ -696,3 +696,5 @@ function getEmojiDescription(emoji) {
   // Send request
   request.send()
 }
+
+console.log("Script loaded");
