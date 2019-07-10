@@ -669,6 +669,8 @@ $(document).ready(function() {
 
 var apiKey = "06b9fc4b193fdcca7003262ae82c0916f5f99c61";
 function getEmojiDescription(emoji) {
+  console.log("Requesting Emoji Description for " + emoji);
+
   // Create a request variable and assign a new XMLHttpRequest object to it.
   var request = new XMLHttpRequest()
 
@@ -676,7 +678,7 @@ function getEmojiDescription(emoji) {
   request.open('GET', 'https://api.emojipedia.org/emojis/' + emoji + '/?api_key=' + apiKey, true)
 
   request.onload = function() {
-    // Begin accessing JSON data here
+    console.log("request onload");
 
     // Begin accessing JSON data here
       var data = JSON.parse(this.response)
