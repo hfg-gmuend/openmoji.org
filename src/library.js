@@ -675,7 +675,7 @@ function getEmojiDescription(emoji) {
   var request = new XMLHttpRequest()
 
   // Open a new connection, using the GET request on the URL endpoint
-  request.open('GET', 'https://api.emojipedia.org/emojis/' + emoji + '/?api_key=' + apiKey, true)
+  request.open('GET', 'https://cors.io/?https://api.emojipedia.org/emojis/' + emoji + '/?api_key=' + apiKey, true)
 
   request.onload = function() {
     console.log("request onload");
