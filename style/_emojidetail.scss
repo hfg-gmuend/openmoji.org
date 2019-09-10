@@ -164,7 +164,7 @@
                     //     background: $clr-grey-light;
                     //     opacity: 0.0;
                     //     transition: all 0.3s;
-                    
+
                     // }
                     // &:hover:before{
                     //     opacity: 0.1;
@@ -197,6 +197,10 @@
     justify-content: space-between;
     width: 30%;
     box-sizing: border-box;
+
+    #emojipedia-link {
+      color: $clr-grey-dark;
+    }
 
     .description-top{
         display: inline-flex;
@@ -234,7 +238,7 @@
         a + a{
             margin-left:$gap-xs;
         }
-    } 
+    }
 }
 
 .close {

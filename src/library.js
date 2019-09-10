@@ -470,36 +470,6 @@ $(document).ready(function() {
       });
     }
 
-    // // Access-Control-Allow-Origin: https://api.emojipedia.org/emojis/🤮/?api_key=06b9fc4b193fdcca7003262ae82c0916f5f99c61;
-    // // Create a request variable and assign a new XMLHttpRequest object to it.
-    // var request = new XMLHttpRequest();
-    //
-    // // request.setHeader('Access-Control-Allow-Origin', '*');
-    // // Open a new connection, using the GET request on the URL endpoint
-    // request.open('GET', "https://api.emojipedia.org/emojis/🤮/?api_key=06b9fc4b193fdcca7003262ae82c0916f5f99c61",false);
-    //
-    // request.onload = function () {
-    //   // Begin accessing JSON data here
-    //
-    // }
-    //
-    // // Send request
-    // request.send()
-
-
-
-    // var url = '//api.emojipedia.org/emojis/%F0%9F%A4%AE/?api_key=06b9fc4b193fdcca7003262ae82c0916f5f99c61';
-    //
-    // function httpGet(theUrl) {
-    //   var xmlHttp = new XMLHttpRequest();
-    //   xmlHttp.open("GET", theUrl, false); // false for synchronous request
-    //   xmlHttp.send(null);
-    //   return xmlHttp.responseText;
-    // }
-    // var result = httpGet(url);
-
-
-
     // update description
     $("#description h2").text(currEmoji.annotation);
     $("#description #unicode").text(currEmoji.hexcode).attr("href", "http://www.decodeunicode.org/en/u+" + currEmoji.hexcode);
@@ -507,10 +477,25 @@ $(document).ready(function() {
     $("#description #category").text(currEmoji.group).attr("data-grouppath", currEmoji.group);
     $("#description #subcategory").text(currEmoji.subgroups).attr("data-grouppath", currEmoji.groupPath);
 
-    // Emoji description changes here
-    $("#description p").text(getEmojiDescription(currEmoji.emoji));
-
-
+    // Emoji description pull from emojipedia via our proxy endpoint
+    // e.g. https://openmoji-emojipedia-api.glitch.me/emojis/✅
+    fetch("https://openmoji-emojipedia-api.glitch.me/emojis/"+ currEmoji.emoji)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(response) {
+        console.log(response);
+        if (response.description !== "") {
+          $("#description .emojipedia").show();
+          $("#description #emojipedia-description").text(response.description);
+          $("#description .emojipedia-link").attr("href", "https://emojipedia.org/" + currEmoji.emoji + "/");
+        } else {
+          $("#description .emojipedia").hide();
+        }
+      })
+      .catch(function() {
+        $("#description .emojipedia").hide();
+      });
 
     // update path
     $("#description .path a:nth-child(2)").text(currEmoji.group).attr("data-grouppath", currEmoji.group);
@@ -519,7 +504,6 @@ $(document).ready(function() {
     // update download links
     $("#svg-download-btn").attr("href", path + "/svg/" + currEmoji.hexcode + ".svg");
     $("#png-download-btn").attr("href", path + "/618x618/" + currEmoji.hexcode + ".png");
-    $("#emojipediaLink").attr("href", "https://emojipedia.org/" + currEmoji.emoji + "/")
 
     // update prev and next
     if (currentList.length > 1) {
@@ -666,35 +650,3 @@ $(document).ready(function() {
     generateEmojiList();
   });
 });
-
-var apiKey = "06b9fc4b193fdcca7003262ae82c0916f5f99c61";
-function getEmojiDescription(emoji) {
-  console.log("Requesting Emoji Description for " + emoji);
-
-  // Create a request variable and assign a new XMLHttpRequest object to it.
-  var request = new XMLHttpRequest()
-
-  // Open a new connection, using the GET request on the URL endpoint
-  request.open('GET', 'https://cors.io/?https://api.emojipedia.org/emojis/' + emoji + '/?api_key=' + apiKey, true)
-
-  request.onload = function() {
-    console.log("request onload");
-
-    // Begin accessing JSON data here
-      var data = JSON.parse(this.response)
-
-      if (request.status >= 200 && request.status < 400) {
-        data.forEach(emojiObject => {
-          console.log(emojiObject.description)
-          return emojiObject.description
-        })
-      } else {
-        console.log('error')
-      }
-  }
-
-  // Send request
-  request.send()
-}
-
-console.log("Script loaded");
