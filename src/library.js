@@ -485,12 +485,12 @@ $(document).ready(function() {
       })
       .then(function(response) {
         console.log(response);
-        if (response.description !== "") {
+        if (response.description == "" || response.detail == "Not found.") {
+          $("#description .emojipedia").hide();
+        } else {
           $("#description .emojipedia").show();
           $("#description #emojipedia-description").text(response.description);
           $("#description .emojipedia-link").attr("href", "https://emojipedia.org/" + currEmoji.emoji + "/");
-        } else {
-          $("#description .emojipedia").hide();
         }
       })
       .catch(function() {
