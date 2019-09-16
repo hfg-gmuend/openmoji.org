@@ -1,21 +1,21 @@
-#samples-wrapper{
+#samples-wrapper {
 	height: 100%;
 
-	.container{
-		grid-template-areas: "header header" "content content" "footer footer";
+	.container {
+		grid-template-areas: "header header""content content""footer footer";
 	}
 
-	#samples-content{
+	#samples-content {
 		@extend %content;
 	}
 
-	.sample { 
-		width: 100%;  
+	.sample {
+		width: 100%;
 	}
 
 	.caption {
 		margin-top: 1em;
 		margin-left: 2em;
-		height: 14em; 
+		height: 14em;
 	}
 }

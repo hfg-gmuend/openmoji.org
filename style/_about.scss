@@ -1,7 +1,7 @@
-#about-wrapper{
+#about-wrapper {
 	height: 100%;
 
-	h1{
+	h1 {
 		color: $clr-yellow-light;
 	}
 
@@ -9,61 +9,71 @@
 	// 	color: $clr-blue-dark;
 	// }
 
-	button{
+	button {
 		background-color: $clr-yellow-light;
 	}
-	.active-tab{
+
+	.active-tab {
 		border-color: $clr-yellow-light;
 	}
-	#about-content{
+
+	#about-content {
 		@extend %content;
 
-		p a, ul a {
+		p a,
+		ul a {
 			color: $clr-yellow-light;
 		}
+
 		// p a, ul a {
 		// 	color: $clr-blue-dark;
 		// }
 
-		ul{
+		ul {
 			padding-left: $gap-reg;
 
-			li{
+			li {
 				list-style-type: disc;
 			}
 		}
 
-		h1{
+		h1 {
 			margin-bottom: $gap-reg;
 		}
 
-		#team-container{
-			display: -webkit-flex; /* Safari */
-			-webkit-flex-wrap: wrap; /* Safari 6.1+ */
+		#team-container {
+			display: -webkit-flex;
+			/* Safari */
+			-webkit-flex-wrap: wrap;
+			/* Safari 6.1+ */
 			display: flex;
 			flex-wrap: wrap;
 			margin-right: -$gap-large;
 			margin-bottom: -$gap-med;
 
-			.teammember{
+			.teammember {
 				display: flex;
 				flex-direction: column;
 				width: 150px;
 				position: relative;
 				margin-bottom: $gap-med;
 				margin-right: $gap-large;
+
 				div {
 					width: 100%;
 					margin: auto;
 					padding-bottom: $gap-xs;
-					img{
+
+					img {
 						width: 100%;
 					}
 				}
-				ul{
+
+				ul {
 					padding-left: 0;
 					padding-top: $gap-reg;
-					li{
+
+					li {
 						width: 20px;
 						height: 20px;
 						display: inline-block;
@@ -71,9 +81,10 @@
 					}
 				}
 
-				.team{
+				.team {
 					flex: 1;
-					p{
+
+					p {
 						font-size: $fnt-sz-s;
 					}
 				}

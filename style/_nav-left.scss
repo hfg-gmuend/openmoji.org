@@ -1,4 +1,4 @@
-.nav-left{
+.nav-left {
 	padding-left: $gap-med;
 	margin-right: $gap-med;
 	margin-top: $gap-reg;
@@ -7,16 +7,14 @@
 	box-sizing: border-box;
 	max-width: 300px;
 
-	ul li{
+	ul li {
 		display: block;
 		margin-top: $gap-xs;
 	}
 
-	&:hover{
+	&:hover {
 		overflow-y: auto;
 	}
-
-	.mainmenu {}
 
 	.submenu {
 		padding-left: $gap-reg;

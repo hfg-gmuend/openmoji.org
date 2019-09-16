@@ -1,4 +1,4 @@
-header{
+header {
 	z-index: 10;
 	background-color: $clr-white;
 	box-sizing: border-box;
@@ -10,54 +10,58 @@ header{
 	height: 80px;
 
 	@media only screen and (max-width: 768px) {
-		ul{
+		ul {
 			flex-basis: 100%;
 		}
-		.search{
+
+		.search {
 			padding-left: 20%;
 			width: 80%;
 		}
 	}
 
-	> *{
+	>* {
 		flex: 1;
 	}
 
-	ul{
+	ul {
 		display: flex;
-		li{
+
+		li {
 			height: 30px;
 			margin-right: $gap-reg;
 			cursor: pointer;
 			list-style: none;
-			a{
+
+			a {
 				vertical-align: middle;
 				display: inline-block;
 			}
 		}
 	}
 
-	.right{
+	.right {
 		display: inline-flex;
 		align-items: center;
 		justify-content: flex-end;
 
-		button{
+		button {
 			display: inline-flex;
 			justify-content: center;
 			align-items: center;
 			width: 200px;
 
-			div + div{
+			div+div {
 				margin-left: $gap-small;
 			}
 		}
 	}
-	#gh-link{
+
+	#gh-link {
 		height: 30px;
 		padding-left: $gap-reg;
 
-		img{
+		img {
 			height: 100%
 		}
 	}
@@ -67,7 +71,7 @@ header{
 	}
 }
 
-.arrow{
+.arrow {
 	border: solid black;
 	border-width: 0 3px 3px 0;
 	border-color: $clr-white;
@@ -75,54 +79,55 @@ header{
 	padding: 4px;
 	margin-bottom: 2px;
 
-	&.down{
+	&.down {
 		transform: rotate(45deg);
 		-webkit-transform: rotate(45deg);
 	}
 }
 
-.active-tab{
+.active-tab {
 	// padding-bottom: -20px;
 	border-bottom: 4px solid $clr-blue-dark;
-	a{
+
+	a {
 		color: $clr-grey-dark;
 	}
 }
 
-.emoji-search{
+.emoji-search {
 	justify-content: center;
 	display: flex;
 	height: 40px;
 	position: relative;
 
-		img {
-			left: 0px;
-			top: 8px;
-			position: absolute;
-			height: 60%;
-			width: auto;
-			padding-right: $gap-small;
-			opacity: 0.4;
-		}
+	img {
+		left: 0px;
+		top: 8px;
+		position: absolute;
+		height: 60%;
+		width: auto;
+		padding-right: $gap-small;
+		opacity: 0.4;
+	}
 
-		input{
-			background: none; //url(../img/search.svg) left no-repeat;
-			padding-left: 33px;
-			border-radius: 20px;
-			border: solid 1px $clr-grey-light;
-			font-size: $fnt-sz-md;
+	input {
+		background: none; //url(../img/search.svg) left no-repeat;
+		padding-left: 33px;
+		border-radius: 20px;
+		border: solid 1px $clr-grey-light;
+		font-size: $fnt-sz-md;
+		color: $clr-grey-dark;
+		transition: all 0.4s;
+		width: 100%;
+		// background: none;
+
+		&:focus {
+			outline: none;
 			color: $clr-grey-dark;
-			transition: all 0.4s;
-			width: 100%;
-			// background: none;
-
-			&:focus{
-				outline: none;
-				color: $clr-grey-dark;
-			}
-
-			&:focus + img {
-				opacity: 1;
-			}
 		}
+
+		&:focus+img {
+			opacity: 1;
+		}
+	}
 }

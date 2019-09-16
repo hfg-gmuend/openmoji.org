@@ -1,44 +1,52 @@
-#styleguide-wrapper{
+#styleguide-wrapper {
 	height: 100%;
 
-	h1{
+	h1 {
 		color: $clr-orange-dark;
 	}
-	button{
+
+	button {
 		background-color: $clr-orange-dark;
 	}
-	.active-tab{
+
+	.active-tab {
 		border-color: $clr-orange-dark;
 	}
-	.intro{
+
+	.intro {
 		max-width: 600px;
 		margin-bottom: $gap-med;
 	}
-	.img-full{
+
+	.img-full {
 		width: 100%;
 	}
-	.two-rows{
+
+	.two-rows {
 		margin-bottom: $gap-med;
 
-		p, h3{
+		p,
+		h3 {
 			float: left;
 			width: 25%;
 			max-width: 240px;
 
 		}
-		.img-small{
+
+		.img-small {
 			width: 20%;
 			float: left;
 			margin-left: 5%;
 		}
 
-		.img-big{
+		.img-big {
 			width: 70%;
 			float: left;
 			margin-left: 5%;
 		}
 	}
-	.border{
+
+	.border {
 		padding: $gap-reg;
 		border: solid 1px $bgclr-grey;
 		border-radius: 5px;
@@ -46,7 +54,7 @@
 	}
 }
 
-#styleguide-content{
+#styleguide-content {
 	@extend %content;
 
 	img {
@@ -60,6 +68,7 @@
 	h2 {
 		margin-bottom: $gap-reg;
 	}
+
 	.download-styleguide-asset button {
 		margin-bottom: $gap-reg * 2;
 	}

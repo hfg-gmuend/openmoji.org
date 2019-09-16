@@ -10,19 +10,22 @@ footer {
 	p {
 		display: inline-block;
 		font-size: $fnt-sz-s;
+
 		a {
 			text-decoration: underline;
 		}
 	}
-	ul{
+
+	ul {
 		display: inline-flex;
 		align-items: center;
 
-		li{
+		li {
 			width: 30px;
 			height: 30px;
 		}
-		li + li{
+
+		li+li {
 			margin-left: $gap-small;
 		}
 	}

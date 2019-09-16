@@ -510,7 +510,8 @@ footer {
     background-color: #EEB41A; }
   #about-wrapper .active-tab {
     border-color: #EEB41A; }
-  #about-wrapper #about-content p a, #about-wrapper #about-content ul a {
+  #about-wrapper #about-content p a,
+  #about-wrapper #about-content ul a {
     color: #EEB41A; }
   #about-wrapper #about-content ul {
     padding-left: 30px; }
@@ -579,7 +580,8 @@ footer {
     width: 100%; }
   #styleguide-wrapper .two-rows {
     margin-bottom: 50px; }
-    #styleguide-wrapper .two-rows p, #styleguide-wrapper .two-rows h3 {
+    #styleguide-wrapper .two-rows p,
+    #styleguide-wrapper .two-rows h3 {
       float: left;
       width: 25%;
       max-width: 240px; }

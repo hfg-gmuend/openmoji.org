@@ -1,13 +1,15 @@
-#library-wrapper{
+#library-wrapper {
 	height: 100%;
 
-	h1{
+	h1 {
 		color: $clr-red-light;
 	}
-	.active-tab{
+
+	.active-tab {
 		border-color: $clr-red-light;
 	}
-	button{
+
+	button {
 		background-color: $clr-red-light;
 	}
 
@@ -59,6 +61,7 @@
 					transform: rotate(-135deg);
 					-webkit-transform: rotate(-135deg);
 				}
+
 				&::after {
 					content: "";
 					border: solid black;
@@ -99,7 +102,7 @@
 	}
 }
 
-.emoji_grid_wrapper{
+.emoji_grid_wrapper {
 	max-width: $content-max-width;
 	overflow-x: hidden;
 
@@ -123,19 +126,23 @@
 				text-align: center;
 				margin-bottom: 2px;
 			}
-			p{
+
+			p {
 				font-size: $fnt-sz-s;
 				text-align: center;
 			}
-			.emoji-container{
+
+			.emoji-container {
 				width: 80%;
 				margin: auto;
 				margin-bottom: $gap-xs;
-				img{
+
+				img {
 					width: 100%;
 					height: auto;
 				}
 			}
+
 			&:hover h3 {
 				color: $clr-red-light;
 			}
@@ -143,7 +150,7 @@
 	}
 }
 
-.switch{
+.switch {
 	position: relative;
 	display: inline-block;
 	width: 27px;
@@ -152,15 +159,17 @@
 	vertical-align: middle;
 
 	input {
-	display:none;
+		display: none;
 
-		&:checked + .slider {
+		&:checked+.slider {
 			background-color: $clr-red-light;
 		}
-		&:focus + .slider {
+
+		&:focus+.slider {
 			box-shadow: 0 0 1px $clr-red-light;
 		}
-		&:checked + .slider:before {
+
+		&:checked+.slider:before {
 			-webkit-transform: translateX(10px);
 			-ms-transform: translateX(10px);
 			transform: translateX(10px);
@@ -181,16 +190,16 @@
 	transition: .4s;
 	border-radius: 34px;
 
-	&:before{
-			position: absolute;
-			content: "";
-			height: 13px;
-			width: 13px;
-			left: 2px;
-			bottom: 2px;
-			background-color: white;
-			-webkit-transition: .4s;
-			transition: .4s;
-			border-radius: 50%;
+	&:before {
+		position: absolute;
+		content: "";
+		height: 13px;
+		width: 13px;
+		left: 2px;
+		bottom: 2px;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+		border-radius: 50%;
 	}
 }
