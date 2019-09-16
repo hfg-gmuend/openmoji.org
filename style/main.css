@@ -417,16 +417,16 @@ header {
       header ul li a {
         vertical-align: middle;
         display: inline-block; }
-  header .right {
+  header .action-links {
     display: inline-flex;
     align-items: center;
     justify-content: flex-end; }
-    header .right button {
+    header .action-links button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
       width: 200px; }
-      header .right button div + div {
+      header .action-links button div + div {
         margin-left: 20px; }
   header #gh-link {
     height: 30px;
