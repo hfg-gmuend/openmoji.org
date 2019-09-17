@@ -9,17 +9,6 @@ header {
 	flex-wrap: wrap;
 	height: 80px;
 
-	@media only screen and (max-width: 768px) {
-		ul {
-			flex-basis: 100%;
-		}
-
-		.search {
-			padding-left: 20%;
-			width: 80%;
-		}
-	}
-
 	>* {
 		flex: 1;
 	}
@@ -33,6 +22,14 @@ header {
 			cursor: pointer;
 			list-style: none;
 
+			&.active-tab {
+				border-bottom: 4px solid $color-blue-dark;
+
+				a {
+					color: $color-grey-dark;
+				}
+			}
+
 			a {
 				vertical-align: middle;
 				display: inline-block;
@@ -40,94 +37,60 @@ header {
 		}
 	}
 
+	@media only screen and (max-width: 768px) {
+		ul {
+			flex-basis: 100%;
+		}
+
+		.search {
+			padding-left: 20%;
+			width: 80%;
+		}
+	}
+
+	@include emoji-search();
+
 	.action-links {
 		display: inline-flex;
 		align-items: center;
 		justify-content: flex-end;
 
-		button {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-			width: 200px;
+		#gh-link {
+			height: 30px;
+			padding-left: $gap-reg;
 
-			div+div {
-				margin-left: $gap-small;
+			img {
+				height: 100%
 			}
 		}
-	}
 
-	#gh-link {
-		height: 30px;
-		padding-left: $gap-reg;
+		.dropdown {
+			margin-left: $gap-small;
 
-		img {
-			height: 100%
-		}
-	}
+			button {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				width: 200px;
 
-	.dropdown {
-		margin-left: $gap-small;
-	}
-}
+				.arrow {
+					border: solid black;
+					border-width: 0 3px 3px 0;
+					border-color: $color-white;
+					display: inline-block;
+					padding: 4px;
+					margin-bottom: 2px;
 
-.arrow {
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	border-color: $color-white;
-	display: inline-block;
-	padding: 4px;
-	margin-bottom: 2px;
+					&.down {
+						transform: rotate(45deg);
+						-webkit-transform: rotate(45deg);
+					}
+				}
 
-	&.down {
-		transform: rotate(45deg);
-		-webkit-transform: rotate(45deg);
-	}
-}
-
-.active-tab {
-	// padding-bottom: -20px;
-	border-bottom: 4px solid $color-blue-dark;
-
-	a {
-		color: $color-grey-dark;
-	}
-}
-
-.emoji-search {
-	justify-content: center;
-	display: flex;
-	height: 40px;
-	position: relative;
-
-	img {
-		left: 0px;
-		top: 8px;
-		position: absolute;
-		height: 60%;
-		width: auto;
-		padding-right: $gap-small;
-		opacity: 0.4;
-	}
-
-	input {
-		background: none; //url(../img/search.svg) left no-repeat;
-		padding-left: 33px;
-		border-radius: 20px;
-		border: solid 1px $color-grey-light;
-		font-size: $font-sz-md;
-		color: $color-grey-dark;
-		transition: all 0.4s;
-		width: 100%;
-		// background: none;
-
-		&:focus {
-			outline: none;
-			color: $color-grey-dark;
-		}
-
-		&:focus+img {
-			opacity: 1;
+				div+div {
+					margin-left: $gap-small;
+				}
+			}
 		}
 	}
 }

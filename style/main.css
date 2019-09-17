@@ -399,12 +399,6 @@ header {
   align-items: center;
   flex-wrap: wrap;
   height: 80px; }
-  @media only screen and (max-width: 768px) {
-    header ul {
-      flex-basis: 100%; }
-    header .search {
-      padding-left: 20%;
-      width: 80%; } }
   header > * {
     flex: 1; }
   header ul {
@@ -414,71 +408,74 @@ header {
       margin-right: 30px;
       cursor: pointer;
       list-style: none; }
+      header ul li.active-tab {
+        border-bottom: 4px solid #3D98BB; }
+        header ul li.active-tab a {
+          color: #242424; }
       header ul li a {
         vertical-align: middle;
         display: inline-block; }
+  @media only screen and (max-width: 768px) {
+    header ul {
+      flex-basis: 100%; }
+    header .search {
+      padding-left: 20%;
+      width: 80%; } }
+  header .emoji-search {
+    justify-content: center;
+    display: flex;
+    height: 40px;
+    position: relative; }
+    header .emoji-search img {
+      left: 0px;
+      top: 8px;
+      position: absolute;
+      height: 60%;
+      width: auto;
+      padding-right: 20px;
+      opacity: 0.4; }
+    header .emoji-search input {
+      background: none;
+      padding-left: 33px;
+      border-radius: 20px;
+      border: solid 1px #818080;
+      font-size: 17px;
+      color: #242424;
+      transition: all 0.4s;
+      width: 100%; }
+      header .emoji-search input:focus {
+        outline: none;
+        color: #242424; }
+      header .emoji-search input:focus + img {
+        opacity: 1; }
   header .action-links {
     display: inline-flex;
     align-items: center;
     justify-content: flex-end; }
-    header .action-links button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 200px; }
-      header .action-links button div + div {
-        margin-left: 20px; }
-  header #gh-link {
-    height: 30px;
-    padding-left: 30px; }
-    header #gh-link img {
-      height: 100%; }
-  header .dropdown {
-    margin-left: 20px; }
-
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  border-color: #fff;
-  display: inline-block;
-  padding: 4px;
-  margin-bottom: 2px; }
-  .arrow.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg); }
-
-.active-tab {
-  border-bottom: 4px solid #3D98BB; }
-  .active-tab a {
-    color: #242424; }
-
-.emoji-search {
-  justify-content: center;
-  display: flex;
-  height: 40px;
-  position: relative; }
-  .emoji-search img {
-    left: 0px;
-    top: 8px;
-    position: absolute;
-    height: 60%;
-    width: auto;
-    padding-right: 20px;
-    opacity: 0.4; }
-  .emoji-search input {
-    background: none;
-    padding-left: 33px;
-    border-radius: 20px;
-    border: solid 1px #818080;
-    font-size: 17px;
-    color: #242424;
-    transition: all 0.4s;
-    width: 100%; }
-    .emoji-search input:focus {
-      outline: none;
-      color: #242424; }
-    .emoji-search input:focus + img {
-      opacity: 1; }
+    header .action-links #gh-link {
+      height: 30px;
+      padding-left: 30px; }
+      header .action-links #gh-link img {
+        height: 100%; }
+    header .action-links .dropdown {
+      margin-left: 20px; }
+      header .action-links .dropdown button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px; }
+        header .action-links .dropdown button .arrow {
+          border: solid black;
+          border-width: 0 3px 3px 0;
+          border-color: #fff;
+          display: inline-block;
+          padding: 4px;
+          margin-bottom: 2px; }
+          header .action-links .dropdown button .arrow.down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg); }
+        header .action-links .dropdown button div + div {
+          margin-left: 20px; }
 
 footer {
   padding: 0 50px 0 50px;
@@ -806,6 +803,33 @@ footer {
       width: 80px;
       margin-left: -25px;
       margin-top: -25px; }
+    #home-wrapper #landing .emoji-search {
+      justify-content: center;
+      display: flex;
+      height: 40px;
+      position: relative; }
+      #home-wrapper #landing .emoji-search img {
+        left: 0px;
+        top: 8px;
+        position: absolute;
+        height: 60%;
+        width: auto;
+        padding-right: 20px;
+        opacity: 0.4; }
+      #home-wrapper #landing .emoji-search input {
+        background: none;
+        padding-left: 33px;
+        border-radius: 20px;
+        border: solid 1px #818080;
+        font-size: 17px;
+        color: #242424;
+        transition: all 0.4s;
+        width: 100%; }
+        #home-wrapper #landing .emoji-search input:focus {
+          outline: none;
+          color: #242424; }
+        #home-wrapper #landing .emoji-search input:focus + img {
+          opacity: 1; }
     #home-wrapper #landing .emoji-search {
       max-width: 400px;
       height: 60px; }
