@@ -25,7 +25,7 @@ h1 {
   font-size: 50px;
   font-weight: 500;
   margin-bottom: 2em; }
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 991px) {
     h1 {
       font-size: 50px; } }
 
@@ -84,7 +84,7 @@ a {
   padding: 10px 30px;
   font-size: 17px;
   border-radius: 29px; }
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 991px) {
     .largebutton {
       font-size: 30px; } }
 
@@ -762,7 +762,7 @@ footer {
     width: 600px;
     padding-left: 150px;
     padding-right: 150px; }
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 991px) {
       #home-wrapper h1 {
         padding-left: 0;
         padding-right: 0;
@@ -833,7 +833,7 @@ footer {
     margin: auto;
     padding-left: 20px;
     padding-right: 20px; }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 991px) {
       #home-wrapper .content-wrapper {
         padding-left: 50px;
         padding-right: 50px; } }
@@ -849,7 +849,7 @@ footer {
       flex-wrap: wrap;
       padding-top: 50px;
       padding-bottom: 50px; }
-      @media screen and (min-width: 960px) {
+      @media screen and (min-width: 991px) {
         #home-wrapper #small-overview .content {
           padding-top: 120px;
           padding-bottom: 120px; } }
@@ -867,10 +867,10 @@ footer {
           box-sizing: border-box; }
           #home-wrapper #small-overview .content .tow-rows .content-item + .content-item {
             margin-top: 50px; }
-            @media screen and (min-width: 960px) {
+            @media screen and (min-width: 991px) {
               #home-wrapper #small-overview .content .tow-rows .content-item + .content-item {
                 margin-top: 0; } }
-          @media screen and (min-width: 960px) {
+          @media screen and (min-width: 991px) {
             #home-wrapper #small-overview .content .tow-rows .content-item {
               width: 50%;
               max-width: 400px;
@@ -898,10 +898,10 @@ footer {
         box-sizing: border-box; }
         #home-wrapper #small-overview .content .content-item + .content-item {
           margin-top: 50px; }
-          @media screen and (min-width: 960px) {
+          @media screen and (min-width: 991px) {
             #home-wrapper #small-overview .content .content-item + .content-item {
               margin-top: 0; } }
-        @media screen and (min-width: 960px) {
+        @media screen and (min-width: 991px) {
           #home-wrapper #small-overview .content .content-item {
             width: 33.333%;
             max-width: 250px;
@@ -930,7 +930,7 @@ footer {
     padding-top: 50px;
     box-sizing: border-box;
     overflow: hidden; }
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 991px) {
       #home-wrapper #big-overview {
         padding-top: 240px; } }
     #home-wrapper #big-overview .col {
