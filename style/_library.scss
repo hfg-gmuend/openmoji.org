@@ -2,15 +2,15 @@
 	height: 100%;
 
 	h1 {
-		color: $clr-red-light;
+		color: $color-red-light;
 	}
 
 	.active-tab {
-		border-color: $clr-red-light;
+		border-color: $color-red-light;
 	}
 
 	button {
-		background-color: $clr-red-light;
+		background-color: $color-red-light;
 	}
 
 	.nav-left {
@@ -31,7 +31,7 @@
 		padding-bottom: $gap-xs;
 		position: sticky;
 		top: 0;
-		background-color: $clr-white;
+		background-color: $color-white;
 		display: inline-flex;
 
 		h2 {
@@ -41,8 +41,8 @@
 
 		.sort_selector {
 			align-self: center;
-			font-size: $fnt-sz-md;
-			color: $clr-grey-light;
+			font-size: $font-sz-md;
+			color: $color-grey-light;
 
 			&__selected {
 				position: relative;
@@ -53,7 +53,7 @@
 					content: "";
 					border: solid black;
 					border-width: 0 1.75px 1.75px 0;
-					border-color: $clr-grey-light;
+					border-color: $color-grey-light;
 					position: absolute;
 					top: 5px;
 					right: 1.25px;
@@ -66,7 +66,7 @@
 					content: "";
 					border: solid black;
 					border-width: 0 1.75px 1.75px 0;
-					border-color: $clr-grey-light;
+					border-color: $color-grey-light;
 					position: absolute;
 					bottom: 5px;
 					right: 1.25px;
@@ -82,21 +82,21 @@
 				}
 
 				li:hover {
-					background-color: $clr-blue-light;
-					color: $clr-grey-ultra-light;
+					background-color: $color-blue-light;
+					color: $color-grey-ultra-light;
 				}
 			}
 		}
 
 		.sort_selector--asc {
 			.sort_selector__selected::before {
-				border-color: $clr-grey-dark;
+				border-color: $color-grey-dark;
 			}
 		}
 
 		.sort_selector--desc {
 			.sort_selector__selected::after {
-				border-color: $clr-grey-dark;
+				border-color: $color-grey-dark;
 			}
 		}
 	}
@@ -128,7 +128,7 @@
 			}
 
 			p {
-				font-size: $fnt-sz-s;
+				font-size: $font-sz-s;
 				text-align: center;
 			}
 
@@ -144,7 +144,7 @@
 			}
 
 			&:hover h3 {
-				color: $clr-red-light;
+				color: $color-red-light;
 			}
 		}
 	}
@@ -162,11 +162,11 @@
 		display: none;
 
 		&:checked+.slider {
-			background-color: $clr-red-light;
+			background-color: $color-red-light;
 		}
 
 		&:focus+.slider {
-			box-shadow: 0 0 1px $clr-red-light;
+			box-shadow: 0 0 1px $color-red-light;
 		}
 
 		&:checked+.slider:before {
@@ -185,7 +185,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: $clr-grey-light;
+	background-color: $color-grey-light;
 	-webkit-transition: .4s;
 	transition: .4s;
 	border-radius: 34px;

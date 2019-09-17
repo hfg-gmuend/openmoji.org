@@ -2,19 +2,19 @@
 	height: 100%;
 
 	h1 {
-		color: $clr-yellow-light;
+		color: $color-yellow-light;
 	}
 
 	// h1{
-	// 	color: $clr-blue-dark;
+	// 	color: $color-blue-dark;
 	// }
 
 	button {
-		background-color: $clr-yellow-light;
+		background-color: $color-yellow-light;
 	}
 
 	.active-tab {
-		border-color: $clr-yellow-light;
+		border-color: $color-yellow-light;
 	}
 
 	#about-content {
@@ -22,11 +22,11 @@
 
 		p a,
 		ul a {
-			color: $clr-yellow-light;
+			color: $color-yellow-light;
 		}
 
 		// p a, ul a {
-		// 	color: $clr-blue-dark;
+		// 	color: $color-blue-dark;
 		// }
 
 		ul {
@@ -85,7 +85,7 @@
 					flex: 1;
 
 					p {
-						font-size: $fnt-sz-s;
+						font-size: $font-sz-s;
 					}
 				}
 			}

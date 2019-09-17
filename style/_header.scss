@@ -1,6 +1,6 @@
 header {
 	z-index: 10;
-	background-color: $clr-white;
+	background-color: $color-white;
 	box-sizing: border-box;
 	padding: 0 $gap-med 0 $gap-med;
 	grid-area: header;
@@ -74,7 +74,7 @@ header {
 .arrow {
 	border: solid black;
 	border-width: 0 3px 3px 0;
-	border-color: $clr-white;
+	border-color: $color-white;
 	display: inline-block;
 	padding: 4px;
 	margin-bottom: 2px;
@@ -87,10 +87,10 @@ header {
 
 .active-tab {
 	// padding-bottom: -20px;
-	border-bottom: 4px solid $clr-blue-dark;
+	border-bottom: 4px solid $color-blue-dark;
 
 	a {
-		color: $clr-grey-dark;
+		color: $color-grey-dark;
 	}
 }
 
@@ -114,16 +114,16 @@ header {
 		background: none; //url(../img/search.svg) left no-repeat;
 		padding-left: 33px;
 		border-radius: 20px;
-		border: solid 1px $clr-grey-light;
-		font-size: $fnt-sz-md;
-		color: $clr-grey-dark;
+		border: solid 1px $color-grey-light;
+		font-size: $font-sz-md;
+		color: $color-grey-dark;
 		transition: all 0.4s;
 		width: 100%;
 		// background: none;
 
 		&:focus {
 			outline: none;
-			color: $clr-grey-dark;
+			color: $color-grey-dark;
 		}
 
 		&:focus+img {

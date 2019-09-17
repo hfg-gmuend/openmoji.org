@@ -1,6 +1,6 @@
 html {
-	color: $clr-grey-dark;
-	font-size: $fnt-sz-md;
+	color: $color-grey-dark;
+	font-size: $font-sz-md;
 }
 
 * {
@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	font-family: $fnt-family;
+	font-family: $font-family;
 	height: 100vh;
 }
 
@@ -23,41 +23,41 @@ li {
 }
 
 h1 {
-	font-size: $fnt-sz-xl;
-	font-weight: $fnt-reg;
-	// font-size: $fnt-sz-lg;
-	// font-weight: $fnt-bold;
+	font-size: $font-sz-xl;
+	font-weight: $font-reg;
+	// font-size: $font-sz-lg;
+	// font-weight: $font-bold;
 	margin-bottom: 2em;
 
-	@media screen and (min-width: $bp-med) {
-		font-size: $fnt-sz-xl;
+	@media screen and (min-width: $breakpoint-med) {
+		font-size: $font-sz-xl;
 	}
 }
 
 h2 {
-	font-size: $fnt-sz-lg;
-	font-weight: $fnt-bold;
+	font-size: $font-sz-lg;
+	font-weight: $font-bold;
 	margin-bottom: $gap-reg;
 }
 
 h3 {
-	font-weight: $fnt-reg;
-	font-size: $fnt-sz-md;
+	font-weight: $font-reg;
+	font-size: $font-sz-md;
 	margin-bottom: $gap-xs;
 }
 
 h4,
 h5,
 h6 {
-	font-weight: $fnt-reg;
-	font-size: $fnt-sz-md;
-	color: $clr-grey-light;
+	font-weight: $font-reg;
+	font-size: $font-sz-md;
+	color: $color-grey-light;
 	margin-top: 0;
 	margin-bottom: $gap-xs;
 }
 
 p {
-	color: $clr-grey-light;
+	color: $color-grey-light;
 }
 
 article:not(:last-child) {
@@ -78,17 +78,17 @@ article:not(:last-child) {
 }
 
 .descriptive-text {
-	color: $clr-grey-dark;
+	color: $color-grey-dark;
 	max-width: 500px;
 }
 
 a {
 	text-decoration: none;
-	color: $clr-grey-light;
+	color: $color-grey-light;
 	transition: all 0.2s;
 
 	&:hover {
-		color: $clr-grey-dark;
+		color: $color-grey-dark;
 	}
 }
 
@@ -104,19 +104,19 @@ a {
 	margin-bottom: $gap-large;
 	align-self: flex-start;
 	padding: $gap-xs $gap-reg;
-	font-size: $fnt-sz-md;
+	font-size: $font-sz-md;
 	border-radius: 29px;
 
-	@media screen and (min-width: $bp-med) {
-		font-size: $fnt-sz-lg;
+	@media screen and (min-width: $breakpoint-med) {
+		font-size: $font-sz-lg;
 	}
 }
 
 .redlink {
-	color: $clr-red-dark;
+	color: $color-red-dark;
 
 	&:hover {
-		color: $clr-red-light;
+		color: $color-red-light;
 	}
 }
 
@@ -137,10 +137,10 @@ button {
 	cursor: pointer;
 	padding: 0 $gap-small;
 	margin: 0;
-	font-size: $fnt-sz-md;
+	font-size: $font-sz-md;
 	font-family: inherit;
-	color: $clr-white;
-	background: $clr-blue-dark;
+	color: $color-white;
+	background: $color-blue-dark;
 	border: none;
 	box-shadow: 0 2px 4px 0 rgba(232, 232, 232, 0.50);
 	min-height: 40px;
@@ -162,18 +162,18 @@ input {
 	background: none;
 	box-shadow: none;
 	border-radius: 0;
-	border-bottom: 1px solid $clr-red-dark;
-	color: $clr-red-dark;
+	border-bottom: 1px solid $color-red-dark;
+	color: $color-red-dark;
 	padding-bottom: 0;
 }
 
 label {
-	color: $clr-grey-light;
+	color: $color-grey-light;
 	cursor: pointer;
 	transition: all 0.2s;
 
 	&:hover {
-		color: $clr-grey-dark;
+		color: $color-grey-dark;
 	}
 }
 
@@ -182,7 +182,7 @@ input[type='radio'] {
 
 	&:checked {
 		+label {
-			color: $clr-grey-dark;
+			color: $color-grey-dark;
 		}
 	}
 }
@@ -253,16 +253,16 @@ svg {
 
 			li {
 				margin: 0;
-				padding: (40px - $fnt-sz-md) / 2 $gap-small;
+				padding: (40px - $font-sz-md) / 2 $gap-small;
 				height: auto;
 
 				>* {
-					font-size: $fnt-sz-md;
+					font-size: $font-sz-md;
 				}
 
 				.disclaimer {
-					font-size: $fnt-sz-s;
-					color: $clr-grey-super-light;
+					font-size: $font-sz-s;
+					color: $color-grey-super-light;
 				}
 			}
 		}

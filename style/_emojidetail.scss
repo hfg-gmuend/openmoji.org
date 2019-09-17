@@ -13,7 +13,7 @@
 }
 
 .highlight {
-    background: $bgclr-grey;
+    background: $background-color-grey;
     border-radius: $border-radius;
 }
 
@@ -32,12 +32,12 @@
 
     .sub {
         text-align: center;
-        font-size: $fnt-sz-s;
+        font-size: $font-sz-s;
     }
 }
 
 .path {
-    color: $clr-grey-light;
+    color: $color-grey-light;
 }
 
 #sharetitle {
@@ -102,7 +102,7 @@
                         height: 50%;
                         width: 50%;
                         border-radius: 50%;
-                        background-color: $clr-white;
+                        background-color: $color-white;
                         box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.50);
                     }
                 }
@@ -112,7 +112,7 @@
                 }
 
                 #outline-emoji-preview {
-                    background-color: $clr-grey-ultra-light;
+                    background-color: $color-grey-ultra-light;
 
                     &::before {
                         content: "";
@@ -122,13 +122,13 @@
                         width: 65%;
                         margin-top: -1px;
                         margin-left: calc(-30% - 1px);
-                        border: 1px solid $clr-grey-light;
+                        border: 1px solid $color-grey-light;
                         transform: rotate3d(0, 0, 1, -45deg);
                     }
                 }
 
                 #color-emoji-preview {
-                    background-color: $clr-fitzpatrick-default;
+                    background-color: $color-fitzpatrick-default;
                 }
 
                 #skintones-emoji-preview {
@@ -143,7 +143,7 @@
                         content: "";
                         height: 15px;
                         margin-left: 7.5px;
-                        border-left: 1px solid $clr-grey-super-light;
+                        border-left: 1px solid $color-grey-super-light;
                     }
 
                     &:empty::before {
@@ -162,7 +162,7 @@
                     //     left: 0px;
                     //     top: 0px;
                     //     border-radius: $border-radius;
-                    //     background: $clr-grey-light;
+                    //     background: $color-grey-light;
                     //     opacity: 0.0;
                     //     transition: all 0.3s;
 
@@ -192,7 +192,7 @@
 }
 
 #description {
-    border-left: 1px solid $clr-grey-super-light;
+    border-left: 1px solid $color-grey-super-light;
     padding-left: $gap-med / 2;
     display: flex;
     flex-direction: column;
@@ -201,7 +201,7 @@
     box-sizing: border-box;
 
     #emojipedia-link {
-        color: $clr-grey-dark;
+        color: $color-grey-dark;
     }
 
     .description-top {
