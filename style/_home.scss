@@ -356,7 +356,8 @@
 
 				a {
 					color: $color-grey-super-light;
-
+					
+					@include active-tab;
 					&.active-tab {
 						color: $color-grey-dark;
 					}

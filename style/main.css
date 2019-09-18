@@ -1011,6 +1011,10 @@ footer {
       #home-wrapper #categories-showcase .content #categories a {
         color: rgba(129, 128, 128, 0.5); }
         #home-wrapper #categories-showcase .content #categories a.active-tab {
+          border-bottom: 4px solid #3D98BB; }
+          #home-wrapper #categories-showcase .content #categories a.active-tab a {
+            color: #242424; }
+        #home-wrapper #categories-showcase .content #categories a.active-tab {
           color: #242424; }
     #home-wrapper #categories-showcase .row {
       display: inline-flex;

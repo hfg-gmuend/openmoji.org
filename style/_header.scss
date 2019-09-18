@@ -22,13 +22,7 @@ header {
 			cursor: pointer;
 			list-style: none;
 
-			&.active-tab {
-				border-bottom: 4px solid $color-blue-dark;
-
-				a {
-					color: $color-grey-dark;
-				}
-			}
+			@include active-tab;
 
 			a {
 				vertical-align: middle;
@@ -48,7 +42,7 @@ header {
 		}
 	}
 
-	@include emoji-search();
+	@include emoji-search;
 
 	.action-links {
 		display: inline-flex;
