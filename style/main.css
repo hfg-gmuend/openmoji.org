@@ -783,6 +783,9 @@ footer {
       padding-left: 100px;
       height: 400px;
       top: calc(50vh - 200px); }
+      @media screen and (max-width: 767px) {
+        #home-wrapper #landing .content {
+          padding-left: 20vw; } }
       #home-wrapper #landing .content > * {
         width: 80%;
         max-width: 675px; }
@@ -798,6 +801,9 @@ footer {
       font-size: 50px;
       font-weight: 500;
       margin-bottom: 35px; }
+      @media screen and (max-width: 767px) {
+        #home-wrapper #landing h2 {
+          font-size: 30px; } }
     #home-wrapper #landing .emoji {
       position: absolute;
       width: 80px;
@@ -841,11 +847,19 @@ footer {
         width: auto;
         padding-right: 20px;
         opacity: 0.4; }
+        @media screen and (max-width: 767px) {
+          #home-wrapper #landing .emoji-search img {
+            height: 40%;
+            top: 18px;
+            left: 8px; } }
       #home-wrapper #landing .emoji-search input {
         font-size: 23px;
         background-color: #F2F1F0;
         padding-left: 55px;
         border: none; }
+        @media screen and (max-width: 767px) {
+          #home-wrapper #landing .emoji-search input {
+            font-size: 17px; } }
   #home-wrapper header {
     position: fixed;
     top: 0;
@@ -879,9 +893,13 @@ footer {
           padding-bottom: 120px; } }
       #home-wrapper #small-overview .content h1 {
         padding-top: 50px;
-        padding-left: 75px;
-        padding-right: 75px;
+        padding: 0 75px;
         width: 750px; }
+        @media screen and (max-width: 991px) {
+          #home-wrapper #small-overview .content h1 {
+            font-size: 30px;
+            width: auto;
+            padding: 0 25px; } }
       #home-wrapper #small-overview .content .tow-rows {
         width: 900px;
         display: flex;
@@ -919,23 +937,29 @@ footer {
               text-align: center; }
       #home-wrapper #small-overview .content .content-item {
         flex-grow: 1;
-        box-sizing: border-box; }
-        #home-wrapper #small-overview .content .content-item + .content-item {
-          margin-top: 50px; }
-          @media screen and (min-width: 991px) {
-            #home-wrapper #small-overview .content .content-item + .content-item {
-              margin-top: 0; } }
-        @media screen and (min-width: 991px) {
+        box-sizing: border-box;
+        width: 33.333%;
+        max-width: 250px;
+        min-width: 150px;
+        margin: 0 50px 50px 0; }
+        @media screen and (max-width: 991px) {
           #home-wrapper #small-overview .content .content-item {
-            width: 33.333%;
-            max-width: 250px;
-            min-width: 150px;
-            margin-right: 50px;
-            margin-bottom: 100px; } }
+            flex-grow: unset;
+            width: 50%;
+            padding: 0 15px 50px 15px;
+            margin: 0;
+            max-width: none;
+            min-width: 0; } }
+        @media screen and (max-width: 767px) {
+          #home-wrapper #small-overview .content .content-item {
+            flex-grow: unset;
+            width: 100%;
+            padding: 0 15px 30px 15px; } }
         #home-wrapper #small-overview .content .content-item img {
-          width: 100px;
-          margin-right: 75px;
-          margin-left: 75px;
+          width: 80px;
+          height: 80px;
+          margin: 0 auto;
+          display: block;
           margin-bottom: 20px; }
         #home-wrapper #small-overview .content .content-item .description {
           display: flex;
@@ -947,6 +971,7 @@ footer {
             color: #000;
             text-align: center; }
           #home-wrapper #small-overview .content .content-item .description p {
+            font-size: 17px;
             text-align: center; }
   #home-wrapper #big-overview {
     background-color: #5EB0CF;
@@ -987,21 +1012,59 @@ footer {
         #home-wrapper #big-overview .section .description p {
           color: #fff;
           padding-top: 20px; }
+  #home-wrapper #video-wrapper {
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: auto;
+    background-color: #fff; }
+    @media screen and (max-width: 991px) {
+      #home-wrapper #video-wrapper {
+        padding-top: 50px;
+        padding-bottom: 50px; } }
+    #home-wrapper #video-wrapper .content-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      min-height: auto; }
+      #home-wrapper #video-wrapper .content-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80vw;
+        height: 100%;
+        margin: 0 10vw; }
   #home-wrapper #categories-showcase {
     padding-top: 120px;
     padding-bottom: 120px;
     background-color: #f5f6f7; }
+    @media screen and (max-width: 991px) {
+      #home-wrapper #categories-showcase {
+        padding-top: 50px;
+        padding-bottom: 50px; } }
     #home-wrapper #categories-showcase h1 {
       margin-bottom: 30px;
       padding-top: 50px;
       padding-left: 75px;
       padding-right: 75px;
       width: 750px; }
+      @media screen and (max-width: 991px) {
+        #home-wrapper #categories-showcase h1 {
+          font-size: 30px;
+          width: auto;
+          padding: 0 25px; } }
     #home-wrapper #categories-showcase .content-wrapper {
       display: block;
       min-height: 0; }
-    #home-wrapper #categories-showcase button {
-      margin-left: 375px; }
+    #home-wrapper #categories-showcase .button-link {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      @media screen and (max-width: 991px) {
+        #home-wrapper #categories-showcase .button-link button {
+          margin-bottom: 50px; } }
     #home-wrapper #categories-showcase .content > * {
       width: 100%; }
     #home-wrapper #categories-showcase .content #categories {
@@ -1028,14 +1091,16 @@ footer {
         display: flex;
         justify-content: center;
         align-items: flex-start; }
+        @media screen and (max-width: 991px) {
+          #home-wrapper #categories-showcase .row .categories-item {
+            min-width: auto; }
+            #home-wrapper #categories-showcase .row .categories-item a h3 {
+              font-size: 17px; } }
         #home-wrapper #categories-showcase .row .categories-item img {
           height: 100%; }
-  #home-wrapper #video-wrapper {
-    display: block;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    height: 506px;
-    background-color: #fff; }
+          @media screen and (max-width: 991px) {
+            #home-wrapper #categories-showcase .row .categories-item img {
+              height: 50%; } }
   #home-wrapper #footer-wrapper {
     background-color: #3D98BB; }
     #home-wrapper #footer-wrapper .content-wrapper {
@@ -1046,21 +1111,36 @@ footer {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      margin-top: 50px; }
+      padding: 50px 0; }
       #home-wrapper #footer-wrapper #interest h1 {
         color: #fff;
-        margin-bottom: 30px; }
+        margin-bottom: 30px;
+        font-size: 30px; }
+        @media screen and (max-width: 991px) {
+          #home-wrapper #footer-wrapper #interest h1 {
+            font-size: 30px; } }
       #home-wrapper #footer-wrapper #interest .buttongroup {
         display: inline-flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-around;
         width: 50%;
         align-items: center; }
         #home-wrapper #footer-wrapper #interest .buttongroup h1 {
           color: #fff;
           margin-bottom: 30px; }
-        #home-wrapper #footer-wrapper #interest .buttongroup .largebutton:first-child {
-          margin-bottom: 30px; }
+          @media screen and (max-width: 991px) {
+            #home-wrapper #footer-wrapper #interest .buttongroup h1 {
+              font-size: 17px; } }
+        #home-wrapper #footer-wrapper #interest .buttongroup .largebutton {
+          font-size: 23px; }
+          #home-wrapper #footer-wrapper #interest .buttongroup .largebutton:first-child {
+            margin-bottom: 30px;
+            margin-right: 30px; }
+        @media screen and (max-width: 991px) {
+          #home-wrapper #footer-wrapper #interest .buttongroup {
+            flex-wrap: wrap; }
+            #home-wrapper #footer-wrapper #interest .buttongroup .largebutton:first-child {
+              margin-right: 0; } }
         #home-wrapper #footer-wrapper #interest .buttongroup button {
           display: flex;
           align-items: center;

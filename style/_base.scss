@@ -29,7 +29,7 @@ h1 {
 	// font-weight: $font-bold;
 	margin-bottom: 2em;
 
-	@media screen and (min-width: $breakpoint-med) {
+	@media screen and (min-width: $breakpoint-md) {
 		font-size: $font-sz-xl;
 	}
 }
@@ -107,7 +107,7 @@ a {
 	font-size: $font-sz-md;
 	border-radius: 29px;
 
-	@media screen and (min-width: $breakpoint-med) {
+	@media screen and (min-width: $breakpoint-md) {
 		font-size: $font-sz-lg;
 	}
 }
