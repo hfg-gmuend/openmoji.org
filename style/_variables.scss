@@ -46,3 +46,9 @@ $border-radius: 8px;
 $breakpoint-lg: 1199px;
 $breakpoint-md: 991px;
 $breakpoint-sm: 767px;
+
+// z-index
+$z-index-overlay-content: 999;
+$z-index-menu: 1000;
+$z-index-menu-toggle: 1001;
+$z-index-overlay-all: 1002;

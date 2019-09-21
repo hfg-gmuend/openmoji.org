@@ -9,13 +9,26 @@ header {
   justify-content: space-between;
   height: 80px;
 
-  >* {
-    flex: 1;
+  .project-name {
+    display: none;
+    color: $color-grey-dark;
+
+    @media screen and (max-width: $breakpoint-md) {
+      display: block;
+
+      h2 {
+        margin-bottom: 0;
+      }
+    }
   }
 
   nav {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $breakpoint-md) {
+      display: none;
+    }
 
     ul {
       display: flex;
@@ -38,21 +51,6 @@ header {
     .github-link {
       display: none;
     }
-
-    @media only screen and (max-width: 768px) {
-      ul {
-        flex-basis: 100%;
-      }
-
-      .github-link {
-        display: block;
-      }
-
-      .search {
-        padding-left: 20%;
-        width: 80%;
-      }
-    }
   }
 
   .actions {
@@ -62,10 +60,33 @@ header {
 
     @include emoji-search;
 
+    @media screen and (max-width: $breakpoint-md) {
+      .emoji-search {
+        display: none;
+      }
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: url(../img/menu.svg) no-repeat center center;
+      padding: 18px;
+      border-radius: 4px;
+      border: solid 1px $color-grey-light;
+      z-index: $z-index-menu-toggle;
+
+      @media screen and (max-width: $breakpoint-md) {
+        display: block;
+      }
+    }
+
     .action-links {
       display: inline-flex;
       align-items: center;
       justify-content: flex-end;
+
+      @media screen and (max-width: $breakpoint-md) {
+        display: none;
+      }
 
       #gh-link {
         height: 30px;
@@ -103,6 +124,58 @@ header {
             margin-left: $gap-small;
           }
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    &.menu-open {
+      position: static !important; // fullscreen menu
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $color-white;
+        z-index: $z-index-menu;
+
+        ul {
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            height: auto;
+            margin-right: 0;
+            margin-bottom: $gap-small;
+
+            &:last-child {
+              margin-bottom: $gap-reg;
+            }
+
+            a {
+              margin: 5px;
+              font-size: $font-sz-lg;
+            }
+          }
+        }
+
+        .github-link {
+          display: block;
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      .mobile-toggle {
+        background: url(../img/menu-close.svg) no-repeat center center;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: none;
       }
     }
   }

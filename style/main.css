@@ -14,6 +14,9 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   height: 100vh; }
 
+.overflow-hidden {
+  overflow: hidden; }
+
 ul {
   padding: 0;
   margin: 0; }
@@ -498,10 +501,14 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2; }
-  header > * {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
+  header .project-name {
+    display: none;
+    color: #242424; }
+    @media screen and (max-width: 991px) {
+      header .project-name {
+        display: block; }
+        header .project-name h2 {
+          margin-bottom: 0; } }
   header nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -509,6 +516,9 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+    @media screen and (max-width: 991px) {
+      header nav {
+        display: none; } }
     header nav ul {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -527,15 +537,6 @@ header {
           display: inline-block; }
     header nav .github-link {
       display: none; }
-    @media only screen and (max-width: 768px) {
-      header nav ul {
-        -ms-flex-preferred-size: 100%;
-            flex-basis: 100%; }
-      header nav .github-link {
-        display: block; }
-      header nav .search {
-        padding-left: 20%;
-        width: 80%; } }
   header .actions {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -577,6 +578,19 @@ header {
           color: #242424; }
         header .actions .emoji-search input:focus + img {
           opacity: 1; }
+    @media screen and (max-width: 991px) {
+      header .actions .emoji-search {
+        display: none; } }
+    header .actions .mobile-toggle {
+      display: none;
+      background: url(../img/menu.svg) no-repeat center center;
+      padding: 18px;
+      border-radius: 4px;
+      border: solid 1px #818080;
+      z-index: 1001; }
+      @media screen and (max-width: 991px) {
+        header .actions .mobile-toggle {
+          display: block; } }
     header .actions .action-links {
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;
@@ -587,6 +601,9 @@ header {
       -webkit-box-pack: end;
           -ms-flex-pack: end;
               justify-content: flex-end; }
+      @media screen and (max-width: 991px) {
+        header .actions .action-links {
+          display: none; } }
       header .actions .action-links #gh-link {
         height: 30px;
         padding-left: 30px; }
@@ -617,6 +634,54 @@ header {
               -webkit-transform: rotate(45deg); }
           header .actions .action-links .dropdown button div + div {
             margin-left: 20px; }
+  @media screen and (max-width: 991px) {
+    header.menu-open {
+      position: static !important; }
+      header.menu-open nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        z-index: 1000; }
+        header.menu-open nav ul {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center; }
+          header.menu-open nav ul li {
+            height: auto;
+            margin-right: 0;
+            margin-bottom: 20px; }
+            header.menu-open nav ul li:last-child {
+              margin-bottom: 30px; }
+            header.menu-open nav ul li a {
+              margin: 5px;
+              font-size: 30px; }
+        header.menu-open nav .github-link {
+          display: block;
+          height: 40px;
+          width: 40px; }
+      header.menu-open .mobile-toggle {
+        background: url(../img/menu-close.svg) no-repeat center center;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: none; } }
 
 footer {
   -ms-grid-row: 3;
