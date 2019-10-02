@@ -60,6 +60,18 @@ header {
 
     @include emoji-search;
 
+    .emoji-search img {
+      left: 2px;
+      top: 10px;
+      height: 50%;
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+      .emoji-search input {
+        width: 210px;
+      }
+    }
+
     @media screen and (max-width: $breakpoint-md) {
       .emoji-search {
         display: none;
@@ -90,7 +102,7 @@ header {
 
       #gh-link {
         height: 30px;
-        padding-left: $gap-reg;
+        margin-left: $gap-small;
 
         img {
           height: 100%
@@ -131,6 +143,7 @@ header {
   @media screen and (max-width: $breakpoint-md) {
     &.menu-open {
       position: static !important; // fullscreen menu
+
       nav {
         display: flex;
         justify-content: center;

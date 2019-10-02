@@ -33,14 +33,17 @@
 <body>
   <div id="about-wrapper">
     <div class="container">
-      <header>
-        <nav>
+      <header class="page-header">
+        <a class="project-name" href="../">
+          <h2>OpenMoji</h2>
+        </a>
+        <nav class="menu">
           <ul>
             <li><a href="../">OpenMoji</a></li>
             <li><a href="../library">Library</a></li>
             <li><a href="../styleguide">Participate</a></li>
             <li><a href="../samples">Samples</a></li>
-            <li class="active-tab"><a href="./">About</a></li>
+            <li class="active-tab"><a href="../about">About</a></li>
           </ul>
           <div class="github-link">
             <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img
@@ -48,9 +51,11 @@
           </div>
         </nav>
         <div class="actions">
-          <div class="emoji-search">
+          <!--<div class="emoji-search">
             <img src="../img/search.svg">
             <input class="search" type="text" name="emojisearch" placeholder="author, category or emoji …">
+          </div>-->
+          <div class="mobile-toggle">
           </div>
           <div class="action-links">
             <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img
@@ -70,7 +75,6 @@
                     <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-svg-black.zip"
                       download>SVG Black</a>
                   </li>
-
                   <li>
                     <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-72x72-color.zip"
                       download>PNG Color 72×72</a>
@@ -79,7 +83,6 @@
                     <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-72x72-black.zip"
                       download>PNG Black 72×72</a>
                   </li>
-
                   <li>
                     <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-618x618-color.zip"
                       download>PNG Color 618×618</a>
@@ -88,7 +91,6 @@
                     <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-618x618-black.zip"
                       download>PNG Black 618×618</a>
                   </li>
-
                   <li>
                     <a href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Black.ttf"
                       target="_blank">OpenMoji-Black.ttf</a>
@@ -99,12 +101,10 @@
                       target="_blank">OpenMoji-Color.ttf</a>
                     <div class="disclaimer">beta-version</div>
                   </li>
-
                   <li>
                     <a href="https://itunes.apple.com/us/app/openmoji/id1462636288" target="_blank">OpenMoji App</a>
                     <div class="disclaimer">for iOS</div>
                   </li>
-
                   <li>
                     <a href="https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank">Download
                       Source</a>
@@ -1112,6 +1112,9 @@
               <li><a href="https://sam0711er.com/" target="_blank">Sam Eckert</a> for creating the iOS OpenMoji App</li>
               <li>Emoji description texts by <a href="https://emojipedia.org" target="_blank">Emojipedia</a> – Thanks
                 Jeremy Burge</li>
+              <li><a href="https://twitter.com/felix_haeberle" target="_blank">Felix Häberle</a> – web development
+                improving accessibility and responsiveness
+              </li>
             </ul>
           </article>
           <article id="contact">

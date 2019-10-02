@@ -578,6 +578,13 @@ header {
           color: #242424; }
         header .actions .emoji-search input:focus + img {
           opacity: 1; }
+    header .actions .emoji-search img {
+      left: 2px;
+      top: 10px;
+      height: 50%; }
+    @media screen and (min-width: 1199px) {
+      header .actions .emoji-search input {
+        width: 210px; } }
     @media screen and (max-width: 991px) {
       header .actions .emoji-search {
         display: none; } }
@@ -606,7 +613,7 @@ header {
           display: none; } }
       header .actions .action-links #gh-link {
         height: 30px;
-        padding-left: 30px; }
+        margin-left: 20px; }
         header .actions .action-links #gh-link img {
           height: 100%; }
       header .actions .action-links .dropdown {
