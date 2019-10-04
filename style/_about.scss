@@ -1,83 +1,94 @@
-#about-wrapper{
-	height: 100%;
+#about-wrapper {
+  height: 100%;
 
-	h1{
-		color: $clr-yellow-light;
-	}
+  h1 {
+    color: $color-yellow-light;
+  }
 
-	// h1{
-	// 	color: $clr-blue-dark;
-	// }
+  // h1{
+  // 	color: $color-blue-dark;
+  // }
 
-	button{
-		background-color: $clr-yellow-light;
-	}
-	.active-tab{
-		border-color: $clr-yellow-light;
-	}
-	#about-content{
-		@extend %content;
+  button {
+    background-color: $color-yellow-light;
+  }
 
-		p a, ul a {
-			color: $clr-yellow-light;
-		}
-		// p a, ul a {
-		// 	color: $clr-blue-dark;
-		// }
+  .active-tab {
+    border-color: $color-yellow-light;
+  }
 
-		ul{
-			padding-left: $gap-reg;
+  #about-content {
+    @extend %content;
 
-			li{
-				list-style-type: disc;
-			}
-		}
+    p a,
+    ul a {
+      color: $color-yellow-light;
+    }
 
-		h1{
-			margin-bottom: $gap-reg;
-		}
+    // p a, ul a {
+    // 	color: $color-blue-dark;
+    // }
 
-		#team-container{
-			display: -webkit-flex; /* Safari */
-			-webkit-flex-wrap: wrap; /* Safari 6.1+ */
-			display: flex;
-			flex-wrap: wrap;
-			margin-right: -$gap-large;
-			margin-bottom: -$gap-med;
+    ul {
+      padding-left: $gap-reg;
 
-			.teammember{
-				display: flex;
-				flex-direction: column;
-				width: 150px;
-				position: relative;
-				margin-bottom: $gap-med;
-				margin-right: $gap-large;
-				div {
-					width: 100%;
-					margin: auto;
-					padding-bottom: $gap-xs;
-					img{
-						width: 100%;
-					}
-				}
-				ul{
-					padding-left: 0;
-					padding-top: $gap-reg;
-					li{
-						width: 20px;
-						height: 20px;
-						display: inline-block;
-						padding-right: $gap-xs;
-					}
-				}
+      li {
+        list-style-type: disc;
+      }
+    }
 
-				.team{
-					flex: 1;
-					p{
-						font-size: $fnt-sz-s;
-					}
-				}
-			}
-		}
-	}
+    h1 {
+      margin-bottom: $gap-reg;
+    }
+
+    #team-container {
+      display: -webkit-flex;
+      /* Safari */
+      -webkit-flex-wrap: wrap;
+      /* Safari 6.1+ */
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -$gap-large;
+      margin-bottom: -$gap-med;
+
+      .teammember {
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        position: relative;
+        margin-bottom: $gap-med;
+        margin-right: $gap-large;
+
+        div {
+          width: 100%;
+          margin: auto;
+          padding-bottom: $gap-xs;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        ul {
+          padding-left: 0;
+          padding-top: $gap-reg;
+
+          li {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            padding-right: $gap-xs;
+          }
+        }
+
+        .team {
+          flex: 1;
+
+          p {
+            font-size: $font-sz-s;
+          }
+        }
+      }
+    }
+  }
 }

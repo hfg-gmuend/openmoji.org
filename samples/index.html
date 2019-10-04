@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,65 +29,91 @@
   <link rel="stylesheet" href="../style/main.css">
   <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
 </head>
+
 <body>
   <div id="samples-wrapper">
     <div class="container">
-      <header>
-        <ul>
-          <li><a href="../">OpenMoji</a></li>
-          <li><a href="../library">Library</a></li>
-          <li><a href="../styleguide">Participate</a></li>
-          <li class="active-tab"><a href="./">Samples</a></li>
-          <li><a href="../about">About</a></li>
-        </ul>
-        <div class="right">
-          <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img src = "../img/brand-icons/github_hi.svg"></a>
-          <div class="dropdown">
-            <button><div>Get OpenMojis</div><div><i class="arrow down"></i></div></button>
-            <div class="dropdown-content">
-              <ul>
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-svg-color.zip" download>SVG Color</a>
-                </li>
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-svg-black.zip" download>SVG Black</a>
-                </li>
+      <header class="page-header">
+        <a class="project-name" href="../">
+          <h2>OpenMoji</h2>
+        </a>
+        <nav class="menu">
+          <ul>
+            <li><a href="../">OpenMoji</a></li>
+            <li><a href="../library">Library</a></li>
+            <li><a href="../styleguide">Participate</a></li>
+            <li class="active-tab"><a href="../samples">Samples</a></li>
+            <li><a href="../about">About</a></li>
+          </ul>
+          <div class="github-link">
+            <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img
+                src="../img/brand-icons/github_hi.svg"></a>
+          </div>
+        </nav>
+        <div class="actions">
+          <!--<div class="emoji-search">
+            <img src="../img/search.svg">
+            <input class="search" type="text" name="emojisearch" placeholder="author, category or emoji …">
+          </div>-->
+          <div class="mobile-toggle">
+          </div>
+          <div class="action-links">
+            <a id="gh-link" class="iconlink" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img
+                src="../img/brand-icons/github_hi.svg"></a>
+            <div class="dropdown">
+              <button>
+                <div>Get OpenMojis</div>
+                <div><i class="arrow down"></i></div>
+              </button>
+              <div class="dropdown-content">
+                <ul>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-svg-color.zip"
+                      download>SVG Color</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-svg-black.zip"
+                      download>SVG Black</a>
+                  </li>
 
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-72x72-color.zip" download>PNG Color 72×72</a>
-                </li>
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-72x72-black.zip" download>PNG Black 72×72</a>
-                </li>
-
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-618x618-color.zip" download>PNG Color 618×618</a>
-                </li>
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-618x618-black.zip" download>PNG Black 618×618</a>
-                </li>
-
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Black.ttf" target="_blank">OpenMoji-Black.ttf</a>
-                  <div class="disclaimer">beta-version</div>
-                </li>
-                <li>
-                  <a href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Color.ttf" target="_blank">OpenMoji-Color.ttf</a>
-                  <div class="disclaimer">beta-version</div>
-                </li>
-
-                <li>
-                  <a href="https://itunes.apple.com/us/app/openmoji/id1462636288" target="_blank">OpenMoji App</a>
-                  <div class="disclaimer">for iOS</div>
-                </li>
-
-                <li>
-                  <a href="https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank">Download Source</a>
-                </li>
-              </ul>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-72x72-color.zip"
+                      download>PNG Color 72×72</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-72x72-black.zip"
+                      download>PNG Black 72×72</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-618x618-color.zip"
+                      download>PNG Color 618×618</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/releases/download/12.0.0/openmoji-618x618-black.zip"
+                      download>PNG Black 618×618</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Black.ttf"
+                      target="_blank">OpenMoji-Black.ttf</a>
+                    <div class="disclaimer">beta-version</div>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Color.ttf"
+                      target="_blank">OpenMoji-Color.ttf</a>
+                    <div class="disclaimer">beta-version</div>
+                  </li>
+                  <li>
+                    <a href="https://itunes.apple.com/us/app/openmoji/id1462636288" target="_blank">OpenMoji App</a>
+                    <div class="disclaimer">for iOS</div>
+                  </li>
+                  <li>
+                    <a href="https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank">Download
+                      Source</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <!-- <div class="clear"></div> -->
         </div>
       </header>
       <main>
@@ -115,7 +142,8 @@
         <p class="caption">cow, deciduous tree, ewe</p>
 
         <object data="../img/samples/jobs.svg" type="image/svg+xml" class="sample"></object>
-        <p class="caption">man mechanic, woman pilot, woman firefighter,<br> woman technologist, man scientist, police officer</p>
+        <p class="caption">man mechanic, woman pilot, woman firefighter,<br> woman technologist, man scientist, police
+          officer</p>
 
         <object data="../img/samples/ufo.svg" type="image/svg+xml" class="sample"></object>
         <p class="caption">shooting star, flying saucer</p>
@@ -137,10 +165,12 @@
 
 
         <object data="../img/samples/traffic.svg" type="image/svg+xml" class="sample"></object>
-        <p class="caption">sport utility vehicle, automobile, delivery truck,<br> minibus, articulated lorry, taxi, police car</p>
+        <p class="caption">sport utility vehicle, automobile, delivery truck,<br> minibus, articulated lorry, taxi,
+          police car</p>
 
         <object data="../img/samples/info.svg" type="image/svg+xml" class="sample"></object>
-        <p class="caption">airplane departure, railway car, articulated lorry, ship<br> eye, automobile, pill, deciduous tree, pick, green apple, cooked rice, droplet</p>
+        <p class="caption">airplane departure, railway car, articulated lorry, ship<br> eye, automobile, pill, deciduous
+          tree, pick, green apple, cooked rice, droplet</p>
 
         <object data="../img/samples/zombie.svg" type="image/svg+xml" class="sample"></object>
         <p class="caption">zombie</p>
@@ -151,11 +181,17 @@
           <p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/.">CC BY-SA 4.0</a></p>
         </div>
         <ul>
-          <li><a class="iconlink" href="https://twitter.com/share?url=https://www.github.com/hfg-gmuend/openmoji/releases/latest&amp;text=OpenMojis&amp;hashtags=openmoji" target="_blank"><img src="../img/brand-icons/twitter.svg"></a></li>
+          <li><a class="iconlink"
+              href="https://twitter.com/share?url=https://www.github.com/hfg-gmuend/openmoji/releases/latest&amp;text=OpenMojis&amp;hashtags=openmoji"
+              target="_blank"><img src="../img/brand-icons/twitter.svg"></a></li>
           <!-- <li><a class="iconlink" href=""><img src="../img/brand-icons/instagram.svg"></a></li> -->
-          <li><a class="iconlink" href="http://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest"><img src="../img/brand-icons/facebook.svg" target="_blank"></a></li>
+          <li><a class="iconlink"
+              href="http://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest"><img
+                src="../img/brand-icons/facebook.svg" target="_blank"></a></li>
           <!-- <li><a class="iconlink" href="mailto:?Subject=OpenMojis&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank"><img src="../data/black/svg/1F4E7.svg"></a></li> -->
-          <li><a class="iconlink" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="../img/brand-icons/pinterest.svg" target="_blank"></a></li>
+          <li><a class="iconlink"
+              href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img
+                src="../img/brand-icons/pinterest.svg" target="_blank"></a></li>
         </ul>
       </footer>
     </div>
@@ -184,48 +220,78 @@
 
               <h3>Haftung für Inhalte</h3>
 
-              <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte
-                fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon
-                unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+              <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
+                allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+                verpflichtet, übermittelte oder gespeicherte
+                fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
+                hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
+                allgemeinen Gesetzen bleiben hiervon
+                unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
+                Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese
+                Inhalte umgehend entfernen.
                 <p><br>
 
                   <h3>Haftung für Links</h3>
 
-                  <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
-                    Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente
-                    inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p><br>
+                  <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss
+                    haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte
+                    der verlinkten Seiten ist stets der jeweilige
+                    Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der
+                    Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
+                    Verlinkung nicht erkennbar. Eine permanente
+                    inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer
+                    Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links
+                    umgehend entfernen.</p><br>
 
                   <h3>Urheberrecht</h3>
 
-                  <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
-                    bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber
-                    erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden
-                    Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p><br>
+                  <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+                    deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
+                    außerhalb der Grenzen des Urheberrechtes
+                    bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien
+                    dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte
+                    auf dieser Seite nicht vom Betreiber
+                    erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als
+                    solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden,
+                    bitten wir um einen entsprechenden
+                    Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                  </p><br>
 
                   <h2>Datenschutzerklärung</h2>
 
-                  <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich,
-                    stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+                  <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit
+                    auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen)
+                    erhoben werden, erfolgt dies, soweit möglich,
+                    stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte
+                    weitergegeben.
 
-                    <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+                    <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per
+                      E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch
+                      Dritte ist nicht möglich.</p>
 
-                    <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber
-                      der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p><br>
+                    <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur
+                      Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit
+                      ausdrücklich widersprochen. Die Betreiber
+                      der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von
+                      Werbeinformationen, etwa durch Spam-Mails, vor.</p><br>
 
                     <p>Quellenangaben: <a href="https://www.e-recht24.de" target="_blank">e-recht24.de</a></p>
             </div>
           </div>
           <div class="close" id="close-impressum-wrapper">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-                                <g id="Detail-iconpreview-big" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47" stroke-width="3">
-                                    <g id="X" transform="translate(1342.000000, 121.000000)">
-                                        <path d="M13.5,0.5 L0.990003997,13.009996 L13.5,0.5 Z" id="Line-2"></path>
-                                        <path d="M13.5,13.5 L0.990003997,0.990003997 L13.5,13.5 Z" id="Line-2"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
+            <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                stroke-linejoin="round">
+                <g id="Detail-iconpreview-big" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47"
+                  stroke-width="3">
+                  <g id="X" transform="translate(1342.000000, 121.000000)">
+                    <path d="M13.5,0.5 L0.990003997,13.009996 L13.5,0.5 Z" id="Line-2"></path>
+                    <path d="M13.5,13.5 L0.990003997,0.990003997 L13.5,13.5 Z" id="Line-2"></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
           </div>
         </div>
       </div>

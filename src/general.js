@@ -88,4 +88,10 @@ $(document).ready(function() {
 	$( "#close-impressum-wrapper" ).click(function() {
 		$( "#impressum-wrapper .popover-wrapper" ).fadeOut(400);
 	});
+
+	// toggle mobile menu
+	$(".mobile-toggle").click(function(){
+		$("header.page-header").toggleClass("menu-open");
+		$("html, body").toggleClass("overflow-hidden");
+	});
 });

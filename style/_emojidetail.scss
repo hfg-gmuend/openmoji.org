@@ -1,247 +1,252 @@
-.popover-wrapper{
-    background: rgba(255,255,255,0.6);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    z-index: 19;
-    opacity: 1;
-    display: none;
-    align-items: center;
-    justify-content: center;
+.popover-wrapper {
+  background: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 19;
+  opacity: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.highlight{
-    background: $bgclr-grey;
-    border-radius: $border-radius;
+.highlight {
+  background: $background-color-grey;
+  border-radius: $border-radius;
 }
 
-.popover{
-    position: relative;
-    width: 80%;
-    max-width: $content-max-width * 1.5;
-    height: 80%;
-    background: #FFFFFF;
-    box-shadow: 0 1px 34px 0 rgba(163,161,173,0.50);
-    border-radius: 8px;
-    padding: $gap-reg;
-    z-index: 20;
-    box-sizing: border-box;
-    display: flex;
+.popover {
+  position: relative;
+  width: 80%;
+  max-width: $content-max-width * 1.5;
+  height: 80%;
+  background: #FFFFFF;
+  box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.50);
+  border-radius: 8px;
+  padding: $gap-reg;
+  z-index: 20;
+  box-sizing: border-box;
+  display: flex;
 
-    .sub{
-        text-align: center;
-        font-size: $fnt-sz-s;
-    }
+  .sub {
+    text-align: center;
+    font-size: $font-sz-s;
+  }
 }
 
 .path {
-	color: $clr-grey-light;
+  color: $color-grey-light;
 }
 
 #sharetitle {
-    position: absolute;
-    bottom: 2 * $gap-reg;
+  position: absolute;
+  bottom: 2 * $gap-reg;
 }
+
 #shareitems {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 #shareitems ul li {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: $gap-reg / 2;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: $gap-reg / 2;
 }
 
 #preview {
-    width: 70%;
-    padding-right: $gap-med / 2;
-    box-sizing: border-box;
+  width: 70%;
+  padding-right: $gap-med / 2;
+  box-sizing: border-box;
 
-    #active-emoji-selection {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-
-        #main-emoji-image{
-            min-height: 0;
-            margin-bottom: $gap-reg + $gap-xs;
-        }
-
-        .small-emoji-preview {
-            display: inline-flex;
-            justify-content: space-between;
-            align-items: center;
-
-            #emoji-preview {
-                display: inline-flex;
-                height: 50px;
-                margin: auto;
-                align-items: center;
-
-                .circle {
-                    box-sizing: border-box;
-                    position: relative;
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                    border: 2px solid rgba(0, 0, 0, 0.1);
-                    cursor: pointer;
-
-                    &.highlight::after {
-                        content: "";
-                        position: absolute;
-                        top: 25%;
-                        right: 25%;
-                        height: 50%;
-                        width: 50%;
-                        border-radius: 50%;
-                        background-color: $clr-white;
-                        box-shadow: 0 1px 5px 0 rgba(163,161,173,0.50);
-                    }
-                }
-
-                .circle + .circle {
-                    margin-left: 5px;
-                }
-
-                #outline-emoji-preview {
-                    background-color: $clr-grey-ultra-light;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 65%;
-                        margin-top: -1px;
-                        margin-left: calc(-30% - 1px);
-                        border: 1px solid $clr-grey-light;
-                        transform: rotate3d(0, 0, 1, -45deg);
-                    }
-                }
-
-                #color-emoji-preview {
-                    background-color: $clr-fitzpatrick-default;
-                }
-
-                #skintones-emoji-preview {
-                    display: inline-flex;
-                    align-items: center;
-
-                    .circle:first-child {
-                        margin-left: 7.5px;
-                    }
-
-                    &::before {
-                        content: "";
-                        height: 15px;
-                        margin-left: 7.5px;
-                        border-left: 1px solid $clr-grey-super-light;
-                    }
-
-                    &:empty::before {
-                        display: none;
-                    }
-                }
-
-                .emoji-preview-image{
-                    height: 50px;
-
-                    // transition: all 0.3s;
-                    // &:before{
-                    //     content: "";
-                    //     width: 100%;
-                    //     height: 100%;
-                    //     left: 0px;
-                    //     top: 0px;
-                    //     border-radius: $border-radius;
-                    //     background: $clr-grey-light;
-                    //     opacity: 0.0;
-                    //     transition: all 0.3s;
-
-                    // }
-                    // &:hover:before{
-                    //     opacity: 0.1;
-                    // }
-                }
-            }
-
-            .next-or-prev {
-                opacity: 0.5;
-                transition: all 0.3s;
-                // background-color: #456;
-                display: inline-flex;
-
-                img{
-                    height: 40px;
-                }
-            }
-            .next-or-prev:hover{
-                opacity: 1;
-            }
-        }
-    }
-}
-
-#description {
-    border-left: 1px solid $clr-grey-super-light;
-    padding-left: $gap-med / 2;
+  #active-emoji-selection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30%;
-    box-sizing: border-box;
+    height: 100%;
 
-    #emojipedia-link {
-      color: $clr-grey-dark;
+    #main-emoji-image {
+      min-height: 0;
+      margin-bottom: $gap-reg + $gap-xs;
     }
 
-    .description-top{
+    .small-emoji-preview {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+
+      #emoji-preview {
         display: inline-flex;
-        justify-content: space-between;
-    }
-
-    .description-bottom{
-        h2 {
-            margin-bottom: $gap-reg;
-            max-width: 400px
-        }
-        table {
-            margin-bottom: $gap-med;
-
-            td {
-                height: 40px;
-            }
-            td + td{
-                padding-left: $gap-reg;
-            }
-        }
-    }
-
-
-    #buttoncontainer{
         height: 50px;
-        display: inline-flex;
+        margin: auto;
         align-items: center;
-        width: 100%;
-        flex-wrap: wrap;
 
-        button:not(.copy-to-clipboard) {
-            min-width: 100px;
+        .circle {
+          box-sizing: border-box;
+          position: relative;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+
+          &.highlight::after {
+            content: "";
+            position: absolute;
+            top: 25%;
+            right: 25%;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: $color-white;
+            box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.50);
+          }
         }
-        a + a{
-            margin-left:$gap-xs;
+
+        .circle+.circle {
+          margin-left: 5px;
         }
+
+        #outline-emoji-preview {
+          background-color: $color-grey-ultra-light;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 65%;
+            margin-top: -1px;
+            margin-left: calc(-30% - 1px);
+            border: 1px solid $color-grey-light;
+            transform: rotate3d(0, 0, 1, -45deg);
+          }
+        }
+
+        #color-emoji-preview {
+          background-color: $color-fitzpatrick-default;
+        }
+
+        #skintones-emoji-preview {
+          display: inline-flex;
+          align-items: center;
+
+          .circle:first-child {
+            margin-left: 7.5px;
+          }
+
+          &::before {
+            content: "";
+            height: 15px;
+            margin-left: 7.5px;
+            border-left: 1px solid $color-grey-super-light;
+          }
+
+          &:empty::before {
+            display: none;
+          }
+        }
+
+        .emoji-preview-image {
+          height: 50px;
+
+          // transition: all 0.3s;
+          // &:before{
+          //     content: "";
+          //     width: 100%;
+          //     height: 100%;
+          //     left: 0px;
+          //     top: 0px;
+          //     border-radius: $border-radius;
+          //     background: $color-grey-light;
+          //     opacity: 0.0;
+          //     transition: all 0.3s;
+
+          // }
+          // &:hover:before{
+          //     opacity: 0.1;
+          // }
+        }
+      }
+
+      .next-or-prev {
+        opacity: 0.5;
+        transition: all 0.3s;
+        // background-color: #456;
+        display: inline-flex;
+
+        img {
+          height: 40px;
+        }
+      }
+
+      .next-or-prev:hover {
+        opacity: 1;
+      }
     }
+  }
+}
+
+#description {
+  border-left: 1px solid $color-grey-super-light;
+  padding-left: $gap-med / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  box-sizing: border-box;
+
+  #emojipedia-link {
+    color: $color-grey-dark;
+  }
+
+  .description-top {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+
+  .description-bottom {
+    h2 {
+      margin-bottom: $gap-reg;
+      max-width: 400px
+    }
+
+    table {
+      margin-bottom: $gap-med;
+
+      td {
+        height: 40px;
+      }
+
+      td+td {
+        padding-left: $gap-reg;
+      }
+    }
+  }
+
+
+  #buttoncontainer {
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+    button:not(.copy-to-clipboard) {
+      min-width: 100px;
+    }
+
+    a+a {
+      margin-left: $gap-xs;
+    }
+  }
 }
 
 .close {
-    cursor: pointer;
-    margin-left: $gap-xs;
+  cursor: pointer;
+  margin-left: $gap-xs;
 }

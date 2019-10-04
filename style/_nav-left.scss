@@ -1,27 +1,25 @@
-.nav-left{
-	padding-left: $gap-med;
-	margin-right: $gap-med;
-	margin-top: $gap-reg;
-	grid-area: nav;
-	overflow: hidden;
-	box-sizing: border-box;
-	max-width: 300px;
+.nav-left {
+  padding-left: $gap-med;
+  margin-right: $gap-med;
+  margin-top: $gap-reg;
+  grid-area: nav;
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 300px;
 
-	ul li{
-		display: block;
-		margin-top: $gap-xs;
-	}
+  ul li {
+    display: block;
+    margin-top: $gap-xs;
+  }
 
-	&:hover{
-		overflow-y: auto;
-	}
+  &:hover {
+    overflow-y: auto;
+  }
 
-	.mainmenu {}
-
-	.submenu {
-		padding-left: $gap-reg;
-		max-height: 0;
-		overflow: hidden;
-		transition: max-height 0.2s ease-out;
-	}
+  .submenu {
+    padding-left: $gap-reg;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 }

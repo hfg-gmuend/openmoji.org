@@ -6,8 +6,8 @@
   "scripts": {
     "start": "parallelshell \"npm run watch\" \"npm run watch-style\"",
     "watch": "budo --host localhost --dir . --open --live --verbose --watch-glob '**/*.{html,js,css}'",
-    "watch-style": "nodemon -e scss -x \"npm run bundle-css\" .",
-    "bundle-css": "node-sass --include-path scss style/main.scss style/main.css",
+    "watch-style": "nodemon -e scss -x \"npm run build-css\" ",
+    "build-css": "gulp sass",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,10 +21,18 @@
   },
   "homepage": "http://openmoji.org/",
   "devDependencies": {
-    "budo": "^10.0.4",
-    "node-sass": "^4.7.2",
-    "nodemon": "^1.14.11",
-    "parallelshell": "^3.0.2",
-    "fuse.js": "^3.2.0"
-  }
+    "budo": "^11.6.3",
+    "fuse.js": "^3.4.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "parallelshell": "^3.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }

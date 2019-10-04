@@ -1,29 +1,32 @@
 footer {
-	padding: 0 $gap-med 0 $gap-med;
-	grid-area: footer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-top: $gap-xs;
-	margin-bottom: $gap-xs;
+  padding: 0 $gap-med 0 $gap-med;
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $gap-xs;
+  margin-bottom: $gap-xs;
 
-	p {
-		display: inline-block;
-		font-size: $fnt-sz-s;
-		a {
-			text-decoration: underline;
-		}
-	}
-	ul{
-		display: inline-flex;
-		align-items: center;
+  p {
+    display: inline-block;
+    font-size: $font-sz-s;
 
-		li{
-			width: 30px;
-			height: 30px;
-		}
-		li + li{
-			margin-left: $gap-small;
-		}
-	}
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    display: inline-flex;
+    align-items: center;
+
+    li {
+      width: 30px;
+      height: 30px;
+    }
+
+    li+li {
+      margin-left: $gap-small;
+    }
+  }
 }
