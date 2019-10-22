@@ -27,7 +27,7 @@ $(document).ready(function() {
 			var yPos = EMOJI_POSITIONS[i].y + 50;
 
 			// add emoji to html
-			if( !(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100) ) $( "#landing .content" ).append("<a href='./library#emoji=" + shuffledList[i].hexcode + "'><img class='emoji lazy' data-src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
+			if (!(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100)) $("#landing .content").append("<a href='./library#emoji=" + shuffledList[i].hexcode + "'><img class='emoji lazy' alt='" + shuffledList[i].annotation + "'data-src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
 		}
 	}
 
@@ -59,15 +59,15 @@ $(document).ready(function() {
 
 		// set random emojis for showcase
 		$( "#big-emoji-left" ).attr("data-src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_left)[0] + ".svg");
-		$( "#big-emoji-right" ).attr("data-src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_right)[0] + ".svg");
+		$( ".big-emoji-right" ).attr("data-src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_right)[0] + ".svg");
 
 		var emoji_left = new ScrollMagic.Scene({triggerElement: "#big-emoji-left-start", duration: Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top)})
 													.setPin("#big-emoji-left")
 													.setTween("#big-emoji-left", {scale: 2, transformOrigin:"100% 50%"})
 													.addTo(scrollMagicController);
-		var emoji_right = new ScrollMagic.Scene({triggerElement: "#big-emoji-right-start", duration: Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top)})
-													.setPin("#big-emoji-right")
-													.setTween("#big-emoji-right", {scale: 2, transformOrigin:"0% 50%"})
+		var emoji_right = new ScrollMagic.Scene({triggerElement: ".big-emoji-right-start", duration: Math.abs($( ".big-emoji-right-start" ).position().top - $( ".big-emoji-right-end" ).position().top)})
+													.setPin(".big-emoji-right")
+													.setTween(".big-emoji-right", {scale: 2, transformOrigin:"0% 50%"})
 													.addTo(scrollMagicController);
 	}
 
@@ -139,7 +139,7 @@ $(document).ready(function() {
 			// break out of loop if array doesn't have new emojis anymore
 			if(i >= filteredList.length) break;
 
-			html += "<a class='categories-item' href='./library#emoji=" + filteredList[i].hexcode + "'><img src='data/color/svg/" + filteredList[i].hexcode + ".svg'></a>";
+			html += "<a class='categories-item' href='./library#emoji=" + filteredList[i].hexcode + "'><img alt='" + filteredList[i].annotation + "' src='data/color/svg/" + filteredList[i].hexcode + ".svg'></a>";
 		}
 		html += "</div>";
 
@@ -200,7 +200,7 @@ $(document).ready(function() {
 
 		// change duration of scrollmagic animations
 		// emoji_left.duration(Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top));
-		// emoji_right.duration(Math.abs($( "#big-emoji-right-start" ).position().top - $( "#big-emoji-right-end" ).position().top));
+		// emoji_right.duration(Math.abs($( ".big-emoji-right-start" ).position().top - $( ".big-emoji-right-end" ).position().top));
 	});
 
 	// window scroll listener

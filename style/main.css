@@ -17,6 +17,9 @@ body {
 .overflow-hidden {
   overflow: hidden; }
 
+.hidden {
+  display: none; }
+
 ul {
   padding: 0;
   margin: 0; }
@@ -63,8 +66,8 @@ article:not(:last-child) {
       grid-template-areas: "header header" "nav content" "footer footer";
   -ms-grid-columns: minmax(200px, 300px) auto;
   grid-template-columns: minmax(200px, 300px) auto;
-  -ms-grid-rows: minmax(40px, 80px) minmax(65%, auto) auto;
-  grid-template-rows: minmax(40px, 80px) minmax(65%, auto) auto;
+  -ms-grid-rows: minmax(40px, 80px) minmax(auto, auto) auto;
+  grid-template-rows: minmax(40px, 80px) minmax(auto, auto) auto;
   height: 100%; }
 
 .descriptive-text {
@@ -609,10 +612,10 @@ header {
       @media screen and (max-width: 991px) {
         header .actions .action-links {
           display: none; } }
-      header .actions .action-links #gh-link {
+      header .actions .action-links .gh-link {
         height: 30px;
         margin-left: 20px; }
-        header .actions .action-links #gh-link img {
+        header .actions .action-links .gh-link img {
           height: 100%; }
       header .actions .action-links .dropdown {
         margin-left: 20px; }
@@ -1015,8 +1018,8 @@ footer {
           flex-direction: column; }
   #home-wrapper .container {
         grid-template-areas: "header header" "content content" "footer footer";
-    -ms-grid-rows: 50px minmax(65%, auto) auto;
-    grid-template-rows: 50px minmax(65%, auto) auto; }
+    -ms-grid-rows: 50px minmax(auto, auto) auto;
+    grid-template-rows: 50px minmax(auto, auto) auto; }
   #home-wrapper h1 {
     text-align: center;
     width: 600px;

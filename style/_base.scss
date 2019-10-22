@@ -17,6 +17,10 @@ body {
   overflow: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -77,7 +81,7 @@ article:not(:last-child) {
   display: grid;
   grid-template-areas: "header header""nav content""footer footer";
   grid-template-columns: minmax(200px, 300px) auto;
-  grid-template-rows: minmax(40px, $footer-header-max-height) minmax(65%, auto) auto;
+  grid-template-rows: minmax(40px, $footer-header-max-height) minmax(auto, auto) auto;
   height: 100%;
 }
 

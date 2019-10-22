@@ -2,7 +2,7 @@
 
   .container {
     grid-template-areas: "header header""content content""footer footer";
-    grid-template-rows: 50px minmax(65%, auto) auto;
+    grid-template-rows: 50px minmax(auto, auto) auto;
   }
 
   min-height: 100vh;
