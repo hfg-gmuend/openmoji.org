@@ -65,7 +65,7 @@ h6 {
 }
 
 p {
-  color: $color-grey-light;
+  color: $color-grey;
 }
 
 article:not(:last-child) {
@@ -92,7 +92,7 @@ article:not(:last-child) {
 
 a {
   text-decoration: none;
-  color: $color-grey-light;
+  color: $color-grey;
   transition: all 0.2s;
 
   &:hover {
@@ -176,7 +176,7 @@ input {
 }
 
 label {
-  color: $color-grey-light;
+  color: $color-grey;
   cursor: pointer;
   transition: all 0.2s;
 
@@ -197,9 +197,12 @@ input[type='radio'] {
 
 main {
   grid-area: content !important;
-  margin-top: $gap-reg;
   overflow-x: hidden;
   overflow-y: auto;
+  margin-top: $gap-reg;
+  &.samples-wrapper {
+    margin-top: 0;
+  }
 }
 
 %content {
