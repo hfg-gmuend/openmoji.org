@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   //------------ Initialization ------------
   $("#emoji-detail-wrapper .popover-wrapper").css("display", "flex").hide();
   $("#sort-selector .sort_selector__selected").text($("#sort-selector .sort_selector__list .active").text());
@@ -11,7 +11,7 @@ $(document).ready(function() {
   var fuse;
   const FUSE_DEFAULT_THRESHOLD = 0.1;
   const SORT_FUNCS = { // list of possible sort functions NOTE: functions need to sort in ascending order
-    "unicode": function(a, b) {
+    "unicode": function (a, b) {
       if (a.item.order === "" && b.item.order === "") {
         return 0;
       } else if (a.item.order === "") {
@@ -21,10 +21,10 @@ $(document).ready(function() {
       }
       return parseInt(a.item.order) - parseInt(b.item.order);
     },
-    "alphabetical": function(a, b) {
+    "alphabetical": function (a, b) {
       return a.item.annotation.localeCompare(b.item.annotation);
     },
-    "contribution_date": function(a, b) {
+    "contribution_date": function (a, b) {
       if (a.item.openmoji_date === "" && b.item.openmoji_date === "") {
         return 0;
       } else if (a.item.openmoji_date === "") {
@@ -34,7 +34,7 @@ $(document).ready(function() {
       }
       return new Date(b.item.openmoji_date) - new Date(a.item.openmoji_date);
     },
-    "best_match": function(a, b) {
+    "best_match": function (a, b) {
       return a.item.score - b.item.score;
     }
   };
@@ -48,10 +48,10 @@ $(document).ready(function() {
   var currentLazyInstance;
 
   $.when(
-    $.getJSON("../data/openmoji.json", function(json) {
+    $.getJSON("../data/openmoji.json", function (json) {
       var filteredEmojies = {};
 
-      json.forEach(function(item) {
+      json.forEach(function (item) {
         // NOTE: skintone_base_emoji needs to occur before skintone variants in list
         if (item.skintone !== "" && Number.isInteger(item.skintone)) {
           if (filteredEmojies[item.skintone_base_hexcode].skintones === undefined) filteredEmojies[item.skintone_base_hexcode].skintones = [];
@@ -65,13 +65,13 @@ $(document).ready(function() {
 
       EMOJI_LIST = Object.values(filteredEmojies).sort(SORT_FUNCS["unicode"]);
     }),
-    $.getJSON("../data/color-palette.json", function(json) {
+    $.getJSON("../data/color-palette.json", function (json) {
       FITZPATRICK_COLOR_PALETTE = json.skintones.fitzpatrick;
     }),
-    $.getJSON("../data/filterWeights.json", function(json) {
+    $.getJSON("../data/filterWeights.json", function (json) {
       LIST_FILTERS = json;
     })
-  ).then(function() {
+  ).then(function () {
     // generate nav-bar
     generateNav();
 
@@ -121,12 +121,12 @@ $(document).ready(function() {
       var weight = 1;
       for (var key in filter) {
         if (filter.hasOwnProperty(key)) {
-          var matchingFuseKeys = Object.keys(LIST_FILTERS).filter(function(fKey) {
+          var matchingFuseKeys = Object.keys(LIST_FILTERS).filter(function (fKey) {
             return fKey.includes(key);
           });
 
           if (matchingFuseKeys.length > 0) {
-            matchingFuseKeys.forEach(function(mKey) {
+            matchingFuseKeys.forEach(function (mKey) {
               fuse.options.keys.push({
                 name: mKey,
                 weight: weight
@@ -142,7 +142,7 @@ $(document).ready(function() {
       if (filter.search) {
         for (var key in LIST_FILTERS) {
           if (LIST_FILTERS.hasOwnProperty(key)) {
-            if (fuse.options.keys.filter(function(fKey) {
+            if (fuse.options.keys.filter(function (fKey) {
                 fKey.name === key
               }).length == 0) {
               fuse.options.keys.push({
@@ -155,7 +155,7 @@ $(document).ready(function() {
       }
 
       // generate fuseSearchStr based on filter entries
-      Object.values(filter).forEach(function(currFilter, idx) {
+      Object.values(filter).forEach(function (currFilter, idx) {
         if (idx == 0) {
           fuseSearchStr += currFilter;
         } else {
@@ -266,12 +266,12 @@ $(document).ready(function() {
     if ($("#show-color .switch input[type=checkbox]").is(":checked")) {
       for (var i = 0; i < currentList.length; i++) {
         var currEmoji = currentList[i].item;
-        $(".emoji_grid").append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img class='lazy' data-src='../data/color/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
+        $(".emoji_grid").append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img alt='" + currEmoji.annotation + "' class='lazy' data-src='../data/color/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
       }
     } else {
       for (var i = 0; i < currentList.length; i++) {
         var currEmoji = currentList[i].item;
-        $(".emoji_grid").append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img class='lazy' data-src='../data/black/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
+        $(".emoji_grid").append("<div class='emoji_single' id='" + currEmoji.hexcode + "'><div class = 'emoji-container'><img alt='" + currEmoji.annotation + "' class='lazy' data-src='../data/black/svg/" + currEmoji.hexcode + ".svg'></div><div><h3>" + currEmoji.annotation + "</h3><p>" + currEmoji.hexcode + "</p></div></div>");
       }
     }
 
@@ -349,20 +349,20 @@ $(document).ready(function() {
     var navItems = [];
     var groups = [];
 
-    EMOJI_LIST.forEach(function(openmoji) {
+    EMOJI_LIST.forEach(function (openmoji) {
       openmoji = openmoji.item;
 
       if (!groups.includes(openmoji.group)) {
         groups.push(openmoji.group);
 
         // get all emojis with specified group
-        var filteredByGroup = EMOJI_LIST.filter(function(emoji) {
+        var filteredByGroup = EMOJI_LIST.filter(function (emoji) {
           return emoji.group == openmoji.group;
         });
 
         // get all subgroups
         var subgroups = [];
-        filteredByGroup.forEach(function(emoji) {
+        filteredByGroup.forEach(function (emoji) {
           if (subgroups.indexOf(emoji.subgroups) == -1) {
             subgroups.push(emoji.subgroups);
           }
@@ -377,7 +377,7 @@ $(document).ready(function() {
     });
 
     // populate html with navItems
-    navItems.forEach(function(item) {
+    navItems.forEach(function (item) {
       // add group
       var html = item.subgroups.length > 0 ? "<li class='mainmenu' data-item='" + item.group + "'>" : "<li data-item='" + item.group + "'>";
       html += "<input id=" + item.group + " type='radio' name='category' value=" + item.group + ">" +
@@ -385,7 +385,7 @@ $(document).ready(function() {
         "<ul class='submenu'>";
 
       // add subgroups
-      item.subgroups.forEach(function(subgroup) {
+      item.subgroups.forEach(function (subgroup) {
         var groupPath = getGroupPath(item.group, subgroup);
 
         html += "<li data-item='" + groupPath + "'>" +
@@ -427,7 +427,7 @@ $(document).ready(function() {
 
     // get in index of current object
     var currEmoji;
-    var index = currentList.findIndex(function(el) {
+    var index = currentList.findIndex(function (el) {
       el = el.item;
 
       if (el.emoji === id || el.hexcode === id) {
@@ -464,7 +464,7 @@ $(document).ready(function() {
     $("#skintones-emoji-preview").empty();
     // add potential skintone variants
     if (currEmoji.skintones !== undefined) {
-      currEmoji.skintones.forEach(function(emoji) {
+      currEmoji.skintones.forEach(function (emoji) {
         var elClass = emoji.hexcode === emojiHex ? "circle highlight" : "circle";
         $("#skintones-emoji-preview").append("<div class='" + elClass + "' data-skintone_hexcode='" + emoji.hexcode + "' style='background-color: " + FITZPATRICK_COLOR_PALETTE[emoji.skintone - 1] + ";'></div>");
       });
@@ -479,11 +479,11 @@ $(document).ready(function() {
 
     // Emoji description pull from emojipedia via our proxy endpoint
     // e.g. https://openmoji-emojipedia-api.glitch.me/emojis/✅
-    fetch("https://openmoji-emojipedia-api.glitch.me/emojis/"+ currEmoji.emoji)
-      .then(function(response) {
+    fetch("https://openmoji-emojipedia-api.glitch.me/emojis/" + currEmoji.emoji)
+      .then(function (response) {
         return response.json();
       })
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
         if (response.description == "" || response.detail == "Not found.") {
           $("#description .emojipedia").hide();
@@ -493,7 +493,7 @@ $(document).ready(function() {
           $("#description .emojipedia-link").attr("href", "https://emojipedia.org/" + currEmoji.emoji + "/");
         }
       })
-      .catch(function() {
+      .catch(function () {
         $("#description .emojipedia").hide();
       });
 
@@ -540,31 +540,34 @@ $(document).ready(function() {
 
   //------------ Event listeners ------------
   // nav selection change listener to update EMOJI_LIST based on clicked (sub-)category
-  $("#library-wrapper").on("click", "#nav-items li label, #category, #subcategory, #description .path a*", function(e) {
-    e.preventDefault();
+  var libraryWrapper = $("#library-wrapper");
+  if (libraryWrapper) {
+    libraryWrapper.on("click", "#nav-items li label, #category, #subcategory, #description .path a*", function (e) {
+      e.preventDefault();
 
-    if ($(this).parent().hasClass("mainmenu")) navItemGotClicked = true;
+      if ($(this).parent().hasClass("mainmenu")) navItemGotClicked = true;
 
-    // hide popover wrapper if it is shown
-    if ($("#emoji-detail-wrapper .popover-wrapper").is(":visible")) {
-      $("#emoji-detail-wrapper .popover-wrapper").fadeOut(400);
-    }
+      // hide popover wrapper if it is shown
+      if ($("#emoji-detail-wrapper .popover-wrapper").is(":visible")) {
+        $("#emoji-detail-wrapper .popover-wrapper").fadeOut(400);
+      }
 
-    exposeListFilter({
-      group: $(this).attr("data-grouppath"),
-      search: undefined,
-      author: undefined,
-      emoji: undefined
+      exposeListFilter({
+        group: $(this).attr("data-grouppath"),
+        search: undefined,
+        author: undefined,
+        emoji: undefined
+      });
     });
-  });
+  }
 
   // "show color" radio button change listener to change EMOJI_LIST from black to color or vice versa
-  $("#show-color .switch input[type=checkbox]").change(function() {
+  $("#show-color .switch input[type=checkbox]").change(function () {
     updateList(getUrlParameters());
   });
 
   // search field listener to update EMOJI_LIST based on search text when enter is pressed
-  $(".search").keydown(function(e) {
+  $(".search").keydown(function (e) {
     if (e.which == 13) {
       $(this).val().length > 0 ? exposeListFilter({
         search: $(this).val(),
@@ -578,14 +581,14 @@ $(document).ready(function() {
   });
 
   // click on emoji in list or move through emojis in detail view
-  $("#library-wrapper").on("click", ".emoji_single, .prev-emoji, .next-emoji", function() {
+  libraryWrapper.on("click", ".emoji_single, .prev-emoji, .next-emoji", function () {
     exposeListFilter({
       emoji: $(this).attr("id")
     });
   });
 
   // toggle outline and color in emoji detail view
-  $("#emoji-preview").click(function(e) {
+  $("#emoji-preview").click(function (e) {
     var skintone = undefined;
     var target = $(e.target);
     // toggle "show color" checkbox
@@ -602,7 +605,7 @@ $(document).ready(function() {
   });
 
   // author click listener to filter emoji list by author
-  $("#author").click(function(e) {
+  $("#author").click(function (e) {
     e.preventDefault();
 
     exposeListFilter({
@@ -615,7 +618,7 @@ $(document).ready(function() {
   });
 
   // close overlay
-  $("#close-detailview").click(function() {
+  $("#close-detailview").click(function () {
     exposeListFilter({
       emoji: undefined
     });
@@ -623,7 +626,7 @@ $(document).ready(function() {
   });
 
   // sort toggle
-  $("#sort-selector .sort_selector__list a").click(function(e) {
+  $("#sort-selector .sort_selector__list a").click(function (e) {
     e.preventDefault();
 
     // fetch according sort function and update sort selector
@@ -634,7 +637,7 @@ $(document).ready(function() {
   });
 
   // sort direction toggle
-  $("#sort-selector .sort_selector__selected").click(function(e) {
+  $("#sort-selector .sort_selector__selected").click(function (e) {
     // toggle current sort direction
     var sortSelector = $("#sort-selector");
 
