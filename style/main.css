@@ -18,7 +18,7 @@ body {
   overflow: hidden; }
 
 .hidden {
-  display: none; }
+  display: none !important; }
 
 ul {
   padding: 0;
