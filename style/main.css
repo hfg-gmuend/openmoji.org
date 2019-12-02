@@ -386,14 +386,16 @@ svg {
           #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview:empty::before {
             display: none; }
         #preview #active-emoji-selection .small-emoji-preview #emoji-preview .emoji-preview-image {
-          height: 50px; }
+          height: 50px;
+          cursor: pointer; }
       #preview #active-emoji-selection .small-emoji-preview .next-or-prev {
         opacity: 0.5;
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
-        display: inline-flex; }
+        display: inline-flex;
+        cursor: pointer; }
         #preview #active-emoji-selection .small-emoji-preview .next-or-prev img {
           height: 40px; }
       #preview #active-emoji-selection .small-emoji-preview .next-or-prev:hover {

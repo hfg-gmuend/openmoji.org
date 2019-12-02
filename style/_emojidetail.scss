@@ -153,6 +153,7 @@
 
         .emoji-preview-image {
           height: 50px;
+          cursor: pointer;
 
           // transition: all 0.3s;
           // &:before{
@@ -178,6 +179,7 @@
         transition: all 0.3s;
         // background-color: #456;
         display: inline-flex;
+        cursor: pointer;
 
         img {
           height: 40px;
