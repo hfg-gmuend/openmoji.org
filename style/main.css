@@ -229,6 +229,11 @@ svg {
         .dropdown .dropdown-content ul li .disclaimer {
           font-size: 14px;
           color: rgba(129, 128, 128, 0.5); }
+          .dropdown .dropdown-content ul li .disclaimer a {
+            color: rgba(129, 128, 128, 0.5);
+            text-decoration: underline; }
+            .dropdown .dropdown-content ul li .disclaimer a:hover {
+              text-decoration: none; }
 
 .dropdown--light-shadow .dropdown-content ul {
   -webkit-box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);

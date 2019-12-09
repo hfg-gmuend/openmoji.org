@@ -274,6 +274,14 @@ svg {
         .disclaimer {
           font-size: $font-sz-s;
           color: $color-grey-super-light;
+
+          a {
+            color: $color-grey-super-light;;
+            text-decoration: underline;
+            &:hover {
+              text-decoration: none;
+            }
+          }
         }
       }
     }
