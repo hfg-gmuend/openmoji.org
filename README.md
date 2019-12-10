@@ -23,7 +23,7 @@ npm install
 Run
 ---
 
-Start a local web server (with live reload, scss support) by typing in your Terminal the command below. This will open the `index.html` file a new browser window.
+Start a local web server (with live reload, scss support) by typing in your Terminal the command below. This will open the `index.html` in a new browser window.
 
 ```
 npm start
