@@ -30,6 +30,11 @@
   box-sizing: border-box;
   display: flex;
 
+  @media screen and (max-width: $breakpoint-md){
+    flex-direction: column;
+    height: auto;
+  }
+
   .sub {
     text-align: center;
     font-size: $font-sz-s;
@@ -63,21 +68,39 @@
   padding-right: $gap-med / 2;
   box-sizing: border-box;
 
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+    padding-right: 0;
+  }
+
   #active-emoji-selection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    
+    @media screen and (max-width: $breakpoint-md) {
+      justify-content: center;
+      align-items: center;
+    }
 
     #main-emoji-image {
       min-height: 0;
       margin-bottom: $gap-reg + $gap-xs;
+
+      @media screen and (max-width: $breakpoint-md) {
+        width: 50%;
+      }
     }
 
     .small-emoji-preview {
       display: inline-flex;
       justify-content: space-between;
       align-items: center;
+
+      @media screen and (max-width: $breakpoint-md) {
+        width: 100%;
+      }
 
       #emoji-preview {
         display: inline-flex;
@@ -202,6 +225,13 @@
   width: 30%;
   box-sizing: border-box;
 
+  @media screen and (max-width: $breakpoint-md) {
+    padding-left: 0;
+    padding-top: $gap-med / 2;
+    border-left: none;
+    width: 100%;
+  }
+
   #emojipedia-link {
     color: $color-grey-dark;
   }
@@ -219,6 +249,9 @@
 
     table {
       margin-bottom: $gap-med;
+      @media screen and (max-width: $breakpoint-md) {
+        margin-top: $gap-med / 3;
+      }
 
       td {
         height: 40px;
