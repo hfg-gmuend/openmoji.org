@@ -7,13 +7,16 @@
   box-sizing: border-box;
   max-width: 300px;
 
+  @media screen and (max-width: $breakpoint-md){
+    max-width: 100%;
+    padding: 0 $gap-med 0 $gap-med;
+    margin: 0;
+    overflow: initial;
+  }
+
   ul li {
     display: block;
     margin-top: $gap-xs;
-  }
-
-  &:hover {
-    overflow-y: auto;
   }
 
   .submenu {
