@@ -72,16 +72,15 @@ article:not(:last-child) {
       grid-template-areas: "header header" "nav content" "footer footer";
   -ms-grid-columns: minmax(200px, 300px) auto;
   grid-template-columns: minmax(200px, 300px) auto;
-  -ms-grid-rows: 80px 1fr 1fr;
-  grid-template-rows: 80px 1fr 1fr;
-  height: 100%; }
+  -ms-grid-rows: 80px 1fr 80px;
+  grid-template-rows: 80px 1fr 80px; }
   @media screen and (max-width: 991px) {
     .container {
-          grid-template-areas: "header header" "nav nav" "content content" "footer footer";
-      -ms-grid-columns: auto;
-      grid-template-columns: auto;
-      -ms-grid-rows: auto 1fr 1fr 1fr;
-      grid-template-rows: auto 1fr 1fr 1fr; } }
+          grid-template-areas: "header header" "content content" "footer footer";
+      -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      -ms-grid-rows: 80px 1fr 80px;
+      grid-template-rows: 80px 1fr 80px; } }
 
 .descriptive-text {
   color: #101010;
@@ -175,7 +174,7 @@ main {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: content;
-  margin-top: 50px; }
+  margin-top: 30px; }
 
 #samples-wrapper .container > main {
   -ms-grid-row: 2;
@@ -302,7 +301,9 @@ svg {
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column;
-      height: auto; } }
+      overflow-y: scroll;
+      height: 100%;
+      width: 100%; } }
   .popover .sub {
     text-align: center;
     font-size: 14px; }
@@ -359,7 +360,8 @@ svg {
       margin-bottom: 40px; }
       @media screen and (max-width: 991px) {
         #preview #active-emoji-selection #main-emoji-image {
-          width: 50%; } }
+          width: 50%;
+          max-width: 250px; } }
     #preview #active-emoji-selection .small-emoji-preview {
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;
@@ -554,7 +556,15 @@ svg {
       max-width: 100%;
       padding: 0 50px 0 50px;
       margin: 0;
-      overflow: initial; } }
+      overflow: initial;
+      display: none; } }
+  .nav-left > ul {
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-left: 50px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px; }
   .nav-left ul li {
     display: block;
     margin-top: 10px; }
@@ -815,10 +825,6 @@ footer {
 
 @media screen and (max-width: 991px) {
     main {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2; }
-    .nav-left {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2; }
@@ -827,7 +833,7 @@ footer {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2; }
     footer {
-    -ms-grid-row: 4;
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2; } }
   footer p {
@@ -1090,9 +1096,7 @@ footer {
     #library-wrapper .nav-left {
       display: none; }
       #library-wrapper .nav-left.mobile-show {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        display: block;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -1100,27 +1104,22 @@ footer {
         right: 0;
         width: 100%;
         height: 100%;
+        padding: 30px;
         background: white;
+        overflow-y: auto;
         z-index: 1002; }
-        #library-wrapper .nav-left.mobile-show > ul {
-          overflow-y: auto;
-          scrollbar-width: none; }
-          #library-wrapper .nav-left.mobile-show > ul::-webkit-scrollbar {
-            display: none; }
-          #library-wrapper .nav-left.mobile-show > ul li {
-            font-size: 22px; } }
+        #library-wrapper .nav-left.mobile-show li {
+          font-size: 22px; } }
   #library-wrapper .category-toggle:hover #nav-left {
     max-height: 500px;
     -webkit-transition: max-height 0.25s ease-in;
     transition: max-height 0.25s ease-in; }
   @media screen and (max-width: 991px) {
     #library-wrapper main {
-      margin-top: 10px;
-      width: 100%; } }
+      margin-top: 10px; } }
 
 #library-content {
-  height: 100%;
-  overflow: auto; }
+  height: 100%; }
   @media screen and (max-width: 991px) {
     #library-content {
       padding: 0 50px 0 50px;
@@ -1129,27 +1128,46 @@ footer {
   #library-content #emoji_grid_header {
     width: 100%;
     max-width: 900px;
-    padding: 10px 0;
+    padding: 30px 0;
     position: -webkit-sticky;
     position: sticky;
     top: 80px;
     background-color: #FFFFFF;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-shadow: 0px 0px 16px 10px #ffffff;
-            box-shadow: 0px 0px 16px 10px #ffffff; }
+            align-items: center; }
     @media screen and (max-width: 991px) {
       #library-content #emoji_grid_header {
         padding: 20px 0; } }
+    #library-content #emoji_grid_header .category-toggle {
+      display: none;
+      background: url(../img/menu.svg) no-repeat center center;
+      background-size: 40px 40px;
+      margin-bottom: 7px;
+      width: 20px;
+      height: 20px;
+      z-index: 1002; }
+      #library-content #emoji_grid_header .category-toggle:hover {
+        cursor: pointer; }
+      @media screen and (max-width: 991px) {
+        #library-content #emoji_grid_header .category-toggle {
+          display: block; } }
     #library-content #emoji_grid_header h2 {
       margin-bottom: 0;
       -webkit-box-flex: 1;
           -ms-flex-positive: 1;
               flex-grow: 1; }
+      @media screen and (max-width: 991px) {
+        #library-content #emoji_grid_header h2 {
+          font-size: 22px;
+          margin-bottom: 10px;
+          margin-left: 20px;
+          width: calc(100% - 40px); } }
     #library-content #emoji_grid_header #show-color {
       margin-right: 20px; }
     #library-content #emoji_grid_header .sort_selector {
@@ -1223,6 +1241,12 @@ footer {
           max-width: unset;
           margin-right: 0;
           width: 33.33%; } }
+      @media screen and (max-width: 767px) {
+        .emoji_grid_wrapper .emoji_grid .emoji_single {
+          min-width: unset;
+          max-width: unset;
+          margin-right: 0;
+          width: 50%; } }
       .emoji_grid_wrapper .emoji_grid .emoji_single h3 {
         -webkit-transition: all 0.3;
         transition: all 0.3;

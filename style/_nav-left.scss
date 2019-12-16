@@ -8,6 +8,15 @@
     padding: 0 $gap-med 0 $gap-med;
     margin: 0;
     overflow: initial;
+    display: none;
+  }
+
+  > ul {
+    padding-right: $gap-med;
+    padding-top: $gap-reg;
+    padding-left: $gap-med;
+    position: sticky;
+    top: 80px;
   }
 
   ul li {

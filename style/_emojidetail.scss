@@ -37,9 +37,11 @@
   box-sizing: border-box;
   display: flex;
 
-  @media screen and (max-width: $breakpoint-md){
+  @media screen and (max-width: $breakpoint-md) {
     flex-direction: column;
-    height: auto;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
   }
 
   .sub {
@@ -85,7 +87,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    
+
     @media screen and (max-width: $breakpoint-md) {
       justify-content: center;
       align-items: center;
@@ -102,6 +104,7 @@
 
       @media screen and (max-width: $breakpoint-md) {
         width: 50%;
+        max-width: 250px;
       }
     }
 
@@ -280,6 +283,7 @@
 
     table {
       margin-bottom: $gap-med;
+
       @media screen and (max-width: $breakpoint-md) {
         margin-top: $gap-med / 3;
       }
