@@ -8,6 +8,8 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  position: sticky;
+  top: 0;
 
   .project-name {
     display: none;

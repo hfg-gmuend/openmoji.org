@@ -276,10 +276,10 @@ $(document).ready(function () {
     }
 
     // init/refresh lazy loading
-    if (currentLazyInstance !== undefined) currentLazyInstance.destroy();
-
+    if (currentLazyInstance !== undefined){
+      currentLazyInstance.destroy();
+    }
     currentLazyInstance = $(".lazy").Lazy({
-      appendScroll: "#library-content",
       chainable: false
     });
   }

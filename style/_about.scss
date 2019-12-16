@@ -20,6 +20,10 @@
   #about-content {
     @extend %content;
 
+    @media screen and (max-width: $breakpoint-md){
+      padding: 0 $gap-med 0 $gap-med;
+    }
+
     p a,
     ul a {
       color: $color-yellow-light;
@@ -39,6 +43,9 @@
 
     h1 {
       margin-bottom: $gap-reg;
+      @media screen and (max-width: $breakpoint-md){
+        font-size: 30px;
+      }
     }
 
     #team-container {
@@ -51,6 +58,11 @@
       margin-right: -$gap-large;
       margin-bottom: -$gap-med;
 
+      @media screen and (max-width: $breakpoint-md){
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+
       .teammember {
         display: flex;
         flex-direction: column;
@@ -58,6 +70,31 @@
         position: relative;
         margin-bottom: $gap-med;
         margin-right: $gap-large;
+
+        @media screen and (max-width: $breakpoint-md){
+          width: calc(33% - 11.1px);
+          &:nth-child(2n+1){
+            padding-right: $gap-small;
+          }
+          &:nth-child(2n) {
+            padding-right: $gap-small;
+          }
+          &:nth-child(3n) {
+            padding-right: 0;
+          }
+          margin-bottom: $gap-reg;
+          margin-right: 0;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+          width: calc(50% - 10px);
+          &:nth-child(2n+1) {
+            padding-right: $gap-small;
+          }
+          &:nth-child(2n) {
+            padding-right: 0;
+          }
+        }
 
         div {
           width: 100%;
