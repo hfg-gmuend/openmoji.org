@@ -94,4 +94,18 @@ $(document).ready(function () {
     $("header.page-header").toggleClass("menu-open");
     $("html, body").toggleClass("overflow-hidden");
   });
+
+  $(".category-toggle").click(function(){
+    var element, lastElement;
+    $(".nav-left").addClass("mobile-show");
+    $(".mainmenu").click(function(){
+        if ($(this).find(".submenu").length !== 0) {
+          $(".submenu li").click(function () {
+            $(".nav-left").removeClass("mobile-show");
+          });
+        } else {
+          $(".nav-left").removeClass("mobile-show");
+        }
+    });
+  });
 });

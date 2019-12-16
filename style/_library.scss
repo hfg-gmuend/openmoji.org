@@ -17,13 +17,46 @@
     #show-color {
       margin-bottom: $gap-reg;
     }
+
+    @media screen and (max-width: $breakpoint-md) {
+      display: none;
+      &.mobile-show {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        padding: $gap-reg;
+        background: white;
+        overflow-y: auto;
+        z-index: $z-index-overlay-all;
+
+        li {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .category-toggle:hover #nav-left {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+  }
+
+  main {
+    @media screen and (max-width: $breakpoint-md) {
+      margin-top: $gap-xs;
+    }
   }
 }
 
 #library-content {
   height: 100%;
-  overflow: auto;
-  @media screen and (max-width: $breakpoint-md){
+
+  @media screen and (max-width: $breakpoint-md) {
     padding: 0 $gap-med 0 $gap-med;
     height: auto;
     overflow: initial;
@@ -32,21 +65,45 @@
   #emoji_grid_header {
     width: 100%;
     max-width: $content-max-width;
-    padding: $gap-xs 0;
+    padding: $gap-reg 0;
     position: sticky;
-    top: 0;
+    top: 80px;
     background-color: $color-white;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    box-shadow: 0px 0px 16px 10px #ffffff;
 
     @media screen and (max-width: $breakpoint-md) {
       padding: $gap-small 0;
     }
 
+    .category-toggle {
+      display: none;
+      background: url(../img/menu.svg) no-repeat center center;
+      background-size: 40px 40px;
+      margin-bottom: 7px;
+      width: 20px;
+      height: 20px;
+      z-index: $z-index-overlay-all;
+      &:hover {
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: $breakpoint-md) {
+        display: block;
+      }
+    }
+
     h2 {
       margin-bottom: 0;
       flex-grow: 1;
+
+      @media screen and (max-width: $breakpoint-md) {
+        font-size: 22px;
+        margin-bottom: $gap-xs;
+        margin-left: $gap-small;
+        width: calc(100% - 40px);
+      }
     }
 
     #show-color {
@@ -120,7 +177,7 @@
   max-width: $content-max-width;
   overflow-x: hidden;
 
-  @media screen and (max-width: $breakpoint-md){
+  @media screen and (max-width: $breakpoint-md) {
     overflow-x: unset;
   }
 
@@ -129,7 +186,7 @@
     flex-wrap: wrap;
     margin-right: -$gap-large;
 
-    @media screen and (max-width: $breakpoint-md){
+    @media screen and (max-width: $breakpoint-md) {
       margin-right: 0;
     }
 
@@ -140,11 +197,18 @@
       max-width: 150px;
       transition: all 0.3;
 
-      @media screen and (max-width: $breakpoint-md){
+      @media screen and (max-width: $breakpoint-md) {
         min-width: unset;
         max-width: unset;
         margin-right: 0;
         width: 33.33%;
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        min-width: unset;
+        max-width: unset;
+        margin-right: 0;
+        width: 50%;
       }
 
       h3 {
