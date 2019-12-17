@@ -16,6 +16,9 @@
   .intro {
     max-width: 600px;
     margin-bottom: $gap-med;
+    @media screen and (max-width: $breakpoint-md){
+      max-width: 100%;
+    }
   }
 
   .img-full {
