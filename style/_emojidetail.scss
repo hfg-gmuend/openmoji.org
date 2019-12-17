@@ -111,12 +111,24 @@
       @media screen and (max-width: $breakpoint-md) {
         width: 100%;
       }
+      @media screen and (max-width: $breakpoint-sm){
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 50%;
+        width: auto;
+        min-width: 170px;
+      }
 
       #emoji-preview {
         display: flex;
         height: 50px;
         margin: auto;
         align-items: center;
+
+        @media screen and (max-width: $breakpoint-sm) {
+          order: 1;
+          padding-bottom: $gap-xs;
+        }
 
         .circle {
           box-sizing: border-box;
@@ -208,6 +220,18 @@
         }
       }
 
+      .prev-emoji {
+        @media screen and (max-width: $breakpoint-sm){
+          order: 2;
+        }
+      }
+
+      .next-emoji {
+        @media screen and (max-width: $breakpoint-sm) {
+          order: 3;
+        }
+      }
+
       .next-or-prev {
         opacity: 0.5;
         transition: all 0.3s;
@@ -237,8 +261,8 @@
   box-sizing: border-box;
 
   @media screen and (max-width: $breakpoint-md) {
-    padding-left: 0;
-    padding-top: $gap-med / 2;
+    display: block;
+    padding: $gap-med/2 0 60px 0;
     border-left: none;
     width: 100%;
   }
@@ -250,6 +274,7 @@
   .description-top {
     display: inline-flex;
     justify-content: space-between;
+    width: 100%;
   }
 
   .description-bottom {

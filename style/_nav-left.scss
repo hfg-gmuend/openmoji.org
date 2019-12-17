@@ -12,9 +12,7 @@
   }
 
   > ul {
-    padding-right: $gap-med;
-    padding-top: $gap-reg;
-    padding-left: $gap-med;
+    margin: $gap-reg $gap-med;
     position: sticky;
     top: 80px;
   }
