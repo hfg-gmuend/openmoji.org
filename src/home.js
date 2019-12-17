@@ -1,19 +1,52 @@
 $(document).ready(function () {
   //------------ Emoji Cloud ------------
-	var EMOJI_LIST;
-	const EMOJI_COUNT = 300;
+  var EMOJI_LIST;
+  var EMOJI_AMOUNT;
+  var EMOJI_FLAGS_AMOUNT;
+  var EMOJI_VERSION;
+  const EMOJI_COUNT = 300;
   const EMOJI_POSITIONS = getPositions(1.4, EMOJI_COUNT);
   // get all emojis and generate category showcase
+  $.getJSON("data/package.json", function (json) {
+    EMOJI_VERSION = json.version;
+
+    setVersion();
+  });
   $.getJSON("data/openmoji.json", function (json) {
+    EMOJI_AMOUNT = parseInt(json.length);
+    EMOJI_FLAGS_AMOUNT = parseInt(json.filter(function (emoji) {
+      return emoji.group == "flags";
+    }).length);
     EMOJI_LIST = json.filter(function (emoji) {
       return emoji.skintone === "" && emoji.subgroups != "country-flag";
     });
 
-		genEmojiCloud();
+    setEmojiCounter();
+    setEmojiFlagCounter();
+    genEmojiCloud();
     genCategoriesShowcase();
-		// initBigEmojiOverview();
-		$(".lazy").Lazy();
+    // initBigEmojiOverview();
+    $(".lazy").Lazy();
   });
+
+  function setVersion() {
+    if (EMOJI_VERSION.length !== 0) {
+      EMOJI_VERSION = EMOJI_VERSION.split(".");
+      $("#emoji-version").text(EMOJI_VERSION[0] + "." + EMOJI_VERSION[1]);
+    }
+  }
+
+  function setEmojiCounter() {
+    if (EMOJI_AMOUNT.length !== 0) {
+      $("#emoji-amount").text(EMOJI_AMOUNT);
+    }
+  }
+
+  function setEmojiFlagCounter() {
+    if (EMOJI_FLAGS_AMOUNT.length !== 0) {
+      $("#flag-amount").text(EMOJI_FLAGS_AMOUNT);
+    }
+  }
 
   function genEmojiCloud() {
     // randomize EMOJI_LIST
@@ -96,10 +129,10 @@ $(document).ready(function () {
     "Interaction": "interaction",
     "UI Design": "ui-element",
     "Technology": "technology"
-	};
-	const EXAMPLES_COUNT = 6;
-	const CATEGORY_SLIDE_INTERVAL_TIMEOUT = 4000;
-	var categoryShowcase = $("#categories-showcase");
+  };
+  const EXAMPLES_COUNT = 6;
+  const CATEGORY_SLIDE_INTERVAL_TIMEOUT = 4000;
+  var categoryShowcase = $("#categories-showcase");
   var categorySlideInterval;
 
   function genCategoriesShowcase() {
