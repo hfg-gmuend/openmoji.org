@@ -8,6 +8,7 @@
     "watch": "budo --host localhost --dir . --open --live --verbose --watch-glob '**/*.{html,js,css}'",
     "watch-style": "nodemon -e scss -x \"npm run build-css\" ",
     "build-css": "gulp sass",
+    "postinstall": "gulp copy-openmoji-data",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,5 +35,8 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "openmoji": "^12.0.0"
+  }
 }
