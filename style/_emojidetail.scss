@@ -116,6 +116,13 @@
       @media screen and (max-width: $breakpoint-md) {
         width: 100%;
       }
+      @media screen and (max-width: $breakpoint-sm){
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 50%;
+        width: auto;
+        min-width: 170px;
+      }
 
       #emoji-preview {
         display: flex;
@@ -259,8 +266,8 @@
   box-sizing: border-box;
 
   @media screen and (max-width: $breakpoint-md) {
-    padding-left: 0;
-    padding-top: $gap-med / 2;
+    display: block;
+    padding: $gap-med/2 0 60px 0;
     border-left: none;
     width: 100%;
   }

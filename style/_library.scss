@@ -20,8 +20,9 @@
 
     @media screen and (max-width: $breakpoint-md) {
       display: none;
+
       &.mobile-show {
-        display: block;
+        display: flex;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -29,13 +30,19 @@
         right: 0;
         width: 100%;
         height: 100%;
-        padding: $gap-reg;
         background: white;
-        overflow-y: auto;
         z-index: $z-index-overlay-all;
 
-        li {
-          font-size: 22px;
+        > ul {
+          overflow-y: auto;
+          scrollbar-width: none;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          li {
+            font-size: 22px;
+          }
         }
       }
     }
@@ -49,6 +56,7 @@
   main {
     @media screen and (max-width: $breakpoint-md) {
       margin-top: $gap-xs;
+      width: 100%;
     }
   }
 }
@@ -85,6 +93,7 @@
       width: 20px;
       height: 20px;
       z-index: $z-index-overlay-all;
+
       &:hover {
         cursor: pointer;
       }
