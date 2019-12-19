@@ -440,7 +440,9 @@ $(document).ready(function () {
     }
 
     // get path
-    var path = $("#show-color .switch input[type=checkbox]").is(":checked") ? "../data/color" : "../data/black";
+    var colorVariant     = $("#show-color .switch input[type=checkbox]").is(":checked") ? "color" : "black";
+    var localVariantPath = "../data/" + colorVariant;
+    var repoVariantPath  = "https://github.com/hfg-gmuend/openmoji/raw/master/" + colorVariant;
 
     // set base_hexcode data attribute to emoji preview element
     $("#emoji-preview").attr("data-base_hexcode", isSkintoneVariant ? baseEmoji.hexcode : currEmoji.hexcode)
@@ -481,7 +483,7 @@ $(document).ready(function () {
     }
 
     // update main image
-    $("#main-emoji-image").attr("src", path + "/svg/" + currEmoji.hexcode + ".svg");
+    $("#main-emoji-image").attr("src", localVariantPath + "/svg/" + currEmoji.hexcode + ".svg");
 
     // clear skintones
     $("#skintones-emoji-preview").empty();
@@ -539,8 +541,8 @@ $(document).ready(function () {
     $("#description .path a:nth-child(3)").text(currEmoji.subgroups).attr("data-grouppath", currEmoji.groupPath);
 
     // update download links
-    $("#svg-download-btn").attr("href", path + "/svg/" + currEmoji.hexcode + ".svg");
-    $("#png-download-btn").attr("href", path + "/618x618/" + currEmoji.hexcode + ".png");
+    $("#svg-download-btn").attr("href", localVariantPath + "/svg/"     + currEmoji.hexcode + ".svg");
+    $("#png-download-btn").attr("href", repoVariantPath  + "/618x618/" + currEmoji.hexcode + ".png");
 
     // update prev and next
     if (currentList.length > 1) {
@@ -562,10 +564,10 @@ $(document).ready(function () {
       }
 
       $(".prev-emoji").attr("id", prevEmoji.hexcode);
-      $(".prev-emoji .icon-img").attr("src", path + "/svg/" + prevEmoji.hexcode + ".svg");
+      $(".prev-emoji .icon-img").attr("src", localVariantPath + "/svg/" + prevEmoji.hexcode + ".svg");
 
       $(".next-emoji").attr("id", nextEmoji.hexcode);
-      $(".next-emoji .icon-img").attr("src", path + "/svg/" + nextEmoji.hexcode + ".svg");
+      $(".next-emoji .icon-img").attr("src", localVariantPath + "/svg/" + nextEmoji.hexcode + ".svg");
     } else {
       $(".prev-emoji").hide();
       $(".next-emoji").hide();
