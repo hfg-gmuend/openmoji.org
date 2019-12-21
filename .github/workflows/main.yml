@@ -18,10 +18,9 @@ jobs:
         FTP_SERVER:   ${{ secrets.FTP_SERVER   }}
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        METHOD: sftp
-        PORT: 22
         ARGS:
           --delete
+          --delete-excluded
           --ignore-time
           --verbose
           --exclude-glob=style/*.scss
