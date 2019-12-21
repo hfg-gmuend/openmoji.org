@@ -442,7 +442,6 @@ $(document).ready(function () {
     // get path
     var colorVariant     = $("#show-color .switch input[type=checkbox]").is(":checked") ? "color" : "black";
     var localVariantPath = "../data/" + colorVariant;
-    var repoVariantPath  = "https://github.com/hfg-gmuend/openmoji/raw/master/" + colorVariant;
 
     // set base_hexcode data attribute to emoji preview element
     $("#emoji-preview").attr("data-base_hexcode", isSkintoneVariant ? baseEmoji.hexcode : currEmoji.hexcode)
@@ -541,8 +540,8 @@ $(document).ready(function () {
     $("#description .path a:nth-child(3)").text(currEmoji.subgroups).attr("data-grouppath", currEmoji.groupPath);
 
     // update download links
-    $("#svg-download-btn").attr("href", localVariantPath + "/svg/"     + currEmoji.hexcode + ".svg");
-    $("#png-download-btn").attr("href", repoVariantPath  + "/618x618/" + currEmoji.hexcode + ".png");
+    $("#svg-download-btn").attr("href", localVariantPath + "/svg/" + currEmoji.hexcode + ".svg");
+    $("#png-download-btn").attr("href", "/php/download_from_github.php?emoji_hexcode=" + currEmoji.hexcode + "&emoji_variant=" + colorVariant);
 
     // update prev and next
     if (currentList.length > 1) {
