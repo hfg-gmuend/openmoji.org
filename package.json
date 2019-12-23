@@ -37,6 +37,6 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "openmoji": "^12.0.0"
+    "openmoji": "^12.1.0"
   }
 }
