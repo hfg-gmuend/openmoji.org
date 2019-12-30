@@ -95,17 +95,16 @@ $(document).ready(function () {
     $("html, body").toggleClass("overflow-hidden");
   });
 
-  $(".category-toggle").click(function(){
-    var element, lastElement;
-    $(".nav-left").addClass("mobile-show");
-    $(".mainmenu").click(function(){
-        if ($(this).find(".submenu").length !== 0) {
-          $(".submenu li").click(function () {
-            $(".nav-left").removeClass("mobile-show");
-          });
-        } else {
-          $(".nav-left").removeClass("mobile-show");
-        }
+  $(".category-toggle").click(function () {
+    var nav = $(".nav-left");
+    nav.addClass("mobile-show");
+    $(".mainmenu").click(function () {
+      $(".submenu li").click(function () {
+        nav.removeClass("mobile-show");
+      });
+    });
+    $(".category-close").click(function () {
+      nav.removeClass("mobile-show");
     });
   });
 });

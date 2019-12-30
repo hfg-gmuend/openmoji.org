@@ -33,9 +33,10 @@
         background: white;
         z-index: $z-index-overlay-all;
 
-        > ul {
+        >ul {
           overflow-y: auto;
           scrollbar-width: none;
+
           &::-webkit-scrollbar {
             display: none;
           }
@@ -55,7 +56,7 @@
 
   main {
     @media screen and (max-width: $breakpoint-md) {
-      margin-top: $gap-xs;
+      margin-top: 0;
       width: 100%;
     }
   }
@@ -65,7 +66,6 @@
   height: 100%;
 
   @media screen and (max-width: $breakpoint-md) {
-    padding: 0 $gap-med 0 $gap-med;
     height: auto;
     overflow: initial;
   }
@@ -82,17 +82,21 @@
     align-items: center;
 
     @media screen and (max-width: $breakpoint-md) {
-      padding: $gap-small 0;
+      padding: 0 $gap-med $gap-small $gap-med;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      padding: 0 $gap-small $gap-small $gap-small;
     }
 
     .category-toggle {
       display: none;
       background: url(../img/menu.svg) no-repeat center center;
-      background-size: 40px 40px;
-      margin-bottom: 7px;
       width: 20px;
       height: 20px;
       z-index: $z-index-overlay-all;
+      margin-left: 10px;
+      margin-right: 20px;
 
       &:hover {
         cursor: pointer;
@@ -108,10 +112,8 @@
       flex-grow: 1;
 
       @media screen and (max-width: $breakpoint-md) {
-        font-size: 22px;
-        margin-bottom: $gap-xs;
-        margin-left: $gap-small;
-        width: calc(100% - 40px);
+        flex-grow: unset;
+        font-size: 18px;
       }
     }
 
@@ -242,6 +244,11 @@
         img {
           width: 100%;
           height: auto;
+        }
+
+        & + div {
+          width: 80%;
+          margin: auto;
         }
       }
 
