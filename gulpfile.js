@@ -11,12 +11,17 @@ function onError(err) {
 gulp.task('sass', function () {
   return gulp.src('style/main.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      errLogToConsole: true
+    }).on('error', sass.logError))
     .pipe(prefix({
       grid: true
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('style/'));
+    .pipe(gulp.dest('style/'))
+    .pipe(plumber({
+      errorHandler: onError
+    }));
 });
 
 gulp.task('copy-openmoji-data-json', function(){
