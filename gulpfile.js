@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
+var sourcemaps = require('gulp-sourcemaps');
 
 function onError(err) {
   console.log(err);
@@ -9,14 +10,13 @@ function onError(err) {
 
 gulp.task('sass', function () {
   return gulp.src('style/main.scss')
-    .pipe(sass())
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
     .pipe(prefix({
       grid: true
     }))
-    .pipe(gulp.dest('style/'))
-    .pipe(plumber({
-      errorHandler: onError
-    }));
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('style/'));
 });
 
 gulp.task('copy-openmoji-data-json', function(){

@@ -117,6 +117,10 @@
     padding: 0 $gap-med 0 $gap-med;
   }
 
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 0 $gap-small 0 $gap-small;
+  }
+
   img {
     width: 100%;
   }
