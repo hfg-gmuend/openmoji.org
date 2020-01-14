@@ -1,0 +1,35 @@
+name: Publish Website
+
+on:
+  push:
+    branches:
+    - production
+
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER:   ${{ secrets.FTP_SERVER   }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        ARGS:
+          --delete
+          --delete-excluded
+          --ignore-time
+          --verbose
+          --exclude-glob=style/*.scss
+          --exclude-glob=.*
+          --exclude-glob=.*/**
+          --exclude-glob=node_modules/*
+          --exclude=package.json
+          --exclude=package-lock.json
+          --exclude=gulpfile.js
+          --exclude=README.md
+          --include=.htaccess
+          --include=data/package.json
