@@ -93,11 +93,6 @@
       align-items: center;
     }
 
-    @media screen and (max-width: $breakpoint-md) {
-      justify-content: center;
-      align-items: center;
-    }
-
     #main-emoji-image {
       min-height: 0;
       margin-bottom: $gap-reg;
@@ -291,10 +286,6 @@
 
     table {
       margin-bottom: $gap-med;
-
-      @media screen and (max-width: $breakpoint-md) {
-        margin-top: $gap-med / 3;
-      }
 
       @media screen and (max-width: $breakpoint-md) {
         margin-top: $gap-med / 3;
