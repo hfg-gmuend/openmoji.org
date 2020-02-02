@@ -90,15 +90,16 @@ article:not(:last-child) {
   "nav content"
   "footer footer";
   grid-template-columns: minmax(200px, 300px) auto;
-  grid-template-rows: 80px 1fr 80px;
-  // height: auto;
+  grid-template-rows: $footer-header-max-height 1fr 1fr;
+  height: 100%;
   @media screen and (max-width: $breakpoint-md){
     grid-template-areas:  
     "header header"
+    "nav nav"
     "content content"
     "footer footer";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80px 1fr 80px;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr 1fr 1fr;
   }
 }
 
@@ -214,10 +215,7 @@ input[type='radio'] {
 
 main {
   grid-area: content;
-  margin-top: $gap-reg;
-  @media screen and (max-width: $breakpoint-md){
-    margin-top: $gap-xs;
-  }
+  margin-top: $gap-med;
   &.samples-wrapper {
     margin-top: 0;
   }

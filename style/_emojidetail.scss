@@ -37,11 +37,9 @@
   box-sizing: border-box;
   display: flex;
 
-  @media screen and (max-width: $breakpoint-md) {
+  @media screen and (max-width: $breakpoint-md){
     flex-direction: column;
-    overflow-y: scroll;
-    height: 100%;
-    width: 100%;
+    height: auto;
   }
 
   .sub {
@@ -87,6 +85,11 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    
+    @media screen and (max-width: $breakpoint-md) {
+      justify-content: center;
+      align-items: center;
+    }
 
     @media screen and (max-width: $breakpoint-md) {
       justify-content: center;
@@ -99,7 +102,6 @@
 
       @media screen and (max-width: $breakpoint-md) {
         width: 50%;
-        max-width: 250px;
       }
     }
 
@@ -110,13 +112,6 @@
 
       @media screen and (max-width: $breakpoint-md) {
         width: 100%;
-      }
-      @media screen and (max-width: $breakpoint-sm){
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 50%;
-        width: auto;
-        min-width: 170px;
       }
 
       #emoji-preview {
@@ -261,8 +256,8 @@
   box-sizing: border-box;
 
   @media screen and (max-width: $breakpoint-md) {
-    display: block;
-    padding: $gap-med/2 0 60px 0;
+    padding-left: 0;
+    padding-top: $gap-med / 2;
     border-left: none;
     width: 100%;
   }
@@ -285,6 +280,9 @@
 
     table {
       margin-bottom: $gap-med;
+      @media screen and (max-width: $breakpoint-md) {
+        margin-top: $gap-med / 3;
+      }
 
       @media screen and (max-width: $breakpoint-md) {
         margin-top: $gap-med / 3;
