@@ -89,6 +89,13 @@
       padding: 0 $gap-small $gap-small $gap-small;
     }
 
+    #selected-category {
+      display: none;
+      @media screen and (max-width: $breakpoint-md) {
+        display: block;
+      }
+    }
+
     .category-toggle {
       display: none;
       background: url(../img/menu.svg) no-repeat center center;
@@ -124,11 +131,10 @@
     .sort_selector {
       align-self: center;
       font-size: $font-sz-md;
-      color: $color-grey-light;
 
       &__selected {
         position: relative;
-        padding-right: 14px;
+        padding-right: 20px;
         cursor: pointer;
 
         &::before {
