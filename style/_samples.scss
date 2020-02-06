@@ -14,7 +14,17 @@
   }
 
   .caption {
-    margin: 1em 2em;
+    margin: 1em $gap-med;
     height: 6em;
+
+    @media screen and (max-width: $breakpoint-md) {
+      height: auto;
+      min-height: 3em;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      margin-left: $gap-small;
+      margin-right: $gap-small;
+    }
   }
 }

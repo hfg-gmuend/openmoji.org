@@ -134,8 +134,8 @@
     padding-right: $gap-small;
 
     @media screen and (min-width: $breakpoint-md) {
-      padding-left: $gap-med;
-      padding-right: $gap-med;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -152,6 +152,7 @@
     .content {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       padding-top: $gap-med;
       padding-bottom: $gap-med;
 
@@ -162,7 +163,7 @@
 
       h1 {
         padding-top: $gap-med;
-        padding: 0 75px;
+        padding: 0;
         width: 750px;
 
         @media screen and (max-width: $breakpoint-md) {
@@ -231,7 +232,7 @@
         width: 33.333%;
         max-width: 250px;
         min-width: 150px;
-        margin: 0 $gap-med $gap-med 0;
+        margin: 25px;
 
         @media screen and (max-width: $breakpoint-md) {
           flex-grow: unset;
@@ -385,16 +386,19 @@
     }
 
     h1 {
-      margin-bottom: $gap-reg;
-      padding-top: $gap-med;
-      padding-left: 75px;
-      padding-right: 75px;
-      width: 750px;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      margin-bottom: $gap-med;
 
       @media screen and (max-width: $breakpoint-md) {
         font-size: $font-sz-lg;
         width: auto;
-        padding: 0 25px;
+        padding: 0 $gap-large;
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        padding: 0 $gap-small;
       }
     }
 
