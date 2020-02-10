@@ -1110,6 +1110,11 @@ footer {
     #styleguide-content h1 {
       font-size: 30px; } }
 
+#styleguide-content h1.title {
+    border-bottom: #ebebeb 1px solid;
+    padding-bottom: 0.2em;
+}
+
 #styleguide-content h2 {
   margin-bottom: 30px; }
   @media screen and (max-width: 991px) {
