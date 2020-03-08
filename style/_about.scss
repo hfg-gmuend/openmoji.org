@@ -20,6 +20,14 @@
   #about-content {
     @extend %content;
 
+    @media screen and (max-width: $breakpoint-md) {
+      padding: 0 $gap-med 0 $gap-med;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      padding: 0 $gap-small 0 $gap-small;
+    }
+
     p a,
     ul a {
       color: $color-yellow-light;
@@ -39,6 +47,10 @@
 
     h1 {
       margin-bottom: $gap-reg;
+
+      @media screen and (max-width: $breakpoint-md) {
+        font-size: 30px;
+      }
     }
 
     #team-container {
@@ -51,6 +63,12 @@
       margin-right: -$gap-large;
       margin-bottom: -$gap-med;
 
+      @media screen and (max-width: $breakpoint-md) {
+        margin-right: -10px;
+        margin-left: -10px;
+        margin-bottom: 0;
+      }
+
       .teammember {
         display: flex;
         flex-direction: column;
@@ -58,6 +76,17 @@
         position: relative;
         margin-bottom: $gap-med;
         margin-right: $gap-large;
+
+        @media screen and (max-width: $breakpoint-md) {
+          padding: 10px;
+          width: 33.33%;
+          margin-bottom: $gap-reg;
+          margin-right: 0;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+          width: 50%;
+        }
 
         div {
           width: 100%;

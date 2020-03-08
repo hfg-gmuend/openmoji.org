@@ -94,4 +94,17 @@ $(document).ready(function () {
     $("header.page-header").toggleClass("menu-open");
     $("html, body").toggleClass("overflow-hidden");
   });
+
+  $(".category-toggle").click(function () {
+    var nav = $(".nav-left");
+    nav.addClass("mobile-show");
+    $(".mainmenu").click(function () {
+      $(".submenu li").click(function () {
+        nav.removeClass("mobile-show");
+      });
+    });
+    $(".category-close").click(function () {
+      nav.removeClass("mobile-show");
+    });
+  });
 });
