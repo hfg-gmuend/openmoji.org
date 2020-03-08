@@ -187,7 +187,9 @@ $(document).ready(function () {
 
     // show fuseSearchStr in HTML
     if (filter && Object.keys(filter).length == 1 && filter.author) fuseSearchStr = "Author: " + fuseSearchStr;
-    $("#selected-category").text(fuseSearchStr);
+    if(window.width > 768){
+      $("#selected-category").text(fuseSearchStr);
+    }
 
     // generate list
     generateEmojiList();
@@ -276,10 +278,10 @@ $(document).ready(function () {
     }
 
     // init/refresh lazy loading
-    if (currentLazyInstance !== undefined) currentLazyInstance.destroy();
-
+    if (currentLazyInstance !== undefined){
+      currentLazyInstance.destroy();
+    }
     currentLazyInstance = $(".lazy").Lazy({
-      appendScroll: "#library-content",
       chainable: false
     });
   }

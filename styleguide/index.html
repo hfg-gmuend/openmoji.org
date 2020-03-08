@@ -247,53 +247,54 @@
       </nav>
       <main>
         <div id="styleguide-content" class="content">
-            <h1>Designer? Developer?<br>
-                Love Open Source?<br>
-                Everyone Can Participate!</h1>
-            <article id="participate">
-                <h2>Help Design New Emoji</h2>
-                <div class="two-rows">
-                    <p>The next set of emojis are due to be released this year, we need your help to make them!
-                        <br>
-                        <br>
-                        <a class="download-styleguide-asset" href="https://github.com/hfg-gmuend/openmoji/issues/124">
-                            <button type="button">Get Started</button>
-                        </a></p>
-                    <div class="img-big">
-                        <img class="lazy" alt="grid" data-src="../img/styleguide/emoji13.svg">
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <h2>Improve Consistency with Other Platforms</h2>
-                <div class="two-rows">
-                    <p>To be useful for communication, emoji need to convey the same idea.
-                        <br>
-                        <br>
-                        <a class="download-styleguide-asset" href="https://github.com/hfg-gmuend/openmoji/issues/105">
-                            <button type="button">Get Started</button>
-                        </a>
-                    </p>
-                    <div class="img-big">
-                        <img class="lazy" alt="grid" data-src="../img/styleguide/consistency.svg">
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <h2>Improve Quality of Emojis</h2>
-                <div class="two-rows">
-                    <p>Design is subjective but we want our emoji to follow our style guide and look good.
-                        <br>
-                        <br>
-                        <a class="download-styleguide-asset" href="https://github.com/hfg-gmuend/openmoji/issues/105">
-                            <button type="button">Get Started</button>
-                        </a>
-                    </p>
-                    <div class="img-big">
-                        <img class="lazy" alt="grid" data-src="../img/styleguide/emojidesign.png">
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </article>
+          <h1 class="title">Designer? Developer?<br>
+            Love Open Source?<br>
+            Everyone Can Participate!</h1>
+          <article id="participate">
+            <h2>Help Design New Emoji</h2>
+            <div class="two-rows">
+              <p>The next set of emojis are due to be released this year, we need your help to make them!
+                <br>
+                <br>
+                <a class="download-styleguide-asset" href="https://github.com/hfg-gmuend/openmoji/issues/124">
+                  <button type="button">Get Started</button>
+                </a></p>
+              <div class="img-big">
+                <img class="lazy" alt="grid" data-src="../img/styleguide/emoji13.svg">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <h2>Improve Quality of Emojis</h2>
+            <div class="two-rows">
+              <p>Design is subjective but we want our emoji to follow our style guide and look good.
+                <br>
+                <br>
+                <a class="download-styleguide-asset" href="https://github.com/hfg-gmuend/openmoji/issues/106">
+                  <button type="button">Get Started</button>
+                </a>
+              </p>
+              <div class="img-big">
+                <img class="lazy" alt="grid" data-src="../img/styleguide/emojidesign.png">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <h2>Improve Consistency with Other Platforms</h2>
+            <div class="two-rows">
+              <p>To be useful for communication, emoji need to convey the same idea.
+                <br>
+                <br>
+                <a class="download-styleguide-asset" href="https://github.com/hfg-gmuend/openmoji/issues/105">
+                  <button type="button">Get Started</button>
+                </a>
+              </p>
+              <div class="img-big">
+                <img class="lazy" alt="grid" data-src="../img/styleguide/consistency.svg">
+              </div>
+              <div class="clear"></div>
+            </div>
+          </article>
           <article id="grid">
+            <h1 class="title">Styleguide</h1>
             <h1>Grid</h1>
             <p class="intro">The Grid serves as orientation for the size of the emojis. If possible your emojis
               <strong>should stay inside the Grid</strong>, but for edge cases use 4px of padding.</p>
@@ -505,7 +506,7 @@
             </div>
           </article>
           <article id="submission">
-            <h1>Submission</h1>
+            <h1 class="title">Submission</h1 class="title">
             <h2 id="file_specification">SVG File Specification</h2>
             <div class="two-rows">
               <p>
@@ -573,11 +574,11 @@
 
               <b>Inkscape</b>
               <div class="two-rows">
-                <p><b>1.</b> Click File -> Save As -><br>
+                <p><b>1.</b> Click File > Save As<br>
                   <br>
-                  <b>2.</b> Click Save as type: -> Optimised SVG -> Save<br>
+                  <b>2.</b> Click Save as type: > Optimised SVG > Save<br>
                   <br>
-                  <b>3.</b> Set "Optimised SVG Output" Settings </p>
+                  <b>3.</b> Set "Optimised SVG Output" Settings</p>
 
                 <div class="img-big border">
                   <img class="lazy" alt="Export" data-src="../img/styleguide/ExportInkscape.png">
@@ -603,7 +604,7 @@
       <footer>
         <div>
           <p><a id="impressumLink" href="">Imprint</a> · </p>
-          <p>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/.">CC BY-SA 4.0</a></p>
+          <p><a href="https://creativecommons.org/licenses/by-sa/4.0/.">CC BY-SA 4.0</a></p>
         </div>
         <ul>
           <li><a class="iconlink"
@@ -721,9 +722,7 @@
 <script src="../src/general.js" rel="script"></script>
 <script>
   // check for images that should be lazy loaded
-  $(".lazy").Lazy({
-    appendScroll: "main"
-  });
+  $(".lazy").Lazy();
 
 </script>
 
