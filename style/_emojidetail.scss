@@ -27,12 +27,12 @@
 .popover {
   position: relative;
   width: 80%;
-  max-width: $content-max-width * 1.5;
   height: 80%;
+  max-width: $content-max-width * 1.5;
+  padding: $gap-reg;
   background: #FFFFFF;
   box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.50);
   border-radius: 8px;
-  padding: $gap-reg;
   z-index: 20;
   box-sizing: border-box;
   display: flex;
@@ -42,6 +42,7 @@
     overflow-y: scroll;
     height: 100%;
     width: 100%;
+    padding: $gap-reg $gap-reg 0 $gap-reg;
   }
 
   .sub {
@@ -308,6 +309,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    margin-bottom: $gap-reg;
 
     button:not(.copy-to-clipboard) {
       min-width: 100px;
