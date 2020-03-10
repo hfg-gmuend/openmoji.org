@@ -1,3 +1,13 @@
+// header headline on mobile
+var headerHeadline = $(".project-name h2");
+if ($(window).width() <= 991 && window.location.pathname !== "/") {
+  if ($(window).width() <= 768) {
+    headerHeadline.html("<img src='../data/color/svg/1F64B.svg' style='padding-right: 5px; margin-bottom: -3px' width='40px' height='auto'>" + $("li.active-tab a").text());
+  } else {
+    headerHeadline.html(document.title);
+  }
+}
+
 //------------ General Functions ------------
 function shuffleArr(arr) {
   var ctr = arr.length,
@@ -95,6 +105,7 @@ $(document).ready(function () {
     $("html, body").toggleClass("overflow-hidden");
   });
 
+  // icon category toggle menu
   $(".category-toggle").click(function () {
     var nav = $(".nav-left");
     nav.addClass("mobile-show");
