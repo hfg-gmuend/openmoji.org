@@ -1,0 +1,12 @@
+style/*.scss
+**/.*
+.*/**
+.editorconfig
+.git-ftp-ignore
+.gitignore
+.nvmrc
+node_modules/*
+package.json
+package-lock.json
+gulpfile.js
+README.md
