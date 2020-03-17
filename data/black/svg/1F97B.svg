@@ -1,7 +1,10 @@
-<svg id="emoji" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+<svg id="emoji" x="0" y="0" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <g id="line">
-    <path d="M41.9765,8.5012c-1.9566,7.7426-14.3539,19.3645-17.55,22.537" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path d="M49.2072,7c.7893,7.4557-25.2166,51.5-28.7811,55.0382" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path d="M40.0428,8.954a20.3273,20.3273,0,0,1,6.27-2.9063A1.4889,1.4889,0,0,1,46.6944,6h3.328a3.9953,3.9953,0,0,1,3.8511,2.9315l7.19,26.03H52.3412l-5-15.9061.8074,13.9028,3.9151,32.0209-16,1-16-1,3.9151-32.0209.93-13.9028-6,15.9061H10.1863L16.4408,9.0845A4.0317,4.0317,0,0,1,20.36,6h4.3185a2.8,2.8,0,0,1,.7525.1,20.3324,20.3324,0,0,1,6.074,2.8536" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" stroke-width="1.5" d="m34.32 29.09 8.242-1.733c4.33 14.15-0.2163 23.9 0.4643 33.11-4.335 4.138-12.88 4.159-17.59 2.081 0 0-1.058-15.04-0.7826-22.34"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" stroke-width="1.5" d="m27.85 33.79c2.203-2.863 1.963-5.489 5.344-7.776 3.468-2.139 5.189-3.705 6.904-6.756s2.217-7.791 1.669-10.49c-1.697-1.278-6.236-0.434-7.289 0.2865-9.446 10-3.805 11.98-8.213 22.04-1.871 4.271-1.357 5.874-1.612 9.108 0.07431-2.681 2.049-4.78 3.196-6.414z"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" stroke-width="1.5" d="m36.54 23.89c4.962 0.128 5.744-0.861 6.592-2.992m2.777 2.051s0.05099 0.0039 2.448-0.6475c-0.7577-3.068-2.015-7.438-3.965-10.13"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" stroke-width="1.5" d="m28.18 23.45c-1.137-0.494-2.002-1.601-2.205-2.452m-4.612 1.319c-0.05926-0.8385 0.1983-1.76 0.1983-1.76 1.176-6.488 5.109-12.07 7.562-11.07l1.493 0.5299m-7.106 12.9s0.0223-0.02792-2.147-0.5998"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" stroke-width="1.5" d="m46.81 38.56c4.62 1.021 3.768-4.908 3.768-4.908-3.721 0.846-5.047-3.655-5.598-7.702"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" stroke-width="1.5" d="m38.62 39.62 0.4046 1.181c0.465 1.556 0.8427 3.068 0.9542 4.708 0.2444 3.618-0.8277 7.166-0.183 10.77 0.2045 1.146 1.655 3.767 2.158 4.792 0.3304 0.6753-0.3778-0.6454 0 0"/>
   </g>
 </svg>

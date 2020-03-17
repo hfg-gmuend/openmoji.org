@@ -10,6 +10,13 @@
   display: none;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: $breakpoint-md) {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .highlight {
@@ -20,15 +27,23 @@
 .popover {
   position: relative;
   width: 80%;
-  max-width: $content-max-width * 1.5;
   height: 80%;
+  max-width: $content-max-width * 1.5;
+  padding: $gap-reg;
   background: #FFFFFF;
   box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.50);
   border-radius: 8px;
-  padding: $gap-reg;
   z-index: 20;
   box-sizing: border-box;
   display: flex;
+
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    padding: $gap-reg $gap-reg 0 $gap-reg;
+  }
 
   .sub {
     text-align: center;
@@ -63,15 +78,30 @@
   padding-right: $gap-med / 2;
   box-sizing: border-box;
 
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+    padding-right: 0;
+  }
+
   #active-emoji-selection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 
+    @media screen and (max-width: $breakpoint-md) {
+      justify-content: center;
+      align-items: center;
+    }
+
     #main-emoji-image {
       min-height: 0;
-      margin-bottom: $gap-reg + $gap-xs;
+      margin-bottom: $gap-reg;
+
+      @media screen and (max-width: $breakpoint-md) {
+        width: 50%;
+        max-width: 250px;
+      }
     }
 
     .small-emoji-preview {
@@ -79,17 +109,35 @@
       justify-content: space-between;
       align-items: center;
 
+      @media screen and (max-width: $breakpoint-md) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 50%;
+        width: auto;
+        min-width: 170px;
+      }
+
       #emoji-preview {
-        display: inline-flex;
+        display: flex;
         height: 50px;
         margin: auto;
         align-items: center;
+
+        @media screen and (max-width: $breakpoint-sm) {
+          order: 1;
+          padding-bottom: $gap-xs;
+        }
 
         .circle {
           box-sizing: border-box;
           position: relative;
           width: 25px;
           height: 25px;
+          flex-basis: 25px;
           border-radius: 50%;
           border: 2px solid rgba(0, 0, 0, 0.1);
           cursor: pointer;
@@ -174,6 +222,18 @@
         }
       }
 
+      .prev-emoji {
+        @media screen and (max-width: $breakpoint-sm) {
+          order: 2;
+        }
+      }
+
+      .next-emoji {
+        @media screen and (max-width: $breakpoint-sm) {
+          order: 3;
+        }
+      }
+
       .next-or-prev {
         opacity: 0.5;
         transition: all 0.3s;
@@ -202,6 +262,13 @@
   width: 30%;
   box-sizing: border-box;
 
+  @media screen and (max-width: $breakpoint-md) {
+    display: block;
+    padding: $gap-med/2 0 0 0;
+    border-left: none;
+    width: 100%;
+  }
+
   #emojipedia-link {
     color: $color-grey-dark;
   }
@@ -209,16 +276,22 @@
   .description-top {
     display: inline-flex;
     justify-content: space-between;
+    width: 100%;
   }
 
   .description-bottom {
     h2 {
-      margin-bottom: $gap-reg;
+      margin: $gap-small 0;
       max-width: 400px
     }
 
     table {
       margin-bottom: $gap-med;
+
+      @media screen and (max-width: $breakpoint-md) {
+        margin-top: $gap-med / 3;
+        margin-bottom: $gap-small * 1.3;
+      }
 
       td {
         height: 40px;
@@ -233,10 +306,10 @@
 
   #buttoncontainer {
     height: 50px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap;
+    margin-bottom: $gap-reg;
 
     button:not(.copy-to-clipboard) {
       min-width: 100px;
@@ -245,10 +318,22 @@
     a+a {
       margin-left: $gap-xs;
     }
+
+    @media screen and (max-width: $breakpoint-md) {
+      a:first-child {
+        margin-left: 0;
+      }
+    }
   }
 }
 
 .close {
   cursor: pointer;
   margin-left: $gap-xs;
+
+  @media screen and (max-width: $breakpoint-md) {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
 }

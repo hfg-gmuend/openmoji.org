@@ -16,6 +16,10 @@
   .intro {
     max-width: 600px;
     margin-bottom: $gap-med;
+
+    @media screen and (max-width: $breakpoint-md) {
+      max-width: 100%;
+    }
   }
 
   .img-full {
@@ -25,11 +29,32 @@
   .two-rows {
     margin-bottom: $gap-med;
 
+    @media screen and (max-width: $breakpoint-md) {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: $gap-reg;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      flex-direction: column;
+    }
+
     p,
     h3 {
       float: left;
       width: 25%;
       max-width: 240px;
+
+      @media screen and (max-width: $breakpoint-md) {
+        width: 100%;
+        float: none;
+        max-width: 100%;
+        order: 2;
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+      }
 
     }
 
@@ -37,12 +62,44 @@
       width: 20%;
       float: left;
       margin-left: 5%;
+
+      @media screen and (max-width: $breakpoint-md) {
+        margin-right: 5%;
+        margin-left: 0;
+        width: 20%;
+        float: none;
+        max-width: 100%;
+        order: 1;
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+        margin-bottom: $gap-reg;
+        margin-right: 0;
+        margin-left: 0;
+      }
     }
 
     .img-big {
       width: 70%;
       float: left;
       margin-left: 5%;
+
+      @media screen and (max-width: $breakpoint-md) {
+        margin-right: 5%;
+        margin-left: 0;
+        width: 70%;
+        float: none;
+        max-width: 100%;
+        order: 1;
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+        margin-bottom: $gap-reg;
+        margin-right: 0;
+        margin-left: 0;
+      }
     }
   }
 
@@ -57,19 +114,54 @@
 #styleguide-content {
   @extend %content;
 
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 0 $gap-med 0 $gap-med;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 0 $gap-small 0 $gap-small;
+  }
+
   img {
     width: 100%;
   }
 
   h1 {
     margin-bottom: $gap-reg;
+
+    &.title {
+      border-bottom: #ebebeb 1px solid;
+      padding-bottom: 0.2em;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+      font-size: 30px;
+    }
   }
 
   h2 {
     margin-bottom: $gap-reg;
+
+    @media screen and (max-width: $breakpoint-md) {
+      font-size: 26px;
+    }
   }
 
-  .download-styleguide-asset button {
-    margin-bottom: $gap-reg * 2;
+  .download-styleguide-asset {
+    &.button {
+      button {
+        margin-bottom: $gap-med;
+      }
+
+    }
+
+    button {
+      margin-bottom: $gap-reg * 2;
+      margin-right: $gap-small;
+
+      @media screen and (max-width: $breakpoint-md) {
+        margin-bottom: $gap-small;
+      }
+    }
   }
 }

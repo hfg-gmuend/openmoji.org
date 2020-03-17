@@ -17,35 +17,125 @@
     #show-color {
       margin-bottom: $gap-reg;
     }
+
+    @media screen and (max-width: $breakpoint-md) {
+      display: none;
+
+      &.mobile-show {
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: $z-index-overlay-all;
+
+        >ul {
+          overflow-y: auto;
+          scrollbar-width: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          li {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+
+  .category-toggle:hover #nav-left {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+  }
+
+  main {
+    @media screen and (max-width: $breakpoint-md) {
+      margin-top: 0;
+      width: 100%;
+    }
   }
 }
 
 #library-content {
   height: 100%;
-  overflow: auto;
+
+  @media screen and (max-width: $breakpoint-md) {
+    height: auto;
+    overflow: initial;
+  }
 
   #emoji_grid_header {
     width: 100%;
     max-width: $content-max-width;
-    padding-bottom: $gap-xs;
+    padding: $gap-reg 0;
     position: sticky;
-    top: 0;
+    top: 80px;
     background-color: $color-white;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @media screen and (max-width: $breakpoint-md) {
+      padding: 0 $gap-med $gap-small $gap-med;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      padding: 0 $gap-small $gap-small $gap-small;
+    }
+
+    #selected-category {
+      display: none;
+
+      @media screen and (max-width: $breakpoint-md) {
+        display: block;
+      }
+    }
+
+    .category-toggle {
+      display: none;
+      background: url(../img/menu.svg) no-repeat center center;
+      width: 20px;
+      height: 20px;
+      z-index: $z-index-overlay-all;
+      margin-left: 10px;
+      margin-right: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: $breakpoint-md) {
+        display: block;
+      }
+    }
 
     h2 {
       margin-bottom: 0;
       flex-grow: 1;
+
+      @media screen and (max-width: $breakpoint-md) {
+        flex-grow: unset;
+        font-size: 18px;
+      }
+    }
+
+    #show-color {
+      margin-right: 20px;
     }
 
     .sort_selector {
       align-self: center;
       font-size: $font-sz-md;
-      color: $color-grey-light;
 
       &__selected {
         position: relative;
-        padding-right: 14px;
+        padding-right: 20px;
         cursor: pointer;
 
         &::before {
@@ -105,10 +195,18 @@
   max-width: $content-max-width;
   overflow-x: hidden;
 
+  @media screen and (max-width: $breakpoint-md) {
+    overflow-x: unset;
+  }
+
   .emoji_grid {
     display: flex;
     flex-wrap: wrap;
     margin-right: -$gap-large;
+
+    @media screen and (max-width: $breakpoint-md) {
+      margin-right: 0;
+    }
 
     .emoji_single {
       margin-right: $gap-large;
@@ -116,6 +214,20 @@
       min-width: 150px;
       max-width: 150px;
       transition: all 0.3;
+
+      @media screen and (max-width: $breakpoint-md) {
+        min-width: unset;
+        max-width: unset;
+        margin-right: 0;
+        width: 33.33%;
+      }
+
+      @media screen and (max-width: $breakpoint-sm) {
+        min-width: unset;
+        max-width: unset;
+        margin-right: 0;
+        width: 50%;
+      }
 
       h3 {
         transition: all 0.3;
@@ -139,6 +251,11 @@
         img {
           width: 100%;
           height: auto;
+        }
+
+        &+div {
+          width: 80%;
+          margin: auto;
         }
       }
 

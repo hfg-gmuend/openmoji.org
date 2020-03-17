@@ -7,6 +7,10 @@ footer {
   margin-top: $gap-xs;
   margin-bottom: $gap-xs;
 
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 0 $gap-small 0 $gap-small;
+  }
+
   p {
     display: inline-block;
     font-size: $font-sz-s;
@@ -28,5 +32,13 @@ footer {
     li+li {
       margin-left: $gap-small;
     }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  #close-impressum-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
   }
 }

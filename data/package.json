@@ -1,27 +1,26 @@
 {
-  "_from": "openmoji@^12.0.0",
-  "_id": "openmoji@12.1.0",
+  "_from": "openmoji@^12.2.0",
+  "_id": "openmoji@12.2.0",
   "_inBundle": false,
-  "_integrity": "sha512-vGuY52n96RvGkPP0oDAWFCgZHyvHt7RbFpAt5LnKd8N/EsY8ffGfFxg49TzMZKplCbL2zgS3Qd9lWEYfODccsw==",
+  "_integrity": "sha512-qeyWnM8gX+Nx1DTM5bonjx3EGbkCnVgi2lPyM1vTWM/VNMBe930j1v2ZVRXann+YZclpEivki//Oeq9J5lKIwQ==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "openmoji@^12.0.0",
+    "raw": "openmoji@^12.2.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "^12.0.0",
+    "rawSpec": "^12.2.0",
     "saveSpec": null,
-    "fetchSpec": "^12.0.0"
+    "fetchSpec": "^12.2.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-12.1.0.tgz",
-  "_shasum": "135803c420dfe6cc718ab3efa787f20a9f57065c",
-  "_spec": "openmoji@^12.0.0",
+  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-12.2.0.tgz",
+  "_shasum": "3b0ab1e47d07d3f5c75b6cb698c29aa3f3d121d1",
+  "_spec": "openmoji@^12.2.0",
   "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
@@ -35,12 +34,14 @@
     "chroma-js": "^1.4.0",
     "csv-parse": "^2.5.0",
     "csv-write-stream": "^2.0.0",
-    "emojibase-data": "^4.1.0",
+    "emojibase": "^4.0.0",
+    "emojibase-data": "^5.0.0",
     "glob": "^7.1.2",
     "jsdom": "^13.2.0",
     "kd-tree-javascript": "^1.0.3",
     "libxmljs": "^0.19.7",
     "lodash": "^4.17.4",
+    "mkdirp": "^1.0.3",
     "mocha": "^5.2.0",
     "mochawesome": "^3.1.1",
     "optimist": "^0.6.1",
@@ -76,7 +77,8 @@
     "export-zip": "./helpers/export-zip.sh",
     "generate": "./helpers/generate.sh",
     "pretty-src-svg": "find src/ -type f -name '*.svg' -print0 | xargs -0 -n 1 -P 6 svgo --quiet --config helpers/beautify-svg.yml",
-    "test": "mocha --reporter mochawesome --reporter-options reportDir=test/report,reportFilename=report,json=false,code=false,cdn=true,reportTitle=OpenMoji-Tester,reportPageTitle=OpenMoji-Tester test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
+    "test": "mocha --reporter mochawesome --reporter-options reportDir=test/report,reportFilename=report,json=false,code=false,cdn=true,reportTitle=OpenMoji-Tester,reportPageTitle=OpenMoji-Tester test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
+    "test-dev": "mocha --invert --grep \"production\" test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
   },
-  "version": "12.1.0"
+  "version": "12.2.0"
 }
