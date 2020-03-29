@@ -16,7 +16,8 @@
   .intro {
     max-width: 600px;
     margin-bottom: $gap-med;
-    @media screen and (max-width: $breakpoint-md){
+
+    @media screen and (max-width: $breakpoint-md) {
       max-width: 100%;
     }
   }
@@ -128,6 +129,11 @@
   h1 {
     margin-bottom: $gap-reg;
 
+    &.title {
+      border-bottom: #ebebeb 1px solid;
+      padding-bottom: 0.2em;
+    }
+
     @media screen and (max-width: $breakpoint-md) {
       font-size: 30px;
     }
@@ -146,8 +152,9 @@
       button {
         margin-bottom: $gap-med;
       }
-      
+
     }
+
     button {
       margin-bottom: $gap-reg * 2;
       margin-right: $gap-small;

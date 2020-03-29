@@ -91,6 +91,7 @@
 
     #selected-category {
       display: none;
+
       @media screen and (max-width: $breakpoint-md) {
         display: block;
       }
@@ -252,7 +253,7 @@
           height: auto;
         }
 
-        & + div {
+        &+div {
           width: 80%;
           margin: auto;
         }
