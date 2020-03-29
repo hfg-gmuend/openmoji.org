@@ -262,7 +262,7 @@ svg {
 
   &:hover {
     .dropdown-content {
-      display: block;
+      display: flex;
     }
   }
 
@@ -275,8 +275,9 @@ svg {
     ul {
       display: block;
       margin-top: $gap-small;
+      margin-left: calc(#{$gap-small} * 0.75);
       background: #FFFFFF;
-      box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.50);
+      box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.50);
       border-radius: 8px;
       padding: 8px 0;
       white-space: nowrap;
