@@ -116,7 +116,7 @@
       @media screen and (max-width: $breakpoint-sm) {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 50%;
+        margin: 0 auto;
         width: auto;
         min-width: 170px;
       }
@@ -130,6 +130,8 @@
         @media screen and (max-width: $breakpoint-sm) {
           order: 1;
           padding-bottom: $gap-xs;
+          width: 100%;
+          justify-content: center;
         }
 
         .circle {
@@ -225,12 +227,20 @@
       .prev-emoji {
         @media screen and (max-width: $breakpoint-sm) {
           order: 2;
+          padding-bottom: $gap-xs;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
         }
       }
 
       .next-emoji {
         @media screen and (max-width: $breakpoint-sm) {
           order: 3;
+          padding-bottom: $gap-xs;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
         }
       }
 
@@ -238,11 +248,14 @@
         opacity: 0.5;
         transition: all 0.3s;
         // background-color: #456;
-        display: inline-flex;
         cursor: pointer;
 
         img {
           height: 40px;
+          width: 40px;
+        }
+        @media screen and (max-width: $breakpoint-sm) {
+          width: 50%;
         }
       }
 
