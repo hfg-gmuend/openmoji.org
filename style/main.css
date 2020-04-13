@@ -229,16 +229,16 @@ svg {
 .dropdown {
   position: relative; }
   .dropdown:hover .dropdown-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
+    display: block; }
   .dropdown .dropdown-content {
     position: absolute;
     right: 0;
     display: none;
     min-width: 100%; }
-    .dropdown .dropdown-content ul {
-      display: block;
+    .dropdown .dropdown-content .list-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
       margin-top: 20px;
       margin-left: calc(20px * 0.75);
       background: #FFFFFF;
@@ -247,20 +247,22 @@ svg {
       border-radius: 8px;
       padding: 8px 0;
       white-space: nowrap; }
-      .dropdown .dropdown-content ul li {
-        margin: 0;
-        padding: 11.5px 20px;
-        height: auto; }
-        .dropdown .dropdown-content ul li > * {
-          font-size: 17px; }
-        .dropdown .dropdown-content ul li .disclaimer {
-          font-size: 14px;
-          color: rgba(129, 128, 128, 0.5); }
-          .dropdown .dropdown-content ul li .disclaimer a {
-            color: rgba(129, 128, 128, 0.5);
-            text-decoration: underline; }
-            .dropdown .dropdown-content ul li .disclaimer a:hover {
-              text-decoration: none; }
+      .dropdown .dropdown-content .list-wrapper ul {
+        display: block; }
+        .dropdown .dropdown-content .list-wrapper ul li {
+          margin: 0;
+          padding: 11.5px 20px;
+          height: auto; }
+          .dropdown .dropdown-content .list-wrapper ul li > * {
+            font-size: 17px; }
+          .dropdown .dropdown-content .list-wrapper ul li .disclaimer {
+            font-size: 14px;
+            color: rgba(129, 128, 128, 0.5); }
+            .dropdown .dropdown-content .list-wrapper ul li .disclaimer a {
+              color: rgba(129, 128, 128, 0.5);
+              text-decoration: underline; }
+              .dropdown .dropdown-content .list-wrapper ul li .disclaimer a:hover {
+                text-decoration: none; }
 
 .dropdown--light-shadow .dropdown-content ul {
   -webkit-box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);

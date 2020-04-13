@@ -277,7 +277,7 @@ svg {
 
   &:hover {
     .dropdown-content {
-      display: flex;
+      display: block;
     }
   }
 
@@ -287,8 +287,8 @@ svg {
     display: none;
     min-width: 100%;
 
-    ul {
-      display: block;
+    .list-wrapper {
+      display: flex;
       margin-top: $gap-small;
       margin-left: calc(#{$gap-small} * 0.75);
       background: #FFFFFF;
@@ -297,25 +297,29 @@ svg {
       padding: 8px 0;
       white-space: nowrap;
 
-      li {
-        margin: 0;
-        padding: (40px - $font-sz-md) / 2 $gap-small;
-        height: auto;
+      ul {
+        display: block;
 
-        >* {
-          font-size: $font-sz-md;
-        }
+        li {
+          margin: 0;
+          padding: (40px - $font-sz-md) / 2 $gap-small;
+          height: auto;
 
-        .disclaimer {
-          font-size: $font-sz-s;
-          color: $color-grey-super-light;
+          >* {
+            font-size: $font-sz-md;
+          }
 
-          a {
+          .disclaimer {
+            font-size: $font-sz-s;
             color: $color-grey-super-light;
-            text-decoration: underline;
 
-            &:hover {
-              text-decoration: none;
+            a {
+              color: $color-grey-super-light;
+              text-decoration: underline;
+
+              &:hover {
+                text-decoration: none;
+              }
             }
           }
         }
