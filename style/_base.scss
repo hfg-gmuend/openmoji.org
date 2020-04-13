@@ -66,11 +66,12 @@ h6 {
 }
 
 :target:before {
-  content: "";
+  content: '';
   display: block;
+  position: relative;
   height: $footer-header-max-height;
   /* fixed header height*/
-  margin: -$footer-header-max-height 0 0;
+  margin-top: -$footer-header-max-height;
   /* negative fixed header height */
 }
 

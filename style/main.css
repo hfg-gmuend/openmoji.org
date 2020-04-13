@@ -57,11 +57,12 @@ h6 {
   margin-bottom: 10px; }
 
 :target:before {
-  content: "";
+  content: '';
   display: block;
+  position: relative;
   height: 80px;
   /* fixed header height*/
-  margin: -80px 0 0;
+  margin-top: -80px;
   /* negative fixed header height */ }
 
 p {
@@ -294,8 +295,8 @@ svg {
 
 .popover {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   max-width: 1350px;
   padding: 30px;
   background: #FFFFFF;
@@ -341,7 +342,7 @@ svg {
   margin-right: 15px; }
 
 #preview {
-  width: 70%;
+  width: 65%;
   padding-right: 25px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -533,7 +534,7 @@ svg {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 30%;
+  width: 35%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
   @media screen and (max-width: 991px) {
@@ -573,15 +574,16 @@ svg {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
-    margin-bottom: 30px; }
+    width: 100%; }
     #description #buttoncontainer button:not(.copy-to-clipboard) {
       min-width: 100px; }
     #description #buttoncontainer a + a {
       margin-left: 10px; }
     @media screen and (max-width: 991px) {
-      #description #buttoncontainer a:first-child {
-        margin-left: 0; } }
+      #description #buttoncontainer {
+        margin-bottom: 30px; }
+        #description #buttoncontainer a:first-child {
+          margin-left: 0; } }
 
 .close {
   cursor: pointer;

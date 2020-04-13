@@ -26,8 +26,8 @@
 
 .popover {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   max-width: $content-max-width * 1.5;
   padding: $gap-reg;
   background: #FFFFFF;
@@ -74,7 +74,7 @@
 }
 
 #preview {
-  width: 70%;
+  width: 65%;
   padding-right: $gap-med / 2;
   box-sizing: border-box;
 
@@ -254,6 +254,7 @@
           height: 40px;
           width: 40px;
         }
+
         @media screen and (max-width: $breakpoint-sm) {
           width: 50%;
         }
@@ -272,7 +273,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30%;
+  width: 35%;
   box-sizing: border-box;
 
   @media screen and (max-width: $breakpoint-md) {
@@ -322,7 +323,6 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: $gap-reg;
 
     button:not(.copy-to-clipboard) {
       min-width: 100px;
@@ -333,6 +333,8 @@
     }
 
     @media screen and (max-width: $breakpoint-md) {
+      margin-bottom: $gap-reg;
+
       a:first-child {
         margin-left: 0;
       }
