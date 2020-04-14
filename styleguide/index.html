@@ -71,6 +71,7 @@
                 <div><i class="arrow down"></i></div>
               </button>
               <div class="dropdown-content">
+              <div class="list-wrapper">
                 <ul>
                   <li>
                     <a rel="noopener"
@@ -129,6 +130,7 @@
                       Source</a>
                   </li>
                 </ul>
+              </div>
               </div>
             </div>
           </div>
@@ -321,7 +323,7 @@
             <h1>Grid</h1>
             <p class="intro">The Grid serves as orientation for the size of the emojis. If possible your emojis
               <strong>should stay inside the Grid</strong>, but for edge cases use 4px of padding.</p>
-            <h2 id="Basic_forms">Basic Forms</h2>
+            <h2 id="basic_forms">Basic Forms</h2>
             <div class="two-rows">
               <p>The four basic forms define the possible extents, aiming to <strong>visually balance</strong> every
                 icon. They don't always have to be fully filled.</p>
@@ -747,14 +749,15 @@
   </div>
 </body>
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
+<script src="../src/lazyload.min.js"></script>
 <script src="../src/fuse.min.js" rel="script"></script>
 <script src="../src/jquery-3.4.1.min.js" rel="script"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js" rel="script"></script>
 <script src="../src/general.js" rel="script"></script>
 <script>
-  // check for images that should be lazy loaded
-  $(".lazy").Lazy();
-
+  var lazyLoadInstance = new LazyLoad({
+      elements_selector: ".lazy",
+      container: document.getElementById("styleguide-content")
+  });
 </script>
 
 </html>

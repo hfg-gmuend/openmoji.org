@@ -187,7 +187,7 @@ $(document).ready(function () {
 
     // show fuseSearchStr in HTML
     if (filter && Object.keys(filter).length == 1 && filter.author) fuseSearchStr = "Author: " + fuseSearchStr;
-    if(window.width > 768){
+    if (window.width > 768) {
       $("#selected-category").text(fuseSearchStr);
     }
 
@@ -278,11 +278,11 @@ $(document).ready(function () {
     }
 
     // init/refresh lazy loading
-    if (currentLazyInstance !== undefined){
+    if (currentLazyInstance !== undefined) {
       currentLazyInstance.destroy();
     }
-    currentLazyInstance = $(".lazy").Lazy({
-      chainable: false
+    currentLazyInstance = new LazyLoad({
+      elements_selector: ".lazy"
     });
   }
 
@@ -292,7 +292,6 @@ $(document).ready(function () {
     var currentUrlParams = getUrlParameters();
     // if currentUrlParams are undefined create new object
     if (currentUrlParams === undefined) currentUrlParams = {};
-
     // remove undefined filters and add new filter to currentUrlParams or update exisiting ones
     for (var key in filter) {
       if (filter.hasOwnProperty(key)) {
@@ -318,7 +317,6 @@ $(document).ready(function () {
       URL = window.location.href.substring(0, window.location.href.indexOf("#")) + "#";
     }
     history.pushState(null, "", URL + $.param(currentUrlParams));
-
     handleRequest(getUrlParameters());
   }
 
@@ -332,7 +330,6 @@ $(document).ready(function () {
       var currentParam = sURLVariables[i].split("=");
       sParameters[currentParam[0]] = currentParam[1];
     }
-
     return sPageURL ? sParameters : undefined;
   }
 
@@ -429,7 +426,7 @@ $(document).ready(function () {
     });
 
     // break if emoji wasn't found
-    if(typeof currEmoji === 'undefined') {
+    if (typeof currEmoji === 'undefined') {
       console.log("ERROR: Failed to find Emoji");
       return;
     }
@@ -442,7 +439,7 @@ $(document).ready(function () {
     }
 
     // get path
-    var colorVariant     = $("#show-color .switch input[type=checkbox]").is(":checked") ? "color" : "black";
+    var colorVariant = $("#show-color .switch input[type=checkbox]").is(":checked") ? "color" : "black";
     var localVariantPath = "../data/" + colorVariant;
 
     // set base_hexcode data attribute to emoji preview element
@@ -501,14 +498,14 @@ $(document).ready(function () {
     }
 
     // get attributes
-    var emoji           = isSkintoneVariant ? baseEmoji.emoji           : currEmoji.emoji;
-    var annotation      = isSkintoneVariant ? baseEmoji.annotation      : currEmoji.annotation;
-    var hexcode         = currEmoji.hexcode;
-    var hexcode_link    = isSkintoneVariant ? baseEmoji.hexcode         : hexcode;
+    var emoji = isSkintoneVariant ? baseEmoji.emoji : currEmoji.emoji;
+    var annotation = isSkintoneVariant ? baseEmoji.annotation : currEmoji.annotation;
+    var hexcode = currEmoji.hexcode;
+    var hexcode_link = isSkintoneVariant ? baseEmoji.hexcode : hexcode;
     var openmoji_author = isSkintoneVariant ? baseEmoji.openmoji_author : currEmoji.openmoji_author;
-    var group           = isSkintoneVariant ? baseEmoji.group           : currEmoji.group;
-    var subgroups       = isSkintoneVariant ? baseEmoji.subgroups       : currEmoji.subgroups;
-    var groupPath       = isSkintoneVariant ? baseEmoji.groupPath       : currEmoji.groupPath;
+    var group = isSkintoneVariant ? baseEmoji.group : currEmoji.group;
+    var subgroups = isSkintoneVariant ? baseEmoji.subgroups : currEmoji.subgroups;
+    var groupPath = isSkintoneVariant ? baseEmoji.groupPath : currEmoji.groupPath;
 
     // update description
     $("#description h2").text(annotation);
