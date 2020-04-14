@@ -26,7 +26,9 @@ $(document).ready(function () {
     genEmojiCloud();
     genCategoriesShowcase();
     // initBigEmojiOverview();
-    $(".lazy").Lazy();
+    var lazyLoadInstance = new LazyLoad({
+        elements_selector: ".lazy"
+    });
   });
 
   function setVersion() {

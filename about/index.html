@@ -71,6 +71,7 @@
                 <div><i class="arrow down"></i></div>
               </button>
               <div class="dropdown-content">
+              <div class="list-wrapper">
                 <ul>
                   <li>
                     <a rel="noopener"
@@ -129,6 +130,7 @@
                       Source</a>
                   </li>
                 </ul>
+              </div>
               </div>
             </div>
           </div>
@@ -1357,14 +1359,15 @@
   </div>
 </body>
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
+<script src="../src/lazyload.min.js"></script>
 <script src="../src/fuse.min.js" rel="script"></script>
 <script src="../src/jquery-3.4.1.min.js" rel="script"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js" rel="script"></script>
 <script src="../src/general.js" rel="script"></script>
 <script>
-  // check for images that should be lazy loaded
-  $(".lazy").Lazy();
-
+  var lazyLoadInstance = new LazyLoad({
+      elements_selector: ".lazy",
+      container: document.getElementById("about-content")
+  });
 </script>
 
 </html>

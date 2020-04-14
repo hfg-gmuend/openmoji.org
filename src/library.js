@@ -281,8 +281,8 @@ $(document).ready(function () {
     if (currentLazyInstance !== undefined) {
       currentLazyInstance.destroy();
     }
-    currentLazyInstance = $(".lazy").Lazy({
-      chainable: false
+    currentLazyInstance = new LazyLoad({
+      elements_selector: ".lazy"
     });
   }
 
