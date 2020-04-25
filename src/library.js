@@ -1,3 +1,10 @@
+// Fix back-forward cache
+window.onpageshow = function (event) {
+  if (event.persisted) {
+      window.location.reload();
+  }
+};
+
 $(document).ready(function () {
   //------------ Initialization ------------
   $("#emoji-detail-wrapper .popover-wrapper").css("display", "flex").hide();
