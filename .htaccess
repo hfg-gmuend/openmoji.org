@@ -1,4 +1,8 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 Header set Cache-Control "no-cache, no-store, must-revalidate"
+<filesMatch ".(ico|svg|jpg|jpeg|png|gif|css)$">
+    Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
