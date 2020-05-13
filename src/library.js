@@ -501,6 +501,13 @@ $(document).ready(function () {
     var emoji = isSkintoneVariant ? baseEmoji.emoji : currEmoji.emoji;
     var annotation = isSkintoneVariant ? baseEmoji.annotation : currEmoji.annotation;
     var hexcode = currEmoji.hexcode;
+    var zwj = "";
+    hexcode.split('-')
+      .map((i) => i === "200D" ?
+        zwj += "ZWJ-" :
+        zwj += String.fromCodePoint(parseInt(i, 16)) + "-");
+    zwj = zwj.slice(0, -1);
+    hexcode = hexcode + "<br/>" + zwj;
     var hexcode_link = isSkintoneVariant ? baseEmoji.hexcode : hexcode;
     var openmoji_author = isSkintoneVariant ? baseEmoji.openmoji_author : currEmoji.openmoji_author;
     var group = isSkintoneVariant ? baseEmoji.group : currEmoji.group;
