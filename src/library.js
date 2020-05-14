@@ -501,13 +501,14 @@ $(document).ready(function () {
     var emoji = isSkintoneVariant ? baseEmoji.emoji : currEmoji.emoji;
     var annotation = isSkintoneVariant ? baseEmoji.annotation : currEmoji.annotation;
     var hexcode = currEmoji.hexcode;
-    var zwj = "";
+    var combination = "";
     hexcode.split('-')
       .map((i) => i === "200D" ?
-        zwj += "ZWJ-" :
-        zwj += String.fromCodePoint(parseInt(i, 16)) + "-");
-    zwj = zwj.slice(0, -1);
-    hexcode = hexcode + "<br/>" + zwj;
+        combination += `<a href="https://emojipedia.org/zero-width-joiner/" 
+        target="_blank" rel="noreferrer noopener" class="redlink">ZWJ</a>-` :
+        combination += `<a href="/library/#emoji=${hexcode}">` +
+        String.fromCodePoint(parseInt(i, 16)) + "</a>-");
+    combination = combination.slice(0, -1);
     var hexcode_link = isSkintoneVariant ? baseEmoji.hexcode : hexcode;
     var openmoji_author = isSkintoneVariant ? baseEmoji.openmoji_author : currEmoji.openmoji_author;
     var group = isSkintoneVariant ? baseEmoji.group : currEmoji.group;
@@ -517,6 +518,7 @@ $(document).ready(function () {
     // update description
     $("#description h2").text(annotation);
     $("#description #unicode").text(hexcode).attr("href", "http://www.decodeunicode.org/en/u+" + hexcode_link);
+    $("#description #combination").html(combination)
     $("#description #author").text(openmoji_author);
     $("#description #category").text(group).attr("data-grouppath", group);
     $("#description #subcategory").text(subgroups).attr("data-grouppath", groupPath);
