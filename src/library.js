@@ -500,16 +500,17 @@ $(document).ready(function () {
     // get attributes
     var emoji = isSkintoneVariant ? baseEmoji.emoji : currEmoji.emoji;
     var annotation = isSkintoneVariant ? baseEmoji.annotation : currEmoji.annotation;
-    var hexcode = currEmoji.hexcode;
-    var combination = "";
-    hexcode.split('-')
-      .map((i) => i === "200D" ?
-        combination += `<a href="https://emojipedia.org/zero-width-joiner/" 
-        target="_blank" rel="noreferrer noopener" class="redlink">ZWJ</a>-` :
-        combination += `<a href="/library/#emoji=${hexcode}">` +
-        String.fromCodePoint(parseInt(i, 16)) + "</a>-");
-    combination = combination.slice(0, -1);
-    var hexcode_link = isSkintoneVariant ? baseEmoji.hexcode : hexcode;
+    var hexcodeString = currEmoji.hexcode;
+
+    // create emoji combination links
+    var combination = hexcodeString.split("-").map(function(hex) {
+      if (hex === "200D") return '<a href="https://emojipedia.org/zero-width-joiner/" target="_blank" rel="noreferrer noopener" class="redlink">ZWJ</a>';
+      if (hex === "FE0F") return '<a href="https://emojipedia.org/variation-selector-16/" target="_blank" rel="noreferrer noopener" class="redlink">VS16</a>';
+      return '<a href="/library/#emoji='+ hex +'" target="_blank" rel="noreferrer noopener" class="redlink">'+ String.fromCodePoint(parseInt(hex, 16)) +'</a>';
+    });
+    combination = combination.join(" • ");
+
+    var hexcode_link = isSkintoneVariant ? baseEmoji.hexcode : hexcodeString;
     var openmoji_author = isSkintoneVariant ? baseEmoji.openmoji_author : currEmoji.openmoji_author;
     var group = isSkintoneVariant ? baseEmoji.group : currEmoji.group;
     var subgroups = isSkintoneVariant ? baseEmoji.subgroups : currEmoji.subgroups;
@@ -517,7 +518,7 @@ $(document).ready(function () {
 
     // update description
     $("#description h2").text(annotation);
-    $("#description #unicode").text(hexcode).attr("href", "http://www.decodeunicode.org/en/u+" + hexcode_link);
+    $("#description #unicode").text(hexcodeString).attr("href", "http://www.decodeunicode.org/en/u+" + hexcode_link);
     $("#description #combination").html(combination)
     $("#description #author").text(openmoji_author);
     $("#description #category").text(group).attr("data-grouppath", group);
