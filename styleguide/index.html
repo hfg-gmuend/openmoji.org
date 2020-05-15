@@ -410,15 +410,15 @@
             </p>
             <a class="download-styleguide-asset"
               rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-color-palette.svg" download>
-              <button type="button">SVG Swatches</button>
+              <button type="button">OpenMoji Color Palette (.svg)</button>
             </a>
             <a class="download-styleguide-asset button"
-              rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-swatches.ase" download>
-              <button type="button">Adobe Illustrator Swatches</button>
+              rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-color-palette-inkscape.gpl" download>
+              <button type="button">Inkscape Palette (.gpl)</button>
             </a>
             <a class="download-styleguide-asset button"
-              rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-color-palette.gpl" download>
-              <button type="button">Inkscape Color Palette (.gpl)</button>
+              rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-color-palette-adobe-illustrator.ase" download>
+              <button type="button">Illustrator Palette (.ase)</button>
             </a>
             <div class="two-rows">
               <h3>Primary Colors</h3>
@@ -619,6 +619,22 @@
 
                 <div class="img-big border">
                   <img class="lazy" alt="Export" data-src="../img/styleguide/ExportInkscape.png">
+                </div>
+                <div class="clear"></div>
+
+
+              <b>Figma</b>
+              <div class="two-rows">
+                <p><b>1.</b> Select frame<br>
+                  <br>
+                  <b>2.</b> In the export pane select SVG and set <code>.figma</code> as suffix<br>
+                  <br>
+                  <b>3.</b> Make sure <em>Contents Only</em> and <em>Include "id" Attribte</em> is checked<br>
+                  <br>
+                  <b>4.</b> Run <code>node helpers/prettyfy-figma-svg.js</code></p>
+
+                <div class="img-big border">
+                  <img class="lazy" alt="Export" data-src="../img/styleguide/ExportFigma.png">
                 </div>
                 <div class="clear"></div>
               </div>
