@@ -1,27 +1,27 @@
 {
-  "_from": "openmoji@^12.3.0",
-  "_id": "openmoji@12.3.0",
+  "_from": "openmoji@^12.4.0",
+  "_id": "openmoji@12.4.0",
   "_inBundle": false,
-  "_integrity": "sha512-55aeMNE6ipy0ErwF4c/X+QhoGHxuQidFjf36ihTNjzbtIFFK/bPlulTeoQq21NN5sqaG4fR0JBCdBa1zj+zoMg==",
+  "_integrity": "sha512-s9qgUWPIFgCvnIhBjK3CG3HDsqiu2vM2MvGgVoDBijmhS10LxPa3B+Uv6RgXJVoGzj9NuJWlAXRCvPndPhjwkQ==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "openmoji@^12.3.0",
+    "raw": "openmoji@^12.4.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "^12.3.0",
+    "rawSpec": "^12.4.0",
     "saveSpec": null,
-    "fetchSpec": "^12.3.0"
+    "fetchSpec": "^12.4.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-12.3.0.tgz",
-  "_shasum": "679dfb5a6a550d5d46d681dcaa428366b4cca484",
-  "_spec": "openmoji@^12.3.0",
-  "_where": "/Users/bene/Documents/GitHub/openmoji-website",
+  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-12.4.0.tgz",
+  "_shasum": "2f66e625d621192ba4f7ad9d2be9ce382b576b9d",
+  "_spec": "openmoji@^12.4.0",
+  "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
   },
@@ -45,9 +45,6 @@
     "mocha": "^5.2.0",
     "optimist": "^0.6.1",
     "svgo": "^1.3.2"
-  },
-  "engines": {
-    "node": "8.x"
   },
   "homepage": "https://openmoji.org/",
   "keywords": [
@@ -87,5 +84,5 @@
     "test": "mocha --reporter progress test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
     "test-dev": "mocha --reporter min --invert --grep \"production\" test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
   },
-  "version": "12.3.0"
+  "version": "12.4.0"
 }
