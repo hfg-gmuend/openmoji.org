@@ -1024,6 +1024,8 @@ footer {
         grid-template-areas: "header header" "content content" "footer footer"; }
   #samples-wrapper .sample {
     width: 100%; }
+  #samples-wrapper video {
+    border: 1px solid rgba(129, 128, 128, 0.5); }
   #samples-wrapper .caption {
     margin: 1em 50px;
     height: 6em; }
