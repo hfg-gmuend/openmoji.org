@@ -518,7 +518,7 @@ $(document).ready(function () {
 
     // update description
     $("#description h2").text(annotation);
-    $("#description #unicode").text(hexcodeString).attr("href", "http://www.decodeunicode.org/en/u+" + hexcode_link);
+    $("#description #unicode").text(hexcodeString).attr("href", "https://www.decodeunicode.org/en/u+" + hexcode_link);
     $("#description #combination").html(combination)
     $("#description #author").text(openmoji_author);
     $("#description #category").text(group).attr("data-grouppath", group);
