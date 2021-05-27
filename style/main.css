@@ -301,7 +301,7 @@ svg {
   height: 90%;
   max-width: 1350px;
   padding: 30px;
-  background: #FFFFFF;
+  background: #ffffff;
   -webkit-box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
           box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
   border-radius: 8px;
@@ -460,21 +460,21 @@ svg {
                     transform: rotate3d(0, 0, 1, -45deg); }
         #preview #active-emoji-selection .small-emoji-preview #emoji-preview #color-emoji-preview {
           background-color: #FCEA2B; }
-        #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview {
+        #preview #active-emoji-selection .small-emoji-preview #emoji-preview .skintone-selector {
           display: -webkit-inline-box;
           display: -ms-inline-flexbox;
           display: inline-flex;
           -webkit-box-align: center;
               -ms-flex-align: center;
                   align-items: center; }
-          #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview .circle:first-child {
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview .skintone-selector .circle:first-child {
             margin-left: 7.5px; }
-          #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview::before {
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview .skintone-selector::before {
             content: "";
             height: 15px;
             margin-left: 7.5px;
             border-left: 1px solid rgba(129, 128, 128, 0.5); }
-          #preview #active-emoji-selection .small-emoji-preview #emoji-preview #skintones-emoji-preview:empty::before {
+          #preview #active-emoji-selection .small-emoji-preview #emoji-preview .skintone-selector:empty::before {
             display: none; }
         #preview #active-emoji-selection .small-emoji-preview #emoji-preview .emoji-preview-image {
           height: 50px;
@@ -612,7 +612,6 @@ svg {
       display: none; } }
   .nav-left > ul {
     margin: 30px 50px;
-    position: -webkit-sticky;
     position: sticky;
     top: 80px; }
     @media screen and (max-width: 991px) {
@@ -662,7 +661,6 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 80px;
-  position: -webkit-sticky;
   position: sticky;
   top: 0; }
 
@@ -1225,7 +1223,6 @@ footer {
     width: 100%;
     max-width: 900px;
     padding: 30px 0;
-    position: -webkit-sticky;
     position: sticky;
     top: 80px;
     background-color: #FFFFFF;

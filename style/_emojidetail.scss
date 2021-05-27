@@ -30,8 +30,8 @@
   height: 90%;
   max-width: $content-max-width * 1.5;
   padding: $gap-reg;
-  background: #FFFFFF;
-  box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.50);
+  background: #ffffff;
+  box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
   border-radius: 8px;
   z-index: 20;
   box-sizing: border-box;
@@ -153,11 +153,11 @@
             width: 50%;
             border-radius: 50%;
             background-color: $color-white;
-            box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.50);
+            box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
           }
         }
 
-        .circle+.circle {
+        .circle + .circle {
           margin-left: 5px;
         }
 
@@ -181,7 +181,7 @@
           background-color: $color-fitzpatrick-default;
         }
 
-        #skintones-emoji-preview {
+        .skintone-selector {
           display: inline-flex;
           align-items: center;
 
@@ -296,7 +296,7 @@
   .description-bottom {
     h2 {
       margin: $gap-small 0;
-      max-width: 400px
+      max-width: 400px;
     }
 
     table {
@@ -311,12 +311,11 @@
         height: 40px;
       }
 
-      td+td {
+      td + td {
         padding-left: $gap-reg;
       }
     }
   }
-
 
   #buttoncontainer {
     height: 50px;
@@ -328,7 +327,7 @@
       min-width: 100px;
     }
 
-    a+a {
+    a + a {
       margin-left: $gap-xs;
     }
 
