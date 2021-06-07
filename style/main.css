@@ -240,7 +240,6 @@ svg {
       display: -ms-flexbox;
       display: flex;
       margin-top: 20px;
-      margin-left: calc(20px * 0.75);
       background: #ffffff;
       -webkit-box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
               box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
@@ -263,6 +262,11 @@ svg {
               text-decoration: underline; }
               .dropdown .dropdown-content .list-wrapper ul li .disclaimer a:hover {
                 text-decoration: none; }
+  .dropdown--align-left .dropdown-content {
+    left: 0;
+    right: unset; }
+  .dropdown--dense li {
+    padding: 5.75px 15px !important; }
 
 .dropdown--light-shadow .dropdown-content ul {
   -webkit-box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
@@ -277,8 +281,6 @@ svg {
     position: relative;
     padding-right: 20px;
     cursor: pointer; }
-  .selector__list ul {
-    margin-top: 10px; }
   .selector__list li {
     white-space: nowrap;
     color: #525252;
