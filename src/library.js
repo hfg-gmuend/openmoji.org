@@ -1,7 +1,6 @@
 $(document).ready(function () {
   //------------ Initialization ------------
   $("#emoji-detail-wrapper .popover-wrapper").css("display", "flex").hide();
-  $("#sort-selector .sort_selector__selected").text($("#sort-selector .sort_selector__list .active").text());
 
   //------------ for emoji list ------------
   var EMOJI_LIST;
@@ -40,7 +39,7 @@ $(document).ready(function () {
   };
 
   // for list sort
-  const INITIAL_SORT = $("#sort-selector .sort_selector__list .active").data("sortfunc");
+  const INITIAL_SORT = $("#sort-selector .selector__list .active").data("sortfunc");
   var currentSort = INITIAL_SORT;
   var prevSort = currentSort;
   var currentSortDir = getSortDir();
@@ -179,13 +178,21 @@ $(document).ready(function () {
 
     // set search input field value to search filter if it is defined and sort by "best match"
     if (filter && filter.search) {
-      updateSortSelector("best_match");
-
       $(".search").val(filter.search);
-    } else if ($(".search").val().length > 0 || prevSort === "best_match") {
-      updateSortSelector(INITIAL_SORT);
 
+      // show "best_match" sort option and select it
+      $("#sort-selector [data-sortfunc=best_match]").removeClass("hidden");
+      $("#sort-selector").trigger("selectEl", $("#sort-selector [data-sortfunc=best_match]"))
+    } else if ($(".search").val().length > 0 || prevSort === "best_match") {
       $(".search").val("");
+
+      // hide "best_match" sort option and reset sorting to initial sort function
+      $("#sort-selector [data-sortfunc=best_match]").addClass("hidden");
+      $("#sort-selector").trigger("selectEl", $("#sort-selector [data-sortfunc=" + INITIAL_SORT + "]"));
+    } else {
+      // hide "best_match" sort option and reset sorting to initial sort function
+      $("#sort-selector [data-sortfunc=best_match]").addClass("hidden");
+      $("#sort-selector").trigger("selectEl", $("#sort-selector [data-sortfunc=" + INITIAL_SORT + "]"));
     }
 
     // show fuseSearchStr in HTML
@@ -198,41 +205,13 @@ $(document).ready(function () {
     generateEmojiList();
   }
 
-  // update sort selector
-  function updateSortSelector(newSortFunc) {
-    // if sort function is defined and isn't the same as the current one set new sort function
-    if (SORT_FUNCS[newSortFunc] !== undefined && newSortFunc !== currentSort) {
-      prevSort = currentSort;
-      currentSort = newSortFunc;
-
-      // get according nodes
-      var activeSortEl = $("#sort-selector .sort_selector__list .active");
-      var targetSortEl = $("#sort-selector .sort_selector__list [data-sortfunc=" + currentSort + "]");
-
-      // if active sort element is normally hidden hide it
-      if (activeSortEl.data("normally_hidden") === true) activeSortEl.removeClass("visible").addClass("hidden");
-
-      // mark to new sort function corresponding element as active
-      $("#sort-selector .sort_selector__list .active").removeClass("active");
-      targetSortEl.addClass("active");
-
-      // if current sort element is hidden show it and mark it as normally hidden
-      if (targetSortEl.hasClass("hidden")) {
-        targetSortEl.removeClass("hidden").addClass("active");
-        targetSortEl.attr("data-normally_hidden", true);
-      }
-
-      // show current sort
-      $("#sort-selector .sort_selector__selected").text(targetSortEl.text());
-    }
-  }
-
   // returns sort direction (asc or desc) based on sort selector classes
   function getSortDir() {
     var sortSelector = $("#sort-selector");
-    if (sortSelector.hasClass("sort_selector--asc")) {
+
+    if (sortSelector.hasClass("selector--sortable-asc")) {
       return "asc";
-    } else if (sortSelector.hasClass("sort_selector--desc")) {
+    } else if (sortSelector.hasClass("selector--sortable-desc")) {
       return "desc";
     } else {
       return currentSortDir;
@@ -790,28 +769,30 @@ $(document).ready(function () {
     $("#emoji-detail-wrapper .popover-wrapper").fadeOut(400);
   });
 
-  // sort toggle
-  $("#sort-selector .sort_selector__list a").click(function (e) {
-    e.preventDefault();
+  $("#sort-selector").on("update", function (_, selectedEl) {
+    const selectedSortFunction = $(selectedEl).data("sortfunc");
 
-    // fetch according sort function and update sort selector
-    updateSortSelector($(e.currentTarget).data("sortfunc"));
+    // if sort function is defined and isn't the same as the current one set new sort function
+    if (SORT_FUNCS[selectedSortFunction] !== undefined && selectedSortFunction !== currentSort) {
+      prevSort = currentSort;
+      currentSort = selectedSortFunction;
 
-    // refresh emoji list
-    if (prevSort !== currentSort) generateEmojiList();
+      // regenerate emoji list
+      generateEmojiList();
+    }
   });
 
   // sort direction toggle
-  $("#sort-selector .sort_selector__selected").click(function (e) {
+  $("#sort-selector .selector__selected-value").click(function (e) {
     // toggle current sort direction
     var sortSelector = $("#sort-selector");
 
     if (getSortDir() === "asc") {
-      sortSelector.removeClass("sort_selector--asc");
-      sortSelector.addClass("sort_selector--desc");
+      sortSelector.removeClass("selector--sortable-asc");
+      sortSelector.addClass("selector--sortable-desc");
     } else if (getSortDir() === "desc") {
-      sortSelector.removeClass("sort_selector--desc");
-      sortSelector.addClass("sort_selector--asc");
+      sortSelector.removeClass("selector--sortable-desc");
+      sortSelector.addClass("selector--sortable-asc");
     }
 
     // regenerate emoji list

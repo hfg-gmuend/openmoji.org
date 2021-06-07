@@ -128,66 +128,6 @@
     #show-color {
       margin-right: 20px;
     }
-
-    .sort_selector {
-      align-self: center;
-      font-size: $font-sz-md;
-
-      &__selected {
-        position: relative;
-        padding-right: 20px;
-        cursor: pointer;
-
-        &::before {
-          content: "";
-          border: solid black;
-          border-width: 0 1.75px 1.75px 0;
-          border-color: $color-grey-light;
-          position: absolute;
-          top: 5px;
-          right: 1.25px;
-          padding: 2.5px;
-          transform: rotate(-135deg);
-          -webkit-transform: rotate(-135deg);
-        }
-
-        &::after {
-          content: "";
-          border: solid black;
-          border-width: 0 1.75px 1.75px 0;
-          border-color: $color-grey-light;
-          position: absolute;
-          bottom: 5px;
-          right: 1.25px;
-          padding: 2.5px;
-          transform: rotate(45deg);
-          -webkit-transform: rotate(45deg);
-        }
-      }
-
-      &__list {
-        ul {
-          margin-top: $gap-xs;
-        }
-
-        li:hover {
-          background-color: $color-blue-light;
-          color: $color-grey-ultra-light;
-        }
-      }
-    }
-
-    .sort_selector--asc {
-      .sort_selector__selected::before {
-        border-color: $color-grey-dark;
-      }
-    }
-
-    .sort_selector--desc {
-      .sort_selector__selected::after {
-        border-color: $color-grey-dark;
-      }
-    }
   }
 }
 

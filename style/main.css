@@ -57,7 +57,7 @@ h6 {
   margin-bottom: 10px; }
 
 :target:before {
-  content: '';
+  content: "";
   display: block;
   position: relative;
   height: 80px;
@@ -176,9 +176,9 @@ label {
   label:hover {
     color: #101010; }
 
-input[type='radio'] {
+input[type="radio"] {
   display: none; }
-  input[type='radio']:checked + label {
+  input[type="radio"]:checked + label {
     color: #101010; }
 
 main {
@@ -241,7 +241,7 @@ svg {
       display: flex;
       margin-top: 20px;
       margin-left: calc(20px * 0.75);
-      background: #FFFFFF;
+      background: #ffffff;
       -webkit-box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
               box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
       border-radius: 8px;
@@ -267,6 +267,51 @@ svg {
 .dropdown--light-shadow .dropdown-content ul {
   -webkit-box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
           box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5); }
+
+.selector {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 17px; }
+  .selector__selected-value {
+    position: relative;
+    padding-right: 20px;
+    cursor: pointer; }
+  .selector__list ul {
+    margin-top: 10px; }
+  .selector__list li {
+    white-space: nowrap;
+    color: #525252;
+    cursor: pointer; }
+    .selector__list li:hover {
+      background-color: #5EB0CF;
+      color: #f5f6f7; }
+  .selector--sortable .selector__selected-value::before {
+    content: "";
+    border: solid black;
+    border-width: 0 1.75px 1.75px 0;
+    border-color: #707070;
+    position: absolute;
+    top: 5px;
+    right: 1.25px;
+    padding: 2.5px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg); }
+  .selector--sortable .selector__selected-value::after {
+    content: "";
+    border: solid black;
+    border-width: 0 1.75px 1.75px 0;
+    border-color: #707070;
+    position: absolute;
+    bottom: 5px;
+    right: 1.25px;
+    padding: 2.5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); }
+  .selector--sortable-asc .selector__selected-value::before {
+    border-color: #101010; }
+  .selector--sortable-desc .selector__selected-value::after {
+    border-color: #101010; }
 
 .popover-wrapper {
   background: rgba(255, 255, 255, 0.6);
@@ -1271,46 +1316,6 @@ footer {
           font-size: 18px; } }
     #library-content #emoji_grid_header #show-color {
       margin-right: 20px; }
-    #library-content #emoji_grid_header .sort_selector {
-      -ms-flex-item-align: center;
-          -ms-grid-row-align: center;
-          align-self: center;
-      font-size: 17px; }
-      #library-content #emoji_grid_header .sort_selector__selected {
-        position: relative;
-        padding-right: 20px;
-        cursor: pointer; }
-        #library-content #emoji_grid_header .sort_selector__selected::before {
-          content: "";
-          border: solid black;
-          border-width: 0 1.75px 1.75px 0;
-          border-color: #707070;
-          position: absolute;
-          top: 5px;
-          right: 1.25px;
-          padding: 2.5px;
-          transform: rotate(-135deg);
-          -webkit-transform: rotate(-135deg); }
-        #library-content #emoji_grid_header .sort_selector__selected::after {
-          content: "";
-          border: solid black;
-          border-width: 0 1.75px 1.75px 0;
-          border-color: #707070;
-          position: absolute;
-          bottom: 5px;
-          right: 1.25px;
-          padding: 2.5px;
-          transform: rotate(45deg);
-          -webkit-transform: rotate(45deg); }
-      #library-content #emoji_grid_header .sort_selector__list ul {
-        margin-top: 10px; }
-      #library-content #emoji_grid_header .sort_selector__list li:hover {
-        background-color: #5EB0CF;
-        color: #f5f6f7; }
-    #library-content #emoji_grid_header .sort_selector--asc .sort_selector__selected::before {
-      border-color: #101010; }
-    #library-content #emoji_grid_header .sort_selector--desc .sort_selector__selected::after {
-      border-color: #101010; }
 
 .emoji_grid_wrapper {
   max-width: 900px;

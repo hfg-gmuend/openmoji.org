@@ -157,22 +157,14 @@
                 <span class="slider"></span>
               </label>
             </div>
-            <div id="sort-selector" class="sort_selector sort_selector--asc dropdown dropdown--light-shadow">
-              <div class="sort_selector__selected"></div>
-              <div class="sort_selector__list dropdown-content">
+            <div id="sort-selector" class="selector selector--sortable selector--sortable-asc dropdown dropdown--light-shadow">
+              <div class="selector__selected-value"></div>
+              <div class="selector__list dropdown-content">
                 <ul>
-                  <a class="hidden" href="" data-sortfunc="best_match">
-                    <li>Best Match</li>
-                  </a>
-                  <a class="active" href="" data-sortfunc="unicode">
-                    <li>Unicode</li>
-                  </a>
-                  <a href="" data-sortfunc="alphabetical">
-                    <li>A-Z</li>
-                  </a>
-                  <a href="" data-sortfunc="contribution_date">
-                    <li>Date</li>
-                  </a>
+                  <li class="hidden" data-sortfunc="best_match">Best Match</li>
+                  <li class="active" data-sortfunc="unicode">Unicode</li>
+                  <li data-sortfunc="alphabetical">A-Z</li>
+                  <li data-sortfunc="contribution_date">Date</li>
                 </ul>
               </div>
             </div>
