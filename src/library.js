@@ -34,7 +34,7 @@ $(document).ready(function () {
       return new Date(b.item.openmoji_date) - new Date(a.item.openmoji_date);
     },
     "best_match": function (a, b) {
-      return a.item.score - b.item.score;
+      return a.score - b.score;
     }
   };
 
