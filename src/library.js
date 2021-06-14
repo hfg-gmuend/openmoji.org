@@ -38,11 +38,27 @@ $(document).ready(function () {
     }
   };
 
+  const FILTER_FUNCS = { // list of possible filter functions
+    "all": function () {
+      return true;
+    },
+    "skintones": function (el) {
+      return Array.isArray(el.item.skintones) || Array.isArray(el.item.skintone_combinations);
+    },
+    "multi_skintones": function (el) {
+      return Array.isArray(el.item.skintone_combinations);
+    },
+  };
+
   // for list sort
   const INITIAL_SORT = $("#sort-selector .selector__list .active").data("sortfunc");
   var currentSort = INITIAL_SORT;
   var prevSort = currentSort;
   var currentSortDir = getSortDir();
+
+  // for list filter
+  const INITIAL_FILTER = $("#filter-selector .selector__list .active").data("filterfunc");
+  let currentFilter = INITIAL_FILTER;
 
   var currentLazyInstance;
 
@@ -231,6 +247,8 @@ $(document).ready(function () {
     $(".emoji_grid").empty();
 
     $("html").scrollTop(0);
+
+    currentList = currentList.filter(FILTER_FUNCS[currentFilter]);
 
     // sort list if sort has changed or flip list if sort direction changed
     if (currentSort !== prevSort) {
@@ -797,5 +815,17 @@ $(document).ready(function () {
 
     // regenerate emoji list
     generateEmojiList();
+  });
+
+  $("#filter-selector").on("update", function (_, selectedEl) {
+    const selectedFilterFunction = $(selectedEl).data("filterfunc");
+
+    // if filter function is defined and isn't the same as the current one set new filter function
+    if (FILTER_FUNCS[selectedFilterFunction] !== undefined && selectedFilterFunction !== currentFilter) {
+      currentFilter = selectedFilterFunction;
+
+      // regenerate emoji list
+      updateList(getUrlParameters());
+    }
   });
 });

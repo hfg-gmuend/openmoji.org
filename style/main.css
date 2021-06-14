@@ -281,6 +281,15 @@ svg {
     position: relative;
     padding-right: 20px;
     cursor: pointer; }
+  .selector__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -0.4em;
+    height: 1.15em;
+    width: 1.15em;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
   .selector__list li {
     white-space: nowrap;
     color: #525252;
@@ -1280,7 +1289,8 @@ footer {
         flex-wrap: wrap;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    margin-left: -20px; }
     @media screen and (max-width: 991px) {
       #library-content #emoji_grid_header {
         padding: 0 50px 20px 50px; } }
@@ -1316,8 +1326,8 @@ footer {
               -ms-flex-positive: unset;
                   flex-grow: unset;
           font-size: 18px; } }
-    #library-content #emoji_grid_header #show-color {
-      margin-right: 20px; }
+    #library-content #emoji_grid_header > * + * {
+      margin-left: 20px; }
 
 .emoji_grid_wrapper {
   max-width: 900px;
@@ -1404,8 +1414,8 @@ footer {
   right: 0;
   bottom: 0;
   background-color: #707070;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 34px; }
   .slider:before {
     position: absolute;
@@ -1415,8 +1425,8 @@ footer {
     left: 2px;
     bottom: 2px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 50%; }
 
 #home-wrapper {

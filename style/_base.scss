@@ -357,6 +357,16 @@ svg {
     cursor: pointer;
   }
 
+  &__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -0.4em;
+    height: 1.15em;
+    width: 1.15em;
+    transform: translateY(-50%);
+  }
+
   &__list {
     li {
       white-space: nowrap;
