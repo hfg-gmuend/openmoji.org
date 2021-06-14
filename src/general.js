@@ -69,8 +69,44 @@ function markNavItem(item) {
 $(document).ready(function () {
   //------------ Initialization ------------
   $("#impressum-wrapper .popover-wrapper").css("display", "flex").hide();
+  $(".selector").each(function () {
+    $(this).children(".selector__selected-value").text($(this).find(".selector__list .active").first().text());
+  });
 
   //------------ Event listeners ------------
+  // selector functionality
+  $(".selector").each(function () {
+    const selector = $(this);
+
+    function selectEl(elToBeSelected) {
+      // do nothing if clicked element is already active
+      if (elToBeSelected.hasClass("active")) return;
+
+      // remove active class from currently active element
+      elToBeSelected.siblings(".active").removeClass("active");
+
+      // set clicked element to active
+      elToBeSelected.addClass("active");
+
+      // set selected value to text of clicked element
+      const selectorValue = selector.children(".selector__selected-value");
+      selectorValue.text(elToBeSelected.text());
+
+      // trigger update event
+      selector.trigger("update", elToBeSelected);
+    }
+
+    // update active element
+    selector.find(".selector__list li").click(function () {
+      selectEl($(this));
+    });
+
+    // add event listeners
+    selector.on("selectEl", function (_, elToBeSelected) {
+      selectEl($(elToBeSelected));
+    });
+  });
+
   // nav-item click listener for smooth scroll
   var navigationItems = $("#nav-items");
   if (navigationItems) {
@@ -118,4 +154,4 @@ $(document).ready(function () {
       nav.removeClass("mobile-show");
     });
   });
-});
+});// 

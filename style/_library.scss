@@ -33,7 +33,7 @@
         background: white;
         z-index: $z-index-overlay-all;
 
-        >ul {
+        > ul {
           overflow-y: auto;
           scrollbar-width: none;
 
@@ -80,6 +80,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-left: -20px;
 
     @media screen and (max-width: $breakpoint-md) {
       padding: 0 $gap-med $gap-small $gap-med;
@@ -125,69 +126,19 @@
       }
     }
 
-    #show-color {
-      margin-right: 20px;
+    // #show-color {
+    //   margin-right: 20px;
+    // }
+    > * + * {
+      margin-left: 20px;
+
+      // TODO: not working because of invisible mobile elements
+      //   &:first-child {
+      //     margin-left: 0;
+      //   }
     }
-
-    .sort_selector {
-      align-self: center;
-      font-size: $font-sz-md;
-
-      &__selected {
-        position: relative;
-        padding-right: 20px;
-        cursor: pointer;
-
-        &::before {
-          content: "";
-          border: solid black;
-          border-width: 0 1.75px 1.75px 0;
-          border-color: $color-grey-light;
-          position: absolute;
-          top: 5px;
-          right: 1.25px;
-          padding: 2.5px;
-          transform: rotate(-135deg);
-          -webkit-transform: rotate(-135deg);
-        }
-
-        &::after {
-          content: "";
-          border: solid black;
-          border-width: 0 1.75px 1.75px 0;
-          border-color: $color-grey-light;
-          position: absolute;
-          bottom: 5px;
-          right: 1.25px;
-          padding: 2.5px;
-          transform: rotate(45deg);
-          -webkit-transform: rotate(45deg);
-        }
-      }
-
-      &__list {
-        ul {
-          margin-top: $gap-xs;
-        }
-
-        li:hover {
-          background-color: $color-blue-light;
-          color: $color-grey-ultra-light;
-        }
-      }
-    }
-
-    .sort_selector--asc {
-      .sort_selector__selected::before {
-        border-color: $color-grey-dark;
-      }
-    }
-
-    .sort_selector--desc {
-      .sort_selector__selected::after {
-        border-color: $color-grey-dark;
-      }
-    }
+    // TODO: not widely supported
+    // gap: 20px;
   }
 }
 
@@ -253,7 +204,7 @@
           height: auto;
         }
 
-        &+div {
+        & + div {
           width: 80%;
           margin: auto;
         }
@@ -277,22 +228,21 @@
   input {
     display: none;
 
-    &:checked+.slider {
+    &:checked + .slider {
       background-color: $color-red-light;
     }
 
-    &:focus+.slider {
+    &:focus + .slider {
       box-shadow: 0 0 1px $color-red-light;
     }
 
-    &:checked+.slider:before {
+    &:checked + .slider:before {
       -webkit-transform: translateX(10px);
       -ms-transform: translateX(10px);
       transform: translateX(10px);
     }
   }
 }
-
 
 .slider {
   position: absolute;
@@ -302,8 +252,8 @@
   right: 0;
   bottom: 0;
   background-color: $color-grey-light;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 34px;
 
   &:before {
@@ -314,8 +264,8 @@
     left: 2px;
     bottom: 2px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 50%;
   }
 }

@@ -1,7 +1,6 @@
 $(document).ready(function () {
   //------------ Initialization ------------
   $("#emoji-detail-wrapper .popover-wrapper").css("display", "flex").hide();
-  $("#sort-selector .sort_selector__selected").text($("#sort-selector .sort_selector__list .active").text());
 
   //------------ for emoji list ------------
   var EMOJI_LIST;
@@ -35,15 +34,31 @@ $(document).ready(function () {
       return new Date(b.item.openmoji_date) - new Date(a.item.openmoji_date);
     },
     "best_match": function (a, b) {
-      return a.item.score - b.item.score;
+      return a.score - b.score;
     }
   };
 
+  const FILTER_FUNCS = { // list of possible filter functions
+    "all": function () {
+      return true;
+    },
+    "skintones": function (el) {
+      return Array.isArray(el.item.skintones) || Array.isArray(el.item.skintone_combinations);
+    },
+    "multi_skintones": function (el) {
+      return Array.isArray(el.item.skintone_combinations);
+    },
+  };
+
   // for list sort
-  const INITIAL_SORT = $("#sort-selector .sort_selector__list .active").data("sortfunc");
+  const INITIAL_SORT = $("#sort-selector .selector__list .active").data("sortfunc");
   var currentSort = INITIAL_SORT;
   var prevSort = currentSort;
   var currentSortDir = getSortDir();
+
+  // for list filter
+  const INITIAL_FILTER = $("#filter-selector .selector__list .active").data("filterfunc");
+  let currentFilter = INITIAL_FILTER;
 
   var currentLazyInstance;
 
@@ -53,9 +68,12 @@ $(document).ready(function () {
 
       json.forEach(function (item) {
         // NOTE: skintone_base_emoji needs to occur before skintone variants in list
-        if (item.skintone !== "" && Number.isInteger(item.skintone)) {
+        if (item.skintone !== "" && item.skintone_combination === "single") {
           if (filteredEmojies[item.skintone_base_hexcode].skintones === undefined) filteredEmojies[item.skintone_base_hexcode].skintones = [];
           filteredEmojies[item.skintone_base_hexcode].skintones.push(item);
+        } else if(item.skintone !== "" && item.skintone_combination === "multiple") {
+          if (filteredEmojies[item.skintone_base_hexcode].skintone_combinations === undefined) filteredEmojies[item.skintone_base_hexcode].skintone_combinations = [];
+          filteredEmojies[item.skintone_base_hexcode].skintone_combinations.push(item);
         } else {
           filteredEmojies[item.hexcode] = item;
           filteredEmojies[item.hexcode].item = item; // wrap item inside item key so structure matches with fusejs search
@@ -176,13 +194,21 @@ $(document).ready(function () {
 
     // set search input field value to search filter if it is defined and sort by "best match"
     if (filter && filter.search) {
-      updateSortSelector("best_match");
-
       $(".search").val(filter.search);
-    } else if ($(".search").val().length > 0 || prevSort === "best_match") {
-      updateSortSelector(INITIAL_SORT);
 
+      // show "best_match" sort option and select it
+      $("#sort-selector [data-sortfunc=best_match]").removeClass("hidden");
+      $("#sort-selector").trigger("selectEl", $("#sort-selector [data-sortfunc=best_match]"))
+    } else if ($(".search").val().length > 0 || prevSort === "best_match") {
       $(".search").val("");
+
+      // hide "best_match" sort option and reset sorting to initial sort function
+      $("#sort-selector [data-sortfunc=best_match]").addClass("hidden");
+      $("#sort-selector").trigger("selectEl", $("#sort-selector [data-sortfunc=" + INITIAL_SORT + "]"));
+    } else {
+      // hide "best_match" sort option and reset sorting to initial sort function
+      $("#sort-selector [data-sortfunc=best_match]").addClass("hidden");
+      $("#sort-selector").trigger("selectEl", $("#sort-selector [data-sortfunc=" + INITIAL_SORT + "]"));
     }
 
     // show fuseSearchStr in HTML
@@ -195,41 +221,13 @@ $(document).ready(function () {
     generateEmojiList();
   }
 
-  // update sort selector
-  function updateSortSelector(newSortFunc) {
-    // if sort function is defined and isn't the same as the current one set new sort function
-    if (SORT_FUNCS[newSortFunc] !== undefined && newSortFunc !== currentSort) {
-      prevSort = currentSort;
-      currentSort = newSortFunc;
-
-      // get according nodes
-      var activeSortEl = $("#sort-selector .sort_selector__list .active");
-      var targetSortEl = $("#sort-selector .sort_selector__list [data-sortfunc=" + currentSort + "]");
-
-      // if active sort element is normally hidden hide it
-      if (activeSortEl.data("normally_hidden") === true) activeSortEl.removeClass("visible").addClass("hidden");
-
-      // mark to new sort function corresponding element as active
-      $("#sort-selector .sort_selector__list .active").removeClass("active");
-      targetSortEl.addClass("active");
-
-      // if current sort element is hidden show it and mark it as normally hidden
-      if (targetSortEl.hasClass("hidden")) {
-        targetSortEl.removeClass("hidden").addClass("active");
-        targetSortEl.attr("data-normally_hidden", true);
-      }
-
-      // show current sort
-      $("#sort-selector .sort_selector__selected").text(targetSortEl.text());
-    }
-  }
-
   // returns sort direction (asc or desc) based on sort selector classes
   function getSortDir() {
     var sortSelector = $("#sort-selector");
-    if (sortSelector.hasClass("sort_selector--asc")) {
+
+    if (sortSelector.hasClass("selector--sortable-asc")) {
       return "asc";
-    } else if (sortSelector.hasClass("sort_selector--desc")) {
+    } else if (sortSelector.hasClass("selector--sortable-desc")) {
       return "desc";
     } else {
       return currentSortDir;
@@ -249,6 +247,8 @@ $(document).ready(function () {
     $(".emoji_grid").empty();
 
     $("html").scrollTop(0);
+
+    currentList = currentList.filter(FILTER_FUNCS[currentFilter]);
 
     // sort list if sort has changed or flip list if sort direction changed
     if (currentSort !== prevSort) {
@@ -292,7 +292,7 @@ $(document).ready(function () {
     var currentUrlParams = getUrlParameters();
     // if currentUrlParams are undefined create new object
     if (currentUrlParams === undefined) currentUrlParams = {};
-    // remove undefined filters and add new filter to currentUrlParams or update exisiting ones
+    // remove undefined filters and add new filter to currentUrlParams or update existing ones
     for (var key in filter) {
       if (filter.hasOwnProperty(key)) {
         if (filter[key] === undefined) {
@@ -413,9 +413,9 @@ $(document).ready(function () {
       if (el.emoji === id || el.hexcode === id) {
         currEmoji = el;
         return true;
-      } else if (typeof el.skintones !== 'undefined') {
-        currEmoji = el.skintones.find(function (el) {
-          return el.emoji === id || el.hexcode === id;
+      } else if (typeof el.skintones !== 'undefined' || typeof el.skintone_combinations !== 'undefined') {
+        currEmoji = Array.prototype.concat(el.skintones, el.skintone_combinations).find(function (el) {
+          return el && (el.emoji === id || el.hexcode === id);
         });
 
         if (typeof currEmoji !== 'undefined') {
@@ -486,15 +486,102 @@ $(document).ready(function () {
     // clear skintones
     $("#skintones-emoji-preview").empty();
 
-    // add potential skintone variants
-    if (typeof currEmoji.skintones !== 'undefined' || isSkintoneVariant) {
-      // get skintone variants
-      var skintones = isSkintoneVariant ? baseEmoji.skintones : currEmoji.skintones;
+    // add skintone selector(s)
+    if (
+      (isSkintoneVariant &&
+        typeof baseEmoji === "object" &&
+        baseEmoji !== null &&
+        (baseEmoji.hasOwnProperty("skintones") ||
+          baseEmoji.hasOwnProperty("skintone_combinations"))) ||
+      (typeof currEmoji === "object" &&
+        currEmoji !== null &&
+        (currEmoji.hasOwnProperty("skintones") ||
+          currEmoji.hasOwnProperty("skintone_combinations")))
+    ) {
+      const skintonesLeft = new Set();
+      const skintonesRight = new Set();
+      const selectedLeft = isSkintoneVariant
+        ? parseInt(
+            currEmoji.skintone_combination === "multiple"
+              ? currEmoji.skintone.split(",")[0]
+              : currEmoji.skintone,
+            10
+          )
+        : undefined;
+      const selectedRight = isSkintoneVariant
+        ? parseInt(
+            currEmoji.skintone_combination === "multiple"
+              ? currEmoji.skintone.split(",")[1]
+              : currEmoji.skintone,
+            10
+          )
+        : undefined;
 
-      skintones.forEach(function (emoji) {
-        var elClass = emoji.hexcode === id ? "circle highlight" : "circle";
-        $("#skintones-emoji-preview").append("<div class='" + elClass + "' data-skintone_hexcode='" + emoji.hexcode + "' style='background-color: " + FITZPATRICK_COLOR_PALETTE[emoji.skintone - 1] + ";'></div>");
-      });
+      // get possible skintones / skintone combinations
+      if (
+        (isSkintoneVariant &&
+          baseEmoji.hasOwnProperty("skintone_combinations")) ||
+        currEmoji.hasOwnProperty("skintone_combinations")
+      ) {
+        if (isSkintoneVariant) {
+          skintonesLeft.add(selectedLeft);
+          skintonesLeft.add(selectedRight);
+          skintonesRight.add(selectedRight);
+          skintonesRight.add(selectedLeft);
+
+          baseEmoji.skintone_combinations.forEach(function (emoji) {
+            const skintoneLeft = parseInt(emoji.skintone.split(",")[0], 10);
+            const skintoneRight = parseInt(emoji.skintone.split(",")[1], 10);
+
+            if (skintoneLeft === selectedLeft)
+              skintonesRight.add(skintoneRight);
+            if (skintoneRight === selectedRight)
+              skintonesLeft.add(skintoneLeft);
+          });
+        } else {
+          currEmoji.skintones.forEach(function (emoji) {
+            skintonesLeft.add(emoji.skintone);
+            skintonesRight.add(emoji.skintone);
+          });
+        }
+      } else {
+        (isSkintoneVariant ? baseEmoji.skintones : currEmoji.skintones).forEach(
+          function (emoji) {
+            skintonesLeft.add(emoji.skintone);
+          }
+        );
+      }
+
+      // render skintone selector(s)
+      function createSkintoneSelector(skintoneIds, selectedSkintoneId) {
+        const selector = $("<div class='skintone-selector'></div>");
+
+        skintoneIds.forEach(function (skintoneId) {
+          const elClass = skintoneId === selectedSkintoneId ? "circle highlight" : "circle";
+          selector.append(
+            "<div class='" +
+              elClass +
+              "' data-skintone_id='" +
+              skintoneId +
+              "' style='background-color: " +
+              FITZPATRICK_COLOR_PALETTE[skintoneId - 1] +
+              ";'></div>"
+          );
+        });
+
+        return selector;
+      }
+      if (skintonesLeft.size > 0)
+        $("#skintones-emoji-preview").append(
+          createSkintoneSelector(Array.from(skintonesLeft).sort(), selectedLeft)
+        );
+      if (skintonesRight.size > 0)
+        $("#skintones-emoji-preview").append(
+          createSkintoneSelector(
+            Array.from(skintonesRight).sort(),
+            selectedRight
+          )
+        );
     }
 
     // get attributes
@@ -635,20 +722,42 @@ $(document).ready(function () {
   });
 
   // toggle outline and color in emoji detail view
-  $("#emoji-preview").click(function (e) {
+  $("#emoji-preview").on("click", ".circle, .emoji-preview-image", function (e) {
     var target = $(e.target);
 
     // get hexcode of current base emoji
-    emoji_hexcode = $(this).attr("data-base_hexcode");
+    emoji_hexcode = $(e.delegateTarget).attr("data-base_hexcode");
+    // get base emoji
+    const baseEmoji = EMOJI_LIST.find(function(emoji) {
+      return emoji.hexcode === emoji_hexcode;
+    }).item;
 
     // toggle "show color" checkbox
     if (target.is($("#color-emoji-preview")) || target.is($("#color-emoji-image-preview"))) {
       $("#show-color .switch input[type=checkbox]").prop("checked", true);
     } else if (target.is($("#outline-emoji-preview")) || target.is($("#outline-emoji-image-preview"))) {
       $("#show-color .switch input[type=checkbox]").prop("checked", false);
-    } else if (target.parent().is($("#skintones-emoji-preview"))) {
-      // set emoji hexcode to hexcode of skintone variant if one was clicked
-      emoji_hexcode = target.attr("data-skintone_hexcode");
+    } else if (target.parent().is($(".skintone-selector"))) {
+      // set emoji hexcode to hexcode of skintone variant if one was clicked or skintone combination
+      let skintoneIdCombination = $(".skintone-selector")
+        .map(function () {
+          const selector = $(this);
+
+          return selector.is(target.parent())
+            ? target.attr("data-skintone_id")
+            : selector.find(".highlight").attr("data-skintone_id");
+        })
+        .get();
+      // remove duplicates and combine to string
+      skintoneIdCombination = Array.from(new Set(skintoneIdCombination)).join(",");
+
+      const emojiMatch = Array.prototype
+        .concat(baseEmoji.skintones, baseEmoji.skintone_combinations)
+        .find(function (emoji) {
+          return emoji.skintone.toString() === skintoneIdCombination;
+        });
+
+      if(typeof emojiMatch === "object" && emojiMatch !== null) emoji_hexcode = emojiMatch.hexcode;
     }
 
     // update emoji detail view
@@ -678,31 +787,45 @@ $(document).ready(function () {
     $("#emoji-detail-wrapper .popover-wrapper").fadeOut(400);
   });
 
-  // sort toggle
-  $("#sort-selector .sort_selector__list a").click(function (e) {
-    e.preventDefault();
+  $("#sort-selector").on("update", function (_, selectedEl) {
+    const selectedSortFunction = $(selectedEl).data("sortfunc");
 
-    // fetch according sort function and update sort selector
-    updateSortSelector($(e.currentTarget).data("sortfunc"));
+    // if sort function is defined and isn't the same as the current one set new sort function
+    if (SORT_FUNCS[selectedSortFunction] !== undefined && selectedSortFunction !== currentSort) {
+      prevSort = currentSort;
+      currentSort = selectedSortFunction;
 
-    // refresh emoji list
-    if (prevSort !== currentSort) generateEmojiList();
+      // regenerate emoji list
+      generateEmojiList();
+    }
   });
 
   // sort direction toggle
-  $("#sort-selector .sort_selector__selected").click(function (e) {
+  $("#sort-selector .selector__selected-value").click(function (e) {
     // toggle current sort direction
     var sortSelector = $("#sort-selector");
 
     if (getSortDir() === "asc") {
-      sortSelector.removeClass("sort_selector--asc");
-      sortSelector.addClass("sort_selector--desc");
+      sortSelector.removeClass("selector--sortable-asc");
+      sortSelector.addClass("selector--sortable-desc");
     } else if (getSortDir() === "desc") {
-      sortSelector.removeClass("sort_selector--desc");
-      sortSelector.addClass("sort_selector--asc");
+      sortSelector.removeClass("selector--sortable-desc");
+      sortSelector.addClass("selector--sortable-asc");
     }
 
     // regenerate emoji list
     generateEmojiList();
+  });
+
+  $("#filter-selector").on("update", function (_, selectedEl) {
+    const selectedFilterFunction = $(selectedEl).data("filterfunc");
+
+    // if filter function is defined and isn't the same as the current one set new filter function
+    if (FILTER_FUNCS[selectedFilterFunction] !== undefined && selectedFilterFunction !== currentFilter) {
+      currentFilter = selectedFilterFunction;
+
+      // regenerate emoji list
+      updateList(getUrlParameters());
+    }
   });
 });
