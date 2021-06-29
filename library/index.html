@@ -148,40 +148,42 @@
       </nav>
       <main>
         <div id="library-content" class="content">
-          <div id="emoji_grid_header">
+          <div class="emoji_grid_header">
             <span id="selected-category">all OpenMojis</span>
             <span class="category-toggle"></span>
-            <div id="show-color">color
-              <label class="switch">
-                <input type="checkbox" checked="true">
-                <span class="slider"></span>
-              </label>
-            </div>
-            <div id="sort-selector" class="selector selector--sortable selector--sortable-asc dropdown dropdown--align-left dropdown--dense">
-              <div class="selector__selected-value"></div>
-              <div class="selector__list dropdown-content">
-                <div class="list-wrapper">
-                  <ul>
-                    <li class="hidden" data-sortfunc="best_match">Best Match</li>
-                    <li class="active" data-sortfunc="unicode">Unicode</li>
-                    <li data-sortfunc="alphabetical">A-Z</li>
-                    <li data-sortfunc="contribution_date">Date</li>
-                  </ul>
+            <div class="emoji_grid_header__selectors">
+              <div id="show-color">color
+                <label class="switch">
+                  <input type="checkbox" checked="true">
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div id="sort-selector" class="selector selector--sortable selector--sortable-asc dropdown dropdown--align-left dropdown--dense">
+                <div class="selector__selected-value"></div>
+                <div class="selector__list dropdown-content">
+                  <div class="list-wrapper">
+                    <ul>
+                      <li class="hidden" data-sortfunc="best_match">Best Match</li>
+                      <li class="active" data-sortfunc="unicode">Unicode</li>
+                      <li data-sortfunc="alphabetical">A-Z</li>
+                      <li data-sortfunc="contribution_date">Date</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div id="filter-selector" class="selector dropdown dropdown--align-left dropdown--dense">
-              <div class="selector__selected-value"></div>
-              <div class="selector__icon">
-                <img src="../data/black/svg/E257.svg" alt="filter icon" />
-              </div>
-              <div class="selector__list dropdown-content">
-                <div class="list-wrapper">
-                  <ul>
-                    <li class="active" data-filterfunc="all">All Emoji</li>
-                    <li data-filterfunc="skintones">With Skintones</li>
-                    <li data-filterfunc="multi_skintones">With Multi-Skintones</li>
-                  </ul>
+              <div id="filter-selector" class="selector dropdown dropdown--align-left dropdown--dense">
+                <div class="selector__selected-value"></div>
+                <div class="selector__icon">
+                  <img src="../data/black/svg/E257.svg" alt="filter icon" />
+                </div>
+                <div class="selector__list dropdown-content">
+                  <div class="list-wrapper">
+                    <ul>
+                      <li class="active" data-filterfunc="all">All Emoji</li>
+                      <li data-filterfunc="skintones">With Skintones</li>
+                      <li data-filterfunc="multi_skintones">With Multi-Skintones</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
