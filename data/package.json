@@ -1,26 +1,26 @@
 {
-  "_from": "openmoji@^13.0.0",
-  "_id": "openmoji@13.0.0",
+  "_from": "openmoji@^13.1.0",
+  "_id": "openmoji@13.1.0",
   "_inBundle": false,
-  "_integrity": "sha512-w4zQ3HyMcYSdrXqwWqhlXRAvV4Vw97MmPCD03L6Rl+jzUfRMHnM04fdTaFZjP18EYaHugnxOaGVKxoHvn/rYHA==",
+  "_integrity": "sha512-rOY6DKqnCPCU9D8lu/SK1cMVQjiBsiJRT4be+GV+WXPcd1os6AKWKtfGWhz0oIWhTrUB8WbLG72IkTt7l3h6Qw==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "openmoji@^13.0.0",
+    "raw": "openmoji@^13.1.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "^13.0.0",
+    "rawSpec": "^13.1.0",
     "saveSpec": null,
-    "fetchSpec": "^13.0.0"
+    "fetchSpec": "^13.1.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-13.0.0.tgz",
-  "_shasum": "691b53a1a5fa97fdee805f6cdecfe876c39fdc5e",
-  "_spec": "openmoji@^13.0.0",
+  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-13.1.0.tgz",
+  "_shasum": "ef69730f1efcc65d70871aa518e1517c6a7232c7",
+  "_spec": "openmoji@^13.1.0",
   "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
@@ -34,13 +34,13 @@
     "chroma-js": "^1.4.0",
     "csv-parse": "^2.5.0",
     "csv-write-stream": "^2.0.0",
-    "emojibase": "^4.0.0",
-    "emojibase-data": "^5.0.0",
+    "emojibase": "^5.0.0",
+    "emojibase-data": "^6.1.0",
     "glob": "^7.1.2",
     "jsdom": "^13.2.0",
     "kd-tree-javascript": "^1.0.3",
     "libxmljs": "^0.19.7",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "mkdirp": "^1.0.3",
     "mocha": "^5.2.0",
     "optimist": "^0.6.1",
@@ -84,5 +84,5 @@
     "test": "mocha --reporter progress test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
     "test-dev": "mocha --reporter min --invert --grep \"production\" test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
   },
-  "version": "13.0.0"
+  "version": "13.1.0"
 }

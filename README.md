@@ -8,7 +8,7 @@ Website of the OpenMoji project 👉 http://openmoji.org/
 Developer Setup
 ---------------
 1. Install [node.js](https://nodejs.org) (see version in the file [`.nvmrc`](.nvmrc#L1))
-2. Open Terminal and navigate over to the `openmoji-website` folder that you downloaded onto your computer:
+2. Open Terminal and navigate over to the `openmoji.org` folder that you downloaded onto your computer:
 
 ```
 cd path/to/folder
@@ -23,8 +23,14 @@ npm install
 Run
 ---
 
-Start a local web server (with live reload, scss support) by typing in your Terminal the command below. This will open the `index.html` in a new browser window.
+Start a local web server with live reload by typing in your Terminal the command below. This will open the `index.html` in a new browser window:
 
 ```
 npm start
+```
+
+Open a new tab in your Terminal with the command below to watch the style/*scss files and to compile those to the style/main.css file:
+
+```
+npm run watch-style
 ```
