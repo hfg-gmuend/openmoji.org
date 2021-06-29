@@ -1,6 +1,6 @@
 {
-  "name": "openmoji-website",
-  "version": "13.0.0",
+  "name": "openmoji.org",
+  "version": "13.1.0",
   "description": "Website of the OpenMoji project",
   "main": "index.js",
   "scripts": {
@@ -38,6 +38,6 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "openmoji": "^13.0.0"
+    "openmoji": "^13.1.0"
   }
 }
