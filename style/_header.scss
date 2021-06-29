@@ -104,12 +104,15 @@ header {
         display: none;
       }
 
+      > * {
+        margin-left: $gap-small;
+      }
+
       .gh-link {
         height: 30px;
-        margin-left: $gap-small;
 
         img {
-          height: 100%
+          height: 100%;
         }
       }
 
@@ -136,7 +139,7 @@ header {
             }
           }
 
-          div+div {
+          div + div {
             margin-left: $gap-small;
           }
         }

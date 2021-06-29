@@ -1035,9 +1035,11 @@ header .actions .action-links {
     display: none;
   }
 }
+header .actions .action-links > * {
+  margin-left: 20px;
+}
 header .actions .action-links .gh-link {
   height: 30px;
-  margin-left: 20px;
 }
 header .actions .action-links .gh-link img {
   height: 100%;
