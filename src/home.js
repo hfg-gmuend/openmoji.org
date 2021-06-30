@@ -130,12 +130,18 @@ $(document).ready(function () {
   const CATEGORIES = {
     "Interaction": "interaction",
     "UI Design": "ui-element",
-    "Technology": "technology"
+    "Technology": "technology",
+    "Healthcare": "healthcare",
+    "Climate Environment": "climate-environment",
   };
+  const CATEGORIES_LIMIT = 3;
   const EXAMPLES_COUNT = 6;
   const CATEGORY_SLIDE_INTERVAL_TIMEOUT = 4000;
   var categoryShowcase = $("#categories-showcase");
   var categorySlideInterval;
+
+  // select random categories based on defined limit
+  const RANDOM_CATEGORIES = Object.fromEntries(shuffleArr(Object.entries(CATEGORIES)).slice(0, CATEGORIES_LIMIT));
 
   function genCategoriesShowcase() {
     // add categories to html
@@ -143,18 +149,18 @@ $(document).ready(function () {
 
     var firstCategory = true;
 
-    for (var category in CATEGORIES) {
-      if (CATEGORIES.hasOwnProperty(category)) {
+    for (var category in RANDOM_CATEGORIES) {
+      if (RANDOM_CATEGORIES.hasOwnProperty(category)) {
         if (firstCategory) {
           html += "<div class='categories-item'>" +
-            "<a class='active-tab' data-category='" + CATEGORIES[category] + "' href=''>" +
+            "<a class='active-tab' data-category='" + RANDOM_CATEGORIES[category] + "' href=''>" +
             "<h3>" + category + "</h3>" +
             "</a>" +
             "</div>";
           firstCategory = false;
         } else {
           html += "<div class='categories-item'>" +
-            "<a data-category='" + CATEGORIES[category] + "' href=''>" +
+            "<a data-category='" + RANDOM_CATEGORIES[category] + "' href=''>" +
             "<h3>" + category + "</h3>" +
             "</a>" +
             "</div>";
@@ -203,17 +209,17 @@ $(document).ready(function () {
     $("#categories-showcase #examples").append(html);
 
     // set element width based on column count
-    $("#categories-showcase .categories-item").css("width", 100 / Object.keys(CATEGORIES).length + "%");
+    $("#categories-showcase .categories-item").css("width", 100 / Object.keys(RANDOM_CATEGORIES).length + "%");
   }
 
   function slideCategory() {
-    var currentCategoryIdx = Object.values(CATEGORIES).indexOf($("#categories-showcase #categories .active-tab").data("category"));
+    var currentCategoryIdx = Object.values(RANDOM_CATEGORIES).indexOf($("#categories-showcase #categories .active-tab").data("category"));
 
     // increment index
     currentCategoryIdx++;
 
     // reset index to 0 index is out of array
-    if (currentCategoryIdx >= Object.values(CATEGORIES).length) {
+    if (currentCategoryIdx >= Object.values(RANDOM_CATEGORIES).length) {
       currentCategoryIdx = 0;
     }
 
@@ -221,7 +227,7 @@ $(document).ready(function () {
     $(window).trigger($.Event("resize"));
 
     // update category selection
-    showCategoryExamples(Object.values(CATEGORIES)[currentCategoryIdx]);
+    showCategoryExamples(Object.values(RANDOM_CATEGORIES)[currentCategoryIdx]);
   }
 
 
