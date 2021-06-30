@@ -1,11 +1,14 @@
 $(document).ready(function () {
+  //------------ META ------------
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
   //------------ Emoji Cloud ------------
   var EMOJI_LIST;
   var EMOJI_AMOUNT;
   var EMOJI_FLAGS_AMOUNT;
   var EMOJI_VERSION;
   const EMOJI_COUNT = 300;
-  const EMOJI_POSITIONS = getPositions(1.4, EMOJI_COUNT);
+  const EMOJI_POSITIONS = getPositions(isMobile ? 1.1 : 1.4, EMOJI_COUNT);
   // get all emojis and generate category showcase
   $.getJSON("data/package.json", function (json) {
     EMOJI_VERSION = json.version;
@@ -52,7 +55,15 @@ $(document).ready(function () {
 
   function genEmojiCloud() {
     // randomize EMOJI_LIST
-    shuffledList = shuffleArr(EMOJI_LIST);
+    const shuffledList = shuffleArr(EMOJI_LIST);
+
+    const isSmall = isMobile;
+    const BOUNDARIES = {
+      xMin: isSmall ? 0 : -5,
+      xMax: isSmall ? 85 : 105,
+      yMin: 0,
+      yMax: isSmall ? 95 : 100,
+    };
 
     // populate html with emojis
     for (var i = 0; i < EMOJI_POSITIONS.length; i++) {
@@ -63,7 +74,25 @@ $(document).ready(function () {
       var yPos = EMOJI_POSITIONS[i].y + 50;
 
       // add emoji to html
-      if (!(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100)) $("#landing .content").append("<a href='./library#emoji=" + shuffledList[i].hexcode + "'><img class='emoji lazy' alt='' src='' data-src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
+      if (
+        !(
+          xPos >= BOUNDARIES.xMin &&
+          xPos <= BOUNDARIES.xMax &&
+          yPos >= BOUNDARIES.yMin &&
+          yPos <= BOUNDARIES.yMax
+        )
+      )
+        $("#landing .content").append(
+          "<a href='./library#emoji=" +
+            shuffledList[i].hexcode +
+            "'><img class='emoji lazy' alt='' src='' data-src='data/color/svg/" +
+            shuffledList[i].hexcode +
+            ".svg' align='middle' style='left: " +
+            xPos +
+            "%; top: " +
+            yPos +
+            "%'></a>"
+        );
     }
   }
 

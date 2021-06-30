@@ -1,7 +1,6 @@
 #home-wrapper {
-
   .container {
-    grid-template-areas: "header header""content content""footer footer";
+    grid-template-areas: "header header" "content content" "footer footer";
     grid-template-rows: 50px minmax(auto, auto) auto;
   }
 
@@ -28,6 +27,11 @@
   }
 
   #landing {
+    $emoji-size: 80px;
+    $emoji-size-sm: $emoji-size * 0.75;
+    $padding: $emoji-size / 2;
+    $padding-sm: $emoji-size-sm / 2;
+
     height: calc(100vh - 80px);
     display: flex;
     justify-content: left;
@@ -41,15 +45,17 @@
       justify-content: center;
       align-items: left;
       text-align: left;
-      padding-left: $gap-large;
+      margin-left: $gap-large;
+      padding: $padding;
       height: 400px;
       top: calc(50vh - 200px);
 
       @media screen and (max-width: $breakpoint-sm) {
-        padding-left: 20vw;
+        margin-left: calc(20vw - #{$padding-sm});
+        padding: $padding-sm;
       }
 
-      >* {
+      > * {
         width: 80%;
         max-width: $content-max-width * 0.75;
       }
@@ -77,10 +83,17 @@
 
     .emoji {
       position: absolute;
-      width: 80px;
-      height: 80px;
-      margin-left: -25px;
-      margin-top: -25px;
+      width: $emoji-size;
+      height: $emoji-size;
+      margin-left: -$emoji-size / 2;
+      margin-top: -$emoji-size / 2;
+
+      @media screen and (max-width: $breakpoint-sm) {
+        width: $emoji-size-sm;
+        height: $emoji-size-sm;
+        margin-left: -$emoji-size-sm / 2;
+        margin-top: -$emoji-size-sm / 2;
+      }
     }
 
     @include emoji-search();
@@ -171,7 +184,6 @@
           width: auto;
           padding: 0 25px;
         }
-
       }
 
       .tow-rows {
@@ -183,7 +195,7 @@
           flex-grow: 1;
           box-sizing: border-box;
 
-          &+.content-item {
+          & + .content-item {
             margin-top: $gap-med;
 
             @media screen and (min-width: $breakpoint-md) {
@@ -223,7 +235,6 @@
             flex-direction: column;
           }
         }
-
       }
 
       .content-item {
@@ -295,7 +306,7 @@
       &.left {
         justify-content: flex-end;
 
-        >.section {
+        > .section {
           justify-content: flex-end;
         }
       }
@@ -303,7 +314,7 @@
       &.right {
         justify-content: flex-start;
 
-        >.section {
+        > .section {
           justify-content: flex-start;
         }
       }
@@ -422,7 +433,7 @@
     .content {
       @extend %content;
 
-      >* {
+      > * {
         width: 100%;
       }
 
