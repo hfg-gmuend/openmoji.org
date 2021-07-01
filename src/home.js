@@ -1,11 +1,14 @@
 $(document).ready(function () {
+  //------------ META ------------
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
   //------------ Emoji Cloud ------------
   var EMOJI_LIST;
   var EMOJI_AMOUNT;
   var EMOJI_FLAGS_AMOUNT;
   var EMOJI_VERSION;
   const EMOJI_COUNT = 300;
-  const EMOJI_POSITIONS = getPositions(1.4, EMOJI_COUNT);
+  const EMOJI_POSITIONS = getPositions(isMobile ? 1.1 : 1.4, EMOJI_COUNT);
   // get all emojis and generate category showcase
   $.getJSON("data/package.json", function (json) {
     EMOJI_VERSION = json.version;
@@ -52,7 +55,15 @@ $(document).ready(function () {
 
   function genEmojiCloud() {
     // randomize EMOJI_LIST
-    shuffledList = shuffleArr(EMOJI_LIST);
+    const shuffledList = shuffleArr(EMOJI_LIST);
+
+    const isSmall = isMobile;
+    const BOUNDARIES = {
+      xMin: isSmall ? 0 : -5,
+      xMax: isSmall ? 85 : 105,
+      yMin: 0,
+      yMax: isSmall ? 95 : 100,
+    };
 
     // populate html with emojis
     for (var i = 0; i < EMOJI_POSITIONS.length; i++) {
@@ -63,7 +74,25 @@ $(document).ready(function () {
       var yPos = EMOJI_POSITIONS[i].y + 50;
 
       // add emoji to html
-      if (!(xPos >= -5 && xPos <= 105 && yPos >= 0 && yPos <= 100)) $("#landing .content").append("<a href='./library#emoji=" + shuffledList[i].hexcode + "'><img class='emoji lazy' alt='' src='' data-src='data/color/svg/" + shuffledList[i].hexcode + ".svg' align='middle' style='top: " + xPos + "%; left: " + yPos + "%'></a>");
+      if (
+        !(
+          xPos >= BOUNDARIES.xMin &&
+          xPos <= BOUNDARIES.xMax &&
+          yPos >= BOUNDARIES.yMin &&
+          yPos <= BOUNDARIES.yMax
+        )
+      )
+        $("#landing .content").append(
+          "<a href='./library#emoji=" +
+            shuffledList[i].hexcode +
+            "'><img class='emoji lazy' alt='' src='' data-src='data/color/svg/" +
+            shuffledList[i].hexcode +
+            ".svg' align='middle' style='left: " +
+            xPos +
+            "%; top: " +
+            yPos +
+            "%'></a>"
+        );
     }
   }
 
@@ -130,12 +159,18 @@ $(document).ready(function () {
   const CATEGORIES = {
     "Interaction": "interaction",
     "UI Design": "ui-element",
-    "Technology": "technology"
+    "Technology": "technology",
+    "Healthcare": "healthcare",
+    "Climate Environment": "climate-environment",
   };
+  const CATEGORIES_LIMIT = 3;
   const EXAMPLES_COUNT = 6;
   const CATEGORY_SLIDE_INTERVAL_TIMEOUT = 4000;
   var categoryShowcase = $("#categories-showcase");
   var categorySlideInterval;
+
+  // select random categories based on defined limit
+  const RANDOM_CATEGORIES = Object.fromEntries(shuffleArr(Object.entries(CATEGORIES)).slice(0, CATEGORIES_LIMIT));
 
   function genCategoriesShowcase() {
     // add categories to html
@@ -143,18 +178,18 @@ $(document).ready(function () {
 
     var firstCategory = true;
 
-    for (var category in CATEGORIES) {
-      if (CATEGORIES.hasOwnProperty(category)) {
+    for (var category in RANDOM_CATEGORIES) {
+      if (RANDOM_CATEGORIES.hasOwnProperty(category)) {
         if (firstCategory) {
           html += "<div class='categories-item'>" +
-            "<a class='active-tab' data-category='" + CATEGORIES[category] + "' href=''>" +
+            "<a class='active-tab' data-category='" + RANDOM_CATEGORIES[category] + "' href=''>" +
             "<h3>" + category + "</h3>" +
             "</a>" +
             "</div>";
           firstCategory = false;
         } else {
           html += "<div class='categories-item'>" +
-            "<a data-category='" + CATEGORIES[category] + "' href=''>" +
+            "<a data-category='" + RANDOM_CATEGORIES[category] + "' href=''>" +
             "<h3>" + category + "</h3>" +
             "</a>" +
             "</div>";
@@ -203,17 +238,17 @@ $(document).ready(function () {
     $("#categories-showcase #examples").append(html);
 
     // set element width based on column count
-    $("#categories-showcase .categories-item").css("width", 100 / Object.keys(CATEGORIES).length + "%");
+    $("#categories-showcase .categories-item").css("width", 100 / Object.keys(RANDOM_CATEGORIES).length + "%");
   }
 
   function slideCategory() {
-    var currentCategoryIdx = Object.values(CATEGORIES).indexOf($("#categories-showcase #categories .active-tab").data("category"));
+    var currentCategoryIdx = Object.values(RANDOM_CATEGORIES).indexOf($("#categories-showcase #categories .active-tab").data("category"));
 
     // increment index
     currentCategoryIdx++;
 
     // reset index to 0 index is out of array
-    if (currentCategoryIdx >= Object.values(CATEGORIES).length) {
+    if (currentCategoryIdx >= Object.values(RANDOM_CATEGORIES).length) {
       currentCategoryIdx = 0;
     }
 
@@ -221,7 +256,7 @@ $(document).ready(function () {
     $(window).trigger($.Event("resize"));
 
     // update category selection
-    showCategoryExamples(Object.values(CATEGORIES)[currentCategoryIdx]);
+    showCategoryExamples(Object.values(RANDOM_CATEGORIES)[currentCategoryIdx]);
   }
 
 

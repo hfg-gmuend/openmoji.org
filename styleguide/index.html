@@ -7,25 +7,29 @@
   <title>OpenMoji · Participate</title>
   <meta name="description" content="Open-source emojis for designers, developers and everyone else!">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
+  <meta property="og:title" content="OpenMoji · Participate">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenMoji">
+  <meta property="og:url" content="https://openmoji.org/styleguide/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/618x618/1F64B.png">
+  <meta property="og:image:alt" content="Open source emojis for designers, developers and everyone else!">
+  <meta property="og:description" content="Open source emojis for designers, developers and everyone else!">
   <meta name="apple-itunes-app" content="app-id=1462636288">
 
 
   <!-- Favicon-->
-  <link rel="apple-touch-icon" sizes="180x180" href="../src/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../src/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../src/favicons/favicon-16x16.png">
-  <link rel="manifest" href="../src/favicons/site.webmanifest">
-  <link rel="mask-icon" href="../src/favicons/safari-pinned-tab.svg" color="#000000">
-  <link rel="shortcut icon" href="../src/favicons/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../img/favicons/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon.png">
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="../img/favicons/favicon-32x32.png">
+  <link rel="alternate icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../img/favicons/site.webmanifest">
+  <link rel="mask-icon" href="../img/favicons/favicon-black.svg" color="#000">
+  <!-- <link rel="mask-icon" href="../img/favicons/safari-pinned-tab.svg" color="#000000"> -->
+  <!-- <link rel="shortcut icon" href="../img/favicons/favicon.ico"> -->
   <meta name="apple-mobile-web-app-title" content="OpenMoji">
   <meta name="application-name" content="OpenMoji">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-config" content="../src/favicons/browserconfig.xml">
+  <meta name="msapplication-config" content="../img/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
@@ -51,8 +55,11 @@
             <li><a href="../about">About</a></li>
           </ul>
           <div class="github-link">
-            <a class="gh-link iconlink" rel="noopener" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img
-                src="../img/brand-icons/github_hi.svg" alt="github icon"></a>
+            <a class="gh-link iconlink" rel="noopener" href="https://github.com/hfg-gmuend/openmoji"
+              target="_blank"><img src="../img/brand-icons/github_hi.svg" alt="github icon"></a>
+            <a class="iconlink" rel="noopener" href="https://twitter.com/OpenMoji" target="_blank">
+              <img alt="twitter" src="../img/brand-icons/twitter_hi.svg">
+            </a>
           </div>
         </nav>
         <div class="actions">
@@ -63,8 +70,11 @@
           <div class="mobile-toggle">
           </div>
           <div class="action-links">
-            <a class="gh-link iconlink" rel="noopener" href="https://github.com/hfg-gmuend/openmoji" target="_blank"><img
-                src="../img/brand-icons/github_hi.svg" alt="github icon"></a>
+            <a class="gh-link iconlink" rel="noopener" href="https://github.com/hfg-gmuend/openmoji"
+              target="_blank"><img src="../img/brand-icons/github_hi.svg" alt="github icon"></a>
+            <a class="iconlink" rel="noopener" href="https://twitter.com/OpenMoji" target="_blank">
+              <img alt="twitter" src="../img/brand-icons/twitter_hi.svg">
+            </a>
             <div class="dropdown">
               <button>
                 <div>Get OpenMojis</div>
@@ -108,14 +118,20 @@
               </ul>
               <ul>
                   <li>
-                    <a rel="noopener" href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Black.ttf"
-                      target="_blank">OpenMoji-Black.ttf</a>
+                    <a rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/font/OpenMoji-Black.ttf"
+                      target="_blank" download>OpenMoji-Black.ttf</a>
                     <div class="disclaimer">proof of concept version,<br>some glyphs are broken,<br>not intended for production use!</div>
                   </li>
                   <li>
-                    <a rel="noopener" href="https://github.com/hfg-gmuend/openmoji/blob/master/font/OpenMoji-Color.ttf"
-                      target="_blank">OpenMoji-Color.ttf</a>
+                    <a rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/font/OpenMoji-Color.ttf"
+                      target="_blank" download>OpenMoji-Color.ttf</a>
                     <div class="disclaimer">beta version,<br>works in Firefox / Edge / Adobe CC,<br>see <a href="https://github.com/hfg-gmuend/openmoji/issues/93" target="_blank" rel="noopener">discussion</a>,<br>not intended for production use!</div>
+                  </li>
+
+                  <li>
+                    <a rel="noopener" href="https://itunes.apple.com/us/app/openmoji/id1462636288"
+                      target="_blank">OpenMoji App</a>
+                    <div class="disclaimer">for iOS</div>
                   </li>
 
                   <li>
@@ -394,7 +410,7 @@
           <article id="perspective">
             <h1>Perspective</h1>
             <div class="two-rows">
-              <p>All objects should be displayed <strong>2-dimensionally</strong> from the front. 
+              <p>All objects should be displayed <strong>2-dimensionally</strong> from the front.
                 In exceptional cases use an isometric projection for better distinction.</p>
               <div class="img-big border">
                 <img class="lazy" alt="perspective" data-src="../img/styleguide/perspective.svg">
@@ -409,15 +425,15 @@
               in special cases.
             </p>
             <a class="download-styleguide-asset"
-              rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-color-palette.svg" download>
+              rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette.svg" download>
               <button type="button">OpenMoji Color Palette (.svg)</button>
             </a>
             <a class="download-styleguide-asset button"
-              rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-color-palette-inkscape.gpl" download>
+              rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette-inkscape.gpl" download>
               <button type="button">Inkscape Palette (.gpl)</button>
             </a>
             <a class="download-styleguide-asset button"
-              rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-color-palette-adobe-illustrator.ase" download>
+              rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette-adobe-illustrator.ase" download>
               <button type="button">Illustrator Palette (.ase)</button>
             </a>
             <div class="two-rows">
@@ -452,7 +468,7 @@
                 </br>
                 </br>
                 <a class="download-styleguide-asset"
-                  rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-abc.svg" download>
+                  rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-abc.svg" download>
                   <button type="button">openmoji-abc.svg</button>
                 </a>
               </p>
@@ -643,11 +659,11 @@
             <h2 id="file_contents">Templates</h2>
             <p>
               <a class="download-styleguide-asset"
-                rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-template.ai" download>
+                rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-template.ai" download>
                 <button type="button">openmoji-template.ai</button>
               </a>
               <a class="download-styleguide-asset"
-                rel="noopener" href="https://github.com/hfg-gmuend/openmoji/raw/master/guidelines/openmoji-template.svg" download>
+                rel="noopener" href="../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-template.svg" download>
                 <button type="button">openmoji-template.svg</button>
               </a>
             </p>
@@ -660,9 +676,6 @@
           <p><a href="https://creativecommons.org/licenses/by-sa/4.0/.">CC BY-SA 4.0</a></p>
         </div>
         <ul>
-          <li><a class="iconlink"
-              rel="noopener" href="https://twitter.com/share?url=https://www.github.com/hfg-gmuend/openmoji/releases/latest&amp;text=OpenMojis&amp;hashtags=openmoji"
-              target="_blank"><img alt="twitter" src="../img/brand-icons/twitter.svg"></a></li>
           <li><a class="iconlink"
               href="http://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest"><img
                 alt="facebook" src="../img/brand-icons/facebook.svg" target="_blank"></a></li>

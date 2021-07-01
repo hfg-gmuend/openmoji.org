@@ -70,7 +70,7 @@
     overflow: initial;
   }
 
-  #emoji_grid_header {
+  .emoji_grid_header {
     width: 100%;
     max-width: $content-max-width;
     padding: $gap-reg 0;
@@ -80,10 +80,14 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: -20px;
 
     @media screen and (max-width: $breakpoint-md) {
       padding: 0 $gap-med $gap-small $gap-med;
+
+      margin-top: -$gap-xs;
+      > * {
+        margin-bottom: $gap-xs;
+      }
     }
 
     @media screen and (max-width: $breakpoint-sm) {
@@ -126,19 +130,18 @@
       }
     }
 
-    // #show-color {
-    //   margin-right: 20px;
-    // }
-    > * + * {
-      margin-left: 20px;
+    &__selectors {
+      display: flex;
+      align-items: center;
 
-      // TODO: not working because of invisible mobile elements
-      //   &:first-child {
-      //     margin-left: 0;
-      //   }
+      #show-color {
+        white-space: nowrap;
+      }
+
+      > * + * {
+        margin-left: 20px;
+      }
     }
-    // TODO: not widely supported
-    // gap: 20px;
   }
 }
 
