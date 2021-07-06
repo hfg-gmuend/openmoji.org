@@ -637,7 +637,7 @@ $(document).ready(function () {
 
     // update download links
     $("#svg-download-btn").attr("href", localVariantPath + "/svg/" + currEmoji.hexcode + ".svg");
-    $("#png-download-btn").attr("href", "/php/download_from_github.php?emoji_hexcode=" + currEmoji.hexcode + "&emoji_variant=" + colorVariant);
+    $("#png-download-btn").attr("href", "../php/download_asset.php?type=emoji&emoji_hexcode=" + currEmoji.hexcode + "&emoji_variant=" + colorVariant);
 
     // update prev and next
     if (currentList.length > 1) {
