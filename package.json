@@ -1,43 +1,14 @@
 {
-  "name": "openmoji.org",
-  "version": "13.1.0",
-  "description": "Website of the OpenMoji project",
-  "main": "index.js",
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "npm run watch",
-    "watch": "budo --host localhost --dir . --open --live --verbose --watch-glob '**/*.{html,js,css}'",
-    "watch-style": "nodemon -e scss -x \"npm run build-css\" ",
-    "build-css": "gulp sass",
-    "postinstall": "gulp copy-openmoji-data",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hfg-gmuend/openmoji-website.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hfg-gmuend/openmoji-website/issues"
-  },
-  "homepage": "http://openmoji.org/",
   "devDependencies": {
-    "budo": "^11.6.3",
-    "fuse.js": "^3.4.5",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.0",
-    "gulp-cli": "^2.2.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "node-sass": "^6.0.1",
-    "nodemon": "^2.0.7",
-    "sass": "^1.35.1"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ],
-  "dependencies": {
-    "openmoji": "^13.1.0"
+    "astro": "^0.20.10"
   }
 }
