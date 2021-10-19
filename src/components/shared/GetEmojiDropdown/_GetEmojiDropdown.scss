@@ -1,0 +1,30 @@
+@use 'src/shared-styles/_variables.scss';
+
+.dropdown {
+  margin-left: variables.$gap-small;
+
+  button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      border-color: variables.$color-white;
+      display: inline-block;
+      padding: 4px;
+      margin-bottom: 2px;
+
+      &.down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    }
+
+    div + div {
+      margin-left: variables.$gap-small;
+    }
+  }
+}

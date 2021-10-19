@@ -1,0 +1,202 @@
+@use 'src/shared-styles/_variables.scss';
+@use 'src/shared-styles/_mixins.scss';
+
+.page-header.orange nav{
+  ul{
+    li{
+      border-color: variables.$color-orange-light;
+    }
+  }
+}
+
+.page-header.yellow nav{
+  ul{
+    li{
+      border-color: variables.$color-yellow-light;
+    }
+  }
+}
+
+.home{
+    position: fixed;
+    width: 100vw;
+    border-bottom: variables.$color-grey-super-light 1px solid;
+}
+
+.default{
+  position: sticky;
+}
+
+header {
+  z-index: 10;
+  background-color: variables.$color-white;
+  box-sizing: border-box;
+  padding: 0 variables.$gap-med 0 variables.$gap-med;
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  
+  top: 0;
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    padding: 0 variables.$gap-small 0 variables.$gap-small;
+  }
+
+  .project-name {
+    display: none;
+    color: variables.$color-grey-dark;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: block;
+
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        height: 30px;
+        margin-right: variables.$gap-reg;
+        cursor: pointer;
+        list-style: none;
+
+        @include mixins.active-tab;
+
+        a {
+          vertical-align: middle;
+          display: inline-block;
+        }
+      }
+    }
+
+    .github-link {
+      display: none;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include mixins.emoji-search;
+
+    .emoji-search img {
+      left: 2px;
+      top: 10px;
+      height: 50%;
+    }
+
+    @media screen and (min-width: variables.$breakpoint-lg) {
+      .emoji-search input {
+        width: 210px;
+      }
+    }
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      .emoji-search {
+        display: none;
+      }
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: url(../img/menu.svg) no-repeat center center;
+      padding: 15px;
+      z-index: variables.$z-index-menu-toggle;
+
+      @media screen and (max-width: variables.$breakpoint-md) {
+        display: block;
+      }
+    }
+
+    .action-links {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      @media screen and (max-width: variables.$breakpoint-md) {
+        display: none;
+      }
+
+      > * {
+        margin-left: variables.$gap-small;
+      }
+
+      .gh-link {
+        height: 30px;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    &.menu-open {
+      position: static !important; // fullscreen menu
+
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: variables.$color-white;
+        z-index: variables.$z-index-menu;
+
+        ul {
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            height: auto;
+            margin-right: 0;
+            margin-bottom: variables.$gap-small;
+
+            &:last-child {
+              margin-bottom: variables.$gap-reg;
+            }
+
+            a {
+              margin: 5px;
+              font-size: variables.$font-sz-lg;
+            }
+          }
+        }
+
+        .github-link {
+          display: block;
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      .mobile-toggle {
+        background: url(../img/menu-close.svg) no-repeat center center;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        border: none;
+      }
+    }
+  }
+}
