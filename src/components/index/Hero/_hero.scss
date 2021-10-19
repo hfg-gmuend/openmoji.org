@@ -1,0 +1,95 @@
+@use 'src/shared-styles/_variables.scss';
+@use 'src/shared-styles/_mixins.scss';
+
+$padding: variables.$emoji-size / 2;
+$padding-sm: variables.$emoji-size-sm / 2;
+
+.wrapper {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  margin-left: variables.$gap-large;
+  padding: $padding;
+  height: 400px;
+  top: calc(50vh - 200px);
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    margin-left: calc(20vw - #{$padding-sm});
+    padding: $padding-sm;
+  }
+
+  > * {
+    width: 80%;
+    max-width: variables.$content-max-width * 0.75;
+  }
+}
+
+h1 {
+  font-size: variables.$font-sz-md;
+  font-weight: variables.$font-reg;
+  margin-bottom: variables.$gap-xs;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+  width: auto;
+}
+
+.version{
+  color: variables.$color-red-light;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: variables.$font-sz-xl;
+  font-weight: variables.$font-reg;
+  margin-bottom: 35px;
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    font-size: variables.$font-sz-lg;
+  }
+}
+
+@include mixins.emoji-search;
+
+.emoji-search {
+  max-width: 400px;
+  height: 60px;
+
+  img {
+    left: 0;
+    top: 12px;
+    position: absolute;
+    height: 60%;
+    width: auto;
+    padding-right: variables.$gap-small;
+    opacity: 0.4;
+
+    @media screen and (max-width: variables.$breakpoint-sm) {
+      height: 40%;
+      top: 18px;
+      left: 8px;
+    }
+  }
+
+  input {
+    font-size: 23px;
+    background-color: variables.$background-color-grey;
+    padding-left: 55px;
+    border: none;
+
+    @media screen and (max-width: variables.$breakpoint-sm) {
+      font-size: variables.$font-sz-md;
+    }
+  }
+}

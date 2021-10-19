@@ -1,0 +1,40 @@
+---
+import searchIcon from './assets/search.svg';
+import packageJSON from '/data/package.json';
+const openMojiVersion = packageJSON.version || '';
+---
+
+<div class="wrapper">
+  <style lang="scss">
+    @use './_hero.scss';
+  </style>
+  <style lang="scss" global>
+    @use 'src/shared-styles/_variables.scss';
+    .emoji {
+      position: absolute;
+      width: variables.$emoji-size;
+      height: variables.$emoji-size;
+      margin-left: - #{variables.$emoji-size} / 2;
+      margin-top: - #{variables.$emoji-size} / 2;
+
+      @media screen and (max-width: variables.$breakpoint-sm) {
+        width: variables.$emoji-size-sm;
+        height: variables.$emoji-size-sm;
+        margin-left: -#{variables.$emoji-size-sm} / 2;
+        margin-top: -#{variables.$emoji-size-sm} / 2;
+      }
+    }
+  </style>
+  <div class="content">
+    <h1>OpenMoji <span id="emoji-version" class="version">{openMojiVersion}</span></h1>
+    <h2>Open source emojis for designers, developers and everyone else!</h2>
+    <div class="emoji-search">
+      <img src={searchIcon} alt="search icon">
+      <label class="hidden" for="emojisearch">Search</label>
+      <input aria-label="Search" type="text" class="search" id="emojisearch" placeholder="search emoji …">
+    </div>
+    <div id="emojiCloud">
+      <!-- Emoji will be dynamically added by hero.js -->
+    </div>
+  </div>
+</div>
