@@ -1,0 +1,82 @@
+@use 'src/shared-styles/_variables.scss';
+@use 'src/shared-styles/_mixins.scss';
+
+.markdownContent{
+  @include mixins.content;
+  margin-left: 0px;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav content"
+    "footer footer";
+  grid-template-columns: minmax(200px, 300px) auto;
+  grid-template-rows: 80px 1fr 80px;
+
+  // height: auto;
+  @media screen and (max-width: variables.$breakpoint-md) {
+    grid-template-areas:
+      "header header"
+      "content content"
+      "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 80px;
+  }
+}
+
+.nav-left {
+  grid-area: nav;
+  box-sizing: border-box;
+  max-width: 300px;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    max-width: 100%;
+    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    margin: 0;
+    overflow: initial;
+    display: none;
+  }
+
+  >ul {
+    margin: variables.$gap-reg variables.$gap-med;
+    position: sticky;
+    top: 80px;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      margin: variables.$gap-reg variables.$gap-reg;
+    }
+  }
+
+  ul li {
+    display: block;
+    margin-top: variables.$gap-xs;
+  }
+
+  .submenu {
+    padding-left: variables.$gap-reg;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .category-close {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: url(../img/menu-close.svg) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    z-index: variables.$z-index-overlay-all;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: block;
+    }
+  }
+}

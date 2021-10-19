@@ -1,0 +1,55 @@
+---
+import MetaHead from '../../components/shared/MetaHead.astro';
+import Header from '../../components/shared/Header/Header.astro';
+import Footer from '../../components/shared/Footer/Footer.astro';
+
+const {content} = Astro.props;
+const title = (content.title || '') + ' · OpenMoji';
+const {sidebarFilter} = content || false;
+const {color} = content || 'orange';
+const contentWidth = content.content || 'defaultWidth';
+let showOnlyHeadlinesWithDepth = false;
+if(sidebarFilter !== false){
+  showOnlyHeadlinesWithDepth = [2, 3];
+}
+
+---
+<html lang="en">
+  <MetaHead title={title}/>
+
+  <body>
+    <style lang="scss">
+      @use './_layoutWithSidebar.scss';
+    </style>
+    <div class="container">
+      <Header color={color}/>
+      <nav class="nav-left">
+        <ul id="nav-left">
+        {
+          content.astro.headers.map((headline) => {
+            let appendRow = false;
+
+            if(showOnlyHeadlinesWithDepth !== false && showOnlyHeadlinesWithDepth.indexOf(headline.depth) > -1){
+              appendRow = true;
+            }
+
+            if(headline.depth === 1){
+                appendRow = false;
+            }
+
+            if(appendRow === true){
+              return (<li class="mainmenu"><a href={'#' + headline.slug}>{headline.text}</a></li>);
+            }
+
+          })
+        }
+        </ul>
+      </nav>
+      <main class={"markdownContent " + color + " " + contentWidth}>
+        <style lang="scss" global> @use './_layoutWithSidebarMarkdown.scss'; </style>
+        <slot />
+      </main>
+      <Footer/>
+    </div>
+  </body>
+</html>
