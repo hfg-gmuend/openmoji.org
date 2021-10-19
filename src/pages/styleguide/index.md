@@ -40,15 +40,14 @@ Special cases are the “Emoji Faces”. They are placed inside a smaller circle
 
 ![The full grid with the center circle highlighted](assets-styleguide/emoji-circle.svg)
 
-Examples<br>
+##### Examples
 ![3 examples of emoji placed within the grid](assets-styleguide/examples-grid.svg)
 
 #### Basic Circles
 Basic circles should give a consistent look to the entire set. Parts of the circles can also be used for rounded corners or wavy forms.
 ![Circles in various sizes from 46px to 4px](assets-styleguide/basic-circles.svg)
 
-Examples
-
+##### Examples
 ![Three emoji showing the various circle sizes in use](assets-styleguide/examples-basic-circles.svg)
 
 ### Contour
@@ -80,11 +79,10 @@ Please aim to mainly use the **primary colors**. Use the lighter colours as defa
 
 [Illustrator Palette (.ase)](https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette-adobe-illustrator.ase)
 
-Primary Colors
-
+##### Primary Colors
 ![The primary colors: Two shades of blue, red, green and yellow and a range from white to black with 3 grays in between](assets-styleguide/primary-colors.svg)
 
-Secondary Colors
+##### Secondary Colors
 ![The secondary colors: Two shades of rose, lavender, orange and brown](assets-styleguide/secondary-colors.svg)
 
 ### Shadow

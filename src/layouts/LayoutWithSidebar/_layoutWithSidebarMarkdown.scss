@@ -47,19 +47,24 @@
   h2{
     font-size: variables.$font-sz-lg;
     font-weight: variables.$font-bold;
-    margin-bottom: variables.$gap-reg;
+    margin-top: variables.$gap-med;
   }
 
   h3{
     font-size: variables.$font-sz-lg;
-    margin-bottom: variables.$gap-reg;
+    margin-top: variables.$gap-med;
+  }
+
+  h4, h5{
+    font-size: variables.$font-sz-md;
+    font-weight: variables.$font-bold;
+    margin-top: variables.$gap-reg;
   }
 
   img, video{
-    width: 80%;
-  }
-
-  img, video{
-    max-width: 100%;
+    display: block;
+    margin-top: variables.$gap-med;
+    min-width: 30%;
+    max-width: 60%;
   }
 }
