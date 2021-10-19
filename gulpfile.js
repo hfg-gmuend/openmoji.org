@@ -1,45 +1,23 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass')(require('sass'));
-var prefix = require('gulp-autoprefixer');
-var plumber = require('gulp-plumber');
-var sourcemaps = require('gulp-sourcemaps');
 
-function onError(err) {
-  console.log(err);
-}
-
-gulp.task('sass', function () {
-  return gulp.src('style/main.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      errLogToConsole: true
-    }).on('error', sass.logError))
-    .pipe(prefix({
-      grid: true
-    }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('style/'))
-    .pipe(plumber({
-      errorHandler: onError
-    }));
-});
+/* Copy emoji data */
 
 gulp.task('copy-openmoji-data-json', function(){
   return gulp.src([
     'node_modules/openmoji/package.json',
     'node_modules/openmoji/data/color-palette.json',
     'node_modules/openmoji/data/openmoji.json',
-    ]).pipe(gulp.dest('data/'));
+    ]).pipe(gulp.dest('public/data/'));
 });
 
 gulp.task('copy-openmoji-data-black-svg', function(){
   return gulp.src('node_modules/openmoji/black/svg/*.svg')
-    .pipe(gulp.dest('data/black/svg/'));
+    .pipe(gulp.dest('public/data/black/svg/'));
 });
 
 gulp.task('copy-openmoji-data-color-svg', function(){
   return gulp.src('node_modules/openmoji/color/svg/*.svg')
-    .pipe(gulp.dest('data/color/svg/'));
+    .pipe(gulp.dest('public/data/color/svg/'));
 });
 
 gulp.task('copy-openmoji-data',
@@ -47,4 +25,22 @@ gulp.task('copy-openmoji-data',
     'copy-openmoji-data-json',
     'copy-openmoji-data-black-svg',
     'copy-openmoji-data-color-svg'
+));
+
+/* Copy Markdown assets */
+
+gulp.task('copy-markdown-samples-assets', function(){
+  return gulp.src('src/pages/samples/assets-samples/*')
+    .pipe(gulp.dest('public/assets-samples/'));
+});
+
+gulp.task('copy-markdown-styleguide-assets', function(){
+  return gulp.src('src/pages/styleguide/assets-styleguide/*')
+    .pipe(gulp.dest('public/assets-styleguide/'));
+});
+
+gulp.task('copy-markdown-assets',
+  gulp.series(
+    'copy-markdown-samples-assets',
+    'copy-markdown-styleguide-assets'
 ));
