@@ -1,0 +1,7 @@
+@use 'src/shared-styles/_variables.scss';
+@use 'src/shared-styles/_mixins.scss';
+
+.markdownContent{
+	@include mixins.content;
+	margin-bottom: variables.$gap-med;
+}

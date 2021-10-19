@@ -1,0 +1,56 @@
+@use 'src/shared-styles/_variables.scss';
+
+.markdownContent{
+	padding-left: variables.$gap-xs;
+	padding-right: variables.$gap-xs;
+
+	video{
+		max-width: 100%;
+	}
+
+	a{
+		text-decoration: underline;
+	}
+
+	img{
+		max-width: 100%;
+	}
+
+	h1{
+		margin-bottom: variables.$gap-reg;
+	}
+
+	h2{
+		margin-top: variables.$gap-med;
+		margin-bottom: variables.$gap-xs;
+	}
+
+	ul, ol, p{
+		margin-top: variables.$gap-xs;
+	}
+
+	li {
+		list-style-type: disc;
+		list-style-position: inside
+	}
+
+	summary{
+		padding: 6px 14px 8px 14px;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+
+	summary:hover{
+		background-color: variables.$color-grey-ultra-light;
+	}
+
+	details p, details ul, details ol, details img{
+		padding: 0 20px;
+	}
+
+	details :last-child{
+		margin-bottom: variables.$gap-small;
+	}
+
+	
+}
