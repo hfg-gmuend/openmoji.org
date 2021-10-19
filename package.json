@@ -1,14 +1,28 @@
 {
-  "name": "@example/starter",
-  "version": "0.0.1",
-  "private": true,
+  "name": "openmoji.org",
+  "version": "13.1.0",
+  "description": "Website of the OpenMoji project",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hfg-gmuend/openmoji-website/issues"
+  },
+  "homepage": "http://openmoji.org/",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "gulp copy-markdown-assets && astro dev",
+    "start": "gulp copy-markdown-assets && astro dev",
+    "build": "gulp copy-markdown-assets && astro build",
+    "preview": "gulp copy-markdown-assets && astro preview",
+    "postinstall": "gulp copy-markdown-assets && gulp copy-openmoji-data"
   },
   "devDependencies": {
-    "astro": "^0.20.10"
+    "gulp": "^4.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "dependencies": {
+    "astro": "^0.20.12",
+    "openmoji": "^13.1.0"
   }
 }
