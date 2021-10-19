@@ -1,0 +1,18 @@
+---
+const {title} = Astro.props || 'OpenMoji';
+const {titleOG} = Astro.props || title;
+import MetaFavicon from './MetaFavicon.astro';
+import MetaOpenGraph from './MetaOpenGraph.astro';
+---
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{title}</title>
+  <meta name="description" content="Open source emojis for designers, developers and everyone else!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <MetaFavicon/>
+  <MetaOpenGraph title={title}/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+  <style lang="scss" global> @use '../../shared-styles/_base.scss'; </style>
+</head>
