@@ -8,13 +8,7 @@ $(document).ready(function () {
   var EMOJI_FLAGS_AMOUNT;
   var EMOJI_VERSION;
   const EMOJI_COUNT = 300;
-  const EMOJI_POSITIONS = getPositions(isMobile ? 1.1 : 1.4, EMOJI_COUNT);
   // get all emojis and generate category showcase
-  $.getJSON("data/package.json", function (json) {
-    EMOJI_VERSION = json.version;
-
-    setVersion();
-  });
   $.getJSON("data/openmoji.json", function (json) {
     EMOJI_AMOUNT = parseInt(json.length);
     EMOJI_FLAGS_AMOUNT = parseInt(json.filter(function (emoji) {
@@ -24,135 +18,8 @@ $(document).ready(function () {
       return emoji.skintone === "" && emoji.subgroups != "country-flag";
     });
 
-    setEmojiCounter();
-    setEmojiFlagCounter();
-    genEmojiCloud();
     genCategoriesShowcase();
-    // initBigEmojiOverview();
-    var lazyLoadInstance = new LazyLoad({
-        elements_selector: ".lazy"
-    });
   });
-
-  function setVersion() {
-    if (EMOJI_VERSION.length !== 0) {
-      EMOJI_VERSION = EMOJI_VERSION.split(".");
-      $("#emoji-version").text(EMOJI_VERSION[0] + "." + EMOJI_VERSION[1]);
-    }
-  }
-
-  function setEmojiCounter() {
-    if (EMOJI_AMOUNT.length !== 0) {
-      $("#emoji-amount").text(EMOJI_AMOUNT);
-    }
-  }
-
-  function setEmojiFlagCounter() {
-    if (EMOJI_FLAGS_AMOUNT.length !== 0) {
-      $("#flag-amount").text(EMOJI_FLAGS_AMOUNT);
-    }
-  }
-
-  function genEmojiCloud() {
-    // randomize EMOJI_LIST
-    const shuffledList = shuffleArr(EMOJI_LIST);
-
-    const isSmall = isMobile;
-    const BOUNDARIES = {
-      xMin: isSmall ? 0 : -5,
-      xMax: isSmall ? 85 : 105,
-      yMin: 0,
-      yMax: isSmall ? 95 : 100,
-    };
-
-    // populate html with emojis
-    for (var i = 0; i < EMOJI_POSITIONS.length; i++) {
-      // break out of loop if array doesn't have new emojis anymore
-      if (i >= shuffledList.length) break;
-
-      var xPos = EMOJI_POSITIONS[i].x + 50;
-      var yPos = EMOJI_POSITIONS[i].y + 50;
-
-      // add emoji to html
-      if (
-        !(
-          xPos >= BOUNDARIES.xMin &&
-          xPos <= BOUNDARIES.xMax &&
-          yPos >= BOUNDARIES.yMin &&
-          yPos <= BOUNDARIES.yMax
-        )
-      )
-        $("#landing .content").append(
-          "<a href='./library#emoji=" +
-            shuffledList[i].hexcode +
-            "'><img class='emoji lazy' alt='' src='' data-src='data/color/svg/" +
-            shuffledList[i].hexcode +
-            ".svg' align='middle' style='left: " +
-            xPos +
-            "%; top: " +
-            yPos +
-            "%'></a>"
-        );
-    }
-  }
-
-  // get emoji positions based on the Vogel/Fermat spiral Equation
-  function getPositions(a, n) {
-    var positions = [];
-    const GOLDEN_ANGLE = 137.508;
-
-    for (var i = 1; i <= n; i++) {
-      var theta = i * GOLDEN_ANGLE;
-
-      // calculate x and y position
-      var xPos = Math.sign(a) * Math.abs(a) * Math.pow(theta, 0.5) * Math.cos(theta);
-      var yPos = Math.sign(a) * Math.abs(a) * Math.pow(theta, 0.5) * Math.sin(theta);
-
-      // push coordinates into position array
-      positions.push({
-        x: xPos,
-        y: yPos
-      });
-    }
-
-    return positions;
-  }
-
-
-  //------------ Big overview scroll animation ------------
-  function initBigEmojiOverview() {
-    var scrollMagicController = new ScrollMagic.Controller();
-    var emoji_pool = {
-      emoji_left: ["1F420"],
-      emoji_right: ["1F6F8"]
-    };
-
-    // set random emojis for showcase
-    $("#big-emoji-left").attr("data-src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_left)[0] + ".svg");
-    $(".big-emoji-right").attr("data-src", "data/color/svg/" + shuffleArr(emoji_pool.emoji_right)[0] + ".svg");
-
-    var emoji_left = new ScrollMagic.Scene({
-        triggerElement: "#big-emoji-left-start",
-        duration: Math.abs($("#big-emoji-left-start").position().top - $("#big-emoji-left-end").position().top)
-      })
-      .setPin("#big-emoji-left")
-      .setTween("#big-emoji-left", {
-        scale: 2,
-        transformOrigin: "100% 50%"
-      })
-      .addTo(scrollMagicController);
-    var emoji_right = new ScrollMagic.Scene({
-        triggerElement: ".big-emoji-right-start",
-        duration: Math.abs($(".big-emoji-right-start").position().top - $(".big-emoji-right-end").position().top)
-      })
-      .setPin(".big-emoji-right")
-      .setTween(".big-emoji-right", {
-        scale: 2,
-        transformOrigin: "0% 50%"
-      })
-      .addTo(scrollMagicController);
-  }
-
 
   //------------ Category showcase ------------
   // Object that holds all Categories with their html display name and corresponding group in the emoji list
@@ -261,13 +128,6 @@ $(document).ready(function () {
 
 
   //------------ Event listeners ------------
-  // search field listener to change location to ./library and set search filter
-  $(".search").keydown(function (e) {
-    var url = window.location.href;
-    if (e.which == 13) {
-      window.location.href = url.substring(0, url.lastIndexOf("/") + 1) + "./library#search=" + $(this).val();
-    }
-  });
 
   // switch category when clicked
   if (categoryShowcase) {
@@ -295,16 +155,22 @@ $(document).ready(function () {
     // emoji_left.duration(Math.abs($( "#big-emoji-left-start" ).position().top - $( "#big-emoji-left-end" ).position().top));
     // emoji_right.duration(Math.abs($( ".big-emoji-right-start" ).position().top - $( ".big-emoji-right-end" ).position().top));
   });
+  //------------ General Functions ------------
+  function shuffleArr(arr) {
+    var ctr = arr.length,
+      temp, index;
 
-  // window scroll listener
-  $(window).scroll(function () {
-    // toggle visibility of header search field based on position
-    var headerOffset = $(window).scrollTop() - $("header").offset().top;
-
-    if (!$("header .emoji-search").is(":visible") && headerOffset == 0) {
-      $("header .emoji-search").fadeIn(150);
-    } else if ($("header .emoji-search").is(":visible") && headerOffset != 0) {
-      $("header .emoji-search").fadeOut(150);
+    // While there are elements in the array
+    while (ctr > 0) {
+      // Pick a random index
+      index = Math.floor(Math.random() * ctr);
+      // Decrease ctr by 1
+      ctr--;
+      // And swap the last element with it
+      temp = arr[ctr];
+      arr[ctr] = arr[index];
+      arr[index] = temp;
     }
-  });
+    return arr;
+  }
 });
