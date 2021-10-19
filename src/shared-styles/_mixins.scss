@@ -1,0 +1,58 @@
+@use '_variables.scss';
+
+@mixin content{
+  max-width: variables.$content-max-width;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// emoji search
+@mixin emoji-search {
+  .emoji-search {
+    justify-content: center;
+    display: flex;
+    height: 40px;
+    position: relative;
+
+    img {
+      left: 0px;
+      top: 8px;
+      position: absolute;
+      height: 60%;
+      width: auto;
+      padding-right: variables.$gap-small;
+      opacity: 0.4;
+    }
+
+    input {
+      background: none;
+      padding-left: 33px;
+      border-radius: 20px;
+      border: solid 1px variables.$color-grey-light;
+      font-size: variables.$font-sz-md;
+      color: variables.$color-grey-dark;
+      transition: all 0.4s;
+      width: 100%;
+
+      &:focus {
+        color: variables.$color-grey-dark;
+      }
+
+      &:focus+img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// active tab
+@mixin active-tab {
+  &.active-tab {
+    border-bottom: 4px solid variables.$color-blue-dark;
+
+    a {
+      color: variables.$color-grey-dark;
+    }
+  }
+}

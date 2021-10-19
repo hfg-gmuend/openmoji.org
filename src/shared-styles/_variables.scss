@@ -1,0 +1,59 @@
+// colors
+$color-red-light: #E95A47;
+$color-red-dark: #D22F29;
+$color-blue-super-light: #92d3f5;
+$color-blue-light: #5EB0CF;
+$color-blue-dark: #3D98BB;
+$color-yellow-light: #EEB41A;
+$color-yellow-dark: #C78D0E;
+$color-orange-light: #F4AA41;
+$color-orange-dark: #E27022;
+$color-violet-dark: #8967AA;
+$color-white: #FFFFFF;
+$color-grey: #525252;
+$color-grey-dark: #101010;
+$color-grey-light: #707070;
+$color-grey-super-light: rgba(129, 128, 128, 0.5);
+$color-grey-ultra-light: #f5f6f7;
+$color-fitzpatrick-default: #FCEA2B;
+// background colors
+$background-color-grey: #F2F1F0;
+
+// fonts
+$font-family: 'Source Sans Pro', sans-serif;
+// font-sizes
+$font-sz-xxl: 70px;
+$font-sz-xl: 50px;
+$font-sz-lg: 30px;
+$font-sz-md: 17px;
+$font-sz-s: 14px;
+// font-weights
+$font-reg: 500;
+$font-bold: 700;
+
+// gaps
+$gap-xs: 10px;
+$gap-small: 20px;
+$gap-reg: 30px;
+$gap-med: 50px;
+$gap-large: 100px;
+
+// sizes
+$content-max-width: 900px;
+$footer-header-max-height: 80px;
+$border-radius: 8px;
+
+// breakpoints
+$breakpoint-lg: 1199px;
+$breakpoint-md: 991px;
+$breakpoint-sm: 767px;
+
+// z-index
+$z-index-overlay-content: 999;
+$z-index-menu: 1000;
+$z-index-menu-toggle: 1001;
+$z-index-overlay-all: 1002;
+
+// emoji
+$emoji-size: 80px;
+$emoji-size-sm: $emoji-size * 0.75;
