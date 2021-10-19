@@ -1,0 +1,58 @@
+@use 'src/shared-styles/_variables.scss';
+
+.blue {
+    background-color: variables.$color-blue-dark;
+    margin-top: 0;
+    p {
+      color: variables.$color-white;
+      a {
+        color: variables.$color-white;
+      }
+    }
+  }
+
+footer {
+  padding: 0 variables.$gap-med 0 variables.$gap-med;
+  grid-area: footer;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: variables.$gap-xs;
+  margin-bottom: variables.$gap-xs;
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    padding: 0 variables.$gap-small 0 variables.$gap-small;
+  }
+
+  p {
+    display: inline-block;
+    font-size: variables.$font-sz-s;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    display: inline-flex;
+    align-items: center;
+
+    li {
+      width: 30px;
+      height: 30px;
+    }
+
+    li+li {
+      margin-left: variables.$gap-small;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-md) {
+  #close-impressum-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+}

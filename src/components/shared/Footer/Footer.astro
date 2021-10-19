@@ -1,0 +1,27 @@
+---
+import pinterestLogo from './assets/pinterest_hi.svg';
+import facebookLogo from './assets/facebook_hi.svg';
+
+const {color} = Astro.props || 'default';
+---
+<footer class={color}>
+  <style lang="scss">
+    @use './_footer.scss';
+  </style>
+  <div>
+    <p>
+      <a id="impressumLink" href="">Imprint</a> · 
+    </p>
+    <p>
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/.">CC BY-SA 4.0</a>
+    </p>
+  </div>
+  <ul>
+    <li><a class="iconlink" rel="noopener"
+        href="https://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest"><img
+          alt="Facebook logo" src={facebookLogo} target="_blank"></a></li>
+    <li><a class="iconlink" rel="noopener"
+        href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img
+          alt="Pinterest logo" src={pinterestLogo} target="_blank"></a></li>
+  </ul>
+</footer>
