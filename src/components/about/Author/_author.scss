@@ -1,0 +1,51 @@
+@use 'src/shared-styles/_variables.scss';
+
+.teammember {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  position: relative;
+  margin-bottom: variables.$gap-med;
+  margin-right: variables.$gap-large;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    padding: 10px;
+    width: 33.33%;
+    margin-bottom: variables.$gap-reg;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    width: 50%;
+  }
+
+  div {
+    width: 100%;
+    margin: auto;
+    padding-bottom: variables.$gap-xs;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    padding-top: variables.$gap-reg;
+
+    li {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      padding-right: variables.$gap-xs;
+    }
+  }
+
+  .team {
+    flex: 1;
+
+    p {
+      font-size: variables.$font-sz-s;
+    }
+  }
+}

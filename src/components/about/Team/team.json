@@ -1,0 +1,498 @@
+[
+	{
+		"name": "Benedikt Groß",
+		"description": "Project initiators, supervision and tutorials",
+		"image": "benedikt-gross.svg",
+		"links": {
+			"link": "http://benedikt-gross.de/",
+			"twitter": "https://twitter.com/bndktgrs",
+			"github": "https://github.com/b-g/"
+		}
+	},
+	{
+		"name": "Daniel Utz",
+		"description": "Project initiators, supervision and tutorials",
+		"image": "daniel-utz.svg",
+		"links": {
+			"link": "http://danielutz.de/",
+			"twitter": "https://twitter.com/dnlutz"
+		}
+	},
+	{
+		"name": "Sofie Ascherl",
+		"description": "Emoji design and styleguide",
+		"image": "sofie-ascherl.svg",
+		"links": {
+			"link": "https://www.behance.net/sofieasche36e2",
+			"twitter": "https://twitter.com/sofie_ascherl",
+			"instagram": "https://www.instagram.com/sofie_asch/"
+		}
+	},
+	{
+		"name": "Miriam Vollmeier",
+		"description": "Emoji design and styleguide",
+		"image": "miriam-vollmeier.svg",
+		"links": {
+			"link": "http://www.miriamvollmeier.com/"
+		}
+	},
+	{
+		"name": "Kai Wanschura",
+		"description": "Emoji design, classification and font creation",
+		"image": "kai-wanschura.svg",
+		"links": {
+			"link": "http://kaiwanschura.de/",
+			"twitter": "https://twitter.com/kaiwanschura"
+		}
+	},
+	{
+		"name": "Johanna Wellnitz",
+		"description": "Emoji design, styleguide and website",
+		"image": "johanna-wellnitz.svg",
+		"links": {
+			"link": "http://johannawellnitz.de/",
+			"twitter": "https://twitter.com/JohannaWellnitz"
+		}
+	},
+	{
+		"name": "Jonas Roßner",
+		"description": "Emoji design and examples of use",
+		"image": "jonas-rossner.svg",
+		"links": {}
+	},
+	{
+		"name": "Marius Schnabel",
+		"description": "Emoji design and website",
+		"image": "marius-schnabel.svg",
+		"links": {
+			"twitter": "https://twitter.com/MariusSchnabel"
+		}
+	},
+	{
+		"name": "Lisa Schulz",
+		"description": "Emoji design and website",
+		"image": "lisa-schulz.svg",
+		"links": {}
+	},
+	{
+		"name": "Mariella Steeb",
+		"description": "Emoji design and examples of use",
+		"image": "mariella-steeb.svg",
+		"links": {}
+	},
+	{
+		"name": "Sina Schulz",
+		"description": "Emoji design and font creation",
+		"image": "sina-schulz.svg",
+		"links": {
+			"link": "http://www.skschulz.com/"
+		}
+	},
+	{
+		"name": "Vanessa Boutzikoudi",
+		"description": "Emoji design and classification",
+		"image": "vanessa-boutzikoudi.svg",
+		"links": {}
+	},
+	{
+		"name": "Jose Avila",
+		"description": "Emoji design and social media",
+		"image": "jose-avila.svg",
+		"links": {}
+	},
+	{
+		"name": "Baris Camli",
+		"description": "Emoji design and examples of use",
+		"image": "baris-camli.svg",
+		"links": {}
+	},
+	{
+		"name": "Ronja Bäurlen",
+		"description": "Emoji design and font creation",
+		"image": "ronja-baeurlen.svg",
+		"links": {
+			"link": "https://ronjabaeurlen.myportfolio.com/",
+			"twitter": "https://twitter.com/RBaurlen",
+			"instagram": "https://www.instagram.com/bae_ronnie/"
+		}
+	},
+	{
+		"name": "Rana Cakir",
+		"description": "Emoji design and website",
+		"image": "rana-cakir.svg",
+		"links": {
+			"link": "http://ranacakir.de/"
+		}
+	},
+	{
+		"name": "Lisa Thiel",
+		"description": "Emoji design, styleguide and font creation",
+		"image": "lisa-thiel.svg",
+		"links": {
+			"link": "https://lisathiel.wixsite.com/portfolio"
+		}
+	},
+	{
+		"name": "Hilda Kalyoncu",
+		"description": "Emoji design and social media",
+		"image": "hilda-kalyoncu.svg",
+		"links": {
+			"link": "http://hilda-kalyoncu.de/",
+			"twitter": "https://twitter.com/hildakalyoncu"
+		}
+	},
+	{
+		"name": "Julian Grüneberg",
+		"description": "Emoji design and social media",
+		"image": "julian-grueneberg.svg",
+		"links": {
+			"link": "http://juliangrueneberg.com/",
+			"instagram": "https://www.instagram.com/dschules_/"
+		}
+	},
+	{
+		"name": "Laura Humpfer",
+		"description": "Emoji design and social media",
+		"image": "laura-humpfer.svg",
+		"links": {}
+	},
+	{
+		"name": "Emily Jäger",
+		"description": "Emoji design and social media",
+		"image": "emily-jaeger.svg",
+		"links": {}
+	},
+	{
+		"name": "Kai Magnus Müller",
+		"description": "Emoji design and website",
+		"image": "kai-mueller.svg",
+		"links": {
+			"link": "http://www.kaimagnus.de/",
+			"twitter": "https://twitter.com/_kaimagnus"
+		}
+	},
+	{
+		"name": "Martin Wehl",
+		"description": "Emoji design and website",
+		"image": "martin-wehl.svg",
+		"links": {
+			"link": "http://martinwehl.de/",
+			"twitter": "https://twitter.com/martin_wehl",
+			"instagram": "https://www.instagram.com/martinwehl/"
+		}
+	},
+	{
+		"name": "Selina Bauder",
+		"description": "Emoji design and social media",
+		"image": "selina-bauder.svg",
+		"links": {}
+	},
+	{
+		"name": "Guemil Project",
+		"description": "Emergency emoji",
+		"image": "guemil.svg",
+		"links": {
+			"link": "http://www.guemil.info/",
+			"twitter": "https://twitter.com/Guemil_Icons"
+		}
+	},
+	{
+		"name": "Abby Esquivel",
+		"description": "Emoji design",
+		"image": "abby-esquivel.svg",
+		"links": {
+			"instagram": "https://www.instagram.com/abby_esquivel_/"
+		}
+	},
+	{
+		"name": "Aileen Gedrat",
+		"description": "Emoji design",
+		"image": "aileen-gedrat.svg",
+		"links": {}
+	},
+	{
+		"name": "Anne Frauendorf",
+		"description": "Emoji design",
+		"image": "anne-frauendorf.svg",
+		"links": {
+			"instagram": "https://www.instagram.com/anne.frafrado/"
+		}
+	},
+	{
+		"name": "Daniel Quiros",
+		"description": "Emoji design",
+		"image": "daniel-quiros.svg",
+		"links": {
+			"link": "https://issuu.com/danielquiros4/docs/123a_official_final_portfolio"
+		}
+	},
+	{
+		"name": "Daniela Ivandikov",
+		"description": "Emoji design",
+		"image": "daniela-ivandikov.svg",
+		"links": {}
+	},
+	{
+		"name": "Hend Hourani",
+		"description": "Emoji design",
+		"image": "hend-hourani.svg",
+		"links": {
+			"link": "http://hendhourani.de/",
+			"facebook": "https://facebook.com/OFAAFO.H/"
+		}
+	},
+	{
+		"name": "Lois Proksch",
+		"description": "Emoji design",
+		"image": "lois-proksch.svg",
+		"links": {
+			"instagram": "https://instagram.com/_iamlois_/"
+		}
+	},
+	{
+		"name": "Louisa Mantsch",
+		"description": "Emoji design",
+		"image": "louisa-mantsch.svg",
+		"links": {
+			"link": "http://louisamantsch.com/",
+			"instagram": "https://instagram.com/lou.mntsch/"
+		}
+	},
+	{
+		"name": "Marleen Heine",
+		"description": "Emoji design",
+		"image": "marleen-heine.svg",
+		"links": {}
+	},
+	{
+		"name": "Nadja Grün",
+		"description": "Emoji design",
+		"image": "nadja-gruen.svg",
+		"links": {
+			"link": "http://nadjagruen.com/",
+			"instagram": "https://instagram.com/nadjavenetia/"
+		}
+	},
+	{
+		"name": "Pascal Ligon",
+		"description": "Emoji design",
+		"image": "pascal-ligon.svg",
+		"links": {
+			"link": "http://pascalligon.de/",
+			"instagram": "https://instagram.com/pasy182/"
+		}
+	},
+	{
+		"name": "Sarah Mager",
+		"description": "Emoji design",
+		"image": "sarah-mager.svg",
+		"links": {
+			"link": "http://sarahmager.com/"
+		}
+	},
+	{
+		"name": "Sina Chlod",
+		"description": "Emoji design",
+		"image": "sina-chlod.svg",
+		"links": {
+			"instagram": "https://instagram.com/apfel.sini/"
+		}
+	},
+	{
+		"name": "Vincent Seitz",
+		"description": "Emoji design",
+		"image": "vincent-seitz.svg",
+		"links": {
+			"instagram": "https://instagram.com/vincentmorrow/"
+		}
+	},
+	{
+		"name": "Ferdinand Sorg",
+		"description": "Emoji design",
+		"image": "ferdinand-sorg.svg",
+		"links": {
+			"link": "https://ferdinands.org/",
+			"twitter": "https://twitter.com/ferdinandsorg/",
+			"instagram": "https://instagram.com/ferdinandsorg/"
+		}
+	},
+	{
+		"name": "Laura Dworatschek",
+		"description": "Emoji design and website",
+		"image": "laura-dworatschek.svg",
+		"links": {}
+	},
+	{
+		"name": "Jonas Dunkel",
+		"description": "Emoji design and website",
+		"image": "jonas-dunkel.svg",
+		"links": {}
+	},
+	{
+		"name": "Ricarda Krejci",
+		"description": "Emoji design",
+		"image": "ricarda-krejci.svg",
+		"links": {
+			"link": "http://ricardakrejci.com/",
+			"instagram": "https://instagram.com/ricardakrejci/"
+		}
+	},
+	{
+		"name": "Antonia Wagner",
+		"description": "Emoji design, website and social media",
+		"image": "antonia-wagner.svg",
+		"links": {
+			"instagram": "https://instagram.com/tonniiaa/"
+		}
+	},
+	{
+		"name": "Evelyn Soos",
+		"description": "Emoji design and website",
+		"image": "evelyn-soos.svg",
+		"links": {
+			"link": "https://evysoos.myportfolio.com/"
+		}
+	},
+	{
+		"name": "Fanny Jung",
+		"description": "Emoji design",
+		"image": "fanny-jung.svg",
+		"links": {
+			"instagram": "https://www.instagram.com/fannypiajung/?hl=de"
+		}
+	},
+	{
+		"name": "Nicole Kornhaas",
+		"description": "Emoji design and animations",
+		"image": "nicole-kornhaas.svg",
+		"links": {
+			"link": "https://nicolekornhaas.myportfolio.com/"
+		}
+	},
+	{
+		"name": "Tonia Reinhardt",
+		"description": "Emoji design",
+		"image": "tonia-reinhardt.svg",
+		"links": {}
+	},
+	{
+		"name": "Yasmin Abdullahi",
+		"description": "Emoji design and T-Shirts",
+		"image": "yasmin-abdullahi.svg",
+		"links": {
+			"link": "https://yasminabdullahi.com/"
+		}
+	},
+	{
+		"name": "Sam Eckert",
+		"description": "Emoji design and iOS App",
+		"image": "sam-eckert.svg",
+		"links": {
+			"link": "https://sam0711er.com/",
+			"twitter": "https://twitter.com/sam0711er",
+			"github": "https://github.com/sam0711er",
+			"instagram": "https://instagram.com/sam0711er",
+			"facebook": "https://facebook.com/sam0711er"
+		}
+	},
+	{
+		"name": "Selina Lange",
+		"description": "Emoji design and animations",
+		"image": "selina-lange.svg",
+		"links": {
+			"instagram": "https://instagram.com/selinazzledazzle"
+		}
+	},
+	{
+		"name": "Rifat Can Erdogan",
+		"description": "Emoji design and posters",
+		"image": "rifat-erdogan.svg",
+		"links": {}
+	},
+	{
+		"name": "Laura Schießer",
+		"description": "Emoji design and stickers",
+		"image": "laura-schiesser.svg",
+		"links": {}
+	},
+	{
+		"name": "Nadine Bartel",
+		"description": "Emoji design and stickers",
+		"image": "nadine-bartel.svg",
+		"links": {
+			"instagram": "https://instagram.com/nadine.brtl"
+		}
+	},
+	{
+		"name": "Florian Nagel",
+		"description": "Emoji design and website",
+		"image": "florian-nagel.svg",
+		"links": {}
+	},
+	{
+		"name": "Hartmut Bohnacker",
+		"description": "Emoji design",
+		"image": "hartmut-bohnacker.svg",
+		"links": {
+			"link": "https://hartmut-bohnacker.de/",
+			"twitter": "https://twitter.com/sinuit/"
+		}
+	},
+	{
+		"name": "Carlin MacKenzie",
+		"description": "Emoji design and proof reading",
+		"image": "carlin-mackenzie.svg",
+		"links": {
+			"link": "https://carlinmack.com/",
+			"github": "https://github.com/carlinmack",
+			"instagram": "https://instagram.com/carlinmack"
+		}
+	},
+	{
+		"name": "Felix Häberle",
+		"description": "Emoji design and web development",
+		"image": "felix-haeberle.svg",
+		"links": {
+			"link": "https://felixhaeberle.de/",
+			"twitter": "https://twitter.com/felix_haeberle/",
+			"github": "https://github.com/felixhaeberle"
+		}
+	},
+	{
+		"name": "Liz Bravo",
+		"description": "Emoji design",
+		"image": "liz-bravo.svg",
+		"links": {
+			"twitter": "https://twitter.com/lizbravob",
+			"github": "https://github.com/lizbravob",
+			"instagram": "https://instagram.com/lizbravob"
+		}
+	},
+	{
+		"name": "Tara Lynn Connelly",
+		"description": "Emoji design",
+		"image": "tara-lynn-connelly.svg",
+		"links": {
+			"link": "http://taralynnconnelly.com/",
+			"github": "https://github.com/taralynnconnelly",
+			"instagram": "https://instagram.com/taralynn.jpg"
+		}
+	},
+	{
+		"name": "Kris Kowal",
+		"description": "Emoji design and Dev Build System",
+		"image": "kris-kowal.svg",
+		"links": {
+			"twitter": "https://twitter.com/kriskowal",
+			"github": "https://github.com/kriskowal"
+		}
+	},
+	{
+		"name": "Alexander Müller",
+		"description": "Emoji design and some Code",
+		"image": "alexander-mueller.svg",
+		"links": {
+			"github": "https://github.com/fuddl"
+		}
+	}
+]

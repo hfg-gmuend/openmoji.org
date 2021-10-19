@@ -1,0 +1,18 @@
+@use 'src/shared-styles/_variables.scss';
+
+.container {
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-flex-wrap: wrap;
+  /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -#{variables.$gap-large};
+  margin-bottom: -#{variables.$gap-med};
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-bottom: 0;
+  }
+}
