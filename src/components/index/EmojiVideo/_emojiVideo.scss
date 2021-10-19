@@ -1,0 +1,32 @@
+@use 'src/shared-styles/_variables.scss';
+
+.wrapper{
+  display: block;
+  padding-top: variables.$gap-large;
+  padding-bottom: variables.$gap-large;
+  height: auto;
+  background-color: variables.$color-white;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    padding-top: variables.$gap-med;
+    padding-bottom: variables.$gap-med;
+  }
+
+  .content-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    min-height: auto;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80vw;
+      height: 100%;
+      margin: 0 10vw;
+    }
+  }
+}
