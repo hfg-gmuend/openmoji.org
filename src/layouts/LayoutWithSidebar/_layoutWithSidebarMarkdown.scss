@@ -44,9 +44,14 @@
     }
   }
 
-  h3{
+  h2{
     font-size: variables.$font-sz-lg;
     font-weight: variables.$font-bold;
+    margin-bottom: variables.$gap-reg;
+  }
+
+  h3{
+    font-size: variables.$font-sz-lg;
     margin-bottom: variables.$gap-reg;
   }
 
