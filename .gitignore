@@ -1,6 +1,11 @@
 # build output
 dist
 
+# generated assets
+public/data
+public/assets-samples
+public/assets-styleguide
+
 # dependencies
 node_modules/
 .snowpack/

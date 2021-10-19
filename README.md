@@ -1,4 +1,4 @@
-OpenMoji.org
+(WIP) OpenMoji.org
 ============
 
 Website of the OpenMoji project 👉 http://openmoji.org/
@@ -7,6 +7,7 @@ Website of the OpenMoji project 👉 http://openmoji.org/
 
 Developer Setup
 ---------------
+### Install
 1. Install [node.js](https://nodejs.org) (see version in the file [`.nvmrc`](.nvmrc#L1))
 2. Open Terminal and navigate over to the `openmoji.org` folder that you downloaded onto your computer:
 
@@ -20,17 +21,18 @@ cd path/to/folder
 npm install
 ```
 
-Run
----
-
-Start a local web server with live reload by typing in your Terminal the command below. This will open the `index.html` in a new browser window:
-
+### Run
 ```
 npm start
 ```
 
-Open a new tab in your Terminal with the command below to watch the style/*scss files and to compile those to the style/main.css file:
+### Build
+```
+npm run build
+```
 
-```
-npm run watch-style
-```
+Notes
+----
+- This is a port from the static OpenMoji page to the static site builder [Astro](https://github.com/snowpackjs/astro)
+- It's still heavy work-in-progress! A lot (including the OpenMoji library) isn't working yet.
+- Astro doesn't automatically resolve relative file paths yet. However, for convenient editting with a Markdown-editor all pages (e.g. `src/pages/samples/index.md`) have the necessary assets in a subfolder. These are copied to `public/` using gulp
