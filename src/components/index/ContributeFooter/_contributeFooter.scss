@@ -1,0 +1,78 @@
+@use 'src/shared-styles/_variables.scss';
+
+.wrapper {
+	background-color: variables.$color-blue-dark;
+
+	.content-wrapper {
+	  min-height: 0;
+	  padding-top: variables.$gap-xs;
+	}
+
+	#interest {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  padding: variables.$gap-med 0;
+
+	  h1 {
+	    color: variables.$color-white;
+	    margin-bottom: variables.$gap-reg;
+	    font-size: variables.$font-sz-lg;
+
+	    @media screen and (max-width: variables.$breakpoint-md) {
+	      font-size: variables.$font-sz-lg;
+	    }
+	  }
+
+	  .buttongroup {
+	    display: inline-flex;
+	    flex-wrap: nowrap;
+	    justify-content: space-around;
+	    width: 50%;
+	    align-items: center;
+
+	    h1 {
+	      color: variables.$color-white;
+	      margin-bottom: variables.$gap-reg;
+
+	      @media screen and (max-width: variables.$breakpoint-md) {
+	        font-size: variables.$font-sz-md;
+	      }
+	    }
+
+	    .largebutton {
+	      font-size: 23px;
+
+	      &:first-child {
+	        margin-bottom: variables.$gap-reg;
+	        margin-right: variables.$gap-reg;
+	      }
+	    }
+
+	    @media screen and (max-width: variables.$breakpoint-md) {
+	      flex-wrap: wrap;
+
+	      .largebutton {
+	        &:first-child {
+	          margin-right: 0;
+	        }
+	      }
+	    }
+
+	    button {
+	      display: flex;
+	      align-items: center;
+	      padding-left: 15px;
+	      background-color: variables.$color-blue-light;
+	      color: variables.$color-white;
+	      box-shadow: none;
+
+	      img {
+	        height: 40px;
+	        margin-right: 5px;
+	      }
+	    }
+	  }
+	}
+}
