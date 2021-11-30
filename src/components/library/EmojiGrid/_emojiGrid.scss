@@ -1,0 +1,20 @@
+@use 'src/shared-styles/_variables.scss';
+
+.emoji_grid_wrapper {
+  max-width: variables.$content-max-width;
+  overflow-x: hidden;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    overflow-x: unset;
+  }
+
+  .emoji_grid {
+    display: flex;
+    flex-wrap: wrap;
+    // margin-right: -#{variables.$gap-large};
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      margin-right: 0;
+    }
+  }
+}

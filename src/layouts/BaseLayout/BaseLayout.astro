@@ -1,5 +1,5 @@
 ---
-import MetaHead from '../../components/shared/MetaHead.astro';
+import MetaHeadContent from '../../components/shared/MetaHeadContent.astro';
 import Header from '../../components/shared/Header/Header.astro';
 import Footer from '../../components/shared/Footer/Footer.astro';
 
@@ -8,7 +8,9 @@ const title = (content.title || '') + ' · OpenMoji';
 const {onlyAllowHeadlines} = Astro.props || false;
 ---
 <html lang="en">
-  <MetaHead title={title}/>
+  <head>
+    <MetaHeadContent title={title}/>
+  </head>
   <body>
     <Header/>
     <main class="markdownContent">

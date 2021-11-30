@@ -1,0 +1,22 @@
+---
+import EmojiGridItem from '../EmojiGridItem/EmojiGridItem.astro';
+import helpers from '../../../util/helpers'
+
+const filteredEmojies = helpers.getUniqueEmojis();
+---
+<div class="emoji_grid_wrapper">
+  <style lang="scss">
+    @use './_emojiGrid.scss';
+  </style>
+  <div id="emoji_grid" class="emoji_grid">
+    {Object.keys(filteredEmojies).map((key) => {
+        const emojiData = filteredEmojies[key]
+        return (<EmojiGridItem
+          description={emojiData.annotation}
+          hexcode={emojiData.hexcode}
+          group={emojiData.group}
+          subgroups={emojiData.subgroups}
+          />)    
+    })}
+  </div>  
+</div>

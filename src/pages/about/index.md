@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/LayoutWithSidebar/LayoutWithSidebar.astro
 setup: |
-  import Team from '../../components/about/Team.astro';
+  import Team from '@/components/about/Team/Team.astro';
 title: About
 color: yellow
 content: narrow

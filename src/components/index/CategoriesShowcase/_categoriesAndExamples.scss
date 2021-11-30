@@ -45,9 +45,9 @@
   a {
     color: variables.$color-grey-super-light;
 
-    @include mixins.active-tab;
-
     &.active-tab {
+      border-bottom: 4px solid;
+      border-bottom-color: variables.$color-blue-light;
       color: variables.$color-grey-dark;
     }
   }

@@ -3,6 +3,8 @@ dist
 
 # generated assets
 public/data
+public/samples-*.*
+public/styleguide-*.*
 public/assets-samples
 public/assets-styleguide
 

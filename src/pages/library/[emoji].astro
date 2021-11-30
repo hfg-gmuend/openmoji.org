@@ -1,0 +1,16 @@
+---
+import helpers from '../../util/helpers'
+export async function getStaticPaths() {
+  const uniqueEmojis = helpers.getUniqueEmojis();
+  let emojiPages = [];
+  for(let key in uniqueEmojis){
+    const emojiData = uniqueEmojis[key]
+    emojiPages.push({ params: { emoji: 'emoji-' + emojiData.hexcode } })
+  }
+  return emojiPages;
+}
+---
+<html>
+  <head><title>My Page</title></head>
+  <body>URL Param is {Astro.request.params.emoji}</body>
+</html>

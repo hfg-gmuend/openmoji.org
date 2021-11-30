@@ -30,13 +30,13 @@ gulp.task('copy-openmoji-data',
 /* Copy Markdown assets */
 
 gulp.task('copy-markdown-samples-assets', function(){
-  return gulp.src('src/pages/samples/assets-samples/*')
-    .pipe(gulp.dest('public/assets-samples/'));
+  return gulp.src(['src/pages/samples/*.*', '!src/pages/samples/index.md'])
+    .pipe(gulp.dest('public/'));
 });
 
 gulp.task('copy-markdown-styleguide-assets', function(){
-  return gulp.src('src/pages/styleguide/assets-styleguide/*')
-    .pipe(gulp.dest('public/assets-styleguide/'));
+  return gulp.src(['src/pages/styleguide/*.*', '!src/pages/styleguide/index.md'])
+    .pipe(gulp.dest('public/'));
 });
 
 gulp.task('copy-markdown-assets',

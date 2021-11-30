@@ -1,32 +1,6 @@
 @use 'src/shared-styles/_variables.scss';
 @use 'src/shared-styles/_mixins.scss';
 
-.page-header.orange nav{
-  ul{
-    li{
-      border-color: variables.$color-orange-light;
-    }
-  }
-}
-
-.page-header.yellow nav{
-  ul{
-    li{
-      border-color: variables.$color-yellow-light;
-    }
-  }
-}
-
-.home{
-    position: fixed;
-    width: 100vw;
-    border-bottom: variables.$color-grey-super-light 1px solid;
-}
-
-.default{
-  position: sticky;
-}
-
 header {
   z-index: 10;
   background-color: variables.$color-white;
@@ -74,7 +48,21 @@ header {
         cursor: pointer;
         list-style: none;
 
-        @include mixins.active-tab;
+          &.active-tab {
+            border-bottom: 4px solid;
+
+            &.default{ border-bottom-color: variables.$color-blue-light; }
+            &.blue{ border-bottom-color: variables.$color-blue-light; }
+            &.orange{ border-bottom-color: variables.$color-orange-light; }
+            &.yellow{ border-bottom-color: variables.$color-yellow-light; }
+            &.red{ border-bottom-color: variables.$color-red-light; }
+            &.grey{ border-bottom-color: variables.$color-grey-light; }
+            &.violet{ border-bottom-color: variables.$color-violet-dark; }
+
+            a {
+              color: variables.$color-grey-dark;
+            }
+          }
 
         a {
           vertical-align: middle;

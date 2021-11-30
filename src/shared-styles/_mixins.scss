@@ -45,14 +45,3 @@
     }
   }
 }
-
-// active tab
-@mixin active-tab {
-  &.active-tab {
-    border-bottom: 4px solid variables.$color-blue-dark;
-
-    a {
-      color: variables.$color-grey-dark;
-    }
-  }
-}

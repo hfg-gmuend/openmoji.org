@@ -26,18 +26,27 @@
 
     img {
       width: 100%;
+      margin: 0;
+      min-width: unset;
+      max-width: unset;
     }
+  }
+
+  h3{
+    margin: 0;
+    font-size: 17px;
+    padding-bottom: variables.$gap-xs;
   }
 
   ul {
     padding-left: 0;
-    padding-top: variables.$gap-reg;
+    padding-top: variables.$gap-small;
 
     li {
       width: 20px;
       height: 20px;
       display: inline-block;
-      padding-right: variables.$gap-xs;
+      margin-right: variables.$gap-xs;
     }
   }
 
@@ -45,7 +54,27 @@
     flex: 1;
 
     p {
+      margin-bottom: 0;
       font-size: variables.$font-sz-s;
     }
+  }
+}
+
+.iconlink {
+  opacity: 0.8;
+  width: 100%;
+  height: 100%; 
+  display: block;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  > img {
+    display: block;
+    height: 100%;
+    margin: 0;
+    min-width: unset;
+    max-width: unset;
   }
 }

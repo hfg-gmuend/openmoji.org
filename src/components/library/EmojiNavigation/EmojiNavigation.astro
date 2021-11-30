@@ -1,0 +1,32 @@
+---
+import helpers from '../../../util/helpers'
+const emojiGroupsAndSubgroups = helpers.getEmojiGroupsAndSubgroups();
+---
+<nav class="nav-left">
+  <style lang="scss">
+    @use './_emojiNavigation.scss';
+  </style>
+  <span class="category-close"></span>
+  <ul id="nav-items">
+    <li data-item="all OpenMojis">
+      <input id="all OpenMojis" type="radio" name="category" value="all OpenMojis" checked="">
+      <label for="all OpenMojis">All OpenMojis</label>
+    </li>
+    {emojiGroupsAndSubgroups.map((group) => (
+      <li class="mainmenu" data-item={group.name}>
+        <input id={group.name} data-grouppath={group.name} type="radio" name="category" value={group.name}>
+        <label for={group.name}>{group.name}</label>
+        <ul class="submenu collapsed">
+        {group.subgroups.map((subgroup) => (
+              <li data-item={group.name + '/' + subgroup}>
+                <input id={group.name + '/' + subgroup} data-grouppath={group.name + '/' + subgroup} type="radio" name="category" value={subgroup}/>
+                <label for={group.name + '/' + subgroup}>
+                  {subgroup}
+                </label>
+              </li>
+            ))
+          }
+        </ul>
+      </li>
+      ))}
+</nav>

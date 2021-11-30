@@ -1,0 +1,100 @@
+@use 'src/shared-styles/_variables.scss';
+
+.nav-left {
+  #show-color {
+    margin-bottom: variables.$gap-reg;
+  }
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    display: none;
+
+    &.mobile-show {
+      display: flex;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: variables.$z-index-overlay-all;
+
+      > ul {
+        overflow-y: auto;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        li {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+.category-toggle:hover #nav-left {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
+
+.nav-left {
+  grid-area: nav;
+  box-sizing: border-box;
+  max-width: 300px;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    max-width: 100%;
+    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    margin: 0;
+    overflow: initial;
+    display: none;
+  }
+
+  >ul {
+    margin: variables.$gap-reg variables.$gap-med;
+    position: sticky;
+    top: 80px;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      margin: variables.$gap-reg variables.$gap-reg;
+    }
+  }
+
+  ul li {
+    display: block;
+    margin-top: variables.$gap-xs;
+  }
+
+  .submenu {
+    padding-left: variables.$gap-reg;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .collapsed{
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .category-close {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: url(../img/menu-close.svg) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    z-index: variables.$z-index-overlay-all;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: block;
+    }
+  }
+}

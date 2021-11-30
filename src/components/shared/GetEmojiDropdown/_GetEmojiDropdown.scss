@@ -1,30 +1,107 @@
 @use 'src/shared-styles/_variables.scss';
 
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  &.default, &.blue{ background: variables.$color-blue-light; }
+  &.orange{ background: variables.$color-orange-light; }
+  &.yellow{ background: variables.$color-yellow-light; }
+  &.red{ background: variables.$color-red-light; }
+  &.grey{ background: variables.$color-grey-light; }
+  &.violet{ background: variables.$color-violet-dark; }
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  border-color: variables.$color-white;
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 2px;
+
+  &.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+}
+
+div + div {
+  margin-left: variables.$gap-small;
+}
+
 .dropdown {
+  position: relative;
+  z-index: 9999;
   margin-left: variables.$gap-small;
 
-  button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-
-    .arrow {
-      border: solid black;
-      border-width: 0 3px 3px 0;
-      border-color: variables.$color-white;
-      display: inline-block;
-      padding: 4px;
-      margin-bottom: 2px;
-
-      &.down {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
-    }
-
-    div + div {
-      margin-left: variables.$gap-small;
+  &:hover {
+    .dropdown-content {
+      display: block;
     }
   }
+
+  .dropdown-content {
+    position: absolute;
+    right: 0;
+    display: none;
+    min-width: 100%;
+
+    .list-wrapper {
+      display: flex;
+      margin-top: variables.$gap-small;
+      background: #ffffff;
+      box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
+      border-radius: 8px;
+      padding: 8px 0;
+      white-space: nowrap;
+
+      ul {
+        display: block;
+
+        li {
+          margin: 0;
+          padding: (40px - variables.$font-sz-md) / 2 variables.$gap-small;
+          height: auto;
+
+          > * {
+            font-size: variables.$font-sz-md;
+          }
+
+          .disclaimer {
+            font-size: variables.$font-sz-s;
+            color: variables.$color-grey-lighter;
+
+            a {
+              color: variables.$color-grey-lighter;
+              text-decoration: underline;
+
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // modifiers
+  &--align-left {
+    .dropdown-content {
+      left: 0;
+      right: unset;
+    }
+  }
+
+  &--dense {
+    li {
+      padding: (40px - variables.$font-sz-md) / 4 variables.$gap-small * 0.75 !important;
+    }
+  }
+}
+
+.dropdown--light-shadow .dropdown-content ul {
+  box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
 }

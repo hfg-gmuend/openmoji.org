@@ -1,6 +1,6 @@
 ---
 import searchIcon from './assets/search.svg';
-import packageJSON from '/data/package.json';
+import packageJSON from '../../../../public/data/package.json';
 const openMojiVersion = packageJSON.version || '';
 ---
 
@@ -29,9 +29,9 @@ const openMojiVersion = packageJSON.version || '';
     <h1>OpenMoji <span id="emoji-version" class="version">{openMojiVersion}</span></h1>
     <h2>Open source emojis for designers, developers and everyone else!</h2>
     <div class="emoji-search">
-      <img src={searchIcon} alt="search icon">
+      <img src={searchIcon} alt="search icon"/>
       <label class="hidden" for="emojisearch">Search</label>
-      <input aria-label="Search" type="text" class="search" id="emojisearch" placeholder="search emoji …">
+      <input aria-label="Search" type="text" class="search" id="emojisearch" placeholder="search emoji …"/>
     </div>
     <div id="emojiCloud">
       <!-- Emoji will be dynamically added by hero.js -->

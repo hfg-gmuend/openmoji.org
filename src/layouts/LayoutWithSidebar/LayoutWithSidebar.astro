@@ -1,10 +1,12 @@
 ---
-import MetaHead from '../../components/shared/MetaHead.astro';
+import MetaHeadContent from '../../components/shared/MetaHeadContent.astro';
 import Header from '../../components/shared/Header/Header.astro';
 import Footer from '../../components/shared/Footer/Footer.astro';
 
 const {content} = Astro.props;
 const title = (content.title || '') + ' · OpenMoji';
+const headers = Astro.props.content.astro.headers || [];
+//const headers = [];
 const {sidebarFilter} = content || false;
 const {color} = content || 'orange';
 const contentWidth = content.content || 'defaultWidth';
@@ -15,32 +17,27 @@ if(sidebarFilter !== false){
 
 ---
 <html lang="en">
-  <MetaHead title={title}/>
+  <head>
+    <MetaHeadContent title={title}/>
+  </head>
 
   <body>
     <style lang="scss">
       @use './_layoutWithSidebar.scss';
     </style>
     <div class="container">
+      
       <Header color={color}/>
       <nav class="nav-left">
         <ul id="nav-left">
         {
-          content.astro.headers.map((headline) => {
-            let appendRow = false;
+          headers.map((headline) => {
+            const headlineDepth = headline.depth;
 
-            if(showOnlyHeadlinesWithDepth !== false && showOnlyHeadlinesWithDepth.indexOf(headline.depth) > -1){
-              appendRow = true;
-            }
-
-            if(headline.depth === 1){
-                appendRow = false;
-            }
-
-            if(appendRow === true){
+            if(headlineDepth !== 1 && showOnlyHeadlinesWithDepth !== false && showOnlyHeadlinesWithDepth.indexOf(headlineDepth) > -1){
               return (<li class="mainmenu"><a href={'#' + headline.slug}>{headline.text}</a></li>);
             }
-
+            return null
           })
         }
         </ul>

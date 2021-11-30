@@ -16,13 +16,15 @@
     "postinstall": "gulp copy-markdown-assets && gulp copy-openmoji-data"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "sass": "^1.43.5"
   },
   "browserslist": [
     "last 2 versions"
   ],
   "dependencies": {
-    "astro": "^0.20.12",
+    "astro": "^0.21.5",
+    "autoprefixer": "^10.4.0",
     "openmoji": "^13.1.0"
   }
 }

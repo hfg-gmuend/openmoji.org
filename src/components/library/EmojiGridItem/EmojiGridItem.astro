@@ -1,0 +1,39 @@
+---
+import downloadIcon from './download-emoji-E252.svg';
+const {hexcode} = Astro.props || '';
+const {group} = Astro.props || '';
+const {subgroups} = Astro.props || '';
+const {description} = Astro.props || '';
+const filePathColor = '/data/color/svg/' + hexcode + '.svg';
+const filePathBlackAndWhite = '/data/black/svg/' + hexcode + '.svg';
+---
+<div class="emoji_single" id={'emoji-' + hexcode} data-group={group} data-subgroups={subgroups}>
+  <style lang="scss">
+    @use './_emojiGridItem.scss';
+  </style>
+  <a href={"/library/emoji-" + hexcode}>
+    <div class="emoji-container">
+      <img class="lazyload" data-src={filePathColor} alt={'"' + description + '"-emoji'}/>
+      <img class="lazyload hidden" data-src={filePathBlackAndWhite} alt={'"' + description + '"-emoji in black and white'}/>
+    </div>
+    <div>
+      <h3>{description}</h3>
+      <p>{hexcode}</p>
+    </div>
+  </a>
+  <div class="shortcuts">
+    <div class="shortcutsContent">
+      <a class="emojiDetails" href={"/library/emoji-" + hexcode}>
+        Emoji details
+      </a>
+      <div class="downloadButtons">
+        <a target="_blank" href={filePathColor} class="buttonAction" download>
+          <img alt="Download" src={downloadIcon}/> <span>.svg</span>
+        </a>
+        <a target="_blank" href={"/php/download_asset.php?type=emoji&emoji_hexcode=" + hexcode + "&emoji_variant=color"} class="buttonAction" download>
+          <img alt="Download" src={downloadIcon}/> <span>.png</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

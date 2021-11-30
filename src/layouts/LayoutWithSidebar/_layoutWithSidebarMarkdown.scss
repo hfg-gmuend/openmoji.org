@@ -15,6 +15,7 @@
 .markdownContent.narrow p{
   color: variables.$color-grey-dark;
   max-width: 500px;
+  margin-bottom: variables.$gap-small;
 }
 
 .markdownContent {

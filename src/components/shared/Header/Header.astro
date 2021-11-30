@@ -1,14 +1,13 @@
 ---
 import HeaderGetEmojiDropdown from '../GetEmojiDropdown/GetEmojiDropdown.astro';
-import githubLogo from './assets/github_hi.svg';
-import twitterLogo from './assets/twitter_hi.svg';
+import githubLogo from './github_hi.svg';
+import twitterLogo from './twitter_hi.svg';
 
 const {theme} = Astro.props || 'default';
-const {color} = Astro.props || 'default';
+const color = Astro.props.color || 'default';
 const {selected} = Astro.props;
 
 let currentPage = String(Astro.request.url);
-/* Dirty way to transfrom "http://localhost:3000/about" to "/about" */
 currentPage = currentPage.replace('//','');
 currentPage = currentPage.split('/');
 currentPage.shift();
@@ -42,7 +41,7 @@ const menuItems = [
   }
 ]
 ---
-<header class={"page-header " + theme + " " + color}>
+<header class={"page-header " + theme}>
   <style lang="scss">
     @use './_header.scss';
   </style>
@@ -51,14 +50,9 @@ const menuItems = [
   </a>
   <nav class="menu">
     <ul>
-      {menuItems.map((menuItem) => {
-        if(currentPage === menuItem.href){
-          return (<li class="active-tab"><a href={menuItem.href}>{menuItem.text}</a></li>)  
-        }else{
-          return (<li><a href={menuItem.href}>{menuItem.text}</a></li>)  
-        }
-        
-      })}
+      {menuItems.map((menuItem) => 
+        currentPage === menuItem.href ? (<li class={'active-tab ' + color}><a href={menuItem.href}>{menuItem.text}</a></li>) : (<li><a href={menuItem.href}>{menuItem.text}</a></li>)
+      )}
     </ul>
     <div class="github-link">
       <a
@@ -94,7 +88,7 @@ const menuItems = [
         target="_blank">
         <img src={twitterLogo} alt="Twitter logo" />
       </a>
-      <HeaderGetEmojiDropdown/>
+      <HeaderGetEmojiDropdown color={color}/>
     </div>
   </div>
 </header>
