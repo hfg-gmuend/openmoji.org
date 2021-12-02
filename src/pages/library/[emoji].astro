@@ -1,16 +1,34 @@
 ---
+import Header from '@/components/shared/Header/Header.astro';
+import Footer from '@/components/shared/Footer/Footer.astro';
+import JavascriptLibraries from '@/components/shared/JavascriptLibraries.astro';
+import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
+import EmojiDetail from '@/components/library/EmojiDetail/EmojiDetail.astro';
 import helpers from '../../util/helpers'
+
+const openmoji = Astro.props.openMojiData
+
 export async function getStaticPaths() {
   const uniqueEmojis = helpers.getUniqueEmojis();
   let emojiPages = [];
   for(let key in uniqueEmojis){
     const emojiData = uniqueEmojis[key]
-    emojiPages.push({ params: { emoji: 'emoji-' + emojiData.hexcode } })
+    emojiPages.push({
+      params: { emoji: 'emoji-' + emojiData.hexcode},
+      props: {openMojiData: emojiData}
+    })
   }
   return emojiPages;
 }
 ---
-<html>
-  <head><title>My Page</title></head>
-  <body>URL Param is {Astro.request.params.emoji}</body>
+<html lang="en">
+  <head>
+      <MetaHeadContent title={helpers.capitalizeFirstLetter(openmoji.annotation) + " · OpenMoji"} titleOG={helpers.capitalizeFirstLetter(openmoji.annotation)}/>
+  </head>
+  <body>
+    <Header color="red"/>
+    <EmojiDetail openMojiData={openmoji}/>
+  </body>
+  <Footer/>
+  <JavascriptLibraries/>
 </html>
