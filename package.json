@@ -25,6 +25,7 @@
   "dependencies": {
     "astro": "^0.21.5",
     "autoprefixer": "^10.4.0",
+    "node-fetch": "^2.6.6",
     "openmoji": "^13.1.0"
   }
 }
