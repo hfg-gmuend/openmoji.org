@@ -5,11 +5,11 @@ $padding: variables.$emoji-size / 2;
 $padding-sm: variables.$emoji-size-sm / 2;
 
 .wrapper {
+  position: relative;
   height: calc(100vh - 80px);
   display: flex;
   justify-content: left;
   align-items: left;
-  overflow: hidden;
 }
 
 .content {
@@ -22,7 +22,7 @@ $padding-sm: variables.$emoji-size-sm / 2;
   margin-left: variables.$gap-large;
   padding: $padding;
   height: 400px;
-  top: calc(50vh - 200px);
+  margin-top: calc(50vh - 200px);
 
   @media screen and (max-width: variables.$breakpoint-sm) {
     margin-left: calc(20vw - #{$padding-sm});
@@ -60,36 +60,19 @@ h2 {
   }
 }
 
-@include mixins.emoji-search;
+.emojiCloudWrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
 
-.emoji-search {
-  max-width: 400px;
-  height: 60px;
-
-  img {
-    left: 0;
-    top: 12px;
-    position: absolute;
-    height: 60%;
-    width: auto;
-    padding-right: variables.$gap-small;
-    opacity: 0.4;
-
-    @media screen and (max-width: variables.$breakpoint-sm) {
-      height: 40%;
-      top: 18px;
-      left: 8px;
-    }
-  }
-
-  input {
-    font-size: 23px;
-    background-color: variables.$background-color-grey;
-    padding-left: 55px;
-    border: none;
-
-    @media screen and (max-width: variables.$breakpoint-sm) {
-      font-size: variables.$font-sz-md;
-    }
-  }
+#emojiCloud{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 80px);
 }

@@ -2,31 +2,15 @@ $(document).ready(function () {
   //------------ META ------------
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-  console.log('rreeeeeeeady');
-
   //------------ Emoji Cloud ------------
-  var EMOJI_LIST;
-  var EMOJI_AMOUNT;
-  var EMOJI_FLAGS_AMOUNT;
-  var EMOJI_VERSION;
   const EMOJI_COUNT = 300;
   const EMOJI_POSITIONS = getPositions(isMobile ? 1.1 : 1.4, EMOJI_COUNT);
-  // get all emojis and generate category showcase
-  $.getJSON("data/openmoji.json", function (json) {
-    EMOJI_AMOUNT = parseInt(json.length);
-    EMOJI_FLAGS_AMOUNT = parseInt(json.filter(function (emoji) {
-      return emoji.group == "flags";
-    }).length);
-    EMOJI_LIST = json.filter(function (emoji) {
-      return emoji.skintone === "" && emoji.subgroups != "country-flag";
-    });
 
-    genEmojiCloud();
-    // initBigEmojiOverview();
-    // var lazyLoadInstance = new LazyLoad({
-    //     elements_selector: ".lazy"
-    // });
+  var EMOJI_LIST = OPENMOJIJSON.filter(function (emoji) {
+    return emoji.skintone === "" && emoji.subgroups != "country-flag";
   });
+
+  genEmojiCloud();
 
   function genEmojiCloud() {
     // randomize EMOJI_LIST
@@ -56,18 +40,14 @@ $(document).ready(function () {
           yPos >= BOUNDARIES.yMin &&
           yPos <= BOUNDARIES.yMax
         )
-      )
-        $("#emojiCloud").append(
-          "<a href='./library#emoji=" +
-            shuffledList[i].hexcode +
-            "'><img class='emoji lazy' alt='' src='data/color/svg/" +
-            shuffledList[i].hexcode +
-            ".svg' align='middle' style='left: " +
-            xPos +
-            "%; top: " +
-            yPos +
-            "%'></a>"
-        );
+      ){
+          let dom = ""
+          dom += "<a class='emojiCloudWrapper' href='./library/emoji-" + shuffledList[i].hexcode + "' style='left: " + xPos + "%; top: " + yPos + "%'>"
+          dom += "  <img class='emoji' alt='' src='data/color/svg/" + shuffledList[i].hexcode + ".svg'>"
+          dom += "</a>"
+
+          $("#emojiCloud").append(dom);
+        }
     }
   }
 
@@ -92,27 +72,6 @@ $(document).ready(function () {
 
     return positions;
   }
-
-  //------------ Event listeners ------------
-  // search field listener to change location to ./library and set search filter
-  $(".search").keydown(function (e) {
-    var url = window.location.href;
-    if (e.which == 13) {
-      window.location.href = url.substring(0, url.lastIndexOf("/") + 1) + "./library#search=" + $(this).val();
-    }
-  });
-
-  // window scroll listener
-  $(window).scroll(function () {
-    // toggle visibility of header search field based on position
-    var headerOffset = $(window).scrollTop() - $("header").offset().top;
-
-    if (!$("header .emoji-search").is(":visible") && headerOffset == 0) {
-      $("header .emoji-search").fadeIn(150);
-    } else if ($("header .emoji-search").is(":visible") && headerOffset != 0) {
-      $("header .emoji-search").fadeOut(150);
-    }
-  });
 
   //------------ General Functions ------------
   function shuffleArr(arr) {
