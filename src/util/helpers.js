@@ -1,4 +1,118 @@
 import openMojiJson from '/public/data/openmoji.json';
+import colorPaletteJson from '/public/data/color-palette.json';
+import packageJSON from '../../public/data/package.json';
+
+const clusterSkintoneVariationsBySkinIdForOneEmoji = (hexcode) => {
+  const skintonesData = getSkintoneVariationForEmoji(hexcode);
+  let output = {};
+  for(let skintoneData of skintonesData.skintones){
+    output[String(skintoneData.skintone)] = skintoneData.hexcode;
+  }
+
+  for(let skintoneData of skintonesData.skintone_combinations){
+    output[String(skintoneData.skintone)] = skintoneData.hexcode;
+  }
+  return output;
+}
+
+const getSkintoneVariationForEmoji = (hexcode) => {
+  const allVariations = getSkintoneVariationsForEachEmoji();
+  return allVariations[hexcode] || null;
+}
+
+const getSkintoneVariationsForEachEmoji = () => {
+  let output = {};
+
+  for(let emoji of openMojiJson){
+    // Whether emoji is variant
+    if(emoji.skintone_base_hexcode == ''){
+      if(!output[emoji.hexcode]){
+        output[emoji.hexcode] = {
+          baseEmoji: {},
+          skintones: [],
+          skintone_combinations: []
+        }
+      }
+      output[emoji.hexcode].baseEmoji = emoji;
+    }else{
+      // Create empty data for this hex code if not existant
+      if(!output[emoji.skintone_base_hexcode]){
+        output[emoji.skintone_base_hexcode] = {
+          skintones: [],
+          skintone_combinations: []
+        }
+      }
+
+      // if multi-skintone -> push to skintones
+      if(emoji.skintone_combination === 'single'){
+          output[emoji.skintone_base_hexcode].skintones.push(emoji);
+      }
+
+      // if multi-skintone -> push to skintone_combinations
+      if(emoji.skintone_combination === 'multiple'){
+          output[emoji.skintone_base_hexcode].skintone_combinations.push(emoji);
+      }
+    }
+  }
+
+  return output;
+}
+
+const getOpenMojiVersion = () => {
+  return packageJSON.version;
+}
+
+const getNumberOfEmojis = () => {
+  return openMojiJson.length;
+}
+
+const getNumberOfFlags = () => {
+  return parseInt(openMojiJson.filter(function (emoji) {
+      return emoji.group == "flags";
+    }).length);
+}
+
+const getColorForSkinId = (skinId, palette = 'fitzpatrick') => {
+  return colorPaletteJson.skintones[palette][parseInt(skinId) - 1];
+}
+
+const getColorPaletteSkintones = (palette = 'fitzpatrick') => {
+  return colorPaletteJson.skintones[palette];
+}
+
+const getFilePathEmojiImage = (hexCode, format = 'svg', blackOrColor = 'color') => {
+  if(format === 'svg'){
+    return '/data/' + blackOrColor + '/svg/' + hexCode + '.svg';
+  }else if(format === 'png'){
+    return '/php/download_asset.php?type=emoji&emoji_hexcode=' + hexCode + '&emoji_variant=' + blackOrColor;
+  }
+}
+
+const getEmojiCombinationLink = (hexcodeString) => {
+  return hexcodeString.split("-").map(function(hex) {
+      if (hex === "200D") return '<a href="https://emojipedia.org/zero-width-joiner/" target="_blank" rel="noreferrer noopener" class="redlink">ZWJ</a>';
+      if (hex === "FE0F") return '<a href="https://emojipedia.org/variation-selector-16/" target="_blank" rel="noreferrer noopener" class="redlink">VS16</a>';
+      return '<a href="/library/#emoji='+ hex +'" target="_blank" rel="noreferrer noopener" class="redlink">'+ String.fromCodePoint(parseInt(hex, 16)) +'</a>';
+  }).join(" • ");
+}
+
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+const getDataForEmoji = (hexcode) => {
+  const allEmojis = getAllEmojisByHex();
+  return allEmojis[hexcode];
+}
+
+const getAllEmojisByHex = () => {
+  let emojisByHex = {};
+  for(let index in openMojiJson){
+    const emojiData = openMojiJson[index];
+    emojisByHex[emojiData.hexcode] = emojiData;
+  }
+  return emojisByHex;
+}
 
 const getUniqueEmojis = () => {
   // Filter emojis, so every "unique" emoji is only shown once (not skintones)
@@ -50,6 +164,19 @@ const getEmojiGroupsAndSubgroups = () => {
 }
 
 export default {
+  getDataForEmoji,
+  getAllEmojisByHex,
+  clusterSkintoneVariationsBySkinIdForOneEmoji,
+  getSkintoneVariationForEmoji,
+  getSkintoneVariationsForEachEmoji,
+  getOpenMojiVersion,
+  getNumberOfEmojis,
+  getNumberOfFlags,
+  getColorPaletteSkintones,
+  getColorForSkinId,
+  getFilePathEmojiImage,
+  getEmojiCombinationLink, 
+  capitalizeFirstLetter,
   getUniqueEmojis,
   getEmojiGroupsAndSubgroups
 }
