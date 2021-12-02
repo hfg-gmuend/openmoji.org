@@ -2,7 +2,7 @@
 @use 'src/shared-styles/_mixins.scss';
 
 header {
-  z-index: 10;
+  z-index: 999999;
   background-color: variables.$color-white;
   box-sizing: border-box;
   padding: 0 variables.$gap-med 0 variables.$gap-med;
@@ -11,6 +11,8 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  position: fixed;
+  width: 100%;
   
   top: 0;
 

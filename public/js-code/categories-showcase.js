@@ -2,23 +2,9 @@ $(document).ready(function () {
   //------------ META ------------
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-  //------------ Emoji Cloud ------------
-  var EMOJI_LIST;
-  var EMOJI_AMOUNT;
-  var EMOJI_FLAGS_AMOUNT;
-  var EMOJI_VERSION;
-  const EMOJI_COUNT = 300;
   // get all emojis and generate category showcase
-  $.getJSON("data/openmoji.json", function (json) {
-    EMOJI_AMOUNT = parseInt(json.length);
-    EMOJI_FLAGS_AMOUNT = parseInt(json.filter(function (emoji) {
-      return emoji.group == "flags";
-    }).length);
-    EMOJI_LIST = json.filter(function (emoji) {
-      return emoji.skintone === "" && emoji.subgroups != "country-flag";
-    });
-
-    genCategoriesShowcase();
+  var EMOJI_LIST = OPENMOJIJSON.filter(function (emoji) {
+    return emoji.skintone === "" && emoji.subgroups != "country-flag";
   });
 
   //------------ Category showcase ------------
@@ -38,6 +24,8 @@ $(document).ready(function () {
 
   // select random categories based on defined limit
   const RANDOM_CATEGORIES = Object.fromEntries(shuffleArr(Object.entries(CATEGORIES)).slice(0, CATEGORIES_LIMIT));
+
+  genCategoriesShowcase();
 
   function genCategoriesShowcase() {
     // add categories to html

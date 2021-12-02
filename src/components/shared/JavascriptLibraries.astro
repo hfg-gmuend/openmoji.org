@@ -1,4 +1,14 @@
+---
+import openMojiJson from '/public/data/openmoji.json';
+---
 <script rel="script" src="/js-libraries/jquery-3.4.1.min.js"></script>
 <script rel="script" src="/js-libraries/lazyload.min.js"></script>
-<script type="text/javascript" src="/js-code/hero.js"></script>
+<script rel="script" src="/js-libraries/fuse.min.js"></script>
+<script define:vars={{openMojiJson}}>
+	// This variable is global, because it is used by emoji-cloud.js, categories-showcase.js and custom-search.js
+	const OPENMOJIJSON = openMojiJson;
+</script>
+<script type="text/javascript" src="/js-code/emoji-cloud.js"></script>
 <script type="text/javascript" src="/js-code/categories-showcase.js"></script>
+<script type="text/javascript" src="/js-code/custom-search.js"></script>
+

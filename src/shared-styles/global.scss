@@ -336,3 +336,24 @@ svg {
     }
   }
 }
+
+.searchResult{
+  border-radius: 4px;
+  padding: variables.$gap-xs;
+  display: flex;
+  align-items: center;
+
+  img{
+    height: 30px;
+    width: auto;
+    margin-right: variables.$gap-xs;
+  }
+}
+
+.itemNotSelected{
+
+}
+
+.itemSelected, .searchResult:hover{
+  background: variables.$color-grey-ultra-light;
+}
