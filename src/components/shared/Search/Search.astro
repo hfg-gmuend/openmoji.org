@@ -1,0 +1,19 @@
+---
+import searchIcon from './search.svg';
+---
+<div id="search-element" class="emoji-search">
+	<style lang="scss">
+    	@use './_search.scss';
+  	</style>
+	  <img src={searchIcon} alt="search icon"/>
+	  <label class="hidden" for="emojisearch">Search</label>
+	  <input aria-label="Search" type="text" class="search" id="emojisearch" placeholder="Search emoji …"/>
+	  <div class="resultsWrapperWrapper">
+			<div id="search-results-wrapper" class="resultsWrapper hidden">
+				<ol id="search-results">
+					<!-- Search results will be put here -->	
+					<a class="searchResult"></a>
+				</ol>
+			</div>
+		</div>
+</div>
