@@ -2,6 +2,7 @@
 layout: ../../layouts/LayoutWithSidebar/LayoutWithSidebar.astro
 setup: |
   import Team from '@/components/about/Team/Team.astro';
+  import Emoji from '@/components/shared/Emoji.astro';
 title: About
 color: yellow
 content: narrow
@@ -9,7 +10,10 @@ content: narrow
 
 # About
 ## Project Intent
-Emoji are indispensable for daily communication. They are practical (👍), funny (😆) and sometimes quite bizarre (💩🤪🙀🧟). For us, emoji are much more than colorful images decorating fun short messages. We think they are rather part of an important and exciting development: the return of pictorial symbols to written communication. For the first time in history, it is possible to communicate with a combination of letters and icons. Now it becomes feasible to say things and convey meanings that were previously impossible.
+
+<p>
+Emoji are indispensable for daily communication. They are practical (<Emoji hex="1F44D"/>), funny (<Emoji hex="1F606"/>) and sometimes quite bizarre (<Emoji hex="1F4A9"/><Emoji hex="1F92A"/><Emoji hex="1F640"/><Emoji hex="1F9DF"/>). For us, emoji are much more than colorful images decorating fun short messages. We think they are rather part of an important and exciting development: the return of pictorial symbols to written communication. For the first time in history, it is possible to communicate with a combination of letters and icons. Now it becomes feasible to say things and convey meanings that were previously impossible.
+</p>
 
 Unfortunately, the creative variety of emoji has been rather limited so far, especially when compared to the incredible number of available fonts. At the moment, there is only a dozen emoji sets, most of them from big tech companies. These emoji are visually adapted to the respective appearance of their software platforms. In addition, the usage rights are often very restrictive (e.g. the terms of use of Apple’s emoji).
 
