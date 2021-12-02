@@ -1,0 +1,30 @@
+---
+import helpers from '../../util/helpers'
+
+const hex = Astro.props.hex;
+const height = Astro.props.size || '1.4em';
+
+const emojiSvg = helpers.getFilePathEmojiImage(hex);
+const emojiData = helpers.getDataForEmoji(hex);
+---
+<span class="emojiForTextWrapper">
+	<style lang="scss">
+		
+		.emojiForTextWrapper{
+			vertical-align: middle;
+			margin-left: -0.2em;
+			margin-right: -0.2em;
+		}
+		.emojiForText{
+			display: inline-block;
+			margin: 0;
+			min-width: initial;
+			max-width: initial;
+		}
+	</style>
+	<img
+		alt={emojiData.annotation + '-emoji'}
+		class="emojiForText"
+		style={"height:" + height + ";width:" + height}
+		src={emojiSvg}>
+</span>

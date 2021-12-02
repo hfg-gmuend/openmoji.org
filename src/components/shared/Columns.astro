@@ -1,0 +1,30 @@
+---
+import { Markdown } from 'astro/components';
+---
+<div>
+    <style type="text/css" global>
+        .layoutContainer{
+            display: flex;
+            /*border: 1px solid #828282;
+            padding: 10px;*/
+            margin-bottom: 10px;
+        }
+
+        .layoutContainer .columnLeft{
+            /*border: 1px solid #D2D2D2;
+            margin: 4px;*/
+            padding-right: 10px;
+            flex: 1;
+        }
+
+        .layoutContainer .columnRight{
+            /*border: 1px solid #D2D2D2;
+            margin: 4px;*/
+            flex: 2;
+        }
+    </style>
+
+    <div class="layoutContainer">
+        <slot />
+    </div>
+</div>
