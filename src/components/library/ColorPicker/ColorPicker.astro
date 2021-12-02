@@ -1,0 +1,53 @@
+---
+import helpers from '../../../util/helpers'
+
+const filteredEmojies = helpers.getUniqueEmojis();
+const colorPalette = helpers.getColorPaletteSkintones();
+
+console.log('colorPalette', colorPalette)
+
+const emojiHex = Astro.props.emoji;
+const emojiData = filteredEmojies[emojiHex];
+const multiskin = Astro.props.multiskin;
+const skintoneCombinations = Astro.props.skintoneCombinations;
+
+---
+<div class="small-emoji-preview">
+  <style lang="scss">
+    @use './_colorPicker.scss';
+  </style>
+
+  <div id="emoji-preview">
+    <div id="outline-emoji-preview" class="circle visible"></div>
+    <div id="color-emoji-preview" onclick="colorChangeSingleColor('')"class="circle highlight visible"></div>
+    {
+      multiskin === false ?
+      (<div class="skintone-selector">
+        {
+          colorPalette.map((color, index) => (
+            <div class="circle" onclick={"colorChangeSingleColor(" + (index + 1) + ")"} style={'background-color:' + color}></div>
+            ))
+        }
+      </div>)
+      :
+      (<div class="skintone-selector">
+        {
+          colorPalette.map((color, index) => (
+            <div class="circle" onclick={"colorChangeMultiColor('left'," + (index + 1) + ")"} style={'background-color:' + color}></div>
+            ))
+        }
+      </div>
+      <div class="skintone-selector">
+        {
+          colorPalette.map((color, index) => (
+            <div class="circle" onclick={"colorChangeMultiColor('right'," + (index + 1) + ")"} style={'background-color:' + color}></div>
+            ))
+        }
+      </div>)
+    }
+  </div>
+  <script define:vars={{skintoneCombinations}}>
+    const SKINTONECOMBINATIONS = skintoneCombinations;
+  </script>
+  <script type="text/javascript" src="/js-code/skintone-colorpicker.js"></script>
+</div>

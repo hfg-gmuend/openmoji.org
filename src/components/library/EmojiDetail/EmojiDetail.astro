@@ -1,0 +1,142 @@
+---
+import ColorPicker from '@/components/library/ColorPicker/ColorPicker.astro';
+import helpers from '../../../util/helpers'
+import emojipediaJson from '/public/data/emojipediaData.json';
+
+const openmoji = Astro.props.openMojiData;
+const emojiPedia = emojipediaJson[openmoji.hexcode];
+
+const skintoneVariations = helpers.getSkintoneVariationForEmoji(openmoji.hexcode);
+const hasMultiSkintone = skintoneVariations.skintone_combinations.length > 0;
+const hasAnySkintone = skintoneVariations.skintone_combinations.length > 0 || skintoneVariations.skintones.length > 0;
+const skintoneCombinations = helpers.clusterSkintoneVariationsBySkinIdForOneEmoji(openmoji.hexcode);
+
+const filePathColorSVG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'color')
+const filePathColorPNG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'png', 'color')
+const filePathBlackSVG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'black')
+const filePathBlackPNG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'png', 'black')
+
+const urlAllEmoji = '/library/'
+const urlGroup = encodeURI('/library/#group=' + openmoji.group)
+const urlSubgroup = encodeURI('/library/#group=' + openmoji.group + ' ' + openmoji.subgroups);
+const urlAuthor = encodeURI('/library/#author=' + openmoji.openmoji_author);
+const urlUnicode = 'https://decodeunicode.org/en/u+' + openmoji.hexcode;
+---
+<div class="wrapper">
+  <style lang="scss">
+    @use './_emojiDetail.scss';
+  </style>
+  <div class="preview">
+    <div class="active-emoji-selection">
+      <img id="main-emoji-image" src={filePathColorSVG} alt={'"' + openmoji.annotation + '"-emoji'}/>
+      {
+        hasAnySkintone === true ? (<ColorPicker
+        emoji={openmoji.hexcode}
+        multiskin={hasMultiSkintone}
+        skintoneCombinations={skintoneCombinations}/>) : null
+      }
+      
+    </div>
+  </div>
+  <div class="description">
+    <nav>
+      <a class="redlink" href={urlAllEmoji}>All OpenMojis</a>
+
+      {
+        openmoji.group ? (
+          <span>/ <a class="redlink" href={urlGroup}>
+            {helpers.capitalizeFirstLetter(openmoji.group)}
+            </a>
+          </span>
+        ) : null
+      }
+
+      {
+        openmoji.subgroups ? (
+          <span>/ <a class="redlink" href={urlSubgroup}>
+            {helpers.capitalizeFirstLetter(openmoji.subgroups)}
+            </a>
+          </span>
+        ) : null
+      }
+    </nav>
+
+    <h1>{openmoji.annotation}</h1>
+
+    {
+      emojiPedia?.description ? (
+        <div>
+          <h2><a href={emojiPedia.permalink}>Emojipedia description:</a></h2>
+          <p>
+            {emojiPedia.description} <a class="redlink" href={emojiPedia.permalink}>Read more</a>
+          </p>
+        </div>
+      ) : null
+    }
+
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <h2>Unicode</h2>
+          </td>
+          <td>
+            <a target="_blank" class="redlink" href={urlUnicode}>
+              {openmoji.hexcode}
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td id="unicodeCombination">{helpers.getEmojiCombinationLink(openmoji.hexcode)}</td>
+        </tr>
+
+        <tr>
+          <td>
+            <h2>Author</h2>
+          </td>
+          <td>
+            <a class="redlink" href={urlAuthor}>
+              {openmoji.openmoji_author}
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <h2>Category</h2>
+          </td>
+          <td>
+            <a class="redlink" href={urlGroup}>
+              {openmoji.group}
+            </a>
+          </td>
+        </tr>
+        
+        {
+          openmoji.subgroups ? (
+            <tr>
+              <td>
+                <h2>Subcategory</h2>
+              </td>
+              <td>
+                <a class="redlink" href={urlSubgroup}>
+                  {openmoji.subgroups}
+                </a>
+              </td>
+            </tr>) : null
+        }
+      </tbody>
+    </table>
+
+    <div>
+      <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
+        <span>SVG</span>
+      </a>  
+      <a class="linkButton" id="downloadPNG" href={filePathColorPNG} download>
+        <span>PNG</span>
+      </a> 
+    </div>
+  </div>
+</div>

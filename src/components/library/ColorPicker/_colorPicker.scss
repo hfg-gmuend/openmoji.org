@@ -1,0 +1,145 @@
+@use 'src/shared-styles/_variables.scss';
+
+.circle {
+  box-sizing: border-box;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  flex-basis: 25px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  &.highlight::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    background-color: variables.$color-white;
+    box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
+  }
+}
+
+.circle + .circle {
+  margin-left: 5px;
+}
+
+.skintone-selector {
+  display: inline-flex;
+  align-items: center;
+
+  .circle:first-child {
+    margin-left: 7.5px;
+  }
+
+  &::before {
+    content: "";
+    height: 15px;
+    margin-left: 7.5px;
+    border-left: 1px solid variables.$color-grey-super-light;
+  }
+
+  &:empty::before {
+    display: none;
+  }
+}
+
+.small-emoji-preview {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media screen and (max-width: variables.$breakpoint-md) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: variables.$breakpoint-sm) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        width: auto;
+        min-width: 170px;
+      }
+
+      #emoji-preview {
+        display: flex;
+        height: 50px;
+        margin: auto;
+        align-items: center;
+
+        @media screen and (max-width: variables.$breakpoint-sm) {
+          order: 1;
+          padding-bottom: variables.$gap-xs;
+          width: 100%;
+          justify-content: center;
+        }
+
+        #outline-emoji-preview {
+          background-color: variables.$color-grey-ultra-light;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 65%;
+            margin-top: -1px;
+            margin-left: calc(-30% - 1px);
+            border: 1px solid variables.$color-grey-light;
+            transform: rotate3d(0, 0, 1, -45deg);
+          }
+        }
+
+        #color-emoji-preview {
+          background-color: variables.$color-fitzpatrick-default;
+        }
+
+        .emoji-preview-image {
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+
+      .prev-emoji {
+        @media screen and (max-width: variables.$breakpoint-sm) {
+          order: 2;
+          padding-bottom: variables.$gap-xs;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+      }
+
+      .next-emoji {
+        @media screen and (max-width: variables.$breakpoint-sm) {
+          order: 3;
+          padding-bottom: variables.$gap-xs;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+
+      .next-or-prev {
+        opacity: 0.5;
+        transition: all 0.3s;
+        // background-color: #456;
+        cursor: pointer;
+
+        img {
+          height: 40px;
+          width: 40px;
+        }
+
+        @media screen and (max-width: variables.$breakpoint-sm) {
+          width: 50%;
+        }
+      }
+
+      .next-or-prev:hover {
+        opacity: 1;
+      }
+    }
