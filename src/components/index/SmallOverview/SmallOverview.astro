@@ -1,3 +1,8 @@
+---
+import helpers from '../../../util/helpers'
+const numberOfEmojis = helpers.getNumberOfEmojis();
+const numberOfFlags = helpers.getNumberOfFlags();
+---
 <div class="wrapper">
   <style lang="scss">
     @use './_smallOverview.scss';
@@ -17,7 +22,7 @@
       <div class="content-item">
         <img alt="3150+ Emojis" src="data/color/svg/1F3C6.svg">
         <div class="description">
-          <h3><span id="emoji-amount">3150+</span> Emojis</h3>
+          <h3>{numberOfEmojis} Emojis</h3>
           <p>So far more than three thousand emojis over many categories have been designed</p>
         </div>
       </div>
@@ -50,9 +55,9 @@
         </div>
       </div>
       <div class="content-item">
-        <img alt="250+ Flags" src="data/color/svg/1F3F3-FE0F-200D-1F308.svg">
+        <img alt={numberOfFlags + ' flags'} src="data/color/svg/1F3F3-FE0F-200D-1F308.svg">
         <div class="description">
-          <h3><span id="flag-amount">250+</span> Flags</h3>
+          <h3>{numberOfFlags} Flags</h3>
           <p>From Andorra to Zimbabwe to Pirates</p>
         </div>
       </div>

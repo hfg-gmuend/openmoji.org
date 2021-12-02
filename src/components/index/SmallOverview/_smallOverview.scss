@@ -2,6 +2,7 @@
 @use 'src/shared-styles/_mixins.scss';
 
 .wrapper {
+  position: relative;
   background-color: variables.$color-grey-ultra-light;
   .content-wrapper{
     @include mixins.content;
