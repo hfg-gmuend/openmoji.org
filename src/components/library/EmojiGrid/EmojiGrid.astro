@@ -9,7 +9,7 @@ const filteredEmojies = helpers.getUniqueEmojis();
     @use './_emojiGrid.scss';
   </style>
   <div id="emoji_grid" class="emoji_grid">
-    {Object.keys(filteredEmojies).map((key) => {
+    {Object.keys(filteredEmojies).slice(0, 50).map((key) => {
         const emojiData = filteredEmojies[key]
         return (<EmojiGridItem
           description={emojiData.annotation}

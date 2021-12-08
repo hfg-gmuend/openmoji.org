@@ -1,5 +1,9 @@
 @use 'src/shared-styles/_variables.scss';
 
+.emoji_single a{
+  text-decoration: none;
+}
+
 .hidden{
   display: none;
 }
@@ -30,12 +34,17 @@
   opacity: 1;
 }
 
-.emojiDetails{
+.emojiDetails, .buttonAction{
+  background: variables.$color-blue-dark;
+  color: white;
   border-radius: 10px;
-  background: variables.$color-blue-light;
+  padding: 12px 6px 12px 6px;
+  text-decoration: none;
+}
+
+.emojiDetails{
   margin: 4px 4px 8px 4px;
-  display: block;
-  padding: 6px 6px 12px 6px;
+  display: block; 
 }
 
 .downloadButtons{
@@ -48,15 +57,16 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 10px;
-  background: variables.$color-blue-light;
-  padding: 6px 6px 12px 6px;
   margin-right: 4px;
   margin-left: 4px;
   width: 100%;
   img{
     width: 40px;
   }
+}
+
+.buttonAction:hover, .emojiDetails:hover{
+  background: variables.$color-blue-light;
 }
 
 
@@ -66,7 +76,8 @@
 
 .emoji_single {
   position: relative;
-  margin-right: variables.$gap-med;
+  margin-right: variables.$gap-small;
+  margin-left: variables.$gap-small;
   margin-bottom: variables.$gap-small;
   border-radius: 6px;
   min-width: 150px;
@@ -114,8 +125,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-right: variables.$gap-xs;
-    margin-left: variables.$gap-xs;
     margin-bottom: variables.$gap-xs;
 
     img {

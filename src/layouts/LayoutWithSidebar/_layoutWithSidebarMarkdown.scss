@@ -38,10 +38,12 @@
   }
 
   h1 {
+    font-size: variables.$font-sz-xl;
+    font-weight: variables.$font-reg;
     margin-bottom: variables.$gap-reg;
 
     @media screen and (max-width: variables.$breakpoint-md) {
-      font-size: 30px;
+      font-size: variables.$font-sz-xl;
     }
   }
 

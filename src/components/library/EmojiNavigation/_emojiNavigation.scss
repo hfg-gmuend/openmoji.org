@@ -1,6 +1,27 @@
 @use 'src/shared-styles/_variables.scss';
+.category-toggle:hover #nav-left {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
 
 .nav-left {
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  max-width: 300px;
+  height: 100vh;
+  padding-top: 80px; // The height of the header
+  overflow-y: scroll;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    max-width: 100%;
+    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    margin: 0;
+    overflow: initial;
+    display: none;
+  }
+
   #show-color {
     margin-bottom: variables.$gap-reg;
   }
@@ -34,30 +55,9 @@
       }
     }
   }
-}
-
-.category-toggle:hover #nav-left {
-  max-height: 500px;
-  transition: max-height 0.25s ease-in;
-}
-
-.nav-left {
-  grid-area: nav;
-  box-sizing: border-box;
-  max-width: 300px;
-
-  @media screen and (max-width: variables.$breakpoint-md) {
-    max-width: 100%;
-    padding: 0 variables.$gap-small 0 variables.$gap-small;
-    margin: 0;
-    overflow: initial;
-    display: none;
-  }
 
   >ul {
-    margin: variables.$gap-reg variables.$gap-med;
-    position: sticky;
-    top: 80px;
+    margin: variables.$gap-med variables.$gap-med;
 
     @media screen and (max-width: variables.$breakpoint-md) {
       margin: variables.$gap-reg variables.$gap-reg;

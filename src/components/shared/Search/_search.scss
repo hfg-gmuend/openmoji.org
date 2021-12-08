@@ -1,35 +1,91 @@
 @use 'src/shared-styles/_variables.scss';
-@use 'src/shared-styles/_mixins.scss';
-@include mixins.emoji-search;
 
 .emoji-search {
-  max-width: 400px;
-  height: 60px;
+  position: relative;
 
-  img {
-    left: 0;
-    top: 12px;
-    position: absolute;
-    height: 60%;
-    width: auto;
-    padding-right: variables.$gap-small;
-    opacity: 0.4;
+  &.forHeader{
+    height: 40px;
 
-    @media screen and (max-width: variables.$breakpoint-sm) {
-      height: 40%;
-      top: 18px;
-      left: 8px;
+    img {
+      left: 0px;
+      top: 8px;
+      position: absolute;
+      height: 60%;
+      width: auto;
+      padding-right: variables.$gap-small;
+      opacity: 0.4;
+    }
+
+    input {
+      border-radius: 999px;
+      height: 100%;
+      background: none;
+      padding-left: 33px;
+      border-radius: 20px;
+      border: solid 1px variables.$color-grey-light;
+      font-size: variables.$font-sz-md;
+      color: variables.$color-grey-dark;
+      transition: all 0.4s;
+      width: 100%;
+
+      &:focus {
+        color: variables.$color-grey-dark;
+      }
+
+      &:focus+img {
+        opacity: 1;
+      }
+    }
+
+    // .emoji-search img {
+    //   left: 2px;
+    //   top: 10px;
+    //   height: 50%;
+    // }
+
+    @media screen and (min-width: variables.$breakpoint-lg) {
+      input {
+        width: 210px;
+      }
+    }
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: none;
     }
   }
 
-  input {
-    font-size: 23px;
-    background-color: variables.$background-color-grey;
-    padding-left: 55px;
-    border: none;
+  &.forHero{
+    max-width: 400px;
+    height: 60px;
 
-    @media screen and (max-width: variables.$breakpoint-sm) {
-      font-size: variables.$font-sz-md;
+    img {
+      left: 0;
+      top: 12px;
+      position: absolute;
+      height: 60%;
+      width: auto;
+      padding-right: variables.$gap-small;
+      opacity: 0.4;
+
+      @media screen and (max-width: variables.$breakpoint-sm) {
+        height: 40%;
+        top: 18px;
+        left: 8px;
+      }
+    }
+
+    input {
+      border-radius: 999px;
+      font-size: 23px;
+      background-color: variables.$background-color-grey;
+      padding-left: 55px;
+      border: none;
+      height: 100%;
+      width: 100%;
+
+      @media screen and (max-width: variables.$breakpoint-sm) {
+        font-size: variables.$font-sz-md;
+      }
     }
   }
 }

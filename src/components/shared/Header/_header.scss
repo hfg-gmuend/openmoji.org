@@ -1,5 +1,8 @@
 @use 'src/shared-styles/_variables.scss';
-@use 'src/shared-styles/_mixins.scss';
+
+.contentPusher{
+  height: 80px;
+}
 
 header {
   z-index: 999999;
@@ -13,9 +16,11 @@ header {
   height: 80px;
   position: fixed;
   width: 100%;
-  border-bottom: variables.$color-grey-super-light 1px solid;
-  
   top: 0;
+
+  &.borderBottom{
+    border-bottom: variables.$color-grey-super-light 1px solid;
+  }
 
   @media screen and (max-width: variables.$breakpoint-sm) {
     padding: 0 variables.$gap-small 0 variables.$gap-small;
@@ -83,26 +88,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
-    @include mixins.emoji-search;
-
-    .emoji-search img {
-      left: 2px;
-      top: 10px;
-      height: 50%;
-    }
-
-    @media screen and (min-width: variables.$breakpoint-lg) {
-      .emoji-search input {
-        width: 210px;
-      }
-    }
-
-    @media screen and (max-width: variables.$breakpoint-md) {
-      .emoji-search {
-        display: none;
-      }
-    }
 
     .mobile-toggle {
       display: none;

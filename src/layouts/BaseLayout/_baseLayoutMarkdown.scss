@@ -1,6 +1,33 @@
 @use 'src/shared-styles/_variables.scss';
 
 .markdownContent{
+	h1 {
+		font-size: variables.$font-sz-xl;
+		font-weight: variables.$font-reg;
+
+		@media screen and (min-width: variables.$breakpoint-md) {
+		    font-size: variables.$font-sz-xl;
+		  }
+	}
+
+	h2{
+		font-size: variables.$font-sz-lg;
+		font-weight: variables.$font-bold;
+		margin-top: variables.$gap-med;
+		margin-bottom: variables.$gap-xs;
+	}
+
+	h3{
+		font-size: variables.$font-sz-lg;
+		margin-top: variables.$gap-med;
+	}
+
+	h4, h5{
+		font-size: variables.$font-sz-md;
+		font-weight: variables.$font-bold;
+		margin-top: variables.$gap-reg;
+	}
+
 	padding-left: variables.$gap-xs;
 	padding-right: variables.$gap-xs;
 
@@ -14,15 +41,6 @@
 
 	img{
 		max-width: 100%;
-	}
-
-	h1{
-		margin-bottom: variables.$gap-reg;
-	}
-
-	h2{
-		margin-top: variables.$gap-med;
-		margin-bottom: variables.$gap-xs;
 	}
 
 	ul, ol, p{

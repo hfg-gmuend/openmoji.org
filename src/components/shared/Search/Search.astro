@@ -1,13 +1,15 @@
 ---
 import searchIcon from './search.svg';
+const {theme} = Astro.props;
+const {placeholder} = Astro.props;
 ---
-<div id="search-element" class="emoji-search">
+<div id="search-element" class={"emoji-search " + theme}>
 	<style lang="scss">
     	@use './_search.scss';
   	</style>
 	  <img src={searchIcon} alt="search icon"/>
 	  <label class="hidden" for="emojisearch">Search</label>
-	  <input aria-label="Search" type="text" class="search" id="emojisearch" placeholder="Search emoji …"/>
+	  <input aria-label="Search" type="text" class="search" id="emojisearch" placeholder={placeholder || 'Search'}/>
 	  <div class="resultsWrapperWrapper">
 			<div id="search-results-wrapper" class="resultsWrapper hidden">
 				<ol id="search-results">

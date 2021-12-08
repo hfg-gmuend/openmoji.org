@@ -29,12 +29,12 @@
 	    display: inline-flex;
 	    flex-wrap: nowrap;
 	    justify-content: space-around;
-	    width: 50%;
+	    width: 54%;
 	    align-items: center;
+	    margin-bottom: variables.$gap-reg;
 
 	    .defaultButton {
 	      &:first-child {
-	        margin-bottom: variables.$gap-reg;
 	        margin-right: variables.$gap-reg;
 	      }
 	    }
@@ -44,7 +44,8 @@
 
 	      .defaultButton {
 	        &:first-child {
-	          margin-right: 0;
+	        	margin-bottom: variables.$gap-reg;
+	        	margin-right: 0;
 	        }
 	      }
 	    }

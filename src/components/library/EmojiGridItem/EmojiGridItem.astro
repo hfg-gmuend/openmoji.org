@@ -1,6 +1,6 @@
 ---
 import helpers from '../../../util/helpers'
-import downloadIcon from './download-emoji-E252.svg';
+import downloadIcon from './download-emoji-E252-white.svg';
 const {hexcode} = Astro.props || '';
 const {group} = Astro.props || '';
 const {subgroups} = Astro.props || '';
@@ -28,7 +28,7 @@ const filePathBlackAndWhitePNG = helpers.getFilePathEmojiImage(hexcode, 'png', '
   <div class="shortcuts">
     <div class="shortcutsContent">
       <a class="emojiDetails" href={"/library/emoji-" + hexcode}>
-        Emoji details
+        Open details
       </a>
       <div class="downloadButtons">
         <a target="_blank" href={filePathColorSVG} class="buttonAction" download>

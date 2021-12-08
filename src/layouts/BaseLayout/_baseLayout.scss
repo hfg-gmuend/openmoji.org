@@ -3,5 +3,6 @@
 
 .markdownContent{
 	@include mixins.content;
+	margin-top: variables.$gap-med;
 	margin-bottom: variables.$gap-med;
 }

@@ -12,8 +12,8 @@ import EmojiGrid from '@/components/library/EmojiGrid/EmojiGrid.astro';
         <MetaHeadContent title="Library · OpenMoji" titleOG="Library"/>
     </head>
     <body>
-        <Header color="red"/>
-        <main style="display: flex;">
+        <Header color="red" showSearch={true}/>
+        <main class="relative">
             <EmojiNavigation/>
             <EmojiGrid/>
         </main>

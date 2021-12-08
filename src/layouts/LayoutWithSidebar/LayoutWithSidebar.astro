@@ -34,7 +34,7 @@ if(sidebarFilter !== false){
             const headlineDepth = headline.depth;
 
             if(headlineDepth !== 1 && showOnlyHeadlinesWithDepth !== false && showOnlyHeadlinesWithDepth.indexOf(headlineDepth) > -1){
-              return (<li class="mainmenu"><a href={'#' + headline.slug}>{headline.text}</a></li>);
+              return (<li class="mainmenu"><a class="standardLink" href={'#' + headline.slug}>{headline.text}</a></li>);
             }
             return null
           })

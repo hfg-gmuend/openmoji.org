@@ -1,6 +1,6 @@
 @use 'src/shared-styles/_variables.scss';
 
-html {
+html, body{
   color: variables.$color-grey-dark;
   font-size: variables.$font-sz-md;
 }
@@ -29,7 +29,7 @@ li {
   list-style: none;
 }
 
-h1 {
+.visuallyHeadline1 {
   font-size: variables.$font-sz-xl;
   font-weight: variables.$font-reg;
   // font-size: variables.$font-sz-lg;
@@ -41,22 +41,21 @@ h1 {
   }
 }
 
-h2 {
+.visuallyHeadline2 {
   font-size: variables.$font-sz-lg;
   font-weight: variables.$font-bold;
   margin-bottom: variables.$gap-reg;
 }
 
-h3 {
+.visuallyHeadline3 {
   font-weight: variables.$font-reg;
-  // font-size: variables.$font-sz-md;
   font-size: variables.$font-sz-lg;
   margin-bottom: variables.$gap-xs;
 }
 
-h4,
-h5,
-h6 {
+.visuallyHeadline4,
+.visuallyHeadline5,
+.visuallyHeadline6 {
   font-weight: variables.$font-reg;
   font-size: variables.$font-sz-md;
   color: variables.$color-grey-light;
@@ -149,14 +148,12 @@ article:not(:last-child) {
   }
 
   &.large {
-    margin-bottom: variables.$gap-large;
     padding: variables.$gap-xs variables.$gap-reg;
     padding-right: 30px;
     font-size: 23px;
   }
 
   &.xl {
-    margin-bottom: variables.$gap-large;
     padding: variables.$gap-xs variables.$gap-reg;
     padding-right: 30px;
     font-size: variables.$font-sz-lg;
@@ -215,7 +212,6 @@ input[type="radio"] {
 
 main {
   grid-area: content;
-  margin-top: variables.$gap-reg;
 
   @media screen and (max-width: variables.$breakpoint-md) {
     margin-top: variables.$gap-xs;
@@ -333,6 +329,7 @@ svg {
   padding: variables.$gap-xs;
   display: flex;
   align-items: center;
+  text-decoration: none;
 
   img{
     height: 30px;
@@ -342,7 +339,6 @@ svg {
 }
 
 .itemNotSelected{
-
 }
 
 .itemSelected, .searchResult:hover{
@@ -382,4 +378,12 @@ svg {
 
 .text-center{
   text-align: center;
+}
+
+.no-underline{
+  text-decoration: none;
+}
+
+.relative{
+  position: relative;
 }

@@ -1,13 +1,15 @@
 ---
-import HeaderGetEmojiDropdown from '../GetEmojiDropdown/GetEmojiDropdown.astro';
+import GetEmojiDropdown from '../GetEmojiDropdown/GetEmojiDropdown.astro';
+import Search from '../Search/Search.astro';
 import githubLogo from './github_hi.svg';
 import twitterLogo from './twitter_hi.svg';
 import menuIcon from './menu.svg';
 import menuCloseIcon from './menu-close.svg';
 
-const {theme} = Astro.props || 'default';
+const {showSearch} = Astro.props;
 const color = Astro.props.color || 'default';
 const {selected} = Astro.props;
+const {borderBottom} = Astro.props;
 
 let currentPage = String(Astro.request.url);
 currentPage = currentPage.replace('//','');
@@ -43,12 +45,12 @@ const menuItems = [
   }
 ]
 ---
-<header class={"page-header " + theme}>
+<header class={borderBottom === true ? "page-header borderBottom" : "page-header"}>
   <style lang="scss">
     @use './_header.scss';
   </style>
   <a class="project-name" href="../">
-    <h2>OpenMoji</h2>
+    <h2 class="visuallyHeadline2">OpenMoji</h2>
   </a>
   <nav class="menu">
     <ul>
@@ -74,6 +76,9 @@ const menuItems = [
     </div>
   </nav>
   <div class="actions">
+    {
+      showSearch ? (<Search theme="forHeader" placeholder="desc, emoji, hexcode …"/>) : null
+    }
     <button class="mobile-toggle">
       <img id="openMenuIcon" src={menuIcon} alt="Open menu"/>
       <img id="closeMenuIcon" class="hidden" src={menuCloseIcon} alt="Close menu"/>
@@ -93,7 +98,8 @@ const menuItems = [
         target="_blank">
         <img src={twitterLogo} alt="Twitter logo" />
       </a>
-      <HeaderGetEmojiDropdown color={color}/>
+      <GetEmojiDropdown color={color}/>
     </div>
   </div>
 </header>
+<div class="contentPusher"></div>

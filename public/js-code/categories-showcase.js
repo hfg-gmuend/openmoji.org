@@ -38,14 +38,14 @@ $(document).ready(function () {
         if (firstCategory) {
           html += "<div class='categories-item'>" +
             "<a class='standardLink active-tab' data-category='" + RANDOM_CATEGORIES[category] + "' href=''>" +
-            "<h3>" + category + "</h3>" +
+            "<h3 class='visuallyHeadline3'>" + category + "</h3>" +
             "</a>" +
             "</div>";
           firstCategory = false;
         } else {
           html += "<div class='categories-item'>" +
             "<a class='standardLink' data-category='" + RANDOM_CATEGORIES[category] + "' href=''>" +
-            "<h3>" + category + "</h3>" +
+            "<h3 class='visuallyHeadline3'>" + category + "</h3>" +
             "</a>" +
             "</div>";
         }
