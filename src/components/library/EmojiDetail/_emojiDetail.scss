@@ -8,12 +8,6 @@ h1{
   margin-bottom: variables.$gap-small;
 }
 
-h2{
-  font-size: variables.$font-sz-md;
-  font-weight: normal;
-  margin-bottom: 0;
-}
-
 table{
   border-collapse:separate; 
   border-spacing: 0 variables.$gap-small;
@@ -32,7 +26,6 @@ td{
   position: relative;
   max-width: variables.$content-max-width * 1.2;
   margin: auto;
-  margin-top: variables.$gap-large;
   padding: variables.$gap-reg;
   background: #ffffff;
   border-radius: 8px;

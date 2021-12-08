@@ -21,6 +21,7 @@ const urlGroup = encodeURI('/library/#group=' + openmoji.group)
 const urlSubgroup = encodeURI('/library/#group=' + openmoji.group + ' ' + openmoji.subgroups);
 const urlAuthor = encodeURI('/library/#author=' + openmoji.openmoji_author);
 const urlUnicode = 'https://decodeunicode.org/en/u+' + openmoji.hexcode;
+console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
 ---
 <div class="wrapper">
   <style lang="scss">
@@ -66,53 +67,61 @@ const urlUnicode = 'https://decodeunicode.org/en/u+' + openmoji.hexcode;
     {
       emojiPedia?.description ? (
         <div>
-          <h2><a href={emojiPedia.permalink}>Emojipedia description:</a></h2>
+          <h2><a target="_blank" class="standardLink" href="https://emojipedia.org/">Emojipedia</a> description:</h2>
           <p>
-            {emojiPedia.description} <a class="redlink" href={emojiPedia.permalink}>Read more</a>
+            {emojiPedia.description} <a class="redlink" target="_blank" href={emojiPedia.permalink}>Read more</a>
           </p>
         </div>
       ) : null
     }
 
     <table>
-      <tbody>
-        <tr>
-          <td>
-            <h2>Unicode</h2>
-          </td>
-          <td>
-            <a target="_blank" class="redlink" href={urlUnicode}>
-              {openmoji.hexcode}
-            </a>
-          </td>
-        </tr>
+      
+        {
+          (<tr>
+            <td>
+              <h2>Unicode</h2>
+            </td>
+            <td>
+              <a target="_blank" class="redlink" href={urlUnicode}>
+                {openmoji.hexcode}
+              </a>
+            </td>
+          </tr>)
+        }
 
-        <tr>
-          <td></td>
-          <td id="unicodeCombination">{helpers.getEmojiCombinationLink(openmoji.hexcode)}</td>
-        </tr>
+        {
+          (<tr>
+            <td></td>
+            <td id="unicodeCombination">{helpers.getEmojiCombinationLink(openmoji.hexcode)}</td>
+          </tr>)
+        }
 
-        <tr>
-          <td>
-            <h2>Author</h2>
-          </td>
-          <td>
-            <a class="redlink" href={urlAuthor}>
-              {openmoji.openmoji_author}
-            </a>
-          </td>
-        </tr>
+        {
+          (<tr>
+            <td>
+              <h2>Author</h2>
+            </td>
+            <td>
+              <a class="redlink" href={urlAuthor}>
+                {openmoji.openmoji_author}
+              </a>
+            </td>
+          </tr>)
+        }
 
-        <tr>
-          <td>
-            <h2>Category</h2>
-          </td>
-          <td>
-            <a class="redlink" href={urlGroup}>
-              {openmoji.group}
-            </a>
-          </td>
-        </tr>
+        {
+          (<tr>
+            <td>
+              <h2>Category</h2>
+            </td>
+            <td>
+              <a class="redlink" href={urlGroup}>
+                {openmoji.group}
+              </a>
+            </td>
+          </tr>)
+        }
         
         {
           openmoji.subgroups ? (
@@ -127,7 +136,7 @@ const urlUnicode = 'https://decodeunicode.org/en/u+' + openmoji.hexcode;
               </td>
             </tr>) : null
         }
-      </tbody>
+      
     </table>
 
     <div>
