@@ -16,12 +16,8 @@ body {
   height: 100vh;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.hidden {
-  display: none !important;
+a{
+  color: variables.$color-grey-dark;
 }
 
 ul {
@@ -53,7 +49,8 @@ h2 {
 
 h3 {
   font-weight: variables.$font-reg;
-  font-size: variables.$font-sz-md;
+  // font-size: variables.$font-sz-md;
+  font-size: variables.$font-sz-lg;
   margin-bottom: variables.$gap-xs;
 }
 
@@ -93,11 +90,6 @@ article:not(:last-child) {
   }
 }
 
-// ::-webkit-scrollbar {
-//     width: 0px;  /* remove scrollbar space */
-//     background: transparent;  /* optional: just make scrollbar invisible */
-// }
-
 .container {
   display: grid;
   grid-template-areas:
@@ -118,10 +110,10 @@ article:not(:last-child) {
   }
 }
 
-a {
+.standardLink {
   text-decoration: none;
   color: variables.$color-grey;
-  transition: all 0.2s;
+  transition: all 0.2s, border 0;
 
   &:hover {
     color: variables.$color-grey-dark;
@@ -136,15 +128,42 @@ a {
   color: white;
 }
 
-.largebutton {
-  margin-bottom: variables.$gap-large;
-  align-self: flex-start;
-  padding: variables.$gap-xs variables.$gap-reg;
+.defaultButton {
+  cursor: pointer;
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: variables.$color-blue-dark;
+  color: variables.$color-white;
+  box-shadow: none;
   font-size: variables.$font-sz-md;
-  border-radius: 29px;
+  text-decoration: none;
+  border-radius: 999px;
 
-  @media screen and (min-width: variables.$breakpoint-md) {
+  img {
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  &.large {
+    margin-bottom: variables.$gap-large;
+    padding: variables.$gap-xs variables.$gap-reg;
+    padding-right: 30px;
+    font-size: 23px;
+  }
+
+  &.xl {
+    margin-bottom: variables.$gap-large;
+    padding: variables.$gap-xs variables.$gap-reg;
+    padding-right: 30px;
     font-size: variables.$font-sz-lg;
+  }
+
+  &.light{
+    background-color: variables.$color-blue-light;
   }
 }
 
@@ -154,22 +173,6 @@ a {
   &:hover {
     color: variables.$color-red-light;
   }
-}
-
-button {
-  cursor: pointer;
-  padding: 0 variables.$gap-small;
-  margin: 0;
-  font-size: variables.$font-sz-md;
-  font-family: inherit;
-  color: variables.$color-white;
-  background: variables.$color-blue-dark;
-  border: none;
-  box-shadow: 0 2px 4px 0 rgba(232, 232, 232, 0.5);
-  min-height: 40px;
-  border-radius: 20px;
-  min-width: 80px;
-  white-space: nowrap;
 }
 
 input {
@@ -228,20 +231,8 @@ main {
   position: relative;
 }
 
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
-}
-
 svg {
   font-family: Times;
-}
-
-.clear {
-  clear: both;
 }
 
 #impressum {
@@ -356,4 +347,39 @@ svg {
 
 .itemSelected, .searchResult:hover{
   background: variables.$color-grey-ultra-light;
+}
+
+
+/* Utilities */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visible {
+  display: block;
+}
+
+.text-center{
+  text-align: center;
 }

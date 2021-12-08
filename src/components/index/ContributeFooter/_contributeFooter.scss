@@ -32,18 +32,7 @@
 	    width: 50%;
 	    align-items: center;
 
-	    h1 {
-	      color: variables.$color-white;
-	      margin-bottom: variables.$gap-reg;
-
-	      @media screen and (max-width: variables.$breakpoint-md) {
-	        font-size: variables.$font-sz-md;
-	      }
-	    }
-
-	    .largebutton {
-	      font-size: 23px;
-
+	    .defaultButton {
 	      &:first-child {
 	        margin-bottom: variables.$gap-reg;
 	        margin-right: variables.$gap-reg;
@@ -53,24 +42,19 @@
 	    @media screen and (max-width: variables.$breakpoint-md) {
 	      flex-wrap: wrap;
 
-	      .largebutton {
+	      .defaultButton {
 	        &:first-child {
 	          margin-right: 0;
 	        }
 	      }
 	    }
 
-	    button {
-	      display: flex;
-	      align-items: center;
-	      padding-left: 15px;
-	      background-color: variables.$color-blue-light;
+	    h1 {
 	      color: variables.$color-white;
-	      box-shadow: none;
+	      margin-bottom: variables.$gap-reg;
 
-	      img {
-	        height: 40px;
-	        margin-right: 5px;
+	      @media screen and (max-width: variables.$breakpoint-md) {
+	        font-size: variables.$font-sz-md;
 	      }
 	    }
 	  }

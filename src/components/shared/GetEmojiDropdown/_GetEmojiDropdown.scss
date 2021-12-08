@@ -1,11 +1,9 @@
 @use 'src/shared-styles/_variables.scss';
 
 button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  &.default, &.blue{ background: variables.$color-blue-light; }
+  min-height: 40px;
+  min-width: 200px;
+  &.default, &.blue{ background: variables.$color-blue-dark; }
   &.orange{ background: variables.$color-orange-light; }
   &.yellow{ background: variables.$color-yellow-light; }
   &.red{ background: variables.$color-red-light; }
@@ -42,51 +40,6 @@ div + div {
     }
   }
 
-  .dropdown-content {
-    position: absolute;
-    right: 0;
-    display: none;
-    min-width: 100%;
-
-    .list-wrapper {
-      display: flex;
-      margin-top: variables.$gap-small;
-      background: #ffffff;
-      box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
-      border-radius: 8px;
-      padding: 8px 0;
-      white-space: nowrap;
-
-      ul {
-        display: block;
-
-        li {
-          margin: 0;
-          padding: (40px - variables.$font-sz-md) / 2 variables.$gap-small;
-          height: auto;
-
-          > * {
-            font-size: variables.$font-sz-md;
-          }
-
-          .disclaimer {
-            font-size: variables.$font-sz-s;
-            color: variables.$color-grey-lighter;
-
-            a {
-              color: variables.$color-grey-lighter;
-              text-decoration: underline;
-
-              &:hover {
-                text-decoration: none;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
   // modifiers
   &--align-left {
     .dropdown-content {
@@ -98,6 +51,53 @@ div + div {
   &--dense {
     li {
       padding: (40px - variables.$font-sz-md) / 4 variables.$gap-small * 0.75 !important;
+    }
+  }
+}
+
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  display: none;
+  min-width: 100%;
+}
+
+.list-wrapper {
+  display: flex;
+  margin-top: variables.$gap-small;
+  background: #ffffff;
+  box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
+  border-radius: 8px;
+  padding: 8px 0;
+  white-space: nowrap;
+
+  ul {
+    display: block;
+
+    li {
+      margin: 0;
+      padding: (40px - variables.$font-sz-md) / 2 variables.$gap-small;
+      height: auto;
+
+      > * {
+        font-size: variables.$font-sz-md;
+      }
+    }
+  }
+}
+
+.disclaimer {
+  font-size: variables.$font-sz-s;
+  color: variables.$color-grey-lighter;
+  margin-top: variables.$gap-xxs;
+
+  a {
+    color: variables.$color-grey-lighter !important;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }

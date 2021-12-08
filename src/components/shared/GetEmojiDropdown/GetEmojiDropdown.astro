@@ -53,7 +53,7 @@ const additionalLinks = [
 	<style lang="scss">
 	  @use './_getEmojiDropdown.scss';
 	</style>
-	<button class={color}>
+	<button class={"defaultButton " + color}>
 	  <div>Get OpenMojis</div>
 	  <div><i class="arrow down"></i></div>
 	</button>
@@ -63,7 +63,7 @@ const additionalLinks = [
 	    	{
 	    		zipFiles.map((zip) => (
 	    			<li>
-	    				<a rel="noopener" href={zip.href} download>
+	    				<a class="standardLink" rel="noopener" href={zip.href} download>
 	    					{zip.text}
 	    				</a>
 	    			</li>))
@@ -73,7 +73,7 @@ const additionalLinks = [
 	    	{
 	    		additionalLinks.map((link) => (
 		    		<li>
-				        <a rel="noopener" href={link.href} target="_blank" download>
+				        <a class="standardLink" rel="noopener" href={link.href} target="_blank" download>
 				        	{link.text}
 				        </a>
 				        { link.additional ? (<div class="disclaimer">{link.additional}</div>) : null}

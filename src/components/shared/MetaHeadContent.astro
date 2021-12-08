@@ -38,4 +38,5 @@ const {titleOG} = Astro.props || title;
 <!-- Styles -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 <!-- <link rel="stylesheet" href={Astro.resolve('/src/shared-styles/global.css')}> -->
-<style lang="scss" global> @use '../../shared-styles/global.scss';</style>
+<link rel="stylesheet" href={Astro.resolve('../../shared-styles/reset.scss')}>
+<link rel="stylesheet" href={Astro.resolve('../../shared-styles/global.scss')}>

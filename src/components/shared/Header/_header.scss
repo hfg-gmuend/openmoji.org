@@ -13,6 +13,7 @@ header {
   height: 80px;
   position: fixed;
   width: 100%;
+  border-bottom: variables.$color-grey-super-light 1px solid;
   
   top: 0;
 
@@ -105,9 +106,12 @@ header {
 
     .mobile-toggle {
       display: none;
-      background: url(../img/menu.svg) no-repeat center center;
       padding: 15px;
       z-index: variables.$z-index-menu-toggle;
+
+      img{
+        width: 30px;
+      }
 
       @media screen and (max-width: variables.$breakpoint-md) {
         display: block;
