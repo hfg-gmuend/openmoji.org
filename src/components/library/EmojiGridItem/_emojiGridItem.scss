@@ -10,7 +10,7 @@
 
 .shortcuts{
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -19,22 +19,24 @@
   text-align: center;
   box-sizing: border-box;
   padding: 10px;
-  // display: none;
   display: flex;
-  opacity: 0;
   align-items: center;
+  overflow: hidden;
+  transition-duration: transform 0.001s;
+  transition-delay: 50ms;
+  pointer-events: none;
 }
 
 .shortcutsContent{
   margin: auto;
 }
 
-.shortcuts:hover{
-  // display: flex;
-  opacity: 1;
+.emoji_single:hover .shortcuts{
+  top: 0;
 }
 
 .emojiDetails, .buttonAction{
+  pointer-events: auto;
   background: variables.$color-blue-dark;
   color: white;
   border-radius: 10px;
