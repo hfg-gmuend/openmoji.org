@@ -33,15 +33,10 @@
 			for(let index in results){
 				const result = results[index];
 				const item = result.item;
-				let backgroundColorClass = classNameSearchResultNotSelected;
-				if (Number(index) === 0) { //This indicates that the first search result is selected and you can click enter to go there
-					backgroundColorClass = classNameSearchResultSelected;
-				}
-
 				const linkUrl = '/library/emoji-' + item.hexcode;
 				const linkText = item.annotation
 				dom += '<li>'
-				dom += '   <a class="searchResult ' + backgroundColorClass + '" href="' + linkUrl + '">'
+				dom += '   <a class="searchResult ' + classNameSearchResultNotSelected + '" href="' + linkUrl + '">'
 				dom += '      <img src="/data/color/svg/' + item.hexcode + '.svg" alt=""/>'
 				dom += '      <span>' + linkText + '</span>'
 				dom += '   </a>'
@@ -92,9 +87,11 @@
 
 				case 13: // Enter button
 					const currentlySelected = getIndexOfCurrentlyFocussedSearchResult();
-					// If no item is selected (i.e. search bar selected) then clicking enter trigger selects and clicks the first item
+					// If no item is selected (i.e. search bar selected) then clicking enter trigger the search for the string
 					if(currentlySelected === false){
-						focusOnSearchItemWithIndex(0, true);
+						const searchTerm = searchBarDom.value.trim();
+						window.location.href = '/library/#search=' + searchTerm;
+						//focusOnSearchItemWithIndex(0, true);
 					}
 					break;
 			}
