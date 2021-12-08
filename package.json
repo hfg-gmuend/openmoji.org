@@ -23,7 +23,7 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "astro": "^0.21.5",
+    "astro": "^0.21.11",
     "autoprefixer": "^10.4.0",
     "node-fetch": "^2.6.6",
     "openmoji": "^13.1.0"
