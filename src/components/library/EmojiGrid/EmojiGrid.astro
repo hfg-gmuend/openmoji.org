@@ -1,6 +1,7 @@
 ---
 import EmojiGridItem from '../EmojiGridItem/EmojiGridItem.astro';
 import helpers from '../../../util/helpers'
+import FilterAndSort from '../FilterAndSort/FilterAndSort.astro';
 
 const filteredEmojies = helpers.getUniqueEmojis();
 ---
@@ -8,8 +9,9 @@ const filteredEmojies = helpers.getUniqueEmojis();
   <style lang="scss">
     @use './_emojiGrid.scss';
   </style>
+  <FilterAndSort/>
   <div id="emoji_grid" class="emoji_grid">
-    {Object.keys(filteredEmojies).slice(0, 50).map((key) => {
+    {Object.keys(filteredEmojies).slice(0, 20).map((key) => {
         const emojiData = filteredEmojies[key]
         return (<EmojiGridItem
           description={emojiData.annotation}

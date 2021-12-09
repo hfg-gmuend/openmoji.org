@@ -1,0 +1,61 @@
+---
+import importFilterIcon from './filter-icon-E257.svg';
+import importArrowUpwardsIcon from './arrow-upwards-icon-1F53C.svg';
+import importArrowDownwardsIcon from './arrow-downwards-icon-1F53D.svg';
+---
+<div class="emoji_grid_header">
+  <style lang="scss">
+    @use './_filterAndSort.scss';
+  </style>
+  <div class="emoji_grid_header__selectors">
+
+    <!-- Color or b/w -->
+    <div id="show-color">color
+      <label class="switch">
+        <input type="checkbox" checked="true">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Sorting (e.g. by unicode) -->
+    <div id="sort-selector" class="selector selector--sortable selector--sortable-asc dropdown dropdown--align-left dropdown--dense">
+      <div class="selector__selected-value">
+        Unicode <!-- Value updated by library-filter-and-sort.js -->
+      </div>
+      <img class="selector__icon sort-direction asc hidden" src={importArrowUpwardsIcon} alt="Sort ascending" />
+      <img class="selector__icon sort-direction desc" src={importArrowDownwardsIcon} alt="Sort descending" />
+      <div class="dropdown-content-wrapper">
+        <div class="selector__list dropdown-content">
+          <div class="list-wrapper">
+            <ul>
+              <li class="hidden" data-sortfunc="best_match">Best Match</li>
+              <li class="active" data-sortfunc="unicode">Unicode</li>
+              <li data-sortfunc="alphabetical">A-Z</li>
+              <li data-sortfunc="contribution_date">Date</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catagories (e.g. skintone properties)-->
+    <div id="filter-selector" class="selector dropdown dropdown--align-left dropdown--dense">
+      <div class="selector__selected-value">
+        All Emoji <!-- Value updated by library-filter-and-sort.js -->
+      </div>
+      <img class="selector__icon" src={importFilterIcon} alt="filter icon" />
+      <div class="dropdown-content-wrapper">
+        <div class="selector__list dropdown-content">
+          <div class="list-wrapper">
+            <ul>
+              <li class="active" data-filterfunc="all">All Emoji</li>
+              <li data-filterfunc="skintones">With Skintones</li>
+              <li data-filterfunc="multi_skintones">With Multi-Skintones</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js-code/library-filter-and-sort.js"/>
+</div>
