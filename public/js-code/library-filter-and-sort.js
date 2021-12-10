@@ -1,42 +1,120 @@
 $(document).ready(function () {
+  let currentFilter = 'all';
+  let currentSort = 'unicode';
+  let currentSortDirection = 'asc';
+  const allEmoji = $('.emoji_single');
+
   // Color toggle
   $("#show-color .switch input[type=checkbox]").change(function () {
+    const isColor = this.checked;
+    showOnlyColoredEmojis(isColor);
     updateList(getUrlParameters());
   });
 
   // Sort direction toggle
   $('.sort-direction.asc').click(function () {
-    updateSort('asc');
+    updateSortDirection('asc');
   });
 
   $('.sort-direction.desc').click(function () {
-    updateSort('desc');
+    updateSortDirection('desc');
   });
 
-  $("#filter-selector").on("update", function (_, selectedEl) {
-    const selectedFilterFunction = $(selectedEl).data("filterfunc");
-
-    // if filter function is defined and isn't the same as the current one set new filter function
-    if (FILTER_FUNCS[selectedFilterFunction] !== undefined && selectedFilterFunction !== currentFilter) {
-      currentFilter = selectedFilterFunction;
-
-      // regenerate emoji list
-      updateList(getUrlParameters());
-    }
+  $("#sort-selector .selector__list li").click(function () {
+    const sortByFunction = $(this).data("sortfunc");
+    const sortByName = $(this).html();
+    sortEmojiBy(sortByFunction, sortByName);
   });
 
-  function updateSort(sortDirection){
-    if (sortDirection === "asc") {
-      $('.sort-direction.asc').addClass('hidden')
-      $('.sort-direction.desc').removeClass('hidden')
-    } else if (sortDirection === "desc") {
-      $('.sort-direction.asc').removeClass('hidden')
-      $('.sort-direction.desc').addClass('hidden')
-    }
+  $("#filter-selector .selector__list li").click(function () {
+    const filterFunctionName = $(this).data("filterfunc");
+    const filterName = $(this).html();
+    filterEmoji(filterFunctionName, filterName);
+  });
 
-    console.log('something happened', sortDirection);
-    // regenerate emoji list
-    //generateEmojiList();
+  function showOnlyColoredEmojis(isColor){
+    if(isColor){
+      $('.emoji-variant-color').removeClass('hidden')
+      $('.emoji-variant-black').addClass('hidden')
+    }else{
+      $('.emoji-variant-color').addClass('hidden')
+      $('.emoji-variant-black').removeClass('hidden')
+    }
+  }
+
+  function sortEmojiBy(newSort, sortName){
+    if(currentSort !== newSort){
+      $('#sortName').html(sortName);
+      sortEmoji(newSort);
+      currentSort = newSort;
+    }
+  }
+
+  function sortEmoji(sortType){
+    allEmoji.each(function () {
+      const element = $(this);
+      if(sortType === 'unicode'){
+        element.css('order', 'unset')
+      }else{
+        const newOrderNumber = element.data('order-' + sortType);
+        element.css('order', newOrderNumber);
+      }
+    })
+  }
+
+  function filterEmoji(newFilter, filterName){
+    if(currentFilter !== newFilter){
+      $('#filterName').html(filterName);
+
+      // Show all
+      if(newFilter === 'all'){
+        allEmoji.each(function () {
+          const element = $(this);
+          element.removeClass('hiddenDueToFilter');
+        })
+
+      // Show only the ones with single skintones
+      }else if(newFilter === 'skintones'){
+        allEmoji.each(function () {
+          const element = $(this);
+          const hasSkintones = element.data("skintones");
+          if(hasSkintones === true){
+            element.removeClass('hiddenDueToFilter');
+          }else{
+            element.addClass('hiddenDueToFilter');
+          }
+        })
+
+      // Show only the ones with multiple skintones
+      }else if(newFilter === 'multi_skintones'){
+        allEmoji.each(function () {
+          const element = $(this);
+          const hasSkintones = element.data("multiskintones");
+          if(hasSkintones === true){
+            element.removeClass('hiddenDueToFilter');
+          }else{
+            element.addClass('hiddenDueToFilter');
+          }
+        })
+      }
+
+      currentFilter = newFilter;
+    }
+  }
+
+  function updateSortDirection(newSortDirection){
+    if(newSortDirection !== currentSortDirection){
+      if (newSortDirection === "asc") {
+        $('#emoji_grid').css('flex-wrap', 'wrap');
+        $('.sort-direction.asc').addClass('hidden')
+        $('.sort-direction.desc').removeClass('hidden')
+      } else if (newSortDirection === "desc") {
+        $('#emoji_grid').css('flex-wrap', 'wrap-reverse');
+        $('.sort-direction.asc').removeClass('hidden')
+        $('.sort-direction.desc').addClass('hidden')
+      }
+      currentSortDirection = newSortDirection;
+    }
   }
 
   function updateList(urlParameters){

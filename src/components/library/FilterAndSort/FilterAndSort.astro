@@ -19,7 +19,7 @@ import importArrowDownwardsIcon from './arrow-downwards-icon-1F53D.svg';
 
     <!-- Sorting (e.g. by unicode) -->
     <div id="sort-selector" class="selector selector--sortable selector--sortable-asc dropdown dropdown--align-left dropdown--dense">
-      <div class="selector__selected-value">
+      <div id="sortName" class="selector__selected-value">
         Unicode <!-- Value updated by library-filter-and-sort.js -->
       </div>
       <img class="selector__icon sort-direction asc hidden" src={importArrowUpwardsIcon} alt="Sort ascending" />
@@ -30,8 +30,8 @@ import importArrowDownwardsIcon from './arrow-downwards-icon-1F53D.svg';
             <ul>
               <li class="hidden" data-sortfunc="best_match">Best Match</li>
               <li class="active" data-sortfunc="unicode">Unicode</li>
-              <li data-sortfunc="alphabetical">A-Z</li>
-              <li data-sortfunc="contribution_date">Date</li>
+              <li data-sortfunc="abc">A-Z</li>
+              <li data-sortfunc="date">Date</li>
             </ul>
           </div>
         </div>
@@ -40,7 +40,7 @@ import importArrowDownwardsIcon from './arrow-downwards-icon-1F53D.svg';
 
     <!-- Catagories (e.g. skintone properties)-->
     <div id="filter-selector" class="selector dropdown dropdown--align-left dropdown--dense">
-      <div class="selector__selected-value">
+      <div id="filterName" class="selector__selected-value">
         All Emoji <!-- Value updated by library-filter-and-sort.js -->
       </div>
       <img class="selector__icon" src={importFilterIcon} alt="filter icon" />

@@ -2,6 +2,44 @@ import openMojiJson from '/public/data/openmoji.json';
 import colorPaletteJson from '/public/data/color-palette.json';
 import packageJSON from '../../public/data/package.json';
 
+const getListBasedOnObjectSortedByCertainKey = (object, key, reverse = false) => {
+  // From:
+  // {
+  //  { elem1: {key: Beta}},
+  //  { elem2: {key: Alpha}},
+  // }
+
+  // To:
+  // [elem2, elem1]
+
+  let objectAsArray = [];
+  for(let key in object){
+    objectAsArray.push([key, object[key]]);
+  }
+
+  // Compare as number of string depending on content
+  if(isNaN(objectAsArray[0][1][key])){
+    objectAsArray.sort((a, b) => String(a[1][key]).localeCompare(String(b[1][key])));  
+  }else{
+    // The if statements make the when the key is null or "", that those results are at the end
+    objectAsArray.sort(function(a, b) {
+      if(a[1][key] === "" || a[1][key] === null) return 1;
+      if(b[1][key] === "" || b[1][key] === null) return -1;
+      if(a[1][key] === b[1][key]) return 0;
+      return a[1][key] < b[1][key] ? -1 : 1;
+    })
+  }
+
+  if(reverse === true){
+    objectAsArray.reverse();
+  }
+  let objectKeysOnly = []
+  for(let index in objectAsArray){
+    objectKeysOnly.push(objectAsArray[index][0])
+  }
+  return objectKeysOnly;
+}
+
 const clusterSkintoneVariationsBySkinIdForOneEmoji = (hexcode) => {
   const skintonesData = getSkintoneVariationForEmoji(hexcode);
   let output = {};
@@ -12,10 +50,12 @@ const clusterSkintoneVariationsBySkinIdForOneEmoji = (hexcode) => {
   for(let skintoneData of skintonesData.skintone_combinations){
     output[String(skintoneData.skintone)] = skintoneData.hexcode;
   }
+
   return output;
 }
 
 const getSkintoneVariationForEmoji = (hexcode) => {
+  /* That's really not efficient but since we build the site it's alright */
   const allVariations = getSkintoneVariationsForEachEmoji();
   return allVariations[hexcode] || null;
 }
@@ -164,6 +204,7 @@ const getEmojiGroupsAndSubgroups = () => {
 }
 
 export default {
+  getListBasedOnObjectSortedByCertainKey,
   getDataForEmoji,
   getAllEmojisByHex,
   clusterSkintoneVariationsBySkinIdForOneEmoji,

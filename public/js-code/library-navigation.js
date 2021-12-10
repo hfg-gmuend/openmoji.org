@@ -31,11 +31,11 @@ $(document).ready(function () {
 		let subgroup = split[1] || null;
 		
 		if(!subgroup){
-			$(allEmojis).filter('[data-group="' + group + '"]').removeClass('hidden');
-			$(allEmojis).not('[data-group="' + group + '"]').addClass('hidden');
+			$(allEmojis).filter('[data-group="' + group + '"]').removeClass('hiddenDueToGroupOrSubgroup');
+			$(allEmojis).not('[data-group="' + group + '"]').addClass('hiddenDueToGroupOrSubgroup');
 		}else{
-			$(allEmojis).filter('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').removeClass('hidden');
-			$(allEmojis).not('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').addClass('hidden');
+			$(allEmojis).filter('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').removeClass('hiddenDueToGroupOrSubgroup');
+			$(allEmojis).not('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').addClass('hiddenDueToGroupOrSubgroup');
 		}
 		// for(let index in allEmojis){
 		// 	$(allEmojis[index] + ' [data-group!="' + group + '"]').removeClass('hidden');

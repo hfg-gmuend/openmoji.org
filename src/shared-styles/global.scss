@@ -276,12 +276,17 @@ svg {
   display: none !important;
 }
 
-.clear {
-  clear: both;
+.hiddenDueToFilter{
+  // For use in library
+  display: none;
 }
 
-.hidden {
+.hiddenDueToGroupOrSubgroup{
   display: none;
+}
+
+.clear {
+  clear: both;
 }
 
 .inlineBlock {

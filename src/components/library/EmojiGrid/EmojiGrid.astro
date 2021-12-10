@@ -4,6 +4,11 @@ import helpers from '../../../util/helpers'
 import FilterAndSort from '../FilterAndSort/FilterAndSort.astro';
 
 const filteredEmojies = helpers.getUniqueEmojis();
+const skinToneVariations = helpers.getSkintoneVariationsForEachEmoji();
+
+const orderByAnnotation = helpers.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'annotation');
+const orderByDate = helpers.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'openmoji_date', true);
+const orderByUnicode = helpers.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'order');
 ---
 <div class="emoji_grid_wrapper">
   <style lang="scss">
@@ -11,13 +16,18 @@ const filteredEmojies = helpers.getUniqueEmojis();
   </style>
   <FilterAndSort/>
   <div id="emoji_grid" class="emoji_grid">
-    {Object.keys(filteredEmojies).slice(0, 20).map((key) => {
-        const emojiData = filteredEmojies[key]
+    {orderByUnicode.slice(0, 80).map((emojiHex) => {
+        const emojiData = filteredEmojies[emojiHex]
         return (<EmojiGridItem
           description={emojiData.annotation}
           hexcode={emojiData.hexcode}
           group={emojiData.group}
+          author={emojiData.openmoji_author}
           subgroups={emojiData.subgroups}
+          skintones={skinToneVariations[emojiData.hexcode].skintones}
+          indexByAlphabeticalOrder={orderByAnnotation.indexOf(emojiData.hexcode)}
+          indexByDateOrder={orderByDate.indexOf(emojiData.hexcode)}
+          multiSkintones={skinToneVariations[emojiData.hexcode].skintone_combinations}
           />)    
     })}
   </div>  

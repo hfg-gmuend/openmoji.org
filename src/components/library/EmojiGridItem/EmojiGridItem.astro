@@ -5,20 +5,27 @@ const {hexcode} = Astro.props || '';
 const {group} = Astro.props || '';
 const {subgroups} = Astro.props || '';
 const {description} = Astro.props || '';
+const {author} = Astro.props;
+const {skintones} = Astro.props;
+const {multiSkintones} = Astro.props;
+
+const {indexByAlphabeticalOrder} = Astro.props;
+const {indexByDateOrder} = Astro.props;
+
 
 const filePathColorSVG = helpers.getFilePathEmojiImage(hexcode, 'svg');
 const filePathColorPNG = helpers.getFilePathEmojiImage(hexcode, 'png');
 const filePathBlackAndWhiteSVG = helpers.getFilePathEmojiImage(hexcode, 'svg', 'black');
 const filePathBlackAndWhitePNG = helpers.getFilePathEmojiImage(hexcode, 'png', 'black');
 ---
-<div class="emoji_single" id={'emoji-' + hexcode} data-group={group} data-subgroups={subgroups}>
+<div class="emoji_single" id={'emoji-' + hexcode} data-order-abc={indexByAlphabeticalOrder + 1} data-order-date={indexByDateOrder + 1} data-author={author} data-group={group} data-subgroups={subgroups} data-skintones={skintones.length > 0 ? 'true' : 'false'} data-multiskintones={multiSkintones.length > 0 ? 'true' : 'false'}>
   <style lang="scss">
     @use './_emojiGridItem.scss';
   </style>
   <a href={"/library/emoji-" + hexcode}>
     <div class="emoji-container">
-      <img class="lazyload" data-src={filePathColorSVG} alt={'"' + description + '"-emoji'}/>
-      <img class="lazyload hidden" data-src={filePathBlackAndWhiteSVG} alt={'"' + description + '"-emoji in black and white'}/>
+      <img class="emoji-variant-color lazyload" data-src={filePathColorSVG} alt={'"' + description + '"-emoji'}/>
+      <img class="emoji-variant-black lazyload hidden" data-src={filePathBlackAndWhiteSVG} alt={'"' + description + '"-emoji in black and white'}/>
     </div>
     <div>
       <h3>{description}</h3>
@@ -30,11 +37,19 @@ const filePathBlackAndWhitePNG = helpers.getFilePathEmojiImage(hexcode, 'png', '
       <a class="emojiDetails" href={"/library/emoji-" + hexcode}>
         Open details
       </a>
-      <div class="downloadButtons">
+      <div class="downloadButtons emoji-variant-color">
         <a target="_blank" href={filePathColorSVG} class="buttonAction" download>
           <img alt="Download" src={downloadIcon}/> <span>.svg</span>
         </a>
         <a target="_blank" href={filePathColorPNG} class="buttonAction" download>
+          <img alt="Download" src={downloadIcon}/> <span>.png</span>
+        </a>
+      </div>
+      <div class="downloadButtons emoji-variant-black hidden">
+        <a target="_blank" href={filePathBlackAndWhiteSVG} class="buttonAction" download>
+          <img alt="Download" src={downloadIcon}/> <span>.svg</span>
+        </a>
+        <a target="_blank" href={filePathBlackAndWhitePNG} class="buttonAction" download>
           <img alt="Download" src={downloadIcon}/> <span>.png</span>
         </a>
       </div>
