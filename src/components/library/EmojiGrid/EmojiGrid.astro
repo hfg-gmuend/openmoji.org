@@ -16,13 +16,16 @@ const orderByUnicode = helpers.getListBasedOnObjectSortedByCertainKey(filteredEm
   </style>
   <FilterAndSort/>
   <div id="emoji_grid" class="emoji_grid">
-    {orderByUnicode.slice(0, 80).map((emojiHex) => {
+    {orderByUnicode.map((emojiHex, index) => {
         const emojiData = filteredEmojies[emojiHex]
+        /* We don't lazload the first emojis so they render while the rest of the dom is processed */
+        const lazyLoad = index >= 30;
         return (<EmojiGridItem
           description={emojiData.annotation}
           hexcode={emojiData.hexcode}
           group={emojiData.group}
           author={emojiData.openmoji_author}
+          lazyload={lazyLoad}
           subgroups={emojiData.subgroups}
           skintones={skinToneVariations[emojiData.hexcode].skintones}
           indexByAlphabeticalOrder={orderByAnnotation.indexOf(emojiData.hexcode)}

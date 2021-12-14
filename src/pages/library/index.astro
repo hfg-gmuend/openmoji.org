@@ -21,7 +21,9 @@ import EmojiGrid from '@/components/library/EmojiGrid/EmojiGrid.astro';
     <Footer/>
     <JavascriptLibraries/>
     <script type="text/javascript">
-        new LazyLoad();
+        new LazyLoad({
+            elements_selector: '.lazyload'
+        });
     </script>
     <script src="/js-code/library-navigation.js"/>
 </html>

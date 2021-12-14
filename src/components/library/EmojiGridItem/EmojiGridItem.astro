@@ -7,6 +7,7 @@ const {subgroups} = Astro.props || '';
 const {description} = Astro.props || '';
 const {author} = Astro.props;
 const {skintones} = Astro.props;
+const {lazyload} = Astro.props;
 const {multiSkintones} = Astro.props;
 
 const {indexByAlphabeticalOrder} = Astro.props;
@@ -24,8 +25,15 @@ const filePathBlackAndWhitePNG = helpers.getFilePathEmojiImage(hexcode, 'png', '
   </style>
   <a href={"/library/emoji-" + hexcode}>
     <div class="emoji-container">
-      <img class="emoji-variant-color lazyload" data-src={filePathColorSVG} alt={'"' + description + '"-emoji'}/>
-      <img class="emoji-variant-black lazyload hidden" data-src={filePathBlackAndWhiteSVG} alt={'"' + description + '"-emoji in black and white'}/>
+      {
+        lazyload === false ? (
+          <img class="emoji-variant-color" src={filePathColorSVG} alt={'"' + description + '"-emoji'}/>
+          <img class="emoji-variant-black hidden" src={filePathBlackAndWhiteSVG} alt={'"' + description + '"-emoji in black and white'}/>
+        ) : (
+          <img class="emoji-variant-color lazyload" data-src={filePathColorSVG} alt={'"' + description + '"-emoji'}/>
+          <img class="emoji-variant-black lazyload hidden" data-src={filePathBlackAndWhiteSVG} alt={'"' + description + '"-emoji in black and white'}/>
+        )
+      }
     </div>
     <div>
       <h3>{description}</h3>
