@@ -1,15 +1,17 @@
 ---
 import helpers from '../../../util/helpers'
 
-const filteredEmojies = helpers.getUniqueEmojis();
 const colorPalette = helpers.getColorPaletteSkintones();
 
-console.log('colorPalette', colorPalette)
-
 const emojiHex = Astro.props.emoji;
-const emojiData = filteredEmojies[emojiHex];
+const {emojiData} = Astro.props;
 const multiskin = Astro.props.multiskin;
 const skintoneCombinations = Astro.props.skintoneCombinations;
+let skintonesForHex = {}
+for(let combination in skintoneCombinations){
+  const value = skintoneCombinations[combination];
+  skintonesForHex[value] = combination;
+}
 
 ---
 <div class="small-emoji-preview">
@@ -18,8 +20,8 @@ const skintoneCombinations = Astro.props.skintoneCombinations;
   </style>
 
   <div id="emoji-preview">
-    <div id="outline-emoji-preview" class="circle visible"></div>
-    <div id="color-emoji-preview" onclick="colorChangeSingleColor('')"class="circle highlight visible"></div>
+    <div id="outline-emoji-preview" class="circle single-color visible" onclick="colorChangeSingleColor('black')"></div>
+    <div id="color-emoji-preview" onclick="colorChangeSingleColor('')" class="circle highlight visible single-color"></div>
     {
       multiskin === false ?
       (<div class="skintone-selector">
@@ -30,14 +32,14 @@ const skintoneCombinations = Astro.props.skintoneCombinations;
         }
       </div>)
       :
-      (<div class="skintone-selector">
+      (<div class="skintone-selector left">
         {
           colorPalette.map((color, index) => (
             <div class="circle" onclick={"colorChangeMultiColor('left'," + (index + 1) + ")"} style={'background-color:' + color}></div>
             ))
         }
       </div>
-      <div class="skintone-selector">
+      <div class="skintone-selector right">
         {
           colorPalette.map((color, index) => (
             <div class="circle" onclick={"colorChangeMultiColor('right'," + (index + 1) + ")"} style={'background-color:' + color}></div>
@@ -46,8 +48,9 @@ const skintoneCombinations = Astro.props.skintoneCombinations;
       </div>)
     }
   </div>
-  <script define:vars={{skintoneCombinations}}>
+  <script define:vars={{skintoneCombinations, skintonesForHex}}>
     const SKINTONECOMBINATIONS = skintoneCombinations;
+    const SKINTONESFORHEX = skintonesForHex;
   </script>
   <script type="text/javascript" src="/js-code/skintone-colorpicker.js"></script>
 </div>
