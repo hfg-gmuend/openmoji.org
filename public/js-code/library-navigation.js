@@ -4,9 +4,13 @@ $(document).ready(function () {
 
 	$('#nav-items input').on('change', function(e){
 		e.stopPropagation();
-		var groupPath = $(this).attr("data-grouppath");
-		var subMenu = $(this).parent().find('.submenu')[0];
-		handleSubMenusAndUpdateUrlAndFilters(subMenu, groupPath);
+		if(e.target.value === 'all OpenMojis'){
+			handleSubMenusAndUpdateUrlAndFilters(undefined, undefined);
+		}else{
+			var groupPath = $(this).attr("data-grouppath");
+			var subMenu = $(this).parent().find('.submenu')[0];
+			handleSubMenusAndUpdateUrlAndFilters(subMenu, groupPath);
+		}
 	})
 
 	function handleSubMenusAndUpdateUrlAndFilters(subMenu, groupPath){
@@ -15,7 +19,6 @@ $(document).ready(function () {
 			$(subMenu).removeClass('collapsed');
 		}
 
-		var label = $(subMenu).find('label')[0];
 		exposeListFilter({
 	        group: groupPath,
 	        search: undefined,
@@ -26,22 +29,22 @@ $(document).ready(function () {
 	}
 
 	function filterEmojiList(groupPath){
-		let split = groupPath.split('/');
-		let group = split[0];
-		let subgroup = split[1] || null;
-		
-		if(!subgroup){
-			$(allEmojis).filter('[data-group="' + group + '"]').removeClass('hiddenDueToGroupOrSubgroup');
-			$(allEmojis).not('[data-group="' + group + '"]').addClass('hiddenDueToGroupOrSubgroup');
+		if(!groupPath){
+			$(allEmojis).removeClass('hiddenDueToGroupOrSubgroup');
 		}else{
-			$(allEmojis).filter('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').removeClass('hiddenDueToGroupOrSubgroup');
-			$(allEmojis).not('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').addClass('hiddenDueToGroupOrSubgroup');
+			let split = groupPath.split('/');
+			let group = split[0];
+			let subgroup = split[1] || null;
+			
+			if(!subgroup){
+				$(allEmojis).filter('[data-group="' + group + '"]').removeClass('hiddenDueToGroupOrSubgroup');
+				$(allEmojis).not('[data-group="' + group + '"]').addClass('hiddenDueToGroupOrSubgroup');
+			}else{
+				$(allEmojis).filter('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').removeClass('hiddenDueToGroupOrSubgroup');
+				$(allEmojis).not('[data-group="' + group + '"][data-subgroups="' + subgroup + '"]').addClass('hiddenDueToGroupOrSubgroup');
+			}
 		}
-		// for(let index in allEmojis){
-		// 	$(allEmojis[index] + ' [data-group!="' + group + '"]').removeClass('hidden');
-		// 	$(allEmojis[index] + ' [data-group="' + group + '"]').addClass('hidden');	
-		// }
-		console.log(group, subgroup, allEmojis);
+		
 	}
 
 	function getUrlParameters() {
@@ -87,15 +90,5 @@ $(document).ready(function () {
 	      URL = window.location.href.substring(0, window.location.href.indexOf("#")) + "#";
 	    }
 	    history.pushState(null, "", URL + $.param(currentUrlParams));
-	    handleRequest(getUrlParameters());
 	}
-
-	function handleRequest(filter) {
-	    // open emoji detail view if emoji filter is set else update list
-	    // if (filter && filter.emoji) {
-	    //   showEmojiDetails(filter.emoji);
-	    // } else {
-	    //   updateList(filter);
-	    // }
-	  }
 })
