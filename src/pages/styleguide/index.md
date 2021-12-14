@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/LayoutWithSidebar/LayoutWithSidebar.astro
 setup: |
+  import ButtonLink from '@/components/shared/ButtonLink.astro';
   import Columns from '@/components/shared/Columns.astro';
   import ColumnLeft from '@/components/shared/ColumnLeft.astro';
   import ColumnRight from '@/components/shared/ColumnRight.astro';
@@ -18,7 +19,7 @@ color: orange
 <ColumnLeft>
 The next set of emojis are due to be released this year, we need your help to make them!
 
-[Get started](https://github.com/hfg-gmuend/openmoji/issues/124)
+<ButtonLink href="https://github.com/hfg-gmuend/openmoji/issues/124">Get started</ButtonLink>
 </ColumnLeft>
 
 <ColumnRight>
@@ -31,7 +32,7 @@ The next set of emojis are due to be released this year, we need your help to ma
 <ColumnLeft>
 Design is subjective but we want our emoji to follow our style guide and look good.
 
-[Get started](https://github.com/hfg-gmuend/openmoji/issues/142)
+<ButtonLink href="https://github.com/hfg-gmuend/openmoji/issues/142">Get started</ButtonLink>
 </ColumnLeft>
 
 <ColumnRight>
@@ -44,7 +45,7 @@ Design is subjective but we want our emoji to follow our style guide and look go
 <ColumnLeft>
 To be useful for communication, emoji need to convey the same idea. 
 
-[Get started](https://github.com/hfg-gmuend/openmoji/issues/143)
+<ButtonLink href="https://github.com/hfg-gmuend/openmoji/issues/143">Get started</ButtonLink>
 </ColumnLeft>
 
 <ColumnRight>
@@ -155,11 +156,11 @@ All objects should be displayed **2-dimensionally** from the front. In exception
 ### Color
 Please aim to mainly use the **primary colors**. Use the lighter colours as default colours and reserve the darker colors for shadowing. The four **secondary colors** should only be used in special cases.
 
-[OpenMoji Color Palette (.svg)](https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette.svg)
+<ButtonLink href="https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette.svg">OpenMoji Color Palette (.svg)</ButtonLink>
 
-[Inkscape Palette (.gpl)](https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette-inkscape.gpl)
+<ButtonLink href="https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette-inkscape.gpl">Inkscape Palette (.gpl)</ButtonLink>
 
-[Illustrator Palette (.ase)](https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette-adobe-illustrator.ase)
+<ButtonLink href="https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-color-palette-adobe-illustrator.ase">Illustrator Palette (.ase)</ButtonLink>
 
 <Columns>
 <ColumnLeft>
@@ -193,11 +194,16 @@ The lighter color should be used for the fill, the darker color for the shading.
 </Columns>
 
 ### Typography
+<Columns>
+<ColumnLeft>
 We provide a custom font for emojis which have to contain typographic elements. Please use it for all text.
+<ButtonLink href="https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-abc.svg">openmoji-abc.svg</ButtonLink>
+</ColumnLeft>
 
-[openmoji-abc.svg](https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-abc.svg)
-
+<ColumnRight>
 ![A sample of the custom openmoji font](styleguide-typography.svg)
+</ColumnRight>
+</Columns>
 
 ### Topics
 #### People
@@ -294,16 +300,17 @@ Vehicles should be deduced from the shapes of **real world models** to avoid a t
 #### SVG File Specification
 <Columns>
 <ColumnLeft>
-- File Name:
-	- **Unicode.svg**
-- Example:
-	- **1F469-200D-1F680.svg**
-- Mandatory layers:
-	- line
-	- hair
-	- skin-shadow
-	- color
-	- grid
+File Name: **Unicode.svg**
+<br><br>
+Example: **1F469-200D-1F680.svg**
+<br><br>
+Mandatory layers:
+- **line**
+- **hair**
+- **skin-shadow**
+- **color**
+- **grid**
+
 </ColumnLeft>
 
 <ColumnRight>
@@ -380,6 +387,7 @@ The black line of the exploding head has to be underneath the "color" layer. The
 
 
 #### Templates
-[openmoji-template.ai](https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-template.ai)
 
-[openmoji-template.svg](https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-template.svg)
+<ButtonLink href="https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-template.ai">openmoji-template.ai</ButtonLink>
+
+<ButtonLink href="https://openmoji.org/php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/guidelines/openmoji-template.svg">openmoji-template.svg</ButtonLink>
