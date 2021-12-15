@@ -19,6 +19,7 @@
 
 	h3{
 		font-size: variables.$font-sz-lg;
+		font-weight: normal;
 		margin-top: variables.$gap-med;
 	}
 
@@ -47,9 +48,18 @@
 		margin-top: variables.$gap-xs;
 	}
 
-	li {
-		list-style-type: disc;
-		list-style-position: inside
+	ul {
+	    li {
+	      list-style-type: disc;
+	      margin-left: variables.$gap-small;
+	    }
+	}
+
+	ol {
+	    li {
+	      list-style-type: decimal;
+	      margin-left: variables.$gap-small;
+	    }
 	}
 
 	summary{

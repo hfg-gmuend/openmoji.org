@@ -1,20 +1,20 @@
 ---
 import ColorPicker from '@/components/library/ColorPicker/ColorPicker.astro';
-import helpers from '../../../util/helpers'
-import emojipediaJson from '/public/data/emojipediaData.json';
+import generalUtil from '../../../util/generalUtil'
+
 
 const openmoji = Astro.props.openMojiData;
-const emojiPedia = emojipediaJson[openmoji.hexcode];
+const {emojiPedia} = Astro.props;
 
-const skintoneVariations = helpers.getSkintoneVariationForEmoji(openmoji.hexcode);
+const {skintoneVariations} = Astro.props;
 const hasMultiSkintone = skintoneVariations.skintone_combinations.length > 0;
 const hasAnySkintone = skintoneVariations.skintone_combinations.length > 0 || skintoneVariations.skintones.length > 0;
-const skintoneCombinations = helpers.clusterSkintoneVariationsBySkinIdForOneEmoji(openmoji.hexcode);
+const {skintoneCombinations} = Astro.props;
 
-const filePathColorSVG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'color')
-const filePathColorPNG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'png', 'color')
-const filePathBlackSVG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'black')
-const filePathBlackPNG = helpers.getFilePathEmojiImage(openmoji.hexcode, 'png', 'black')
+const filePathColorSVG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'color')
+const filePathColorPNG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'png', 'color')
+const filePathBlackSVG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'black')
+const filePathBlackPNG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'png', 'black')
 
 const urlAllEmoji = '/library/'
 const urlGroup = encodeURI('/library/#group=' + openmoji.group)
@@ -48,7 +48,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
       {
         openmoji.group ? (
           <span>/ <a class="redlink" href={urlGroup}>
-            {helpers.capitalizeFirstLetter(openmoji.group)}
+            {generalUtil.capitalizeFirstLetter(openmoji.group)}
             </a>
           </span>
         ) : null
@@ -57,7 +57,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
       {
         openmoji.subgroups ? (
           <span>/ <a class="redlink" href={urlSubgroup}>
-            {helpers.capitalizeFirstLetter(openmoji.subgroups)}
+            {generalUtil.capitalizeFirstLetter(openmoji.subgroups)}
             </a>
           </span>
         ) : null
@@ -95,7 +95,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
         {
           (<tr>
             <td></td>
-            <td id="unicodeCombination">{helpers.getEmojiCombinationLink(openmoji.hexcode)}</td>
+            <td id="unicodeCombination">{generalUtil.getEmojiCombinationLink(openmoji.hexcode)}</td>
           </tr>)
         }
 

@@ -1,11 +1,12 @@
 ---
-import helpers from '../../util/helpers'
+import generalUtil from '../../util/generalUtil'
+import openmojiJsonUtil from '../../util/openmojiJsonUtil'
 
 const hex = Astro.props.hex;
 const height = Astro.props.size || '1.4em';
 
-const emojiSvg = helpers.getFilePathEmojiImage(hex);
-const emojiData = helpers.getDataForEmoji(hex);
+const emojiSvg = generalUtil.getFilePathEmojiImage(hex);
+const emojiData = openmojiJsonUtil.getDataForEmoji(hex);
 ---
 <span class="emojiForTextWrapper">
 	<style lang="scss">

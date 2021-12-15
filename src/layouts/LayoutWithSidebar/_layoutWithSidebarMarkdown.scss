@@ -37,6 +37,14 @@
     }
   }
 
+  ol {
+    padding-left: variables.$gap-reg;
+
+    li {
+      list-style-type: decimal;
+    }
+  }
+
   h1 {
     font-size: variables.$font-sz-xl;
     font-weight: variables.$font-reg;
@@ -59,9 +67,17 @@
   }
 
   h4, h5{
-    font-size: variables.$font-sz-md;
-    font-weight: variables.$font-bold;
+    font-size: 24px;
     margin-top: variables.$gap-reg;
+    margin-bottom: variables.$gap-xs;
+  }
+
+  h4{
+    font-weight: variables.$font-bold;
+  }
+
+  h5{
+    font-weight: normal;
   }
 
   img, video{

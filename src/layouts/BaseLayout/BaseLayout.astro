@@ -2,10 +2,12 @@
 import MetaHeadContent from '../../components/shared/MetaHeadContent.astro';
 import Header from '../../components/shared/Header/Header.astro';
 import Footer from '../../components/shared/Footer/Footer.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
 
 const {content} = Astro.props;
 const title = (content.title || '') + ' · OpenMoji';
 const {onlyAllowHeadlines} = Astro.props || false;
+console.log('Rendering markdown page', title);
 ---
 <html lang="en">
   <head>
@@ -20,4 +22,5 @@ const {onlyAllowHeadlines} = Astro.props || false;
     </main>
     <Footer/>
   </body>
+  <JavascriptGlobalVariables/>
 </html>

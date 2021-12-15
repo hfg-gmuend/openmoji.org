@@ -29,6 +29,7 @@ header {
   .project-name {
     display: none;
     color: variables.$color-grey-dark;
+    text-decoration: none;
 
     @media screen and (max-width: variables.$breakpoint-md) {
       display: block;
@@ -92,6 +93,9 @@ header {
     .mobile-toggle {
       display: none;
       padding: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
       z-index: variables.$z-index-menu-toggle;
 
       img{

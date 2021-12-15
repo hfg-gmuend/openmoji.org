@@ -4,6 +4,7 @@
 .markdownContent{
   @include mixins.content;
   margin-left: 0px;
+  margin-top: variables.$gap-reg;
 }
 
 .container {

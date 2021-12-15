@@ -1,10 +1,11 @@
 ---
 import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
-import JavascriptLibraries from '@/components/shared/JavascriptLibraries.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
 import Header from '@/components/shared/Header/Header.astro';
 import Footer from '@/components/shared/Footer/Footer.astro';
 import EmojiNavigation from '@/components/library/EmojiNavigation/EmojiNavigation.astro';
 import EmojiGrid from '@/components/library/EmojiGrid/EmojiGrid.astro';
+console.log('Rendering library index.astro');
 ---
 
 <html lang="en">
@@ -18,8 +19,8 @@ import EmojiGrid from '@/components/library/EmojiGrid/EmojiGrid.astro';
             <EmojiGrid/>
         </main>
     </body>
-    <Footer/>
-    <JavascriptLibraries/>
+    <JavascriptGlobalVariables/>
+    <script rel="script" src="/js-libraries/lazyload.min.js"></script>
     <script type="text/javascript">
         new LazyLoad({
             elements_selector: '.lazyload'

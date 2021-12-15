@@ -1,14 +1,15 @@
 ---
 import EmojiGridItem from '../EmojiGridItem/EmojiGridItem.astro';
-import helpers from '../../../util/helpers'
+import openmojiJsonUtil from '../../../util/openmojiJsonUtil'
+import generalUtil from '../../../util/generalUtil'
 import FilterAndSort from '../FilterAndSort/FilterAndSort.astro';
 
-const filteredEmojies = helpers.getUniqueEmojis();
-const skinToneVariations = helpers.getSkintoneVariationsForEachEmoji();
+const filteredEmojies = openmojiJsonUtil.getUniqueEmojis();
+const skinToneVariations = openmojiJsonUtil.getSkintoneVariationsForEachEmoji();
 
-const orderByAnnotation = helpers.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'annotation');
-const orderByDate = helpers.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'openmoji_date', true);
-const orderByUnicode = helpers.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'order');
+const orderByAnnotation = generalUtil.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'annotation');
+const orderByDate = generalUtil.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'openmoji_date', true);
+const orderByUnicode = generalUtil.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'order');
 ---
 <div class="emoji_grid_wrapper">
   <style lang="scss">

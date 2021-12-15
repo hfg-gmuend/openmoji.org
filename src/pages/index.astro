@@ -1,7 +1,7 @@
 ---
 import Header from '@/components/shared/Header/Header.astro';
 import Footer from '@/components/shared/Footer/Footer.astro';
-import JavascriptLibraries from '@/components/shared/JavascriptLibraries.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
 import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
 
 import Hero from '@/components/index/Hero/Hero.astro';
@@ -9,6 +9,7 @@ import SmallOverview from '@/components/index/SmallOverview/SmallOverview.astro'
 import EmojiVideo from '@/components/index/EmojiVideo/EmojiVideo.astro';
 import CategoriesShowcase from '@/components/index/CategoriesShowcase/CategoriesShowcase.astro';
 import ContributeFooter from '@/components/index/ContributeFooter/ContributeFooter.astro';
+console.log('Rendering home page index.astro');
 ---
 
 <html lang="en">
@@ -26,5 +27,5 @@ import ContributeFooter from '@/components/index/ContributeFooter/ContributeFoot
         </main>
         <Footer color="blue"/>
     </body>
-    <JavascriptLibraries/>
+    <JavascriptGlobalVariables/>
 </html>

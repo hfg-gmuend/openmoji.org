@@ -1,5 +1,5 @@
 ---
-import helpers from '../../../util/helpers'
+import generalUtil from '../../../util/generalUtil'
 import downloadIcon from './download-emoji-E252-white.svg';
 const {hexcode} = Astro.props || '';
 const {group} = Astro.props || '';
@@ -14,12 +14,12 @@ const {indexByAlphabeticalOrder} = Astro.props;
 const {indexByDateOrder} = Astro.props;
 
 
-const filePathColorSVG = helpers.getFilePathEmojiImage(hexcode, 'svg');
-const filePathColorPNG = helpers.getFilePathEmojiImage(hexcode, 'png');
-const filePathBlackAndWhiteSVG = helpers.getFilePathEmojiImage(hexcode, 'svg', 'black');
-const filePathBlackAndWhitePNG = helpers.getFilePathEmojiImage(hexcode, 'png', 'black');
+const filePathColorSVG = generalUtil.getFilePathEmojiImage(hexcode, 'svg');
+const filePathColorPNG = generalUtil.getFilePathEmojiImage(hexcode, 'png');
+const filePathBlackAndWhiteSVG = generalUtil.getFilePathEmojiImage(hexcode, 'svg', 'black');
+const filePathBlackAndWhitePNG = generalUtil.getFilePathEmojiImage(hexcode, 'png', 'black');
 ---
-<div class="emoji_single" id={'emoji-' + hexcode} data-order-abc={indexByAlphabeticalOrder + 1} data-order-date={indexByDateOrder + 1} data-author={author} data-group={group} data-subgroups={subgroups} data-skintones={skintones.length > 0 ? 'true' : 'false'} data-multiskintones={multiSkintones.length > 0 ? 'true' : 'false'}>
+<div class="emoji_single" id={'emoji-' + hexcode} data-hex={hexcode} data-order-abc={indexByAlphabeticalOrder + 1} data-order-date={indexByDateOrder + 1} data-author={author} data-group={group} data-subgroups={subgroups} data-skintones={skintones.length > 0 ? 'true' : 'false'} data-multiskintones={multiSkintones.length > 0 ? 'true' : 'false'}>
   <style lang="scss">
     @use './_emojiGridItem.scss';
   </style>
@@ -27,11 +27,11 @@ const filePathBlackAndWhitePNG = helpers.getFilePathEmojiImage(hexcode, 'png', '
     <div class="emoji-container">
       {
         lazyload === false ? (
-          <img class="emoji-variant-color" src={filePathColorSVG} alt={'"' + description + '"-emoji'}/>
-          <img class="emoji-variant-black hidden" src={filePathBlackAndWhiteSVG} alt={'"' + description + '"-emoji in black and white'}/>
+          <img class="emoji-variant-color" src={filePathColorSVG} alt={'\"' + description + '\"-emoji'}/>
+          <img class="emoji-variant-black hidden" src={filePathBlackAndWhiteSVG} alt={'\"' + description + '\"-emoji in black and white'}/>
         ) : (
-          <img class="emoji-variant-color lazyload" data-src={filePathColorSVG} alt={'"' + description + '"-emoji'}/>
-          <img class="emoji-variant-black lazyload hidden" data-src={filePathBlackAndWhiteSVG} alt={'"' + description + '"-emoji in black and white'}/>
+          <img class="emoji-variant-color lazyload" data-src={filePathColorSVG} alt={'\"' + description + '\"-emoji'}/>
+          <img class="emoji-variant-black lazyload hidden" data-src={filePathBlackAndWhiteSVG} alt={'\"' + description + '\"-emoji in black and white'}/>
         )
       }
     </div>

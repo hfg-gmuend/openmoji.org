@@ -4,18 +4,33 @@ import Footer from '@/components/shared/Footer/Footer.astro';
 import JavascriptLibraries from '@/components/shared/JavascriptLibraries.astro';
 import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
 import EmojiDetail from '@/components/library/EmojiDetail/EmojiDetail.astro';
-import helpers from '../../util/helpers'
+import openmojiJsonUtil from '../../util/openmojiJsonUtil'
+import generalUtil from '../../util/generalUtil'
+import emojipediaUtil from '../../util/emojipediaUtil'
 
 const openmoji = Astro.props.openMojiData
+const {skintoneVariations} = Astro.props
+const {skintoneCombinations} = Astro.props
+const {emojiPedia} = Astro.props
 
 export async function getStaticPaths() {
-  const uniqueEmojis = helpers.getUniqueEmojis();
+  const uniqueEmojis = openmojiJsonUtil.getUniqueEmojis();
+  const allSkintoneVariations = openmojiJsonUtil.getSkintoneVariationsForEachEmoji();
+  const allSkintoneCombinations = openmojiJsonUtil.clusterSkintoneVariationsBySkinIdForAllEmojis(uniqueEmojis);
+  const emojipediaDescriptions = emojipediaUtil.getDescriptionForAllEmoji()
+
   let emojiPages = [];
   for(let key in uniqueEmojis){
     const emojiData = uniqueEmojis[key]
+    
     emojiPages.push({
       params: { emoji: 'emoji-' + emojiData.hexcode},
-      props: {openMojiData: emojiData}
+      props: {
+        openMojiData: emojiData,
+        skintoneVariations: allSkintoneVariations[emojiData.hexcode],
+        skintoneCombinations: allSkintoneCombinations[emojiData.hexcode],
+        emojiPedia: emojipediaDescriptions[emojiData.hexcode] || undefined
+      }
     })
   }
   return emojiPages;
@@ -23,11 +38,11 @@ export async function getStaticPaths() {
 ---
 <html lang="en">
   <head>
-      <MetaHeadContent title={helpers.capitalizeFirstLetter(openmoji.annotation) + " · OpenMoji"} titleOG={helpers.capitalizeFirstLetter(openmoji.annotation)}/>
+      <MetaHeadContent title={generalUtil.capitalizeFirstLetter(openmoji.annotation) + " · OpenMoji"} titleOG={generalUtil.capitalizeFirstLetter(openmoji.annotation)}/>
   </head>
   <body>
     <Header color="red"/>
-    <EmojiDetail openMojiData={openmoji}/>
+    <EmojiDetail openMojiData={openmoji} skintoneVariations={skintoneVariations} skintoneCombinations={skintoneCombinations} emojiPedia={emojiPedia}/>
   </body>
   <Footer/>
   <JavascriptLibraries/>

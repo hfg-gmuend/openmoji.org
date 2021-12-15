@@ -2,10 +2,10 @@
 import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
 import Header from '@/components/shared/Header/Header.astro';
 import Footer from '@/components/shared/Footer/Footer.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
 const {content} = Astro.props;
 const title = (content.title || '') + ' · OpenMoji';
 const headers = Astro.props.content.astro.headers || [];
-//const headers = [];
 const {sidebarFilter} = content || false;
 const {color} = content || 'orange';
 const contentWidth = content.content || 'defaultWidth';
@@ -13,7 +13,7 @@ let showOnlyHeadlinesWithDepth = false;
 if(sidebarFilter !== false){
   showOnlyHeadlinesWithDepth = [2, 3];
 }
-
+console.log('Rendering markdown page', title);
 ---
 <html lang="en">
   <head>
@@ -48,4 +48,5 @@ if(sidebarFilter !== false){
       <Footer/>
     </div>
   </body>
+  <JavascriptGlobalVariables/>
 </html>

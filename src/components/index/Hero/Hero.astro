@@ -1,8 +1,8 @@
 ---
 import Search from '@/components/shared/Search/Search.astro';
-import helpers from '../../../util/helpers'
+import openmojiJsonUtil from '../../../util/openmojiJsonUtil'
 
-const openMojiVersion = helpers.getOpenMojiVersion();
+const openMojiVersion = openmojiJsonUtil.getOpenMojiVersion();
 ---
 
 <div class="wrapper">
@@ -21,6 +21,7 @@ const openMojiVersion = helpers.getOpenMojiVersion();
       height: variables.$emoji-size;
       margin-left: - #{variables.$emoji-size} / 2;
       margin-top: - #{variables.$emoji-size} / 2;
+      border-radius: 999px;
 
       @media screen and (max-width: variables.$breakpoint-sm) {
         width: variables.$emoji-size-sm;
@@ -28,6 +29,10 @@ const openMojiVersion = helpers.getOpenMojiVersion();
         margin-left: -#{variables.$emoji-size-sm} / 2;
         margin-top: -#{variables.$emoji-size-sm} / 2;
       }
+    }
+
+    .emoji:hover{
+      background-color: variables.$color-grey-ultra-light;
     }
   </style>
   <div class="emojiCloudWrapper">
@@ -42,4 +47,5 @@ const openMojiVersion = helpers.getOpenMojiVersion();
     <h2>Open source emojis for designers, developers and everyone else!</h2>
     <Search theme="forHero" placeholder="Search emoji …"/>
   </div>
+  <script type="text/javascript" src="/js-code/emoji-cloud.js"></script>
 </div>
