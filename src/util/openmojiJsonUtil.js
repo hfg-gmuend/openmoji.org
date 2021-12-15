@@ -93,9 +93,22 @@ const getNumberOfFlags = () => {
     }).length);
 }
 
-const getDataForEmoji = (hexcode) => {
-  const allEmojis = getAllEmojisByHex();
-  return allEmojis[hexcode];
+const getDataForEmojiByHex = (hexcode) => {
+  for(let index in openMojiJson){
+    if(openMojiJson[index].hexcode === hexcode){
+      return openMojiJson[index];
+    }
+  }
+  return false;
+}
+
+const getDataForEmojiByEmoji = (emoji) => {
+  for(let index in openMojiJson){
+    if(openMojiJson[index].emoji == emoji){
+      return openMojiJson[index];
+    }
+  }
+  return false;
 }
 
 const getAllEmojisByHex = () => {
@@ -159,8 +172,9 @@ const getEmojiGroupsAndSubgroups = () => {
 export default {
   getEmojiGroupsAndSubgroups,
   getUniqueEmojis,
-  getDataForEmoji,
+  getDataForEmojiByHex,
   getAllEmojisByHex,
+  getDataForEmojiByEmoji,
   clusterSkintoneVariationsBySkinIdForOneEmoji,
   clusterSkintoneVariationsBySkinIdForAllEmojis,
   getSkintoneVariationForEmoji,
