@@ -17,6 +17,11 @@ td{
  padding-right: variables.$gap-small; 
 }
 
+h2{
+  font-size: variables.$font-sz-md;
+  margin: 0;
+}
+
 .highlight {
   background: variables.$background-color-grey;
   border-radius: variables.$border-radius;

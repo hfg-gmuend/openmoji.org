@@ -1,11 +1,10 @@
 ---
 import Header from '@/components/shared/Header/Header.astro';
 import Footer from '@/components/shared/Footer/Footer.astro';
-import JavascriptLibraries from '@/components/shared/JavascriptLibraries.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
 import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
 import EmojiDetail from '@/components/library/EmojiDetail/EmojiDetail.astro';
 import openmojiJsonUtil from '../../util/openmojiJsonUtil'
-import generalUtil from '../../util/generalUtil'
 import emojipediaUtil from '../../util/emojipediaUtil'
 
 const openmoji = Astro.props.openMojiData
@@ -38,12 +37,12 @@ export async function getStaticPaths() {
 ---
 <html lang="en">
   <head>
-      <MetaHeadContent title={generalUtil.capitalizeFirstLetter(openmoji.annotation) + " · OpenMoji"} titleOG={generalUtil.capitalizeFirstLetter(openmoji.annotation)}/>
+      <MetaHeadContent title={openmoji.emoji + " · OpenMoji"} titleOG={openmoji.emoji}/>
   </head>
   <body>
     <Header color="red"/>
     <EmojiDetail openMojiData={openmoji} skintoneVariations={skintoneVariations} skintoneCombinations={skintoneCombinations} emojiPedia={emojiPedia}/>
   </body>
   <Footer/>
-  <JavascriptLibraries/>
+  <JavascriptGlobalVariables/>
 </html>

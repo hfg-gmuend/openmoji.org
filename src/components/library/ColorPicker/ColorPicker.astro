@@ -5,7 +5,8 @@ const colorPalette = colorUtil.getColorPaletteSkintones();
 
 const emojiHex = Astro.props.emoji;
 const {emojiData} = Astro.props;
-const multiskin = Astro.props.multiskin;
+const {multiskin} = Astro.props;
+const {anySkintone} = Astro.props;
 const skintoneCombinations = Astro.props.skintoneCombinations;
 let skintonesForHex = {}
 for(let combination in skintoneCombinations){
@@ -23,7 +24,7 @@ for(let combination in skintoneCombinations){
     <div id="outline-emoji-preview" class="circle single-color visible" onclick="colorChangeSingleColor('black')"></div>
     <div id="color-emoji-preview" onclick="colorChangeSingleColor('')" class="circle highlight visible single-color"></div>
     {
-      multiskin === false ?
+      anySkintone === false ? null : multiskin === false ?
       (<div class="skintone-selector">
         {
           colorPalette.map((color, index) => (

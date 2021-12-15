@@ -31,13 +31,13 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
     <div class="active-emoji-selection">
       <img id="main-emoji-image-color" class="main-emoji-image emoji-variant-color" src={filePathColorSVG} alt={'"' + openmoji.annotation + '"-emoji'}/>
       <img class="main-emoji-image emoji-variant-black hidden" src={filePathBlackSVG} alt={'"' + openmoji.annotation + '"-emoji in black and white'}/>
-      {
-        hasAnySkintone === true ? (<ColorPicker
+
+      <ColorPicker
         emoji={openmoji.hexcode}
         emojiData={openmoji}
+        anySkintone={hasAnySkintone}
         multiskin={hasMultiSkintone}
-        skintoneCombinations={skintoneCombinations}/>) : null
-      }
+        skintoneCombinations={skintoneCombinations}/>
       
     </div>
   </div>
