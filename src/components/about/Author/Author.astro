@@ -7,30 +7,27 @@ const description = authorData.description || '';
 const links = authorData.links || {};
 ---
 
-<div>
+<div class="teammember">
   <style lang="scss">
     @use './_author.scss';
   </style>
-
-  <div class="teammember">
-    <div>
-      <a href={'../library#author=' + name}>
-        <img src={'/assets/author-illustrations/' + image}/>
-      </a>
-    </div>
-    <h3>{name}</h3>
-    <div class="team">
-      <p>{description}</p>
-    </div>
-    <ul>
-      {Object.keys(links).map((linkType, index) => {
-        const href = links[linkType];
-        return (<li>
-          <a class="iconlink" rel="noopener" target="_blank" href={href}>
-            <img alt={linkType} src={'/assets/link-icons/' + linkType + '.svg'}/>
-          </a>
-        </li>)
-      })}
-    </ul>
+  <div>
+    <a href={'../library#author=' + name}>
+      <img src={'/assets/author-illustrations/' + image}/>
+    </a>
   </div>
+  <h3>{name}</h3>
+  <div class="team">
+    <p>{description}</p>
+  </div>
+  <ul>
+    {Object.keys(links).map((linkType, index) => {
+      const href = links[linkType];
+      return (<li>
+        <a class="iconlink" rel="noopener" target="_blank" href={href}>
+          <img alt={linkType} src={'/assets/link-icons/' + linkType + '.svg'}/>
+        </a>
+      </li>)
+    })}
+  </ul>
 </div>

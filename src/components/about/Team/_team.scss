@@ -1,5 +1,9 @@
 @use 'src/shared-styles/_variables.scss';
 
+.team{
+  overflow: hidden;
+}
+
 .container {
   display: -webkit-flex;
   /* Safari */
