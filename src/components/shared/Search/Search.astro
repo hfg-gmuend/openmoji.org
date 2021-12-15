@@ -7,15 +7,17 @@ const {placeholder} = Astro.props;
 	<style lang="scss">
     	@use './_search.scss';
   	</style>
-	  <img src={searchIcon} alt="search icon"/>
-	  <label class="hidden" for="emojisearch">Search</label>
-	  <input aria-label="Search" type="text" class="search" id="emojisearch" placeholder={placeholder || 'Search'}/>
-	  <div class="resultsWrapperWrapper">
-			<div id="search-results-wrapper" class="resultsWrapper hidden">
-				<ol id="search-results">
-					<!-- Search results will be put here -->	
-					<a class="searchResult"></a>
-				</ol>
-			</div>
+		<img src={searchIcon} alt="search icon"/>
+		<label class="hidden" for="emojisearch">Search</label>
+		<input aria-label="Search" type="text" class="search" id="emojisearch" placeholder={placeholder || 'Search'}/>
+		<div class="resultsWrapperWrapper">
+		<div id="search-results-wrapper" class="resultsWrapper hidden">
+			<ol id="search-results">
+				<!-- Search results will be put here -->	
+				<a class="searchResult"></a>
+			</ol>
 		</div>
+	</div>
+	<script rel="script" src="/js-libraries/fuse.min.js"></script>
+	<script type="text/javascript" src="/js-code/custom-search.js"></script>
 </div>

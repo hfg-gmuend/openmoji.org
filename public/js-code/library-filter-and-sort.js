@@ -43,11 +43,11 @@ $(document).ready(function () {
   }
 
   function sortEmojiBy(newSort, sortName){
-    if(currentSort !== newSort){
+    //if(currentSort !== newSort){
       $('#sortName').html(sortName);
       sortEmoji(newSort);
       currentSort = newSort;
-    }
+    //}
   }
 
   function sortEmoji(sortType){

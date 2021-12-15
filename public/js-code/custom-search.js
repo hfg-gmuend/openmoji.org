@@ -1,9 +1,90 @@
-(function () {
+$(document).ready(function () {
 	let fuse, searchTermBefore, searchDom, searchBarDom, searchResultsDom, searchResultsListDom;
 	const classNameForHidingSearchBar = 'hidden';
 	const classNameSearchResultSelected = 'itemSelected';
 	const classNameSearchResultNotSelected = 'itemNotSelected';
 	init();
+	checkUrlParametersAndSearchIfNecessary();
+
+	function checkUrlParametersAndSearchIfNecessary(){
+		let urlParameters = getUrlParameters();
+		if(urlParameters && urlParameters.search && urlParameters.search !== ''){
+			const searchTerm = urlParameters.search;
+			searchForTerm(searchTerm);
+		}
+	}
+
+	function exposeListFilter(filter) {
+	    // add filter that already exist in URL to current filter, so they don't get lost
+	    var currentUrlParams = getUrlParameters();
+	    // if currentUrlParams are undefined create new object
+	    if (currentUrlParams === undefined) currentUrlParams = {};
+	    // remove undefined filters and add new filter to currentUrlParams or update existing ones
+	    for (var key in filter) {
+	      if (filter.hasOwnProperty(key)) {
+	        if (filter[key] === undefined) {
+	          // also delete in currentUrlParams if it exists there
+	          if (currentUrlParams.hasOwnProperty(key)) {
+	            delete currentUrlParams[key];
+	          }
+	          delete filter[key];
+	        } else {
+	          currentUrlParams[key] = filter[key];
+	        }
+	      }
+	    }
+
+	    // expose filter in URL
+	    var URL;
+	    if ($.isEmptyObject(currentUrlParams)) {
+	      URL = window.location.href.substring(0, window.location.href.indexOf("#"));
+	    } else if (window.location.href.includes("#")) {
+	      URL = window.location.href.substring(0, window.location.href.indexOf("#") + 1);
+	    } else {
+	      URL = window.location.href.substring(0, window.location.href.indexOf("#")) + "#";
+	    }
+	    history.pushState(null, "", URL + $.param(currentUrlParams));
+	}
+
+	function clearSearch(){
+		exposeListFilter({search: undefined});
+		$('.emoji_single').removeClass('hiddenDueToSearch');
+		$('#sortFunctionBestMatch').addClass('hidden');
+		$('#sortName').html( $('#sortFunctionUnicode').text() );
+		$(searchBarDom).val('');
+		$(searchBarDom).blur();
+	}
+
+	function searchForTerm(searchTerm){
+		exposeListFilter({search: searchTerm});
+		let results = fuse.search(searchTerm)
+		$(searchBarDom).val(searchTerm)
+		$(searchBarDom).blur();
+		$('.emoji_single').addClass('hiddenDueToSearch');
+		$('#sortFunctionBestMatch').removeClass('hidden');
+		$('#sortName').html( $('#sortFunctionBestMatch').text() );
+		
+		for(let index in results){
+			const result = results[index];
+			const element = $('#emoji-' + result.item.hexcode)
+			element.data('order-bestmatch', index + 1);
+			element.css('order', index + 1);
+			element.removeClass('hiddenDueToSearch');
+		}
+	}
+
+	function getUrlParameters() {
+	    var sPageURL = decodeURIComponent(window.location.hash.substring(1)),
+	      sURLVariables = sPageURL.split("&"),
+	      sParameters = {},
+	      i;
+
+	    for (i = 0; i < sURLVariables.length; i++) {
+	      var currentParam = sURLVariables[i].split("=");
+	      sParameters[currentParam[0]] = currentParam[1];
+	    }
+	    return sPageURL ? sParameters : undefined;
+	  }
 
 	function init(){
 		searchTermBefore = undefined;
@@ -24,7 +105,6 @@
 	}
 
 	function updateResultsDom(results, searchTerm){
-		console.log(results);
 		if(results.length === 0){ // No search results
 			const dom = '<div class="noResults">No results for ' + searchTerm + '</div>';
 			searchResultsListDom.innerHTML = dom;
@@ -73,28 +153,39 @@
 	}
 
 	function monitorKeyEventsDown(e) {
-		if(areSearchResultsShown() === true){
-			switch(e.keyCode) { 
-				case 38: // "up" arrow
+		let resultsShown = areSearchResultsShown()
+		switch(e.keyCode) { 
+			case 38: // "up" arrow
+				if(resultsShown === true){
 					navigateInList('up');
 					e.preventDefault();
-					break;
-				
-				case 40: // "down" arrow
+				}
+				break;
+			
+			case 40: // "down" arrow
+				if(resultsShown === true){
 					navigateInList('down');
 					e.preventDefault();
-					break;
+				}
+				break;
 
-				case 13: // Enter button
-					const currentlySelected = getIndexOfCurrentlyFocussedSearchResult();
-					// If no item is selected (i.e. search bar selected) then clicking enter trigger the search for the string
-					if(currentlySelected === false){
-						const searchTerm = searchBarDom.value.trim();
-						window.location.href = '/library/#search=' + searchTerm;
-						//focusOnSearchItemWithIndex(0, true);
+			case 13: // Enter button
+				const currentlySelected = getIndexOfCurrentlyFocussedSearchResult();
+				// If no item is selected (i.e. search bar selected) then clicking enter trigger the search for the string
+				if(currentlySelected === false){
+					const searchTerm = searchBarDom.value.trim();
+					if(searchTerm === '' || resultsShown === false){
+						clearSearch()
+					}else{
+						// An ugly check whether the search list is present and whether the url should change or search in place
+						if( $('#emoji_grid').length ){
+							searchForTerm(searchTerm);
+						}else{
+							window.location.href = '/library/#search=' + searchTerm;
+						}
 					}
-					break;
-			}
+				}
+				break;
 		}
 	}
 
@@ -198,4 +289,4 @@
 
 		searchTermBefore = searchTerm;
 	}
-}());
+})
