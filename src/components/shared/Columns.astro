@@ -2,12 +2,17 @@
 import { Markdown } from 'astro/components';
 ---
 <div>
-    <style type="text/css" global>
+    <style lang="scss" global>
+        @use 'src/shared-styles/_variables.scss';
         .layoutContainer{
             display: flex;
             /*border: 1px solid #828282;
             padding: 10px;*/
             margin-bottom: 10px;
+
+            @media screen and (max-width: variables.$breakpoint-sm) {
+                flex-direction: column;
+            }
         }
 
         .layoutContainer .columnLeft{

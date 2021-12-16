@@ -19,6 +19,7 @@
 }
 
 .markdownContent {
+  width: 100%;
   // @extend %content;
 
   @media screen and (max-width: variables.$breakpoint-md) {
@@ -81,10 +82,12 @@
   }
 
   img, video{
+    padding: 30px;
+    box-sizing: border-box;
     display: block;
     // margin-top: variables.$gap-med;
     margin-bottom: variables.$gap-xs;
-    min-width: 30%;
-    max-width: 60%;
+    min-width: 20%;
+    max-width: 100%;
   }
 }
