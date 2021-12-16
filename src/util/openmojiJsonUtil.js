@@ -1,8 +1,6 @@
 import openMojiJson from '/public/data/openmoji.json';
 import packageJSON from '../../public/data/package.json';
 
-console.log('---> loading openMojiJsonUtil');
-
 const getSkintoneVariationForEmoji = (hexcode) => {
   /* That's really not efficient but since we build the site it's alright */
   const allVariations = getSkintoneVariationsForEachEmoji();

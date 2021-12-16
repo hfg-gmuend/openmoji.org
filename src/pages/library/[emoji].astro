@@ -5,6 +5,7 @@ import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVaria
 import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
 import EmojiDetail from '@/components/library/EmojiDetail/EmojiDetail.astro';
 import openmojiJsonUtil from '../../util/openmojiJsonUtil'
+import generalUtil from '../../util/generalUtil'
 import emojipediaUtil from '../../util/emojipediaUtil'
 
 const openmoji = Astro.props.openMojiData
@@ -17,10 +18,13 @@ export async function getStaticPaths() {
   const allSkintoneVariations = openmojiJsonUtil.getSkintoneVariationsForEachEmoji();
   const allSkintoneCombinations = openmojiJsonUtil.clusterSkintoneVariationsBySkinIdForAllEmojis(uniqueEmojis);
   const emojipediaDescriptions = emojipediaUtil.getDescriptionForAllEmoji()
+  const orderByUnicode = generalUtil.getListBasedOnObjectSortedByCertainKey(uniqueEmojis, 'order');
 
   let emojiPages = [];
-  for(let key in uniqueEmojis){
-    const emojiData = uniqueEmojis[key]
+  let limitPagesForTesting = 30;
+  for(let index in orderByUnicode){
+    const hex = orderByUnicode[index];
+    const emojiData = uniqueEmojis[hex];
     
     emojiPages.push({
       params: { emoji: 'emoji-' + emojiData.hexcode},
@@ -31,6 +35,11 @@ export async function getStaticPaths() {
         emojiPedia: emojipediaDescriptions[emojiData.hexcode] || undefined
       }
     })
+
+    
+    if(limitPagesForTesting && index > limitPagesForTesting){
+      break;
+    }
   }
   return emojiPages;
 }
