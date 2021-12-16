@@ -3,11 +3,19 @@ $(document).ready(function () {
   emojiDetailWrapper = $("#emoji-detail-wrapper .popover-wrapper");
   emojiDetailWrapper.css("display", "flex").hide();
 
+  openPopopAccordingToUrl();
+
   $("#emoji-preview").on("click", ".circle, .emoji-preview-image", function (e) {
     handlePreviewChange(e)
   });
 })
 
+function openPopopAccordingToUrl(){
+  var currentUrlParams = getUrlParameters();
+  if(currentUrlParams && currentUrlParams.emoji){
+    showEmojiDetails(currentUrlParams.emoji)
+  }
+}
 
 function handlePreviewChange(e){
   // toggle outline and color in emoji detail view
@@ -52,21 +60,18 @@ function handlePreviewChange(e){
       if(typeof emojiMatch === "object" && emojiMatch !== null) emoji_hexcode = emojiMatch.hexcode;
     }
 
-    // update emoji detail view
     exposeListFilter({
       emoji: emoji_hexcode
     });
+    // update emoji detail view
+    showEmojiDetails(emoji_hexcode)
 }
 
-function filterByAuthor(elem, event){
-  event.preventDefault();
-  exposeListFilter({
-    author: $(elem).text(),
-    search: undefined,
-    group: undefined,
-    emoji: undefined
-  });
+function closePopupAndTriggerUpdate(){
   emojiDetailWrapper.fadeOut(400);
+  setTimeout(function(){
+    updateViewAccordingToUrl() /* This is a function from library-navigation */  
+  })
 }
 
 function closeEmojiDetails(){
@@ -76,9 +81,10 @@ function closeEmojiDetails(){
   emojiDetailWrapper.fadeOut(400);
 }
 
-function showEmojiDetails(id) {
-    const hex = id;
-    console.log(id);
+function showEmojiDetails(hex, event) {
+    if(event){
+      event.preventDefault();
+    }
     // get in index of current object
     var currEmoji = undefined;
     var baseEmoji = undefined;
@@ -93,12 +99,12 @@ function showEmojiDetails(id) {
     // var emojiIdx = currentList.findIndex(function (el) {
     //   el = el.item;
 
-    //   if (el.emoji === id || el.hexcode === id) {
+    //   if (el.emoji === hex || el.hexcode === hex) {
     //     currEmoji = el;
     //     return true;
     //   } else if (typeof el.skintones !== 'undefined' || typeof el.skintone_combinations !== 'undefined') {
     //     currEmoji = Array.prototype.concat(el.skintones, el.skintone_combinations).find(function (el) {
-    //       return el && (el.emoji === id || el.hexcode === id);
+    //       return el && (el.emoji === hex || el.hexcode === hex);
     //     });
 
     //     if (typeof currEmoji !== 'undefined') {
@@ -293,9 +299,10 @@ function showEmojiDetails(id) {
     $("#description h2").text(annotation);
     $("#description #unicode").text(hexcodeString).attr("href", "https://www.decodeunicode.org/en/u+" + hexcode_link);
     $("#description #combination").html(combination)
-    $("#description #author").text(openmoji_author);
-    $("#description #category").text(group).attr("data-grouppath", group);
-    $("#description #subcategory").text(subgroups).attr("data-grouppath", groupPath);
+
+    $("#description #author").text(openmoji_author).attr('href', '#author=' + openmoji_author);
+    $("#description #category").text(group).attr("data-grouppath", group).attr('href', '#group=' + group);
+    $("#description #subcategory").text(subgroups).attr("data-grouppath", groupPath).attr('href', '#group=' + group + '%2F' + subgroups);
 
     // Emoji description pull from emojipedia via our proxy endpoint
     // e.g. https://openmoji-emojipedia-api.glitch.me/emojis/✅
@@ -356,6 +363,10 @@ function showEmojiDetails(id) {
     $(".prev-emoji").hide();
     $(".next-emoji").hide();
 
+    exposeListFilter({
+      emoji: hex
+    });
+
     emojiDetailWrapper.fadeIn(300);
 }
 
@@ -389,17 +400,16 @@ function exposeListFilter(filter) {
       URL = window.location.href.substring(0, window.location.href.indexOf("#")) + "#";
     }
     history.pushState(null, "", URL + $.param(currentUrlParams));
-    handleRequest(getUrlParameters());
 }
 
-function handleRequest(filter) {
-    // open emoji detail view if emoji filter is set else update list
-    if (filter && filter.emoji) {
-      showEmojiDetails(filter.emoji);
-    } else {
-      //updateList(filter);
-    }
-  }
+// function handleRequest(filter) {
+//     // open emoji detail view if emoji filter is set else update list
+//     if (filter && filter.emoji) {
+//       showEmojiDetails(filter.emoji);
+//     } else {
+//       //updateList(filter);
+//     }
+//   }
 
 function getUrlParameters() {
     var sPageURL = decodeURIComponent(window.location.hash.substring(1)),

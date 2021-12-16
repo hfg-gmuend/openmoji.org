@@ -113,7 +113,8 @@ $(document).ready(function () {
 			for(let index in results){
 				const result = results[index];
 				const item = result.item;
-				const linkUrl = '/library/emoji-' + item.hexcode;
+				const linkUrl = '/library#emoji=' + item.hexcode;
+				//const linkUrl = '/library/emoji-' + item.hexcode; /* This is once we have emoji-pages */
 				const linkText = item.annotation
 				dom += '<li>'
 				dom += '   <a class="searchResult ' + classNameSearchResultNotSelected + '" href="' + linkUrl + '">'
