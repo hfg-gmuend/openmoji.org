@@ -14,6 +14,33 @@ $(document).ready(function () {
 		}
 	}
 
+	function clearSearch(){
+		exposeListFilter({search: undefined});
+		$('.emoji_single').removeClass('hiddenDueToSearch');
+		$('#sortFunctionBestMatch').addClass('hidden');
+		$('#sortName').html( $('#sortFunctionUnicode').text() );
+		$(searchBarDom).val('');
+		$(searchBarDom).blur();
+	}
+
+	function searchForTerm(searchTerm){
+		exposeListFilter({search: searchTerm});
+		let results = fuse.search(searchTerm)
+		$(searchBarDom).val(searchTerm)
+		$(searchBarDom).blur();
+		$('.emoji_single').addClass('hiddenDueToSearch');
+		$('#sortFunctionBestMatch').removeClass('hidden');
+		$('#sortName').html( $('#sortFunctionBestMatch').text() );
+		
+		for(let index in results){
+			const result = results[index];
+			const element = $('#emoji-' + result.item.hexcode)
+			element.data('order-bestmatch', index + 1);
+			element.css('order', index + 1);
+			element.removeClass('hiddenDueToSearch');
+		}
+	}
+
 	function exposeListFilter(filter) {
 	    // add filter that already exist in URL to current filter, so they don't get lost
 	    var currentUrlParams = getUrlParameters();
@@ -44,33 +71,6 @@ $(document).ready(function () {
 	      URL = window.location.href.substring(0, window.location.href.indexOf("#")) + "#";
 	    }
 	    history.pushState(null, "", URL + $.param(currentUrlParams));
-	}
-
-	function clearSearch(){
-		exposeListFilter({search: undefined});
-		$('.emoji_single').removeClass('hiddenDueToSearch');
-		$('#sortFunctionBestMatch').addClass('hidden');
-		$('#sortName').html( $('#sortFunctionUnicode').text() );
-		$(searchBarDom).val('');
-		$(searchBarDom).blur();
-	}
-
-	function searchForTerm(searchTerm){
-		exposeListFilter({search: searchTerm});
-		let results = fuse.search(searchTerm)
-		$(searchBarDom).val(searchTerm)
-		$(searchBarDom).blur();
-		$('.emoji_single').addClass('hiddenDueToSearch');
-		$('#sortFunctionBestMatch').removeClass('hidden');
-		$('#sortName').html( $('#sortFunctionBestMatch').text() );
-		
-		for(let index in results){
-			const result = results[index];
-			const element = $('#emoji-' + result.item.hexcode)
-			element.data('order-bestmatch', index + 1);
-			element.css('order', index + 1);
-			element.removeClass('hiddenDueToSearch');
-		}
 	}
 
 	function getUrlParameters() {
