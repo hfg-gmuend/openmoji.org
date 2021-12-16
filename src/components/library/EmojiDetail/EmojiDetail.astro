@@ -17,9 +17,9 @@ const filePathBlackSVG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'sv
 const filePathBlackPNG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'png', 'black')
 
 const urlAllEmoji = '/library/'
-const urlGroup = encodeURI('/library/#group=' + openmoji.group)
-const urlSubgroup = encodeURI('/library/#group=' + openmoji.group + ' ' + openmoji.subgroups);
-const urlAuthor = encodeURI('/library/#author=' + openmoji.openmoji_author);
+const urlGroup = '/library/#group=' + openmoji.group
+const urlSubgroup = '/library/#group=' + openmoji.group + '%2F' + openmoji.subgroups
+const urlAuthor = '/library/#author=' + openmoji.openmoji_author
 const urlUnicode = 'https://decodeunicode.org/en/u+' + openmoji.hexcode;
 console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
 ---
