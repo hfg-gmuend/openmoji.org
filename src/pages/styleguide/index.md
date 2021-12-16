@@ -23,7 +23,7 @@ The next set of emojis are due to be released this year, we need your help to ma
 </ColumnLeft>
 
 <ColumnRight>
-![Emoji 13.0](styleguide-emoji13.svg)
+![Emoji 13.0](/styleguide-emoji13.svg)
 </ColumnRight>
 </Columns>
 
@@ -36,7 +36,7 @@ Design is subjective but we want our emoji to follow our style guide and look go
 </ColumnLeft>
 
 <ColumnRight>
-![Comparison polar bear emoji before and after redesign](styleguide-emojidesign.png)
+![Comparison polar bear emoji before and after redesign](/styleguide-emojidesign.png)
 </ColumnRight>
 </Columns>
 
@@ -49,7 +49,7 @@ To be useful for communication, emoji need to convey the same idea.
 </ColumnLeft>
 
 <ColumnRight>
-![Example of how other emoji libraries influence the OpenMojis](styleguide-consistency.svg)
+![Example of how other emoji libraries influence the OpenMojis](/styleguide-consistency.svg)
 </ColumnRight>
 </Columns>
 
@@ -64,7 +64,7 @@ The four basic forms define the possible extents, aiming to **visually balance**
 </ColumnLeft>
 
 <ColumnRight>
-![The full grid](styleguide-grid.svg)
+![The full grid](/styleguide-grid.svg)
 </ColumnRight>
 </Columns>
 
@@ -74,7 +74,7 @@ Special cases are the “Emoji Faces”. They are placed inside a smaller circle
 </ColumnLeft>
 
 <ColumnRight>
-![The full grid with the center circle highlighted](styleguide-emoji-circle.svg)
+![The full grid with the center circle highlighted](/styleguide-emoji-circle.svg)
 </ColumnRight>
 </Columns>
 
@@ -84,7 +84,7 @@ Special cases are the “Emoji Faces”. They are placed inside a smaller circle
 </ColumnLeft>
 
 <ColumnRight>
-![3 examples of emoji placed within the grid](styleguide-examples-grid.svg)
+![3 examples of emoji placed within the grid](/styleguide-examples-grid.svg)
 </ColumnRight>
 </Columns>
 
@@ -95,7 +95,7 @@ Basic circles should give a consistent look to the entire set. Parts of the circ
 </ColumnLeft>
 
 <ColumnRight>
-![Circles in various sizes from 46px to 4px](styleguide-basic-circles.svg)
+![Circles in various sizes from 46px to 4px](/styleguide-basic-circles.svg)
 </ColumnRight>
 </Columns>
 
@@ -105,7 +105,7 @@ Basic circles should give a consistent look to the entire set. Parts of the circ
 </ColumnLeft>
 
 <ColumnRight>
-![Three emoji showing the various circle sizes in use](styleguide-examples-basic-circles.svg)
+![Three emoji showing the various circle sizes in use](/styleguide-examples-basic-circles.svg)
 </ColumnRight>
 </Columns>
 
@@ -116,7 +116,7 @@ The stroke settings are: **2px weight, round corners and ends**. Two overlapping
 </ColumnLeft>
 
 <ColumnRight>
-![The different types of contours and cornes: Round caps, round edges and centered contour](styleguide-contour.svg)
+![The different types of contours and cornes: Round caps, round edges and centered contour](/styleguide-contour.svg)
 </ColumnRight>
 </Columns>
 
@@ -127,7 +127,7 @@ The open contours result in a nice dynamic look and should be used for overlappi
 </ColumnLeft>
 
 <ColumnRight>
-![Two examples showing the open contour](styleguide-open-contour.svg)
+![Two examples showing the open contour](/styleguide-open-contour.svg)
 </ColumnRight>
 </Columns>
 
@@ -138,7 +138,7 @@ The fill should continue as if the contour was still there
 </ColumnLeft>
 
 <ColumnRight>
-![Two examples the expected fill style](styleguide-open-contour-color.svg)
+![Two examples the expected fill style](/styleguide-open-contour-color.svg)
 </ColumnRight>
 </Columns>
 
@@ -149,7 +149,7 @@ All objects should be displayed **2-dimensionally** from the front. In exception
 </ColumnLeft>
 
 <ColumnRight>
-![Example for dos and don'ts regarding perspective](styleguide-perspective.svg)
+![Example for dos and don'ts regarding perspective](/styleguide-perspective.svg)
 </ColumnRight>
 </Columns>
 
@@ -168,7 +168,7 @@ Please aim to mainly use the **primary colors**. Use the lighter colours as defa
 </ColumnLeft>
 
 <ColumnRight>
-![The primary colors: Two shades of blue, red, green and yellow and a range from white to black with 3 grays in between](styleguide-primary-colors.svg)
+![The primary colors: Two shades of blue, red, green and yellow and a range from white to black with 3 grays in between](/styleguide-primary-colors.svg)
 </ColumnRight>
 </Columns>
 
@@ -178,7 +178,7 @@ Please aim to mainly use the **primary colors**. Use the lighter colours as defa
 </ColumnLeft>
 
 <ColumnRight>
-![The secondary colors: Two shades of rose, lavender, orange and brown](styleguide-secondary-colors.svg)
+![The secondary colors: Two shades of rose, lavender, orange and brown](/styleguide-secondary-colors.svg)
 </ColumnRight>
 </Columns>
 
@@ -189,7 +189,7 @@ The lighter color should be used for the fill, the darker color for the shading.
 </ColumnLeft>
 
 <ColumnRight>
-![Two examples showing the shading](styleguide-shadows.svg)
+![Two examples showing the shading](/styleguide-shadows.svg)
 </ColumnRight>
 </Columns>
 
@@ -201,13 +201,13 @@ We provide a custom font for emojis which have to contain typographic elements. 
 </ColumnLeft>
 
 <ColumnRight>
-![A sample of the custom openmoji font](styleguide-typography.svg)
+![A sample of the custom openmoji font](/styleguide-typography.svg)
 </ColumnRight>
 </Columns>
 
 ### Topics
 #### People
-![Multiple examples of people-emojis](styleguide-people.svg)
+![Multiple examples of people-emojis](/styleguide-people.svg)
 
 ##### Full Body
 <Columns>
@@ -216,7 +216,7 @@ People are pictured without clothing. Narrow their legs at the bottom. Arms are 
 </ColumnLeft>
 
 <ColumnRight>
-![Examples of full body emojis](styleguide-full-body.svg)
+![Examples of full body emojis](/styleguide-full-body.svg)
 </ColumnRight>
 </Columns>
 
@@ -227,7 +227,7 @@ The face is elliptical. There is no neck, but there is a gap between head and sh
 </ColumnLeft>
 
 <ColumnRight>
-![Examples of emoji where only the bust is visible](styleguide-bust.svg)
+![Examples of emoji where only the bust is visible](/styleguide-bust.svg)
 </ColumnRight>
 </Columns>
 
@@ -238,7 +238,7 @@ The thumb converges slightly at the end. The lower side of the hand is rounded. 
 </ColumnLeft>
 
 <ColumnRight>
-![Examples of hand-emojis](styleguide-hands.svg)
+![Examples of hand-emojis](/styleguide-hands.svg)
 </ColumnRight>
 </Columns>
 
@@ -249,7 +249,7 @@ The arrow head is made out of one basic form.
 </ColumnLeft>
 
 <ColumnRight>
-![Examples of arrow-emojis](styleguide-arrows.svg)
+![Examples of arrow-emojis](/styleguide-arrows.svg)
 </ColumnRight>
 </Columns>
 
@@ -259,7 +259,7 @@ Arrows use double lines for every emoji. For special cases (e.g. icons for user 
 </ColumnLeft>
 
 <ColumnRight>
-![Example of how to translate from a double line emoji to a single line emoji](styleguide-arrows-2.svg)
+![Example of how to translate from a double line emoji to a single line emoji](/styleguide-arrows-2.svg)
 </ColumnRight>
 </Columns>
 
@@ -270,7 +270,7 @@ Buildings are shown **from the front** with an entrance door. Details should be 
 </ColumnLeft>
 
 <ColumnRight>
-![Examples of buildings](styleguide-buildings.svg)
+![Examples of buildings](/styleguide-buildings.svg)
 </ColumnRight>
 </Columns>
 
@@ -281,7 +281,7 @@ Plants are illustrated **organically**. Stems should always be a single line. An
 </ColumnLeft>
 
 <ColumnRight>
-![Examples of animal-emojis and plant-emojis](styleguide-plants-animals.svg)
+![Examples of animal-emojis and plant-emojis](/styleguide-plants-animals.svg)
 </ColumnRight>
 </Columns>
 
@@ -292,7 +292,7 @@ Vehicles should be deduced from the shapes of **real world models** to avoid a t
 </ColumnLeft>
 
 <ColumnRight>
-![Examples of vehicle-emojis](styleguide-vehicles.svg)
+![Examples of vehicle-emojis](/styleguide-vehicles.svg)
 </ColumnRight>
 </Columns>
 
@@ -314,7 +314,7 @@ Mandatory layers:
 </ColumnLeft>
 
 <ColumnRight>
-![Screenshot of Adobe Illustrator with the correct layers](styleguide-submission-layer-structure.png)
+![Screenshot of Adobe Illustrator with the correct layers](/styleguide-submission-layer-structure.png)
 </ColumnRight>
 </Columns>
 
@@ -328,7 +328,7 @@ The red frame of the bike has to be in the foreground. Therefore, add a "color-f
 </ColumnLeft>
 
 <ColumnRight>
-![Explanation on how to structure the file](styleguide-bicycles.svg)
+![Explanation on how to structure the file](/styleguide-bicycles.svg)
 </ColumnRight>
 </Columns>
 
@@ -339,7 +339,7 @@ The black line of the exploding head has to be underneath the "color" layer. The
 </ColumnLeft>
 
 <ColumnRight>
-![Explanation on how to structure the file](styleguide-explodinghead.svg)
+![Explanation on how to structure the file](/styleguide-explodinghead.svg)
 </ColumnRight>
 </Columns>
 
@@ -353,7 +353,7 @@ The black line of the exploding head has to be underneath the "color" layer. The
 </ColumnLeft>
 
 <ColumnRight>
-![Screenshot from Adobe Illustrator with the correct export settings](styleguide-Export.png)
+![Screenshot from Adobe Illustrator with the correct export settings](/styleguide-Export.png)
 </ColumnRight>
 </Columns>
 
@@ -366,7 +366,7 @@ The black line of the exploding head has to be underneath the "color" layer. The
 </ColumnLeft>
 
 <ColumnRight>
-![Screenshots from Inkscape with the correct export settings](styleguide-ExportInkscape.png)
+![Screenshots from Inkscape with the correct export settings](/styleguide-ExportInkscape.png)
 </ColumnRight>
 </Columns>
 
@@ -381,7 +381,7 @@ The black line of the exploding head has to be underneath the "color" layer. The
 </ColumnLeft>
 
 <ColumnRight>
-![Screenshot from Figma with the correct export settings](styleguide-ExportFigma.png)
+![Screenshot from Figma with the correct export settings](/styleguide-ExportFigma.png)
 </ColumnRight>
 </Columns>
 
