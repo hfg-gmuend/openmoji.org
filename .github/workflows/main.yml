@@ -1,24 +1,35 @@
-name: Publish Website
+name: Publish Website to lab.stephanbogner.de (test)
 
 on:
   push:
     branches:
-      - production
+      - astro-refactoring
 
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  build-and-deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
       with:
         fetch-depth: 2
 
-    - name: FTP-Deploy-Action
+    - name: 🧰 Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: "16.13.0"
+
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build
+
+    - name: 🚀 Sync to FTP
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        ftp-server:   ${{ secrets.FTP_SERVER   }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        ftp-server:   ${{ secrets.FTP_STEPHANBOGNER_SERVER   }}
+        ftp-username: ${{ secrets.FTP_STEPHANBOGNER_USERNAME }}
+        ftp-password: ${{ secrets.FTP_STEPHANBOGNER_PASSWORD }}
+        local-dir: ./dist/
         git-ftp-args: --lock
-
