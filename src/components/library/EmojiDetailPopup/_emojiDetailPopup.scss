@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'src/shared-styles/_variables.scss';
 @use 'src/shared-styles/_mixins.scss';
 
@@ -76,12 +77,12 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: variables.$gap-reg / 2;
+  margin-right: math.div(variables.$gap-reg, 2);
 }
 
 #preview {
   width: 65%;
-  padding-right: variables.$gap-med / 2;
+  padding-right: math.div(variables.$gap-med, 2);
   box-sizing: border-box;
 
   @media screen and (max-width: variables.$breakpoint-md) {
@@ -275,7 +276,7 @@
 
 #description {
   border-left: 1px solid variables.$color-grey-super-light;
-  padding-left: variables.$gap-med / 2;
+  padding-left: math.div(variables.$gap-med, 2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -285,7 +286,7 @@
 
   @media screen and (max-width: variables.$breakpoint-md) {
     display: block;
-    padding: variables.$gap-med/2 0 0 0;
+    padding: math.div(variables.$gap-med,2) 0 0 0;
     border-left: none;
     width: 100%;
   }
@@ -310,7 +311,7 @@
       margin-bottom: variables.$gap-med;
 
       @media screen and (max-width: variables.$breakpoint-md) {
-        margin-top: variables.$gap-med / 3;
+        margin-top: math.div(variables.$gap-med, 3);
         margin-bottom: variables.$gap-small * 1.3;
       }
 

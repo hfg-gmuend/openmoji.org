@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'src/shared-styles/_variables.scss';
 
 .switch {
@@ -96,24 +97,6 @@
     }
   }
 
-  .category-toggle {
-    display: none;
-    background: url(../img/menu.svg) no-repeat center center;
-    width: 20px;
-    height: 20px;
-    z-index: variables.$z-index-overlay-all;
-    margin-left: 10px;
-    margin-right: 20px;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    @media screen and (max-width: variables.$breakpoint-md) {
-      display: block;
-    }
-  }
-
   h2 {
     margin-bottom: 0;
     flex-grow: 1;
@@ -175,7 +158,7 @@
 
         li {
           margin: 0;
-          padding: (40px - variables.$font-sz-md) / 2 variables.$gap-small;
+          padding: math.div((40px - variables.$font-sz-md), 2) variables.$gap-small;
           height: auto;
 
           > * {
@@ -210,7 +193,7 @@
 
   &--dense {
     li {
-      padding: (40px - variables.$font-sz-md) / 4 variables.$gap-small * 0.75 !important;
+      padding: math.div((40px - variables.$font-sz-md), 4) variables.$gap-small * 0.75 !important;
     }
   }
 }

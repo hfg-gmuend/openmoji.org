@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'src/shared-styles/_variables.scss';
 
 button {
@@ -50,7 +51,7 @@ div + div {
 
   &--dense {
     li {
-      padding: (40px - variables.$font-sz-md) / 4 variables.$gap-small * 0.75 !important;
+      padding: math.div((40px - variables.$font-sz-md), 4) variables.$gap-small * 0.75 !important;
     }
   }
 }
@@ -77,7 +78,7 @@ div + div {
 
     li {
       margin: 0;
-      padding: (40px - variables.$font-sz-md) / 2 variables.$gap-small;
+      padding: math.div((40px - variables.$font-sz-md), 2) variables.$gap-small;
       height: auto;
 
       > * {
