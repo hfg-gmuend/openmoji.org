@@ -1,14 +1,14 @@
 let emojiDetailWrapper = null;
-$(document).ready(function () {
-  emojiDetailWrapper = $("#emoji-detail-wrapper .popover-wrapper");
-  emojiDetailWrapper.css("display", "flex").hide();
+//$(document).ready(function () {
+emojiDetailWrapper = $("#emoji-detail-wrapper .popover-wrapper");
+emojiDetailWrapper.css("display", "flex").hide();
 
-  openPopopAccordingToUrl();
+openPopopAccordingToUrl();
 
-  $("#emoji-preview").on("click", ".circle, .emoji-preview-image", function (e) {
-    handlePreviewChange(e)
-  });
-})
+$("#emoji-preview").on("click", ".circle, .emoji-preview-image", function (e) {
+  handlePreviewChange(e)
+});
+//})
 
 function openPopopAccordingToUrl(){
   var currentUrlParams = getUrlParameters();
@@ -23,7 +23,6 @@ function handlePreviewChange(e){
 
     // get hexcode of current base emoji
     emoji_hexcode = $(e.delegateTarget).attr("data-base_hexcode");
-    console.log(emoji_hexcode);
     // get base emoji
 
     const baseEmoji = OPENMOJIJSON.find(function(emoji) {
@@ -366,7 +365,7 @@ function showEmojiDetails(hex, event) {
     exposeListFilter({
       emoji: hex
     });
-
+    console.log(emojiDetailWrapper);
     emojiDetailWrapper.fadeIn(300);
 }
 

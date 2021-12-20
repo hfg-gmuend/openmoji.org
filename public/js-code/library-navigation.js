@@ -58,13 +58,11 @@ function handleSubMenusAndUpdateUrlAndFilters(subMenu, groupPath){
 		$(allSubmenus).not(subMenu).addClass('collapsed');
 	}
 
-	exposeListFilter({
-        group: groupPath,
-        search: undefined,
-        author: undefined,
-        emoji: undefined
-    });
-    filterEmojiList(groupPath, undefined);
+	let filter = getUrlParameters() || {};
+	filter.group = groupPath;
+
+	exposeListFilter(filter);
+  filterEmojiList(groupPath, undefined);
 }
 
 function filterEmojiList(groupPath, author){

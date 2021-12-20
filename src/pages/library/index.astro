@@ -12,6 +12,7 @@ console.log('Rendering library index.astro');
 <html lang="en">
     <head>
         <MetaHeadContent title="Library · OpenMoji" titleOG="Library"/>
+        <JavascriptGlobalVariables/>
     </head>
     <body>
         <Header color="red" showSearch={true}/>
@@ -21,7 +22,6 @@ console.log('Rendering library index.astro');
             <EmojiDetailPopup/>
         </main>
     </body>
-    <JavascriptGlobalVariables/>
     <script rel="script" src="/js-libraries/lazyload.min.js"></script>
     <script type="text/javascript">
         new LazyLoad({

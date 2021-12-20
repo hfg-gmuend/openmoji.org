@@ -1,4 +1,17 @@
-$(document).ready(function () {
+function refreshViewIfNecessary(){
+	if(openPopopAccordingToUrl){
+		console.log('update view')
+		setTimeout(function(){
+			openPopopAccordingToUrl(); // This is a function from emoji-details-popup.js	
+			document.getElementById('search-results-wrapper').classList.add('hidden');
+		})
+	}else{
+		console.log('doesnt exist')
+	}
+}
+
+//$(document).ready(function () {
+(function () {
 	let fuse, searchTermBefore, searchDom, searchBarDom, searchResultsDom, searchResultsListDom;
 	const classNameForHidingSearchBar = 'hidden';
 	const classNameSearchResultSelected = 'itemSelected';
@@ -117,7 +130,7 @@ $(document).ready(function () {
 				//const linkUrl = '/library/emoji-' + item.hexcode; /* This is once we have emoji-pages */
 				const linkText = item.annotation
 				dom += '<li>'
-				dom += '   <a class="searchResult ' + classNameSearchResultNotSelected + '" href="' + linkUrl + '">'
+				dom += '   <a class="searchResult ' + classNameSearchResultNotSelected + '" href="' + linkUrl + '" onclick="refreshViewIfNecessary()">'
 				dom += '      <img src="/data/color/svg/' + item.hexcode + '.svg" alt=""/>'
 				dom += '      <span>' + linkText + '</span>'
 				dom += '   </a>'
@@ -290,4 +303,5 @@ $(document).ready(function () {
 
 		searchTermBefore = searchTerm;
 	}
-})
+}());
+//})

@@ -37,7 +37,7 @@
 
 .emojiDetails, .buttonAction{
   pointer-events: auto;
-  background: variables.$color-red-dark;
+  background: variables.$color-red-light;
   color: white;
   border-radius: 10px;
   padding: 12px 6px 12px 6px;
@@ -68,7 +68,7 @@
 }
 
 .buttonAction:hover, .emojiDetails:hover{
-  background: variables.$color-red-light;
+  background: variables.$color-red-dark;
 }
 
 
