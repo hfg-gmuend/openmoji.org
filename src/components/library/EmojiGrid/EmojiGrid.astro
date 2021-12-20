@@ -18,7 +18,7 @@ const orderByUnicode = generalUtil.getListBasedOnObjectSortedByCertainKey(filter
   </style>
   <FilterAndSort/>
   <div id="emoji_grid" class="emoji_grid">
-    {orderByUnicode.map((emojiHex, index) => {
+    {orderByUnicode.slice(0,50).map((emojiHex, index) => {
         const emojiData = filteredEmojies[emojiHex]
         /* We don't lazload the first emojis so they render while the rest of the dom is processed */
         const lazyLoad = index >= 30;

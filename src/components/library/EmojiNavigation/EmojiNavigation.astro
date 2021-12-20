@@ -1,12 +1,13 @@
 ---
 import openmojiJsonUtil from '../../../util/openmojiJsonUtil'
+import closeIcon from './icon-menu-close.svg';
 const emojiGroupsAndSubgroups = openmojiJsonUtil.getEmojiGroupsAndSubgroups();
 ---
 <nav class="nav-left">
   <style lang="scss">
     @use './_emojiNavigation.scss';
   </style>
-  <span class="category-close"></span>
+  <img src={closeIcon} class="category-close"/>
   <ul id="nav-items">
     <li data-item="all OpenMojis">
       <input id="all OpenMojis" type="radio" name="category" value="all OpenMojis" checked="">

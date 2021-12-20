@@ -4,6 +4,21 @@ $(document).ready(function () {
   let currentSortDirection = 'asc';
   const allEmoji = $('.emoji_single');
 
+  
+
+  $("#change-category").click(function () {
+    var nav = $(".nav-left");
+    nav.addClass("mobile-show");
+    $(".mainmenu").click(function () {
+      $(".submenu li").click(function () {
+        nav.removeClass("mobile-show");
+      });
+    });
+    $(".category-close").click(function () {
+      nav.removeClass("mobile-show");
+    });
+  });
+
   // Color toggle
   $("#show-color .switch input[type=checkbox]").change(function () {
     const isColor = this.checked;

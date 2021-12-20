@@ -7,7 +7,8 @@
   margin-left: 300px; /* The size of the sidebar */
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    margin-left: variables.$gap-med;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .emoji_grid {

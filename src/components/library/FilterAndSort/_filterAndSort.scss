@@ -27,13 +27,13 @@
   }
 }
 
-#filter-selector, #sort-selector{
+#filter-selector, #sort-selector, #change-category{
   cursor: pointer;
   padding: 8px 12px;
   border-radius: 999px;
 }
 
-#filter-selector:hover, #sort-selector:hover{
+#filter-selector:hover, #sort-selector:hover, #change-category:hover{
   background-color: variables.$color-grey-ultra-light;
 }
 
@@ -88,11 +88,11 @@
     padding: 0 variables.$gap-small variables.$gap-small variables.$gap-small;
   }
 
-  #selected-category {
+  #change-category {
     display: none;
 
     @media screen and (max-width: variables.$breakpoint-md) {
-      display: block;
+      display: flex;
     }
   }
 

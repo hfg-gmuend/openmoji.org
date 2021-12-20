@@ -37,6 +37,20 @@ function updateViewAccordingToUrl(){
 }
 
 function handleSubMenusAndUpdateUrlAndFilters(subMenu, groupPath){
+	// Update hamburger menu label which is visible on mobile
+	if(!groupPath){
+		$('#selected-category').html('All OpenMojis');
+	}else{
+		let split = groupPath.split('/');
+		let group = split[0];
+		let subGroup = split[1];
+		if(subGroup){
+			$('#selected-category').html(subGroup);
+		}else{
+			$('#selected-category').html(group);
+		}
+	}
+
 	if(subMenu){
 		$(allSubmenus).not(subMenu).addClass('collapsed');
 		$(subMenu).removeClass('collapsed');
