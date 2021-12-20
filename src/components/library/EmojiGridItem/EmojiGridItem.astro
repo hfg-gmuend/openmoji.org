@@ -21,7 +21,7 @@ const filePathBlackAndWhitePNG = generalUtil.getFilePathEmojiImage(hexcode, 'png
 ---
 <div class="emoji_single" id={'emoji-' + hexcode} data-hex={hexcode} data-order-abc={indexByAlphabeticalOrder + 1} data-order-date={indexByDateOrder + 1} data-author={author} data-group={group} data-subgroups={subgroups} data-skintones={skintones.length > 0 ? 'true' : 'false'} data-multiskintones={multiSkintones.length > 0 ? 'true' : 'false'}>
   <style lang="scss">
-    @use './_emojiGridItem.scss';
+    @use '_emojiGridItem.scss';
   </style>
   <a onclick={"showEmojiDetails('" + hexcode + "', event)"} href="#">
     <div class="emoji-container">

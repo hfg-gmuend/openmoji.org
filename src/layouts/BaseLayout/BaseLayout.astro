@@ -16,8 +16,8 @@ console.log('Rendering markdown page', title);
   <body>
     <Header/>
     <main class="markdownContent">
-      <style lang="scss"> @use './_baseLayout.scss'; </style>
-      <style lang="scss" global> @use './_baseLayoutMarkdown.scss'; </style>
+      <style lang="scss"> @use '_baseLayout.scss'; </style>
+      <style lang="scss" global> @use '_baseLayoutMarkdown.scss'; </style>
       <slot />
     </main>
     <Footer/>

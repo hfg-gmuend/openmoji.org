@@ -22,7 +22,7 @@ console.log('Rendering markdown page', title);
 
   <body>
     <style lang="scss">
-      @use './_layoutWithSidebar.scss';
+      @use '_layoutWithSidebar.scss';
     </style>
     <div class="container">
       
@@ -42,7 +42,7 @@ console.log('Rendering markdown page', title);
         </ul>
       </nav>
       <main class={"markdownContent " + color + " " + contentWidth}>
-        <style lang="scss" global> @use './_layoutWithSidebarMarkdown.scss'; </style>
+        <style lang="scss" global> @use '_layoutWithSidebarMarkdown.scss'; </style>
         <slot />
       </main>
       <Footer/>
