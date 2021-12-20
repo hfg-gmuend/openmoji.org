@@ -277,7 +277,7 @@ svg {
 .itemNotSelected{
 }
 
-.itemSelected, .searchResult:hover{
+.itemSelected, .searchResult:hover, .searchResult:focus{
   background: variables.$color-grey-ultra-light;
 }
 
