@@ -29,7 +29,7 @@ function handlePreviewChange(e){
       return emoji.hexcode === emoji_hexcode;
     });
 
-    console.log(baseEmoji)
+    
 
     // toggle "show color" checkbox
     if (target.is($("#color-emoji-preview")) || target.is($("#color-emoji-image-preview"))) {
@@ -88,30 +88,24 @@ function showEmojiDetails(hex, event) {
     var currEmoji = undefined;
     var baseEmoji = undefined;
 
+    // fetch current emoji from data. If current emoji is a skintone variant also set its base emoji
     for(let index in OPENMOJIJSON){
-      if(OPENMOJIJSON[index].hexcode === hex){
-        currEmoji = OPENMOJIJSON[index]
+      let el = OPENMOJIJSON[index];
+
+      if (el.emoji === hex || el.hexcode === hex) {
+        currEmoji = el;
+        break;
+      } else if (typeof el.skintones !== 'undefined' || typeof el.skintone_combinations !== 'undefined') {
+        currEmoji = Array.prototype.concat(el.skintones, el.skintone_combinations).find(function (el) {
+          return el && (el.emoji === hex || el.hexcode === hex);
+        });
+
+        if (typeof currEmoji !== 'undefined') {
+          baseEmoji = el;
+          break;
+        }
       }
     }
-
-    // fetch current emoji from currentList. If current emoji is a skintone variant also set its base emoji
-    // var emojiIdx = currentList.findIndex(function (el) {
-    //   el = el.item;
-
-    //   if (el.emoji === hex || el.hexcode === hex) {
-    //     currEmoji = el;
-    //     return true;
-    //   } else if (typeof el.skintones !== 'undefined' || typeof el.skintone_combinations !== 'undefined') {
-    //     currEmoji = Array.prototype.concat(el.skintones, el.skintone_combinations).find(function (el) {
-    //       return el && (el.emoji === hex || el.hexcode === hex);
-    //     });
-
-    //     if (typeof currEmoji !== 'undefined') {
-    //       baseEmoji = el;
-    //       return true;
-    //     }
-    //   }
-    // });
 
     // break if emoji wasn't found
     if (typeof currEmoji === 'undefined') {
@@ -129,8 +123,6 @@ function showEmojiDetails(hex, event) {
     // get path
     var colorVariant = $("#show-color .switch input[type=checkbox]").is(":checked") ? "color" : "black";
     var localVariantPath = "/data/" + colorVariant;
-
-    console.log(currEmoji, isSkintoneVariant, colorVariant, localVariantPath)
 
     // set base_hexcode data attribute to emoji preview element
     $("#emoji-preview").attr("data-base_hexcode", isSkintoneVariant ? baseEmoji.hexcode : currEmoji.hexcode)
@@ -324,8 +316,8 @@ function showEmojiDetails(hex, event) {
       });
 
     // update path
-    $("#description .path a:nth-child(2)").text(currEmoji.group).attr("data-grouppath", currEmoji.group);
-    $("#description .path a:nth-child(3)").text(currEmoji.subgroups).attr("data-grouppath", currEmoji.groupPath);
+    $("#description .path a:nth-child(2)").text(currEmoji.group).attr("data-grouppath", currEmoji.group).attr('href', '#group=' + group);
+    $("#description .path a:nth-child(3)").text(currEmoji.subgroups).attr("data-grouppath", currEmoji.groupPath).attr('href', '#group=' + group + '%2F' + subgroups);
 
     // update download links
     $("#svg-download-btn").attr("href", localVariantPath + "/svg/" + currEmoji.hexcode + ".svg");
@@ -365,7 +357,7 @@ function showEmojiDetails(hex, event) {
     exposeListFilter({
       emoji: hex
     });
-    console.log(emojiDetailWrapper);
+    
     emojiDetailWrapper.fadeIn(300);
 }
 

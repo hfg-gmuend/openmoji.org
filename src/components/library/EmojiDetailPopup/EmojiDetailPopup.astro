@@ -4,6 +4,82 @@ import iconArrowFrom from './icon-arrow-from.svg';
 import spinner from './spinner.gif';
 ---
 <div id="emoji-detail-wrapper">
+  <style lang="scss" global>
+    @use 'src/shared-styles/_variables.scss';
+    #emoji-preview{
+      .circle {
+          box-sizing: border-box;
+          position: relative;
+          width: 25px;
+          height: 25px;
+          flex-basis: 25px;
+          border-radius: 50%;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+
+          &.highlight::after {
+            content: "";
+            position: absolute;
+            top: 25%;
+            right: 25%;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: variables.$color-white;
+            box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
+          }
+        }
+
+        .circle + .circle {
+          margin-left: 5px;
+        }
+
+        #outline-emoji-preview {
+          background-color: variables.$color-grey-ultra-light;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 65%;
+            margin-top: -1px;
+            margin-left: calc(-30% - 1px);
+            border: 1px solid variables.$color-grey-light;
+            transform: rotate3d(0, 0, 1, -45deg);
+          }
+        }
+
+        #color-emoji-preview {
+          background-color: variables.$color-fitzpatrick-default;
+        }
+
+        .skintone-selector {
+          display: inline-flex;
+          align-items: center;
+
+          .circle:first-child {
+            margin-left: 7.5px;
+          }
+
+          &::before {
+            content: "";
+            height: 15px;
+            margin-left: 7.5px;
+            border-left: 1px solid variables.$color-grey-super-light;
+          }
+
+          &:empty::before {
+            display: none;
+          }
+        }
+
+        .emoji-preview-image {
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+  </style>
   <style lang="scss">
     @use './_emojiDetailPopup.scss';
   </style>
@@ -27,7 +103,15 @@ import spinner from './spinner.gif';
               <img id="outline-emoji-image-preview" class="emoji-preview-image lazy" data-src="" data-ll-status="observed">
               <img id="color-emoji-image-preview" class="emoji-preview-image lazy" data-src="" data-ll-status="observed">
 
-              <div id="skintones-emoji-preview"></div>
+              <div id="skintones-emoji-preview">
+                <div class="skintone-selector">
+                  <div class="circle" data-skintone_id="1" style="background-color: #fadcbc;"></div>
+                  <div class="circle" data-skintone_id="2" style="background-color: #debb90;"></div>
+                  <div class="circle" data-skintone_id="3" style="background-color: #c19a65;"></div>
+                  <div class="circle" data-skintone_id="4" style="background-color: #a57939;"></div>
+                  <div class="circle" data-skintone_id="5" style="background-color: #6a462f;"></div>
+                </div>
+              </div>
             </div>
             <div class="next-or-prev next-emoji" id="">
               <img class="icon-img lazy" data-src="" data-ll-status="observed">
@@ -40,7 +124,7 @@ import spinner from './spinner.gif';
       <div id="description">
         <div class="description-top">
           <div class="path">
-            <a href="">all OpenMojis</a> / <a href="">people</a> / <a href="">sports</a>
+            <a href="/library">all OpenMojis</a> / <a href="" onclick="closePopupAndTriggerUpdate()">groupName</a> / <a href="" onclick="closePopupAndTriggerUpdate()">subGroupName</a>
           </div>
           <div class="close" onclick="closeEmojiDetails()" id="close-detailview">
             <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
