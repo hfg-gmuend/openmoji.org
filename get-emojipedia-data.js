@@ -98,7 +98,7 @@ const getEmojiPediaDataAndWriteToFile = async () => {
     }
 	}
   console.log('- Querying done');
-  const filePath = './public/data/emojipediaData.json';
+  const filePath = './src/data/emojipediaData.json';
   console.log('- Writing data to file', filePath)
   fs.writeFileSync(filePath, JSON.stringify(emojiPediaData, null, 4), 'utf-8');
 }
