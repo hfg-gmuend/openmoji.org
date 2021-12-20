@@ -21,8 +21,11 @@ export async function getStaticPaths() {
   const orderByUnicode = generalUtil.getListBasedOnObjectSortedByCertainKey(uniqueEmojis, 'order');
 
   let emojiPages = [];
-  let limitPagesForTesting = 30;
+  let limitPagesForTesting = 0; // This is set to 0 because the page generation is not working well in Astro yet (https://github.com/withastro/astro/issues/1711) and will be fixed when it does
   for(let index in orderByUnicode){
+    if(!isNaN(limitPagesForTesting) && index >= limitPagesForTesting){
+      break;
+    }
     const hex = orderByUnicode[index];
     const emojiData = uniqueEmojis[hex];
     
@@ -35,11 +38,6 @@ export async function getStaticPaths() {
         emojiPedia: emojipediaDescriptions[emojiData.hexcode] || undefined
       }
     })
-
-    
-    if(limitPagesForTesting && index > limitPagesForTesting){
-      break;
-    }
   }
   return emojiPages;
 }
