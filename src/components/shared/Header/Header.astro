@@ -1,10 +1,11 @@
 ---
 import GetEmojiDropdown from '../GetEmojiDropdown/GetEmojiDropdown.astro';
 import Search from '../Search/Search.astro';
-import githubLogo from './github_hi.svg';
-import twitterLogo from './twitter_hi.svg';
-import menuIcon from './menu.svg';
-import menuCloseIcon from './menu-close.svg';
+import openMojiLogo from './logo-openmoji-1F64B.svg';
+import githubLogo from './logo-github.svg';
+import twitterLogo from './logo-twitter.svg';
+import menuIcon from './icon-menu.svg';
+import menuCloseIcon from './icon-menu-close.svg';
 
 const {showSearch} = Astro.props;
 const color = Astro.props.color || 'default';
@@ -44,13 +45,24 @@ const menuItems = [
     "href": "/about"
   }
 ]
+
+let currentlyActive = 'OpenMoji'
+for(let index in menuItems){
+  if(currentPage === menuItems[index].href){
+    currentlyActive = menuItems[index].text;
+    break;
+  }
+}
 ---
 <header class={borderBottom === true ? "page-header borderBottom" : "page-header"}>
   <style lang="scss">
     @use './_header.scss';
   </style>
   <a class="project-name" href="/">
-    <h2 class="visuallyHeadline2">OpenMoji</h2>
+    <h2 class="visuallyHeadline2">
+      <img src={openMojiLogo} style="padding-right: 5px; margin-bottom: -3px" width="40px" height="auto">
+      {currentlyActive}
+    </h2>
   </a>
   <nav class="menu">
     <ul>
