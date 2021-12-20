@@ -1,4 +1,4 @@
-import emojipediaJson from '/public/data/emojipediaData.json';
+import emojipediaJson from '../data/emojipediaData.json';
 
 const getDescriptionForAllEmoji = () => {
 	return emojipediaJson;
