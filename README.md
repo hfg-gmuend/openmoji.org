@@ -3,7 +3,7 @@ OpenMoji.org
 
 Website of the OpenMoji project 👉 http://openmoji.org/
 
-⚠️ Please note that the master branch is in active development! You can view the most recent version under the [staging instance](https://hfg-gmuend.github.io/openmoji.org/).  
+⚠️ Please note that the master branch is in active development! 
 
 Developer Setup
 ---------------
@@ -18,7 +18,9 @@ Run `npm start`
 
 ### Build:
 1. Run `npm run build`
-2. The build will appear in `/dist`
+2. The build will appear in `/docs`¹
+
+**¹** The folder name */docs* was chosen, because it's a [restriction by Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source) (which we will be using for staging).
 
 ### (Normally not necessary) Downloading Emojipedia-data:
 1. Run `node get-emojipedia-data.js`
