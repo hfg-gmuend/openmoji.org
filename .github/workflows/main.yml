@@ -20,5 +20,5 @@ jobs:
         ftp-server:   ${{ secrets.FTP_STEPHANBOGNER_SERVER   }}
         ftp-username: ${{ secrets.FTP_STEPHANBOGNER_USERNAME }}
         ftp-password: ${{ secrets.FTP_STEPHANBOGNER_PASSWORD }}
-        local-dir: ./build/
+        local-dir: ./docs/
         git-ftp-args: --lock

@@ -1,5 +1,5 @@
 export default {
-  dist: './build',
+  dist: './docs',
   buildOptions: {
     site: 'https://openmoji.org/',
     sitemap: true
