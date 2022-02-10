@@ -11,8 +11,8 @@
   /* Safari 6.1+ */
   display: flex;
   flex-wrap: wrap;
-  margin-right: -#{variables.$gap-large};
-  margin-bottom: -#{variables.$gap-med};
+  margin-right: -#{variables.$gap-lg};
+  margin-bottom: -#{variables.$gap-md};
 
   @media screen and (max-width: variables.$breakpoint-md) {
     margin-right: -10px;

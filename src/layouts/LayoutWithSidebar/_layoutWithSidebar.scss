@@ -4,7 +4,7 @@
 .markdownContent{
   @include mixins.content;
   margin-left: 0px;
-  margin-top: variables.$gap-reg;
+  margin-top: variables.$gap-normal;
 }
 
 .container {
@@ -34,19 +34,19 @@
 
   @media screen and (max-width: variables.$breakpoint-md) {
     max-width: 100%;
-    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    padding: 0 variables.$gap-sm 0 variables.$gap-sm;
     margin: 0;
     overflow: initial;
     display: none;
   }
 
   >ul {
-    margin: variables.$gap-reg variables.$gap-med;
+    margin: variables.$gap-normal variables.$gap-md;
     position: sticky;
     top: 80px;
 
     @media screen and (max-width: variables.$breakpoint-md) {
-      margin: variables.$gap-reg variables.$gap-reg;
+      margin: variables.$gap-normal variables.$gap-normal;
     }
   }
 
@@ -56,7 +56,7 @@
   }
 
   .submenu {
-    padding-left: variables.$gap-reg;
+    padding-left: variables.$gap-normal;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

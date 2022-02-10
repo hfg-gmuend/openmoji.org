@@ -13,15 +13,15 @@
 	  justify-content: center;
 	  align-items: center;
 	  flex-direction: column;
-	  padding: variables.$gap-med 0;
+	  padding: variables.$gap-md 0;
 
 	  h1 {
 	    color: variables.$color-white;
-	    margin-bottom: variables.$gap-reg;
-	    font-size: variables.$font-sz-lg;
+	    margin-bottom: variables.$gap-normal;
+	    font-size: variables.$text-lg;
 
 	    @media screen and (max-width: variables.$breakpoint-md) {
-	      font-size: variables.$font-sz-lg;
+	      font-size: variables.$text-lg;
 	    }
 	  }
 
@@ -31,11 +31,11 @@
 	    justify-content: space-around;
 	    width: 54%;
 	    align-items: center;
-	    margin-bottom: variables.$gap-reg;
+	    margin-bottom: variables.$gap-normal;
 
 	    .defaultButton {
 	      &:first-child {
-	        margin-right: variables.$gap-reg;
+	        margin-right: variables.$gap-normal;
 	      }
 	    }
 
@@ -44,7 +44,7 @@
 
 	      .defaultButton {
 	        &:first-child {
-	        	margin-bottom: variables.$gap-reg;
+	        	margin-bottom: variables.$gap-normal;
 	        	margin-right: 0;
 	        }
 	      }
@@ -52,10 +52,10 @@
 
 	    h1 {
 	      color: variables.$color-white;
-	      margin-bottom: variables.$gap-reg;
+	      margin-bottom: variables.$gap-normal;
 
 	      @media screen and (max-width: variables.$breakpoint-md) {
-	        font-size: variables.$font-sz-md;
+	        font-size: variables.$text-md;
 	      }
 	    }
 	  }

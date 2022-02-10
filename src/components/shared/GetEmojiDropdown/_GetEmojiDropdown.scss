@@ -8,7 +8,7 @@ button {
   &.orange{ background: variables.$color-orange-dark; }
   &.yellow{ background: variables.$color-yellow-light; }
   &.red{ background: variables.$color-red-light; }
-  &.grey{ background: variables.$color-grey-light; }
+  &.grey{ background: variables.$color-grey-500; }
   &.violet{ background: variables.$color-violet-dark; }
 }
 
@@ -27,13 +27,13 @@ button {
 }
 
 div + div {
-  margin-left: variables.$gap-small;
+  margin-left: variables.$gap-sm;
 }
 
 .dropdown {
   position: relative;
   z-index: 9999;
-  margin-left: variables.$gap-small;
+  margin-left: variables.$gap-sm;
 
   &:hover {
     .dropdown-content {
@@ -51,7 +51,7 @@ div + div {
 
   &--dense {
     li {
-      padding: math.div((40px - variables.$font-sz-md), 4) variables.$gap-small * 0.75 !important;
+      padding: math.div((40px - variables.$text-md), 4) variables.$gap-sm * 0.75 !important;
     }
   }
 }
@@ -66,7 +66,7 @@ div + div {
 
 .list-wrapper {
   display: flex;
-  margin-top: variables.$gap-small;
+  margin-top: variables.$gap-sm;
   background: #ffffff;
   box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
   border-radius: 8px;
@@ -78,23 +78,23 @@ div + div {
 
     li {
       margin: 0;
-      padding: math.div((40px - variables.$font-sz-md), 2) variables.$gap-small;
+      padding: math.div((40px - variables.$text-md), 2) variables.$gap-sm;
       height: auto;
 
       > * {
-        font-size: variables.$font-sz-md;
+        font-size: variables.$text-md;
       }
     }
   }
 }
 
 .disclaimer {
-  font-size: variables.$font-sz-s;
-  color: variables.$color-grey-lighter;
-  margin-top: variables.$gap-xxs;
+  font-size: variables.$text-sm;
+  color: variables.$color-grey-400;
+  margin-top: variables.$gap-2xs;
 
   a {
-    color: variables.$color-grey-lighter !important;
+    color: variables.$color-grey-400 !important;
     text-decoration: underline;
 
     &:hover {

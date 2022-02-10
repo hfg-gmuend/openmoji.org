@@ -73,14 +73,14 @@
 
 
 .emoji_single:hover{
-  background-color: variables.$color-grey-ultra-light;
+  background-color: variables.$color-grey-70;
 }
 
 .emoji_single {
   position: relative;
-  margin-right: variables.$gap-small;
-  margin-left: variables.$gap-small;
-  margin-bottom: variables.$gap-small;
+  margin-right: variables.$gap-sm;
+  margin-left: variables.$gap-sm;
+  margin-bottom: variables.$gap-sm;
   border-radius: 6px;
   min-width: 150px;
   max-width: 150px;
@@ -117,12 +117,12 @@
     // text-overflow: ellipsis;
     text-align: center;
     margin-bottom: 2px;
-    font-size: variables.$font-sz-md;
+    font-size: variables.$text-md;
     font-weight: normal;
   }
 
   p {
-    font-size: variables.$font-sz-s;
+    font-size: variables.$text-sm;
     text-align: center;
   }
 

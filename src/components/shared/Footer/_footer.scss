@@ -12,7 +12,7 @@
   }
 
 footer {
-  padding: 0 variables.$gap-med 0 variables.$gap-med;
+  padding: 0 variables.$gap-md 0 variables.$gap-md;
   grid-area: footer;
   display: flex;
   height: 50px;
@@ -22,12 +22,12 @@ footer {
   margin-bottom: variables.$gap-xs;
 
   @media screen and (max-width: variables.$breakpoint-sm) {
-    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    padding: 0 variables.$gap-sm 0 variables.$gap-sm;
   }
 
   p {
     display: inline-block;
-    font-size: variables.$font-sz-s;
+    font-size: variables.$text-sm;
 
     a {
       text-decoration: underline;
@@ -44,7 +44,7 @@ footer {
     }
 
     li+li {
-      margin-left: variables.$gap-small;
+      margin-left: variables.$gap-sm;
     }
   }
 }

@@ -8,7 +8,7 @@ header {
   z-index: 999999;
   background-color: variables.$color-white;
   box-sizing: border-box;
-  padding: 0 variables.$gap-med 0 variables.$gap-med;
+  padding: 0 variables.$gap-md 0 variables.$gap-md;
   grid-area: header;
   display: flex;
   align-items: center;
@@ -19,16 +19,16 @@ header {
   top: 0;
 
   &.borderBottom{
-    border-bottom: variables.$color-grey-super-light 1px solid;
+    border-bottom: variables.$color-grey-300 1px solid;
   }
 
   @media screen and (max-width: variables.$breakpoint-sm) {
-    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    padding: 0 variables.$gap-sm 0 variables.$gap-sm;
   }
 
   .project-name {
     display: none;
-    color: variables.$color-grey-dark;
+    color: variables.$color-grey-900;
     text-decoration: none;
 
     @media screen and (max-width: variables.$breakpoint-md) {
@@ -53,7 +53,7 @@ header {
 
       li {
         height: 30px;
-        margin-right: variables.$gap-reg;
+        margin-right: variables.$gap-normal;
         cursor: pointer;
         list-style: none;
 
@@ -65,11 +65,11 @@ header {
             &.orange{ border-bottom-color: variables.$color-orange-dark; }
             &.yellow{ border-bottom-color: variables.$color-yellow-light; }
             &.red{ border-bottom-color: variables.$color-red-light; }
-            &.grey{ border-bottom-color: variables.$color-grey-light; }
+            &.grey{ border-bottom-color: variables.$color-grey-500; }
             &.violet{ border-bottom-color: variables.$color-violet-dark; }
 
             a {
-              color: variables.$color-grey-dark;
+              color: variables.$color-grey-900;
             }
           }
 
@@ -117,7 +117,7 @@ header {
       }
 
       > * {
-        margin-left: variables.$gap-small;
+        margin-left: variables.$gap-sm;
       }
 
       .gh-link {
@@ -153,15 +153,15 @@ header {
           li {
             height: auto;
             margin-right: 0;
-            margin-bottom: variables.$gap-small;
+            margin-bottom: variables.$gap-sm;
 
             &:last-child {
-              margin-bottom: variables.$gap-reg;
+              margin-bottom: variables.$gap-normal;
             }
 
             a {
               margin: 5px;
-              font-size: variables.$font-sz-lg;
+              font-size: variables.$text-lg;
             }
           }
         }

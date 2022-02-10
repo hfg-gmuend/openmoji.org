@@ -16,14 +16,14 @@
 
   @media screen and (max-width: variables.$breakpoint-md) {
     max-width: 100%;
-    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    padding: 0 variables.$gap-sm 0 variables.$gap-sm;
     margin: 0;
     overflow: initial;
     display: none;
   }
 
   #show-color {
-    margin-bottom: variables.$gap-reg;
+    margin-bottom: variables.$gap-normal;
   }
 
   @media screen and (max-width: variables.$breakpoint-md) {
@@ -57,10 +57,10 @@
   }
 
   >ul {
-    margin: variables.$gap-med variables.$gap-med;
+    margin: variables.$gap-md variables.$gap-md;
 
     @media screen and (max-width: variables.$breakpoint-md) {
-      margin: variables.$gap-reg variables.$gap-reg;
+      margin: variables.$gap-normal variables.$gap-normal;
     }
   }
 
@@ -70,7 +70,7 @@
   }
 
   .submenu {
-    padding-left: variables.$gap-reg;
+    padding-left: variables.$gap-normal;
     transition: max-height 0.2s ease-out;
   }
 

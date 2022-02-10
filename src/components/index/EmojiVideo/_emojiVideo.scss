@@ -2,14 +2,14 @@
 
 .wrapper{
   display: block;
-  padding-top: variables.$gap-large;
-  padding-bottom: variables.$gap-large;
+  padding-top: variables.$gap-lg;
+  padding-bottom: variables.$gap-lg;
   height: auto;
   background-color: variables.$color-white;
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    padding-top: variables.$gap-med;
-    padding-bottom: variables.$gap-med;
+    padding-top: variables.$gap-md;
+    padding-bottom: variables.$gap-md;
   }
 
   .content-wrapper {

@@ -3,23 +3,23 @@
 @use 'src/shared-styles/_mixins.scss';
 
 h1{
-  font-size: variables.$font-sz-lg;
+  font-size: variables.$text-lg;
   font-weight: bold;
-  margin-top: variables.$gap-small;
-  margin-bottom: variables.$gap-small;
+  margin-top: variables.$gap-sm;
+  margin-bottom: variables.$gap-sm;
 }
 
 table{
   border-collapse:separate; 
-  border-spacing: 0 variables.$gap-small;
+  border-spacing: 0 variables.$gap-sm;
 }
 
 td{
- padding-right: variables.$gap-small; 
+ padding-right: variables.$gap-sm; 
 }
 
 h2{
-  font-size: variables.$font-sz-md;
+  font-size: variables.$text-md;
   margin: 0;
 }
 
@@ -32,7 +32,7 @@ h2{
   position: relative;
   max-width: variables.$content-max-width * 1.2;
   margin: auto;
-  padding: variables.$gap-reg;
+  padding: variables.$gap-normal;
   background: #ffffff;
   border-radius: 8px;
   z-index: 20;
@@ -44,22 +44,22 @@ h2{
     // overflow-y: scroll;
     // height: 100%;
     // width: 100%;
-    padding: variables.$gap-reg variables.$gap-reg 0 variables.$gap-reg;
+    padding: variables.$gap-normal variables.$gap-normal 0 variables.$gap-normal;
   }
 
   .sub {
     text-align: center;
-    font-size: variables.$font-sz-s;
+    font-size: variables.$text-sm;
   }
 }
 
 .path {
-  color: variables.$color-grey-light;
+  color: variables.$color-grey-500;
 }
 
 #sharetitle {
   position: absolute;
-  bottom: 2 * variables.$gap-reg;
+  bottom: 2 * variables.$gap-normal;
 }
 
 #shareitems {
@@ -72,12 +72,12 @@ h2{
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: math.div(variables.$gap-reg, 2);
+  margin-right: math.div(variables.$gap-normal, 2);
 }
 
 .preview {
   width: 65%;
-  padding-right: math.div(variables.$gap-med, 2);
+  padding-right: math.div(variables.$gap-md, 2);
   box-sizing: border-box;
 
   @media screen and (max-width: variables.$breakpoint-md) {
@@ -97,7 +97,7 @@ h2{
 
     .main-emoji-image {
       min-height: 0;
-      margin-bottom: variables.$gap-reg;
+      margin-bottom: variables.$gap-normal;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
@@ -111,10 +111,10 @@ h2{
 }
 
 .description {
-  //border-left: 1px solid variables.$color-grey-super-light;
+  //border-left: 1px solid variables.$color-grey-300;
   box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
-  padding: math.div(variables.$gap-med, 2);
-  border-radius: math.div(variables.$gap-med, 2);
+  padding: math.div(variables.$gap-md, 2);
+  border-radius: math.div(variables.$gap-md, 2);
   display: flex;
   flex-direction: column;
   width: 35%;
@@ -122,13 +122,13 @@ h2{
 
   @media screen and (max-width: variables.$breakpoint-md) {
     display: block;
-    padding: math.div(variables.$gap-med, 2);
+    padding: math.div(variables.$gap-md, 2);
     //border-left: none;
     width: 100%;
   }
 
   #emojipedia-link {
-    color: variables.$color-grey-dark;
+    color: variables.$color-grey-900;
   }
 
   .description-top {
@@ -139,16 +139,16 @@ h2{
 
   .description-bottom {
     h2 {
-      margin: variables.$gap-small 0;
+      margin: variables.$gap-sm 0;
       max-width: 400px;
     }
 
     table {
-      margin-bottom: variables.$gap-med;
+      margin-bottom: variables.$gap-md;
 
       @media screen and (max-width: variables.$breakpoint-md) {
-        margin-top: math.div(variables.$gap-med, 3);
-        margin-bottom: variables.$gap-small * 1.3;
+        margin-top: math.div(variables.$gap-md, 3);
+        margin-bottom: variables.$gap-sm * 1.3;
       }
 
       td {
@@ -156,7 +156,7 @@ h2{
       }
 
       td + td {
-        padding-left: variables.$gap-reg;
+        padding-left: variables.$gap-normal;
       }
     }
   }
@@ -176,7 +176,7 @@ h2{
     }
 
     @media screen and (max-width: variables.$breakpoint-md) {
-      margin-bottom: variables.$gap-reg;
+      margin-bottom: variables.$gap-normal;
 
       a:first-child {
         margin-left: 0;

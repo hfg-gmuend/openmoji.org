@@ -6,13 +6,13 @@
   width: 150px;
   flex-shrink: 0;
   position: relative;
-  margin-bottom: variables.$gap-med;
-  margin-right: variables.$gap-large;
+  margin-bottom: variables.$gap-md;
+  margin-right: variables.$gap-lg;
 
   @media screen and (max-width: variables.$breakpoint-md) {
     padding: 10px;
     width: 33.33%;
-    margin-bottom: variables.$gap-reg;
+    margin-bottom: variables.$gap-normal;
     margin-right: 0;
   }
 
@@ -42,7 +42,7 @@
 
   ul {
     padding-left: 0;
-    padding-top: variables.$gap-small;
+    padding-top: variables.$gap-sm;
 
     li {
       width: 20px;
@@ -57,7 +57,7 @@
 
     p {
       margin-bottom: 0;
-      font-size: variables.$font-sz-s;
+      font-size: variables.$text-sm;
     }
   }
 }

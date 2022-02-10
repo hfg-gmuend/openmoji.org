@@ -2,8 +2,8 @@
 @use 'src/shared-styles/_variables.scss';
 
 html, body{
-  color: variables.$color-grey-dark;
-  font-size: variables.$font-sz-md;
+  color: variables.$color-grey-900;
+  font-size: variables.$text-md;
 }
 
 * {
@@ -18,7 +18,7 @@ body {
 }
 
 a{
-  color: variables.$color-grey-dark;
+  color: variables.$color-grey-900;
 }
 
 ul {
@@ -31,35 +31,35 @@ li {
 }
 
 .visuallyHeadline1 {
-  font-size: variables.$font-sz-xl;
-  font-weight: variables.$font-reg;
-  // font-size: variables.$font-sz-lg;
+  font-size: variables.$text-xl;
+  font-weight: variables.$font-normal;
+  // font-size: variables.$text-lg;
   // font-weight: variables.$font-bold;
   margin-bottom: 2em;
 
   @media screen and (min-width: variables.$breakpoint-md) {
-    font-size: variables.$font-sz-xl;
+    font-size: variables.$text-xl;
   }
 }
 
 .visuallyHeadline2 {
-  font-size: variables.$font-sz-lg;
+  font-size: variables.$text-lg;
   font-weight: variables.$font-bold;
-  margin-bottom: variables.$gap-reg;
+  margin-bottom: variables.$gap-normal;
 }
 
 .visuallyHeadline3 {
-  font-weight: variables.$font-reg;
-  font-size: variables.$font-sz-lg;
+  font-weight: variables.$font-normal;
+  font-size: variables.$text-lg;
   margin-bottom: variables.$gap-xs;
 }
 
 .visuallyHeadline4,
 .visuallyHeadline5,
 .visuallyHeadline6 {
-  font-weight: variables.$font-reg;
-  font-size: variables.$font-sz-md;
-  color: variables.$color-grey-light;
+  font-weight: variables.$font-normal;
+  font-size: variables.$text-md;
+  color: variables.$color-grey-500;
   margin-top: 0;
   margin-bottom: variables.$gap-xs;
 }
@@ -75,18 +75,18 @@ li {
 }
 
 p {
-  color: variables.$color-grey;
+  color: variables.$color-grey-600;
 }
 
 article:not(:last-child) {
-  margin-bottom: variables.$gap-large;
+  margin-bottom: variables.$gap-lg;
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    margin-bottom: variables.$gap-med;
+    margin-bottom: variables.$gap-md;
   }
 
   @media screen and (max-width: variables.$breakpoint-sm) {
-    margin-bottom: variables.$gap-reg;
+    margin-bottom: variables.$gap-normal;
   }
 }
 
@@ -112,11 +112,11 @@ article:not(:last-child) {
 
 .standardLink {
   text-decoration: none;
-  color: variables.$color-grey;
+  color: variables.$color-grey-600;
   transition: all 0.2s, border 0;
 
   &:hover {
-    color: variables.$color-grey-dark;
+    color: variables.$color-grey-900;
   }
 }
 
@@ -139,7 +139,7 @@ article:not(:last-child) {
   background-color: variables.$color-blue-dark;
   color: variables.$color-white;
   box-shadow: none;
-  font-size: variables.$font-sz-md;
+  font-size: variables.$text-md;
   text-decoration: none;
   border-radius: 999px;
 
@@ -149,20 +149,20 @@ article:not(:last-child) {
   }
 
   &.larger {
-    padding: variables.$gap-xs variables.$gap-small;
-    font-size: variables.$font-sz-md
+    padding: variables.$gap-xs variables.$gap-sm;
+    font-size: variables.$text-md
   }
 
   &.large {
-    padding: variables.$gap-xs variables.$gap-reg;
+    padding: variables.$gap-xs variables.$gap-normal;
     padding-right: 30px;
     font-size: 23px;
   }
 
   &.xl {
-    padding: variables.$gap-xs variables.$gap-reg;
+    padding: variables.$gap-xs variables.$gap-normal;
     padding-right: 30px;
-    font-size: variables.$font-sz-lg;
+    font-size: variables.$text-lg;
   }
 
   &.light{
@@ -209,12 +209,12 @@ input {
 }
 
 label {
-  color: variables.$color-grey;
+  color: variables.$color-grey-600;
   cursor: pointer;
   transition: all 0.2s;
 
   &:hover {
-    color: variables.$color-grey-dark;
+    color: variables.$color-grey-900;
   }
 }
 
@@ -223,7 +223,7 @@ input[type="radio"] {
 
   &:checked {
     + label {
-      color: variables.$color-grey-dark;
+      color: variables.$color-grey-900;
     }
   }
 }
@@ -250,10 +250,10 @@ svg {
 }
 
 #impressum {
-  padding-right: variables.$gap-reg;
+  padding-right: variables.$gap-normal;
 
   p {
-    margin-bottom: math.div(variables.$gap-reg, 2);
+    margin-bottom: math.div(variables.$gap-normal, 2);
   }
 }
 
@@ -279,7 +279,7 @@ svg {
 }
 
 .itemSelected, .searchResult:hover, .searchResult:focus{
-  background: variables.$color-grey-ultra-light;
+  background: variables.$color-grey-70;
 }
 
 

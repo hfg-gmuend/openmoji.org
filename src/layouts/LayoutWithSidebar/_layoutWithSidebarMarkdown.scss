@@ -15,9 +15,9 @@
 }
 
 .markdownContent.narrow p{
-  color: variables.$color-grey-dark;
+  color: variables.$color-grey-900;
   max-width: 500px;
-  margin-bottom: variables.$gap-small;
+  margin-bottom: variables.$gap-sm;
 }
 
 .markdownContent {
@@ -25,15 +25,15 @@
   // @extend %content;
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    padding: 0 variables.$gap-med 0 variables.$gap-med;
+    padding: 0 variables.$gap-md 0 variables.$gap-md;
   }
 
   @media screen and (max-width: variables.$breakpoint-sm) {
-    padding: 0 variables.$gap-small 0 variables.$gap-small;
+    padding: 0 variables.$gap-sm 0 variables.$gap-sm;
   }
 
   ul {
-    padding-left: variables.$gap-reg;
+    padding-left: variables.$gap-normal;
 
     li {
       list-style-type: disc;
@@ -41,7 +41,7 @@
   }
 
   ol {
-    padding-left: variables.$gap-reg;
+    padding-left: variables.$gap-normal;
 
     li {
       list-style-type: decimal;
@@ -49,34 +49,34 @@
   }
 
   h1 {
-    font-size: variables.$font-sz-xl;
-    font-weight: variables.$font-reg;
-    margin-bottom: variables.$gap-reg;
+    font-size: variables.$text-xl;
+    font-weight: variables.$font-normal;
+    margin-bottom: variables.$gap-normal;
 
     @media screen and (max-width: variables.$breakpoint-md) {
-      font-size: variables.$font-sz-xl;
+      font-size: variables.$text-xl;
     }
   }
 
   h2{
-    font-size: variables.$font-sz-xl;
-    font-weight: variables.$font-reg;
-    margin-top: variables.$gap-med;
-    margin-bottom: variables.$gap-small;
-    padding-bottom: variables.$gap-xxs;
-    border-bottom: 1px solid variables.$color-grey-ultra-light;
+    font-size: variables.$text-xl;
+    font-weight: variables.$font-normal;
+    margin-top: variables.$gap-md;
+    margin-bottom: variables.$gap-sm;
+    padding-bottom: variables.$gap-2xs;
+    border-bottom: 1px solid variables.$color-grey-100;
   }
 
   h3{
-    font-size: variables.$font-sz-lg;
-    margin-top: variables.$gap-med;
+    font-size: variables.$text-lg;
+    margin-top: variables.$gap-md;
     margin-bottom: variables.$gap-xs;
   }
 
   h4, h5{
     font-size: 24px;
-    margin-top: variables.$gap-reg;
-    margin-bottom: variables.$gap-xxs;
+    margin-top: variables.$gap-normal;
+    margin-bottom: variables.$gap-2xs;
   }
 
   h4{
@@ -87,15 +87,19 @@
     font-weight: normal;
   }
 
-  img:not(.iconlink > img):not(.emojiForText), video{
+  img:not(.iconlink > img):not(.emojiForText):not(.authorImage), video{
     // So it doesn't override the CSS from the Author.astro file
     // And also not the one from the OpenMoji.astro file
     padding: 30px;
     box-sizing: border-box;
     display: block;
-    // margin-top: variables.$gap-med;
+    // margin-top: variables.$gap-md;
     margin-bottom: variables.$gap-xs;
     min-width: 20%;
     max-width: 100%;
+  }
+
+  img:not(.iconlink > img):not(.emojiForText):not(.authorImage){
+    border: 1px solid variables.$color-grey-100;
   }
 }

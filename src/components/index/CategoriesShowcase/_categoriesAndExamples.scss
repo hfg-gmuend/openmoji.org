@@ -21,7 +21,7 @@
 
         a {
           h3 {
-            font-size: variables.$font-sz-md;
+            font-size: variables.$text-md;
           }
         }
       }
@@ -43,12 +43,12 @@
   }
 
   a {
-    color: variables.$color-grey-super-light;
+    color: variables.$color-grey-300;
 
     &.active-tab {
       border-bottom: 4px solid;
       border-bottom-color: variables.$color-blue-light;
-      color: variables.$color-grey-dark;
+      color: variables.$color-grey-900;
     }
   }
 }

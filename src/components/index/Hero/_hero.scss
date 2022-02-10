@@ -20,7 +20,7 @@ $padding-sm: math.div(variables.$emoji-size-sm, 2);
   justify-content: center;
   align-items: left;
   text-align: left;
-  margin-left: variables.$gap-large;
+  margin-left: variables.$gap-lg;
   padding: $padding;
   height: 400px;
   margin-top: calc(50vh - 200px);
@@ -37,8 +37,8 @@ $padding-sm: math.div(variables.$emoji-size-sm, 2);
 }
 
 h1 {
-  font-size: variables.$font-sz-md;
-  font-weight: variables.$font-reg;
+  font-size: variables.$text-md;
+  font-weight: variables.$font-normal;
   margin-bottom: variables.$gap-xs;
   text-align: left;
   padding-left: 0;
@@ -52,12 +52,12 @@ h1 {
 }
 
 h2 {
-  font-size: variables.$font-sz-xl;
-  font-weight: variables.$font-reg;
+  font-size: variables.$text-xl;
+  font-weight: variables.$font-normal;
   margin-bottom: 35px;
 
   @media screen and (max-width: variables.$breakpoint-sm) {
-    font-size: variables.$font-sz-lg;
+    font-size: variables.$text-lg;
   }
 }
 

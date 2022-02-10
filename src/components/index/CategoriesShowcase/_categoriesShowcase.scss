@@ -2,20 +2,20 @@
 @use 'src/shared-styles/_mixins.scss';
 
 .wrapper{
-  padding-top: variables.$gap-large + variables.$gap-small;
-  padding-bottom: variables.$gap-large + variables.$gap-small;
-  background-color: variables.$color-grey-ultra-light;
+  padding-top: variables.$gap-lg + variables.$gap-sm;
+  padding-bottom: variables.$gap-lg + variables.$gap-sm;
+  background-color: variables.$color-grey-70;
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    padding-top: variables.$gap-med;
-    padding-bottom: variables.$gap-med;
+    padding-top: variables.$gap-md;
+    padding-bottom: variables.$gap-md;
   }
 
   h1 {
     margin-top: 0;
     padding: 0;
     width: auto;
-    margin-bottom: variables.$gap-med;
+    margin-bottom: variables.$gap-md;
     margin-left: auto;
     margin-right: auto;
 
@@ -23,13 +23,13 @@
     text-align: center;
 
     @media screen and (max-width: variables.$breakpoint-md) {
-      font-size: variables.$font-sz-lg;
+      font-size: variables.$text-lg;
       width: auto;
-      padding: 0 variables.$gap-large;
+      padding: 0 variables.$gap-lg;
     }
 
     @media screen and (max-width: variables.$breakpoint-sm) {
-      padding: 0 variables.$gap-small;
+      padding: 0 variables.$gap-sm;
     }
   }
 
@@ -45,7 +45,7 @@
 
     @media screen and (max-width: variables.$breakpoint-md) {
       button {
-        margin-bottom: variables.$gap-med;
+        margin-bottom: variables.$gap-md;
       }
     }
   }
@@ -59,12 +59,12 @@
     }
 
     #categories {
-      margin-bottom: variables.$gap-small;
+      margin-bottom: variables.$gap-sm;
     }
   }
 
   .buttonWrapper{
     text-align: center;
-    margin-bottom: variables.$gap-med;
+    margin-bottom: variables.$gap-md;
   }
 }

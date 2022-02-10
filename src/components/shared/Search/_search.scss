@@ -12,7 +12,7 @@
       position: absolute;
       height: 60%;
       width: auto;
-      padding-right: variables.$gap-small;
+      padding-right: variables.$gap-sm;
       opacity: 0.4;
     }
 
@@ -22,14 +22,14 @@
       background: none;
       padding-left: 33px;
       border-radius: 20px;
-      border: solid 1px variables.$color-grey-light;
-      font-size: variables.$font-sz-md;
-      color: variables.$color-grey-dark;
+      border: solid 1px variables.$color-grey-500;
+      font-size: variables.$text-md;
+      color: variables.$color-grey-900;
       transition: all 0.4s;
       width: 100%;
 
       &:focus {
-        color: variables.$color-grey-dark;
+        color: variables.$color-grey-900;
       }
 
       &:focus+img {
@@ -64,7 +64,7 @@
       position: absolute;
       height: 60%;
       width: auto;
-      padding-right: variables.$gap-small;
+      padding-right: variables.$gap-sm;
       opacity: 0.4;
 
       @media screen and (max-width: variables.$breakpoint-sm) {
@@ -84,7 +84,7 @@
       width: 100%;
 
       @media screen and (max-width: variables.$breakpoint-sm) {
-        font-size: variables.$font-sz-md;
+        font-size: variables.$text-md;
       }
     }
   }

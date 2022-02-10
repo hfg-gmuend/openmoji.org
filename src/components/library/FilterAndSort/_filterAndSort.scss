@@ -35,7 +35,7 @@
 }
 
 #filter-selector:hover, #sort-selector:hover, #change-category:hover{
-  background-color: variables.$color-grey-ultra-light;
+  background-color: variables.$color-grey-70;
 }
 
 .slider {
@@ -45,7 +45,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: variables.$color-grey-light;
+  background-color: variables.$color-grey-500;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
@@ -67,7 +67,7 @@
 .emoji_grid_header {
   width: 100%;
   max-width: variables.$content-max-width;
-  padding: variables.$gap-reg 0;
+  padding: variables.$gap-normal 0;
   position: sticky;
   top: 80px;
   background-color: variables.$color-white;
@@ -77,7 +77,7 @@
   z-index: 999;
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    padding: 0 variables.$gap-med variables.$gap-small variables.$gap-med;
+    padding: 0 variables.$gap-md variables.$gap-sm variables.$gap-md;
 
     margin-top: -#{variables.$gap-xs};
     > * {
@@ -86,7 +86,7 @@
   }
 
   @media screen and (max-width: variables.$breakpoint-sm) {
-    padding: 0 variables.$gap-small variables.$gap-small variables.$gap-small;
+    padding: 0 variables.$gap-sm variables.$gap-sm variables.$gap-sm;
   }
 
   #change-category {
@@ -158,19 +158,19 @@
 
         li {
           margin: 0;
-          padding: math.div((40px - variables.$font-sz-md), 2) variables.$gap-small;
+          padding: math.div((40px - variables.$text-md), 2) variables.$gap-sm;
           height: auto;
 
           > * {
-            font-size: variables.$font-sz-md;
+            font-size: variables.$text-md;
           }
 
           .disclaimer {
-            font-size: variables.$font-sz-s;
-            color: variables.$color-grey-super-light;
+            font-size: variables.$text-sm;
+            color: variables.$color-grey-300;
 
             a {
-              color: variables.$color-grey-super-light;
+              color: variables.$color-grey-300;
               text-decoration: underline;
 
               &:hover {
@@ -193,7 +193,7 @@
 
   &--dense {
     li {
-      padding: math.div((40px - variables.$font-sz-md), 4) variables.$gap-small * 0.75 !important;
+      padding: math.div((40px - variables.$text-md), 4) variables.$gap-sm * 0.75 !important;
     }
   }
 }
@@ -207,7 +207,7 @@
 
   position: relative;
   align-self: center;
-  font-size: variables.$font-sz-md;
+  font-size: variables.$text-md;
   display: flex;
   align-items: center;
 
@@ -242,7 +242,7 @@
 
       &:hover {
         background-color: variables.$color-blue-light;
-        color: variables.$color-grey-ultra-light;
+        color: variables.$color-grey-70;
       }
     }
   }

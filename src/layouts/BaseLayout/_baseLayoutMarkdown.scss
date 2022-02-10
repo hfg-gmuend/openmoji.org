@@ -2,31 +2,31 @@
 
 .markdownContent{
 	h1 {
-		font-size: variables.$font-sz-xl;
-		font-weight: variables.$font-reg;
+		font-size: variables.$text-xl;
+		font-weight: variables.$font-normal;
 
 		@media screen and (min-width: variables.$breakpoint-md) {
-		    font-size: variables.$font-sz-xl;
+		    font-size: variables.$text-xl;
 		  }
 	}
 
 	h2{
-		font-size: variables.$font-sz-lg;
+		font-size: variables.$text-lg;
 		font-weight: variables.$font-bold;
-		margin-top: variables.$gap-med;
+		margin-top: variables.$gap-md;
 		margin-bottom: variables.$gap-xs;
 	}
 
 	h3{
-		font-size: variables.$font-sz-lg;
+		font-size: variables.$text-lg;
 		font-weight: normal;
-		margin-top: variables.$gap-med;
+		margin-top: variables.$gap-md;
 	}
 
 	h4, h5{
-		font-size: variables.$font-sz-md;
+		font-size: variables.$text-md;
 		font-weight: variables.$font-bold;
-		margin-top: variables.$gap-reg;
+		margin-top: variables.$gap-normal;
 	}
 
 	padding-left: variables.$gap-xs;
@@ -51,14 +51,14 @@
 	ul {
 	    li {
 	      list-style-type: disc;
-	      margin-left: variables.$gap-small;
+	      margin-left: variables.$gap-sm;
 	    }
 	}
 
 	ol {
 	    li {
 	      list-style-type: decimal;
-	      margin-left: variables.$gap-small;
+	      margin-left: variables.$gap-sm;
 	    }
 	}
 
@@ -69,7 +69,7 @@
 	}
 
 	summary:hover{
-		background-color: variables.$color-grey-ultra-light;
+		background-color: variables.$color-grey-70;
 	}
 
 	details p, details ul, details ol, details img{
@@ -77,7 +77,7 @@
 	}
 
 	details :last-child{
-		margin-bottom: variables.$gap-small;
+		margin-bottom: variables.$gap-sm;
 	}
 
 	

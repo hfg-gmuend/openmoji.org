@@ -3,9 +3,9 @@
 @mixin button{
   cursor: pointer;
   text-decoration: none;
-  padding: 0 variables.$gap-small;
+  padding: 0 variables.$gap-sm;
   margin: 0;
-  font-size: variables.$font-sz-md;
+  font-size: variables.$text-md;
   font-family: inherit;
   color: variables.$color-white;
   background: variables.$color-blue-dark;

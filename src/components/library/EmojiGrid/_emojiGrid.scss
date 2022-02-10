@@ -3,7 +3,7 @@
 .emoji_grid_wrapper {
   
   max-width: variables.$content-max-width;
-  margin: variables.$gap-med;
+  margin: variables.$gap-md;
   margin-left: 300px; /* The size of the sidebar */
 
   @media screen and (max-width: variables.$breakpoint-md) {
