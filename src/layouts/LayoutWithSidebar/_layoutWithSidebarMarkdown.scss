@@ -60,17 +60,19 @@
     font-size: variables.$font-sz-lg;
     font-weight: variables.$font-bold;
     margin-top: variables.$gap-med;
+    margin-bottom: variables.$gap-small;
   }
 
   h3{
     font-size: variables.$font-sz-lg;
     margin-top: variables.$gap-med;
+    margin-bottom: variables.$gap-xs;
   }
 
   h4, h5{
     font-size: 24px;
     margin-top: variables.$gap-reg;
-    margin-bottom: variables.$gap-xs;
+    margin-bottom: variables.$gap-xxs;
   }
 
   h4{
@@ -81,7 +83,9 @@
     font-weight: normal;
   }
 
-  img, video{
+  img:not(.iconlink > img):not(.emojiForText), video{
+    // So it doesn't override the CSS from the Author.astro file
+    // And also not the one from the OpenMoji.astro file
     padding: 30px;
     box-sizing: border-box;
     display: block;
