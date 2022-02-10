@@ -3,6 +3,7 @@ layout: ../../layouts/LayoutWithSidebar/LayoutWithSidebar.astro
 setup: |
   import ButtonLink from '@/components/shared/ButtonLink.astro';
   import Columns from '@/components/shared/Columns.astro';
+  import ColumnsReversingOnMobile from '@/components/shared/ColumnsReversingOnMobile.astro';
   import ColumnLeft from '@/components/shared/ColumnLeft.astro';
   import ColumnRight from '@/components/shared/ColumnRight.astro';
 sidebarFilter: true
@@ -13,7 +14,7 @@ color: orange
 # Designer? Developer?<br>Love Open Source?<br>Everyone Can Participate!
 
 ### Help Design New Emoji
-<Columns>
+<ColumnsReversingOnMobile>
 <ColumnLeft>
 The next set of emojis are due to be released this year, we need your help to make them!
 
@@ -23,10 +24,10 @@ The next set of emojis are due to be released this year, we need your help to ma
 <ColumnRight>
 ![Emoji 13.0](/styleguide-emoji13.svg)
 </ColumnRight>
-</Columns>
+</ColumnsReversingOnMobile>
 
 ### Improve Quality of Emojis
-<Columns>
+<ColumnsReversingOnMobile>
 <ColumnLeft>
 Design is subjective but we want our emoji to follow our style guide and look good.
 
@@ -36,10 +37,10 @@ Design is subjective but we want our emoji to follow our style guide and look go
 <ColumnRight>
 ![Comparison polar bear emoji before and after redesign](/styleguide-emojidesign.png)
 </ColumnRight>
-</Columns>
+</ColumnsReversingOnMobile>
 
 ### Improve Consistency with Other Platforms
-<Columns>
+<ColumnsReversingOnMobile>
 <ColumnLeft>
 To be useful for communication, emoji need to convey the same idea. 
 
@@ -49,7 +50,7 @@ To be useful for communication, emoji need to convey the same idea.
 <ColumnRight>
 ![Example of how other emoji libraries influence the OpenMojis](/styleguide-consistency.svg)
 </ColumnRight>
-</Columns>
+</ColumnsReversingOnMobile>
 
 ## Styleguide
 ### Grid
