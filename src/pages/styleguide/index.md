@@ -12,8 +12,6 @@ color: orange
 
 # Designer? Developer?<br>Love Open Source?<br>Everyone Can Participate!
 
-
-
 ### Help Design New Emoji
 <Columns>
 <ColumnLeft>

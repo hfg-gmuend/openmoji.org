@@ -8,7 +8,6 @@ color: yellow
 content: narrow
 ---
 
-# About
 ## Project Intent
 
 <p>

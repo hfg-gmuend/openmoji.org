@@ -3,7 +3,6 @@ layout: ../../layouts/BaseLayout/BaseLayout.astro
 title: Samples
 ---
 
-# Samples
 ## Rabbit hole
 ![Rabbit hole](/samples-rabbit-hole.svg)
 

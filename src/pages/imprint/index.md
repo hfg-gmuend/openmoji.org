@@ -3,7 +3,6 @@ layout: ../../layouts/BaseLayout/BaseLayout.astro
 title: Impressum (Imprint)
 ---
 
-# Impressum (imprint)
 ## Contact
 Prof. Daniel Utz <br>
 Prof. Benedikt Groß <br>
