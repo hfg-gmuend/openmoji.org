@@ -101,5 +101,6 @@
 
   img:not(.iconlink > img):not(.emojiForText):not(.authorImage){
     border: 1px solid variables.$color-grey-100;
+    border-radius: 5px;
   }
 }
