@@ -1,12 +1,14 @@
 @use 'src/shared-styles/_variables.scss';
 
 .markdownContent.yellow h1,
+.markdownContent.yellow h2,
 .markdownContent.yellow p a,
 .markdownContent.yellow ul a {
     color: variables.$color-yellow-light;
 }
 
 .markdownContent.orange h1,
+.markdownContent.orange h2,
 .markdownContent.orange p a,
 .markdownContent.orange ul a {
     color: variables.$color-orange-dark;
@@ -57,10 +59,12 @@
   }
 
   h2{
-    font-size: variables.$font-sz-lg;
-    font-weight: variables.$font-bold;
+    font-size: variables.$font-sz-xl;
+    font-weight: variables.$font-reg;
     margin-top: variables.$gap-med;
     margin-bottom: variables.$gap-small;
+    padding-bottom: variables.$gap-xxs;
+    border-bottom: 1px solid variables.$color-grey-ultra-light;
   }
 
   h3{
