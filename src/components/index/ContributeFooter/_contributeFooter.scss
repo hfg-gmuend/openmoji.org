@@ -29,9 +29,10 @@
 	    display: inline-flex;
 	    flex-wrap: nowrap;
 	    justify-content: space-around;
-	    width: 54%;
 	    align-items: center;
 	    margin-bottom: variables.$gap-normal;
+	    padding-left: variables.$gap-sm;
+	    padding-right: variables.$gap-sm;
 
 	    .defaultButton {
 	      &:first-child {
@@ -41,6 +42,7 @@
 
 	    @media screen and (max-width: variables.$breakpoint-md) {
 	      flex-wrap: wrap;
+	      flex-direction: column;
 
 	      .defaultButton {
 	        &:first-child {
