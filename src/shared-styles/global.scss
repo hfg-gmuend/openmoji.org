@@ -232,7 +232,7 @@ main {
   grid-area: content;
 
   @media screen and (max-width: variables.$breakpoint-md) {
-    margin-top: variables.$gap-xs;
+    // margin-top: variables.$gap-xs;
   }
 
   &.samples-wrapper {

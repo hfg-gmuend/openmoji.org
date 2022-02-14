@@ -70,20 +70,20 @@ for(let index in menuItems){
         currentPage === menuItem.href ? (<li class={'active-tab ' + color}><a class="standardLink" href={menuItem.href}>{menuItem.text}</a></li>) : (<li><a class="standardLink" href={menuItem.href}>{menuItem.text}</a></li>)
       )}
     </ul>
-    <div class="github-link">
+    <div class="social-link">
       <a
         class="gh-link iconlink"
         rel="noopener"
         href="https://github.com/hfg-gmuend/openmoji"
         target="_blank">
-        <img src={githubLogo} alt="GitHub logo"/>
+        <img src={githubLogo} class="social-icon" alt="GitHub logo"/>
       </a>
       <a
         class="iconlink"
         rel="noopener"
         href="https://twitter.com/OpenMoji"
         target="_blank">
-          <img src={twitterLogo} alt="Twitter logo" />
+        <img src={twitterLogo} class="social-icon" alt="Twitter logo"/>
       </a>
     </div>
   </nav>
@@ -101,14 +101,14 @@ for(let index in menuItems){
         rel="noopener"
         href="https://github.com/hfg-gmuend/openmoji"
         target="_blank">
-        <img src={githubLogo} alt="GitHub logo"/>
+        <img src={githubLogo} class="social-icon" alt="GitHub logo"/>
       </a>
       <a
         class="iconlink"
         rel="noopener"
         href="https://twitter.com/OpenMoji"
         target="_blank">
-        <img src={twitterLogo} alt="Twitter logo" />
+        <img src={twitterLogo} class="social-icon" alt="Twitter logo" />
       </a>
       <GetEmojiDropdown color={color}/>
     </div>

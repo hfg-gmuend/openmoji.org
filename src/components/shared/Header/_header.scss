@@ -18,6 +18,10 @@ header {
   width: 100%;
   top: 0;
 
+  h1{
+    margin-bottom: 0;
+  }
+
   &.borderBottom{
     border-bottom: variables.$color-grey-300 1px solid;
   }
@@ -80,7 +84,7 @@ header {
       }
     }
 
-    .github-link {
+    .social-link {
       display: none;
     }
   }
@@ -130,6 +134,10 @@ header {
     }
   }
 
+  .social-icon{
+      display: block;
+    }
+
   @media screen and (max-width: variables.$breakpoint-md) {
     &.menu-open {
       position: static !important; // fullscreen menu
@@ -166,7 +174,7 @@ header {
           }
         }
 
-        .github-link {
+        .social-link {
           display: block;
           height: 40px;
           width: 40px;
