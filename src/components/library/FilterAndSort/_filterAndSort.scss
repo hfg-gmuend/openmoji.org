@@ -81,6 +81,7 @@
 
     margin-top: -#{variables.$gap-xs};
     > * {
+      flex-wrap: wrap;
       margin-bottom: variables.$gap-xs;
     }
   }
@@ -94,6 +95,9 @@
 
     @media screen and (max-width: variables.$breakpoint-md) {
       display: flex;
+      width: 100%;
+      flex-shrink: 0;
+      margin-left: 20px;
     }
   }
 

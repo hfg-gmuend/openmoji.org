@@ -213,14 +213,27 @@
       width: 100%;
     }
 
-    #emojipedia-link {
+    .emojipedia-link {
       color: variables.$color-grey-900;
+      text-decoration: none;
+    }
+
+    .emojipedia-link:hover{
+      text-decoration: underline;
     }
 
     .description-top {
       display: inline-flex;
       justify-content: space-between;
       width: 100%;
+    }
+
+    .description-top a{
+      text-decoration: none;
+    }
+
+    .description-top a:hover{
+      text-decoration: underline;
     }
 
     .description-bottom {
