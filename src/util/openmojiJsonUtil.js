@@ -158,12 +158,17 @@ const getEmojiGroupsAndSubgroups = () => {
     }
   }
 
-  // Put into array and sort them alphabetically
+  // Put into array and sort them alphabetically, with the exception the those starting with extras- should be last
   let groupsAndSubgroupsArray = [];
   for(let groupName in groupsAndSubgroupsObject){
     groupsAndSubgroupsArray.push({name: groupName, subgroups: groupsAndSubgroupsObject[groupName]});
   }
-  groupsAndSubgroupsArray = groupsAndSubgroupsArray.sort((a, b) => a.name.localeCompare(b.name));
+  groupsAndSubgroupsArray = groupsAndSubgroupsArray.sort((a, b) => {
+    if(a.name.indexOf('extras-') > -1){
+      return 1
+    }
+    return a.name.localeCompare(b.name)
+  });
   return groupsAndSubgroupsArray;
 }
 
