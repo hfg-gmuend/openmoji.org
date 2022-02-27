@@ -67,7 +67,8 @@
 .emoji_grid_header {
   width: 100%;
   max-width: variables.$content-max-width;
-  padding: variables.$gap-normal 0;
+  padding: 0 0 variables.$gap-normal 0;
+  margin-top: -10px;
   position: sticky;
   top: 80px;
   background-color: variables.$color-white;
