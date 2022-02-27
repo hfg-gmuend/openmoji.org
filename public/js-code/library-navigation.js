@@ -11,8 +11,14 @@ $(document).ready(function () {
 		if(e.target.value === 'all OpenMojis'){
 			handleSubMenusAndUpdateUrlAndFilters(undefined, undefined);
 		}else{
-			var groupPath = $(this).attr("data-grouppath");
-			var subMenu = $(this).parent().find('.submenu')[0];
+			var interactedElement = $(this);
+			var groupPath = interactedElement.attr("data-grouppath");
+			var subMenu = interactedElement.siblings('.submenu')[0];  // For click on the overall category (e.g. symbols)
+
+			if(interactedElement.parent().parent().hasClass('submenu')){
+				subMenu = interactedElement.parent().parent() // For click on the sub category (e.g. symbols > math)
+			}			
+
 			handleSubMenusAndUpdateUrlAndFilters(subMenu, groupPath);
 		}
 	})
