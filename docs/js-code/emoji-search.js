@@ -10,8 +10,10 @@ function refreshViewIfNecessary(){
 	}
 }
 
+$(document).on('openmojiJsonLoaded', initEmojiSearch)
+
 //$(document).ready(function () {
-(function () {
+function initEmojiSearch() {
 	let fuse, searchTermBefore, searchDom, searchBarDom, searchResultsDom, searchResultsListDom;
 	const classNameForHidingSearchBar = 'hidden';
 	const classNameSearchResultSelected = 'itemSelected';
@@ -303,5 +305,4 @@ function refreshViewIfNecessary(){
 
 		searchTermBefore = searchTerm;
 	}
-}());
-//})
+}
