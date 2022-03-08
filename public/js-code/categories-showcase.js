@@ -1,4 +1,6 @@
-$(document).ready(function () {
+$(document).on('openmojiJsonLoaded', initCategoriesShowCase)
+
+function initCategoriesShowCase() {
   //------------ META ------------
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
@@ -161,4 +163,4 @@ $(document).ready(function () {
     }
     return arr;
   }
-});
+}

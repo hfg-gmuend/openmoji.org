@@ -1,4 +1,6 @@
-$(document).ready(function () {
+$(document).on('openmojiJsonLoaded', initEmojiCloud)
+
+function initEmojiCloud() {
   //------------ META ------------
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
@@ -91,4 +93,4 @@ $(document).ready(function () {
     }
     return arr;
   }
-});
+}

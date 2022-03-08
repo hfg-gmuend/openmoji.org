@@ -9,11 +9,11 @@
   },
   "homepage": "http://openmoji.org/",
   "scripts": {
-    "dev": "gulp copy-markdown-assets && astro dev",
-    "start": "gulp copy-markdown-assets && astro dev",
-    "build": "gulp copy-markdown-assets && astro build",
-    "preview": "gulp copy-markdown-assets && astro preview",
-    "postinstall": "gulp copy-markdown-assets && gulp copy-openmoji-data"
+    "dev": "gulp copy-markdown-assets && node compress-json.mjs && astro dev",
+    "start": "gulp copy-markdown-assets && node compress-json.mjs && astro dev",
+    "build": "gulp copy-markdown-assets && node compress-json.mjs && astro build",
+    "preview": "gulp copy-markdown-assets && node compress-json.mjs && astro preview",
+    "postinstall": "gulp copy-markdown-assets && gulp copy-openmoji-data && node compress-json.mjs"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
@@ -23,7 +23,7 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "astro": "^0.21.12",
+    "astro": "^0.23.7",
     "autoprefixer": "^10.4.0",
     "node-fetch": "^2.6.6",
     "openmoji": "^13.1.0"

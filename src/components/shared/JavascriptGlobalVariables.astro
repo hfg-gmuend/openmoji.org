@@ -1,9 +1,24 @@
----
-import openMojiJson from '/public/data/openmoji.json';
----
-<script define:vars={{openMojiJson}}>
-	// This variable is global, because it is used by emoji-cloud.js, categories-showcase.js and custom-search.js
-	const OPENMOJIJSON = openMojiJson;
+<script type="text/javascript" src="/js-libraries/pako.min.js"></script>
+<script type="text/javascript">
+	let OPENMOJIJSON = []
+	//getOpenMojiData('/data/openmoji.json.gz')
+	getOpenMojiData('/data/openmoji.json.gz')
+
+	function getOpenMojiData(url){
+		fetch(url).then(function (response) {
+			return response.arrayBuffer()
+		})
+		.then(function (data) {
+			const array = new Uint8Array(data)
+			const decompressed = pako.inflate(array, { to: 'string' });
+			const json = JSON.parse(decompressed);
+			OPENMOJIJSON = json;
+			$(document).trigger('openmojiJsonLoaded')
+		})
+		.catch(function(err) {
+			console.error('Error loading data')
+		});
+	}
 </script>
 
 
