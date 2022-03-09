@@ -1,0 +1,26 @@
+---
+import MetaHeadContent from '../../components/shared/MetaHeadContent.astro';
+import Header from '../../components/shared/Header/Header.astro';
+import Footer from '../../components/shared/Footer/Footer.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
+
+const {content} = Astro.props;
+const title = (content.title || '') + ' · OpenMoji';
+const {onlyAllowHeadlines} = Astro.props || false;
+console.log('Rendering markdown page', title);
+---
+<html lang="en">
+  <head>
+    <MetaHeadContent title={title}/>
+  </head>
+  <body>
+    <Header/>
+    <main class="markdownContent">
+      <style lang="scss"> @use '_baseLayout.scss'; </style>
+      <style lang="scss" global> @use '_baseLayoutMarkdown.scss'; </style>
+      <slot />
+    </main>
+    <Footer/>
+  </body>
+  <JavascriptGlobalVariables/>
+</html>

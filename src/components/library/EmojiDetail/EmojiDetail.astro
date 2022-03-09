@@ -1,0 +1,161 @@
+---
+import ColorPicker from '@/components/library/ColorPicker/ColorPicker.astro';
+import generalUtil from '../../../util/generalUtil'
+
+
+const openmoji = Astro.props.openMojiData;
+const {emojiPedia} = Astro.props;
+
+const {skintoneVariations} = Astro.props;
+const hasMultiSkintone = skintoneVariations.skintone_combinations.length > 0;
+const hasAnySkintone = skintoneVariations.skintone_combinations.length > 0 || skintoneVariations.skintones.length > 0;
+const {skintoneCombinations} = Astro.props;
+
+const filePathColorSVG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'color')
+const filePathColorPNG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'png', 'color')
+const filePathBlackSVG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'svg', 'black')
+const filePathBlackPNG = generalUtil.getFilePathEmojiImage(openmoji.hexcode, 'png', 'black')
+
+const urlAllEmoji = '/library/'
+const urlGroup = '/library/#group=' + openmoji.group
+const urlSubgroup = '/library/#group=' + openmoji.group + '%2F' + openmoji.subgroups
+const urlAuthor = '/library/#author=' + openmoji.openmoji_author
+const urlUnicode = 'https://decodeunicode.org/en/u+' + openmoji.hexcode;
+console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
+---
+<div class="wrapper">
+  <style lang="scss">
+    @use '_emojiDetail.scss';
+  </style>
+  <div class="preview">
+    <div class="active-emoji-selection">
+      <img id="main-emoji-image-color" class="main-emoji-image emoji-variant-color" src={filePathColorSVG} alt={'"' + openmoji.annotation + '"-emoji'}/>
+      <img class="main-emoji-image emoji-variant-black hidden" src={filePathBlackSVG} alt={'"' + openmoji.annotation + '"-emoji in black and white'}/>
+
+      <ColorPicker
+        emoji={openmoji.hexcode}
+        emojiData={openmoji}
+        anySkintone={hasAnySkintone}
+        multiskin={hasMultiSkintone}
+        skintoneCombinations={skintoneCombinations}/>
+      
+    </div>
+  </div>
+  <div class="description">
+    <nav>
+      <a class="redlink" href={urlAllEmoji}>All OpenMojis</a>
+
+      {
+        openmoji.group ? (
+          <span>/ <a class="redlink" href={urlGroup}>
+            {generalUtil.capitalizeFirstLetter(openmoji.group)}
+            </a>
+          </span>
+        ) : null
+      }
+
+      {
+        openmoji.subgroups ? (
+          <span>/ <a class="redlink" href={urlSubgroup}>
+            {generalUtil.capitalizeFirstLetter(openmoji.subgroups)}
+            </a>
+          </span>
+        ) : null
+      }
+    </nav>
+
+    <h1>{openmoji.annotation}</h1>
+
+    {
+      emojiPedia?.description ? (
+        <div>
+          <h2><a target="_blank" class="standardLink" href="https://emojipedia.org/">Emojipedia</a> description:</h2>
+          <p>
+            {emojiPedia.description} <a class="redlink" target="_blank" href={emojiPedia.permalink}>Read more</a>
+          </p>
+        </div>
+      ) : null
+    }
+
+    <table>
+      
+        {
+          (<tr>
+            <td>
+              <h2>Unicode</h2>
+            </td>
+            <td>
+              <a target="_blank" class="redlink" href={urlUnicode}>
+                {openmoji.hexcode}
+              </a>
+            </td>
+          </tr>)
+        }
+
+        {
+          (<tr>
+            <td></td>
+            <td id="unicodeCombination">{generalUtil.getEmojiCombinationLink(openmoji.hexcode)}</td>
+          </tr>)
+        }
+
+        {
+          (<tr>
+            <td>
+              <h2>Author</h2>
+            </td>
+            <td>
+              <a class="redlink" href={urlAuthor}>
+                {openmoji.openmoji_author}
+              </a>
+            </td>
+          </tr>)
+        }
+
+        {
+          (<tr>
+            <td>
+              <h2>Category</h2>
+            </td>
+            <td>
+              <a class="redlink" href={urlGroup}>
+                {openmoji.group}
+              </a>
+            </td>
+          </tr>)
+        }
+        
+        {
+          openmoji.subgroups ? (
+            <tr>
+              <td>
+                <h2>Subcategory</h2>
+              </td>
+              <td>
+                <a class="redlink" href={urlSubgroup}>
+                  {openmoji.subgroups}
+                </a>
+              </td>
+            </tr>) : null
+        }
+      
+    </table>
+
+    <div class="downloadButtons emoji-variant-color">
+      <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
+        <span>SVG</span>
+      </a>  
+      <a class="linkButton" id="downloadPNG" href={filePathColorPNG} download>
+        <span>PNG</span>
+      </a> 
+    </div>
+    <div class="emoji-variant-black hidden">
+      <a class="linkButton" id="downloadSVG" href={filePathBlackSVG} download>
+        <span>SVG</span>
+      </a>  
+      <a class="linkButton" id="downloadPNG" href={filePathBlackPNG} download>
+        <span>PNG</span>
+      </a> 
+    </div>
+  </div>
+</div>

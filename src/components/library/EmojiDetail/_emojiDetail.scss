@@ -1,0 +1,203 @@
+@use 'sass:math';
+@use 'src/shared-styles/_variables.scss';
+@use 'src/shared-styles/_mixins.scss';
+
+h1{
+  font-size: variables.$text-lg;
+  font-weight: bold;
+  margin-top: variables.$gap-sm;
+  margin-bottom: variables.$gap-sm;
+}
+
+table{
+  border-collapse:separate; 
+  border-spacing: 0 variables.$gap-sm;
+}
+
+td{
+ padding-right: variables.$gap-sm; 
+}
+
+h2{
+  font-size: variables.$text-md;
+  margin: 0;
+}
+
+.highlight {
+  background: variables.$background-color-grey;
+  border-radius: variables.$border-radius;
+}
+
+.wrapper {
+  position: relative;
+  max-width: variables.$content-max-width * 1.2;
+  margin: auto;
+  padding: variables.$gap-normal;
+  background: #ffffff;
+  border-radius: 8px;
+  z-index: 20;
+  box-sizing: border-box;
+  display: flex;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    flex-direction: column;
+    // overflow-y: scroll;
+    // height: 100%;
+    // width: 100%;
+    padding: variables.$gap-normal variables.$gap-normal 0 variables.$gap-normal;
+  }
+
+  .sub {
+    text-align: center;
+    font-size: variables.$text-sm;
+  }
+}
+
+.path {
+  color: variables.$color-grey-500;
+}
+
+#sharetitle {
+  position: absolute;
+  bottom: 2 * variables.$gap-normal;
+}
+
+#shareitems {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#shareitems ul li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: math.div(variables.$gap-normal, 2);
+}
+
+.preview {
+  width: 65%;
+  padding-right: math.div(variables.$gap-md, 2);
+  box-sizing: border-box;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .active-emoji-selection {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-emoji-image {
+      min-height: 0;
+      margin-bottom: variables.$gap-normal;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media screen and (max-width: variables.$breakpoint-md) {
+        width: 50%;
+        max-width: 250px;
+      }
+    }
+  }
+}
+
+.description {
+  //border-left: 1px solid variables.$color-grey-300;
+  box-shadow: 0 1px 34px 0 rgba(163, 161, 173, 0.5);
+  padding: math.div(variables.$gap-md, 2);
+  border-radius: math.div(variables.$gap-md, 2);
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  box-sizing: border-box;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    display: block;
+    padding: math.div(variables.$gap-md, 2);
+    //border-left: none;
+    width: 100%;
+  }
+
+  #emojipedia-link {
+    color: variables.$color-grey-900;
+  }
+
+  .description-top {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .description-bottom {
+    h2 {
+      margin: variables.$gap-sm 0;
+      max-width: 400px;
+    }
+
+    table {
+      margin-bottom: variables.$gap-md;
+
+      @media screen and (max-width: variables.$breakpoint-md) {
+        margin-top: math.div(variables.$gap-md, 3);
+        margin-bottom: variables.$gap-sm * 1.3;
+      }
+
+      td {
+        height: 40px;
+      }
+
+      td + td {
+        padding-left: variables.$gap-normal;
+      }
+    }
+  }
+
+  #buttoncontainer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    button:not(.copy-to-clipboard) {
+      min-width: 100px;
+    }
+
+    a + a {
+      margin-left: variables.$gap-xs;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      margin-bottom: variables.$gap-normal;
+
+      a:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.close {
+  cursor: pointer;
+  margin-left: variables.$gap-xs;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+
+.linkButton {
+    @include mixins.button;
+    background-color: variables.$color-red-light;
+}

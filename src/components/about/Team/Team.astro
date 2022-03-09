@@ -1,0 +1,14 @@
+---
+import authors from './team.json';
+import Author from '../Author/Author.astro';
+---
+<div class="team">
+  <style lang="scss">
+    @use '_team.scss';
+  </style>
+  <div class="container">
+    {authors.map((author) => (
+      <Author data={author}/>
+    ))}
+  </div>
+</div>

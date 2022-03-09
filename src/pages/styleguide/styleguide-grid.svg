@@ -1,0 +1,9 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M132.5 170H47.5C43.25 170 40 166.75 40 162.5V17.5C40 13.25 43.25 10 47.5 10H132.5C136.75 10 140 13.25 140 17.5V162.5C140 166.75 136.75 170 132.5 170Z" stroke="#E27022" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 132.5V47.5C10 43.25 13.25 40 17.5 40H162.5C166.75 40 170 43.25 170 47.5V132.5C170 136.75 166.75 140 162.5 140H17.5C13.25 140 10 136.75 10 132.5Z" stroke="#E27022" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145 152.5H35C30.75 152.5 27.5 149.25 27.5 145V35C27.5 30.75 30.75 27.5 35 27.5H145C149.25 27.5 152.5 30.75 152.5 35V145C152.5 149.25 149.25 152.5 145 152.5Z" stroke="#E27022" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M90 162.5C130.041 162.5 162.5 130.041 162.5 90C162.5 49.9594 130.041 17.5 90 17.5C49.9594 17.5 17.5 49.9594 17.5 90C17.5 130.041 49.9594 162.5 90 162.5Z" stroke="#E27022" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<g opacity="0.2">
+<path opacity="0.2" d="M170 10V170H10V10H170ZM180 0H170H10H0V10V170V180H10H170H180V170V10V0Z" fill="#1D1D1B"/>
+</g>
+</svg>

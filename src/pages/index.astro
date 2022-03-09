@@ -1,0 +1,31 @@
+---
+import Header from '@/components/shared/Header/Header.astro';
+import Footer from '@/components/shared/Footer/Footer.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
+import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
+
+import Hero from '@/components/index/Hero/Hero.astro';
+import SmallOverview from '@/components/index/SmallOverview/SmallOverview.astro';
+import EmojiVideo from '@/components/index/EmojiVideo/EmojiVideo.astro';
+import CategoriesShowcase from '@/components/index/CategoriesShowcase/CategoriesShowcase.astro';
+import ContributeFooter from '@/components/index/ContributeFooter/ContributeFooter.astro';
+console.log('Rendering home page index.astro');
+---
+
+<html lang="en">
+    <head>
+        <MetaHeadContent title="OpenMoji" titleOG="OpenMoji"/>
+        <JavascriptGlobalVariables/>
+    </head>
+    <body>
+        <Header borderBottom={true}/>
+        <main>
+            <Hero/>
+            <SmallOverview/>
+            <EmojiVideo/>
+            <CategoriesShowcase/>
+            <ContributeFooter/>
+        </main>
+        <Footer style="color" color="blue"/>
+    </body>
+</html>

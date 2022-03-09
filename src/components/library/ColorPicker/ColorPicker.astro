@@ -1,0 +1,57 @@
+---
+import colorUtil from '../../../util/colorUtil'
+
+const colorPalette = colorUtil.getColorPaletteSkintones();
+
+const emojiHex = Astro.props.emoji;
+const {emojiData} = Astro.props;
+const {multiskin} = Astro.props;
+const {anySkintone} = Astro.props;
+const skintoneCombinations = Astro.props.skintoneCombinations;
+let skintonesForHex = {}
+for(let combination in skintoneCombinations){
+  const value = skintoneCombinations[combination];
+  skintonesForHex[value] = combination;
+}
+
+---
+<div class="small-emoji-preview">
+  <style lang="scss">
+    @use '_colorPicker.scss';
+  </style>
+
+  <div id="emoji-preview">
+    <div id="outline-emoji-preview" class="circle single-color visible" onclick="colorChangeSingleColor('black')"></div>
+    <div id="color-emoji-preview" onclick="colorChangeSingleColor('')" class="circle highlight visible single-color"></div>
+    {
+      anySkintone === false ? null : multiskin === false ?
+      (<div class="skintone-selector">
+        {
+          colorPalette.map((color, index) => (
+            <div class="circle" onclick={"colorChangeSingleColor(" + (index + 1) + ")"} style={'background-color:' + color}></div>
+            ))
+        }
+      </div>)
+      :
+      (<div class="skintone-selector left">
+        {
+          colorPalette.map((color, index) => (
+            <div class="circle" onclick={"colorChangeMultiColor('left'," + (index + 1) + ")"} style={'background-color:' + color}></div>
+            ))
+        }
+      </div>
+      <div class="skintone-selector right">
+        {
+          colorPalette.map((color, index) => (
+            <div class="circle" onclick={"colorChangeMultiColor('right'," + (index + 1) + ")"} style={'background-color:' + color}></div>
+            ))
+        }
+      </div>)
+    }
+  </div>
+  <script define:vars={{skintoneCombinations, skintonesForHex}}>
+    const SKINTONECOMBINATIONS = skintoneCombinations;
+    const SKINTONESFORHEX = skintonesForHex;
+  </script>
+  <script type="text/javascript" src="/js-code/skintone-colorpicker.js"></script>
+</div>

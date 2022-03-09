@@ -1,0 +1,106 @@
+@use 'src/shared-styles/_variables.scss';
+
+.markdownContent.yellow h1,
+.markdownContent.yellow h2,
+.markdownContent.yellow p a,
+.markdownContent.yellow ul a {
+    color: variables.$color-yellow-light;
+}
+
+.markdownContent.orange h1,
+.markdownContent.orange h2,
+.markdownContent.orange p a,
+.markdownContent.orange ul a {
+    color: variables.$color-orange-dark;
+}
+
+.markdownContent.narrow p{
+  color: variables.$color-grey-900;
+  max-width: 500px;
+  margin-bottom: variables.$gap-sm;
+}
+
+.markdownContent {
+  width: 100%;
+  // @extend %content;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    padding: 0 variables.$gap-md 0 variables.$gap-md;
+  }
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    padding: 0 variables.$gap-sm 0 variables.$gap-sm;
+  }
+
+  ul {
+    padding-left: variables.$gap-normal;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  ol {
+    padding-left: variables.$gap-normal;
+
+    li {
+      list-style-type: decimal;
+    }
+  }
+
+  h1 {
+    font-size: variables.$text-xl;
+    font-weight: variables.$font-normal;
+    margin-bottom: variables.$gap-normal;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      font-size: variables.$text-xl;
+    }
+  }
+
+  h2{
+    font-size: variables.$text-xl;
+    font-weight: variables.$font-normal;
+    margin-top: variables.$gap-md;
+    margin-bottom: variables.$gap-sm;
+    padding-bottom: variables.$gap-2xs;
+    border-bottom: 1px solid variables.$color-grey-100;
+  }
+
+  h3{
+    font-size: variables.$text-lg;
+    margin-top: variables.$gap-md;
+    margin-bottom: variables.$gap-xs;
+  }
+
+  h4, h5{
+    font-size: 24px;
+    margin-top: variables.$gap-normal;
+    margin-bottom: variables.$gap-2xs;
+  }
+
+  h4{
+    font-weight: variables.$font-bold;
+  }
+
+  h5{
+    font-weight: normal;
+  }
+
+  img:not(.iconlink > img):not(.emojiForText):not(.authorImage), video{
+    // So it doesn't override the CSS from the Author.astro file
+    // And also not the one from the OpenMoji.astro file
+    padding: 30px;
+    box-sizing: border-box;
+    display: block;
+    // margin-top: variables.$gap-md;
+    margin-bottom: variables.$gap-xs;
+    min-width: 20%;
+    max-width: 100%;
+  }
+
+  img:not(.iconlink > img):not(.emojiForText):not(.authorImage){
+    border: 1px solid variables.$color-grey-100;
+    border-radius: 5px;
+  }
+}

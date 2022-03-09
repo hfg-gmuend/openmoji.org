@@ -1,0 +1,193 @@
+@use 'src/shared-styles/_variables.scss';
+
+.contentPusher{
+  height: 80px;
+}
+
+header {
+  z-index: 999999;
+  background-color: variables.$color-white;
+  box-sizing: border-box;
+  padding: 0 variables.$gap-md 0 variables.$gap-md;
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  h1{
+    margin-bottom: 0;
+  }
+
+  &.borderBottom{
+    border-bottom: variables.$color-grey-300 1px solid;
+  }
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    padding: 0 variables.$gap-sm 0 variables.$gap-sm;
+  }
+
+  .project-name {
+    display: none;
+    color: variables.$color-grey-900;
+    text-decoration: none;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: block;
+
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        height: 30px;
+        margin-right: variables.$gap-normal;
+        cursor: pointer;
+        list-style: none;
+
+          &.active-tab {
+            border-bottom: 4px solid;
+
+            &.default{ border-bottom-color: variables.$color-blue-light; }
+            &.blue{ border-bottom-color: variables.$color-blue-light; }
+            &.orange{ border-bottom-color: variables.$color-orange-dark; }
+            &.yellow{ border-bottom-color: variables.$color-yellow-light; }
+            &.red{ border-bottom-color: variables.$color-red-light; }
+            &.grey{ border-bottom-color: variables.$color-grey-500; }
+            &.violet{ border-bottom-color: variables.$color-violet-dark; }
+
+            a {
+              color: variables.$color-grey-900;
+            }
+          }
+
+        a {
+          vertical-align: middle;
+          display: inline-block;
+        }
+      }
+    }
+
+    .social-link {
+      display: none;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .mobile-toggle {
+      display: none;
+      padding: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: variables.$z-index-menu-toggle;
+
+      img{
+        width: 30px;
+      }
+
+      @media screen and (max-width: variables.$breakpoint-md) {
+        display: block;
+      }
+    }
+
+    .action-links {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      @media screen and (max-width: variables.$breakpoint-md) {
+        display: none;
+      }
+
+      > * {
+        margin-left: variables.$gap-sm;
+      }
+
+      .gh-link {
+        height: 30px;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .social-icon{
+      display: block;
+    }
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    &.menu-open {
+      position: static !important; // fullscreen menu
+
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: variables.$color-white;
+        z-index: variables.$z-index-menu;
+
+        ul {
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            height: auto;
+            margin-right: 0;
+            margin-bottom: variables.$gap-sm;
+
+            &:last-child {
+              margin-bottom: variables.$gap-normal;
+            }
+
+            a {
+              margin: 5px;
+              font-size: variables.$text-lg;
+            }
+          }
+        }
+
+        .social-link {
+          display: block;
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      .mobile-toggle {
+        background: url(../img/menu-close.svg) no-repeat center center;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        border: none;
+      }
+    }
+  }
+}

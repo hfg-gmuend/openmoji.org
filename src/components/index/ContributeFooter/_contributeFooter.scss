@@ -1,0 +1,65 @@
+@use 'src/shared-styles/_variables.scss';
+
+.wrapper {
+	background-color: variables.$color-blue-dark;
+
+	.content-wrapper {
+	  min-height: 0;
+	  padding-top: variables.$gap-xs;
+	}
+
+	#interest {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  padding: variables.$gap-md 0;
+
+	  h1 {
+	    color: variables.$color-white;
+	    margin-bottom: variables.$gap-normal;
+	    font-size: variables.$text-lg;
+
+	    @media screen and (max-width: variables.$breakpoint-md) {
+	      font-size: variables.$text-lg;
+	    }
+	  }
+
+	  .buttongroup {
+	    display: inline-flex;
+	    flex-wrap: nowrap;
+	    justify-content: space-around;
+	    align-items: center;
+	    margin-bottom: variables.$gap-normal;
+	    padding-left: variables.$gap-sm;
+	    padding-right: variables.$gap-sm;
+
+	    .defaultButton {
+	      &:first-child {
+	        margin-right: variables.$gap-normal;
+	      }
+	    }
+
+	    @media screen and (max-width: variables.$breakpoint-md) {
+	      flex-wrap: wrap;
+	      flex-direction: column;
+
+	      .defaultButton {
+	        &:first-child {
+	        	margin-bottom: variables.$gap-normal;
+	        	margin-right: 0;
+	        }
+	      }
+	    }
+
+	    h1 {
+	      color: variables.$color-white;
+	      margin-bottom: variables.$gap-normal;
+
+	      @media screen and (max-width: variables.$breakpoint-md) {
+	        font-size: variables.$text-md;
+	      }
+	    }
+	  }
+	}
+}
