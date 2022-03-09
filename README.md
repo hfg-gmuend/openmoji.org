@@ -3,34 +3,46 @@ OpenMoji.org
 
 Website of the OpenMoji project 👉 http://openmoji.org/
 
-⚠️ Please note that the master branch is in active development! You can view the most recent version under the [staging instance](https://hfg-gmuend.github.io/openmoji.org/).  
+⚠️ Please note that the master branch is in active development! 
 
 Developer Setup
 ---------------
+### Installing:
 1. Install [node.js](https://nodejs.org) (see version in the file [`.nvmrc`](.nvmrc#L1))
-2. Open Terminal and navigate over to the `openmoji.org` folder that you downloaded onto your computer:
+2. Open Terminal and navigate over to the `openmoji.org` folder that you downloaded onto your computer: `cd path/to/folder`
 
-```
-cd path/to/folder
-```
+3. Run: `npm install`
 
-3. Run:
+### Starting:
+Run `npm start`
 
-```
-npm install
-```
+### Build:
+1. Run `npm run build`
+2. The build will appear in `/docs`¹
 
-Run
----
+**¹** The folder name */docs* was chosen, because it's a [restriction by Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source) (which we will be using for staging).
 
-Start a local web server with live reload by typing in your Terminal the command below. This will open the `index.html` in a new browser window:
+### (Normally not necessary) Downloading Emojipedia-data:
+1. Run `node get-emojipedia-data.js`
+2. This will get all emoji-descriptions from Emojipedia and save them in `/src/data/emojipediaData.json`
 
-```
-npm start
-```
+Notes about structure
+----
 
-Open a new tab in your Terminal with the command below to watch the style/*scss files and to compile those to the style/main.css file:
+### Astro + Markdown:
+Astro doesn't automatically resolve relative file paths yet. However, for convenient editting with a Markdown-editor all pages (e.g. `src/pages/samples/index.md`) have the necessary assets in next to them. These are copied to `public/` using gulp.
 
-```
-npm run watch-style
-```
+### Components:
+`components/`-folder: Contains all Astro-components
+
+`components/shared/` contains all components used across the whole site, all others are associated to the page they appear in (`components/about/`, `components/index/` & `components/library/`)
+
+### Layouts:
+`layouts/` contains the layouts used to render the markdown pages → [Astro docs](https://docs.astro.build/core-concepts/layouts/)
+
+*BaseLayout* is a simple single column (e.g. used for FAQ) and *LayoutWithSidebar* has a side with table of contents (used on the styleguide and about page)
+
+### Styles:
+SCSS is now (where possible) moved to a component level and scoped ([thanks to Astro](https://docs.astro.build/guides/styling/))
+
+All cross-site styles are located in `src/shared-styles/`

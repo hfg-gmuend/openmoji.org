@@ -1,0 +1,118 @@
+---
+import GetEmojiDropdown from '../GetEmojiDropdown/GetEmojiDropdown.astro';
+import Search from '../Search/Search.astro';
+import openMojiLogo from './logo-openmoji-1F64B.svg';
+import githubLogo from './logo-github.svg';
+import twitterLogo from './logo-twitter.svg';
+import menuIcon from './icon-menu.svg';
+import menuCloseIcon from './icon-menu-close.svg';
+
+const {showSearch} = Astro.props;
+const color = Astro.props.color || 'default';
+const {selected} = Astro.props;
+const {borderBottom} = Astro.props;
+
+let currentPage = String(Astro.request.url);
+currentPage = currentPage.replace('//','');
+currentPage = currentPage.split('/');
+currentPage.shift();
+currentPage = '/' + currentPage.join('/');
+
+
+const menuItems = [
+  {
+    "text": "OpenMoji",
+    "href": "/"
+  },
+  {
+    "text": "Library",
+    "href": "/library"
+  },
+  {
+    "text": "Participate",
+    "href": "/styleguide"
+  },
+  {
+    "text": "Samples",
+    "href": "/samples"
+  },
+  {
+    "text": "FAQ",
+    "href": "/faq"
+  },
+  {
+    "text": "About",
+    "href": "/about"
+  }
+]
+
+let currentlyActive = 'OpenMoji'
+for(let index in menuItems){
+  if(currentPage === menuItems[index].href){
+    currentlyActive = menuItems[index].text;
+    break;
+  }
+}
+---
+<header class={borderBottom === true ? "page-header borderBottom" : "page-header"}>
+  <style lang="scss">
+    @use '_header.scss';
+  </style>
+  <a class="project-name" href="/">
+    <h1 class="visuallyHeadline2">
+      <img src={openMojiLogo} style="padding-right: 5px; margin-bottom: -3px" width="40px" height="auto">
+      {currentlyActive}
+    </h1>
+  </a>
+  <nav class="menu">
+    <ul>
+      {menuItems.map((menuItem) => 
+        currentPage === menuItem.href ? (<li class={'active-tab ' + color}><a class="standardLink" href={menuItem.href}>{menuItem.text}</a></li>) : (<li><a class="standardLink" href={menuItem.href}>{menuItem.text}</a></li>)
+      )}
+    </ul>
+    <div class="social-link">
+      <a
+        class="gh-link iconlink"
+        rel="noopener"
+        href="https://github.com/hfg-gmuend/openmoji"
+        target="_blank">
+        <img src={githubLogo} class="social-icon" alt="GitHub logo"/>
+      </a>
+      <a
+        class="iconlink"
+        rel="noopener"
+        href="https://twitter.com/OpenMoji"
+        target="_blank">
+        <img src={twitterLogo} class="social-icon" alt="Twitter logo"/>
+      </a>
+    </div>
+  </nav>
+  <div class="actions">
+    {
+      showSearch ? (<Search theme="forHeader" placeholder="desc, emoji, hexcode …"/>) : null
+    }
+    <button class="mobile-toggle">
+      <img id="openMenuIcon" src={menuIcon} alt="Open menu"/>
+      <img id="closeMenuIcon" class="hidden" src={menuCloseIcon} alt="Close menu"/>
+    </button>
+    <div class="action-links">
+      <a
+        class="gh-link iconlink"
+        rel="noopener"
+        href="https://github.com/hfg-gmuend/openmoji"
+        target="_blank">
+        <img src={githubLogo} class="social-icon" alt="GitHub logo"/>
+      </a>
+      <a
+        class="iconlink"
+        rel="noopener"
+        href="https://twitter.com/OpenMoji"
+        target="_blank">
+        <img src={twitterLogo} class="social-icon" alt="Twitter logo" />
+      </a>
+      <GetEmojiDropdown color={color}/>
+    </div>
+  </div>
+</header>
+<script type="text/javascript" src="/js-code/mobile-menu.js"></script>
+<div class="contentPusher"></div>

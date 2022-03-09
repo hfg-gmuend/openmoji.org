@@ -1,0 +1,108 @@
+@use 'sass:math';
+@use 'src/shared-styles/_variables.scss';
+
+button {
+  min-height: 40px;
+  min-width: 200px;
+  &.default, &.blue{ background: variables.$color-blue-dark; }
+  &.orange{ background: variables.$color-orange-dark; }
+  &.yellow{ background: variables.$color-yellow-light; }
+  &.red{ background: variables.$color-red-light; }
+  &.grey{ background: variables.$color-grey-500; }
+  &.violet{ background: variables.$color-violet-dark; }
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  border-color: variables.$color-white;
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 2px;
+
+  &.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+}
+
+div + div {
+  margin-left: variables.$gap-sm;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 9999;
+  margin-left: variables.$gap-sm;
+
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
+
+  // modifiers
+  &--align-left {
+    .dropdown-content {
+      left: 0;
+      right: unset;
+    }
+  }
+
+  &--dense {
+    li {
+      padding: math.div((40px - variables.$text-md), 4) variables.$gap-sm * 0.75 !important;
+    }
+  }
+}
+
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  display: none;
+  min-width: 100%;
+}
+
+.list-wrapper {
+  display: flex;
+  margin-top: variables.$gap-sm;
+  background: #ffffff;
+  box-shadow: 0 1px 15px 0 rgba(163, 161, 173, 0.5);
+  border-radius: 8px;
+  padding: 8px 0;
+  white-space: nowrap;
+
+  ul {
+    display: block;
+
+    li {
+      margin: 0;
+      padding: math.div((40px - variables.$text-md), 2) variables.$gap-sm;
+      height: auto;
+
+      > * {
+        font-size: variables.$text-md;
+      }
+    }
+  }
+}
+
+.disclaimer {
+  font-size: variables.$text-sm;
+  color: variables.$color-grey-400;
+  margin-top: variables.$gap-2xs;
+
+  a {
+    color: variables.$color-grey-400 !important;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.dropdown--light-shadow .dropdown-content ul {
+  box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
+}

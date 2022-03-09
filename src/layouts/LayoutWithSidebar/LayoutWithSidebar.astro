@@ -1,0 +1,52 @@
+---
+import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
+import Header from '@/components/shared/Header/Header.astro';
+import Footer from '@/components/shared/Footer/Footer.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
+const {content} = Astro.props;
+const title = (content.title || '') + ' · OpenMoji';
+const headers = Astro.props.content.astro.headers || [];
+const {sidebarFilter} = content || false;
+const {color} = content || 'orange';
+const contentWidth = content.content || 'defaultWidth';
+let showOnlyHeadlinesWithDepth = false;
+if(sidebarFilter !== false){
+  showOnlyHeadlinesWithDepth = [2, 3];
+}
+console.log('Rendering markdown page', title);
+---
+<html lang="en">
+  <head>
+    <MetaHeadContent title={title}/>
+  </head>
+
+  <body>
+    <style lang="scss">
+      @use '_layoutWithSidebar.scss';
+    </style>
+    <div class="container">
+      
+      <Header color={color}/>
+      <nav class="nav-left">
+        <ul id="nav-left">
+        {
+          headers.map((headline) => {
+            const headlineDepth = headline.depth;
+
+            if(headlineDepth !== 1 && showOnlyHeadlinesWithDepth !== false && showOnlyHeadlinesWithDepth.indexOf(headlineDepth) > -1){
+              return (<li class="mainmenu"><a class="standardLink" href={'#' + headline.slug}>{headline.text}</a></li>);
+            }
+            return null
+          })
+        }
+        </ul>
+      </nav>
+      <main class={"markdownContent " + color + " " + contentWidth}>
+        <style lang="scss" global> @use '_layoutWithSidebarMarkdown.scss'; </style>
+        <slot />
+      </main>
+      <Footer/>
+    </div>
+  </body>
+  <JavascriptGlobalVariables/>
+</html>

@@ -1,0 +1,85 @@
+---
+const color = Astro.props.color || 'default';
+const zipFiles = [
+	{
+		href: "https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-svg-color.zip",
+		text: "SVG Color"
+	},
+	{
+		href: "https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-svg-black.zip",
+		text: "SVG Black"
+	},
+	{
+		href: "https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-72x72-color.zip",
+		text: "PNG Color 72×72"
+	},
+	{
+		href: "https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-72x72-black.zip",
+		text: "PNG Black 72×72"
+	},
+	{
+		href: "https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-618x618-color.zip",
+		text: "PNG Color 618×618"
+	},
+	{
+		href: "https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-618x618-black.zip",
+		text: "PNG Black 618×618"
+	}
+]
+
+const additionalLinks = [
+	{
+		href: "../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/font/OpenMoji-Black.ttf",
+		text: "OpenMoji-Black.ttf",
+		additional: "proof of concept version,<br/>some glyphs are broken,<br/>not intended for production use!"
+	},
+	{
+		href: "../php/download_asset.php?type=url&target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/font/OpenMoji-Color.ttf",
+		text: "OpenMoji-Color.ttf",
+		additional: 'beta version,<br/>works in Firefox / Edge / Adobe CC,<br/>see <a href="https://github.com/hfg-gmuend/openmoji/issues/93" target="_blank" rel="noopener">discussion</a>,<br />not intended for production use!'
+	},
+	{
+		href: "https://itunes.apple.com/us/app/openmoji/id1462636288",
+		text: "OpenMoji App",
+		additional: "for iOS"
+	},
+	{
+		href: "https://www.github.com/hfg-gmuend/openmoji/releases/latest",
+		text: "Download Source"
+	}
+]
+---
+<div class="dropdown">
+	<style lang="scss">
+	  @use '_getEmojiDropdown.scss';
+	</style>
+	<button class={"defaultButton " + color}>
+	  <div>Get OpenMojis</div>
+	  <div><i class="arrow down"></i></div>
+	</button>
+	<div class="dropdown-content">
+	  <div class="list-wrapper">
+	    <ul>
+	    	{
+	    		zipFiles.map((zip) => (
+	    			<li>
+	    				<a class="standardLink" rel="noopener" href={zip.href} download>
+	    					{zip.text}
+	    				</a>
+	    			</li>))
+	    	}
+	    </ul>
+	    <ul>
+	    	{
+	    		additionalLinks.map((link) => (
+		    		<li>
+				        <a class="standardLink" rel="noopener" href={link.href} target="_blank" download>
+				        	{link.text}
+				        </a>
+				        { link.additional ? (<div class="disclaimer">{link.additional}</div>) : null}
+				    </li>))
+	    	}
+	    </ul>
+	  </div>
+	</div>
+</div>

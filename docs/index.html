@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en"><head>
+        
+<!-- Basics -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>OpenMoji</title>
+<meta name="description" content="Open source emojis for designers, developers and everyone else!">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="alternate icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="alternate icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/site.webmanifest">
+<link rel="mask-icon" href="/favicons/favicon-black.svg" color="#000">
+<!-- <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#000000"> -->
+<!-- <link rel="shortcut icon" href="/favicons/favicon.ico"> -->
+<meta name="apple-mobile-web-app-title" content="OpenMoji">
+<meta name="application-name" content="OpenMoji">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content="favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Open Graph -->
+<meta property="og:title" content="OpenMoji">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OpenMoji">
+<meta property="og:url" content="https://openmoji.org/">
+<meta property="og:image" content="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/618x618/1F64B.png">
+<meta property="og:image:alt" content="Open source emojis for designers, developers and everyone else!">
+<meta property="og:description" content="Open source emojis for designers, developers and everyone else!">
+<meta name="apple-itunes-app" content="app-id=1462636288">
+
+<!-- Styles -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+<!-- <link rel="stylesheet" href={Astro.resolve('/src/shared-styles/global.css')}> -->
+<link rel="stylesheet" href="./assets/index.024d2fba.css"><link rel="stylesheet" href="./assets/global.a3b5d2a5.css">
+<script rel="script" src="/js-libraries/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/js-libraries/pako.min.js"></script>
+<script type="text/javascript">
+	let OPENMOJIJSON = []
+	//getOpenMojiData('/data/openmoji.json.gz')
+	getOpenMojiData('/data/openmoji.json.gz')
+
+	function getOpenMojiData(url){
+		fetch(url).then(function (response) {
+			return response.arrayBuffer()
+		})
+		.then(function (data) {
+			const array = new Uint8Array(data)
+			const decompressed = pako.inflate(array, { to: 'string' });
+			const json = JSON.parse(decompressed);
+			OPENMOJIJSON = json;
+			$(document).trigger('openmojiJsonLoaded')
+		})
+		.catch(function(err) {
+			console.error('Error loading data')
+		});
+	}
+</script>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+</head>
+    <body>
+        <header class="page-header borderBottom astro-SVYA2PP6">
+  
+  <a class="project-name astro-SVYA2PP6" href="/">
+    <h1 class="visuallyHeadline2 astro-SVYA2PP6">
+      <img src="./assets/logo-openmoji-1F64B.2c7bf38f.svg" style="padding-right: 5px; margin-bottom: -3px" width="40px" height="auto" class="astro-SVYA2PP6">
+      OpenMoji
+    </h1>
+  </a>
+  <nav class="menu astro-SVYA2PP6">
+    <ul class="astro-SVYA2PP6">
+      <li class="active-tab default astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/">OpenMoji</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/library">Library</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/styleguide">Participate</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/samples">Samples</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/faq">FAQ</a></li><li class="astro-SVYA2PP6"><a class="standardLink astro-SVYA2PP6" href="/about">About</a></li>
+    </ul>
+    <div class="social-link astro-SVYA2PP6">
+      <a class="gh-link iconlink astro-SVYA2PP6" rel="noopener" href="https://github.com/hfg-gmuend/openmoji" target="_blank">
+        <img src="./assets/logo-github.a1fdb524.svg" class="social-icon astro-SVYA2PP6" alt="GitHub logo">
+      </a>
+      <a class="iconlink astro-SVYA2PP6" rel="noopener" href="https://twitter.com/OpenMoji" target="_blank">
+        <img src="./assets/logo-twitter.d7535dc4.svg" class="social-icon astro-SVYA2PP6" alt="Twitter logo">
+      </a>
+    </div>
+  </nav>
+  <div class="actions astro-SVYA2PP6">
+    
+    <button class="mobile-toggle astro-SVYA2PP6">
+      <img id="openMenuIcon" src="./assets/icon-menu.c8d9d32d.svg" alt="Open menu" class="astro-SVYA2PP6">
+      <img id="closeMenuIcon" class="hidden astro-SVYA2PP6" src="./assets/icon-menu-close.cfd7ca54.svg" alt="Close menu">
+    </button>
+    <div class="action-links astro-SVYA2PP6">
+      <a class="gh-link iconlink astro-SVYA2PP6" rel="noopener" href="https://github.com/hfg-gmuend/openmoji" target="_blank">
+        <img src="./assets/logo-github.a1fdb524.svg" class="social-icon astro-SVYA2PP6" alt="GitHub logo">
+      </a>
+      <a class="iconlink astro-SVYA2PP6" rel="noopener" href="https://twitter.com/OpenMoji" target="_blank">
+        <img src="./assets/logo-twitter.d7535dc4.svg" class="social-icon astro-SVYA2PP6" alt="Twitter logo">
+      </a>
+      <div class="dropdown astro-WWPCS7GW">
+	
+	<button class="defaultButton default astro-WWPCS7GW">
+	  <div class="astro-WWPCS7GW">Get OpenMojis</div>
+	  <div class="astro-WWPCS7GW"><i class="arrow down astro-WWPCS7GW"></i></div>
+	</button>
+	<div class="dropdown-content astro-WWPCS7GW">
+	  <div class="list-wrapper astro-WWPCS7GW">
+	    <ul class="astro-WWPCS7GW">
+	    	<li class="astro-WWPCS7GW">
+	    				<a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-svg-color.zip" download="">
+	    					SVG Color
+	    				</a>
+	    			</li><li class="astro-WWPCS7GW">
+	    				<a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-svg-black.zip" download="">
+	    					SVG Black
+	    				</a>
+	    			</li><li class="astro-WWPCS7GW">
+	    				<a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-72x72-color.zip" download="">
+	    					PNG Color 72×72
+	    				</a>
+	    			</li><li class="astro-WWPCS7GW">
+	    				<a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-72x72-black.zip" download="">
+	    					PNG Black 72×72
+	    				</a>
+	    			</li><li class="astro-WWPCS7GW">
+	    				<a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-618x618-color.zip" download="">
+	    					PNG Color 618×618
+	    				</a>
+	    			</li><li class="astro-WWPCS7GW">
+	    				<a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://github.com/hfg-gmuend/openmoji/releases/latest/download/openmoji-618x618-black.zip" download="">
+	    					PNG Black 618×618
+	    				</a>
+	    			</li>
+	    </ul>
+	    <ul class="astro-WWPCS7GW">
+	    	<li class="astro-WWPCS7GW">
+				        <a class="standardLink astro-WWPCS7GW" rel="noopener" href="../php/download_asset.php?type=url&amp;target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/font/OpenMoji-Black.ttf" target="_blank" download="">
+				        	OpenMoji-Black.ttf
+				        </a>
+				        <div class="disclaimer astro-WWPCS7GW">proof of concept version,<br>some glyphs are broken,<br>not intended for production use!</div>
+				    </li><li class="astro-WWPCS7GW">
+				        <a class="standardLink astro-WWPCS7GW" rel="noopener" href="../php/download_asset.php?type=url&amp;target_url=https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/font/OpenMoji-Color.ttf" target="_blank" download="">
+				        	OpenMoji-Color.ttf
+				        </a>
+				        <div class="disclaimer astro-WWPCS7GW">beta version,<br>works in Firefox / Edge / Adobe CC,<br>see <a href="https://github.com/hfg-gmuend/openmoji/issues/93" target="_blank" rel="noopener">discussion</a>,<br>not intended for production use!</div>
+				    </li><li class="astro-WWPCS7GW">
+				        <a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://itunes.apple.com/us/app/openmoji/id1462636288" target="_blank" download="">
+				        	OpenMoji App
+				        </a>
+				        <div class="disclaimer astro-WWPCS7GW">for iOS</div>
+				    </li><li class="astro-WWPCS7GW">
+				        <a class="standardLink astro-WWPCS7GW" rel="noopener" href="https://www.github.com/hfg-gmuend/openmoji/releases/latest" target="_blank" download="">
+				        	Download Source
+				        </a>
+				        
+				    </li>
+	    </ul>
+	  </div>
+	</div>
+</div>
+    </div>
+  </div>
+</header>
+<script type="text/javascript" src="/js-code/mobile-menu.js"></script>
+<div class="contentPusher astro-SVYA2PP6"></div>
+        <main>
+            
+<div class="wrapper astro-2XJLJ4R5">
+  
+  
+  <div class="emojiCloudWrapper astro-2XJLJ4R5">
+    <div class="content astro-2XJLJ4R5">
+      <div id="emojiCloud" class="astro-2XJLJ4R5">
+        <!-- Emoji will be dynamically added by emoji-cloud.js -->
+      </div>
+    </div>
+  </div>
+  <div class="content astro-2XJLJ4R5">
+    <h1 class="astro-2XJLJ4R5">OpenMoji <span id="emoji-version" class="version astro-2XJLJ4R5">13.1.0</span></h1>
+    <h2 class="astro-2XJLJ4R5">Open source emojis for designers, developers and everyone else!</h2>
+    <div id="search-element" class="emoji-search forHero astro-ZQGR4XAA">
+	
+		<img src="./assets/search.34600de8.svg" alt="search icon" class="astro-ZQGR4XAA">
+		<label class="hidden astro-ZQGR4XAA" for="emojisearch">Search</label>
+		<input aria-label="Search" type="text" class="search astro-ZQGR4XAA" id="emojisearch" placeholder="Search emoji …">
+		<div class="resultsWrapperWrapper astro-ZQGR4XAA">
+		<div id="search-results-wrapper" class="resultsWrapper hidden astro-ZQGR4XAA">
+			<ol id="search-results" class="astro-ZQGR4XAA">
+				<!-- Search results will be put here -->	
+				<a class="searchResult astro-ZQGR4XAA"></a>
+			</ol>
+		</div>
+	</div>
+	<script rel="script" src="/js-libraries/fuse.min.js"></script>
+	<script type="text/javascript" src="/js-code/emoji-search.js"></script>
+</div>
+  </div>
+  <script type="text/javascript" src="/js-code/emoji-cloud.js"></script>
+</div>
+            <div class="wrapper astro-CV3S4ZIB">
+  
+  <div class="content-wrapper astro-CV3S4ZIB">
+    <div class="content astro-CV3S4ZIB">
+      <h1 class="visuallyHeadline1 astro-CV3S4ZIB">
+        <span style="color:#5EB0CF" class="astro-CV3S4ZIB">OpenMoji</span> is an open source project of 60+ students and 3 professors of the HfG Schwäbisch Gmünd and 20+ external contributors
+      </h1>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="Free to use" src="data/color/svg/1F64F.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">Free to use</h3>
+          <p class="astro-CV3S4ZIB">All emojis are free to use under the CC BY-SA 4.0 license</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="3150+ Emojis" src="data/color/svg/1F3C6.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">3914 Emojis</h3>
+          <p class="astro-CV3S4ZIB">So far more than three thousand emojis over many categories have been designed</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="Emoji Version" src="data/color/svg/2705.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">Emoji v13.1</h3>
+          <p class="astro-CV3S4ZIB">OpenMoji carefully supports the Unicode Emoji standard</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="Consistent" src="data/color/svg/26D3.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">Consistent</h3>
+          <p class="astro-CV3S4ZIB">All emojis follow a single style guide and fit perfectly together</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="Colored/Outlined" src="data/color/svg/1F58C.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">Colored/Outlined</h3>
+          <p class="astro-CV3S4ZIB">Supporting a wide range of use cases with colored and outlined emojis</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="Skintones" src="data/color/svg/1F9D1-1F3FE-200D-1F91D-200D-1F9D1-1F3FB.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">Skintones</h3>
+          <p class="astro-CV3S4ZIB">OpenMoji supports the Fitzpatrick skin tones scale and multiple skin tone combinations</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="269 flags" src="data/color/svg/1F3F3-FE0F-200D-1F308.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">269 Flags</h3>
+          <p class="astro-CV3S4ZIB">From Andorra to Zimbabwe to Pirates</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="Special Interest Categories" src="data/color/svg/E188.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">Special Interest Categories</h3>
+          <p class="astro-CV3S4ZIB">OpenMoji ships with various special interest categories beyond standard unicode</p>
+        </div>
+      </div>
+      <div class="content-item astro-CV3S4ZIB">
+        <img alt="Handcrafted" src="data/color/svg/1F6E0.svg" class="astro-CV3S4ZIB">
+        <div class="description astro-CV3S4ZIB">
+          <h3 class="astro-CV3S4ZIB">Handcrafted</h3>
+          <p class="astro-CV3S4ZIB">All emojis have been carefully designed, tested and reviewed over many iterations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="wrapper astro-C3VT6PKM">
+  
+  <div class="content-wrapper astro-C3VT6PKM">
+    <iframe src="https://player.vimeo.com/video/336126508" title="emoji video in vimeo player" width="“100%”" height="“100%”" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="" class="astro-C3VT6PKM"></iframe>
+  </div>
+</div>
+            <div id="categories-showcase" class="wrapper astro-35UDLYPU">
+  
+  <div class="content-wrapper astro-35UDLYPU">
+    <h1 class="visuallyHeadline1 astro-35UDLYPU">Special Interest Categories for Technologies and Design</h1>
+    <div class="buttonWrapper astro-35UDLYPU">
+      <a class="defaultButton xl inlineBlock mx-auto astro-35UDLYPU" href="./library/#group=extras-openmoji">
+        Explore
+      </a>
+    </div>
+    <div id="categoriesAndExamples" class="content astro-35UDLYPU">
+      
+      <div id="categories" class="astro-35UDLYPU">
+        <!-- Content is dynamically added by categories-showcase.js -->
+      </div>
+      <div id="examples" class="astro-35UDLYPU">
+        <!-- Content is dynamically added by categories-showcase.js -->
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js-code/categories-showcase.js"></script>
+</div>
+            <div class="wrapper astro-J7QHKU5G">
+  
+  <div class="content-wrapper astro-J7QHKU5G">
+    <div id="interest" class="astro-J7QHKU5G">
+      <h1 class="visuallyHeadline1 astro-J7QHKU5G">Interested?</h1>
+      <div class="buttongroup astro-J7QHKU5G">
+        <a href="./styleguide" class="defaultButton large light astro-J7QHKU5G">
+            <img alt="Participate &amp; Contribute" class="big-emoji-right astro-J7QHKU5G" src="data/color/svg/1F449.svg">
+            <div class="astro-J7QHKU5G">Participate &amp; Contribute</div>
+        </a>
+        <a href="./library" class="defaultButton large light astro-J7QHKU5G">
+          <img alt="Explore Collection" class="big-emoji-right astro-J7QHKU5G" src="data/color/svg/1F449.svg">
+          <div class="astro-J7QHKU5G">Explore Collection</div>
+        </a>
+      </div>
+      <h1 class="visuallyHeadline1 astro-J7QHKU5G">Or try OpenMoji on your phone</h1>
+      <a rel="noopener" href="https://itunes.apple.com/us/app/openmoji/id1462636288" class="astro-J7QHKU5G"><img alt="Apple App Store" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" class="astro-J7QHKU5G"></a>
+    </div>
+  </div>
+</div>
+        </main>
+        <footer class="blue astro-6M53DM6Y">
+  
+  <div class="astro-6M53DM6Y">
+    <p class="astro-6M53DM6Y">
+      <a id="impressumLink" href="/imprint" class="astro-6M53DM6Y">Imprint</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/." class="astro-6M53DM6Y">CC BY-SA 4.0</a>
+    </p>
+  </div>
+  <!-- <ul>
+    <li>
+      <a class="iconlink" rel="noopener"
+        href="https://www.facebook.com/sharer.php?u=https://www.github.com/hfg-gmuend/openmoji/releases/latest">
+        <img alt="Facebook logo" src={style === 'outline' ? facebookLogoOutline : facebookLogoColor} target="_blank">
+      </a>
+    </li>
+    <li>
+      <a class="iconlink" rel="noopener"
+        href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+          <img alt="Pinterest logo" src={style === 'outline' ? pinterestLogoOutline : pinterestLogoColor} target="_blank">
+      </a>
+    </li>
+  </ul> -->
+</footer>
+    </body></html>

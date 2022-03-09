@@ -1,0 +1,39 @@
+---
+import EmojiGridItem from '../EmojiGridItem/EmojiGridItem.astro';
+import EmojiGridItem from '../EmojiGridItem/EmojiGridItem.astro';
+import openmojiJsonUtil from '../../../util/openmojiJsonUtil'
+import generalUtil from '../../../util/generalUtil'
+import FilterAndSort from '../FilterAndSort/FilterAndSort.astro';
+
+const filteredEmojies = openmojiJsonUtil.getUniqueEmojis();
+const skinToneVariations = openmojiJsonUtil.getSkintoneVariationsForEachEmoji();
+
+const orderByAnnotation = generalUtil.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'annotation');
+const orderByDate = generalUtil.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'openmoji_date', true);
+const orderByUnicode = generalUtil.getListBasedOnObjectSortedByCertainKey(filteredEmojies, 'order');
+---
+<div class="emoji_grid_wrapper">
+  <style lang="scss">
+    @use '_emojiGrid.scss';
+  </style>
+  <FilterAndSort/>
+  <div id="emoji_grid" class="emoji_grid">
+    {orderByUnicode.map((emojiHex, index) => {
+        const emojiData = filteredEmojies[emojiHex]
+        /* We don't lazload the first emojis so they render while the rest of the dom is processed */
+        const lazyLoad = index >= 30;
+        return (<EmojiGridItem
+          description={emojiData.annotation}
+          hexcode={emojiData.hexcode}
+          group={emojiData.group}
+          author={emojiData.openmoji_author}
+          lazyload={lazyLoad}
+          subgroups={emojiData.subgroups}
+          skintones={skinToneVariations[emojiData.hexcode].skintones}
+          indexByAlphabeticalOrder={orderByAnnotation.indexOf(emojiData.hexcode)}
+          indexByDateOrder={orderByDate.indexOf(emojiData.hexcode)}
+          multiSkintones={skinToneVariations[emojiData.hexcode].skintone_combinations}
+          />)    
+    })}
+  </div>  
+</div>

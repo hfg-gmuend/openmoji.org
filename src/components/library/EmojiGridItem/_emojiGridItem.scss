@@ -1,0 +1,147 @@
+@use 'src/shared-styles/_variables.scss';
+
+.emoji_single a{
+  text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.shortcuts{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.7);
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition-duration: transform 0.001s;
+  transition-delay: 50ms;
+  pointer-events: none;
+}
+
+.shortcutsContent{
+  margin: auto;
+}
+
+.emoji_single:hover .shortcuts{
+  top: 0;
+}
+
+.emojiDetails, .buttonAction{
+  pointer-events: auto;
+  background: variables.$color-red-light;
+  color: white;
+  border-radius: 10px;
+  padding: 12px 6px 12px 6px;
+  text-decoration: none;
+}
+
+.emojiDetails{
+  margin: 4px 4px 8px 4px;
+  display: block; 
+}
+
+.downloadButtons{
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.buttonAction{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 4px;
+  margin-left: 4px;
+  width: 100%;
+  img{
+    width: 40px;
+  }
+}
+
+.buttonAction:hover, .emojiDetails:hover{
+  background: variables.$color-red-dark;
+}
+
+
+.emoji_single:hover{
+  background-color: variables.$color-grey-70;
+}
+
+.emoji_single {
+  position: relative;
+  margin-right: variables.$gap-sm;
+  margin-left: variables.$gap-sm;
+  margin-bottom: variables.$gap-sm;
+  border-radius: 6px;
+  min-width: 150px;
+  max-width: 150px;
+  transition: all 0.3;
+  cursor: pointer;
+  overflow: hidden;
+  padding-bottom: variables.$gap-xs;
+
+  .hidden{
+    display: none;
+  }
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    min-width: unset;
+    max-width: unset;
+    margin-right: 0;
+    margin-left: 0;
+    width: 33.33%;
+  }
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    min-width: unset;
+    max-width: unset;
+    margin-right: 0;
+    margin-left: 0;
+    width: 50%;
+  }
+
+  h3 {
+    transition: all 0.3;
+    // white-space: nowrap;
+    line-break: auto;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    text-align: center;
+    margin-bottom: 2px;
+    font-size: variables.$text-md;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: variables.$text-sm;
+    text-align: center;
+  }
+
+  .emoji-container {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: variables.$gap-xs;
+
+    img {
+      margin: auto;
+      width: 100%;
+      height: auto;
+    }
+
+    & + div {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}

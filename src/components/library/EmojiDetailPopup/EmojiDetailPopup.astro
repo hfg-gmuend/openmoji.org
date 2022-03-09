@@ -1,0 +1,194 @@
+---
+import iconArrowTo from './icon-arrow-to.svg';
+import iconArrowFrom from './icon-arrow-from.svg';
+import spinner from './spinner.gif';
+---
+<div id="emoji-detail-wrapper">
+  <style lang="scss" global>
+    @use 'src/shared-styles/_variables.scss';
+    #emoji-preview{
+      .circle {
+          box-sizing: border-box;
+          position: relative;
+          width: 25px;
+          height: 25px;
+          flex-basis: 25px;
+          border-radius: 50%;
+          border: 2px solid rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+
+          &.highlight::after {
+            content: "";
+            position: absolute;
+            top: 25%;
+            right: 25%;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: variables.$color-white;
+            box-shadow: 0 1px 5px 0 rgba(163, 161, 173, 0.5);
+          }
+        }
+
+        .circle + .circle {
+          margin-left: 5px;
+        }
+
+        #outline-emoji-preview {
+          background-color: variables.$color-grey-70;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 65%;
+            margin-top: -1px;
+            margin-left: calc(-30% - 1px);
+            border: 1px solid variables.$color-grey-500;
+            transform: rotate3d(0, 0, 1, -45deg);
+          }
+        }
+
+        #color-emoji-preview {
+          background-color: variables.$color-fitzpatrick-default;
+        }
+
+        .skintone-selector {
+          display: inline-flex;
+          align-items: center;
+          margin-top: 5px;
+          margin-bottom: 5px;
+
+          .circle:first-child {
+            margin-left: 7.5px;
+          }
+
+          &::before {
+            content: "";
+            height: 15px;
+            margin-left: 7.5px;
+            border-left: 1px solid variables.$color-grey-300;
+          }
+
+          &:empty::before {
+            display: none;
+          }
+        }
+
+        .emoji-preview-image {
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+  </style>
+  <style lang="scss">
+    @use '_emojiDetailPopup.scss';
+  </style>
+  <div class="popover-wrapper" style="display: none;">
+    <div class="popover">
+      <div id="preview">
+        <!-- <div id="prev-icon"><- -->
+        <!-- </div>     -->
+        <div id="active-emoji-selection">
+          <!--Set main rmoji-->
+          <img id="main-emoji-image" class="lazy" data-src="" data-ll-status="observed">
+          <div class="small-emoji-preview">
+            <div class="next-or-prev prev-emoji" id="">
+              <img class="arrow" src={iconArrowFrom}>
+              <img class="icon-img lazy" data-src="" data-ll-status="observed">
+            </div>
+            <div id="emoji-preview">
+              <div id="outline-emoji-preview" class="circle hidden"></div>
+              <div id="color-emoji-preview" class="circle hidden"></div>
+
+              <img id="outline-emoji-image-preview" class="emoji-preview-image lazy" data-src="" data-ll-status="observed">
+              <img id="color-emoji-image-preview" class="emoji-preview-image lazy" data-src="" data-ll-status="observed">
+
+              <div id="skintones-emoji-preview">
+                <div class="skintone-selector">
+                  <div class="circle" data-skintone_id="1" style="background-color: #fadcbc;"></div>
+                  <div class="circle" data-skintone_id="2" style="background-color: #debb90;"></div>
+                  <div class="circle" data-skintone_id="3" style="background-color: #c19a65;"></div>
+                  <div class="circle" data-skintone_id="4" style="background-color: #a57939;"></div>
+                  <div class="circle" data-skintone_id="5" style="background-color: #6a462f;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="next-or-prev next-emoji" id="">
+              <img class="icon-img lazy" data-src="" data-ll-status="observed">
+              <img class="arrow" src={iconArrowTo}>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="description">
+        <div class="description-top">
+          <div class="path">
+            <a href="/library">all OpenMojis</a> / <a href="" onclick="closePopupAndTriggerUpdate()">groupName</a> / <a href="" onclick="closePopupAndTriggerUpdate()">subGroupName</a>
+          </div>
+          <div class="close" onclick="closeEmojiDetails()" id="close-detailview">
+            <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-2-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                <g id="Detail-iconpreview-big-1" transform="translate(-1341.000000, -120.000000)" stroke="#E95A47" stroke-width="3">
+                  <g id="X-1" transform="translate(1342.000000, 121.000000)">
+                    <path d="M13.5,0.5 L0.990003997,13.009996 L13.5,0.5 Z" id="Line-1"></path>
+                    <path d="M13.5,13.5 L0.990003997,0.990003997 L13.5,13.5 Z" id="Line-2"></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <!-- details zu den icons-->
+        <div class="description-bottom">
+          <h2>Skier</h2>
+          <a class="emojipedia emojipedia-link" id="emojipedia-link" rel="noopener" href="https://emojipedia.org/" target="_blank">Emojipedia Description</a>
+          <p class="emojipedia" id="emojipedia-description"><img src={spinner} width="16" height="16">
+          </p>
+          <a class="emojipedia emojipedia-link" rel="noopener" href="https://emojipedia.org/" target="_blank">[read more]</a>
+          <table>
+            <tbody><tr>
+              <td>Unicode</td>
+              <td><a id="unicode" class="redlink" rel="noopener" href="https://www.decodeunicode.org/en/u+26F7" target="_blank">26F7</a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td id="combination">combination links</td>
+            </tr>
+            <tr>
+              <td>Author</td>
+              <td><a id="author" class="redlink" onclick="closePopupAndTriggerUpdate()" href="">Name Ofauthor</a></td>
+            </tr>
+            <tr>
+              <td>Category</td>
+              <td><a id="category" class="redlink" onclick="closePopupAndTriggerUpdate()" href="">Name Ofauthor</a></td>
+            </tr>
+            <tr>
+              <td>Subcategory</td>
+              <td><a id="subcategory" class="redlink" onclick="closePopupAndTriggerUpdate()" href="">Name Ofauthor</a></td>
+            </tr>
+          </tbody></table>
+          <div id="buttoncontainer">
+            <a id="svg-download-btn" class="linkButton" href="" download="">
+              <span>SVG</span>
+            </a>
+            <a id="png-download-btn" class="linkButton" href="" download="">
+              <span>PNG</span>
+            </a>
+          </div>
+        </div>
+        <!-- <h4 id="sharetitle"> share </h4> -->
+        <!-- <div id="shareitems">
+            <ul>
+                <li><a class = "iconlink" href=""><img src="../img/brand-icons/facebook.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="../img/brand-icons/instagram.svg"></a></li>
+                <li><a class = "iconlink" href=""><img src="../img/brand-icons/twitter.svg"></a></li>
+            </ul>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js-code/emoji-details-popup.js"></script>
+</div>

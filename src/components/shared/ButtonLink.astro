@@ -1,0 +1,7 @@
+---
+const {href} = Astro.props;
+const color = Astro.props.color || 'orange';
+---
+<div>
+	<a href={href} target="_blank" class={"defaultButton larger forMarkdown " + color}><slot/></a>
+</div>

@@ -1,0 +1,22 @@
+@use 'src/shared-styles/_variables.scss';
+
+.team{
+  overflow: hidden;
+}
+
+.container {
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-flex-wrap: wrap;
+  /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -#{variables.$gap-lg};
+  margin-bottom: -#{variables.$gap-md};
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-bottom: 0;
+  }
+}

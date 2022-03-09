@@ -1,0 +1,82 @@
+@use 'src/shared-styles/_variables.scss';
+
+.teammember {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: variables.$gap-md;
+  margin-right: variables.$gap-lg;
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    padding: 10px;
+    width: 33.33%;
+    margin-bottom: variables.$gap-normal;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    width: 50%;
+  }
+
+  div {
+    width: 100%;
+    margin: auto;
+    padding-bottom: variables.$gap-xs;
+
+    img {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      min-width: unset;
+      max-width: unset;
+    }
+  }
+
+  h3{
+    margin: 0;
+    font-size: 17px;
+    padding-bottom: variables.$gap-xs;
+  }
+
+  ul {
+    padding-left: 0;
+    padding-top: variables.$gap-sm;
+
+    li {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: variables.$gap-xs;
+    }
+  }
+
+  .team {
+    flex: 1;
+
+    p {
+      margin-bottom: 0;
+      font-size: variables.$text-sm;
+    }
+  }
+}
+
+.iconlink {
+  opacity: 0.8;
+  width: 100%;
+  height: 100%; 
+  display: block;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  > img {
+    display: block;
+    height: 100%;
+    margin: 0;
+    min-width: unset;
+    max-width: unset;
+  }
+}

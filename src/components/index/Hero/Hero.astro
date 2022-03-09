@@ -1,0 +1,51 @@
+---
+import Search from '@/components/shared/Search/Search.astro';
+import openmojiJsonUtil from '../../../util/openmojiJsonUtil'
+
+const openMojiVersion = openmojiJsonUtil.getOpenMojiVersion();
+---
+
+<div class="wrapper">
+  <style lang="scss">
+    @use '_hero.scss';
+  </style>
+  <style lang="scss" global>
+    @use 'src/shared-styles/_variables.scss';
+    .emojiCloudWrapper{
+      position: absolute;
+      display: inline-block;
+    }
+    .emoji {
+      position: relative;
+      width: variables.$emoji-size;
+      height: variables.$emoji-size;
+      margin-left: - #{variables.$emoji-size} / 2;
+      margin-top: - #{variables.$emoji-size} / 2;
+      border-radius: variables.$border-radius;
+
+      @media screen and (max-width: variables.$breakpoint-sm) {
+        width: variables.$emoji-size-sm;
+        height: variables.$emoji-size-sm;
+        margin-left: -#{variables.$emoji-size-sm} / 2;
+        margin-top: -#{variables.$emoji-size-sm} / 2;
+      }
+    }
+
+    .emoji:hover{
+      background-color: variables.$color-grey-70;
+    }
+  </style>
+  <div class="emojiCloudWrapper">
+    <div class="content">
+      <div id="emojiCloud">
+        <!-- Emoji will be dynamically added by emoji-cloud.js -->
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <h1>OpenMoji <span id="emoji-version" class="version">{openMojiVersion}</span></h1>
+    <h2>Open source emojis for designers, developers and everyone else!</h2>
+    <Search theme="forHero" placeholder="Search emoji …"/>
+  </div>
+  <script type="text/javascript" src="/js-code/emoji-cloud.js"></script>
+</div>

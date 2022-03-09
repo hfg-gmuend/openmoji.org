@@ -1,0 +1,55 @@
+---
+import Header from '@/components/shared/Header/Header.astro';
+import Footer from '@/components/shared/Footer/Footer.astro';
+import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
+import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
+import EmojiDetail from '@/components/library/EmojiDetail/EmojiDetail.astro';
+import openmojiJsonUtil from '../../util/openmojiJsonUtil'
+import generalUtil from '../../util/generalUtil'
+import emojipediaUtil from '../../util/emojipediaUtil'
+
+const openmoji = Astro.props.openMojiData
+const {skintoneVariations} = Astro.props
+const {skintoneCombinations} = Astro.props
+const {emojiPedia} = Astro.props
+
+export async function getStaticPaths() {
+  const uniqueEmojis = openmojiJsonUtil.getUniqueEmojis();
+  const allSkintoneVariations = openmojiJsonUtil.getSkintoneVariationsForEachEmoji();
+  const allSkintoneCombinations = openmojiJsonUtil.clusterSkintoneVariationsBySkinIdForAllEmojis(uniqueEmojis);
+  const emojipediaDescriptions = emojipediaUtil.getDescriptionForAllEmoji()
+  const orderByUnicode = generalUtil.getListBasedOnObjectSortedByCertainKey(uniqueEmojis, 'order');
+
+  let emojiPages = [];
+  let limitPagesForTesting = 0; // This is set to 0 because the page generation is not working well in Astro yet (https://github.com/withastro/astro/issues/1711) and will be fixed when it does
+  for(let index in orderByUnicode){
+    if(!isNaN(limitPagesForTesting) && index >= limitPagesForTesting){
+      break;
+    }
+    const hex = orderByUnicode[index];
+    const emojiData = uniqueEmojis[hex];
+    
+    emojiPages.push({
+      params: { emoji: 'emoji-' + emojiData.hexcode},
+      props: {
+        openMojiData: emojiData,
+        skintoneVariations: allSkintoneVariations[emojiData.hexcode],
+        skintoneCombinations: allSkintoneCombinations[emojiData.hexcode],
+        emojiPedia: emojipediaDescriptions[emojiData.hexcode] || undefined
+      }
+    })
+  }
+  return emojiPages;
+}
+---
+<html lang="en">
+  <head>
+      <MetaHeadContent title={openmoji.emoji + " · OpenMoji"} titleOG={openmoji.emoji}/>
+  </head>
+  <body>
+    <Header color="red"/>
+    <EmojiDetail openMojiData={openmoji} skintoneVariations={skintoneVariations} skintoneCombinations={skintoneCombinations} emojiPedia={emojiPedia}/>
+  </body>
+  <Footer/>
+  <JavascriptGlobalVariables/>
+</html>

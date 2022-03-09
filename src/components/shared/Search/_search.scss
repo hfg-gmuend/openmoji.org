@@ -1,0 +1,111 @@
+@use 'src/shared-styles/_variables.scss';
+
+.emoji-search {
+  position: relative;
+
+  &.forHeader{
+    height: 40px;
+
+    img {
+      left: 0px;
+      top: 8px;
+      position: absolute;
+      height: 60%;
+      width: auto;
+      padding-right: variables.$gap-sm;
+      opacity: 0.4;
+    }
+
+    input {
+      border-radius: 999px;
+      height: 100%;
+      background: none;
+      padding-left: 33px;
+      border-radius: 20px;
+      border: solid 1px variables.$color-grey-500;
+      font-size: variables.$text-md;
+      color: variables.$color-grey-900;
+      transition: all 0.4s;
+      width: 100%;
+
+      &:focus {
+        color: variables.$color-grey-900;
+      }
+
+      &:focus+img {
+        opacity: 1;
+      }
+    }
+
+    // .emoji-search img {
+    //   left: 2px;
+    //   top: 10px;
+    //   height: 50%;
+    // }
+
+    @media screen and (min-width: variables.$breakpoint-lg) {
+      input {
+        width: 210px;
+      }
+    }
+
+    @media screen and (max-width: variables.$breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &.forHero{
+    max-width: 400px;
+    height: 60px;
+
+    img {
+      left: 0;
+      top: 12px;
+      position: absolute;
+      height: 60%;
+      width: auto;
+      padding-right: variables.$gap-sm;
+      opacity: 0.4;
+
+      @media screen and (max-width: variables.$breakpoint-sm) {
+        height: 40%;
+        top: 18px;
+        left: 8px;
+      }
+    }
+
+    input {
+      border-radius: 999px;
+      font-size: 23px;
+      background-color: variables.$background-color-grey;
+      padding-left: 55px;
+      border: none;
+      height: 100%;
+      width: 100%;
+
+      @media screen and (max-width: variables.$breakpoint-sm) {
+        font-size: variables.$text-md;
+      }
+    }
+  }
+}
+
+.resultsWrapperWrapper{
+  position: absolute;
+  z-index: 999999;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.resultsWrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: variables.$gap-xs;
+  border-radius: 4px;
+  background: white;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(232, 232, 232, 0.5);
+  box-sizing: border-box;
+}

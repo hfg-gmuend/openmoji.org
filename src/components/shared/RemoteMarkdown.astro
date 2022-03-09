@@ -1,0 +1,8 @@
+---
+import { Markdown } from 'astro/components';
+const response = await fetch(Astro.props.url);
+const remoteFaqMarkdown = await response.text();
+---
+<Markdown>
+	{remoteFaqMarkdown}
+</Markdown>

@@ -1,0 +1,84 @@
+@use 'src/shared-styles/_variables.scss';
+
+.markdownContent{
+	h1 {
+		font-size: variables.$text-xl;
+		font-weight: variables.$font-normal;
+
+		@media screen and (min-width: variables.$breakpoint-md) {
+		    font-size: variables.$text-xl;
+		  }
+	}
+
+	h2{
+		font-size: variables.$text-lg;
+		font-weight: variables.$font-bold;
+		margin-top: variables.$gap-md;
+		margin-bottom: variables.$gap-xs;
+	}
+
+	h3{
+		font-size: variables.$text-lg;
+		font-weight: normal;
+		margin-top: variables.$gap-md;
+	}
+
+	h4, h5{
+		font-size: variables.$text-md;
+		font-weight: variables.$font-bold;
+		margin-top: variables.$gap-normal;
+	}
+
+	padding-left: variables.$gap-xs;
+	padding-right: variables.$gap-xs;
+
+	video{
+		max-width: 100%;
+	}
+
+	a{
+		text-decoration: underline;
+	}
+
+	img{
+		max-width: 100%;
+	}
+
+	ul, ol, p{
+		margin-top: variables.$gap-xs;
+	}
+
+	ul {
+	    li {
+	      list-style-type: disc;
+	      margin-left: variables.$gap-sm;
+	    }
+	}
+
+	ol {
+	    li {
+	      list-style-type: decimal;
+	      margin-left: variables.$gap-sm;
+	    }
+	}
+
+	summary{
+		padding: 6px 14px 8px 14px;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+
+	summary:hover{
+		background-color: variables.$color-grey-70;
+	}
+
+	details p, details ul, details ol, details img{
+		padding: 0 20px;
+	}
+
+	details :last-child{
+		margin-bottom: variables.$gap-sm;
+	}
+
+	
+}
