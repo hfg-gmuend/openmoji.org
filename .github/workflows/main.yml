@@ -16,8 +16,8 @@ jobs:
     - name: 📂 Sync files via FTP
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: lab.stephanbogner.de
-        username: ${{ secrets.FTP_STEPHANBOGNER_USERNAME }}
-        password: ${{ secrets.FTP_STEPHANBOGNER_PASSWORD }}
+        server: openmoji.org
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./docs/
         server-dir: ./
