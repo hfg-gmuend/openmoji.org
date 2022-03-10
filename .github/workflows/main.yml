@@ -7,7 +7,7 @@ on:
 
 jobs:
   FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+    name: FTP-Deploy-Action 
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
