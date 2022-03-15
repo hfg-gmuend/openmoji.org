@@ -16,6 +16,8 @@ Developer Setup
 ### Starting:
 Run `npm start`
 
+**Note:** The gzipped openmoji.json (which is mainly responsible for the emojigrid on the home page and the search recommendations) is only loaded by the browser when using `npm start` (or on the actual server), not with `npm preview`. Assumable due to different server configurations.
+
 ### Build:
 1. Run `npm run build`
 2. The build will appear in `/docs`¹
