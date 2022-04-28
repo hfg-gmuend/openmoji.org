@@ -103,7 +103,7 @@ function getUrlParameters() {
       var currentParam = sURLVariables[i].split("=");
       sParameters[currentParam[0]] = currentParam[1];
     }
-    return sPageURL ? sParameters : undefined;
+    return sPageURL ? sParameters : {};
 }
 
 // function getUrlParameters() {
@@ -172,6 +172,7 @@ function updatePicker(skintoneId){
 
 function pickCorrectVariantAccordingToUrl(){
 	let urlParameters = getUrlParameters();
+	//console.log(urlParameters)
 	if(urlParameters.variant){
 		let skintoneId = urlParameters.variant
 		if(skintoneId !== 'black'){
