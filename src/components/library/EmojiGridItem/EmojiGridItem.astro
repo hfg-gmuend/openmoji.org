@@ -23,7 +23,7 @@ const filePathBlackAndWhitePNG = generalUtil.getFilePathEmojiImage(hexcode, 'png
   <style lang="scss">
     @use '_emojiGridItem.scss';
   </style>
-  <a onclick={"showEmojiDetails('" + hexcode + "', event)"} href="#">
+  <a class="emojiDetailsLink" href={'/library/emoji-' + hexcode}>
     <div class="emoji-container">
       {
         lazyload === false ? (
@@ -42,7 +42,7 @@ const filePathBlackAndWhitePNG = generalUtil.getFilePathEmojiImage(hexcode, 'png
   </a>
   <div class="shortcuts">
     <div class="shortcutsContent">
-      <a onclick={"showEmojiDetails('" + hexcode + "', event)"} class="emojiDetails" href="#">
+      <a class="emojiDetailsLink emojiDetails" href={'/library/emoji-' + hexcode}>
         Open details
       </a>
       <div class="downloadButtons emoji-variant-color">
