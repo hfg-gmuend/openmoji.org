@@ -11,7 +11,7 @@
   box-sizing: border-box;
   max-width: 300px;
   height: 100vh;
-  margin-top: 80px; // The height of the header
+  padding-top: 80px; // The height of the header
   overflow-y: auto;
 
   @media screen and (max-width: variables.$breakpoint-md) {
