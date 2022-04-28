@@ -38,13 +38,14 @@ h2{
   z-index: 20;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
 
   @media screen and (max-width: variables.$breakpoint-md) {
     flex-direction: column;
-    // overflow-y: scroll;
+    // overflow-y: auto;
     // height: 100%;
     // width: 100%;
-    padding: variables.$gap-normal variables.$gap-normal 0 variables.$gap-normal;
+    // padding: variables.$gap-normal variables.$gap-normal 0 variables.$gap-normal;
   }
 
   .sub {
@@ -97,7 +98,7 @@ h2{
 
     .main-emoji-image {
       min-height: 0;
-      margin-bottom: variables.$gap-normal;
+      //margin-bottom: variables.$gap-normal;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;

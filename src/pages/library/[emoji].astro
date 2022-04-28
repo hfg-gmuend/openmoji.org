@@ -4,6 +4,7 @@ import Footer from '@/components/shared/Footer/Footer.astro';
 import JavascriptGlobalVariables from '@/components/shared/JavascriptGlobalVariables.astro';
 import MetaHeadContent from '@/components/shared/MetaHeadContent.astro';
 import EmojiDetail from '@/components/library/EmojiDetail/EmojiDetail.astro';
+import NextAndPrevEmoji from '@/components/library/NextAndPrevEmoji/NextAndPrevEmoji.astro';
 import openmojiJsonUtil from '../../util/openmojiJsonUtil'
 import generalUtil from '../../util/generalUtil'
 import emojipediaUtil from '../../util/emojipediaUtil'
@@ -12,6 +13,8 @@ const openmoji = Astro.props.openMojiData
 const {skintoneVariations} = Astro.props
 const {skintoneCombinations} = Astro.props
 const {emojiPedia} = Astro.props
+const {nextEmoji} = Astro.props
+const {prevEmoji} = Astro.props
 
 export async function getStaticPaths() {
   const uniqueEmojis = openmojiJsonUtil.getUniqueEmojis();
@@ -21,21 +24,37 @@ export async function getStaticPaths() {
   const orderByUnicode = generalUtil.getListBasedOnObjectSortedByCertainKey(uniqueEmojis, 'order');
 
   let emojiPages = [];
-  let limitPagesForTesting = 0; // This is set to 0 because the page generation is not working well in Astro yet (https://github.com/withastro/astro/issues/1711) and will be fixed when it does
+  let limitPagesForTesting = false; // This is set to 0 because the page generation is not working well in Astro yet (https://github.com/withastro/astro/issues/1711) and will be fixed when it does
   for(let index in orderByUnicode){
-    if(!isNaN(limitPagesForTesting) && index >= limitPagesForTesting){
+    if(limitPagesForTesting !== false && index >= limitPagesForTesting){
       break;
     }
     const hex = orderByUnicode[index];
-    const emojiData = uniqueEmojis[hex];
+    if(hex === '1F600'){
+      console.log('index', index)
+      console.log(index + 1)  
+    }
     
+    const nextHex = orderByUnicode[Number(index) + 1] || orderByUnicode[0];
+    const prevHex = orderByUnicode[Number(index) - 1] || orderByUnicode[orderByUnicode.length - 1];
+
+    const emojiData = uniqueEmojis[hex];
+    const emojiDataNext = uniqueEmojis[nextHex];
+    const emojiDataPrev = uniqueEmojis[prevHex];
+    
+    if(emojiData.hexcode === '1F600'){
+      console.log(allSkintoneVariations[emojiData.hexcode])
+    }
+
     emojiPages.push({
       params: { emoji: 'emoji-' + emojiData.hexcode},
       props: {
         openMojiData: emojiData,
         skintoneVariations: allSkintoneVariations[emojiData.hexcode],
         skintoneCombinations: allSkintoneCombinations[emojiData.hexcode],
-        emojiPedia: emojipediaDescriptions[emojiData.hexcode] || undefined
+        emojiPedia: emojipediaDescriptions[emojiData.hexcode] || undefined,
+        nextEmoji: emojiDataNext,
+        prevEmoji: emojiDataPrev
       }
     })
   }
@@ -48,7 +67,14 @@ export async function getStaticPaths() {
   </head>
   <body>
     <Header color="red"/>
-    <EmojiDetail openMojiData={openmoji} skintoneVariations={skintoneVariations} skintoneCombinations={skintoneCombinations} emojiPedia={emojiPedia}/>
+    <EmojiDetail
+      openMojiData={openmoji}
+      skintoneVariations={skintoneVariations}
+      skintoneCombinations={skintoneCombinations}
+      emojiPedia={emojiPedia}/>
+    <NextAndPrevEmoji
+      nextEmoji={nextEmoji}
+      prevEmoji={prevEmoji}/>
   </body>
   <Footer/>
   <JavascriptGlobalVariables/>
