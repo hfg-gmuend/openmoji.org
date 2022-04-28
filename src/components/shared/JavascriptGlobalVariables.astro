@@ -1,4 +1,3 @@
-<!-- <script type="text/javascript" src="/js-libraries/pako.min.js"></script> -->
 <script type="text/javascript">
 	let OPENMOJIJSON = []
 
@@ -13,26 +12,12 @@
 			$(document).trigger('openmojiJsonLoaded')
 		})
 		.catch(function(err) {
-			console.error('Error loading data')
+			console.error('Error loading data from', url)
+
+			// If the gzipped file can't be processed (also happens in localhost)
+			getOpenMojiData('/data/openmoji.json')
 		});
 	}
-
-	// function getOpenMojiData(url){
-	//	// Approach using Pako JS
-	// 	fetch(url).then(function (response) {
-	// 		return response.arrayBuffer()
-	// 	})
-	// 	.then(function (data) {
-	// 		const array = new Uint8Array(data)
-	// 		const decompressed = pako.inflate(array, { to: 'string' });
-	// 		const json = JSON.parse(decompressed);
-	// 		OPENMOJIJSON = json;
-	// 		$(document).trigger('openmojiJsonLoaded')
-	// 	})
-	// 	.catch(function(err) {
-	// 		console.error('Error loading data')
-	// 	});
-	// }
 </script>
 
 
