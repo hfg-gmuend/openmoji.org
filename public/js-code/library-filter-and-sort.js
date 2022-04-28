@@ -22,6 +22,22 @@ $(document).ready(function () {
   // Color toggle
   $("#show-color .switch input[type=checkbox]").change(function () {
     const isColor = this.checked;
+    console.log('test', isColor)
+
+    if(isColor === false){
+      $('.emojiDetailsLink').attr('href', function(i, val) {
+        if(val.indexOf('#variant=black') === -1){
+          return val + '#variant=black'  
+        }
+        return val
+      })
+    }else{
+      $('.emojiDetailsLink').attr('href', function(i, val) {
+        return val.replace('#variant=black', '')
+      })
+    }
+    
+
     showOnlyColoredEmojis(isColor);
     updateList(getUrlParameters());
   });
