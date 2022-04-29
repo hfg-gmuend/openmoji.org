@@ -1,3 +1,9 @@
+if(OPENMOJIJSON.length > 0){
+  initEmojiSearch()
+}else{
+  $(document).on('openmojiJsonLoaded', initEmojiSearch)
+}
+
 function refreshViewIfNecessary(){
 	if(openPopopAccordingToUrl){
 		console.log('update view')
@@ -9,8 +15,6 @@ function refreshViewIfNecessary(){
 		console.log('doesnt exist')
 	}
 }
-
-$(document).on('openmojiJsonLoaded', initEmojiSearch)
 
 //$(document).ready(function () {
 function initEmojiSearch() {

@@ -1,4 +1,8 @@
-$(document).on('openmojiJsonLoaded', initCategoriesShowCase)
+if(OPENMOJIJSON.length > 0){
+  initCategoriesShowCase()
+}else{
+  $(document).on('openmojiJsonLoaded', initCategoriesShowCase)
+}
 
 function initCategoriesShowCase() {
   //------------ META ------------
