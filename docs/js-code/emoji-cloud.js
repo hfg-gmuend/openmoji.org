@@ -1,4 +1,8 @@
-$(document).on('openmojiJsonLoaded', initEmojiCloud)
+if(OPENMOJIJSON.length > 0){
+  initEmojiCloud()
+}else{
+  $(document).on('openmojiJsonLoaded', initEmojiCloud)  
+}
 
 function initEmojiCloud() {
   //------------ META ------------
