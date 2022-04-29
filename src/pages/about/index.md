@@ -32,6 +32,7 @@ OpenMoji is an open-source project of 50+ students and 2 professors of the [HfG 
 - Emoji description texts by [Emojipedia](https://emojipedia.org/) – Thanks Jeremy Burge
 - [Felix Häberle](https://twitter.com/felix_haeberle) – web development improving accessibility and responsiveness
 - [Kris Kowal](https://github.com/kriskowal) – vastly improving the OpenMoji build system
+- [Stephan Bogner](https://stephanbogner.de/) for porting the website to [Astro](https://astro.build/)
 
 ## Contact
 Daniel Utz & Benedikt Groß

@@ -29,8 +29,8 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
   </style>
   <div class="preview">
     <div class="active-emoji-selection">
-      <img id="main-emoji-image-color" class="main-emoji-image emoji-variant-color" src={filePathColorSVG} alt={'"' + openmoji.annotation + '"-emoji'}/>
-      <img class="main-emoji-image emoji-variant-black hidden" src={filePathBlackSVG} alt={'"' + openmoji.annotation + '"-emoji in black and white'}/>
+      <img id="main-emoji-image-color" class="main-emoji-image emoji-variant-color" src={filePathColorSVG} alt={openmoji.annotation + ' emoji'}/>
+      <img class="main-emoji-image emoji-variant-black hidden" src={filePathBlackSVG} alt={openmoji.annotation + ' emoji in black and white'}/>
 
       <ColorPicker
         emoji={openmoji.hexcode}
@@ -79,52 +79,45 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
 
     <table>
       
-        {
-          (<tr>
-            <td>
-              <h2>Unicode</h2>
-            </td>
-            <td>
-              <a target="_blank" class="redlink" href={urlUnicode}>
-                {openmoji.hexcode}
-              </a>
-            </td>
-          </tr>)
-        }
+        <tr>
+          <td>
+            <h2>Unicode</h2>
+          </td>
+          <td>
+            <a target="_blank" class="redlink" href={urlUnicode}>
+              {openmoji.hexcode}
+            </a>
+          </td>
+        </tr>
 
-        {
-          (<tr>
-            <td></td>
-            <td id="unicodeCombination">{generalUtil.getEmojiCombinationLink(openmoji.hexcode)}</td>
-          </tr>)
-        }
+        <tr>
+          <td></td>
+          <td id="unicodeCombination">{generalUtil.getEmojiCombinationLink(openmoji.hexcode)}</td>
+        </tr>
 
-        {
-          (<tr>
-            <td>
-              <h2>Author</h2>
-            </td>
-            <td>
-              <a class="redlink" href={urlAuthor}>
-                {openmoji.openmoji_author}
-              </a>
-            </td>
-          </tr>)
-        }
+        <tr>
+          <td>
+            <h2>Author</h2>
+          </td>
+          <td>
+            <a class="redlink" href={urlAuthor}>
+              {openmoji.openmoji_author}
+            </a>
+          </td>
+        </tr>
 
-        {
-          (<tr>
-            <td>
-              <h2>Category</h2>
-            </td>
-            <td>
-              <a class="redlink" href={urlGroup}>
-                {openmoji.group}
-              </a>
-            </td>
-          </tr>)
-        }
-        
+        <tr>
+          <td>
+            <h2>Category</h2>
+          </td>
+          <td>
+            <a class="redlink" href={urlGroup}>
+              {openmoji.group}
+            </a>
+          </td>
+        </tr>
+        <!--
+        // ToDo: This doesn't work due to a Astro-Bug. Remove this comment once resolved in a future version
         {
           openmoji.subgroups ? (
             <tr>
@@ -137,8 +130,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
                 </a>
               </td>
             </tr>) : null
-        }
-      
+        } -->
     </table>
 
     <div class="downloadButtons emoji-variant-color">

@@ -32,51 +32,10 @@
 <meta property="og:description" content="Open source emojis for designers, developers and everyone else!">
 <meta name="apple-itunes-app" content="app-id=1462636288">
 
-<!-- Styles -->
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 <!-- <link rel="stylesheet" href={Astro.resolve('/src/shared-styles/global.css')}> -->
-<link rel="stylesheet" href="./assets/index.024d2fba.css"><link rel="stylesheet" href="./assets/global.a3b5d2a5.css">
+<link rel="stylesheet" href="./assets/index.418e097e.css"><link rel="stylesheet" href="./assets/global.de14c50b.css">
 <script rel="script" src="/js-libraries/jquery-3.4.1.min.js"></script>
-        <!-- <script type="text/javascript" src="/js-libraries/pako.min.js"></script> -->
-<script type="text/javascript">
-	let OPENMOJIJSON = []
-
-	getOpenMojiData('/data/openmoji.json.gz')
-
-	function getOpenMojiData(url){
-		fetch(url).then(function (response) {
-			return response.json()
-		})
-		.then(function (json) {
-			OPENMOJIJSON = json;
-			$(document).trigger('openmojiJsonLoaded')
-		})
-		.catch(function(err) {
-			console.error('Error loading data')
-		});
-	}
-
-	// function getOpenMojiData(url){
-	//	// Approach using Pako JS
-	// 	fetch(url).then(function (response) {
-	// 		return response.arrayBuffer()
-	// 	})
-	// 	.then(function (data) {
-	// 		const array = new Uint8Array(data)
-	// 		const decompressed = pako.inflate(array, { to: 'string' });
-	// 		const json = JSON.parse(decompressed);
-	// 		OPENMOJIJSON = json;
-	// 		$(document).trigger('openmojiJsonLoaded')
-	// 	})
-	// 	.catch(function(err) {
-	// 		console.error('Error loading data')
-	// 	});
-	// }
-</script>
-
-
-
-
+        <script type="text/javascript" src="/js-code/fetch-openmoji-json.js"></script>
     
 
 
@@ -323,23 +282,23 @@
   </div>
   <script type="text/javascript" src="/js-code/categories-showcase.js"></script>
 </div>
-            <div class="wrapper astro-J7QHKU5G">
+            <div class="wrapper astro-KPLXZGBB">
   
-  <div class="content-wrapper astro-J7QHKU5G">
-    <div id="interest" class="astro-J7QHKU5G">
-      <h1 class="visuallyHeadline1 astro-J7QHKU5G">Interested?</h1>
-      <div class="buttongroup astro-J7QHKU5G">
-        <a href="./styleguide" class="defaultButton large light astro-J7QHKU5G">
-            <img alt="Participate &amp; Contribute" class="big-emoji-right astro-J7QHKU5G" src="data/color/svg/1F449.svg">
-            <div class="astro-J7QHKU5G">Participate &amp; Contribute</div>
+  <div class="content-wrapper astro-KPLXZGBB">
+    <div id="interest" class="astro-KPLXZGBB">
+      <h1 class="visuallyHeadline1 astro-KPLXZGBB">Interested?</h1>
+      <div class="buttongroup astro-KPLXZGBB">
+        <a href="./styleguide" class="defaultButton large light astro-KPLXZGBB">
+            <img alt="Participate &amp; Contribute" class="big-emoji-right astro-KPLXZGBB" src="data/color/svg/1F449.svg">
+            <div class="astro-KPLXZGBB">Participate &amp; Contribute</div>
         </a>
-        <a href="./library" class="defaultButton large light astro-J7QHKU5G">
-          <img alt="Explore Collection" class="big-emoji-right astro-J7QHKU5G" src="data/color/svg/1F449.svg">
-          <div class="astro-J7QHKU5G">Explore Collection</div>
+        <a href="./library" class="defaultButton large light astro-KPLXZGBB">
+          <img alt="Explore Collection" class="big-emoji-right astro-KPLXZGBB" src="data/color/svg/1F449.svg">
+          <div class="astro-KPLXZGBB">Explore Collection</div>
         </a>
       </div>
-      <h1 class="visuallyHeadline1 astro-J7QHKU5G">Or try OpenMoji on your phone</h1>
-      <a rel="noopener" href="https://itunes.apple.com/us/app/openmoji/id1462636288" class="astro-J7QHKU5G"><img alt="Apple App Store" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" class="astro-J7QHKU5G"></a>
+      <h1 class="visuallyHeadline1 astro-KPLXZGBB">Or try OpenMoji on your phone</h1>
+      <a rel="noopener" href="https://itunes.apple.com/us/app/openmoji/id1462636288" class="astro-KPLXZGBB"><img alt="Download on the App Store" src="./assets/app-store-badge.9929dcdf.svg" class="astro-KPLXZGBB"></a>
     </div>
   </div>
 </div>

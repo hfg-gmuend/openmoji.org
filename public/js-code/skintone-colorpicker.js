@@ -89,7 +89,7 @@ function getEmojiCombinationLink(hexcodeString){
   return hexcodeString.split("-").map(function(hex) {
       if (hex === "200D") return '<a href="https://emojipedia.org/zero-width-joiner/" target="_blank" rel="noreferrer noopener" class="redlink">ZWJ</a>';
       if (hex === "FE0F") return '<a href="https://emojipedia.org/variation-selector-16/" target="_blank" rel="noreferrer noopener" class="redlink">VS16</a>';
-      return '<a href="/library/#emoji='+ hex +'" target="_blank" rel="noreferrer noopener" class="redlink">'+ String.fromCodePoint(parseInt(hex, 16)) +'</a>';
+      return '<a href="/library/emoji-'+ hex +'" target="_blank" rel="noreferrer noopener" class="redlink">'+ String.fromCodePoint(parseInt(hex, 16)) +'</a>';
   }).join(" • ");
 }
 
@@ -103,7 +103,7 @@ function getUrlParameters() {
       var currentParam = sURLVariables[i].split("=");
       sParameters[currentParam[0]] = currentParam[1];
     }
-    return sPageURL ? sParameters : undefined;
+    return sPageURL ? sParameters : {};
 }
 
 // function getUrlParameters() {
@@ -172,6 +172,7 @@ function updatePicker(skintoneId){
 
 function pickCorrectVariantAccordingToUrl(){
 	let urlParameters = getUrlParameters();
+	//console.log(urlParameters)
 	if(urlParameters.variant){
 		let skintoneId = urlParameters.variant
 		if(skintoneId !== 'black'){

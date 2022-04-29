@@ -1,4 +1,8 @@
-$(document).on('openmojiJsonLoaded', initCategoriesShowCase)
+if(OPENMOJIJSON.length > 0){
+  initCategoriesShowCase()
+}else{
+  $(document).on('openmojiJsonLoaded', initCategoriesShowCase)
+}
 
 function initCategoriesShowCase() {
   //------------ META ------------
@@ -87,7 +91,7 @@ function initCategoriesShowCase() {
       // break out of loop if array doesn't have new emojis anymore
       if (i >= filteredList.length) break;
 
-      html += "<a class='categories-item' href='./library#emoji=" + filteredList[i].hexcode + "'><img alt='" + filteredList[i].annotation + "' src='data/color/svg/" + filteredList[i].hexcode + ".svg'></a>";
+      html += "<a class='categories-item' href='./library/emoji-" + filteredList[i].hexcode + "'><img alt='" + filteredList[i].annotation + "' src='data/color/svg/" + filteredList[i].hexcode + ".svg'></a>";
     }
     html += "</div>";
 

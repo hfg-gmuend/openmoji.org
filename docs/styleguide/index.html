@@ -32,10 +32,8 @@
 <meta property="og:description" content="Open source emojis for designers, developers and everyone else!">
 <meta name="apple-itunes-app" content="app-id=1462636288">
 
-<!-- Styles -->
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 <!-- <link rel="stylesheet" href={Astro.resolve('/src/shared-styles/global.css')}> -->
-<link rel="stylesheet" href="../assets/global.a3b5d2a5.css"><link rel="stylesheet" href="../assets/styleguide.23995c15.css">
+<link rel="stylesheet" href="../assets/global.de14c50b.css"><link rel="stylesheet" href="../assets/styleguide.670028d9.css">
 <script rel="script" src="/js-libraries/jquery-3.4.1.min.js"></script>
   
 
@@ -763,44 +761,5 @@ openmoji-template.svg
   </ul> -->
 </footer>
     </div>
-  <!-- <script type="text/javascript" src="/js-libraries/pako.min.js"></script> -->
-<script type="text/javascript">
-	let OPENMOJIJSON = []
-
-	getOpenMojiData('/data/openmoji.json.gz')
-
-	function getOpenMojiData(url){
-		fetch(url).then(function (response) {
-			return response.json()
-		})
-		.then(function (json) {
-			OPENMOJIJSON = json;
-			$(document).trigger('openmojiJsonLoaded')
-		})
-		.catch(function(err) {
-			console.error('Error loading data')
-		});
-	}
-
-	// function getOpenMojiData(url){
-	//	// Approach using Pako JS
-	// 	fetch(url).then(function (response) {
-	// 		return response.arrayBuffer()
-	// 	})
-	// 	.then(function (data) {
-	// 		const array = new Uint8Array(data)
-	// 		const decompressed = pako.inflate(array, { to: 'string' });
-	// 		const json = JSON.parse(decompressed);
-	// 		OPENMOJIJSON = json;
-	// 		$(document).trigger('openmojiJsonLoaded')
-	// 	})
-	// 	.catch(function(err) {
-	// 		console.error('Error loading data')
-	// 	});
-	// }
-</script>
-
-
-
-
+  <script type="text/javascript" src="/js-code/fetch-openmoji-json.js"></script>
 </body></html>
