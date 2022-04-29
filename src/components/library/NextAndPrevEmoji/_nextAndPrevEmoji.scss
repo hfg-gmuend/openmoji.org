@@ -1,0 +1,31 @@
+@use 'src/shared-styles/_variables.scss';
+
+#wrapper{
+	max-width: 1080px;
+	padding-left: variables.$gap-normal;
+	padding-right: variables.$gap-normal;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.emoji{
+	max-width: 60px;
+    width: 100%;
+}
+
+.arrow{
+	width: 60px;
+}
+
+.nav{
+	display: flex;
+	align-items: center;
+	padding: variables.$gap-2xs variables.$gap-xs;
+}
+
+.nav:hover{
+	border-radius: 10px;
+	background: variables.$color-grey-70;
+}

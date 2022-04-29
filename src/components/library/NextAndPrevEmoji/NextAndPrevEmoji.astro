@@ -1,0 +1,29 @@
+---
+import generalUtil from '../../../util/generalUtil'
+
+import arrowLeft from './icon-arrow-from.svg';
+import arrowRight from './icon-arrow-to.svg';
+
+const {prevEmoji} = Astro.props
+const {nextEmoji} = Astro.props
+
+const prevEmojifilePathColorSVG = generalUtil.getFilePathEmojiImage(prevEmoji.hexcode, 'svg', 'color')
+const nextEmojifilePathColorSVG = generalUtil.getFilePathEmojiImage(nextEmoji.hexcode, 'svg', 'color')
+
+const prevEmojifilePathBlackSVG = generalUtil.getFilePathEmojiImage(prevEmoji.hexcode, 'svg', 'color')
+const nextEmojifilePathBlackSVG = generalUtil.getFilePathEmojiImage(nextEmoji.hexcode, 'svg', 'color')
+---
+
+<section id="wrapper">
+  <style lang="scss">
+    @use '_nextAndPrevEmoji.scss';
+  </style>
+  <a class="nav" href={'/library/emoji-' + prevEmoji.hexcode}>
+    <img class="arrow" src={arrowLeft} alt="←">
+    <img class="emoji" src={prevEmojifilePathColorSVG} alt={prevEmoji.annotation + ' emoji'}/>
+  </a>
+  <a class="nav" href={'/library/emoji-' + nextEmoji.hexcode}>
+    <img class="emoji" src={nextEmojifilePathColorSVG} alt={nextEmoji.annotation + ' emoji'}/>
+    <img class="arrow" src={arrowRight} alt="→">
+  </a>
+</section>

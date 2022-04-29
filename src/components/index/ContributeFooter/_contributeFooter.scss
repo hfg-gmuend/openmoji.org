@@ -6,6 +6,8 @@
 	.content-wrapper {
 	  min-height: 0;
 	  padding-top: variables.$gap-xs;
+	  padding-left: variables.$gap-sm;
+	  padding-right: variables.$gap-sm;
 	}
 
 	#interest {
@@ -19,6 +21,7 @@
 	    color: variables.$color-white;
 	    margin-bottom: variables.$gap-normal;
 	    font-size: variables.$text-lg;
+	    text-align: center;
 
 	    @media screen and (max-width: variables.$breakpoint-md) {
 	      font-size: variables.$text-lg;
@@ -31,10 +34,12 @@
 	    justify-content: space-around;
 	    align-items: center;
 	    margin-bottom: variables.$gap-normal;
-	    padding-left: variables.$gap-sm;
-	    padding-right: variables.$gap-sm;
+	    // padding-left: variables.$gap-sm;
+	    // padding-right: variables.$gap-sm;
 
 	    .defaultButton {
+	    	padding-left: variables.$gap-sm;
+	    	padding-right: variables.$gap-sm;
 	      &:first-child {
 	        margin-right: variables.$gap-normal;
 	      }

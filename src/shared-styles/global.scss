@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use 'src/shared-styles/_variables.scss';
+@use 'src/shared-styles/_fonts.scss';
 
 html, body{
   color: variables.$color-grey-900;
