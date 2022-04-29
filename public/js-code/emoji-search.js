@@ -128,8 +128,13 @@ function initEmojiSearch() {
 			for(let index in results){
 				const result = results[index];
 				const item = result.item;
-				//const linkUrl = '/library#emoji=' + item.hexcode;
-				const linkUrl = '/library/emoji-' + item.hexcode; /* This is once we have emoji-pages */
+				console.log(result)
+
+				let linkUrl = '/library/emoji-' + item.hexcode;
+				if(item.skintone_base_hexcode !== "" && item.hexcode !== item.skintone_base_hexcode){
+					linkUrl = '/library/emoji-' + item.skintone_base_hexcode + '#variant=' + item.hexcode;
+				}
+				
 				const linkText = item.annotation
 				dom += '<li>'
 				dom += '   <a class="searchResult ' + classNameSearchResultNotSelected + '" href="' + linkUrl + '" onclick="refreshViewIfNecessary()">'
