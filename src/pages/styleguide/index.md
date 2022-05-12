@@ -13,6 +13,7 @@ color: orange
 
 # Designer? Developer?<br>Love Open Source?<br>Everyone Can Participate!
 
+<!--
 ### Help Design New Emoji
 <ColumnsReversingOnMobile>
 <ColumnLeft>
@@ -25,6 +26,7 @@ The next set of emojis are due to be released this year, we need your help to ma
 ![Emoji 13.0](/styleguide-emoji13.svg)
 </ColumnRight>
 </ColumnsReversingOnMobile>
+-->
 
 ### Improve Quality of Emojis
 <ColumnsReversingOnMobile>
@@ -42,7 +44,7 @@ Design is subjective but we want our emoji to follow our style guide and look go
 ### Improve Consistency with Other Platforms
 <ColumnsReversingOnMobile>
 <ColumnLeft>
-To be useful for communication, emoji need to convey the same idea. 
+To be useful for communication, emoji need to convey the same idea.
 
 <ButtonLink href="https://github.com/hfg-gmuend/openmoji/issues/143">Get started</ButtonLink>
 </ColumnLeft>
