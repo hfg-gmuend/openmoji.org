@@ -14,10 +14,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: 📂 Sync files via FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        server: openmoji.org
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        ftp-server: ftp://openmoji.org/
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./docs/
-        server-dir: ./
