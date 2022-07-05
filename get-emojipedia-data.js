@@ -87,7 +87,7 @@ const getEmojiPediaDataAndWriteToFile = async () => {
 		const emojiData = filteredEmojies[key];
 		const emoji = emojiData.emoji;
 		const response = await getEmojiDataFor(counter, emoji);
-    const timeoutToPreventStressingTheAPI = Math.round(Math.random() * 2000);
+    const timeoutToPreventStressingTheAPI = Math.round(Math.random() * 1500);
     console.log('    - Wait for', timeoutToPreventStressingTheAPI ,'ms')
     await delay(timeoutToPreventStressingTheAPI);
     console.log('');
