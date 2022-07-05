@@ -155,10 +155,14 @@
   <div id="emoji-preview" class="astro-2YPZSAYS">
     <div id="outline-emoji-preview" class="circle single-color visible astro-2YPZSAYS" onclick="colorChangeSingleColor('black')"></div>
     <div id="color-emoji-preview" onclick="colorChangeSingleColor('')" class="circle highlight visible single-color astro-2YPZSAYS"></div>
-    
+    <div class="skintone-selector left astro-2YPZSAYS">
+        <div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('left',1)" style="background-color:#fadcbc"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('left',2)" style="background-color:#debb90"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('left',3)" style="background-color:#c19a65"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('left',4)" style="background-color:#a57939"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('left',5)" style="background-color:#6a462f"></div>
+      </div><div class="skintone-selector right astro-2YPZSAYS">
+        <div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('right',1)" style="background-color:#fadcbc"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('right',2)" style="background-color:#debb90"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('right',3)" style="background-color:#c19a65"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('right',4)" style="background-color:#a57939"></div><div class="circle astro-2YPZSAYS" onclick="colorChangeMultiColor('right',5)" style="background-color:#6a462f"></div>
+      </div>
   </div>
-  <script>let skintoneCombinations = {};
-let skintonesForHex = {};
+  <script>let skintoneCombinations = {"1":"1F91D-1F3FB","2":"1F91D-1F3FC","3":"1F91D-1F3FD","4":"1F91D-1F3FE","5":"1F91D-1F3FF","":"1F91D","1,2":"1FAF1-1F3FB-200D-1FAF2-1F3FC","1,3":"1FAF1-1F3FB-200D-1FAF2-1F3FD","1,4":"1FAF1-1F3FB-200D-1FAF2-1F3FE","1,5":"1FAF1-1F3FB-200D-1FAF2-1F3FF","2,1":"1FAF1-1F3FC-200D-1FAF2-1F3FB","2,3":"1FAF1-1F3FC-200D-1FAF2-1F3FD","2,4":"1FAF1-1F3FC-200D-1FAF2-1F3FE","2,5":"1FAF1-1F3FC-200D-1FAF2-1F3FF","3,1":"1FAF1-1F3FD-200D-1FAF2-1F3FB","3,2":"1FAF1-1F3FD-200D-1FAF2-1F3FC","3,4":"1FAF1-1F3FD-200D-1FAF2-1F3FE","3,5":"1FAF1-1F3FD-200D-1FAF2-1F3FF","4,1":"1FAF1-1F3FE-200D-1FAF2-1F3FB","4,2":"1FAF1-1F3FE-200D-1FAF2-1F3FC","4,3":"1FAF1-1F3FE-200D-1FAF2-1F3FD","4,5":"1FAF1-1F3FE-200D-1FAF2-1F3FF","5,1":"1FAF1-1F3FF-200D-1FAF2-1F3FB","5,2":"1FAF1-1F3FF-200D-1FAF2-1F3FC","5,3":"1FAF1-1F3FF-200D-1FAF2-1F3FD","5,4":"1FAF1-1F3FF-200D-1FAF2-1F3FE"};
+let skintonesForHex = {"1F91D-1F3FB":"1","1F91D-1F3FC":"2","1F91D-1F3FD":"3","1F91D-1F3FE":"4","1F91D-1F3FF":"5","1F91D":"","1FAF1-1F3FB-200D-1FAF2-1F3FC":"1,2","1FAF1-1F3FB-200D-1FAF2-1F3FD":"1,3","1FAF1-1F3FB-200D-1FAF2-1F3FE":"1,4","1FAF1-1F3FB-200D-1FAF2-1F3FF":"1,5","1FAF1-1F3FC-200D-1FAF2-1F3FB":"2,1","1FAF1-1F3FC-200D-1FAF2-1F3FD":"2,3","1FAF1-1F3FC-200D-1FAF2-1F3FE":"2,4","1FAF1-1F3FC-200D-1FAF2-1F3FF":"2,5","1FAF1-1F3FD-200D-1FAF2-1F3FB":"3,1","1FAF1-1F3FD-200D-1FAF2-1F3FC":"3,2","1FAF1-1F3FD-200D-1FAF2-1F3FE":"3,4","1FAF1-1F3FD-200D-1FAF2-1F3FF":"3,5","1FAF1-1F3FE-200D-1FAF2-1F3FB":"4,1","1FAF1-1F3FE-200D-1FAF2-1F3FC":"4,2","1FAF1-1F3FE-200D-1FAF2-1F3FD":"4,3","1FAF1-1F3FE-200D-1FAF2-1F3FF":"4,5","1FAF1-1F3FF-200D-1FAF2-1F3FB":"5,1","1FAF1-1F3FF-200D-1FAF2-1F3FC":"5,2","1FAF1-1F3FF-200D-1FAF2-1F3FD":"5,3","1FAF1-1F3FF-200D-1FAF2-1F3FE":"5,4"};
 
     const SKINTONECOMBINATIONS = skintoneCombinations;
     const SKINTONESFORHEX = skintonesForHex;
@@ -188,7 +192,7 @@ let skintonesForHex = {};
     <div class="astro-3TWLDLUD">
           <h2 class="astro-3TWLDLUD"><a target="_blank" class="standardLink astro-3TWLDLUD" href="https://emojipedia.org/">Emojipedia</a> description:</h2>
           <p class="astro-3TWLDLUD">
-            Two hands performing a handshake gesture, indicating a cordial greeting between friends or associates. Some platforms support a shared skin tone… <a class="redlink astro-3TWLDLUD" target="_blank" href="https://emojipedia.org/handshake/">Read more</a>
+            Two hands performing a handshake gesture, indicating a cordial greeting between friends or associates. As of late 2021's Emoji 14.0… <a class="redlink astro-3TWLDLUD" target="_blank" href="https://emojipedia.org/handshake/">Read more</a>
           </p>
         </div>
 
