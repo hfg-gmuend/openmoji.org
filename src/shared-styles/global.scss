@@ -66,13 +66,13 @@ li {
 }
 
 :target:before {
+  /* Purpose: Pushes the content down, so that nothing is hidden behind the sticky header */
   content: "";
   display: block;
   position: relative;
-  height: variables.$footer-header-max-height;
-  /* fixed header height*/
-  margin-top: -#{variables.$footer-header-max-height};
-  /* negative fixed header height */
+  height: variables.$footer-header-max-height; /* fixed header height*/
+  margin-top: -#{variables.$footer-header-max-height}; /* negative fixed header height */
+  pointer-events: none;
 }
 
 p {
