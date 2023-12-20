@@ -479,6 +479,19 @@
 		}
 	},
 	{
+		"name": "Jasmin Fassler",
+		"description": "Emoji design",
+		"image": "jasmin-fassler.svg"
+	},
+	{
+		"name": "Linda Hartmann",
+		"description": "Emoji design",
+		"image": "linda-hartmann.svg",
+		"links": {
+			"link": "https://hartmannlinda.de/"
+		}
+	},
+	{
 		"name": "Kris Kowal",
 		"description": "Emoji design and Dev Build System",
 		"image": "kris-kowal.svg",
