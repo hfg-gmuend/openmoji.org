@@ -1,26 +1,26 @@
 {
-  "_from": "openmoji@^14.0.0",
-  "_id": "openmoji@14.0.0",
+  "_from": "openmoji@^15.0.0",
+  "_id": "openmoji@15.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-MGF9GbXfpULuRtUM1srEv2OP3sg/e8hAw0UCTiP+N3+CX38RCo8/kjyFYm0eO+OENnbbri9Vx4m5pU0Vbc7LGw==",
+  "_integrity": "sha512-Jk8h7k/aG3PikTB0IDxZ1Vqf63G0kvgXKMXDrnw4j4dBcezoKWBuhXlkpZbEZEXnJZDzN0PBNdE1nZwYroaA3g==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "openmoji@^14.0.0",
+    "raw": "openmoji@^15.0.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "^14.0.0",
+    "rawSpec": "^15.0.0",
     "saveSpec": null,
-    "fetchSpec": "^14.0.0"
+    "fetchSpec": "^15.0.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-14.0.0.tgz",
-  "_shasum": "83d52501c3bb96a00d4bbd096825d9b533b4dc51",
-  "_spec": "openmoji@^14.0.0",
+  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-15.0.0.tgz",
+  "_shasum": "1e7f45c78dabd1cea238b2b7d211244b476d2380",
+  "_spec": "openmoji@^15.0.0",
   "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
@@ -35,10 +35,11 @@
     "csv-parse": "^2.5.0",
     "csv-write-stream": "^2.0.0",
     "emojibase": "^5.0.0",
-    "emojibase-data": "^7.0.1",
+    "emojibase-data": "^15.0.0",
     "glob": "^7.1.2",
     "jsdom": "^13.2.0",
     "kd-tree-javascript": "^1.0.3",
+    "lib-font": "^2.4.0",
     "libxmljs": "^0.19.7",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.3",
@@ -81,8 +82,9 @@
     "generate-font": "./helpers/generate-fonts.sh",
     "lint-sh": "shellcheck helpers/*.sh",
     "pretty-src-svg": "./helpers/pretty-src-svg.sh",
-    "test": "mocha --parallel --reporter min test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
-    "test-dev": "mocha --parallel --reporter min --invert --grep \"production\" test/*.js --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
+    "show-extras-hexcodes": "node helpers/show-extras-hexcodes.js",
+    "test": "mocha --parallel --reporter min test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
+    "test-dev": "mocha --parallel --reporter min --invert --grep \"production\" test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
   },
-  "version": "14.0.0"
+  "version": "15.0.0"
 }
