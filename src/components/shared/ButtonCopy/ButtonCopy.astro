@@ -1,0 +1,97 @@
+---
+import duplicateIcon from "./E25B.svg";
+const { content, imgurl } = Astro.props;
+---
+
+<style lang="scss" global>
+    @use "src/shared-styles/_variables.scss";
+    .buttonCopy {
+        position: relative;
+        // display: inline;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .buttonCopy:active {
+        top: 2px;
+        left: 1px;
+    }
+</style>
+<button-copy data-content={content} data-imgurl={imgurl}>
+    <button class="buttonCopy">
+        <img class="" src={duplicateIcon} alt="copy to clipboard" />
+    </button>
+</button-copy>
+
+<script>
+    // i have no idea how to include this here...
+    // import {copyTextToClipboard} from "../../../../js-code/library/copy-clipboard.js";
+
+    // based on example from
+    // https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts
+    class ButtonCopy extends HTMLElement {
+        constructor() {
+            super();
+
+            console.log("this", this);
+            // const button = this.querySelector("button");
+            // console.log("button", button);
+
+            const copyTextToClipboard = function (content) {
+              // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText#examples
+              navigator.clipboard.writeText(content).then(
+                () => {
+                  /* clipboard successfully set */
+                  console.log("copied '" + content + "'to clipboard.");
+                },
+                () => {
+                  /* clipboard write failed */
+                  console.error(
+                    "copy '" + content + "'to clipboard failed."
+                    );
+                  }
+                  );
+                };
+
+            // TODO: check if this is really working..
+            const copyImgURLAsImageToClipboard = async function (imgURL) {
+                // based on https://web.dev/articles/async-clipboard
+                console.log("imgURL", imgURL);
+                try {
+                    const data = await fetch(imgURL);
+                    const blob = await data.blob();
+                    await navigator.clipboard.write([
+                        new ClipboardItem({
+                            // The key is determined dynamically based on the blob's type.
+                            [blob.type]: blob,
+                        }),
+                    ]);
+                    console.log("Image copied.");
+                } catch (err) {
+                    console.error(err.name, err.message);
+                }
+            };
+
+            this.addEventListener("click", () => {
+              // Read the message from the data attribute.
+              const content = this.dataset.content;
+              const imgurl = this.dataset.imgurl;
+                console.log(
+                  "click for ", this, "\n",
+                  "content:", content,
+                  "imgurl:", imgurl,
+                );
+                if (content) {
+                  copyTextToClipboard(content);
+                }
+                if (imgurl) {
+                  copyImgURLAsImageToClipboard(imgurl);
+                }
+            });
+        }
+    }
+
+    customElements.define("button-copy", ButtonCopy);
+</script>

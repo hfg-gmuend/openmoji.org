@@ -18,7 +18,7 @@ const getListBasedOnObjectSortedByCertainKey = (object, key, reverse = false) =>
 
   // Compare as number of string depending on content
   if(isNaN(objectAsArray[0][1][key])){
-    objectAsArray.sort((a, b) => String(a[1][key]).localeCompare(String(b[1][key])));  
+    objectAsArray.sort((a, b) => String(a[1][key]).localeCompare(String(b[1][key])));
   }else{
     // The if statements make the when the key is null or "", that those results are at the end
     objectAsArray.sort(function(a, b) {
@@ -55,6 +55,12 @@ const getEmojiCombinationLink = (hexcodeString) => {
   }).join(" • ");
 }
 
+const getEmojiCombinationString = (hexcodeString) => {
+  return hexcodeString.split("-").map(function(hex) {
+      return String.fromCodePoint(parseInt(hex, 16));
+  }).join("");
+}
+
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -62,6 +68,7 @@ const capitalizeFirstLetter = (string) => {
 export default {
   getListBasedOnObjectSortedByCertainKey,
   getFilePathEmojiImage,
-  getEmojiCombinationLink, 
+  getEmojiCombinationLink,
+  getEmojiCombinationString,
   capitalizeFirstLetter,
-}
+};

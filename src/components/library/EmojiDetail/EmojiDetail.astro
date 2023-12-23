@@ -1,6 +1,7 @@
 ---
 import ColorPicker from '@/components/library/ColorPicker/ColorPicker.astro';
 import generalUtil from '../../../util/generalUtil'
+import ButtonCopy from '@/components/shared/ButtonCopy/ButtonCopy.astro';
 
 
 const openmoji = Astro.props.openMojiData;
@@ -38,7 +39,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
         anySkintone={hasAnySkintone}
         multiskin={hasMultiSkintone}
         skintoneCombinations={skintoneCombinations}/>
-      
+
     </div>
   </div>
   <div class="description">
@@ -71,14 +72,15 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
         <div>
           <h2><a target="_blank" class="standardLink" href="https://emojipedia.org/">Emojipedia</a> description:</h2>
           <p>
-            {emojiPedia.description} <a class="redlink" target="_blank" href={emojiPedia.permalink}>Read more</a>
+            <!-- {emojiPedia.description}  TODO: temporarly disabled do to #184-->>
+            <a class="redlink" target="_blank" href={emojiPedia.permalink}>Read more</a>
           </p>
         </div>
       ) : null
     }
 
     <table>
-      
+
         <tr>
           <td>
             <h2>Unicode</h2>
@@ -92,7 +94,10 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
 
         <tr>
           <td></td>
-          <td id="unicodeCombination">{generalUtil.getEmojiCombinationLink(openmoji.hexcode)}</td>
+          <td id="unicodeCombination">
+            {generalUtil.getEmojiCombinationLink(openmoji.hexcode)}
+            <ButtonCopy content={generalUtil.getEmojiCombinationString(openmoji.hexcode)}></ButtonCopy>
+          </td>
         </tr>
 
         <tr>
@@ -136,18 +141,22 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
     <div class="downloadButtons emoji-variant-color">
       <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
         <span>SVG</span>
-      </a>  
+      </a>
+      <ButtonCopy imgurl={filePathColorSVG}></ButtonCopy>
       <a class="linkButton" id="downloadPNG" href={filePathColorPNG} download>
         <span>PNG</span>
-      </a> 
+      </a>
+      <ButtonCopy imgurl={filePathColorPNG}></ButtonCopy>
     </div>
     <div class="emoji-variant-black hidden">
       <a class="linkButton" id="downloadSVG" href={filePathBlackSVG} download>
         <span>SVG</span>
-      </a>  
+      </a>
+      <ButtonCopy imgurl={filePathBlackSVG}></ButtonCopy>
       <a class="linkButton" id="downloadPNG" href={filePathBlackPNG} download>
         <span>PNG</span>
-      </a> 
+      </a>
+      <ButtonCopy imgurl={filePathBlackPNG}></ButtonCopy>
     </div>
   </div>
 </div>
