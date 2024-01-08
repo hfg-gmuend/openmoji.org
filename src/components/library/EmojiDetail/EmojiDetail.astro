@@ -84,6 +84,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
         <tr>
           <td>
             <h2>Unicode</h2>
+            <ButtonCopy content={generalUtil.getEmojiCombinationString(openmoji.hexcode)}></ButtonCopy>
           </td>
           <td>
             <a target="_blank" class="redlink" href={urlUnicode}>
@@ -96,7 +97,6 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
           <td></td>
           <td id="unicodeCombination">
             {generalUtil.getEmojiCombinationLink(openmoji.hexcode)}
-            <ButtonCopy content={generalUtil.getEmojiCombinationString(openmoji.hexcode)}></ButtonCopy>
           </td>
         </tr>
 
@@ -142,21 +142,17 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
       <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
         <span>SVG</span>
       </a>
-      <ButtonCopy imgurl={filePathColorSVG}></ButtonCopy>
       <a class="linkButton" id="downloadPNG" href={filePathColorPNG} download>
         <span>PNG</span>
       </a>
-      <ButtonCopy imgurl={filePathColorPNG}></ButtonCopy>
     </div>
     <div class="emoji-variant-black hidden">
       <a class="linkButton" id="downloadSVG" href={filePathBlackSVG} download>
         <span>SVG</span>
       </a>
-      <ButtonCopy imgurl={filePathBlackSVG}></ButtonCopy>
       <a class="linkButton" id="downloadPNG" href={filePathBlackPNG} download>
         <span>PNG</span>
       </a>
-      <ButtonCopy imgurl={filePathBlackPNG}></ButtonCopy>
     </div>
   </div>
 </div>
