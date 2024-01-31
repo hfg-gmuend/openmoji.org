@@ -3,7 +3,7 @@ OpenMoji.org
 
 Website of the OpenMoji project 👉 http://openmoji.org/
 
-⚠️ Please note that the master branch is in active development! 
+⚠️ Please note that the master branch is in active development!
 
 Developer Setup
 ---------------

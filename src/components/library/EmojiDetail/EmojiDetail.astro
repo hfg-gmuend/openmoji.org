@@ -2,6 +2,7 @@
 import ColorPicker from '@/components/library/ColorPicker/ColorPicker.astro';
 import generalUtil from '../../../util/generalUtil'
 import ButtonCopy from '@/components/shared/ButtonCopy/ButtonCopy.astro';
+import ButtonDownloadImage from '@/components/shared/ButtonDownloadImage/ButtonDownloadImage.astro';
 
 
 const openmoji = Astro.props.openMojiData;
@@ -72,7 +73,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
         <div>
           <h2><a target="_blank" class="standardLink" href="https://emojipedia.org/">Emojipedia</a> description:</h2>
           <p>
-            <!-- {emojiPedia.description}  TODO: temporarly disabled do to #184-->>
+            {emojiPedia.description}
             <a class="redlink" target="_blank" href={emojiPedia.permalink}>Read more</a>
           </p>
         </div>
@@ -139,20 +140,18 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
     </table>
 
     <div class="downloadButtons emoji-variant-color">
-      <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
+      <ButtonDownloadImage href={filePathColorSVG} data-imageType="image/svg+xml">SVG</ButtonDownloadImage>
+      <ButtonDownloadImage href={filePathColorPNG} data-imageType="image/png">PNG</ButtonDownloadImage>
+      <!-- <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
         <span>SVG</span>
       </a>
       <a class="linkButton" id="downloadPNG" href={filePathColorPNG} download>
         <span>PNG</span>
-      </a>
+      </a> -->
     </div>
     <div class="emoji-variant-black hidden">
-      <a class="linkButton" id="downloadSVG" href={filePathBlackSVG} download>
-        <span>SVG</span>
-      </a>
-      <a class="linkButton" id="downloadPNG" href={filePathBlackPNG} download>
-        <span>PNG</span>
-      </a>
+      <ButtonDownloadImage href={filePathBlackSVG} data-imageType="image/svg+xml">SVG</ButtonDownloadImage>
+      <ButtonDownloadImage href={filePathBlackPNG} data-imageType="image/png">PNG</ButtonDownloadImage>
     </div>
   </div>
 </div>

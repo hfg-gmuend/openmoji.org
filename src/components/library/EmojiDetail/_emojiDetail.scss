@@ -198,7 +198,3 @@ h2{
 }
 
 
-.linkButton {
-    @include mixins.button;
-    background-color: variables.$color-red-light;
-}

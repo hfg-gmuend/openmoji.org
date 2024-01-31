@@ -1,0 +1,96 @@
+---
+const { href, imageType } = Astro.props;
+---
+
+<style lang="scss">
+    @use "src/shared-styles/_variables.scss";
+    @use "src/shared-styles/_mixins.scss";
+    .buttonDownloadImage {
+        @include mixins.button;
+        background-color: variables.$color-red-light;
+    }
+</style>
+<button-download-image>
+    <a
+        class="buttonDownloadImage"
+        href={href}
+        data-imageType={imageType}
+        download
+        title="Ctr+Click to copy image to clipboard."
+    >
+        <span>
+            <slot />
+        </span>
+    </a>
+</button-download-image>
+
+<script>
+    // based on example from
+    // https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts
+    class ButtonDownload extends HTMLElement {
+        constructor() {
+            super();
+
+            console.log("this", this);
+
+            const copyImgURLAsImageToClipboard = async function (
+                imgURL,
+                imageType
+            ) {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
+                // based on https://web.dev/articles/async-clipboard
+                console.log("imgURL", imgURL);
+                try {
+                    console.log("fetching imgage...");
+                    const data = await fetch(imgURL);
+                    // console.log("data", data);
+                    const blob = await data.blob();
+                    // console.log("blob", blob);
+                    // console.log("creating blob url");
+                    // const objectURL = URL.createObjectURL(blob);
+                    // console.log("objectURL", objectURL);
+
+                    // The key is determined dynamically based on the blob's type.
+                    // const blobType = blob.type;
+                    // for now not possible as the php script is returning 'application/octet-stream' for an png image :-(
+                    // so we just leave it to the user..
+                    const blobType = imageType;
+                    console.log("blobType", blobType);
+
+                    if (blobType) {
+                        // Firefox: From version 122, the text/plain, text/html and image/png MIME types are supported.
+                        await navigator.clipboard.write([
+                            new ClipboardItem({
+                                [blobType]: blob,
+                            }),
+                        ]);
+                        console.log("Image copied.");
+                    } else {
+                        console.error(
+                            `image file type '${blobType}'not available.`
+                        );
+                    }
+                } catch (err) {
+                    console.error(err);
+                    // console.error(err.name, err.message);
+                } finally {
+                    console.log("copyImgURLAsImageToClipboard finished.");
+                }
+            };
+
+            this.addEventListener("click", (event) => {
+                const href = this.querySelector("a").href;
+                const imageType = this.dataset.imageType;
+                console.log("click for ", this, "\n", "href:", href);
+                if (href && imageType) {
+                    console.log(event);
+                    // event.preventDefault
+                    copyImgURLAsImageToClipboard(href, imageType);
+                }
+            });
+            console.log("init done.");
+        }
+    }
+
+    customElements.define("button-download-image", ButtonDownload);
+</script>
