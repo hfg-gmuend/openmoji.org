@@ -1,5 +1,5 @@
 ---
-const { href, imageType } = Astro.props;
+const { href, MIMEType } = Astro.props;
 ---
 
 <style lang="scss">
@@ -14,7 +14,7 @@ const { href, imageType } = Astro.props;
     <a
         class="buttonDownloadImage"
         href={href}
-        data-imageType={imageType}
+        data-mimetype={MIMEType}
         download
         title="Ctr+Click to copy image to clipboard."
     >
@@ -35,7 +35,7 @@ const { href, imageType } = Astro.props;
 
             const copyImgURLAsImageToClipboard = async function (
                 imgURL,
-                imageType
+                mimetype
             ) {
                 // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
                 // based on https://web.dev/articles/async-clipboard
@@ -52,9 +52,10 @@ const { href, imageType } = Astro.props;
 
                     // The key is determined dynamically based on the blob's type.
                     // const blobType = blob.type;
+                    console.log("blob.type", blob.type);
                     // for now not possible as the php script is returning 'application/octet-stream' for an png image :-(
                     // so we just leave it to the user..
-                    const blobType = imageType;
+                    const blobType = mimetype;
                     console.log("blobType", blobType);
 
                     if (blobType) {
@@ -80,17 +81,27 @@ const { href, imageType } = Astro.props;
 
             this.addEventListener("click", (event) => {
                 const href = this.querySelector("a").href;
-                const imageType = this.dataset.imageType;
-                console.log("click for ", this, "\n", "href:", href);
-                if (href && imageType) {
+                const mimetype = this.querySelector("a").dataset.mimetype;
+                console.log(
+                    "click for ",
+                    this,
+                    "\n",
+                    "href:",
+                    href,
+                    "\n",
+                    "mimetype:",
+                    mimetype
+                );
+                // if (href && mimetype) {
+                if (href) {
                     console.log(event);
                     // event.preventDefault
-                    copyImgURLAsImageToClipboard(href, imageType);
+                    copyImgURLAsImageToClipboard(href, mimetype);
                 }
             });
             console.log("init done.");
         }
     }
-
+    console.log("customElements.define");
     customElements.define("button-download-image", ButtonDownload);
 </script>
