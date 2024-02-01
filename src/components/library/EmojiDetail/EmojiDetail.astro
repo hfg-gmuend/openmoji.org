@@ -140,18 +140,13 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
     </table>
 
     <div class="downloadButtons emoji-variant-color">
-      <ButtonDownloadImage href={filePathColorSVG} MIMEType="image/svg+xml">SVG</ButtonDownloadImage>
-      <ButtonDownloadImage href={filePathColorPNG} MIMEType="image/png">PNG</ButtonDownloadImage>
-      <!-- <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
-        <span>SVG</span>
-      </a>
-      <a class="linkButton" id="downloadPNG" href={filePathColorPNG} download>
-        <span>PNG</span>
-      </a> -->
+      <ButtonDownloadImage href={filePathColorSVG}>SVG</ButtonDownloadImage>
+      <p>..</p>
+      <ButtonDownloadImage href={filePathColorPNG}>PNG</ButtonDownloadImage>
     </div>
     <div class="emoji-variant-black hidden">
-      <ButtonDownloadImage href={filePathBlackSVG} MIMEType="image/svg+xml">SVG</ButtonDownloadImage>
-      <ButtonDownloadImage href={filePathBlackPNG} MIMEType="image/png">PNG</ButtonDownloadImage>
+      <ButtonDownloadImage href={filePathBlackSVG}>SVG</ButtonDownloadImage>
+      <ButtonDownloadImage href={filePathBlackPNG}>PNG</ButtonDownloadImage>
     </div>
   </div>
 </div>
