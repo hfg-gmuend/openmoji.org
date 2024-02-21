@@ -1,35 +1,32 @@
 {
-  "_args": [
-    [
-      "openmoji@15.0.0",
-      "/home/stefan/mydata/github/openmoji.org"
-    ]
-  ],
-  "_from": "openmoji@15.0.0",
+  "_from": "openmoji@^15.0.0",
   "_id": "openmoji@15.0.0",
   "_inBundle": false,
   "_integrity": "sha512-Jk8h7k/aG3PikTB0IDxZ1Vqf63G0kvgXKMXDrnw4j4dBcezoKWBuhXlkpZbEZEXnJZDzN0PBNdE1nZwYroaA3g==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "openmoji@15.0.0",
+    "raw": "openmoji@^15.0.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "15.0.0",
+    "rawSpec": "^15.0.0",
     "saveSpec": null,
-    "fetchSpec": "15.0.0"
+    "fetchSpec": "^15.0.0"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-15.0.0.tgz",
-  "_spec": "15.0.0",
-  "_where": "/home/stefan/mydata/github/openmoji.org",
+  "_shasum": "1e7f45c78dabd1cea238b2b7d211244b476d2380",
+  "_spec": "openmoji@^15.0.0",
+  "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Open source emojis for designers, developers and everyone else!",
   "devDependencies": {
     "chai": "^4.3.6",
