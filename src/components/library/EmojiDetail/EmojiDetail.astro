@@ -8,15 +8,12 @@ const openmoji = Astro.props.openMojiData;
 let { emojiPedia } = Astro.props;
 // TODO
 // quick fix https://github.com/hfg-gmuend/openmoji.org/issues/189
-if (emojiPedia == undefined) {
-    emojiPedia = {
-        description: "",
-    };
+if (emojiPedia != undefined) {
+  // remove p tags from description
+  emojiPedia.description = emojiPedia.description.replace(/<\/?p>/g, "");
+  // remove links from description
+  emojiPedia.description = emojiPedia.description.replace(/<a.*$/s, "");
 }
-// remove p tags from description
-emojiPedia.description = emojiPedia.description.replace(/<\/?p>/g, "");
-// remove links from description
-emojiPedia.description = emojiPedia.description.replace(/<a.*$/s, "");
 
 const { skintoneVariations } = Astro.props;
 const hasMultiSkintone = skintoneVariations.skintone_combinations.length > 0;
