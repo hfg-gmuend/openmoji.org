@@ -4,7 +4,13 @@ import generalUtil from '../../../util/generalUtil'
 
 
 const openmoji = Astro.props.openMojiData;
-const {emojiPedia} = Astro.props;
+let {emojiPedia} = Astro.props;
+// TODO
+// quick fix https://github.com/hfg-gmuend/openmoji.org/issues/189
+// remove p tags from description
+emojiPedia.description = emojiPedia.description.replace(/<\/?p>/g, '');
+// remove links from description
+emojiPedia.description = emojiPedia.description.replace(/<a.*$/s, '');
 
 const {skintoneVariations} = Astro.props;
 const hasMultiSkintone = skintoneVariations.skintone_combinations.length > 0;
@@ -38,7 +44,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
         anySkintone={hasAnySkintone}
         multiskin={hasMultiSkintone}
         skintoneCombinations={skintoneCombinations}/>
-      
+
     </div>
   </div>
   <div class="description">
@@ -78,7 +84,7 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
     }
 
     <table>
-      
+
         <tr>
           <td>
             <h2>Unicode</h2>
@@ -136,18 +142,18 @@ console.log('Rendering page for emoji', openmoji.emoji, ' ', openmoji.hexcode);
     <div class="downloadButtons emoji-variant-color">
       <a class="linkButton" id="downloadSVG" href={filePathColorSVG} download>
         <span>SVG</span>
-      </a>  
+      </a>
       <a class="linkButton" id="downloadPNG" href={filePathColorPNG} download>
         <span>PNG</span>
-      </a> 
+      </a>
     </div>
     <div class="emoji-variant-black hidden">
       <a class="linkButton" id="downloadSVG" href={filePathBlackSVG} download>
         <span>SVG</span>
-      </a>  
+      </a>
       <a class="linkButton" id="downloadPNG" href={filePathBlackPNG} download>
         <span>PNG</span>
-      </a> 
+      </a>
     </div>
   </div>
 </div>
