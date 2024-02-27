@@ -5,7 +5,18 @@ import ButtonCopy from "@/components/shared/ButtonCopy/ButtonCopy.astro";
 import ButtonDownloadImage from "@/components/shared/ButtonDownloadImage/ButtonDownloadImage.astro";
 
 const openmoji = Astro.props.openMojiData;
-const { emojiPedia } = Astro.props;
+let { emojiPedia } = Astro.props;
+// TODO
+// quick fix https://github.com/hfg-gmuend/openmoji.org/issues/189
+if (emojiPedia == undefined) {
+    emojiPedia = {
+        description: "",
+    };
+}
+// remove p tags from description
+emojiPedia.description = emojiPedia.description.replace(/<\/?p>/g, "");
+// remove links from description
+emojiPedia.description = emojiPedia.description.replace(/<a.*$/s, "");
 
 const { skintoneVariations } = Astro.props;
 const hasMultiSkintone = skintoneVariations.skintone_combinations.length > 0;
@@ -116,7 +127,7 @@ console.log("Rendering page for emoji", openmoji.emoji, " ", openmoji.hexcode);
                         description:
                     </h2>
                     <p>
-                        {emojiPedia.description}
+                        {emojiPedia.description}{" "}
                         <a
                             class="redlink"
                             target="_blank"
@@ -148,9 +159,9 @@ console.log("Rendering page for emoji", openmoji.emoji, " ", openmoji.hexcode);
 
             <tr>
                 <td></td>
-                <td id="unicodeCombination">
-                    {generalUtil.getEmojiCombinationLink(openmoji.hexcode)}
-                </td>
+                <td id="unicodeCombination"
+                    >{generalUtil.getEmojiCombinationLink(openmoji.hexcode)}</td
+                >
             </tr>
 
             <tr>
@@ -174,21 +185,21 @@ console.log("Rendering page for emoji", openmoji.emoji, " ", openmoji.hexcode);
                     </a>
                 </td>
             </tr>
-            <!-- // ToDo: This doesn't work due to a Astro-Bug. Remove this comment once resolved in a future version -->
             <!--
-            {
-              openmoji.subgroups ? (
-                <tr>
-                  <td>
-                    <h2>Subcategory</h2>
-                  </td>
-                  <td>
-                    <a class="redlink" href={urlSubgroup}>
-                      {openmoji.subgroups}
-                    </a>
-                  </td>
-                </tr>) : null
-            } -->
+        // ToDo: This doesn't work due to a Astro-Bug. Remove this comment once resolved in a future version
+        {
+          openmoji.subgroups ? (
+            <tr>
+              <td>
+                <h2>Subcategory</h2>
+              </td>
+              <td>
+                <a class="redlink" href={urlSubgroup}>
+                  {openmoji.subgroups}
+                </a>
+              </td>
+            </tr>) : null
+        } -->
         </table>
 
         <!--
