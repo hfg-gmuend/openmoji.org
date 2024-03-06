@@ -1,6 +1,7 @@
 const fs = require('fs');
 const openMojiJson = require('./public/data/openmoji.json');
 const fetch = require('node-fetch');
+const stripHtml = require('string-strip-html');
 
 const limitForTesting = false;
 
@@ -92,6 +93,9 @@ const getEmojiPediaDataAndWriteToFile = async () => {
     await delay(timeoutToPreventStressingTheAPI);
     console.log('');
     emojiPediaData[key] = response;
+    if (response !== null) {
+      emojiPediaData[key].description = stripHtml(emojiPediaData[key].description);
+    }
     counter ++
     if(limitForTesting === true && counter > 3){
       break;
