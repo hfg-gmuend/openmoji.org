@@ -6,14 +6,6 @@ import ButtonDownloadImage from "@/components/shared/ButtonDownloadImage/ButtonD
 
 const openmoji = Astro.props.openMojiData;
 let { emojiPedia } = Astro.props;
-// TODO
-// quick fix https://github.com/hfg-gmuend/openmoji.org/issues/189
-if (emojiPedia != undefined) {
-  // remove p tags from description
-  emojiPedia.description = emojiPedia.description.replace(/<\/?p>/g, "");
-  // remove links from description
-  emojiPedia.description = emojiPedia.description.replace(/<a.*$/s, "");
-}
 
 const { skintoneVariations } = Astro.props;
 const hasMultiSkintone = skintoneVariations.skintone_combinations.length > 0;
@@ -124,7 +116,7 @@ console.log("Rendering page for emoji", openmoji.emoji, " ", openmoji.hexcode);
                         description:
                     </h2>
                     <p>
-                        {emojiPedia.description}{" "}
+                        {emojiPedia.description + " "}
                         <a
                             class="redlink"
                             target="_blank"
