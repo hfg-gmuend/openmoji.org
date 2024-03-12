@@ -63,7 +63,10 @@ const { href } = Astro.props;
                 ]);
             } else {
                 return Promise.reject(
-                    new Error(`image file type not given.. ('${blobType}')`)
+                    new Error(
+                        `image file type not given.. ('${blobType}'). \n
+                        (most likely it was not possible to donwload the image.)`
+                    )
                 );
             }
         };
@@ -87,8 +90,8 @@ const { href } = Astro.props;
                     console.log(`image copy done.`, res);
                 })
                 .catch((err) => {
-                    console.log("error copying the image. \n", err);
-                    console.error(err.name, err.message);
+                    console.error("error copying the image. \n", err);
+                    // console.error(err.name, err.message);
                 });
         };
 
