@@ -26,6 +26,7 @@
     "astro": "^0.23.7",
     "autoprefixer": "^10.4.0",
     "node-fetch": "^2.6.7",
-    "openmoji": "^15.0.0"
+    "openmoji": "^15.0.0",
+    "string-strip-html": "^4.3.9"
   }
 }
