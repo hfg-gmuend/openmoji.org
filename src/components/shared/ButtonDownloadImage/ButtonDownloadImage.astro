@@ -25,94 +25,113 @@ const { href } = Astro.props;
 </button-download-image>
 
 <script>
-    const copyImageBlob = async function (blob) {
-        // The key is determined dynamically based on the blob's type.
-        let blobType = blob.type;
-        // console.log("blobType", blobType);
-        if (blobType) {
-            // https://stackoverflow.com/a/9851769/574981
-            // var isFirefox = typeof InstallTrigger !== "undefined";
-            // if (isFirefox && blobType.toLowerCase().includes("svg")) {
-            //     // Firefox: From version 122, the text/plain, text/html and image/png MIME types are supported.
-            //     // so we tell that svg is html. hope that this helps.. ;-)
-            //     blobType = "text/html";
-            // }
-            // this does not work so easy...
-            // maybe we first need to embed the svg in an html document..
-            // but for now i leave it as is.
-            // so fore firefox svg does not work..
-            // console.log("blobType", blobType);
-            return navigator.clipboard.write([
-                new ClipboardItem({
-                    [blobType]: blob,
-                }),
-            ]);
-        } else {
-            return Promise.reject(
-                new Error(`image file type not given.. ('${blobType}')`)
-            );
-        }
-    };
+    // console.log(
+    //     "PING hier wird das script in der datei ButtonDownloadImage.astro ausgeführt!!!"
+    // );
 
-    const copyImgURLAsImageToClipboard = function (imgURL) {
-        // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
-        // based on https://web.dev/articles/async-clipboard
-        // console.log("imgURL", imgURL);
-
-        // console.log("fetching image...");
-        fetch(imgURL)
-            .then((data) => data.blob())
-            // .then((blob) => {
-            //     console.log("creating blob url");
-            //     const objectURL = URL.createObjectURL(blob);
-            //     console.log("objectURL", objectURL);
-            //     return blob;
-            // })
-            .then(copyImageBlob)
-            .then((res) => {
-                console.log(`image copy done.`, res);
-            })
-            .catch((err) => {
-                console.log("error copying the image. \n", err);
-                console.error(err.name, err.message);
-            });
-    };
-
-    const buttonOnClickEvent = function (event, el) {
+    // es scheint im astro setup ein bug / einstellung zu geben die momentan verhindert das dieses script,
+    //  so wie in der docu angegeben, nur einmal eingebunden wird.
+    // deshalb hier ein HACK der die definition unserer componente umschließt..
+    // link zu docu zu v0.23
+    // https://web.archive.org/web/20220521182404/https://docs.astro.build/en/core-concepts/astro-components/#client-side-scripts
+    if (customElements.get("button-download-image") == undefined) {
         // console.log(
-        //     "click for ",
-        //     el,
-        //     "\n",
-        //     "event:",
-        //     event
+        //     "HACK! we only do the following if the custom element is not defined.."
         // );
-        let href = el.querySelector("a").href;
-        if (!href) {
-            console.log("href not found.", el);
-        }
-        if (event.ctrlKey) {
-            event.preventDefault();
-            if (href) {
-                copyImgURLAsImageToClipboard(href);
+
+        const copyImageBlob = async function (blob) {
+            // The key is determined dynamically based on the blob's type.
+            let blobType = blob.type;
+            // console.log("blobType", blobType);
+            if (blobType) {
+                // https://stackoverflow.com/a/9851769/574981
+                // var isFirefox = typeof InstallTrigger !== "undefined";
+                // if (isFirefox && blobType.toLowerCase().includes("svg")) {
+                //     // Firefox: From version 122, the text/plain, text/html and image/png MIME types are supported.
+                //     // so we tell that svg is html. hope that this helps.. ;-)
+                //     blobType = "text/html";
+                // }
+                // this does not work so easy...
+                // maybe we first need to embed the svg in an html document..
+                // but for now i leave it as is.
+                // so fore firefox svg does not work..
+                // console.log("blobType", blobType);
+                return navigator.clipboard.write([
+                    new ClipboardItem({
+                        [blobType]: blob,
+                    }),
+                ]);
+            } else {
+                return Promise.reject(
+                    new Error(`image file type not given.. ('${blobType}')`)
+                );
             }
-        }
-    };
+        };
 
-    // https://docs.astro.build/en/guides/client-side-scripts/#handle-onclick-and-other-events
-    // https://tanggd.github.io/en/core-concepts/astro-components/#client-side-scripts
-    const buttonConnectedCallback = function (el) {
-        console.log("buttonConnectedCallback", el);
-        el.addEventListener("click", (event) => {
-            buttonOnClickEvent(event, el);
-        });
-    };
+        const copyImgURLAsImageToClipboard = function (imgURL) {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write#browser_compatibility
+            // based on https://web.dev/articles/async-clipboard
+            // console.log("imgURL", imgURL);
 
-    customElements.define(
-        "button-download-image",
-        class extends HTMLElement {
+            // console.log("fetching image...");
+            fetch(imgURL)
+                .then((data) => data.blob())
+                // .then((blob) => {
+                //     console.log("creating blob url");
+                //     const objectURL = URL.createObjectURL(blob);
+                //     console.log("objectURL", objectURL);
+                //     return blob;
+                // })
+                .then(copyImageBlob)
+                .then((res) => {
+                    console.log(`image copy done.`, res);
+                })
+                .catch((err) => {
+                    console.log("error copying the image. \n", err);
+                    console.error(err.name, err.message);
+                });
+        };
+
+        const buttonOnClickEvent = function (event, el) {
+            // console.log(
+            //     "click for ",
+            //     el,
+            //     "\n",
+            //     "event:",
+            //     event
+            // );
+            let href = el.querySelector("a").href;
+            if (!href) {
+                console.log("href not found.", el);
+            }
+            if (event.ctrlKey) {
+                event.preventDefault();
+                if (href) {
+                    copyImgURLAsImageToClipboard(href);
+                }
+            }
+        };
+
+        // https://docs.astro.build/en/guides/client-side-scripts/#handle-onclick-and-other-events
+        // https://tanggd.github.io/en/core-concepts/astro-components/#client-side-scripts
+        const buttonConnectedCallback = function (el) {
+            // console.log("buttonConnectedCallback", el);
+            el.addEventListener("click", (event) => {
+                buttonOnClickEvent(event, el);
+            });
+        };
+
+        class ButtonDownloadImage extends HTMLElement {
+            constructor() {
+                super();
+                // console.log("ButtonDownloadImage constructor", this);
+            }
             connectedCallback() {
+                // console.log("ButtonDownloadImage connectedCallback", this);
                 buttonConnectedCallback(this);
             }
         }
-    );
+
+        customElements.define("button-download-image", ButtonDownloadImage);
+    }
 </script>
