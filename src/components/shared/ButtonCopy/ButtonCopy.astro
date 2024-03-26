@@ -36,7 +36,7 @@ const { content } = Astro.props;
                 // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText#examples
                 navigator.clipboard.writeText(content).then(
                     () => {
-                        console.log("copied '" + content + "'to clipboard.");
+                        console.log("copied '" + content + "' to clipboard.");
                     },
                     () => {
                         console.error(
