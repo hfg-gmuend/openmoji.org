@@ -1,0 +1,61 @@
+---
+import duplicateIcon from "./E25B.svg";
+const { content } = Astro.props;
+---
+
+<style lang="scss">
+    @use "src/shared-styles/_variables.scss";
+    .buttonCopy {
+        position: relative;
+        // display: inline;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .buttonCopy:active {
+        top: 2px;
+        left: 1px;
+    }
+</style>
+<button-copy data-content={content}>
+    <button class="buttonCopy">
+        <img class="" src={duplicateIcon} alt="copy to clipboard" />
+    </button>
+</button-copy>
+
+<script>
+    // based on example from
+    // https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts
+    class ButtonCopy extends HTMLElement {
+        constructor() {
+            super();
+
+            const copyTextToClipboard = function (content) {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText#examples
+                navigator.clipboard.writeText(content).then(
+                    () => {
+                        console.log("copied '" + content + "' to clipboard.");
+                    },
+                    () => {
+                        console.error(
+                            "copy '" + content + "'to clipboard failed."
+                        );
+                    }
+                );
+            };
+
+            this.addEventListener("click", (event) => {
+                // Read the message from the data attribute.
+                const content = this.dataset.content;
+                // console.log("click for ", this, "\n", "content:", content);
+                if (content) {
+                    copyTextToClipboard(content);
+                }
+            });
+        }
+    }
+
+    customElements.define("button-copy", ButtonCopy);
+</script>
