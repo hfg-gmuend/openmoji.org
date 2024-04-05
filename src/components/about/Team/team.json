@@ -507,5 +507,13 @@
 		"links": {
 			"github": "https://github.com/fuddl"
 		}
+	},
+	{
+		"name": "Xavier Martinez",
+		"description": "Emoji design",
+		"image": "xavier-martinez.svg",
+		"links": {
+			"github": "https://github.com/xavizardKnight"
+		}
 	}
 ]
