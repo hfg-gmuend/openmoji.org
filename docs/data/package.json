@@ -1,32 +1,35 @@
 {
-  "_from": "openmoji@^15.0.0",
-  "_id": "openmoji@15.0.0",
+  "_args": [
+    [
+      "openmoji@15.1.0",
+      "/Users/bene/Documents/openmoji-website"
+    ]
+  ],
+  "_from": "openmoji@15.1.0",
+  "_id": "openmoji@15.1.0",
   "_inBundle": false,
-  "_integrity": "sha512-Jk8h7k/aG3PikTB0IDxZ1Vqf63G0kvgXKMXDrnw4j4dBcezoKWBuhXlkpZbEZEXnJZDzN0PBNdE1nZwYroaA3g==",
+  "_integrity": "sha512-stNFJkXeiH9dQfRNN3vrM8Ac0cSAR83Y1a3UqA8o8eVKTxynU2dUeTK0wWO8968YC7KGYaVbuCWBDp7n6plIrw==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "openmoji@^15.0.0",
+    "raw": "openmoji@15.1.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "^15.0.0",
+    "rawSpec": "15.1.0",
     "saveSpec": null,
-    "fetchSpec": "^15.0.0"
+    "fetchSpec": "15.1.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-15.0.0.tgz",
-  "_shasum": "1e7f45c78dabd1cea238b2b7d211244b476d2380",
-  "_spec": "openmoji@^15.0.0",
+  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-15.1.0.tgz",
+  "_spec": "15.1.0",
   "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "Open source emojis for designers, developers and everyone else!",
   "devDependencies": {
     "chai": "^4.3.6",
@@ -34,8 +37,8 @@
     "chroma-js": "^1.4.0",
     "csv-parse": "^2.5.0",
     "csv-write-stream": "^2.0.0",
-    "emojibase": "^5.0.0",
-    "emojibase-data": "^15.0.0",
+    "emojibase": "^5.2.0",
+    "emojibase-data": "^15.3.2",
     "glob": "^7.1.2",
     "jsdom": "^13.2.0",
     "kd-tree-javascript": "^1.0.3",
@@ -86,5 +89,5 @@
     "test": "mocha --parallel --reporter min test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
     "test-dev": "mocha --parallel --reporter min --invert --grep \"production\" test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
   },
-  "version": "15.0.0"
+  "version": "15.1.0"
 }
