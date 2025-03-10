@@ -16,7 +16,7 @@
     "postinstall": "gulp copy-markdown-assets && gulp copy-openmoji-data && node compress-json.mjs"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "sass": "^1.43.5"
   },
   "browserslist": [
