@@ -1,6 +1,6 @@
 {
   "name": "openmoji.org",
-  "version": "15.1.0",
+  "version": "16.0.0",
   "description": "Website of the OpenMoji project",
   "author": "",
   "license": "ISC",
@@ -26,7 +26,7 @@
     "astro": "^0.23.7",
     "autoprefixer": "^10.4.0",
     "node-fetch": "^2.6.7",
-    "openmoji": "^15.1.0",
+    "openmoji": "^16.0.0",
     "string-strip-html": "^4.3.9"
   }
 }

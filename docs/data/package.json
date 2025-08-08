@@ -1,35 +1,32 @@
 {
-  "_args": [
-    [
-      "openmoji@15.1.0",
-      "/Users/bene/Documents/openmoji-website"
-    ]
-  ],
-  "_from": "openmoji@15.1.0",
-  "_id": "openmoji@15.1.0",
+  "_from": "openmoji@^16.0.0",
+  "_id": "openmoji@16.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-stNFJkXeiH9dQfRNN3vrM8Ac0cSAR83Y1a3UqA8o8eVKTxynU2dUeTK0wWO8968YC7KGYaVbuCWBDp7n6plIrw==",
+  "_integrity": "sha512-ruaRCfXL23tYzZ8cWzVxNsMEEUnol68RRxP4UueYyegtMz9wg/0p5RIJRdPz/e2KbBWq7ydrYvnN0NN4lhxN1g==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "openmoji@15.1.0",
+    "raw": "openmoji@^16.0.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "15.1.0",
+    "rawSpec": "^16.0.0",
     "saveSpec": null,
-    "fetchSpec": "15.1.0"
+    "fetchSpec": "^16.0.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-15.1.0.tgz",
-  "_spec": "15.1.0",
+  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-16.0.0.tgz",
+  "_shasum": "20093dd819fda48c5ccfc6f35ec0abd45b0a5e77",
+  "_spec": "openmoji@^16.0.0",
   "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Open source emojis for designers, developers and everyone else!",
   "devDependencies": {
     "chai": "^4.3.6",
@@ -38,12 +35,12 @@
     "csv-parse": "^2.5.0",
     "csv-write-stream": "^2.0.0",
     "emojibase": "^5.2.0",
-    "emojibase-data": "^15.3.2",
+    "emojibase-data": "^16.0.2",
     "glob": "^7.1.2",
     "jsdom": "^13.2.0",
     "kd-tree-javascript": "^1.0.3",
     "lib-font": "^2.4.0",
-    "libxmljs": "^0.19.7",
+    "libxmljs": "^1.0.11",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.3",
     "mocha": "^9.2.0",
@@ -82,12 +79,12 @@
     "export-zip": "./helpers/export-zip.sh",
     "generate": "./helpers/generate.sh",
     "generate-data-tables": "node helpers/generate-data-tables.js",
-    "generate-font": "./helpers/generate-fonts.sh",
+    "generate-fonts": "./helpers/generate-fonts.sh",
     "lint-sh": "shellcheck helpers/*.sh",
     "pretty-src-svg": "./helpers/pretty-src-svg.sh",
     "show-extras-hexcodes": "node helpers/show-extras-hexcodes.js",
     "test": "mocha --parallel --reporter min test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
     "test-dev": "mocha --parallel --reporter min --invert --grep \"production\" test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
   },
-  "version": "15.1.0"
+  "version": "16.0.0"
 }
