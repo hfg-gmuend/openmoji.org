@@ -3,6 +3,10 @@ layout: ../../layouts/BaseLayout/BaseLayout.astro
 title: Samples
 ---
 
+## Confoederatio Emojica
+![Confoederatio Emojica](/samples-confoederatio-emojica.svg)
+[Thomas Weibel](https://www.thomasweibel.ch/), Basel.
+
 ## Rabbit hole
 ![Rabbit hole](/samples-rabbit-hole.svg)
 
