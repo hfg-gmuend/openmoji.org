@@ -1,26 +1,26 @@
 {
-  "_from": "openmoji@^16.0.0",
-  "_id": "openmoji@16.0.0",
+  "_from": "openmoji@^17.0.0",
+  "_id": "openmoji@17.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-ruaRCfXL23tYzZ8cWzVxNsMEEUnol68RRxP4UueYyegtMz9wg/0p5RIJRdPz/e2KbBWq7ydrYvnN0NN4lhxN1g==",
+  "_integrity": "sha512-EBnYrNGdcdw+OSXmENeNE1yBNRu6tOraTmoOyUbJkTmvT/+XETp8RZLSJFzD3lrPc5N9CzsyPnRTk0Vp4UaI9w==",
   "_location": "/openmoji",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "openmoji@^16.0.0",
+    "raw": "openmoji@^17.0.0",
     "name": "openmoji",
     "escapedName": "openmoji",
-    "rawSpec": "^16.0.0",
+    "rawSpec": "^17.0.0",
     "saveSpec": null,
-    "fetchSpec": "^16.0.0"
+    "fetchSpec": "^17.0.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-16.0.0.tgz",
-  "_shasum": "20093dd819fda48c5ccfc6f35ec0abd45b0a5e77",
-  "_spec": "openmoji@^16.0.0",
+  "_resolved": "https://registry.npmjs.org/openmoji/-/openmoji-17.0.0.tgz",
+  "_shasum": "ee8094c5c0de0d2126b77ceb074d62b6fe2071d0",
+  "_spec": "openmoji@^17.0.0",
   "_where": "/Users/bene/Documents/openmoji-website",
   "bugs": {
     "url": "https://github.com/hfg-gmuend/openmoji/issues"
@@ -35,7 +35,7 @@
     "csv-parse": "^2.5.0",
     "csv-write-stream": "^2.0.0",
     "emojibase": "^5.2.0",
-    "emojibase-data": "^16.0.2",
+    "emojibase-data": "^17.0.0",
     "glob": "^7.1.2",
     "jsdom": "^13.2.0",
     "kd-tree-javascript": "^1.0.3",
@@ -86,5 +86,5 @@
     "test": "mocha --parallel --reporter min test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src",
     "test-dev": "mocha --parallel --reporter min --invert --grep \"production\" test/*.{js,mjs} --openmoji-data-json $PWD/data/openmoji.json --openmoji-src-folder $PWD/src"
   },
-  "version": "16.0.0"
+  "version": "17.0.0"
 }
