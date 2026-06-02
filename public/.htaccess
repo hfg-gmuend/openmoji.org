@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect AI training crawlers to the GitHub repo
+RewriteCond %{HTTP_USER_AGENT} (GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|anthropic-ai|Claude-Web|CCBot|Google-Extended|Bytespider|Amazonbot|DiffBot|FacebookBot|Applebot-Extended|meta-externalagent|PerplexityBot|cohere-ai|YouBot|PetalBot|ImagesiftBot|img2dataset) [NC]
+RewriteRule ^ https://github.com/hfg-gmuend/openmoji [R=302,L]
+
+Header set Cache-Control "no-cache, no-store, must-revalidate"
+<filesMatch ".(ico|svg|jpg|jpeg|png|gif|css)$">
+    Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
