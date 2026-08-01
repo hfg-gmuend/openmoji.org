@@ -3,7 +3,6 @@ import GetEmojiDropdown from '../GetEmojiDropdown/GetEmojiDropdown.astro';
 import Search from '../Search/Search.astro';
 import openMojiLogo from './logo-openmoji-1F64B.svg';
 import githubLogo from './logo-github.svg';
-import twitterLogo from './logo-twitter.svg';
 import menuIcon from './icon-menu.svg';
 import menuCloseIcon from './icon-menu-close.svg';
 
@@ -78,13 +77,6 @@ for(let index in menuItems){
         target="_blank">
         <img src={githubLogo} class="social-icon" alt="GitHub logo"/>
       </a>
-      <a
-        class="iconlink"
-        rel="noopener"
-        href="https://twitter.com/OpenMoji"
-        target="_blank">
-        <img src={twitterLogo} class="social-icon" alt="Twitter logo"/>
-      </a>
     </div>
   </nav>
   <div class="actions">
@@ -102,13 +94,6 @@ for(let index in menuItems){
         href="https://github.com/hfg-gmuend/openmoji"
         target="_blank">
         <img src={githubLogo} class="social-icon" alt="GitHub logo"/>
-      </a>
-      <a
-        class="iconlink"
-        rel="noopener"
-        href="https://twitter.com/OpenMoji"
-        target="_blank">
-        <img src={twitterLogo} class="social-icon" alt="Twitter logo" />
       </a>
       <GetEmojiDropdown color={color}/>
     </div>
