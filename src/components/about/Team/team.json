@@ -515,5 +515,11 @@
 		"links": {
 			"github": "https://github.com/xavizardKnight"
 		}
+	},
+	{
+		"name": "Mark-Jonathan Freyer",
+		"description": "Emoji design",
+		"image": "mark-jonathan-freyer.svg",
+		"links": {}
 	}
 ]
